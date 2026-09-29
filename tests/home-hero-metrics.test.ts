@@ -26,6 +26,7 @@ describe("home hero global metrics", () => {
         totalCandidatos: 3,
         totalPatrimonio: 150,
         totalProcessos: 3,
+        totalProcessosDisciplinares: 0,
       }
     )
   })
@@ -45,6 +46,7 @@ describe("home hero global metrics", () => {
         totalCandidatos: 2,
         totalPatrimonio: 140,
         totalProcessos: 3,
+        totalProcessosDisciplinares: 0,
       }
     )
   })
@@ -58,12 +60,13 @@ describe("home hero global metrics", () => {
     ]
     assert.deepEqual(
       getHomeHeroMetrics(resumos, "live", { SENADO_ENABLED: "true" }),
-      { totalCandidatos: 4, totalPatrimonio: 150, totalProcessos: 7 }
+      { totalCandidatos: 4, totalPatrimonio: 150, totalProcessos: 7, totalProcessosDisciplinares: 0 }
     )
     assert.deepEqual(getHomeHeroMetrics(resumos, "live", {}), {
       totalCandidatos: 2,
       totalPatrimonio: 140,
       totalProcessos: 3,
+      totalProcessosDisciplinares: 0,
     })
   })
 
@@ -81,6 +84,7 @@ describe("home hero global metrics", () => {
         totalCandidatos: 2,
         totalPatrimonio: null,
         totalProcessos: null,
+        totalProcessosDisciplinares: null,
       }
     )
   })
@@ -90,6 +94,7 @@ describe("home hero global metrics", () => {
       totalCandidatos: null,
       totalPatrimonio: null,
       totalProcessos: null,
+      totalProcessosDisciplinares: null,
     })
   })
 })

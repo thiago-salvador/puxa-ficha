@@ -165,11 +165,12 @@ test("famílias da ficha: zero declarado, verificado e não verificado não se c
   const [columns, cells] = parseCsv(csv.replace(/^\ufeff/, ""))
   const value = (column: string) => cells[columns.indexOf(column)]
   // Colunas novas ficam no fim, antes só do aviso.
-  assert.deepEqual(columns.slice(-21, -1), [
+  assert.deepEqual(columns.slice(-24, -1), [
     "patrimonio_estado", "patrimonio_ano", "patrimonio_total", "patrimonio_valor_estado", "patrimonio_ano_anterior",
     "patrimonio_total_anterior", "patrimonio_variacao_pct", "patrimonio_fonte_url", "gastos_estado", "gastos_ultimo_ano",
     "gastos_ultimo_ano_total", "gastos_anos_em_revisao", "tcu_estado", "tcu_registros", "tcu_consultado_em", "tcu_fonte_url",
     "sancoes_estado", "sancoes_quantidade", "sancoes_consultado_em", "sancoes_fonte_url",
+    "processos_judiciais", "processos_disciplinares", "processos_total",
   ])
   assert.equal(value("patrimonio_total"), "0")
   assert.equal(value("patrimonio_valor_estado"), "sem_bens_declarados")

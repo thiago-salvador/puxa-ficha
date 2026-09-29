@@ -1,9 +1,9 @@
+// cspell:ignore contaveis
 // cspell:words representacoes etica
 import type { FichaCandidato } from "@/lib/types"
 import type { CandidatoProfileTabId } from "@/lib/candidato-profile-tabs"
 import { hasWideManualOverlappingSegmentedMandates } from "@/lib/historico-dedupe"
 import { countPartySwitches, hasSameYearPartyReversal, partySwitchCountVerified } from "@/lib/party-switches"
-import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { estadoValorPatrimonio } from "@/lib/patrimonio-contexto"
 import {
   prepareHistoricoPoliticoPublicDisplayList,
@@ -14,7 +14,7 @@ import type { SenadoRunningMatesPayload } from "@/components/SenadoRunningMates"
 import type { EstadoEvidenciasPrograma } from "@/lib/compromisso-evidencia"
 import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
-import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
+import { filtrarProcessosJudiciaisContaveis, getProcessosDisciplinaresContaveis } from "@/lib/processos-justica-candidato"
 
 export function DeferredCandidatoProfile({
   ficha,
@@ -72,10 +72,10 @@ export function DeferredCandidatoProfile({
         senadoRunningMates={senadoRunningMates}
         pesquisas={pesquisas}
         overview={{
-          processos: (ficha.processos ?? []).filter((row) => Boolean(nivelFonteProcesso(row))).length,
+          processos: filtrarProcessosJudiciaisContaveis(ficha.processos ?? []).length,
           processosOmitidos: ficha.processos_omitidos_sem_fonte_oficial ?? 0,
           processosVerificacao: ficha.processos_verificacao,
-          processosDisciplinares: getRepresentacoesEticaAprovadas(ficha.slug).map((item) => ({ casa: item.casa })),
+          processosDisciplinares: getProcessosDisciplinaresContaveis(ficha.slug).map((item) => ({ casa: item.casa })),
           patrimonio:
             patrimonioMaisRecente && estadoValorPatrimonio(patrimonioMaisRecente) !== "valor_nao_informado"
               ? patrimonioMaisRecente.valor_total

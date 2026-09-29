@@ -97,6 +97,8 @@ describe("computeImprensaFacts", () => {
       publicado: 1,
       coberturaParcial: 1,
       registros: 5,
+      judiciais: 5,
+      disciplinares: 0,
       emConfirmacao: 1,
       indeterminado: 2,
       vazioConfirmado: 1,
@@ -135,7 +137,7 @@ describe("processo publicado na ficha", () => {
     const [card] = buildImprensaFactCards(facts, ["processos"])
     assert.equal(card.value, 1)
     assert.equal(card.label, "candidato com processo publicado na ficha")
-    assert.equal(card.detail, "2 registros na ficha; 2 com fonte oficial em confirmação.")
+    assert.equal(card.detail, "2 registros na ficha: 2 judiciais · 0 disciplinares; 2 com fonte oficial em confirmação.")
     assert.doesNotMatch(card.label, /link do tribunal/)
   })
 
@@ -144,6 +146,30 @@ describe("processo publicado na ficha", () => {
     assert.equal(formatImprensaCargoList(["Governador", "Presidente"]), "presidente e governador")
     assert.equal(formatImprensaCargoList(["Governador"]), "governador")
     assert.equal(formatImprensaCargoList([]), "")
+  })
+})
+
+describe("contagem única de processos (judiciais + disciplinares)", () => {
+  const rows = [
+    row({ processos: { estado: "publicado", quantidade: 1, quantidadeEmConfirmacao: 0, contagem: { judiciais: 1, disciplinares: 6, total: 7 } } }),
+    row({ processos: { estado: "vazio_confirmado", quantidade: 0, contagem: { judiciais: 0, disciplinares: 2, total: 2 } } }),
+    row({ processos: { estado: "indeterminado", quantidade: null, contagem: { judiciais: null, disciplinares: 0, total: null } } }),
+  ]
+  const facts = computeImprensaFacts(rows)
+
+  it("conta candidato com processo pelo total, inclusive só disciplinar", () => {
+    assert.equal(facts.processos.candidatosComProcesso, 2)
+    assert.equal(facts.processos.judiciais, 1)
+    assert.equal(facts.processos.disciplinares, 8)
+    assert.equal(facts.processos.registros, 9)
+    assert.equal(facts.processos.vazioConfirmado, 1, "o estado da busca judicial continua separado")
+  })
+
+  it("mostra a quebra e o aviso de que disciplinar não é judicial", () => {
+    const [card] = buildImprensaFactCards(facts, ["processos"])
+    assert.equal(card.value, 2)
+    assert.equal(card.detail, "9 registros na ficha: 1 judicial · 8 disciplinares; 0 com fonte oficial em confirmação.")
+    assert.match(card.caveat, /Processo disciplinar não é processo judicial nem condenação\./)
   })
 })
 
@@ -181,8 +207,8 @@ describe("buildImprensaFactCards", () => {
     assert.equal(byId.patrimonio_variacao.label, "patrimônio cresceu mais de 100% entre duas eleições")
     assert.equal(byId.patrimonio_variacao.detail, "Entre 3 candidatos com duas declarações comparáveis, de 4 declarações publicadas.")
     assert.equal(byId.patrimonio_variacao.caveat, "Variação nominal, sem correção pela inflação. Declaração ao TSE, não auditoria.")
-    assert.equal(byId.processos.detail, "5 registros na ficha; 1 com fonte oficial em confirmação.")
-    assert.equal(byId.processos.caveat, "Processo não é condenação. Homônimo não confirmado não entra.")
+    assert.equal(byId.processos.detail, "5 registros na ficha: 5 judiciais · 0 disciplinares; 1 com fonte oficial em confirmação.")
+    assert.equal(byId.processos.caveat, "Processo não é condenação. Processo disciplinar não é processo judicial nem condenação. Homônimo não confirmado não entra.")
     assert.equal(byId.sancoes.label, "candidato em cadastro federal de sanções")
     assert.equal(byId.sancoes.caveat, "CEIS, CNEP ou CEAF, da CGU.")
     assert.deepEqual(byId.patrimonio_variacao.mesaQuery, { ordem: "variacao" })

@@ -161,7 +161,7 @@ describe("DTO de lista: patrimonio_atipico calculado no servidor", () => {
     for (const row of resource.data) {
       assert.deepEqual(
         Object.keys(row).sort(),
-        ["candidato", "patrimonio", "patrimonio_atipico", "pontos_atencao", "processos", "processos_ordenacao"],
+        ["candidato", "patrimonio", "patrimonio_atipico", "pontos_atencao", "processos", "processos_contagem", "processos_ordenacao"],
       )
     }
   })

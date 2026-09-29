@@ -1,3 +1,4 @@
+// cspell:ignore exibicao
 import { patrimonioWithoutValueLabel } from "@/lib/public-data-vocabulary"
 import Link from "next/link"
 import type { FichaCandidato } from "@/lib/types"
@@ -11,6 +12,8 @@ import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { formatCargoDisputadoPublicLabel, formatDestaquesLabel } from "@/lib/ui-labels"
 import { processosOverviewDisplay } from "@/lib/processos-display"
+import { exibicaoProcessosJustica } from "@/lib/processos-justica-total"
+import { contarProcessosJusticaDoCandidato } from "@/lib/processos-justica-candidato"
 import {
   estadoValorPatrimonio,
   patrimonioMaisRecenteSemEscolhaArbitraria,
@@ -88,12 +91,16 @@ export function EmbedWidget({ ficha }: { ficha: FichaCandidato }) {
   )
   const pontos = ficha.pontos_atencao ?? []
   const historico = ficha.historico ?? []
-  const processosDisplay = processosOverviewDisplay(
-    ficha.total_processos,
-    ficha.processos_criminais,
-    ficha.processos_verificacao,
-    new Date(),
-    ficha.processos_omitidos_sem_fonte_oficial ?? 0,
+  // Mesma contagem única do KPI da ficha: judiciais + disciplinares.
+  const processosDisplay = exibicaoProcessosJustica(
+    processosOverviewDisplay(
+      ficha.total_processos,
+      ficha.processos_criminais,
+      ficha.processos_verificacao,
+      new Date(),
+      ficha.processos_omitidos_sem_fonte_oficial ?? 0,
+    ),
+    contarProcessosJusticaDoCandidato(ficha.slug, ficha.total_processos ?? 0),
   )
   const mudancasPartido = ficha.mudancas_partido ?? []
   const fichaUrl = `${SITE_ORIGIN}/candidato/${ficha.slug}`

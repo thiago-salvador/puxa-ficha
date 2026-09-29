@@ -65,7 +65,7 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
   ])
   const candidatos = resumosResource.data.map((r) => r.candidato)
   const comparaveis = comparaveisResource.data
-  const { processos, patrimonios, processSortCounts, patrimoniosAtipicos } =
+  const { processos, processosContagem, patrimonios, processSortCounts, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumosResource.data)
   const sourceStatus = mergeSourceStatuses(resumosResource.sourceStatus, comparaveisResource.sourceStatus)
   const sourceMessage = mergeSourceMessages(resumosResource.sourceMessage, comparaveisResource.sourceMessage)
@@ -110,6 +110,7 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
           <CandidatoGrid
             candidatos={candidatos}
             processos={processos}
+            processosContagem={processosContagem}
             processSortCounts={processSortCounts}
             patrimonios={patrimonios}
             patrimoniosAtipicos={patrimoniosAtipicos}

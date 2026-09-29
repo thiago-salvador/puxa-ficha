@@ -1,4 +1,5 @@
 "use client"
+// cspell:ignore contaveis
 
 // cspell:words variacao representacoes representacao etica
 
@@ -36,8 +37,8 @@ import { isContradictionAttentionCategory } from "@/lib/attention-points"
 import { MetaBadge } from "./MetaBadge"
 import { ProcessoPublicGroupSurface } from "./ProcessoPublicSurface"
 import { OverviewCountBadge } from "./OverviewCountBadge"
+import { getProcessosDisciplinaresContaveis } from "@/lib/processos-justica-candidato"
 import {
-  getRepresentacoesEticaAprovadas,
   representacaoTitulo,
   type RepresentacaoEticaAprovada,
 } from "@/lib/representacoes-etica"
@@ -1059,7 +1060,7 @@ export function ProfileOverview({
       : socialNetworksEmptyVerifiedAt
   const sitesTseIndeterminateAt =
     ficha.sites_candidato?.resultado === "indeterminado" ? sitesTseCollectedAt : null
-  const disciplinares = getRepresentacoesEticaAprovadas(ficha.slug)
+  const disciplinares = getProcessosDisciplinaresContaveis(ficha.slug)
 
   if (!hasOverviewData(ficha) && disciplinares.length === 0 && !pollCard && !trailingCard && !factChecksCard && !closingCard) {
     return <EmptyOverviewState />

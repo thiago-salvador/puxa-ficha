@@ -43,12 +43,16 @@ import { trackLaunchEvent } from "@/lib/analytics-client"
 import { compareCandidateSortValues } from "@/lib/candidate-sort"
 import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import { normalizeForSearch } from "@/lib/search-normalize"
+import { legendaProcessosJustica, type ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 import type { Candidato } from "@/lib/types"
 import { readPartyFilterFromSearchParams, replacePartyFilterInBrowserUrl, subscribeToPartyFilterUrlChanges } from "@/lib/party-filter-url"
 
 interface CandidatoGridProps {
   candidatos: Candidato[]
+  /** Total da contagem única (judicial + disciplinar), o mesmo número da ficha. */
   processos: Record<string, number>
+  /** Partes do total, só para quem tem processo disciplinar. */
+  processosContagem?: Record<string, ProcessosJusticaContagem>
   patrimonios: Record<string, number | null>
   processSortCounts?: Record<string, number | null>
   /**
@@ -122,6 +126,7 @@ interface ListItemProps {
   patrimonio: number | null
   patrimonioAtipico?: boolean
   processos: number
+  processosContagem?: ProcessosJusticaContagem
   index: number
 }
 
@@ -130,8 +135,10 @@ function CandidatoListItem({
   patrimonio,
   patrimonioAtipico = false,
   processos,
+  processosContagem,
   index,
 }: ListItemProps) {
+  const processosLegenda = processosContagem ? legendaProcessosJustica(processosContagem) : undefined
   return (
     <Link
       href={`/candidato/${candidato.slug}`}
@@ -172,9 +179,14 @@ function CandidatoListItem({
       </div>
       <div className="hidden shrink-0 items-center gap-4 sm:flex">
         {processos > 0 && (
-          <span className="flex items-center gap-1 text-[length:var(--text-caption)] font-bold text-foreground">
+          <span
+            className="flex items-center gap-1 text-[length:var(--text-caption)] font-bold text-foreground"
+            title={processosLegenda}
+            data-pf-lista-processos={processos}
+          >
             <Scale className="size-3.5" />
             {processos}
+            <span className="sr-only">{processosLegenda ? ` processos: ${processosLegenda}` : ` processo${processos === 1 ? "" : "s"}`}</span>
           </span>
         )}
         {patrimonio != null && (
@@ -204,6 +216,7 @@ function CandidatoListItem({
 export function CandidatoGrid({
   candidatos,
   processos,
+  processosContagem,
   patrimonios,
   processSortCounts,
   patrimoniosAtipicos,
@@ -466,6 +479,7 @@ export function CandidatoGrid({
               key={candidato.id}
               candidato={candidato}
               processos={processos[candidato.slug] ?? 0}
+              processosContagem={processosContagem?.[candidato.slug]}
               patrimonio={patrimonios[candidato.slug]}
               patrimonioAtipico={patrimoniosAtipicos?.[candidato.slug] === true}
               index={index}
@@ -496,6 +510,7 @@ export function CandidatoGrid({
                     patrimonio={patrimonios[candidato.slug]}
                     patrimonioAtipico={patrimoniosAtipicos?.[candidato.slug] === true}
                     processos={processos[candidato.slug] ?? 0}
+                    processosContagem={processosContagem?.[candidato.slug]}
                     index={virtualRow.index}
                   />
                 </div>
@@ -512,6 +527,7 @@ export function CandidatoGrid({
               patrimonio={patrimonios[candidato.slug]}
               patrimonioAtipico={patrimoniosAtipicos?.[candidato.slug] === true}
               processos={processos[candidato.slug] ?? 0}
+              processosContagem={processosContagem?.[candidato.slug]}
               index={index}
             />
           ))}

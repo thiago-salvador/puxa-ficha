@@ -69,18 +69,31 @@ function variacaoCell(row: MesaRow): Cell {
 function processosCell(row: MesaRow): Cell {
   const { processos } = row
   const bucket = imprensaDataBucket(processos.estado)
+  const disciplinares = processos.contagem?.disciplinares ?? 0
+  const avisoDisciplinar = disciplinares > 0 ? "Disciplinar não é processo judicial nem condenação" : null
   if (processos.estado === "publicado" || processos.estado === "cobertura_parcial") {
     const quantidade = processos.quantidade
     const selo = processos.quantidadeEmConfirmacao ?? 0
     const omitidos = processos.quantidadeOmitida ?? 0
+    const total = processos.contagem?.total ?? quantidade
     return {
       bucket,
-      primary: quantidade == null ? "Quantidade não publicada" : plural(quantidade, "registro", "registros"),
+      primary: total == null ? "Quantidade não publicada" : plural(total, "registro", "registros"),
       secondary: [
+        disciplinares > 0 && quantidade != null ? `${plural(quantidade, "judicial", "judiciais")} · ${plural(disciplinares, "disciplinar", "disciplinares")}` : null,
         selo > 0 ? `${selo} com fonte oficial em confirmação` : null,
         omitidos > 0 ? `${omitidos} sem fonte publicável, fora da conta` : null,
         "Processo não é condenação",
+        avisoDisciplinar,
       ],
+    }
+  }
+  if (disciplinares > 0) {
+    // Sem processo judicial publicado, o disciplinar ainda aparece na ficha.
+    return {
+      bucket: "publicado",
+      primary: plural(disciplinares, "registro disciplinar", "registros disciplinares"),
+      secondary: [`Judicial: ${processos.estado === "vazio_confirmado" ? "nada consta" : labelProcessState(processos.estado).toLowerCase()}`, avisoDisciplinar],
     }
   }
   if (processos.estado === "vazio_confirmado") return { bucket, primary: "Nada consta", secondary: ["Busca feita, sem registro"] }

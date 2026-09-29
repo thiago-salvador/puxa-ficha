@@ -173,16 +173,25 @@ function processosLine(row: CardRow): PackCardLine {
   const p = row.processos
   const bucket = imprensaDataBucket(p.estado) ?? "sem_confirmacao"
   const base = { id: "processos" as const, label: "Processos", bucket, tab: "justica" as const }
+  const disciplinares = p.contagem?.disciplinares ?? 0
+  const disciplinarDetail = disciplinares > 0
+    ? `${disciplinares} ${plural(disciplinares, "disciplinar", "disciplinares")} no Conselho de Ética; disciplinar não é processo judicial nem condenação`
+    : null
   if (p.estado === "publicado" || p.estado === "cobertura_parcial") {
     if (p.quantidade == null) return { ...base, value: "Quantidade não publicada", detail: p.estado === "cobertura_parcial" ? "Cobertura parcial." : null }
     const emConfirmacao = p.quantidadeEmConfirmacao ?? 0
     const comLink = Math.max(p.quantidade - emConfirmacao, 0)
+    const total = p.contagem?.total ?? p.quantidade
     const detail = [
+      disciplinares > 0 ? `${p.quantidade} ${plural(p.quantidade, "judicial", "judiciais")} · ${disciplinarDetail}` : null,
       `${comLink} com link do tribunal`,
       emConfirmacao > 0 ? `${emConfirmacao} com fonte oficial em confirmação` : null,
       p.estado === "cobertura_parcial" ? "cobertura parcial" : null,
     ].filter(Boolean).join("; ")
-    return { ...base, value: `${p.quantidade} ${plural(p.quantidade, "registro", "registros")}`, detail: `${detail}.` }
+    return { ...base, value: `${total} ${plural(total, "registro", "registros")}`, detail: `${detail}.` }
+  }
+  if (disciplinares > 0) {
+    return { ...base, bucket: "publicado", value: `${disciplinares} ${plural(disciplinares, "registro disciplinar", "registros disciplinares")}`, detail: `${disciplinarDetail}.` }
   }
   if (p.estado === "vazio_confirmado") return { ...base, value: "Buscado, nada consta", detail: null }
   return { ...base, value: labelProcessState(p.estado), detail: null }

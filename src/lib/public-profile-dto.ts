@@ -34,7 +34,7 @@ import {
   type FinanciamentoDespesas,
 } from "@/lib/financiamento-despesas-contrato"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
-import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
+import { filtrarProcessosJudiciaisContaveis } from "@/lib/processos-justica-candidato"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { formatProcessSummaryLabel } from "@/lib/ui-labels"
@@ -910,10 +910,7 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     !gastoParlamentarEmRevisao(ficha.slug, row.ano),
   )
   const processosBrutos = ficha.processos ?? []
-  const processosPublicos = processosBrutos.flatMap((row) => {
-    const fonte_nivel = nivelFonteProcesso(row)
-    return fonte_nivel ? [{ ...row, fonte_nivel }] : []
-  })
+  const processosPublicos = filtrarProcessosJudiciaisContaveis(processosBrutos)
   const processosOmitidos = (ficha.processos_omitidos_sem_fonte_oficial ?? 0) + processosBrutos.length - processosPublicos.length
   const despesasPublicas = publicDespesasDaFicha(ficha)
 
