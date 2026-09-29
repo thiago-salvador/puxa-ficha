@@ -16,7 +16,7 @@ import { casaParlamentarDaFonte, fonteUrlGastoParlamentar, gastoParlamentarExibi
 import { resolverEstadoSancoes, type EstadoSancoes } from "@/lib/sancoes-verificacao"
 import { getCandidateSitesTseBySlug } from "@/lib/candidate-sites-data"
 import { getCitableCandidateSites } from "@/lib/candidate-sites-proof"
-import { filtrarProcessosJudiciaisContaveis } from "@/lib/processos-justica-candidato"
+import { contarProcessosJusticaDoCandidato, filtrarProcessosJudiciaisContaveis } from "@/lib/processos-justica-candidato"
 import { urlFonteJudicialEspecifica, urlPublicaDoProcesso, type FonteProcessoNivel } from "@/lib/djen-consulta-url"
 import { createServerSupabaseClient, createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { shouldExposeCargo } from "@/lib/senado-feature"
@@ -70,6 +70,13 @@ export interface ImprensaRow {
     quantidadeOmitida?: number
     /** Linhas públicas com o selo "Fonte em confirmação", a mesma regra da ficha. */
     quantidadeEmConfirmacao?: number
+    /**
+     * Contagem única da ficha (judiciais + disciplinares do Conselho de Ética),
+     * de `contarProcessosJusticaDoCandidato`. `judiciais` fica null quando a
+     * parte judicial não tem quantidade publicada; `total` é o número da ficha,
+     * que nesse caso soma só os disciplinares, e fica null só sem nenhum dos dois.
+     */
+    contagem?: { judiciais: number | null; disciplinares: number; total: number | null }
     ocorrencias: {
       numero: string | null
       tipo: string
@@ -489,6 +496,25 @@ function mapProcesses(rows: ProcessoRow[], receipt: ProcessoReceiptRow | null): 
   return { estado: "publicado", buscaEstado, quantidade: ocorrencias.length, quantidadeOmitida, quantidadeEmConfirmacao, ocorrencias }
 }
 
+/**
+ * Acrescenta a contagem única da ficha. A parte judicial é a quantidade já
+ * publicada acima (zero quando a busca voltou vazia); a disciplinar e o total
+ * saem só de `contarProcessosJusticaDoCandidato`, sem filtro paralelo.
+ */
+export function withProcessosContagem(processos: ImprensaRow["processos"], slug: string): ImprensaRow["processos"] {
+  const judiciais = processos.estado === "vazio_confirmado" ? 0 : processos.quantidade
+  const contagem = contarProcessosJusticaDoCandidato(slug, judiciais ?? 0)
+  return {
+    ...processos,
+    contagem: {
+      judiciais,
+      disciplinares: contagem.disciplinares,
+      // Mesmo total da ficha e do hero: sem quantidade judicial, a ficha lista 0 judiciais.
+      total: judiciais === null && contagem.disciplinares === 0 ? null : contagem.total,
+    },
+  }
+}
+
 function mapChapa(rows: ChapaRow[]): ImprensaRow["chapa"] {
   if (rows.length !== 1) return { estado: "sem_dado", suplentesEstado: "nao_aplicavel", viceNome: null, viceNomeOriginal: null, suplentes: [], fonteUrl: null, fonteSha256: null, snapshotEm: null }
   const row = rows[0]
@@ -720,7 +746,7 @@ export async function getImprensaDataset(filters: ImprensaFilters): Promise<Impr
     fichaUrl: `/candidato/${candidate.slug}`,
     chapa: senateChapaBySlug.get(candidate.slug) ?? mapChapa(chapaByCandidate.get(candidate.id) ?? []),
     sites: mapSites(await deps.loadSites(candidate.slug)),
-    processos: mapProcesses(processByCandidate.get(candidate.id) ?? [], receiptBySlug.get(candidate.slug) ?? null),
+    processos: withProcessosContagem(mapProcesses(processByCandidate.get(candidate.id) ?? [], receiptBySlug.get(candidate.slug) ?? null), candidate.slug),
     patrimonio: mapPatrimonio(normalizePatrimonioForDisplay(
       (personIdsBySlug.get(candidate.slug) ?? [candidate.id]).flatMap((id) => patrimonioByCandidate.get(id) ?? []),
     )),

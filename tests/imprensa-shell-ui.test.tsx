@@ -48,7 +48,7 @@ describe("ImprensaFacts", () => {
     assert.match(visible, /0 candidatos em cadastro federal de sanções/)
     assert.match(visible, /2 consultados sem registro; 0 sem consulta\./)
     assert.match(visible, /CEIS, CNEP ou CEAF, da CGU\./)
-    assert.match(visible, /Processo não é condenação\. Homônimo não confirmado não entra\./)
+    assert.match(visible, /Processo não é condenação\. Processo disciplinar não é processo judicial nem condenação\. Homônimo não confirmado não entra\./)
     assert.match(html, /href="\/imprensa\/mesa\?uf=BA&amp;ordem=variacao"/)
     assert.match(html, /href="\/imprensa\/mesa\?uf=BA&amp;com=sancao"/)
     assert.doesNotMatch(visible, /[\u2013\u2014]/)

@@ -58,6 +58,10 @@ const MAIN_COLUMNS = [
   "sancoes_quantidade",
   "sancoes_consultado_em",
   "sancoes_fonte_url",
+  // Contagem única da ficha (29/09/2026): judiciais + disciplinares = total.
+  "processos_judiciais",
+  "processos_disciplinares",
+  "processos_total",
 ] as const
 
 export type ImprensaExportKind = "csv" | "json"
@@ -119,6 +123,9 @@ function mainCells(row: ImprensaRow): Cell[] {
     row.sancoes?.quantidade ?? null,
     row.sancoes?.consultadoEm ?? null,
     row.sancoes?.fonteUrl ?? null,
+    row.processos?.contagem?.judiciais ?? null,
+    row.processos?.contagem?.disciplinares ?? 0,
+    row.processos?.contagem?.total ?? null,
   ]
 }
 
@@ -175,6 +182,9 @@ export function serializeImprensaJson(dataset: ImprensaDataset): string {
         quantidade: row.processos.quantidade,
         quantidadeOmitida: row.processos.quantidadeOmitida,
         quantidadeEmConfirmacao: row.processos.quantidadeEmConfirmacao ?? 0,
+        judiciais: row.processos.contagem?.judiciais ?? null,
+        disciplinares: row.processos.contagem?.disciplinares ?? 0,
+        total: row.processos.contagem?.total ?? null,
       },
       patrimonio: row.patrimonio ?? null,
       gastos: row.gastos

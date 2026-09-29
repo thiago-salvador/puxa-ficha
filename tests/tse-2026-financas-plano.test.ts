@@ -372,7 +372,7 @@ describe("coletor TSE 2026: portão e argumentos", () => {
   it("--out dentro do repositório falha em lerArgs, antes do try que grava recibo de erro", () => {
     assert.throws(() => lerArgs(["--apply", "--agendado", "--out=reports/tse-2026"]), /--out precisa ficar fora do repositório/)
     const src = readFileSync("scripts/tse-2026-financas.ts", "utf8")
-    assert.match(src, /const opts = lerArgs\(argv\)\n  if \(!opts\.aplicar \|\| opts\.reviewedPlan\) return executar\(opts\)\n  try \{/)
+    assert.match(src, /const opts = lerArgs\(argv\)\n  const pinado = .*carregarPinadoAgendado\(\).*\n  if \(!opts\.aplicar \|\| opts\.reviewedPlan\) return executar\(opts, pinado\)\n  try \{/)
   })
 
   it("workflow agendado grava plano e resumo fora do checkout", () => {

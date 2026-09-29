@@ -22,12 +22,16 @@ export interface ImprensaFacts {
     acima10Milhoes: number
   }
   processos: {
-    /** Estado publicado ou cobertura parcial com ao menos um registro publicável (`temProcessoPublicado`). */
+    /** Candidatos com ao menos um processo na ficha, judicial ou disciplinar (`temProcessoNaFicha`). */
     candidatosComProcesso: number
     publicado: number
     coberturaParcial: number
-    /** Soma de registros exibidos para os candidatos com processo. */
+    /** Total da ficha: judiciais + disciplinares, pela contagem única. */
     registros: number
+    /** Processos judiciais publicados (parte judicial de `registros`). */
+    judiciais: number
+    /** Processos disciplinares do Conselho de Ética (parte disciplinar de `registros`). */
+    disciplinares: number
     emConfirmacao: number
     /** Nome encontrado sem um segundo dado oficial que confirme a pessoa. */
     indeterminado: number
@@ -79,6 +83,14 @@ export function temProcessoPublicado(processos: ImprensaPageRow["processos"]): b
   return (processos.estado === "publicado" || processos.estado === "cobertura_parcial") && (processos.quantidade ?? 0) > 0
 }
 
+/**
+ * Regra do total da ficha: processo judicial publicado ou processo disciplinar
+ * contado pela contagem única. Card de fatos e filtro da Mesa usam esta regra.
+ */
+export function temProcessoNaFicha(processos: ImprensaPageRow["processos"]): boolean {
+  return temProcessoPublicado(processos) || (processos.contagem?.disciplinares ?? 0) > 0
+}
+
 function isNumber(value: number | null | undefined): value is number {
   return typeof value === "number" && Number.isFinite(value)
 }
@@ -88,7 +100,7 @@ export function computeImprensaFacts(rows: readonly ImprensaFactsRow[]): Imprens
     total: rows.length,
     porCargo: [],
     patrimonio: { publicado: 0, comVariacao: 0, variacaoAcima100: 0, acima10Milhoes: 0 },
-    processos: { candidatosComProcesso: 0, publicado: 0, coberturaParcial: 0, registros: 0, emConfirmacao: 0, indeterminado: 0, vazioConfirmado: 0 },
+    processos: { candidatosComProcesso: 0, publicado: 0, coberturaParcial: 0, registros: 0, judiciais: 0, disciplinares: 0, emConfirmacao: 0, indeterminado: 0, vazioConfirmado: 0 },
     sancoes: { comRegistro: 0, vazioConfirmado: 0, naoVerificado: 0 },
     tcu: { encontradoEmRevisao: 0, vazioVerificado: 0, pendente: 0, naoVerificado: 0 },
     cota: { publicado: 0 },
@@ -110,11 +122,12 @@ export function computeImprensaFacts(rows: readonly ImprensaFactsRow[]): Imprens
     }
 
     const { processos } = row
+    if (temProcessoNaFicha(processos)) facts.processos.candidatosComProcesso += 1
+    facts.processos.disciplinares += processos.contagem?.disciplinares ?? 0
     if (temProcessoPublicado(processos)) {
-      facts.processos.candidatosComProcesso += 1
       if (processos.estado === "publicado") facts.processos.publicado += 1
       else facts.processos.coberturaParcial += 1
-      facts.processos.registros += processos.quantidade ?? 0
+      facts.processos.judiciais += processos.quantidade ?? 0
       facts.processos.emConfirmacao += processos.quantidadeEmConfirmacao ?? 0
     } else if (processos.estado === "indeterminado") {
       facts.processos.indeterminado += 1
@@ -146,6 +159,7 @@ export function computeImprensaFacts(rows: readonly ImprensaFactsRow[]): Imprens
     }
   }
 
+  facts.processos.registros = facts.processos.judiciais + facts.processos.disciplinares
   facts.porCargo = [...cargos.entries()]
     .sort(([a], [b]) => cargoRank(a) - cargoRank(b) || a.localeCompare(b, "pt-BR"))
     .map(([cargo, total]) => ({ cargo, total }))
@@ -186,7 +200,7 @@ export const IMPRENSA_FACT_CARD_ORDER: readonly ImprensaFactCardId[] = [
 const IMPRENSA_FACT_CAVEATS = {
   patrimonio: "Variação nominal, sem correção pela inflação. Declaração ao TSE, não auditoria.",
   patrimonioValor: "Última declaração única ao TSE. Declaração ao TSE, não auditoria.",
-  processos: "Processo não é condenação. Homônimo não confirmado não entra.",
+  processos: "Processo não é condenação. Processo disciplinar não é processo judicial nem condenação. Homônimo não confirmado não entra.",
   sancoes: "CEIS, CNEP ou CEAF, da CGU.",
   cota: "Anos em revisão ficam fora do total.",
   chapas: "Situação oficial do TSE ao lado do nome.",
@@ -214,7 +228,7 @@ function cardFor(id: ImprensaFactCardId, facts: ImprensaFacts): ImprensaFactCard
         id,
         value: processos.candidatosComProcesso,
         label: plural(processos.candidatosComProcesso, "candidato com processo publicado na ficha", "candidatos com processo publicado na ficha"),
-        detail: `${processos.registros} ${plural(processos.registros, "registro", "registros")} na ficha; ${processos.emConfirmacao} com fonte oficial em confirmação.`,
+        detail: `${processos.registros} ${plural(processos.registros, "registro", "registros")} na ficha: ${processos.judiciais} ${plural(processos.judiciais, "judicial", "judiciais")} · ${processos.disciplinares} ${plural(processos.disciplinares, "disciplinar", "disciplinares")}; ${processos.emConfirmacao} com fonte oficial em confirmação.`,
         caveat: IMPRENSA_FACT_CAVEATS.processos,
         cta: "Ver quem tem processo",
         mesaQuery: { com: MESA_COM.processo },

@@ -9,10 +9,16 @@
  * pessoa no mesmo ano ficam separadas. Divergência de conferência, SQ sem
  * vínculo, vínculo ambíguo, contexto eleitoral diferente ou não comprovado e
  * coleta duplicada vão para revisão, nunca para o banco.
+ *
+ * Anos históricos sem cargo no vínculo: o cargo só é aceito quando os eventos
+ * de `historico_politico` da janela da eleição têm exatamente um cargo e ele é
+ * o mesmo da coleta. A ação registra essa proveniência; a linha gravada
+ * continua com o cargo da fonte do TSE.
  */
 
 import { createHash } from "node:crypto"
 
+import { canonicalCargo } from "../../src/lib/cargo-utils"
 import { stripAccents } from "../../src/lib/strip-accents"
 
 import { textoTemDocumento, type DivergenciaDespesas, type LinhaDespesasNormalizada, type ResultadoNormalizacao } from "./despesas-normalizar"
@@ -30,6 +36,12 @@ export interface CandidaturaVinculada {
   uf: string | null
   /** Cargo da candidatura gravado no banco; null = não comprovado (vai para revisão). */
   cargo_candidatura: string | null
+  /**
+   * Só em ano histórico com `cargo_candidatura` null: cargos canônicos distintos
+   * dos eventos de `historico_politico` na janela da eleição (ver
+   * `cargoInferidoDoHistoricoPolitico`). Ausente = não consultado.
+   */
+  cargos_historico_politico?: string[]
 }
 
 export interface CandidaturaColetada {
@@ -42,10 +54,15 @@ export interface CandidaturaColetada {
 
 export type LinhaParaGravar = LinhaDespesasNormalizada & { candidato_id: string }
 
+/** Proveniência do cargo usado para conferir o vínculo quando o banco não o tinha. */
+export const ORIGEM_CARGO_HISTORICO_POLITICO = "cargo inferido de historico_politico"
+
 export interface AcaoUpsertDespesas {
   tipo: "upsert_despesas"
   slug: string
   linha: LinhaParaGravar
+  /** Presente só quando o cargo do vínculo não veio do banco de financiamento. */
+  origem_cargo_vinculo?: typeof ORIGEM_CARGO_HISTORICO_POLITICO
 }
 
 export type MotivoRevisaoDespesas =
@@ -77,6 +94,7 @@ export interface PlanoDespesas {
     por_estado: Record<string, number>
     por_ano: Record<string, number>
     revisao_por_motivo: Record<string, number>
+    acoes_com_cargo_inferido: number
   }
 }
 
@@ -121,6 +139,30 @@ export function contextoEleitoralDivergente(
   const cargoLinha = comparavel(linha.cargo_candidatura)
   if (!cargoVinculo || !cargoLinha || cargoVinculo !== cargoLinha) campos.push("cargo")
   return campos.length ? `coleta ${campos.join(", ")} diferente ou ausente na candidatura ligada` : null
+}
+
+/**
+ * Cargo do vínculo inferido de `historico_politico`, ou null. Aceita só quando o
+ * vínculo não tem cargo, a janela tem exatamente um cargo distinto e ele é o
+ * mesmo da coleta (comparação canônica). Zero cargos, mais de um cargo ou cargo
+ * diferente continuam sem cargo e vão para revisão.
+ */
+export function cargoInferidoDoHistoricoPolitico(
+  vinculo: Pick<CandidaturaVinculada, "cargo_candidatura" | "cargos_historico_politico">,
+  cargoColeta: string | null,
+): string | null {
+  if (vinculo.cargo_candidatura !== null || !cargoColeta?.trim()) return null
+  const cargos = vinculo.cargos_historico_politico
+  if (!cargos || cargos.length !== 1) return null
+  return canonicalCargo(cargos[0]!) === canonicalCargo(cargoColeta) ? cargoColeta : null
+}
+
+function detalheHistoricoPolitico(vinculo: CandidaturaVinculada, cargoColeta: string | null): string {
+  const cargos = vinculo.cargos_historico_politico
+  if (vinculo.cargo_candidatura !== null || !cargos) return ""
+  if (cargos.length === 0) return "; historico_politico sem evento na janela da eleição"
+  if (cargos.length > 1) return `; historico_politico com ${cargos.length} cargos na janela da eleição`
+  return canonicalCargo(cargos[0]!) === canonicalCargo(cargoColeta ?? "") ? "" : "; historico_politico com outro cargo"
 }
 
 function contar(lista: readonly string[]): Record<string, number> {
@@ -175,13 +217,19 @@ export function planejarDespesas(entrada: {
       continue
     }
     const vinculo = ligados[0]!
-    const contexto = contextoEleitoralDivergente(vinculo, linha)
+    const cargoInferido = cargoInferidoDoHistoricoPolitico(vinculo, linha.cargo_candidatura)
+    const contexto = contextoEleitoralDivergente(cargoInferido ? { ...vinculo, cargo_candidatura: cargoInferido } : vinculo, linha)
     if (contexto) {
-      revisao.push({ ...base, motivo: "contexto_eleitoral_divergente", detalhe: contexto })
+      revisao.push({ ...base, motivo: "contexto_eleitoral_divergente", detalhe: `${contexto}${detalheHistoricoPolitico(vinculo, linha.cargo_candidatura)}` })
       continue
     }
     estados.push(linha.estado_coleta)
-    acoes.push({ tipo: "upsert_despesas", slug: vinculo.slug, linha: { candidato_id: vinculo.candidato_id, ...linha } })
+    acoes.push({
+      tipo: "upsert_despesas",
+      slug: vinculo.slug,
+      linha: { candidato_id: vinculo.candidato_id, ...linha },
+      ...(cargoInferido ? { origem_cargo_vinculo: ORIGEM_CARGO_HISTORICO_POLITICO } : {}),
+    })
   }
   acoes.sort((a, b) => a.linha.ano_eleicao - b.linha.ano_eleicao || a.slug.localeCompare(b.slug) || a.linha.sq_candidato.localeCompare(b.linha.sq_candidato))
   revisao.sort((a, b) => a.ano_eleicao - b.ano_eleicao || a.sq_candidato.localeCompare(b.sq_candidato) || a.motivo.localeCompare(b.motivo))
@@ -196,6 +244,7 @@ export function planejarDespesas(entrada: {
       por_estado: contar(estados),
       por_ano: contar(acoes.map((a) => String(a.linha.ano_eleicao))),
       revisao_por_motivo: contar(revisao.map((r) => r.motivo)),
+      acoes_com_cargo_inferido: acoes.filter((a) => a.origem_cargo_vinculo).length,
     },
   }
 }
