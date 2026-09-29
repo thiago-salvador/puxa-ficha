@@ -182,6 +182,7 @@ const PROCESSOS_FORA_DO_SELO = new Set<string>([
  */
 export const PROCESSOS_OCULTOS_POR_DECISAO = new Set<string>([
   "dd836992-ab4c-45fd-bc04-8b7b5b1750ac", // segredo de justiça no DJEN desde 29/09/2023 (execução de ANPP); Mesa L8
+  "28f8ea67-c429-4cf5-af59-cf8c15f215d8", // sem número nem fonte; ano, tribunal e denúncia não batem com o episódio de 2018 em Boa Vista (RR)
 ])
 
 /**

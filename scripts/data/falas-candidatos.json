@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-09-28T09:22:23.610Z",
+  "updated_at": "2026-09-29T12:09:42.503Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -195,6 +195,36 @@
         "fetched_url": "https://clebertoledo.com.br/politica/ataides-ataca-velha-politica-du-pereira-pede-renovacao-witer-cobra-emprego-e-luiz-carlos-critica-impostos-e-avanco-de-faccoes/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "086a79d39813c00497c6aaea7c77f83b915ce1a55124a2400f4736d803f6a402",
+      "candidate_id": "b3988a51-2776-4172-a73b-e326365b0c04",
+      "candidate_slug": "samara-martins",
+      "candidate_name": "Samara Martins",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "Nós acreditamos, inclusive, que a nacionalização dos bancos é necessária para impedir corrupções como essas, escândalo de corrupção como esse que aconteceu no Banco Master",
+      "context": "\"Nós acreditamos, inclusive, que a nacionalização dos bancos é necessária para impedir corrupções como essas, escândalo de corrupção como esse que aconteceu no Banco Master, que usa do dinheiro do povo, do Rio Previdência, dos fundos de previdência do povo para poder fazer farras, como a gente tem assistido.\"",
+      "event_context": "Sabatina SBT News com a candidata à Presidência. A afirmação foi feita durante a sabatina realizada pelo SBT News neste sábado (12).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-12",
+      "publisher": "SBT News",
+      "article_url": "https://sbtnews.sbt.com.br/colunas/coluna-do-magalhaes/samara-martins-propoe-revogar-pagamento-da-divida-publica",
+      "article_title": "Samara Martins propõe revogar pagamento da dívida pública",
+      "article_published_at": "2026-09-13T00:50:29.744Z",
+      "observed_at": "2026-09-29T12:09:42.503Z",
+      "source_sha256": "09741469aa82301baba7cd8c5d8f813c42ce7856f5c3e2ea98a39be0045f210e",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A candidata à Presidência da República Samara Martins, filiada ao partido Unidade Popular, defendeu que o estado brasileiro revogue o pagamento da dívida pública.",
+        "date_excerpt": "A afirmação foi feita durante a sabatina realizada pelo SBT News neste sábado (12).",
+        "fetched_url": "https://sbtnews.sbt.com.br/colunas/coluna-do-magalhaes/samara-martins-propoe-revogar-pagamento-da-divida-publica",
+        "method": "codex_source_review"
       }
     },
     {
@@ -4188,6 +4218,36 @@
       }
     },
     {
+      "id": "87ef399db520336de40d25e7b6131943206c5e273274d405120b4807ace97d3d",
+      "candidate_id": "b3988a51-2776-4172-a73b-e326365b0c04",
+      "candidate_slug": "samara-martins",
+      "candidate_name": "Samara Martins",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "Uma de nossas propostas centrais é que se faça uma auditoria cidadã e que se suspenda o pagamento da dívida pública.",
+      "context": "Apesar de dizerem que o país não tem dinheiro para a educação, para a saúde e para as áreas sociais, nós somos um país extremamente rico, a 10ª economia do mundo. No entanto, nosso povo vive empobrecido e as áreas sociais têm perdido cada vez mais verba. Sou servidora do Sistema Único de Saúde e o SUS perdeu recursos nesses últimos 10 anos, que chegam a mais de 60%. Isso ocorre não porque o Brasil não tenha dinheiro, mas porque metade desse orçamento é destinado ao pagamento da dívida pública, o que chamamos de bolsa banqueiro. Vai R$ 1,8 trilhão do nosso orçamento riquíssimo para pagar os juros e as amortizações da dívida pública. Uma de nossas propostas centrais é que se faça uma auditoria cidadã e que se suspenda o pagamento da dívida pública. Sobre a necessidade da reestatização de empresas que foram privatizadas e, também, da nacionalização de outros recursos extremamente importantes para a soberania do nosso país. Ontem (segunda-feira) comemoramos a Independência do Brasil, mas não dá para ser um país independente e soberano se o controle das nossas riquezas e de recursos estratégicos está na mão do setor privado ou de empresas estrangeiras. Por isso, defendemos a nacionalização do petróleo, com a Petrobras sendo 100% estatal, a reestatização da Vale e do minério de ferro, além das próprias empresas estaduais que têm sido privatizadas, como as companhias de água e de luz. Apesar de parecer que privatização traz melhoria no serviço, o que temos visto é a piora dos serviços e a precarização do trabalho dos profissionais que atuam nessas empresas. Portanto, privatizar não é a solução. Primeiro porque, quando uma empresa é privatizada, o que ela busca é o lucro, e não o melhor serviço destinado à população, querendo cada ano mais lucro. Nós defendemos que o controle de questões tão importantes para o nosso povo — como a água, a luz e esses setores estratégicos — esteja nas mãos do Estado, para que sirva ao benefício e ao desenvolvimento da nossa população, e não ao lucro de apenas alguns setores.",
+      "event_context": "Sabatina Correio Braziliense, Ana Maria Campos e Denise Rothenburg, estúdio da TV Brasília. Samara defendeu na sabatina realizada ontem pelo Correio Braziliense",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-08",
+      "publisher": "Correio Braziliense",
+      "article_url": "https://www.correiobraziliense.com.br/politica/2026/09/7496426-bolsa-banqueiro-quebra-o-brasil-diz-samara-martins.html",
+      "article_title": "'Bolsa banqueiro quebra o Brasil', diz Samara Martins",
+      "article_published_at": "2026-09-09T03:55:00+00:00",
+      "observed_at": "2026-09-29T12:09:42.503Z",
+      "source_sha256": "3e762135a01dd8a135d85e23264e24b47698884c98e9f5bd0453c5d74a4404d2",
+      "collection_scope": {
+        "mode": "initial_backfill",
+        "from": "2026-08-16"
+      },
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Samara Martins",
+        "date_excerpt": "Samara defendeu na sabatina realizada ontem pelo Correio Braziliense",
+        "fetched_url": "https://www.correiobraziliense.com.br/politica/2026/09/7496426-bolsa-banqueiro-quebra-o-brasil-diz-samara-martins.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "880360e838ec1e48f1c47ee71d2f406a035b94172ea5b5da29c4ac16ad0d33b2",
       "candidate_id": "e836a676-5cb5-40d2-90a5-0251cf20977a",
       "candidate_slug": "bruno-pedreiro-do-pco",
@@ -6301,6 +6361,32 @@
         "identity_excerpt": "Dra. Lúcia Santos (PSDB) negou os rumores de que teria desistido da disputa",
         "date_excerpt": "nesta segunda-feira (7)",
         "fetched_url": "https://conectapiaui.com.br/noticia/politica/tv-cidade-verde-promove-debate-com-candidatos-ao-governo-do-piaui-21924.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "d04c8e22e57cb40b814b3f5ced36a7ce8a7e71b58ec39e96145799036373ba7f",
+      "candidate_id": "30bca027-016e-4db1-a065-2081a62d71de",
+      "candidate_slug": "adriano-funileiro",
+      "candidate_name": "Adriano Funileiro",
+      "office": "Governador",
+      "uf": "PR",
+      "quote_text": "É uma coisa grave colocar o setor elétrico de um estado na mão do setor privado, na mão de empresas, um grupo seleto de pessoas.",
+      "context": "“É uma coisa grave colocar o setor elétrico de um estado na mão do setor privado, na mão de empresas, um grupo seleto de pessoas. E esses grupos quando comprar um setor que nem esse, eles não têm preocupação com a população. A preocupação deles é o lucro, e aí vai sucateando cada vez mais”, reclamou o candidato. “Somos a favor de estatizar todo o sistema financeiro”, complementou.",
+      "event_context": "Sabatinas Bem Paraná, conduzida por Josianne Ritz com Kátia Brembatti e Luísa Mainardes. Adriano Teixeira, o Adriano Funileiro, candidato a governador do Paraná pelo Partido da Causa Operária (PCO), foi o convidado das Sabatinas Bem Paraná nesta quinta-feira (24 de setembro).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-24",
+      "publisher": "Bem Paraná",
+      "article_url": "https://www.bemparana.com.br/eleicoes-2026/candidato-do-pco-a-governador-defende-o-fim-do-vestibular-e-a-estatizacao-do-sistema-financeiro/",
+      "article_title": "Candidato do PCO a governador defende o fim do vestibular e a estatização do sistema financeiro",
+      "article_published_at": "2026-09-24T18:45:33+00:00",
+      "observed_at": "2026-09-29T12:09:42.503Z",
+      "source_sha256": "ce72e69f394db8153c7ba9a3691368825e4caf76a299a9122249aac1285d3d9d",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Adriano Teixeira, o Adriano Funileiro, candidato a governador do Paraná pelo Partido da Causa Operária (PCO), foi o convidado das Sabatinas Bem Paraná nesta quinta-feira (24 de setembro).",
+        "date_excerpt": "Adriano Teixeira, o Adriano Funileiro, candidato a governador do Paraná pelo Partido da Causa Operária (PCO), foi o convidado das Sabatinas Bem Paraná nesta quinta-feira (24 de setembro).",
+        "fetched_url": "https://www.bemparana.com.br/eleicoes-2026/candidato-do-pco-a-governador-defende-o-fim-do-vestibular-e-a-estatizacao-do-sistema-financeiro/",
         "method": "codex_source_review"
       }
     },
