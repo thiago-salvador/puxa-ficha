@@ -23,7 +23,6 @@ describe("candidato profile tab navigation", () => {
   it("keeps supported visible tabs navigable", () => {
     assert.deepEqual([...CANDIDATO_PROFILE_NAV_TAB_IDS], [
       "geral",
-      "pesquisas",
       "programa",
       "media",
       "checagens",
@@ -37,7 +36,8 @@ describe("candidato profile tab navigation", () => {
     assert.equal(normalizeCandidatoProfileNavTab("legislacao"), "legislacao")
     assert.equal(normalizeCandidatoProfileNavTab("trajetoria"), "trajetoria")
     assert.equal(normalizeCandidatoProfileNavTab("media"), "media")
-    assert.equal(normalizeCandidatoProfileNavTab("pesquisas"), "pesquisas")
+    // A aba Pesquisas saiu: ?tab=pesquisas antigo cai na Visão geral.
+    assert.equal(normalizeCandidatoProfileNavTab("pesquisas"), undefined)
     assert.equal(normalizeCandidatoProfileNavTab("programa"), "programa")
   })
 
@@ -52,7 +52,7 @@ describe("candidato profile tab navigation", () => {
     assert.match(src, /window\.addEventListener\("popstate", onStoreChange\)/)
     assert.match(src, /window\.history\.pushState/)
     assert.doesNotMatch(src, /id:\s*["']timeline["'],\s*label:\s*["']Linha do tempo["']/)
-    assert.match(src, /id !== "pesquisas" \|\| pesquisasEnabled/)
+    assert.doesNotMatch(src, /pesquisasEnabled/, "a aba Pesquisas saiu da ficha")
     assert.match(src, /id !== "programa" \|\| programaEnabled/)
     assert.match(src, /requestedTab === "timeline" \|\| tabDefs\.some/)
   })

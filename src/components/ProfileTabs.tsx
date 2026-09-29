@@ -9,15 +9,15 @@ export interface Tab {
   count?: number
 }
 
-const MOBILE_PRIMARY_IDS = ["geral", "pesquisas", "programa"]
+const MOBILE_PRIMARY_IDS = ["geral", "programa"]
 // A barra mobile e um grid de 3 colunas com `truncate` em cada rotulo. A 360px,
-// "PESQUISAS" (9 caracteres em caixa alta com tracking, mais a badge de contagem
-// na mesma celula) saia como "PES…". "VISÃO" e "PROGRAMA" cabem; a forma curta
-// vale so para o rotulo mobile, o desktop continua com o nome inteiro.
+// um rotulo de 9 caracteres em caixa alta com tracking, mais a badge de contagem
+// na mesma celula, sai cortado ("CHE…"). "VISÃO" e "PROGRAMA" cabem; a forma
+// curta vale so para o rotulo mobile, o desktop continua com o nome inteiro.
 const MOBILE_TAB_LABELS: Record<string, string> = {
   geral: "Visão",
-  pesquisas: "Pesq.",
   programa: "Programa",
+  checagens: "Checag.",
 }
 
 type TabChange = (id: string) => void

@@ -4,7 +4,7 @@ import { describe, it } from "node:test"
 import React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 
-import { ProgramaGovernoOverview, ProgramaGovernoPendente } from "../src/components/ProgramaGovernoSection"
+import { ProgramaGovernoOverview, ProgramaGovernoPendente, ProgramaGovernoTab } from "../src/components/ProgramaGovernoSection"
 import { programaGovernoPendencia } from "../src/lib/programa-governo-pendencia"
 import {
   agruparEvidenciasPorTema,
@@ -33,8 +33,29 @@ const evidencia = (over: Partial<CompromissoEvidenciaPublica>): CompromissoEvide
 
 const com = (itens: CompromissoEvidenciaPublica[]): EstadoEvidenciasPrograma => ({ estado: "com_vinculos", itens, processadoEm: null })
 
-const render = (props: Partial<React.ComponentProps<typeof ProgramaGovernoOverview>> & { manifesto: typeof presidencial }) =>
-  renderToStaticMarkup(<ProgramaGovernoOverview onOpenTab={() => {}} {...props} />)
+// As evidências relacionadas e a data da última comparação moram no topo da aba
+// Programa; o card da visão geral só as mostra quando não há documento oficial.
+// O helper renderiza os dois lados, como o leitor os encontra na ficha.
+const render = ({
+  teveMandatoNoCongresso,
+  ...props
+}: Partial<React.ComponentProps<typeof ProgramaGovernoOverview>> & {
+  manifesto: typeof presidencial
+  teveMandatoNoCongresso?: boolean
+}) =>
+  renderToStaticMarkup(
+    <>
+      <ProgramaGovernoOverview onOpenTab={() => {}} {...props} />
+      <ProgramaGovernoTab
+        manifesto={props.manifesto}
+        loadState="failed"
+        response={null}
+        onRetry={() => {}}
+        evidencias={props.evidencias}
+        teveMandatoNoCongresso={teveMandatoNoCongresso}
+      />
+    </>,
+  )
 
 describe("evidências relacionadas na seção do programa", () => {
   it("sem a prop, a seção não aparece e o resto do overview não muda", () => {

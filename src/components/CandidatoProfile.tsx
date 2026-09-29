@@ -5,7 +5,6 @@
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
 import type { FichaCandidato, LegislacaoMandatoExecutivo, ProjetoLei } from "@/lib/types"
-import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
 import type {
   ProgramaGovernoApiResponse,
   ProgramaGovernoManifestoPublico,
@@ -65,6 +64,12 @@ import { getReciboChecagens } from "@/lib/buscas-recibos"
 import { getRepresentacoesEticaAprovadas } from "@/lib/representacoes-etica"
 import { RepresentacoesEticaCategoria } from "./RepresentacoesEticaCategoria"
 import {
+  aberturaAbaJustica,
+  contarProcessosJustica,
+  legendaProcessosJustica,
+  PROCESSO_DISCIPLINAR_AVISO,
+} from "@/lib/processos-justica-total"
+import {
   CANDIDATO_PROFILE_NAV_TAB_IDS,
   normalizeCandidatoProfileNavTab,
   normalizeCandidatoProfileTab,
@@ -86,10 +91,6 @@ import {
 import { FontesList } from "./attention-points/FontesList"
 import { MetaBadge } from "./MetaBadge"
 import { NoticePanel } from "./NoticePanel"
-import {
-  PesquisasPresidenciaisOverview,
-  PesquisasPresidenciaisTab,
-} from "./PesquisasPresidenciaisSection"
 import {
   ProgramaGovernoOverview,
   ProgramaGovernoPendente,
@@ -330,8 +331,6 @@ async function fetchProgramaGoverno(
 export function CandidatoProfile({
   ficha,
   initialTab,
-  pesquisasEnabled = false,
-  pesquisas = [],
   programaGoverno = null,
   compromissoEvidencias,
   programaPendente = null,
@@ -342,8 +341,6 @@ export function CandidatoProfile({
   ficha: FichaCandidato
   /** Definido no servidor (`?tab=` ou rota `/timeline`). */
   initialTab?: CandidatoProfileTabId
-  pesquisasEnabled?: boolean
-  pesquisas?: PesquisaEleitoralDoCandidato[]
   programaGoverno?: ProgramaGovernoManifestoPublico | null
   /** Evidências públicas ligadas aos temas do programa; ausente não mostra a seção. */
   compromissoEvidencias?: EstadoEvidenciasPrograma
@@ -494,13 +491,12 @@ export function CandidatoProfile({
       : null
   const checagensEnabled = attributedChecks.length > 0 || checagensReceipt !== null
   const representacoesEtica = getRepresentacoesEticaAprovadas(ficha.slug)
+  // Um total só para o KPI do topo, o badge da aba e o card da visão geral.
+  const processosJustica = contarProcessosJustica({ judiciais: processos.length, disciplinares: representacoesEtica })
+  const aberturaJustica = aberturaAbaJustica(processosJustica)
 
   const tabDefsById: Record<CandidatoProfileNavTabId, { label: string; dataCount: number }> = {
     geral: { label: fixedCopy.generalOverview, dataCount: 0 },
-    pesquisas: {
-      label: "Pesquisas",
-      dataCount: pesquisas.filter((pesquisa) => (pesquisa.grupo ?? "recente") === "recente").length,
-    },
     programa: { label: "Programa", dataCount: 0 },
     media: { label: "Mídia", dataCount: ficha.noticias?.length ?? 0 },
     checagens: { label: "Checagens", dataCount: attributedChecks.length },
@@ -513,7 +509,7 @@ export function CandidatoProfile({
         (ficha.transparencia?.length ?? 0) +
         gastosExecutivo.length,
     },
-    justica: { label: "Justiça", dataCount: processos.length + sancoes.length + representacoesEtica.length },
+    justica: { label: "Justiça", dataCount: processosJustica.total },
     votos: { label: "Votos", dataCount: votos.length },
     trajetoria: { label: "Trajetória", dataCount: profileTrajetoriaTabBadgeCount(historico, mudancas) },
     legislacao: {
@@ -528,7 +524,6 @@ export function CandidatoProfile({
 
   const tabDefs: { id: CandidatoProfileNavTabId; label: string; dataCount: number }[] =
     CANDIDATO_PROFILE_NAV_TAB_IDS
-      .filter((id) => id !== "pesquisas" || pesquisasEnabled)
       .filter((id) => id !== "programa" || programaEnabled)
       .filter((id) => id !== "checagens" || checagensEnabled)
       .map((id) => ({ id, ...tabDefsById[id] }))
@@ -625,7 +620,7 @@ export function CandidatoProfile({
 
   const navigateToTab = useCallback((tabId: string, opts?: TimelineNavigateOptions) => {
     const next = normalizeCandidatoProfileNavTab(tabId)
-    if (!next || (next === "pesquisas" && !pesquisasEnabled)) return
+    if (!next) return
     if (next === "programa" && !programaEnabled) return
     pushProfileTabUrl(next)
     if (opts?.timelineEventId) {
@@ -633,7 +628,7 @@ export function CandidatoProfile({
     } else {
       setTabHighlightRef(null)
     }
-  }, [pesquisasEnabled, programaEnabled])
+  }, [programaEnabled])
 
   const retryProgramaGoverno = useCallback(() => {
     programaLoadStateRef.current = "idle"
@@ -762,13 +757,20 @@ export function CandidatoProfile({
       {/* Stats strip */}
       <section className="mx-auto max-w-7xl px-5 py-4 sm:py-6 md:px-12">
         <div className="grid grid-cols-2 items-stretch gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5 [&>*]:h-full [&>*:last-child:nth-child(odd)]:col-span-2 lg:[&>*:last-child:nth-child(odd)]:col-span-1">
+            {/*
+              Com processo disciplinar, o número é o mesmo total da aba Justiça
+              (judiciais + disciplinares) e a legenda separa os dois. O valor
+              bruto continua sendo o total judicial, que é o que o readback
+              compara com a API.
+            */}
             <StatCard
-              value={processosOverview.value}
+              value={processosJustica.disciplinares > 0 ? processosJustica.total : processosOverview.value}
               label="Processos"
               icon={Scale}
               dataValueAttr="data-pf-overview-processos"
               dataRawValue={ficha.total_processos ?? 0}
-              sub={processosOverview.sub}
+              sub={processosJustica.disciplinares > 0 ? legendaProcessosJustica(processosJustica) : processosOverview.sub}
+              rootDataAttrs={{ "data-pf-overview-processos-disciplinares": String(processosJustica.disciplinares) }}
             />
             <StatCard
               value={latestPatrimonio && latestPatrimonioEstado === "valor_nao_informado"
@@ -879,21 +881,12 @@ export function CandidatoProfile({
                 <ProfileOverview
                   ficha={ficha}
                   onNavigateTab={navigateToTab}
-                  leadingCard={
-                    pesquisasEnabled ? (
-                      <PesquisasPresidenciaisOverview
-                        pesquisas={pesquisas}
-                        onOpenTab={() => navigateToTab("pesquisas")}
-                      />
-                    ) : undefined
-                  }
                   trailingCard={
                     programaEnabled && programaGoverno ? (
                       <ProgramaGovernoOverview
                         manifesto={programaGoverno}
                         onOpenTab={() => navigateToTab("programa")}
                         evidencias={compromissoEvidencias}
-                        teveMandatoNoCongresso={teveMandatoNoCongresso(ficha.historico ?? [])}
                       />
                     ) : programaPendente ? (
                       <ProgramaGovernoPendente pendencia={programaPendente} />
@@ -943,11 +936,6 @@ export function CandidatoProfile({
               />
             )}
 
-            {/* PESQUISAS TAB */}
-            {activeTab === "pesquisas" && pesquisasEnabled && (
-              <PesquisasPresidenciaisTab pesquisas={pesquisas} />
-            )}
-
             {/* PROGRAMA TAB */}
             {activeTab === "programa" && programaEnabled && programaGoverno && (
               <ProgramaGovernoTab
@@ -960,6 +948,8 @@ export function CandidatoProfile({
                 loadedDocument={programaDocuments.loadedDocument}
                 onSelectDocument={programaDocuments.selectDocument}
                 onRetryDocument={programaDocuments.retryDocument}
+                evidencias={compromissoEvidencias}
+                teveMandatoNoCongresso={teveMandatoNoCongresso(ficha.historico ?? [])}
               />
             )}
 
@@ -1021,6 +1011,14 @@ export function CandidatoProfile({
                 {/* Sem "(0)": zero aqui é ausência de verificação, não contagem apurada. */}
                 <SectionLabel>{processos.length > 0 ? `Processos judiciais (${processos.length})` : "Processos judiciais"}</SectionLabel>
                 <SectionTitle>{fixedCopy.justiceSituation}</SectionTitle>
+                {aberturaJustica && (
+                  <p
+                    data-pf-justica-abertura={processosJustica.total}
+                    className="mt-3 max-w-3xl text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground"
+                  >
+                    <span className="font-semibold text-foreground">{aberturaJustica}</span> {PROCESSO_DISCIPLINAR_AVISO}
+                  </p>
+                )}
                 {processosBuscaAviso && <NoticePanel className="mt-4" tone="caution" {...processosBuscaAviso} />}
                 {processos.length === 0 && (
                   <EmptyState {...getProcessosEmptyState(ficha.processos_verificacao, new Date(), ficha.processos_omitidos_sem_fonte_oficial ?? 0)} />

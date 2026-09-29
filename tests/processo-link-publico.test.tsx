@@ -139,6 +139,6 @@ describe("processos clicáveis na Visão Geral", () => {
     assert.equal(hrefs.length, 2)
     hrefs.forEach(assertHrefPublico)
     assert.ok(hrefs.every((href) => href === PORTAL))
-    assert.match(html, /Processos judiciais/)
+    assert.match(html, />Processos</)
   })
 })

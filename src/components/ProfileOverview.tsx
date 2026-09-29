@@ -1,6 +1,6 @@
 "use client"
 
-// cspell:words variacao
+// cspell:words variacao representacoes representacao etica
 
 import { useLayoutEffect, useRef } from "react"
 import Link from "next/link"
@@ -35,10 +35,19 @@ import { PatrimonioEvolucaoAlerta } from "@/components/PatrimonioEvolucaoAlerta"
 import { isContradictionAttentionCategory } from "@/lib/attention-points"
 import { MetaBadge } from "./MetaBadge"
 import { ProcessoPublicGroupSurface } from "./ProcessoPublicSurface"
+import { OverviewCountBadge } from "./OverviewCountBadge"
 import {
-  CandidateDebatesBentoCard,
-  hasCandidateFalasCard,
-} from "./CandidateDebatesBentoCard"
+  getRepresentacoesEticaAprovadas,
+  representacaoTitulo,
+  type RepresentacaoEticaAprovada,
+} from "@/lib/representacoes-etica"
+import { FASE_REPRESENTACAO_LABEL } from "@/lib/representacoes-etica-fase"
+import {
+  contarProcessosJustica,
+  PROCESSO_DISCIPLINAR_AVISO,
+  recorteProcessosJustica,
+} from "@/lib/processos-justica-total"
+import { formatDate } from "@/lib/utils"
 import {
   FINANCING_COLOR_BY_KEY,
   fixedCopy,
@@ -200,6 +209,7 @@ function TeaserCard({
   children,
   className,
   moneyCardKind,
+  badge,
 }: {
   title: string
   linkLabel: string
@@ -207,14 +217,19 @@ function TeaserCard({
   children: React.ReactNode
   className?: string
   moneyCardKind?: "patrimonio" | "financiamento" | "gasto"
+  /** Contagem ao lado do título (ex.: total de processos). */
+  badge?: number
 }) {
   return (
     <div
       data-pf-money-overview-card={moneyCardKind}
       className={`flex min-h-[220px] flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4 ${className ?? ""}`}
     >
-      <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-[length:var(--text-body-sm)] font-semibold text-foreground">{title}</h2>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <h2 className="flex min-w-0 items-center gap-2 text-[length:var(--text-body-sm)] font-semibold text-foreground">
+          {title}
+          {badge != null && <OverviewCountBadge value={badge} />}
+        </h2>
         <button
           type="button"
           onClick={onNavigate}
@@ -239,20 +254,66 @@ function EmptyOverviewState() {
   )
 }
 
-const OVERVIEW_MASONRY_GAP_PX = 24
+const OVERVIEW_COLUMNS_GAP_PX = 24
 
-function OverviewMasonryItem({ children }: { children: React.ReactNode }) {
+type OverviewColumnSlot = "left" | "right" | "auto"
+
+function OverviewColumnItem({ slot, children }: { slot: OverviewColumnSlot; children: React.ReactNode }) {
   return (
     <div
-      className="min-w-0 w-full empty:hidden"
+      // `[&>*]:grow`: quando o item estica para alinhar o rodapé das colunas,
+      // a caixa do card cresce junto e o conteúdo continua no topo.
+      className="flex min-w-0 w-full flex-col empty:hidden [&>*]:grow"
       data-pf-profile-overview-item=""
+      data-pf-profile-overview-slot={slot}
     >
       {children}
     </div>
   )
 }
 
-function OverviewMasonry({ children }: { children: React.ReactNode }) {
+/**
+ * Ordem de leitura intercalada (E1, D1, E2, D2...): no mobile vira uma coluna
+ * nessa ordem, que também é a ordem do DOM e do leitor de tela. Os itens
+ * "auto" (suplentes e afins) vão para o fim.
+ */
+function interleaveOverviewColumns(
+  left: React.ReactNode[],
+  right: React.ReactNode[],
+  auto: React.ReactNode[],
+): React.ReactNode[] {
+  const out: React.ReactNode[] = []
+  const rows = Math.max(left.length, right.length)
+  for (let index = 0; index < rows; index += 1) {
+    if (index < left.length) {
+      out.push(<OverviewColumnItem key={`left-${index}`} slot="left">{left[index]}</OverviewColumnItem>)
+    }
+    if (index < right.length) {
+      out.push(<OverviewColumnItem key={`right-${index}`} slot="right">{right[index]}</OverviewColumnItem>)
+    }
+  }
+  auto.forEach((node, index) => {
+    out.push(<OverviewColumnItem key={`auto-${index}`} slot="auto">{node}</OverviewColumnItem>)
+  })
+  return out
+}
+
+/**
+ * Grade da visão geral em md+: duas colunas fixas (cada card sabe a sua), sem
+ * espaço vazio. Depois de posicionar, o último card da coluna mais baixa
+ * estica até o rodapé da outra. A altura natural é medida sem o esticamento
+ * guardado, e o valor só é escrito quando muda, para o ResizeObserver não
+ * entrar em ciclo.
+ */
+function OverviewColumns({
+  left,
+  right,
+  auto,
+}: {
+  left: React.ReactNode[]
+  right: React.ReactNode[]
+  auto: React.ReactNode[]
+}) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
@@ -262,12 +323,18 @@ function OverviewMasonry({ children }: { children: React.ReactNode }) {
     const desktopQuery = window.matchMedia("(min-width: 768px)")
     let animationFrame = 0
 
+    const setStyle = (item: HTMLElement, key: "minHeight" | "transform" | "width" | "position" | "inset", value: string) => {
+      if (item.style[key] !== value) item.style[key] = value
+    }
+
     const resetItem = (item: HTMLElement) => {
-      item.style.position = ""
-      item.style.inset = ""
-      item.style.width = ""
-      item.style.transform = ""
+      setStyle(item, "position", "")
+      setStyle(item, "inset", "")
+      setStyle(item, "width", "")
+      setStyle(item, "transform", "")
+      setStyle(item, "minHeight", "")
       delete item.dataset.pfProfileOverviewColumn
+      delete item.dataset.pfProfileOverviewStretched
     }
 
     const layout = () => {
@@ -279,36 +346,70 @@ function OverviewMasonry({ children }: { children: React.ReactNode }) {
 
         if (!desktopQuery.matches) {
           items.forEach(resetItem)
-          container.style.height = ""
+          if (container.style.height !== "") container.style.height = ""
           container.dataset.pfProfileOverviewLayout = "single-column"
           return
         }
 
         const visibleItems = items.filter((item) => !item.matches(":empty"))
-        const columnWidth = (container.clientWidth - OVERVIEW_MASONRY_GAP_PX) / 2
+        const columnWidth = (container.clientWidth - OVERVIEW_COLUMNS_GAP_PX) / 2
 
         for (const item of items) {
-          if (!visibleItems.includes(item)) {
-            resetItem(item)
-            continue
-          }
-          item.style.position = "absolute"
-          item.style.inset = "0 auto auto 0"
-          item.style.width = `${columnWidth}px`
+          if (!visibleItems.includes(item)) resetItem(item)
         }
 
-        const columnHeights = [0, 0]
+        // Altura natural: o esticamento anterior sai antes da medida. A troca
+        // acontece dentro do mesmo frame, então nunca chega a ser pintada.
+        const naturalHeights = new Map<HTMLElement, number>()
         for (const item of visibleItems) {
-          const column = columnHeights[0] <= columnHeights[1] ? 0 : 1
-          const x = column * (columnWidth + OVERVIEW_MASONRY_GAP_PX)
-          const y = columnHeights[column]
-          item.style.transform = `translate3d(${x}px, ${y}px, 0)`
-          item.dataset.pfProfileOverviewColumn = String(column + 1)
-          columnHeights[column] += item.getBoundingClientRect().height + OVERVIEW_MASONRY_GAP_PX
+          setStyle(item, "position", "absolute")
+          setStyle(item, "inset", "0 auto auto 0")
+          setStyle(item, "width", `${columnWidth}px`)
+          const previousMinHeight = item.style.minHeight
+          if (previousMinHeight) item.style.minHeight = ""
+          naturalHeights.set(item, item.getBoundingClientRect().height)
+          if (previousMinHeight) item.style.minHeight = previousMinHeight
         }
 
-        container.style.height = `${Math.max(...columnHeights, OVERVIEW_MASONRY_GAP_PX) - OVERVIEW_MASONRY_GAP_PX}px`
-        container.dataset.pfProfileOverviewLayout = "masonry"
+        const columns: HTMLElement[][] = [[], []]
+        const heights = [0, 0]
+        const place = (item: HTMLElement, column: 0 | 1) => {
+          columns[column].push(item)
+          heights[column] += (heights[column] > 0 ? OVERVIEW_COLUMNS_GAP_PX : 0) + (naturalHeights.get(item) ?? 0)
+        }
+        for (const item of visibleItems) {
+          const slot = item.dataset.pfProfileOverviewSlot
+          if (slot === "left") place(item, 0)
+          else if (slot === "right") place(item, 1)
+        }
+        for (const item of visibleItems) {
+          if (item.dataset.pfProfileOverviewSlot === "auto") place(item, heights[0] <= heights[1] ? 0 : 1)
+        }
+
+        const tallest = Math.max(heights[0], heights[1])
+        const shorter: 0 | 1 = heights[0] <= heights[1] ? 0 : 1
+        const stretchTarget = columns[shorter][columns[shorter].length - 1] ?? null
+        const stretchBy = tallest - heights[shorter]
+
+        columns.forEach((columnItems, column) => {
+          let y = 0
+          for (const item of columnItems) {
+            const x = column * (columnWidth + OVERVIEW_COLUMNS_GAP_PX)
+            setStyle(item, "transform", `translate3d(${x}px, ${y}px, 0)`)
+            item.dataset.pfProfileOverviewColumn = String(column + 1)
+            const natural = naturalHeights.get(item) ?? 0
+            const stretched = item === stretchTarget && stretchBy > 0.5
+            const minHeight = stretched ? `${Math.round((natural + stretchBy) * 100) / 100}px` : ""
+            setStyle(item, "minHeight", minHeight)
+            if (stretched) item.dataset.pfProfileOverviewStretched = ""
+            else delete item.dataset.pfProfileOverviewStretched
+            y += (stretched ? natural + stretchBy : natural) + OVERVIEW_COLUMNS_GAP_PX
+          }
+        })
+
+        const containerHeight = `${Math.max(0, tallest)}px`
+        if (container.style.height !== containerHeight) container.style.height = containerHeight
+        container.dataset.pfProfileOverviewLayout = "columns"
       })
     }
 
@@ -331,10 +432,10 @@ function OverviewMasonry({ children }: { children: React.ReactNode }) {
     <div
       ref={containerRef}
       data-pf-profile-overview-grid=""
-      data-pf-profile-overview-masonry=""
+      data-pf-profile-overview-columns=""
       className="relative grid grid-cols-1 items-start gap-6 md:grid-cols-2"
     >
-      {children}
+      {interleaveOverviewColumns(left, right, auto)}
     </div>
   )
 }
@@ -561,17 +662,62 @@ function FinancingTeaser({
   )
 }
 
+const PROCESSES_TEASER_MAX_ITEMS = 3
+
+function DisciplinaryProcessTeaserItem({ item }: { item: RepresentacaoEticaAprovada }) {
+  return (
+    <div
+      data-pf-processo-disciplinar-overview={item.id}
+      className="rounded-lg border border-border/50 border-l-[3px] border-l-[#d4d4d4] px-3 py-2"
+    >
+      <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+        <MetaBadge tone="muted">
+          {item.casa === "senado" ? "Disciplinar · Senado" : "Disciplinar · Câmara"}
+        </MetaBadge>
+        <span className="min-w-0 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
+          {item.casa === "senado"
+            ? formatProcessStatusLabel(item.situacao_oficial.descricao)
+            : FASE_REPRESENTACAO_LABEL[item.fase]}
+        </span>
+      </div>
+      <p className="mt-1 text-[length:var(--text-caption)] font-medium leading-snug text-foreground">
+        {representacaoTitulo(item)} ·{" "}
+        {item.casa === "senado"
+          ? "Conselho de Ética e Decoro Parlamentar"
+          : "Conselho de Ética da Câmara dos Deputados"}
+      </p>
+      <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">
+        Último andamento em {formatDate(item.ultimo_andamento_em)}
+      </p>
+    </div>
+  )
+}
+
 function ProcessesTeaser({
   processos,
+  disciplinares,
   onNavigate,
 }: {
   processos: Processo[]
+  /** Processos disciplinares do Conselho de Ética, já ordenados pelo último andamento. */
+  disciplinares: RepresentacaoEticaAprovada[]
   onNavigate: () => void
 }) {
-  if (processos.length === 0) return null
-  const processGroups = groupProcessosForDisplay(processos).slice(0, 3)
+  if (processos.length === 0 && disciplinares.length === 0) return null
+  const contagem = contarProcessosJustica({ judiciais: processos.length, disciplinares })
+  const recorte = recorteProcessosJustica(contagem)
+  const processGroups = groupProcessosForDisplay(processos).slice(0, PROCESSES_TEASER_MAX_ITEMS)
+  const disciplinaresVisiveis = disciplinares.slice(0, Math.max(0, PROCESSES_TEASER_MAX_ITEMS - processGroups.length))
   return (
-    <TeaserCard title="Processos judiciais" linkLabel="TODOS" onNavigate={onNavigate}>
+    <TeaserCard title="Processos" linkLabel="TODOS" onNavigate={onNavigate} badge={contagem.total}>
+      {recorte && (
+        <p
+          data-pf-processos-overview-recorte=""
+          className="mb-3 text-[length:var(--text-caption)] font-medium leading-snug text-muted-foreground"
+        >
+          <span className="font-semibold text-foreground">{recorte}</span> {PROCESSO_DISCIPLINAR_AVISO}
+        </p>
+      )}
       <div className="space-y-2">
         {processGroups.map((processGroup) => {
           const p = processGroup[0]
@@ -637,7 +783,19 @@ function ProcessesTeaser({
           </ProcessoPublicGroupSurface>
           )
         })}
+        {disciplinaresVisiveis.map((item) => (
+          <DisciplinaryProcessTeaserItem key={item.id} item={item} />
+        ))}
       </div>
+      <button
+        type="button"
+        onClick={onNavigate}
+        data-pf-processos-overview-ver-todos={contagem.total}
+        className="mt-3 inline-flex min-h-11 items-center gap-1 self-start rounded-[8px] border border-border px-3 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        {contagem.total === 1 ? "Ver o processo" : `Ver todos os ${contagem.total} processos`}
+        <ChevronRight className="size-3.5" aria-hidden="true" />
+      </button>
     </TeaserCard>
   )
 }
@@ -852,18 +1010,17 @@ function CareerTeaser({
 export function ProfileOverview({
   ficha,
   onNavigateTab,
-  leadingCard,
   trailingCard,
   factChecksCard,
   closingCard,
 }: {
   ficha: FichaCandidato
   onNavigateTab: (tabId: string) => void
-  leadingCard?: React.ReactNode
+  /** Programa de governo (coluna da esquerda, depois do financiamento). */
   trailingCard?: React.ReactNode
   /** Resumo das checagens atribuídas; a lista completa fica na aba Checagens. */
   factChecksCard?: React.ReactNode
-  /** Último card da grade (suplentes do Senado), antes do bloco de alertas. */
+  /** Suplentes do Senado e afins: vão para o fim da coluna mais baixa. */
   closingCard?: React.ReactNode
 }) {
   const socialNetworksVerification = ficha.verificacao_campos?.social_networks
@@ -886,9 +1043,9 @@ export function ProfileOverview({
       : socialNetworksEmptyVerifiedAt
   const sitesTseIndeterminateAt =
     ficha.sites_candidato?.resultado === "indeterminado" ? sitesTseCollectedAt : null
-  const hasDebateQuotes = hasCandidateFalasCard(ficha.slug, ficha.id)
+  const disciplinares = getRepresentacoesEticaAprovadas(ficha.slug)
 
-  if (!hasOverviewData(ficha) && !leadingCard && !trailingCard && !factChecksCard && !closingCard && !hasDebateQuotes) {
+  if (!hasOverviewData(ficha) && disciplinares.length === 0 && !trailingCard && !factChecksCard && !closingCard) {
     return <EmptyOverviewState />
   }
 
@@ -913,78 +1070,67 @@ export function ProfileOverview({
   const finSegments = getFinancingSegments(latestFin)
   const topGastos = getLatestSpending(gastos)
 
-  return (
-    <OverviewMasonry>
-      <OverviewMasonryItem>
-        <PatrimonioTeaser
-          patrimonio={patrimonio}
-          summary={patrimonioSummary}
-          eleicoes={patrimonioEleicoes}
-          onNavigate={() => onNavigateTab("dinheiro")}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        {leadingCard}
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <FinancingTeaser
-          latestFin={latestFin}
-          pleitoLabel={latestFinPleitoLabel}
-          segments={finSegments}
-          onNavigate={() => onNavigateTab("dinheiro")}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <ContradictionsHighlight
-          votosContradicao={contradicoes}
-          pontosContradicao={pontosContradicao}
-          onNavigateTab={onNavigateTab}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>{factChecksCard}</OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <ProcessesTeaser processos={processos} onNavigate={() => onNavigateTab("justica")} />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>{trailingCard}</OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <CandidateSitesCard
-          sites={ficha.sites_candidato?.sites}
-          vazioConfirmadoEm={sitesTseEmptyAt}
-          indeterminadoEm={sitesTseIndeterminateAt}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <VotesTeaser
-          votos={votos}
-          contradicoes={contradicoes}
-          onNavigate={() => onNavigateTab("votos")}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <ParliamentarySpendingTeaser
-          topGastos={topGastos}
-          onNavigate={() => onNavigateTab("dinheiro")}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <ExecutiveSpendingTeaser
-          gastosExecutivo={gastosExecutivo}
-          onNavigate={() => onNavigateTab("dinheiro")}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        <CareerTeaser
-          historico={historico}
-          historicoOrdenado={historicoOrdenado}
-          onNavigate={() => onNavigateTab("trajetoria")}
-        />
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>
-        {hasDebateQuotes && (
-          <CandidateDebatesBentoCard candidateSlug={ficha.slug} candidateId={ficha.id} />
-        )}
-      </OverviewMasonryItem>
-      <OverviewMasonryItem>{closingCard}</OverviewMasonryItem>
-    </OverviewMasonry>
-  )
+  // Ordem fixa por coluna (md+). No mobile, a leitura intercala E1, D1, E2, D2...
+  const leftColumn: React.ReactNode[] = [
+    <PatrimonioTeaser
+      key="patrimonio"
+      patrimonio={patrimonio}
+      summary={patrimonioSummary}
+      eleicoes={patrimonioEleicoes}
+      onNavigate={() => onNavigateTab("dinheiro")}
+    />,
+    <FinancingTeaser
+      key="financiamento"
+      latestFin={latestFin}
+      pleitoLabel={latestFinPleitoLabel}
+      segments={finSegments}
+      onNavigate={() => onNavigateTab("dinheiro")}
+    />,
+    trailingCard,
+    <ParliamentarySpendingTeaser
+      key="cota"
+      topGastos={topGastos}
+      onNavigate={() => onNavigateTab("dinheiro")}
+    />,
+    <ExecutiveSpendingTeaser
+      key="gasto-executivo"
+      gastosExecutivo={gastosExecutivo}
+      onNavigate={() => onNavigateTab("dinheiro")}
+    />,
+  ]
+  const rightColumn: React.ReactNode[] = [
+    factChecksCard,
+    <ProcessesTeaser
+      key="processos"
+      processos={processos}
+      disciplinares={disciplinares}
+      onNavigate={() => onNavigateTab("justica")}
+    />,
+    <ContradictionsHighlight
+      key="contradicoes"
+      votosContradicao={contradicoes}
+      pontosContradicao={pontosContradicao}
+      onNavigateTab={onNavigateTab}
+    />,
+    <VotesTeaser
+      key="votos"
+      votos={votos}
+      contradicoes={contradicoes}
+      onNavigate={() => onNavigateTab("votos")}
+    />,
+    <CareerTeaser
+      key="carreira"
+      historico={historico}
+      historicoOrdenado={historicoOrdenado}
+      onNavigate={() => onNavigateTab("trajetoria")}
+    />,
+    <CandidateSitesCard
+      sites={ficha.sites_candidato?.sites}
+      key="sites"
+      vazioConfirmadoEm={sitesTseEmptyAt}
+      indeterminadoEm={sitesTseIndeterminateAt}
+    />,
+  ]
+
+  return <OverviewColumns left={leftColumn} right={rightColumn} auto={closingCard ? [closingCard] : []} />
 }
