@@ -22,7 +22,20 @@ export interface RevisaoPceSenado {
   situacao_sigla: string
   situacao_descricao: string
   aprovado_em: string
+  /**
+   * Prova de alvo pelo documento do próprio processo, para ementa que nomeia o
+   * senador sem "em face do/da" nem "contra o/a" ("por parte do Senador X",
+   * "a visita do Senador X"). Só vale se a ementa oficial citar exatamente um
+   * senador do roster, o escolhido, e o trecho do documento o nomear.
+   */
+  alvo_por_documento?: {
+    documento_url: string
+    trecho_documento: string
+    confirmado_por_humano: true
+  }
 }
+
+const DOCUMENTO_SENADO = /^https:\/\/legis\.senado\.(?:gov|leg)\.br\/sdleg-getter\/documento\?dm=\d+$/
 
 export interface ProcessoPceAtual {
   id: number
@@ -34,7 +47,22 @@ export interface ProcessoPceAtual {
   siglaSituacaoAtual?: string
   situacaoAtual?: string
   dataSituacaoAtual?: string
-  autuacoes?: Array<{ situacoes?: Array<{ inicio?: string; fim?: string }> }>
+  tramitando?: string
+  autuacoes?: Array<{ situacoes?: Array<{ sigla?: string; descricao?: string; inicio?: string; fim?: string }> }>
+}
+
+/**
+ * Processo encerrado ("tramitando": "Não") pode vir sem situação atual no topo;
+ * aí vale a última situação oficial registrada nas autuações (maior início),
+ * copiada como veio. Processo em tramitação sem situação atual continua bloqueado.
+ */
+function situacaoDeProcessoEncerrado(current: ProcessoPceAtual): { sigla: string; descricao: string } | null {
+  if (current.tramitando?.trim() !== "Não") return null
+  const situacoes = (current.autuacoes ?? []).flatMap((autuacao) => autuacao.situacoes ?? [])
+    .filter((state) => date(state.inicio) && state.sigla?.trim() && state.descricao?.trim())
+    .sort((a, b) => date(a.inicio)!.localeCompare(date(b.inicio)!))
+  const ultima = situacoes.at(-1)
+  return ultima ? { sigla: ultima.sigla!.trim(), descricao: ultima.descricao!.trim() } : null
 }
 
 export interface CandidatoSenadoAprovacao {
@@ -143,8 +171,9 @@ function checkCurrentSource(queueItem: ItemPceFila, current: ProcessoPceAtual): 
   if (numero !== queueItem.processo.numero || current.ano !== queueItem.processo.ano) throw new Error("número ou ano do PCE mudou; recolete a fila")
   const ementa = current.conteudo?.ementa ?? current.ementa ?? ""
   if (!ementa || compact(ementa) !== compact(queueItem.ementa_oficial)) throw new Error("ementa mudou desde a coleta; recolete e revise novamente")
-  const descricao = current.situacaoAtual?.trim() ?? ""
-  const sigla = current.siglaSituacaoAtual?.trim() ?? ""
+  const encerrado = !current.situacaoAtual?.trim() && !current.siglaSituacaoAtual?.trim() ? situacaoDeProcessoEncerrado(current) : null
+  const descricao = encerrado?.descricao ?? current.situacaoAtual?.trim() ?? ""
+  const sigla = encerrado?.sigla ?? current.siglaSituacaoAtual?.trim() ?? ""
   if (!descricao || !sigla) throw new Error("estado oficial atual incompleto; não há rótulo seguro para publicar")
   const lastDate = maxDate([
     current.dataSituacaoAtual,
@@ -201,7 +230,22 @@ export function aprovarPceSenado(options: {
   if (rosterMentions.length > 1 && !todosAlvos) throw new Error("trecho de identidade menciona mais de um senador do roster oficial")
   const senatorNames = [senator.nome, senator.nome_completo].filter(Boolean)
   const alvoExplicito = senatorNames.some((name) => temPapelDeAlvo(revisao.trecho_ementa, name))
-  if (!alvoExplicito) throw new Error("trecho não identifica o senador escolhido como representado após 'em face do/da' ou 'contra o/a'")
+  let alvoMetodo: "ementa" | "documento" = "ementa"
+  let trechoAlvo = revisao.trecho_ementa
+  if (!alvoExplicito) {
+    const documento = revisao.alvo_por_documento
+    const unicoNaEmenta = rosterMentions.length === 1 && rosterMentions[0]!.senador_id === senator.senador_id
+    if (!documento || documento.confirmado_por_humano !== true || !unicoNaEmenta) {
+      throw new Error("trecho não identifica o senador escolhido como representado após 'em face do/da' ou 'contra o/a', nem há prova de alvo pelo documento com a ementa citando só ele")
+    }
+    if (!DOCUMENTO_SENADO.test(documento.documento_url)) throw new Error("documento de alvo fora do repositório oficial do Senado")
+    const trechoDocumento = ` ${compact(documento.trecho_documento)} `
+    if (trechoDocumento.trim().length < 20 || !senatorNames.some((name) => trechoDocumento.includes(` ${compact(name)} `))) {
+      throw new Error("trecho do documento não nomeia o senador escolhido")
+    }
+    alvoMetodo = "documento"
+    trechoAlvo = documento.trecho_documento
+  }
 
   const candidates = options.seed.filter((candidate) => candidate.ids?.senado === revisao.senador_id)
   if (candidates.length !== 1 || candidates[0].slug !== revisao.candidate_slug) throw new Error("ponte senador → candidato não é única e exata por ids.senado")
@@ -223,9 +267,9 @@ export function aprovarPceSenado(options: {
       metodo: "seed_ids_senado",
       conferida_em: verificadoEm,
       alvo: {
-        metodo: "ementa",
+        metodo: alvoMetodo,
         fonte_url: queueItem.url_oficial,
-        trecho_sha256: createHash("sha256").update(revisao.trecho_ementa).digest("hex"),
+        trecho_sha256: createHash("sha256").update(trechoAlvo).digest("hex"),
         conferida_em: verificadoEm,
       },
     },

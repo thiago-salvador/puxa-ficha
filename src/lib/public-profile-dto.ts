@@ -34,7 +34,7 @@ import {
   type FinanciamentoDespesas,
 } from "@/lib/financiamento-despesas-contrato"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
-import { filtrarProcessosJudiciaisContaveis } from "@/lib/processos-justica-candidato"
+import { contarProcessosOmitidos, filtrarProcessosJudiciaisContaveis } from "@/lib/processos-justica-candidato"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
 import { sanitizePublicText } from "@/lib/public-text"
 import { formatProcessSummaryLabel } from "@/lib/ui-labels"
@@ -911,7 +911,7 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
   )
   const processosBrutos = ficha.processos ?? []
   const processosPublicos = filtrarProcessosJudiciaisContaveis(processosBrutos)
-  const processosOmitidos = (ficha.processos_omitidos_sem_fonte_oficial ?? 0) + processosBrutos.length - processosPublicos.length
+  const processosOmitidos = (ficha.processos_omitidos_sem_fonte_oficial ?? 0) + contarProcessosOmitidos(processosBrutos, processosPublicos.length)
   const despesasPublicas = publicDespesasDaFicha(ficha)
 
   return {
