@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   }),
 }
 
-// G3 (2026-09-29): página estática. Era dinâmica por ler `searchParams` e
+// 2026-09-29: página estática. Era dinâmica por ler `searchParams` e
 // `headers()` e rodava como função em todo hit (~22 mil por dia). O termo `?q=`
 // é lido no client por `DoadoresBusca`, que consulta /api/doadores/busca (cache
 // de CDN por termo, rate limit por IP nos misses).

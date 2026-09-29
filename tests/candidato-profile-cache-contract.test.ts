@@ -12,7 +12,7 @@ describe("cache da API publica de candidato", () => {
     assert.doesNotMatch(route, /export const revalidate\s*=/)
   })
 
-  // G3 (2026-09-29): a resposta viva vai para o CDN com a tag
+  // 2026-09-29: a resposta viva vai para o CDN com a tag
   // public-candidato-ficha, e o POST /api/revalidate apaga essa tag no CDN junto
   // com o unstable_cache. Isso substitui o no-store da #57, que existia porque o
   // revalidate limpava os dados e deixava a resposta HTTP antiga no CDN.

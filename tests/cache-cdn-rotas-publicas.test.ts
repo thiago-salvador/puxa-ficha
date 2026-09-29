@@ -18,7 +18,7 @@ const { socialCardVersionToken } =
   require("../src/lib/social-card-version") as typeof import("../src/lib/social-card-version")
 
 /**
- * G3 (2026-09-29): ficha, JSON do perfil e /doadores saíram do caminho
+ * 2026-09-29: ficha, JSON do perfil e /doadores saíram do caminho
  * "função em todo hit". Estes testes seguram o contrato de cache: resposta viva
  * vai para o CDN com a tag que o POST /api/revalidate apaga; degradada, 404 de
  * fonte fora do ar e release-verify nunca vão.

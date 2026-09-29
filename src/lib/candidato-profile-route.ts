@@ -25,7 +25,7 @@ const perfilRateLimiter = createDistributedIpRateLimiter({
   windowMs: 60_000,
 })
 
-// Cache de CDN (G3, 2026-09-29): o JSON era private/no-store e custava ~16,7 mil
+// Cache de CDN (2026-09-29): o JSON era private/no-store e custava ~16,7 mil
 // execuções por dia. A resposta viva vai para o CDN com a tag
 // `public-candidato-ficha`; o POST /api/revalidate apaga essa tag no CDN junto
 // com o `revalidateTag`, então uma correção aparece na requisição seguinte.

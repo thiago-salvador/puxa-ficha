@@ -194,7 +194,7 @@ describe("bypass de cache do release-verify", () => {
     assert.equal(resolveReleaseVerifyCacheBypassToken(), null)
   })
 
-  // G3 (2026-09-29): a ficha é ISR e não lê request; o bypass mora no handler
+  // 2026-09-29: a ficha é ISR e não lê request; o bypass mora no handler
   // de /api/candidato-profile/[slug], sempre atrás do mesmo gate.
   it("o bypass fica só no handler do perfil, atrás do gate, sem consultar o opt-in", () => {
     const api = readFileSync("src/lib/api.ts", "utf8")

@@ -7,7 +7,7 @@ import { describe, it } from "node:test"
 const root = join(dirname(fileURLToPath(import.meta.url)), "..")
 
 describe("candidate dynamic route build contract", () => {
-  // G3 (2026-09-29): a ficha virou ISR sob demanda. Nenhum slug é gerado no
+  // 2026-09-29: a ficha virou ISR sob demanda. Nenhum slug é gerado no
   // build (lista vazia); cada ficha é renderizada na primeira visita.
   it("/candidato/[slug] is on-demand ISR and does not pre-render the full candidate catalog", () => {
     const src = readFileSync(join(root, "src/app/(site)/candidato/[slug]/page.tsx"), "utf8")

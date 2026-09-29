@@ -14,7 +14,7 @@ import {
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
-// G3 (2026-09-29): /doadores rodava como função em todo hit (~22 mil por dia,
+// 2026-09-29: /doadores rodava como função em todo hit (~22 mil por dia,
 // inclusive prefetch de link). A página virou estática e a busca veio para cá,
 // com cache de CDN por termo. A tag `doador-reverse` é a mesma do
 // `unstable_cache` da busca; o POST /api/revalidate apaga as duas camadas.

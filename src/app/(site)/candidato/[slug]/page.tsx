@@ -8,7 +8,7 @@ import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { truncateOnWordBoundary } from "@/lib/text-truncate"
 import { CandidatoFichaView } from "./CandidatoFichaView"
 
-// ISR sob demanda (G3, 2026-09-29): era force-dynamic e custava ~34 mil
+// ISR sob demanda (2026-09-29): era force-dynamic e custava ~34 mil
 // execuções de função por dia. Nenhuma ficha é gerada no build (lista vazia);
 // cada slug é renderizado na primeira visita e servido do cache depois. O
 // frescor pós-escrita vem das tags de `unstable_cache` em src/lib/api.ts: o
