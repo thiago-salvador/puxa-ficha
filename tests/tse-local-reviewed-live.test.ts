@@ -46,8 +46,9 @@ test("dry-run artifacts pass the live gate without regeneration; tampering fails
         bem_candidato_2026: { fresh_certifiable: true, errors: [] },
         financiamento_2026: { fresh_certifiable: true, errors: [] } },
       steps: { history_review_receipts: { ok: true }, coverage_dry_run: { ok: true },
-        history_coverage_dry_run: { ok: true }, finance_planner: { ok: true },
+        history_coverage_dry_run: { ok: true }, finance_planner: { ok: true }, finance_gates: { ok: true },
         apply_projection: { ok: true }, family_receipts: { ok: true }, identity_risk_actions_blocked: 0 },
+      finance_gate: { focused_cohort: false, fichas_alteradas: 0, teto_explicito: null, falhas: [] },
       cohort: { selected: 2 } }))
     writeFileSync(receipts, "[]")
     const options = parseCliOptions([
@@ -179,7 +180,8 @@ test("live libera só a célula aprovada do perfil em risco e recusa decisão, e
       identity_risk_source_shas: { history_review: sha(p("historico-revisao.json")), candidates: sha(p("coorte-candidatos.json")), family_receipts: sha(p("recibos-familias-tse.json")) },
       sources: { consulta_cand: { requested: 16, fresh_certifiable: 16, errors: [] }, bem_candidato_2026: { fresh_certifiable: true, errors: [] }, financiamento_2026: { fresh_certifiable: true, errors: [] } },
       steps: { history_review_receipts: { ok: true }, coverage_dry_run: { ok: true }, history_coverage_dry_run: { ok: true }, finance_planner: { ok: true },
-        apply_projection: { ok: true }, family_receipts: { ok: true }, identity_risk_actions_blocked: 0 },
+        finance_gates: { ok: true }, apply_projection: { ok: true }, family_receipts: { ok: true }, identity_risk_actions_blocked: 0 },
+      finance_gate: { focused_cohort: false, fichas_alteradas: 1, teto_explicito: null, falhas: [] },
       cohort: { selected: 2 } }
     const report = p("relatorio.json")
     writeFileSync(report, JSON.stringify(reportBody))
