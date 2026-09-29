@@ -142,7 +142,9 @@ describe("decisao editorial de processos", () => {
         decisoes: new Set([chaveDecisao(slug, cnj)]),
         emit: (saida) => saidas.push(saida),
       })
-      assert.equal(resumo.plano_sha256, "9dd4a74969c0ee91865679b9a814c239ac0eed9047081c37842c851785b11b0c")
+      // Contrato do plano: sha256 do JSON dos pares [id, preimagem] ordenados por id.
+      const esperado = createHash("sha256").update(JSON.stringify([[item.id, item.preimagem_sha256]])).digest("hex")
+      assert.equal(resumo.plano_sha256, esperado)
       assert.equal(shaPlano([item]), resumo.plano_sha256)
       const outro = { ...item, id: "00000000-0000-4000-8000-000000000003" }
       assert.equal(shaPlano([item, outro]), shaPlano([outro, item]))
