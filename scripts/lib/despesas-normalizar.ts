@@ -19,6 +19,7 @@
 import { stripAccents } from "../../src/lib/strip-accents"
 import {
   removerDocumentosDoTexto,
+  textoTemSequenciaDeDocumento,
   type DespesaConcentracaoItem,
   type DespesaDoacaoTerceiroItem,
   type DespesaFornecedorItem,
@@ -163,6 +164,35 @@ export interface ResultadoNormalizacao {
 const PADRAO_DOACAO = /doac(?:ao|oes)\b.*\ba outros? candidat/i
 const PADRAO_PARTIDO = /\b(?:partido|diretorio|direcao|comissao (?:provisoria|executiva)|orgao (?:partidario|de direcao)|executiva (?:nacional|estadual|municipal))\b/i
 const PADRAO_CAMPANHA = /\beleic(?:ao|oes)\s+\d{4}\b/i
+/**
+ * Convenção de nome do CNPJ de campanha do TSE: "ELEICAO <ano> <NOME> <CARGO>".
+ * O ano capturado precisa ser o da eleição da candidatura que doou; o cargo é o
+ * último termo do nome.
+ */
+const CARGOS_CNPJ_CAMPANHA = [
+  "PRESIDENTE",
+  "VICE-PRESIDENTE",
+  "GOVERNADOR",
+  "VICE-GOVERNADOR",
+  "SENADOR",
+  "DEPUTADO FEDERAL",
+  "DEPUTADO ESTADUAL",
+  "DEPUTADO DISTRITAL",
+  "PREFEITO",
+  "VICE-PREFEITO",
+  "VEREADOR",
+]
+const PADRAO_NOME_CNPJ_CAMPANHA = new RegExp(
+  `^ELEICAO (\\d{4}) \\S.*\\S (?:${CARGOS_CNPJ_CAMPANHA.map((c) => c.replace("-", "[- ]")).join("|")})$`,
+)
+
+/** Nome segue "ELEICAO <ano> <NOME> <CARGO>" com o ano da eleição informada. */
+export function nomeSegueConvencaoCnpjCampanha(nome: string | null, anoEleicao: number): boolean {
+  if (!nome) return false
+  const comparavel = semAcento(nome).toUpperCase().replace(/\s+/g, " ").trim()
+  const ano = PADRAO_NOME_CNPJ_CAMPANHA.exec(comparavel)?.[1]
+  return ano !== undefined && Number(ano) === anoEleicao
+}
 
 function semAcento(texto: string): string {
   return stripAccents(texto)
@@ -207,8 +237,15 @@ function sqValido(sq: string | null): boolean {
   return limpo !== null && /^\d{5,20}$/.test(limpo) && !/^0+$/.test(limpo)
 }
 
+/**
+ * Tipo público do destinatário. Com SQ oficial: candidato. Sem SQ: "candidato"
+ * só quando o nome segue a convenção do CNPJ de campanha com o mesmo ano da
+ * eleição; "partido" só pela regra forte de órgão partidário (nunca pessoa
+ * física); o resto é "outro", sem nome.
+ */
 function classificarDestinatario(
   item: DespesaItemEntrada,
+  anoEleicao: number,
 ): { tipo: DespesaDoacaoTerceiroItem["destinatario_tipo"]; nome: string | null; temSq: boolean; parecePartido: boolean; pareceCampanha: boolean } {
   const destinatario = item.destinatario ?? null
   const nomeBruto = semSentinela(destinatario?.nome ?? item.nomeFornecedor)
@@ -219,8 +256,10 @@ function classificarDestinatario(
   const temSq = sqValido(destinatario?.sq ?? null)
   const nome = textoPublico(nomeBruto)
   if (temSq) return { tipo: "candidato", nome, temSq, parecePartido, pareceCampanha }
+  if (documento !== "PF" && nomeSegueConvencaoCnpjCampanha(nome, anoEleicao)) {
+    return { tipo: "candidato", nome, temSq, parecePartido, pareceCampanha }
+  }
   if (parecePartido && documento !== "PF") return { tipo: "partido", nome, temSq, parecePartido, pareceCampanha }
-  if (pareceCampanha && documento === "PJ") return { tipo: "candidato", nome, temSq, parecePartido, pareceCampanha }
   return { tipo: "outro", nome: null, temSq, parecePartido, pareceCampanha }
 }
 
@@ -256,12 +295,19 @@ export function normalizarDespesas(
   const totalOficialCentavos = centavosDeReais(totais.total_despesas_contratadas)
 
   // Estado e total: null da fonte continua null; zero só quando declarado.
+  // "sem_prestacao" exige ausência de entrega: sem id de entrega e sem item. Uma
+  // entrega com total ainda null e lista vazia continua "declarado", com totais
+  // null ("total ainda não informado"), nunca "nenhuma despesa declarada".
+  const semEntrega = semSentinela(contexto.id_ultima_entrega) === null
   let estado: DespesasEstadoColeta = "declarado"
   let totalCentavos: number | null
   if (totais.origemTotalContratado === "oficial") {
     if (totalOficialCentavos === null) {
-      if (itens.length === 0) estado = "sem_prestacao"
-      else divergencias.push({ tipo: "itens_sem_total_oficial", quantidade_itens: itens.length })
+      if (itens.length === 0) {
+        if (semEntrega) estado = "sem_prestacao"
+      } else {
+        divergencias.push({ tipo: "itens_sem_total_oficial", quantidade_itens: itens.length })
+      }
       totalCentavos = null
     } else {
       totalCentavos = totalOficialCentavos
@@ -276,7 +322,7 @@ export function normalizarDespesas(
     }
   } else {
     totalCentavos = itens.length === 0 ? null : somaItens
-    if (itens.length === 0) estado = "sem_prestacao"
+    if (itens.length === 0 && semEntrega) estado = "sem_prestacao"
   }
 
   // Concentração por tipo.
@@ -400,7 +446,7 @@ export function normalizarDespesas(
     if (!ehDoacaoATerceiros(semSentinela(item.tipo))) return
     const valor = valorDe(item)
     doacoesCentavos += valor
-    const classe = classificarDestinatario(item)
+    const classe = classificarDestinatario(item, contexto.ano_eleicao)
     const destinatario = item.destinatario ?? null
     const comContexto = classe.tipo !== "outro"
     doacoes_a_terceiros.push({
@@ -431,7 +477,9 @@ export function normalizarDespesas(
   if (doacoesOficialCentavos !== null && doacoesOficialCentavos !== doacoesCentavos) {
     divergencias.push({ tipo: "doacoes_diferentes_do_oficial", calculado_centavos: doacoesCentavos, oficial_centavos: doacoesOficialCentavos })
   }
-  const totalDoacoes = estado === "sem_prestacao" && doacoesOficialCentavos === null
+  // Sem item e sem total (sem prestação, ou entrega ainda sem valores): o total
+  // de doações também não é conhecido e fica null, nunca zero.
+  const totalDoacoes = itens.length === 0 && totalCentavos === null && doacoesOficialCentavos === null
     ? null
     : reaisDeCentavos(doacoesCentavos)
 
@@ -482,8 +530,20 @@ export function normalizarDespesas(
   }
 }
 
-/** Varredura de segurança: nenhum texto público pode carregar 11 ou 14 dígitos. */
+/**
+ * Varredura de segurança: nenhum texto público pode carregar 11 dígitos ou mais,
+ * nem separados por espaço, ponto, barra ou hífen ("123 456 789 01",
+ * "12 345 678 0001 90"). Em objeto e lista, olha cada texto (valores e chaves)
+ * separadamente; número só conta quando inteiro com 11 dígitos ou mais, porque
+ * o ponto decimal de um valor monetário não é separador de documento.
+ */
 export function textoTemDocumento(valor: unknown): boolean {
-  const texto = typeof valor === "string" ? valor : JSON.stringify(valor)
-  return /\d{3}\.?\d{3}\.?\d{3}-?\d{2}|\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}|\d{11,14}/.test(texto ?? "")
+  if (typeof valor === "string") return textoTemSequenciaDeDocumento(valor)
+  if (typeof valor === "number") return Number.isInteger(valor) && /\d{11,}/.test(String(Math.abs(valor)))
+  if (typeof valor === "bigint") return /\d{11,}/.test(String(valor))
+  if (Array.isArray(valor)) return valor.some(textoTemDocumento)
+  if (valor && typeof valor === "object") {
+    return Object.entries(valor).some(([chave, item]) => textoTemSequenciaDeDocumento(chave) || textoTemDocumento(item))
+  }
+  return false
 }

@@ -2,11 +2,13 @@
  * Leitura pública das despesas de campanha (view `financiamento_despesas_publico`).
  *
  * Regras:
- * - qualquer erro da leitura (relação ausente, permissão, coluna ausente, timeout,
- *   resposta malformada) vira `{ status: "indisponivel", rows: null }`; a ficha
+ * - relação ainda não aplicada vira `{ status: "ausente", rows: null }`; qualquer
+ *   outro erro (permissão, coluna ausente, timeout, resposta malformada, linha ou
+ *   item JSONB inválido) vira `{ status: "indisponivel", rows: null }`; a ficha
  *   continua e a UI omite a seção, nunca afirma "nenhuma despesa";
  * - cada linha e cada item jsonb passa por lista de chaves permitidas (nada de
- *   spread), e todo texto tem sequências de 11 e 14 dígitos removidas;
+ *   spread), e todo texto perde as corridas de 11 dígitos ou mais, inclusive
+ *   separadas por espaço, ponto, barra ou hífen;
  * - o slug do destinatário de uma doação fica null: o item público não carrega o
  *   SQ do destinatário, então a leitura não tem como provar a ligação com uma
  *   ficha publicada. Só uma resolução por SQ oficial contra candidatos públicos
@@ -66,16 +68,9 @@ function inteiroNaoNegativo(value: unknown): number {
   return parsed !== null && parsed >= 0 ? Math.trunc(parsed) : 0
 }
 
-/**
- * Corridas contínuas de 11 ou mais dígitos saem antes do removedor do contrato:
- * a primeira alternativa dele consome só 11 dígitos de um CNPJ sem pontuação e
- * deixaria o resto ("12345678901234" viraria "234").
- */
-const CORRIDA_LONGA_DE_DIGITOS = /\d{11,}/g
-
 function textoOuNull(value: unknown): string | null {
   if (typeof value !== "string") return null
-  const limpo = removerDocumentosDoTexto(value.replace(CORRIDA_LONGA_DE_DIGITOS, " "))
+  const limpo = removerDocumentosDoTexto(value)
   return limpo.length > 0 ? limpo : null
 }
 
@@ -87,67 +82,97 @@ function listaOuVazia(value: unknown): unknown[] {
   return Array.isArray(value) ? value : []
 }
 
-function sanitizarConcentracao(value: unknown): DespesaConcentracaoItem[] {
-  const itens: DespesaConcentracaoItem[] = []
-  for (const bruto of listaOuVazia(value)) {
-    if (!ehRegistro(bruto)) continue
-    const valor = numeroOuNull(bruto.valor)
-    if (valor === null) continue
-    itens.push({
-      tipo: textoOuNull(bruto.tipo) ?? DESPESAS_TIPO_NAO_INFORMADO,
+/** Valor monetário de item: número finito e não negativo; qualquer outra coisa invalida o item. */
+function valorDeItem(value: unknown): number | null {
+  const valor = numeroOuNull(value)
+  return valor !== null && valor >= 0 ? valor : null
+}
+
+function itemConcentracao(bruto: unknown): DespesaConcentracaoItem | null {
+  if (!ehRegistro(bruto)) return null
+  const valor = valorDeItem(bruto.valor)
+  if (valor === null) return null
+  return {
+    tipo: textoOuNull(bruto.tipo) ?? DESPESAS_TIPO_NAO_INFORMADO,
+    quantidade: inteiroNaoNegativo(bruto.quantidade),
+    valor,
+  }
+}
+
+function itemFornecedor(bruto: unknown): DespesaFornecedorItem | null {
+  if (!ehRegistro(bruto)) return null
+  const valor = valorDeItem(bruto.valor)
+  if (valor === null) return null
+  if (bruto.tipo === "PJ") {
+    const nome = textoOuNull(bruto.nome)
+    return nome ? { tipo: "PJ", nome, quantidade: inteiroNaoNegativo(bruto.quantidade), valor } : null
+  }
+  if (bruto.tipo === "PF_agregado") {
+    return {
+      tipo: "PF_agregado",
+      quantidade_prestadores: inteiroNaoNegativo(bruto.quantidade_prestadores),
       quantidade: inteiroNaoNegativo(bruto.quantidade),
       valor,
-    })
+    }
+  }
+  return null
+}
+
+const TIPOS_DESTINATARIO = new Set<DespesaDoacaoTerceiroItem["destinatario_tipo"]>(["candidato", "partido", "outro"])
+
+function itemDoacao(bruto: unknown): DespesaDoacaoTerceiroItem | null {
+  if (!ehRegistro(bruto)) return null
+  const valor = valorDeItem(bruto.valor)
+  const tipo = bruto.destinatario_tipo as DespesaDoacaoTerceiroItem["destinatario_tipo"]
+  if (valor === null || !TIPOS_DESTINATARIO.has(tipo)) return null
+  return {
+    destinatario_tipo: tipo,
+    // "outro" pode ser pessoa física: o nome nunca sai.
+    destinatario_nome: tipo === "outro" ? null : textoOuNull(bruto.destinatario_nome),
+    uf: ufOuNull(bruto.uf),
+    cargo: textoOuNull(bruto.cargo),
+    partido: textoOuNull(bruto.partido),
+    valor,
+    candidato_slug: null,
+  }
+}
+
+/** Versão tolerante (descarta o item inválido); a leitura da view usa `itensEstritos`. */
+function itensValidos<T>(value: unknown, item: (bruto: unknown) => T | null): T[] {
+  return listaOuVazia(value).flatMap((bruto) => {
+    const valido = item(bruto)
+    return valido ? [valido] : []
+  })
+}
+
+/**
+ * Todos os itens ou nada: um item inválido deixaria o detalhamento incompleto
+ * (concentração que não fecha com o total, fornecedor sumido) e a seção seria
+ * publicada como se estivesse inteira.
+ */
+function itensEstritos<T>(value: unknown, item: (bruto: unknown) => T | null): T[] | null {
+  if (!Array.isArray(value)) return null
+  const itens: T[] = []
+  for (const bruto of value) {
+    const valido = item(bruto)
+    if (!valido) return null
+    itens.push(valido)
   }
   return itens
 }
 
 export function sanitizarFornecedores(value: unknown): DespesaFornecedorItem[] {
-  const itens: DespesaFornecedorItem[] = []
-  for (const bruto of listaOuVazia(value)) {
-    if (!ehRegistro(bruto)) continue
-    const valor = numeroOuNull(bruto.valor)
-    if (valor === null) continue
-    if (bruto.tipo === "PJ") {
-      const nome = textoOuNull(bruto.nome)
-      if (!nome) continue
-      itens.push({ tipo: "PJ", nome, quantidade: inteiroNaoNegativo(bruto.quantidade), valor })
-    } else if (bruto.tipo === "PF_agregado") {
-      itens.push({
-        tipo: "PF_agregado",
-        quantidade_prestadores: inteiroNaoNegativo(bruto.quantidade_prestadores),
-        quantidade: inteiroNaoNegativo(bruto.quantidade),
-        valor,
-      })
-    }
-  }
-  return itens
+  return itensValidos(value, itemFornecedor)
 }
-
-const TIPOS_DESTINATARIO = new Set<DespesaDoacaoTerceiroItem["destinatario_tipo"]>(["candidato", "partido", "outro"])
 
 export function sanitizarDoacoes(value: unknown): DespesaDoacaoTerceiroItem[] {
-  const itens: DespesaDoacaoTerceiroItem[] = []
-  for (const bruto of listaOuVazia(value)) {
-    if (!ehRegistro(bruto)) continue
-    const valor = numeroOuNull(bruto.valor)
-    const tipo = bruto.destinatario_tipo as DespesaDoacaoTerceiroItem["destinatario_tipo"]
-    if (valor === null || !TIPOS_DESTINATARIO.has(tipo)) continue
-    itens.push({
-      destinatario_tipo: tipo,
-      // "outro" pode ser pessoa física: o nome nunca sai.
-      destinatario_nome: tipo === "outro" ? null : textoOuNull(bruto.destinatario_nome),
-      uf: ufOuNull(bruto.uf),
-      cargo: textoOuNull(bruto.cargo),
-      partido: textoOuNull(bruto.partido),
-      valor,
-      candidato_slug: null,
-    })
-  }
-  return itens
+  return itensValidos(value, itemDoacao)
 }
 
-/** Uma linha da view para o formato público; null quando a linha não é confiável. */
+/**
+ * Uma linha da view para o formato público; null quando a linha não é
+ * confiável, inclusive quando qualquer item dos três JSONB falha na validação.
+ */
 export function sanitizarLinhaDespesas(bruta: unknown): FinanciamentoDespesas | null {
   if (!ehRegistro(bruta)) return null
   const id = typeof bruta.id === "string" ? bruta.id : null
@@ -158,6 +183,10 @@ export function sanitizarLinhaDespesas(bruta: unknown): FinanciamentoDespesas | 
   if (!id || !candidatoId || ano === null || !sq || !DESPESAS_ESTADOS_COLETA.includes(estado)) return null
   const coletadoEm = typeof bruta.coletado_em === "string" ? bruta.coletado_em : null
   if (!coletadoEm) return null
+  const concentracao = itensEstritos(bruta.concentracao_despesas, itemConcentracao)
+  const fornecedores = itensEstritos(bruta.maiores_fornecedores, itemFornecedor)
+  const doacoes = itensEstritos(bruta.doacoes_a_terceiros, itemDoacao)
+  if (!concentracao || !fornecedores || !doacoes) return null
 
   return {
     id,
@@ -175,9 +204,9 @@ export function sanitizarLinhaDespesas(bruta: unknown): FinanciamentoDespesas | 
     recursos_estimaveis: numeroOuNull(bruta.recursos_estimaveis),
     divida_campanha: numeroOuNull(bruta.divida_campanha),
     sobra_financeira: numeroOuNull(bruta.sobra_financeira),
-    concentracao_despesas: sanitizarConcentracao(bruta.concentracao_despesas),
-    maiores_fornecedores: sanitizarFornecedores(bruta.maiores_fornecedores),
-    doacoes_a_terceiros: sanitizarDoacoes(bruta.doacoes_a_terceiros),
+    concentracao_despesas: concentracao,
+    maiores_fornecedores: fornecedores,
+    doacoes_a_terceiros: doacoes,
     prestacao_parcial: bruta.prestacao_parcial === true,
     data_entrega: typeof bruta.data_entrega === "string" ? bruta.data_entrega : null,
     fonte: textoOuNull(bruta.fonte) ?? "",
@@ -188,8 +217,10 @@ export function sanitizarLinhaDespesas(bruta: unknown): FinanciamentoDespesas | 
 
 /**
  * Lê as despesas das candidaturas da pessoa. Consulta única, sem retentativa:
- * falha determinística (relação ainda não aplicada, permissão) não melhora na
- * segunda tentativa, e a seção é opcional para a ficha.
+ * falha determinística (relação ainda não aplicada) não melhora na segunda
+ * tentativa, e a seção é opcional para a ficha. Uma linha que não passa na
+ * validação (inclusive um único item JSONB inválido) torna a leitura inteira
+ * indisponível: detalhamento incompleto nunca é servido como saudável.
  */
 export async function lerDespesasPublicas(
   supabase: DespesasSupabaseClient,
@@ -205,9 +236,12 @@ export async function lerDespesasPublicas(
       .abortSignal(supabaseQueryTimeoutSignal())
     if (error) throw error
     if (!Array.isArray(data)) throw new Error("resposta de despesas sem lista de linhas")
-    const rows = data
-      .map(sanitizarLinhaDespesas)
-      .filter((linha): linha is FinanciamentoDespesas => linha !== null)
+    const rows: FinanciamentoDespesas[] = []
+    for (const bruta of data) {
+      const linha = sanitizarLinhaDespesas(bruta)
+      if (!linha) throw new Error("linha de despesas com campo ou item JSONB inválido")
+      rows.push(linha)
+    }
     return { status: "ok", rows }
   } catch (erro) {
     const detalhe = erro instanceof Error ? erro.message : (erro as { message?: string } | null)?.message ?? String(erro)
@@ -219,23 +253,38 @@ export async function lerDespesasPublicas(
 }
 
 /**
- * Relação inexistente, fora do schema cache do PostgREST, sem permissão ou com
- * coluna faltando: estado estável até a migration ser aplicada.
+ * Só relação inexistente ou fora do schema cache do PostgREST é "ausente"
+ * (estado estável até a migration ser aplicada). Permissão negada (42501) e
+ * coluna faltando (42703) com a view já existente são falha de configuração ou
+ * de deploy e ficam "indisponivel".
  */
-const CODIGOS_VIEW_AUSENTE = new Set(["42P01", "PGRST205", "PGRST202", "42501", "42703"])
+const CODIGOS_VIEW_AUSENTE = new Set(["42P01", "PGRST205", "PGRST202"])
+
+/** Prazo curto da releitura só das despesas quando a ficha guardou "indisponivel". */
+export const DESPESAS_RELEITURA_REVALIDATE_SECONDS = 60
+
+type FichaComDespesas = {
+  financiamento_despesas?: FinanciamentoDespesas[] | null
+  financiamento_despesas_status?: DespesasLeituraStatus
+  financiamento_despesas_candidato_ids?: string[]
+}
 
 /**
- * Trava do cache da ficha: falha transitória nas despesas não pode ser congelada
- * como se a ficha estivesse saudável. Lançar dentro do loader em cache não grava
- * o resultado, e o chamador refaz a leitura sem cache. View ausente ("ausente")
- * vai para o cache normalmente: a seção omitida é o estado real até o apply, e o
- * apply é seguido de revalidação das fichas.
+ * Cache da ficha e despesas:
+ * - "ok" e "ausente" entram no cache da ficha pelo TTL normal. "ausente" dura
+ *   até o apply da migration: o workflow de apply e o escritor `tse-despesas`
+ *   revalidam a tag `public-candidato-ficha` e falham se a revalidação não for
+ *   confirmada;
+ * - "indisponivel" também entra no cache da ficha (não refazemos a ficha inteira
+ *   a cada visita), mas o chamador relê só as despesas com cache próprio de
+ *   `DESPESAS_RELEITURA_REVALIDATE_SECONDS` e mescla o resultado.
  */
-export function exigirDespesasLidasParaCache<T extends { financiamento_despesas_status?: DespesasLeituraStatus } | null>(
-  ficha: T,
-): T {
-  if (ficha?.financiamento_despesas_status === "indisponivel") {
-    throw new Error("ficha com despesas indisponíveis não entra no cache público")
-  }
-  return ficha
+export function idsParaReleituraDeDespesas(ficha: FichaComDespesas | null | undefined): string[] | null {
+  if (ficha?.financiamento_despesas_status !== "indisponivel") return null
+  const ids = ficha.financiamento_despesas_candidato_ids ?? []
+  return ids.length > 0 ? ids : null
+}
+
+export function mesclarDespesasRelidas<T extends FichaComDespesas>(ficha: T, leitura: DespesasLeitura): T {
+  return { ...ficha, financiamento_despesas: leitura.rows, financiamento_despesas_status: leitura.status }
 }

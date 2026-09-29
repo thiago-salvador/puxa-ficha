@@ -100,6 +100,26 @@ test("CHECK de documento cobre as três colunas JSONB: chaves proibidas e 11 dí
   assert.ok(!padrao.test('[{"nome":"GRAFICA LTDA","valor":1234567.89}]'))
 })
 
+test("CHECK de documento colapsa espaço, ponto, barra e hífen só nas folhas de texto dos três JSONB", () => {
+  const check = sql.match(/CONSTRAINT financiamento_despesas_jsonb_sem_documento_check\s+CHECK \(([\s\S]*?)\n\s{4}\),/)?.[1]
+  assert.ok(check, "CHECK de documento ausente")
+  const colapsos = [...check.matchAll(/regexp_replace\(jsonb_path_query_array\((\w+), 'lax \$\.\*\* \? \(@\.type\(\) == "string"\)'\)::text, '([^']+)', '\\1', 'g'\) !~ '\[0-9\]\{11\}'/g)]
+  assert.deepEqual(colapsos.map((m) => m[1]).sort(), ["concentracao_despesas", "doacoes_a_terceiros", "maiores_fornecedores"])
+  // Emulação em JS da mesma expressão (POSIX [[:space:]] vira \s): só as
+  // strings do JSONB passam pelo colapso, como o jsonpath filtra no Postgres.
+  // A prova em PostgreSQL 17 real fica em provar-financiamento-despesas-pg17.sh.
+  const padraoSql = colapsos[0]![2]!
+  const colapso = new RegExp(padraoSql.replace("[[:space:]./-]", "[\\s./-]"), "g")
+  const folhas = (valor: unknown): string[] =>
+    typeof valor === "string" ? [valor] : Array.isArray(valor) ? valor.flatMap(folhas) : valor && typeof valor === "object" ? Object.values(valor).flatMap(folhas) : []
+  const reprova = (json: string) => /[0-9]{11}/.test(JSON.stringify(folhas(JSON.parse(json))).replace(colapso, "$1"))
+  assert.ok(reprova('[{"nome":"MEI 123 456 789 01","valor":1}]'))
+  assert.ok(reprova('[{"nome":"MEI 123.456.789/01","valor":1}]'))
+  assert.ok(reprova('[{"nome":"EMPRESA 12 345 678 0001 90","valor":1}]'))
+  assert.ok(!reprova('[{"nome":"GRAFICA 2024 LTDA","valor":123456789.12}]'), "decimal grande não é documento")
+  assert.ok(!reprova('[{"nome":"FONE (11) 98765-4321","valor":1}]'))
+})
+
 test("REVOKE antes de GRANT na tabela e na view, e service_role explícito nas duas", () => {
   for (const relacao of [TABELA, VIEW]) {
     const escapada = relacao.replace(".", "\\.")

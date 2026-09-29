@@ -3,14 +3,17 @@
  *
  * Entrada: candidaturas já ligadas a candidatos no banco (candidato, ano, SQ)
  * e coletas normalizadas. Só vira ação a coleta cujo (ano, SQ) bate com
- * exatamente uma candidatura ligada; a chave de gravação é
+ * exatamente uma candidatura ligada e cujo contexto eleitoral (ano, UF e cargo)
+ * é o mesmo da candidatura ligada; a chave de gravação é
  * (candidato_id, ano_eleicao, sq_candidato), então duas candidaturas da mesma
  * pessoa no mesmo ano ficam separadas. Divergência de conferência, SQ sem
- * vínculo, vínculo ambíguo e coleta duplicada vão para revisão, nunca para o
- * banco.
+ * vínculo, vínculo ambíguo, contexto eleitoral diferente ou não comprovado e
+ * coleta duplicada vão para revisão, nunca para o banco.
  */
 
 import { createHash } from "node:crypto"
+
+import { stripAccents } from "../../src/lib/strip-accents"
 
 import { textoTemDocumento, type DivergenciaDespesas, type LinhaDespesasNormalizada, type ResultadoNormalizacao } from "./despesas-normalizar"
 
@@ -23,6 +26,10 @@ export interface CandidaturaVinculada {
   slug: string
   ano_eleicao: number
   sq_candidato: string
+  /** UF da candidatura gravada no banco; null = não comprovada (vai para revisão). */
+  uf: string | null
+  /** Cargo da candidatura gravado no banco; null = não comprovado (vai para revisão). */
+  cargo_candidatura: string | null
 }
 
 export interface CandidaturaColetada {
@@ -48,6 +55,7 @@ export type MotivoRevisaoDespesas =
   | "coleta_sem_resultado"
   | "divergencia_de_conferencia"
   | "documento_em_campo_publico"
+  | "contexto_eleitoral_divergente"
 
 export interface ItemRevisaoDespesas {
   ano_eleicao: number
@@ -89,6 +97,30 @@ export function shaDoPlanoDespesas(plano: Pick<PlanoDespesas, "acoes">): string 
 
 function chave(ano: number, sq: string): string {
   return `${ano}|${sq}`
+}
+
+function comparavel(valor: string | null | undefined): string | null {
+  const texto = valor ? stripAccents(valor).toUpperCase().replace(/\s+/g, " ").trim() : ""
+  return texto ? texto : null
+}
+
+/**
+ * Ano, UF e cargo da coleta precisam ser os da candidatura ligada. Valor
+ * ausente de qualquer lado não prova a ligação e também vai para revisão.
+ */
+export function contextoEleitoralDivergente(
+  vinculo: Pick<CandidaturaVinculada, "ano_eleicao" | "uf" | "cargo_candidatura">,
+  linha: Pick<LinhaDespesasNormalizada, "ano_eleicao" | "uf" | "cargo_candidatura">,
+): string | null {
+  const campos: string[] = []
+  if (vinculo.ano_eleicao !== linha.ano_eleicao) campos.push("ano")
+  const ufVinculo = comparavel(vinculo.uf)
+  const ufLinha = comparavel(linha.uf)
+  if (!ufVinculo || !ufLinha || ufVinculo !== ufLinha) campos.push("uf")
+  const cargoVinculo = comparavel(vinculo.cargo_candidatura)
+  const cargoLinha = comparavel(linha.cargo_candidatura)
+  if (!cargoVinculo || !cargoLinha || cargoVinculo !== cargoLinha) campos.push("cargo")
+  return campos.length ? `coleta ${campos.join(", ")} diferente ou ausente na candidatura ligada` : null
 }
 
 function contar(lista: readonly string[]): Record<string, number> {
@@ -143,6 +175,11 @@ export function planejarDespesas(entrada: {
       continue
     }
     const vinculo = ligados[0]!
+    const contexto = contextoEleitoralDivergente(vinculo, linha)
+    if (contexto) {
+      revisao.push({ ...base, motivo: "contexto_eleitoral_divergente", detalhe: contexto })
+      continue
+    }
     estados.push(linha.estado_coleta)
     acoes.push({ tipo: "upsert_despesas", slug: vinculo.slug, linha: { candidato_id: vinculo.candidato_id, ...linha } })
   }

@@ -93,12 +93,24 @@ test("coleta 2026: falha de rede é erro, nunca zero", async () => {
   assert.equal(coleta.normalizado, null)
 })
 
-test("coleta 2026: candidatura sem prestação fica com totais null", async () => {
+test("coleta 2026: entrega registrada com total ainda null fica declarada com totais null", async () => {
   const { fixture, conta, identity } = cenario("2026-governador-sem-prestacao")
   const lista = despesasUrl(ELEICAO_SINTETICA, String(conta.idPrestador), String(conta.idUltimaEntrega))
   const client = clienteFalso((url) => (url === lista ? fixture.itens : conta))
   const coleta = await coletarDespesas2026ParaCliente(client, identity, ELEICAO_SINTETICA)
+  assert.equal(coleta.resultado, "coletado")
+  assert.equal(coleta.normalizado!.linha.estado_coleta, "declarado")
+  assert.equal(coleta.normalizado!.linha.total_despesas_contratadas, null)
+  assert.equal(coleta.normalizado!.linha.total_despesas_pagas, null)
+})
+
+test("coleta 2026: sem nenhuma entrega é sem prestação, com totais null", async () => {
+  const { conta, identity } = cenario("2026-governador-sem-prestacao")
+  const semEntrega = { ...conta, idUltimaEntrega: null, historicoEntregas: [] }
+  const client = clienteFalso(() => semEntrega)
+  const coleta = await coletarDespesas2026ParaCliente(client, identity, ELEICAO_SINTETICA)
   assert.equal(coleta.resultado, "sem_prestacao")
+  assert.equal(coleta.normalizado!.linha.estado_coleta, "sem_prestacao")
   assert.equal(coleta.normalizado!.linha.total_despesas_contratadas, null)
   assert.equal(coleta.normalizado!.linha.total_despesas_pagas, null)
 })

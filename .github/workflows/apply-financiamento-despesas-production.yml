@@ -56,3 +56,40 @@ jobs:
         env:
           PF_DATABASE_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: bash scripts/audit/apply-financiamento-despesas-production.sh
+
+  # Mesmo POST /api/revalidate dos jobs `revalidate` de ingest.yml e
+  # tse-2026-financas.yml. Sem ele, fichas aquecidas com a view ainda ausente
+  # ("ausente") seguiriam sem a seção de despesas até o TTL de 12 h. Falha o
+  # workflow se a resposta não confirmar a tag da ficha.
+  revalidate:
+    name: Revalidar cache público da ficha
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [apply]
+    if: ${{ success() && github.ref == 'refs/heads/main' }}
+    env:
+      REVALIDATE_URL: https://puxaficha.com.br/api/revalidate
+      REVALIDATE_SECRET: ${{ secrets.PF_REVALIDATE_SECRET }}
+      TAGS_JSON: '["public-candidato-ficha"]'
+    steps:
+      - name: POST /api/revalidate
+        run: |
+          set -euo pipefail
+          if [ -z "${REVALIDATE_SECRET:-}" ]; then
+            echo "PF_REVALIDATE_SECRET ausente nos GitHub Actions secrets." >&2
+            exit 1
+          fi
+          jq -cn --argjson tags "$TAGS_JSON" '{tags: $tags}' > /tmp/payload.json
+          status="$(curl -sS -o /tmp/resp.json -w "%{http_code}" \
+            -X POST "$REVALIDATE_URL" \
+            -H "content-type: application/json" \
+            -H "x-pf-revalidate-secret: ${REVALIDATE_SECRET}" \
+            --data-binary @/tmp/payload.json)"
+          echo "HTTP ${status}"
+          jq -c . /tmp/resp.json || cat /tmp/resp.json
+          echo "HTTP ${status}" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$status" != "200" ]; then exit 1; fi
+          if ! jq -e '.ok == true and (.revalidated | index("public-candidato-ficha"))' /tmp/resp.json > /dev/null; then
+            echo "FAIL: revalidação de public-candidato-ficha não confirmada" >&2
+            exit 1
+          fi

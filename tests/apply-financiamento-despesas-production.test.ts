@@ -68,6 +68,35 @@ test("workflow de apply é manual, só main, e prova em PostgreSQL 17 antes de a
   }
 })
 
+test("depois do apply, o workflow revalida a ficha pública e falha sem confirmação", () => {
+  const inicio = applyWorkflow.indexOf("  revalidate:")
+  assert.ok(inicio > applyWorkflow.indexOf("apply-financiamento-despesas-production.sh"), "job revalidate depois do apply")
+  const job = applyWorkflow.slice(inicio)
+  for (const value of [
+    "needs: [apply]",
+    "https://puxaficha.com.br/api/revalidate",
+    "secrets.PF_REVALIDATE_SECRET",
+    "x-pf-revalidate-secret",
+    '["public-candidato-ficha"]',
+    'if [ "$status" != "200" ]; then exit 1; fi',
+    '.ok == true and (.revalidated | index("public-candidato-ficha"))',
+  ]) {
+    assert.ok(job.includes(value), value)
+  }
+  // O segredo de revalidação não chega ao job que tem a URL do banco.
+  assert.doesNotMatch(applyWorkflow.slice(0, inicio), /PF_REVALIDATE_SECRET/)
+  assert.doesNotMatch(job, /SUPABASE_DB_URL/)
+  assert.match(runner, /job `revalidate` do workflow revalida a tag/)
+})
+
+test("prova PG17 reprova documento com separadores e aceita valor decimal grande", () => {
+  for (const nome of ["MEI 123 456 789 09", "MEI 123.456.789/09", "EMPRESA 12 345 678 0001 90"]) {
+    assert.ok(proof.includes(`"nome":"${nome}"`), nome)
+  }
+  assert.match(proof, /"valor":123456789\.12/)
+  assert.match(proof, /CHECK recusou valor decimal grande legitimo/)
+})
+
 test("prova PG17 roda forward duas vezes, readback, anon real, CHECKs e rollback", () => {
   assert.equal((proof.match(/file_db prova "\$FORWARD"/g) ?? []).length, 2, "idempotência: forward aplicado duas vezes")
   assert.match(proof, /file_db prova "\$READBACK"/)

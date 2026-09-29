@@ -32,7 +32,8 @@ export const TARGETS: readonly ExposureTarget[] = [
   { table: "mudancas_partido", columns: "contexto" },
   {
     table: "financiamento_despesas_publico",
-    columns: "concentracao_despesas,maiores_fornecedores,doacoes_a_terceiros",
+    // Todo texto livre publicado pela view: os três JSONB, o cargo e a fonte.
+    columns: "concentracao_despesas,maiores_fornecedores,doacoes_a_terceiros,cargo_candidatura,fonte",
     bareDigits: true,
     pendingOn404: true,
   },

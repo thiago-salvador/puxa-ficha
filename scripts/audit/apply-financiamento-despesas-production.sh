@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Aplica somente a migration 20260929100000 (despesas de campanha), com predecessor, hash, lock,
 # ledger e readback fechados para o projeto de producao do Puxa Ficha.
+# Depois deste script, o job `revalidate` do workflow revalida a tag
+# public-candidato-ficha e falha se a resposta nao confirmar a tag.
 set -euo pipefail
 case $- in *x*) set +x ;; esac
 

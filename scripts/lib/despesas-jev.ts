@@ -40,7 +40,8 @@ export interface EstadoJevDespesasCandidatura {
   }>
   categorias_nao_informadas: Array<{
     ref: string
-    descricao: string
+    /** Null quando o fornecedor é pessoa física: texto livre pode identificá-la. */
+    descricao: string | null
     fornecedor_nome: string | null
     flags: { tipo_original: "vazio" | "sentinela"; documento_fornecedor: "PJ" | "PF" | "ausente" }
     valor: number
@@ -68,9 +69,13 @@ function limpar<T>(valor: T): T {
   return valor
 }
 
-/** Falha se qualquer texto do state tiver 11 ou 14 dígitos (CPF, CNPJ, SQ longo). */
+/**
+ * Falha se qualquer texto do state tiver 11 dígitos ou mais, inclusive separados
+ * por espaço, ponto, barra ou hífen (CPF, CNPJ, SQ longo). Recebe o objeto, não o
+ * JSON: cada texto é conferido sozinho e o ponto decimal de um valor não conta.
+ */
 export function assertEstadoSemDocumento(estado: unknown): void {
-  if (textoTemDocumento(JSON.stringify(estado))) {
+  if (textoTemDocumento(estado)) {
     throw new Error("state do Jev contém sequência de 11 a 14 dígitos; nada gravado")
   }
 }
@@ -99,7 +104,7 @@ export function montarEstadoJevCandidatura(
     })),
     categorias_nao_informadas: categorias_nao_informadas.map((p) => ({
       ref: refOpaca(candidatura, "categoria", p.indice),
-      descricao: p.descricao,
+      descricao: p.documento === "PF" ? null : p.descricao,
       fornecedor_nome: p.documento === "PJ" ? p.fornecedor_nome : null,
       flags: { tipo_original: p.tipo_original, documento_fornecedor: p.documento },
       valor: p.valor,

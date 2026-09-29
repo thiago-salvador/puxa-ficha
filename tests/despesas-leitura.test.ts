@@ -3,9 +3,11 @@ import { readFileSync } from "node:fs"
 import { afterEach, describe, it } from "node:test"
 import { FINANCIAMENTO_DESPESAS_COLUNAS_PUBLICAS } from "../src/lib/financiamento-despesas-contrato"
 import {
+  DESPESAS_RELEITURA_REVALIDATE_SECONDS,
   DESPESAS_VIEW_PUBLICA,
-  exigirDespesasLidasParaCache,
+  idsParaReleituraDeDespesas,
   lerDespesasPublicas,
+  mesclarDespesasRelidas,
   sanitizarDoacoes,
   sanitizarFornecedores,
   sanitizarLinhaDespesas,
@@ -78,7 +80,9 @@ describe("leitura das despesas de campanha", () => {
     ["resposta sem lista de linhas", async () => ({ data: { inesperado: true }, error: null })],
   ]
 
-  const VIEW_AUSENTE = new Set(["42P01 (relação inexistente)", "PGRST205 (tabela fora do cache do schema)", "42501 (permissão negada)", "42703 (coluna ausente)"])
+  // Só relação inexistente é "ausente"; permissão e coluna faltando com a view
+  // já aplicada são falha de configuração e ficam "indisponivel".
+  const VIEW_AUSENTE = new Set(["42P01 (relação inexistente)", "PGRST205 (tabela fora do cache do schema)"])
   for (const [nome, resposta] of falhas) {
     const esperado = VIEW_AUSENTE.has(nome) ? "ausente" : "indisponivel"
     it(`qualquer erro omite a seção, sem linhas (${esperado}): ${nome}`, async () => {
@@ -94,14 +98,14 @@ describe("leitura das despesas de campanha", () => {
   it("lê a view pública com exatamente as colunas públicas e sanitiza as linhas", async () => {
     const chamadas: Chamadas = { relacao: [], colunas: [], ids: [] }
     const leitura = await lerDespesasPublicas(
-      clienteFalso(async () => ({ data: [LINHA_BASE, { id: "linha-sem-campos" }], error: null }), chamadas),
+      clienteFalso(async () => ({ data: [LINHA_BASE], error: null }), chamadas),
       ["cand-1", "cand-2"],
     )
     assert.deepEqual(chamadas.relacao, [DESPESAS_VIEW_PUBLICA])
     assert.equal(chamadas.colunas[0], FINANCIAMENTO_DESPESAS_COLUNAS_PUBLICAS.join(","))
     assert.deepEqual(chamadas.ids, [["cand-1", "cand-2"]])
     assert.equal(leitura.status, "ok")
-    assert.equal(leitura.rows?.length, 1, "linha malformada é descartada")
+    assert.equal(leitura.rows?.length, 1)
     const linha = leitura.rows?.[0]
     assert.equal(linha?.total_despesas_contratadas, 1500.5, "numeric em string vira número")
     assert.equal(linha?.total_despesas_pagas, null, "null da fonte continua null, nunca zero")
@@ -109,6 +113,44 @@ describe("leitura das despesas de campanha", () => {
     assert.equal(linha?.uf, "SP")
     assert.equal(linha?.prestacao_parcial, true)
   })
+
+  it("linha malformada torna a leitura inteira indisponível, com aviso", async () => {
+    const avisos: string[] = []
+    console.warn = (...args: unknown[]) => { avisos.push(args.map(String).join(" ")) }
+    const leitura = await lerDespesasPublicas(
+      clienteFalso(async () => ({ data: [LINHA_BASE, { id: "linha-sem-campos" }], error: null })),
+      ["cand-1"],
+    )
+    assert.deepEqual(leitura, { status: "indisponivel", rows: null })
+    assert.equal(avisos.length, 1)
+    assert.match(avisos[0], /indisponível, seção de despesas omitida: linha de despesas/)
+  })
+
+  it("total 100 com item de concentração inválido: indisponível, nunca 'ok' com detalhamento incompleto", async () => {
+    const avisos: string[] = []
+    console.warn = (...args: unknown[]) => { avisos.push(args.map(String).join(" ")) }
+    const linha = {
+      ...LINHA_BASE,
+      total_despesas_contratadas: 100,
+      concentracao_despesas: [{ tipo: "Publicidade", quantidade: 1, valor: "cem" }],
+    }
+    const leitura = await lerDespesasPublicas(clienteFalso(async () => ({ data: [linha], error: null })), ["cand-1"])
+    assert.deepEqual(leitura, { status: "indisponivel", rows: null })
+    assert.equal(avisos.length, 1, "um aviso de log")
+    assert.match(avisos[0], /financiamento_despesas_publico\(ficha\) indisponível/)
+  })
+
+  for (const [coluna, invalido] of [
+    ["concentracao_despesas", [{ tipo: "Publicidade", quantidade: 1, valor: -5 }]],
+    ["maiores_fornecedores", [{ tipo: "PJ", nome: "12345678901234", quantidade: 1, valor: 10 }]],
+    ["maiores_fornecedores", [{ tipo: "OUTRO", quantidade: 1, valor: 10 }]],
+    ["doacoes_a_terceiros", [{ destinatario_tipo: "invalido", valor: 1 }]],
+    ["doacoes_a_terceiros", null],
+  ] as const) {
+    it(`item inválido em ${coluna} (${JSON.stringify(invalido)}) invalida a linha`, () => {
+      assert.equal(sanitizarLinhaDespesas({ ...LINHA_BASE, [coluna]: invalido }), null)
+    })
+  }
 
   it("lista vazia é leitura ok (não confundir com indisponível)", async () => {
     const leitura = await lerDespesasPublicas(clienteFalso(async () => ({ data: [], error: null })), ["cand-1"])
@@ -179,37 +221,56 @@ describe("leitura das despesas de campanha", () => {
     assert.ok(doacoes.every((item) => item.candidato_slug === null))
   })
 
-  it("categoria vazia vira 'Não informada' e valor não numérico descarta o item", async () => {
+  it("categoria vazia vira 'Não informada'; valor não numérico invalida a linha inteira", async () => {
     const linha = sanitizarLinhaDespesas({
+      ...LINHA_BASE,
+      concentracao_despesas: [{ tipo: "", quantidade: 1, valor: 5 }],
+    })
+    assert.deepEqual(linha?.concentracao_despesas, [{ tipo: "Não informada", quantidade: 1, valor: 5 }])
+    const invalida = sanitizarLinhaDespesas({
       ...LINHA_BASE,
       concentracao_despesas: [
         { tipo: "", quantidade: 1, valor: 5 },
         { tipo: "Outros", quantidade: 1, valor: "abc" },
       ],
     })
-    assert.deepEqual(linha?.concentracao_despesas, [{ tipo: "Não informada", quantidade: 1, valor: 5 }])
+    assert.equal(invalida, null)
+  })
+
+  it("documentos com separadores saem dos textos: espaço, ponto, barra e hífen", () => {
+    const fornecedores = sanitizarFornecedores([
+      { tipo: "PJ", nome: "JOAO 123 456 789 01", quantidade: 1, valor: 10 },
+      { tipo: "PJ", nome: "MARIA 123.456.789/01 ME", quantidade: 1, valor: 20 },
+      { tipo: "PJ", nome: "LOJA 12 345 678 0001 90 LTDA", quantidade: 1, valor: 30 },
+    ])
+    assert.deepEqual(fornecedores.map((item) => (item.tipo === "PJ" ? item.nome : null)), ["JOAO", "MARIA ME", "LOJA LTDA"])
   })
 })
 
 describe("cache da ficha com despesas indisponíveis", () => {
-  it("lança para ficha indisponível e deixa passar ok, ausente e nula", () => {
-    assert.throws(() => exigirDespesasLidasParaCache({ financiamento_despesas_status: "indisponivel" }), /não entra no cache/)
-    const ausente = { financiamento_despesas_status: "ausente" as const }
-    assert.equal(exigirDespesasLidasParaCache(ausente), ausente, "view ausente é estado estável e pode ir para o cache")
-    const ok = { financiamento_despesas_status: "ok" as const }
-    assert.equal(exigirDespesasLidasParaCache(ok), ok)
-    const semStatus = {}
-    assert.equal(exigirDespesasLidasParaCache(semStatus), semStatus)
-    assert.equal(exigirDespesasLidasParaCache(null), null)
+  it("só ficha com status indisponível e ids conhecidos pede releitura", () => {
+    assert.deepEqual(idsParaReleituraDeDespesas({ financiamento_despesas_status: "indisponivel", financiamento_despesas_candidato_ids: ["a", "b"] }), ["a", "b"])
+    assert.equal(idsParaReleituraDeDespesas({ financiamento_despesas_status: "indisponivel", financiamento_despesas_candidato_ids: [] }), null)
+    assert.equal(idsParaReleituraDeDespesas({ financiamento_despesas_status: "ausente", financiamento_despesas_candidato_ids: ["a"] }), null)
+    assert.equal(idsParaReleituraDeDespesas({ financiamento_despesas_status: "ok", financiamento_despesas_candidato_ids: ["a"] }), null)
+    assert.equal(idsParaReleituraDeDespesas(null), null)
   })
 
-  it("o loader em cache de api.ts aplica a trava e a chave do payload subiu de versão", () => {
+  it("mescla a releitura sem tocar o resto da ficha", () => {
+    const ficha = { nome: "x", financiamento_despesas: null, financiamento_despesas_status: "indisponivel" as const, financiamento_despesas_candidato_ids: ["a"] }
+    const mesclada = mesclarDespesasRelidas(ficha, { status: "ok", rows: [] })
+    assert.deepEqual(mesclada, { nome: "x", financiamento_despesas: [], financiamento_despesas_status: "ok", financiamento_despesas_candidato_ids: ["a"] })
+    assert.equal(ficha.financiamento_despesas_status, "indisponivel", "a ficha em cache não é mutada")
+  })
+
+  it("api.ts relê só as despesas com cache curto e chave própria; a chave da ficha subiu de versão", () => {
     const fonte = readFileSync("src/lib/api.ts", "utf8")
     const inicio = fonte.indexOf("const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(")
     assert.ok(inicio > 0, "loader em cache não encontrado")
-    const trecho = fonte.slice(inicio, inicio + 12_000)
-    assert.match(trecho, /exigirDespesasLidasParaCache\(resource\.data\)/)
-    assert.match(trecho, /"financiamento-despesas-v1-20260929"/)
+    assert.match(fonte.slice(inicio, inicio + 12_000), /"financiamento-despesas-v1-20260929"/)
+    assert.match(fonte, /"public-candidato-ficha-despesas-releitura"/)
+    assert.match(fonte, /revalidate: DESPESAS_RELEITURA_REVALIDATE_SECONDS/)
+    assert.equal(DESPESAS_RELEITURA_REVALIDATE_SECONDS, 60)
   })
 
   it("a leitura de despesas fica fora da tupla posicional do Promise.all", () => {

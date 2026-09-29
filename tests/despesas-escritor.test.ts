@@ -5,8 +5,18 @@ import { join } from "node:path"
 import { test } from "node:test"
 
 import { normalizarDespesas, type ResultadoNormalizacao } from "../scripts/lib/despesas-normalizar"
-import { decidirAplicacao, planejarDespesas, shaDoPlanoDespesas, type CandidaturaColetada } from "../scripts/lib/despesas-plano"
-import { main, salvarPrivado, SCHEMA_COLETA } from "../scripts/tse-despesas"
+import { decidirAplicacao, planejarDespesas, shaDoPlanoDespesas, type CandidaturaColetada, type CandidaturaVinculada } from "../scripts/lib/despesas-plano"
+import {
+  CODIGO_REVALIDACAO_NAO_CONFIRMADA,
+  lerArgsDespesas,
+  lerArquivoColeta,
+  main,
+  planejarEAplicar,
+  revalidarFichasPublicas,
+  salvarPrivado,
+  SCHEMA_COLETA,
+  TAG_FICHA_PUBLICA,
+} from "../scripts/tse-despesas"
 import { documentoPj } from "./fixtures/despesas/carregar"
 
 function resultado(sq: string, ano: number, valor: number, totalOficial: number | null = valor): ResultadoNormalizacao {
@@ -22,12 +32,13 @@ function coleta(sq: string, ano: number, valor: number, totalOficial?: number | 
   return { ano_eleicao: ano, sq_candidato: sq, resultado: r.divergencias.length ? "rejeitado" : "coletado", normalizado: r }
 }
 
-const vinculadas = [
-  { candidato_id: "id-pessoa-b", slug: "pessoa-b", ano_eleicao: 2022, sq_candidato: "7000000102" },
-  { candidato_id: "id-pessoa-b", slug: "pessoa-b", ano_eleicao: 2022, sq_candidato: "7000000103" },
-  { candidato_id: "id-pessoa-a", slug: "pessoa-a", ano_eleicao: 2022, sq_candidato: "7000000101" },
-  { candidato_id: "id-pessoa-x", slug: "pessoa-x", ano_eleicao: 2022, sq_candidato: "7000000300" },
-  { candidato_id: "id-pessoa-y", slug: "pessoa-y", ano_eleicao: 2022, sq_candidato: "7000000300" },
+const contextoAp = { uf: "AP", cargo_candidatura: "SENADOR" }
+const vinculadas: CandidaturaVinculada[] = [
+  { candidato_id: "id-pessoa-b", slug: "pessoa-b", ano_eleicao: 2022, sq_candidato: "7000000102", ...contextoAp },
+  { candidato_id: "id-pessoa-b", slug: "pessoa-b", ano_eleicao: 2022, sq_candidato: "7000000103", ...contextoAp },
+  { candidato_id: "id-pessoa-a", slug: "pessoa-a", ano_eleicao: 2022, sq_candidato: "7000000101", ...contextoAp },
+  { candidato_id: "id-pessoa-x", slug: "pessoa-x", ano_eleicao: 2022, sq_candidato: "7000000300", ...contextoAp },
+  { candidato_id: "id-pessoa-y", slug: "pessoa-y", ano_eleicao: 2022, sq_candidato: "7000000300", ...contextoAp },
 ]
 
 test("colisão de candidatura: mesma pessoa, dois SQs no mesmo ano, duas linhas com chaves distintas", () => {
@@ -107,6 +118,152 @@ test("plano e recibo ficam fora do repositório, modo 0600", () => {
     assert.equal(statSync(caminho).mode & 0o777, 0o600)
     assert.equal(statSync(join(dir, "privado")).mode & 0o777, 0o700)
   } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+test("contexto eleitoral: coleta do AP ligada a candidatura do RJ vai para revisão, nunca para o banco", () => {
+  const ligadaNoRj: CandidaturaVinculada[] = [
+    { candidato_id: "id-pessoa-a", slug: "pessoa-a", ano_eleicao: 2022, sq_candidato: "7000000101", uf: "RJ", cargo_candidatura: "Senador" },
+  ]
+  const plano = planejarDespesas({ vinculadas: ligadaNoRj, coletas: [coleta("7000000101", 2022, 5)] })
+  assert.equal(plano.acoes.length, 0)
+  assert.deepEqual(plano.revisao.map((r) => [r.sq_candidato, r.motivo, r.detalhe]), [
+    ["7000000101", "contexto_eleitoral_divergente", "coleta uf diferente ou ausente na candidatura ligada"],
+  ])
+})
+
+test("contexto eleitoral: cargo diferente ou UF/cargo ausente no vínculo também vão para revisão", () => {
+  for (const [uf, cargo, campos] of [
+    ["AP", "Deputado Federal", "cargo"],
+    [null, "Senador", "uf"],
+    ["AP", null, "cargo"],
+  ] as const) {
+    const plano = planejarDespesas({
+      vinculadas: [{ candidato_id: "id-pessoa-a", slug: "pessoa-a", ano_eleicao: 2022, sq_candidato: "7000000101", uf, cargo_candidatura: cargo }],
+      coletas: [coleta("7000000101", 2022, 5)],
+    })
+    assert.equal(plano.acoes.length, 0, `${uf}/${cargo}`)
+    assert.equal(plano.revisao[0]?.motivo, "contexto_eleitoral_divergente")
+    assert.equal(plano.revisao[0]?.detalhe, `coleta ${campos} diferente ou ausente na candidatura ligada`)
+  }
+  // Mesma UF e cargo com caixa e acento diferentes: grava.
+  const plano = planejarDespesas({
+    vinculadas: [{ candidato_id: "id-pessoa-a", slug: "pessoa-a", ano_eleicao: 2022, sq_candidato: "7000000101", uf: "ap", cargo_candidatura: "Senador" }],
+    coletas: [coleta("7000000101", 2022, 5)],
+  })
+  assert.equal(plano.acoes.length, 1)
+})
+
+test("arquivo de coleta com documento no cargo ou na fonte é recusado", () => {
+  const dir = mkdtempSync(join(tmpdir(), "despesas-coleta-doc-"))
+  try {
+    for (const campo of ["cargo_candidatura", "fonte"] as const) {
+      const r = resultado("7000000101", 2022, 5)
+      const linha = { ...r.linha, [campo]: "SENADOR 123 456 789 01" }
+      const arquivo = join(dir, `${campo}.json`)
+      writeFileSync(arquivo, JSON.stringify({
+        schema: SCHEMA_COLETA,
+        gerado_em: "2026-09-29T12:00:00.000Z",
+        origem: "historico",
+        candidaturas: [{ ano_eleicao: 2022, sq_candidato: "7000000101", resultado: "coletado", normalizado: { ...r, linha } }],
+      }))
+      assert.throws(() => lerArquivoColeta(arquivo), /documento em campo público/, campo)
+    }
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
+})
+
+function respostaRevalidacao(status: number, corpo: unknown): Response {
+  return new Response(JSON.stringify(corpo), { status, headers: { "content-type": "application/json" } })
+}
+
+test("revalidação: mesmo POST dos jobs de ingest, confirmada só com 200, ok e a tag da ficha", async () => {
+  const chamadas: Array<{ url: string; init: RequestInit | undefined }> = []
+  const fetcher = (async (url: RequestInfo | URL, init?: RequestInit) => {
+    chamadas.push({ url: String(url), init })
+    return respostaRevalidacao(200, { ok: true, status: 200, revalidated: [TAG_FICHA_PUBLICA], rejected: [] })
+  }) as typeof fetch
+  assert.deepEqual(await revalidarFichasPublicas({ segredo: "segredo-teste", fetcher }), { confirmada: true })
+  assert.equal(chamadas[0]?.url, "https://puxaficha.com.br/api/revalidate")
+  assert.equal(chamadas[0]?.init?.method, "POST")
+  assert.equal((chamadas[0]?.init?.headers as Record<string, string>)["x-pf-revalidate-secret"], "segredo-teste")
+  assert.deepEqual(JSON.parse(String(chamadas[0]?.init?.body)), { tags: [TAG_FICHA_PUBLICA] })
+
+  for (const [status, corpo] of [
+    [503, { ok: false, reason: "env_missing", revalidated: [] }],
+    [200, { ok: false, revalidated: [] }],
+    [200, { ok: true, revalidated: ["public-candidatos"] }],
+    [200, "sem json"],
+  ] as const) {
+    const falho = (async () => respostaRevalidacao(status, corpo)) as unknown as typeof fetch
+    const resultado = await revalidarFichasPublicas({ segredo: "s", fetcher: falho })
+    assert.equal(resultado.confirmada, false, JSON.stringify(corpo))
+  }
+  const rede = (async () => { throw new Error("offline") }) as unknown as typeof fetch
+  assert.equal((await revalidarFichasPublicas({ segredo: "s", fetcher: rede })).confirmada, false)
+  assert.deepEqual(await revalidarFichasPublicas({ segredo: " ", fetcher }), { confirmada: false, motivo: "PF_REVALIDATE_SECRET ausente" })
+  assert.equal(chamadas.length, 1, "sem segredo não há POST")
+})
+
+async function aplicarComMocks(revalidacao: { confirmada: true } | { confirmada: false; motivo: string }) {
+  const dir = mkdtempSync(join(tmpdir(), "despesas-apply-"))
+  const eventos: string[] = []
+  const logOriginal = console.log
+  const erroOriginal = console.error
+  try {
+    const coletas = [coleta("7000000101", 2022, 5)]
+    const arquivo = join(dir, "coleta.json")
+    writeFileSync(arquivo, JSON.stringify({ schema: SCHEMA_COLETA, gerado_em: "2026-09-29T12:00:00.000Z", origem: "historico", candidaturas: coletas }))
+    const sha = shaDoPlanoDespesas(planejarDespesas({ vinculadas, coletas }))
+    console.log = () => {}
+    console.error = (...args: unknown[]) => { eventos.push(`erro:${args.map(String).join(" ")}`) }
+    const codigo = await planejarEAplicar(
+      lerArgsDespesas([`--coleta=${arquivo}`, "--apply", `--expected-plan-sha=${sha}`, `--out=${join(dir, "saida")}`]),
+      {
+        carregar: async () => vinculadas,
+        gravar: async (plano) => { eventos.push(`gravar:${plano.acoes.length}`); return { gravadas: plano.acoes.length, falhas: [] } },
+        revalidar: async () => { eventos.push("revalidar"); return revalidacao },
+      },
+    )
+    return { codigo, eventos }
+  } finally {
+    console.log = logOriginal
+    console.error = erroOriginal
+    rmSync(dir, { recursive: true, force: true })
+  }
+}
+
+test("escritor revalida a ficha pública depois de gravar", async () => {
+  const { codigo, eventos } = await aplicarComMocks({ confirmada: true })
+  assert.equal(codigo, 0)
+  assert.deepEqual(eventos, ["gravar:1", "revalidar"])
+})
+
+test("escritor falha alto quando a revalidação não é confirmada", async () => {
+  const { codigo, eventos } = await aplicarComMocks({ confirmada: false, motivo: "HTTP 503" })
+  assert.equal(codigo, CODIGO_REVALIDACAO_NAO_CONFIRMADA)
+  assert.deepEqual(eventos.slice(0, 2), ["gravar:1", "revalidar"])
+  assert.match(eventos[2] ?? "", /erro:FALHA: .*NÃO foi revalidado.*HTTP 503/)
+})
+
+test("CLI: --apply sem PF_REVALIDATE_SECRET sai com código 2 antes de ler o banco", async () => {
+  const dir = mkdtempSync(join(tmpdir(), "despesas-cli-segredo-"))
+  const erroOriginal = console.error
+  const segredoOriginal = process.env.PF_REVALIDATE_SECRET
+  const erros: string[] = []
+  try {
+    delete process.env.PF_REVALIDATE_SECRET
+    const arquivo = join(dir, "coleta.json")
+    writeFileSync(arquivo, JSON.stringify({ schema: SCHEMA_COLETA, gerado_em: "2026-09-29T12:00:00.000Z", origem: "historico", candidaturas: [] }))
+    console.error = (...args: unknown[]) => { erros.push(args.map(String).join(" ")) }
+    assert.equal(await main([`--coleta=${arquivo}`, "--apply", `--expected-plan-sha=${"a".repeat(64)}`, `--out=${dir}`]), 2)
+    assert.match(erros.join("\n"), /PF_REVALIDATE_SECRET/)
+  } finally {
+    console.error = erroOriginal
+    if (segredoOriginal === undefined) delete process.env.PF_REVALIDATE_SECRET
+    else process.env.PF_REVALIDATE_SECRET = segredoOriginal
     rmSync(dir, { recursive: true, force: true })
   }
 })

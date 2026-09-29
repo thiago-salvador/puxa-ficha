@@ -106,11 +106,33 @@ export const FINANCIAMENTO_DESPESAS_COLUNAS_PRIVADAS = [
 export type DespesasLeituraStatus = "ok" | "ausente" | "indisponivel"
 
 /**
- * Sequências de 11 ou 14 dígitos, pontuadas ou não (CPF, CNPJ, razão social de MEI).
- * O padrão de CNPJ vem antes do de CPF para uma corrida de 14 dígitos não deixar resto.
+ * Separadores que a fonte usa dentro de documento: espaço, ponto, barra e hífen.
+ * "123 456 789 01", "123.456.789/01" e "12 345 678 0001 90" são o mesmo documento
+ * que "12345678901" depois de colapsados.
  */
-const DOCUMENTO_EM_TEXTO = /\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}|\d{3}\.?\d{3}\.?\d{3}-?\d{2}|\d{11,}/g
+const SEPARADOR_ENTRE_DIGITOS = /(\d)[\s./-]+(?=\d)/g
+
+/** Junta dígitos separados só por espaço, ponto, barra ou hífen. */
+export function colapsarSeparadoresEntreDigitos(texto: string): string {
+  return texto.replace(SEPARADOR_ENTRE_DIGITOS, "$1")
+}
+
+/** Texto com 11 ou mais dígitos seguidos depois do colapso (CPF, CNPJ, SQ longo). */
+export function textoTemSequenciaDeDocumento(texto: string): boolean {
+  return /\d{11,}/.test(colapsarSeparadoresEntreDigitos(texto))
+}
+
+/**
+ * Corrida de dígitos com os separadores acima entre eles. Sai inteira quando
+ * soma 11 dígitos ou mais: é o mesmo critério de `textoTemSequenciaDeDocumento`,
+ * então nada que o teste reprovaria sobra depois da remoção.
+ */
+const CORRIDA_DE_DIGITOS = /\d(?:[\s./-]*\d)*/g
 
 export function removerDocumentosDoTexto(texto: string): string {
-  return texto.replace(DOCUMENTO_EM_TEXTO, "").replace(/\s{2,}/g, " ").replace(/[\s\-–,.]+$/, "").trim()
+  return texto
+    .replace(CORRIDA_DE_DIGITOS, (corrida) => (corrida.replace(/\D/g, "").length >= 11 ? "" : corrida))
+    .replace(/\s{2,}/g, " ")
+    .replace(/[\s\-–,.]+$/, "")
+    .trim()
 }

@@ -734,6 +734,11 @@ export interface FichaCandidato extends Candidato {
    */
   financiamento_despesas?: import("@/lib/financiamento-despesas-contrato").FinanciamentoDespesas[] | null;
   financiamento_despesas_status?: import("@/lib/financiamento-despesas-contrato").DespesasLeituraStatus;
+  /**
+   * Só servidor (o DTO público não copia): ids das candidaturas da pessoa, para
+   * reler apenas as despesas quando a ficha em cache guardou "indisponivel".
+   */
+  financiamento_despesas_candidato_ids?: string[];
   votos: VotoCandidato[];
   processos: Processo[];
   /** Linhas judiciais omitidas do público por falta de URL com CNJ oficial exato. */

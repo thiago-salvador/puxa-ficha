@@ -28,7 +28,12 @@ import { sortVotosForPublicDisplay } from "@/lib/votos-candidato-aggregate"
 import { hasIncompletePartyTimeline } from "@/lib/candidate-integrity"
 import { buildPatrimonioEleicoes, publicTransparencia } from "@/lib/public-profile-dto"
 import { buildFinanciamentoEleicoes, type FinanciamentoVerificacaoPublica } from "@/lib/financiamento-eleicoes"
-import { exigirDespesasLidasParaCache, lerDespesasPublicas } from "@/lib/financiamento-despesas-leitura"
+import {
+  DESPESAS_RELEITURA_REVALIDATE_SECONDS,
+  idsParaReleituraDeDespesas,
+  lerDespesasPublicas,
+  mesclarDespesasRelidas,
+} from "@/lib/financiamento-despesas-leitura"
 import { ensureCurrentCandidacyInHistory, normalizeHistoricoPoliticoForDisplay } from "@/lib/historico-dedupe"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
 import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
@@ -1837,9 +1842,10 @@ async function getCandidatoBySlugFromRelationResource(
   }
 
   // Despesas de campanha: fora da tupla posicional acima porque a leitura é
-  // opcional e nunca lança. Falha (view ainda não aplicada, permissão, timeout)
-  // vira status "indisponivel" e a seção some da aba Dinheiro; ver
-  // `exigirDespesasLidasParaCache` no loader em cache.
+  // opcional e nunca lança. View ainda não aplicada vira "ausente"; qualquer
+  // outra falha vira "indisponivel" e a seção some da aba Dinheiro. Com
+  // "indisponivel", `getCandidatoBySlugResource` relê só as despesas; ver
+  // `comDespesasRelidas`.
   const despesas = await lerDespesasPublicas(supabase, personLevelIds, slug)
 
   const historicoConfiavel = normalizeHistoricoPoliticoForDisplay(
@@ -1951,6 +1957,7 @@ async function getCandidatoBySlugFromRelationResource(
     doadores_recorrentes: doadoresRecorrentes,
     financiamento_despesas: despesas.rows,
     financiamento_despesas_status: despesas.status,
+    financiamento_despesas_candidato_ids: personLevelIds,
     votos: sortVotosForPublicDisplay(votos.data ?? []),
     processos: processosPublicos,
     processos_omitidos_sem_fonte_oficial: processosBrutos.length - processosPublicos.length,
@@ -2089,9 +2096,40 @@ export async function getCandidatoBySlugResource(
     const resource = await getCachedCandidatoBySlugResource(slug)
     return !isSenadoEnabled() && resource.data?.cargo_disputado === "Senador"
       ? liveResource(null)
-      : resource
+      : await comDespesasRelidas(resource)
   } catch {
     return getCandidatoBySlugResourceUncached(slug)
+  }
+}
+
+/**
+ * Releitura só das despesas, com cache curto e chave própria. Usada quando a
+ * ficha em cache guardou `financiamento_despesas_status = "indisponivel"`: a
+ * ficha inteira continua no cache pelo TTL normal (sem refazer as ~30 consultas
+ * a cada visita) e a seção de despesas tenta de novo no máximo uma vez por
+ * `DESPESAS_RELEITURA_REVALIDATE_SECONDS`.
+ */
+const getCachedDespesasRelidas = unstableCacheWithSingleFlight(
+  async (candidatoIds: string[]) =>
+    lerDespesasPublicas(createServerSupabaseClient({ cacheMode: "no-store" }), candidatoIds, "releitura"),
+  ["public-candidato-ficha-despesas-releitura", "financiamento-despesas-v1-20260929", CURRENT_DATA_WAVE],
+  {
+    revalidate: DESPESAS_RELEITURA_REVALIDATE_SECONDS,
+    tags: ["public-candidato-ficha"],
+  }
+)
+
+async function comDespesasRelidas(
+  resource: DataResource<FichaCandidato | null>
+): Promise<DataResource<FichaCandidato | null>> {
+  const ids = idsParaReleituraDeDespesas(resource.data)
+  if (!resource.data || !ids) return resource
+  try {
+    const leitura = await getCachedDespesasRelidas(ids)
+    return { ...resource, data: mesclarDespesasRelidas(resource.data, leitura) }
+  } catch {
+    // Falha da própria camada de cache: a ficha segue com a seção omitida.
+    return resource
   }
 }
 
@@ -2225,13 +2263,8 @@ export async function getCandidatoBySlugAuditResource(
 }
 
 const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
-  async (slug: string) => {
-    const resource = requireLiveResourceForCache(await getCandidatoBySlugResourceUncached(slug))
-    // Despesas indisponíveis: lança para a ficha não ser congelada sem a seção
-    // por APP_DATA_REVALIDATE_SECONDS; o wrapper refaz a leitura sem cache.
-    exigirDespesasLidasParaCache(resource.data)
-    return resource
-  },
+  async (slug: string) =>
+    requireLiveResourceForCache(await getCandidatoBySlugResourceUncached(slug)),
   // Bumped 2026-05-01: payload publico de legislacao_mandato_executivo passou a
   // dropar campos internos (candidato_id/historico_politico_id/created_at/
   // identificador_fonte/fonte_primaria_titulo/fonte_tramitacao_url) e a podar
@@ -2251,8 +2284,10 @@ const getCachedCandidatoBySlugResource = unstableCacheWithSingleFlight(
   // calendario recuada um dia, por ate uma hora depois do deploy.
   //
   // Bumped 2026-09-29 (`financiamento-despesas-v1-20260929`): o payload ganhou
-  // `financiamento_despesas` e `financiamento_despesas_status`. Sem o bump, fichas
-  // já aquecidas ficariam sem os campos (a seção some) até o TTL vencer.
+  // `financiamento_despesas`, `financiamento_despesas_status` e
+  // `financiamento_despesas_candidato_ids`. Sem o bump, fichas já aquecidas
+  // ficariam sem os campos (a seção some) até o TTL vencer. Ficha com despesas
+  // "indisponivel" entra no cache; `comDespesasRelidas` relê só as despesas.
   //
   // Bumped 2026-09-06 (`trajetoria-candidatura-atual-20260906`): a candidatura
   // vigente passou a ser projetada na trajetória quando a linha denormalizada

@@ -60,7 +60,7 @@ describe("audit-public-document-exposure: despesas de campanha", () => {
 
   it("varre as três colunas JSONB da view pública com dígitos soltos e 404 pendente", () => {
     assert.ok(despesas)
-    assert.deepEqual(despesas.columns.split(",").sort(), ["concentracao_despesas", "doacoes_a_terceiros", "maiores_fornecedores"])
+    assert.deepEqual(despesas.columns.split(",").sort(), ["cargo_candidatura", "concentracao_despesas", "doacoes_a_terceiros", "fonte", "maiores_fornecedores"])
     assert.equal(despesas.bareDigits, true)
     assert.equal(despesas.pendingOn404, true)
     // Os alvos antigos continuam estritos: 404 neles é falha, e número de processo

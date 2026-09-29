@@ -23,6 +23,36 @@ process.env.SUPABASE_SERVICE_ROLE_KEY = "test-service-role-key"
 
 let apiPromise: Promise<typeof import("../src/lib/api")> | null = null
 
+/**
+ * Cache falso que guarda de verdade (como o Data Cache do Next): mesma chave e
+ * mesmos argumentos devolvem o valor gravado; rejeição não é gravada. Registra
+ * as chaves e o `revalidate` de cada loader para as asserções de cache.
+ */
+interface RegistroCache {
+  keyParts: string[]
+  revalidate: number | false | undefined
+  tags: string[] | undefined
+}
+const registrosCache: RegistroCache[] = []
+const valoresCache = new Map<string, unknown>()
+const execucoesCache: string[] = []
+
+function unstableCacheQueGrava(
+  fn: (...args: unknown[]) => Promise<unknown>,
+  keyParts: string[] = [],
+  options: { revalidate?: number | false; tags?: string[] } = {},
+) {
+  registrosCache.push({ keyParts, revalidate: options.revalidate, tags: options.tags })
+  return async (...args: unknown[]) => {
+    const chave = JSON.stringify([keyParts, args])
+    if (valoresCache.has(chave)) return structuredClone(valoresCache.get(chave))
+    execucoesCache.push(keyParts[0] ?? "")
+    const valor = await fn(...args)
+    valoresCache.set(chave, structuredClone(valor))
+    return structuredClone(valor)
+  }
+}
+
 function loadApi() {
   if (apiPromise) return apiPromise
   const moduleLoader = Module as Loader
@@ -31,10 +61,7 @@ function loadApi() {
     if (request === "server-only") return {}
     if (request === "next/cache") {
       return {
-        unstable_cache:
-          (fn: (...args: unknown[]) => Promise<unknown>) =>
-          async (...args: unknown[]) =>
-            fn(...args),
+        unstable_cache: unstableCacheQueGrava,
         unstable_noStore: () => {},
         revalidateTag: () => {},
       }
@@ -55,6 +82,8 @@ const originalWarn = console.warn
 const originalError = console.error
 
 afterEach(() => {
+  valoresCache.clear()
+  execucoesCache.length = 0
   globalThis.fetch = originalFetch
   console.warn = originalWarn
   console.error = originalError
@@ -119,6 +148,8 @@ function postgrestError(code: string, message: string): Response {
 interface StubOptions {
   ausenciaError?: Response
   despesasError?: Response
+  /** Respostas das leituras de despesas em ordem; a última se repete. */
+  despesasRespostas?: Array<() => Response>
   selects: Record<string, string[]>
   projetosUrls?: string[]
 }
@@ -162,6 +193,10 @@ function stubPreMigrationDatabase(options: StubOptions): void {
         return postgrestError("42703", `column patrimonio_ausencia_oficial.${missing} does not exist`)
       }
       return json([AUSENCIA_PRE_MIGRATION])
+    }
+    if (table === "financiamento_despesas_publico" && options.despesasRespostas?.length) {
+      const leitura = (options.selects[table] ?? []).length - 1
+      return options.despesasRespostas[Math.min(leitura, options.despesasRespostas.length - 1)]!()
     }
     if (table === "financiamento_despesas_publico" && options.despesasError) {
       return options.despesasError.clone()
@@ -275,7 +310,8 @@ describe("ficha antes das migrations de contexto eleitoral", () => {
 
   for (const [codigo, mensagem, status, leituras] of [
     ["42P01", 'relation "public.financiamento_despesas_publico" does not exist', "ausente", 1],
-    ["42501", "permission denied for view financiamento_despesas_publico", "ausente", 1],
+    ["42501", "permission denied for view financiamento_despesas_publico", "indisponivel", 2],
+    ["42703", "column financiamento_despesas_publico.fonte does not exist", "indisponivel", 2],
     ["57014", "canceling statement due to statement timeout", "indisponivel", 2],
   ] as const) {
     it(`despesas com erro ${codigo}: a ficha carrega com status ${status} e a seção é omitida`, async () => {
@@ -298,13 +334,70 @@ describe("ficha antes das migrations de contexto eleitoral", () => {
         warnings.some((line) => line.includes("financiamento_despesas_publico") && line.includes("seção de despesas omitida")),
         `esperado aviso de despesas omitidas, veio: ${JSON.stringify(warnings)}`,
       )
-      // View ausente é estado estável: a ficha vai para o cache com uma leitura só.
-      // Falha transitória: o loader em cache lança e o wrapper refaz a leitura sem cache.
+      // View ausente: uma leitura só, e a ficha fica no cache. Indisponível: a
+      // ficha também fica no cache e só as despesas são relidas uma vez (cache
+      // curto próprio), sem reconstruir a ficha.
       assert.equal((selects.financiamento_despesas_publico ?? []).length, leituras)
     })
   }
 
-  it("despesas lidas com sucesso: status ok e o payload entra no caminho normal do cache", async () => {
+  it("despesas indisponíveis: ficha em cache uma vez, releitura só das despesas sob chave própria de 60 s", async () => {
+    const api = await loadApi()
+    const selects: Record<string, string[]> = {}
+    console.warn = () => {}
+    console.error = () => {}
+    stubPreMigrationDatabase({
+      selects,
+      despesasError: postgrestError("57014", "canceling statement due to statement timeout"),
+    })
+
+    const primeira = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
+    const leiturasFicha = (selects.candidatos_publico ?? []).length
+    const segunda = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
+    const terceira = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
+
+    for (const resource of [primeira, segunda, terceira]) {
+      assert.equal(resource.data?.financiamento_despesas_status, "indisponivel")
+      assert.equal(resource.data?.financiamento_despesas, null)
+    }
+    assert.ok(leiturasFicha > 0)
+    assert.equal((selects.candidatos_publico ?? []).length, leiturasFicha, "a ficha não é reconstruída a cada visita")
+    assert.equal((selects.financiamento_despesas_publico ?? []).length, 2, "uma leitura da ficha e uma releitura em cache")
+    assert.deepEqual(
+      execucoesCache.filter((chave) => chave.startsWith("public-candidato-ficha")),
+      ["public-candidato-ficha-resource", "public-candidato-ficha-despesas-releitura"],
+    )
+
+    const ficha = registrosCache.find((r) => r.keyParts[0] === "public-candidato-ficha-resource")
+    const releitura = registrosCache.find((r) => r.keyParts[0] === "public-candidato-ficha-despesas-releitura")
+    assert.ok(ficha && releitura, JSON.stringify(registrosCache.map((r) => r.keyParts[0])))
+    assert.equal(releitura.revalidate, 60)
+    assert.deepEqual(releitura.tags, ["public-candidato-ficha"])
+    assert.equal(ficha.revalidate, 43200)
+    assert.ok(ficha.keyParts.includes("financiamento-despesas-v1-20260929"))
+    assert.notDeepEqual(releitura.keyParts, ficha.keyParts)
+  })
+
+  it("despesas indisponíveis na ficha e lidas na releitura: a seção volta sem refazer a ficha", async () => {
+    const api = await loadApi()
+    const selects: Record<string, string[]> = {}
+    console.warn = () => {}
+    console.error = () => {}
+    stubPreMigrationDatabase({
+      selects,
+      despesasRespostas: [
+        () => postgrestError("57014", "canceling statement due to statement timeout"),
+        () => json([]),
+      ],
+    })
+
+    const resource = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
+    assert.equal(resource.data?.financiamento_despesas_status, "ok")
+    assert.deepEqual(resource.data?.financiamento_despesas, [])
+    assert.equal((selects.financiamento_despesas_publico ?? []).length, 2)
+  })
+
+  it("despesas lidas com sucesso: status ok, uma leitura, e a segunda visita sai do cache da ficha", async () => {
     const api = await loadApi()
     const selects: Record<string, string[]> = {}
     console.warn = () => {}
@@ -312,10 +405,13 @@ describe("ficha antes das migrations de contexto eleitoral", () => {
     stubPreMigrationDatabase({ selects })
 
     const resource = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
+    const deNovo = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
 
     assert.equal(resource.data?.financiamento_despesas_status, "ok")
     assert.deepEqual(resource.data?.financiamento_despesas, [])
+    assert.deepEqual(deNovo.data, resource.data)
     assert.equal((selects.financiamento_despesas_publico ?? []).length, 1, "uma leitura só, sem refazer")
+    assert.ok(!execucoesCache.includes("public-candidato-ficha-despesas-releitura"), "sem releitura quando a leitura foi ok")
   })
 
   it("preview omite projeto despublicado da lista e das três contagens", async () => {

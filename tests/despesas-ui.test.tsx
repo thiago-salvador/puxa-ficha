@@ -109,6 +109,22 @@ test("prestação declarada com zero e lista vazia usa o mesmo texto de zero dec
   assert.match(html, /Nenhuma despesa declarada até/)
 })
 
+test("entrega com total ainda null e sem itens: 'Total ainda não informado pelo TSE', nunca 'Nenhuma despesa declarada'", () => {
+  const html = secao({
+    despesas: [linha({ estado_coleta: "declarado", total_despesas_contratadas: null, total_despesas_pagas: null, total_doacoes_a_terceiros: null, concentracao_despesas: [], maiores_fornecedores: [], doacoes_a_terceiros: [] })],
+    status: "ok",
+  })
+  assert.match(html, /Total ainda não informado pelo TSE até 20\/09\/2026\./)
+  assert.match(html, /data-pf-despesas-estado="total_nao_informado"/)
+  assert.doesNotMatch(html, /Nenhuma despesa declarada/)
+  assert.doesNotMatch(html, /data-pf-despesas-contratado/)
+})
+
+test("o recorte de fornecedores diz que são até 10 empresas", () => {
+  const html = secao({ despesas: [linha()], status: "ok" })
+  assert.match(html, /Maiores fornecedores \(até 10 empresas\)/)
+})
+
 test("falha de coleta da candidatura não gera afirmação nenhuma", () => {
   assert.equal(secao({ despesas: [linha({ estado_coleta: "falha_coleta" })], status: "ok" }), "")
 })

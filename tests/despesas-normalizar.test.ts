@@ -4,6 +4,7 @@ import { test } from "node:test"
 import {
   CATEGORIA_NAO_INFORMADA,
   normalizarDespesas,
+  nomeSegueConvencaoCnpjCampanha,
   textoTemDocumento,
   type ContextoCandidatura,
   type DespesaItemEntrada,
@@ -130,11 +131,11 @@ test("nome de MEI perde o CPF embutido em fornecedores e em doações", () => {
   const r = normalizarDespesas([
     item(500, { documentoFornecedor: documentoPj(2), nomeFornecedor: `FULANO FICTICIO ${cpf}` }),
     item(40, { documentoFornecedor: documentoPj(3), nomeFornecedor: `BELTRANO FICTICIO ${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6, 9)}-${cpf.slice(9)}` }),
-    item(70, { tipo: "Doações financeiras a outros candidatos/partidos", documentoFornecedor: documentoPj(4), nomeFornecedor: `ELEICAO 2026 CICLANO FICTICIO ${cpf}` }),
+    item(70, { tipo: "Doações financeiras a outros candidatos/partidos", documentoFornecedor: documentoPj(4), nomeFornecedor: `ELEICAO 2026 CICLANO FICTICIO DEPUTADO FEDERAL ${cpf}` }),
   ], totaisOficiais(610), contexto)
   const nomes = r.linha.maiores_fornecedores.flatMap((f) => (f.tipo === "PJ" ? [f.nome] : []))
-  assert.deepEqual(nomes, ["FULANO FICTICIO", "ELEICAO 2026 CICLANO FICTICIO", "BELTRANO FICTICIO"])
-  assert.equal(r.linha.doacoes_a_terceiros[0]!.destinatario_nome, "ELEICAO 2026 CICLANO FICTICIO")
+  assert.deepEqual(nomes, ["FULANO FICTICIO", "ELEICAO 2026 CICLANO FICTICIO DEPUTADO FEDERAL", "BELTRANO FICTICIO"])
+  assert.equal(r.linha.doacoes_a_terceiros[0]!.destinatario_nome, "ELEICAO 2026 CICLANO FICTICIO DEPUTADO FEDERAL")
   assert.equal(textoTemDocumento([r.linha.maiores_fornecedores, r.linha.doacoes_a_terceiros]), false)
 })
 
@@ -178,10 +179,42 @@ test("doação a pessoa física ou sem pista de destinatário vira 'outro' sem n
   assert.equal(r.linha.total_despesas_contratadas, 50)
 })
 
-test("2026 sem prestação: consulta toda null continua null, nunca zero", () => {
+test("2026 com entrega e total ainda null: declarado com totais null, nunca 'sem prestação' nem zero", () => {
+  // A fixture tem idUltimaEntrega e uma entrega parcial no histórico, mas a
+  // consulta ainda não traz total nem itens.
   const { coleta } = coletarFixture("2026-governador-sem-prestacao")
   const linha = coleta.normalizado!.linha
-  assert.equal(coleta.resultado, "sem_prestacao")
+  assert.equal(coleta.resultado, "coletado")
+  assert.equal(linha.estado_coleta, "declarado")
+  assert.equal(linha.id_ultima_entrega, "7000000")
+  for (const campo of ["total_despesas_contratadas", "total_despesas_pagas", "total_doacoes_a_terceiros", "recursos_financeiros", "recursos_estimaveis", "divida_campanha", "sobra_financeira"] as const) {
+    assert.equal(linha[campo], null, campo)
+  }
+  assert.deepEqual([linha.concentracao_despesas, linha.maiores_fornecedores, linha.doacoes_a_terceiros], [[], [], []])
+})
+
+test("sem nenhuma entrega (sem id de entrega e sem item): sem_prestacao com totais null", () => {
+  for (const origem of ["oficial", "soma_itens"] as const) {
+    const r = normalizarDespesas([], totaisOficiais(null, { origemTotalContratado: origem }), { ...contexto, id_ultima_entrega: null })
+    assert.equal(r.linha.estado_coleta, "sem_prestacao", origem)
+    assert.equal(r.linha.total_despesas_contratadas, null)
+    assert.equal(r.linha.total_doacoes_a_terceiros, null)
+  }
+})
+
+test("entrega registrada sem item e sem total: declarado, nunca sem_prestacao", () => {
+  const r = normalizarDespesas([], totaisOficiais(null), contexto)
+  assert.deepEqual(r.divergencias, [])
+  assert.equal(r.linha.estado_coleta, "declarado")
+  assert.equal(r.linha.total_despesas_contratadas, null)
+  assert.equal(r.linha.total_doacoes_a_terceiros, null, "doações também não são zero")
+})
+
+test("2026 sem prestação de verdade: consulta toda null continua null, nunca zero", () => {
+  const fixture = carregarFixture2026("2026-governador-sem-prestacao")
+  const r = normalizarDespesas([], totaisOficiais(null), { ...contexto, id_ultima_entrega: null })
+  const linha = r.linha
+  assert.equal(fixture.itens.length, 0)
   assert.equal(linha.estado_coleta, "sem_prestacao")
   for (const campo of ["total_despesas_contratadas", "total_despesas_pagas", "total_doacoes_a_terceiros", "recursos_financeiros", "recursos_estimaveis", "divida_campanha", "sobra_financeira"] as const) {
     assert.equal(linha[campo], null, campo)
@@ -279,4 +312,41 @@ test("valores com erro de float saem arredondados em centavos: nenhum JSON com 1
   assert.equal(r.linha.divida_campanha, 3.3)
   assert.equal(r.linha.sobra_financeira, 0.8)
   assert.deepEqual(r.linha.concentracao_despesas.find((c) => c.tipo === "A")!.valor, 0.3)
+})
+
+test("doação sem SQ: 'candidato' só com o nome do CNPJ de campanha e o mesmo ano da eleição", () => {
+  const doacao = "Doações financeiras a outros candidatos/partidos"
+  const r = normalizarDespesas([
+    item(10, { tipo: doacao, documentoFornecedor: documentoPj(11), nomeFornecedor: "ELEICAO 2026 CICLANO FICTICIO GOVERNADOR" }),
+    item(20, { tipo: doacao, documentoFornecedor: documentoPj(12), nomeFornecedor: "ELEICAO 2022 CICLANO FICTICIO GOVERNADOR" }),
+    item(30, { tipo: doacao, documentoFornecedor: documentoPj(13), nomeFornecedor: "ELEICAO 2026 CICLANO FICTICIO" }),
+    item(40, { tipo: doacao, documentoFornecedor: documentoPj(14), nomeFornecedor: "COMITE ELEICAO 2026 FICTICIO" }),
+    item(50, { tipo: doacao, documentoFornecedor: documentoPj(15), nomeFornecedor: "DIRETORIO ESTADUAL PARTIDO FICTICIO" }),
+  ], totaisOficiais(150), contexto)
+  const porValor = new Map(r.linha.doacoes_a_terceiros.map((d) => [d.valor, d]))
+  assert.equal(porValor.get(10)!.destinatario_tipo, "candidato")
+  assert.equal(porValor.get(10)!.destinatario_nome, "ELEICAO 2026 CICLANO FICTICIO GOVERNADOR")
+  for (const valor of [20, 30, 40]) {
+    assert.equal(porValor.get(valor)!.destinatario_tipo, "outro", String(valor))
+    assert.equal(porValor.get(valor)!.destinatario_nome, null, String(valor))
+  }
+  assert.equal(porValor.get(50)!.destinatario_tipo, "partido")
+})
+
+test("nomeSegueConvencaoCnpjCampanha: ano, nome e cargo no fim", () => {
+  assert.equal(nomeSegueConvencaoCnpjCampanha("ELEIÇÃO 2022 FULANO DE TAL DEPUTADO ESTADUAL", 2022), true)
+  assert.equal(nomeSegueConvencaoCnpjCampanha("eleicao 2024 fulano vice-prefeito", 2024), true)
+  assert.equal(nomeSegueConvencaoCnpjCampanha("ELEICAO 2022 FULANO DE TAL DEPUTADO ESTADUAL", 2026), false)
+  assert.equal(nomeSegueConvencaoCnpjCampanha("ELEICAO 2022 GOVERNADOR", 2022), false)
+  assert.equal(nomeSegueConvencaoCnpjCampanha(null, 2022), false)
+})
+
+test("textoTemDocumento pega documento com espaço, ponto, barra ou hífen, e não o decimal de um valor", () => {
+  for (const texto of ["MEI 123 456 789 01", "MEI 123.456.789/01", "EMPRESA 12 345 678 0001 90", "12345678901"]) {
+    assert.equal(textoTemDocumento(texto), true, texto)
+    assert.equal(textoTemDocumento([{ nome: texto, valor: 1 }]), true, `${texto} dentro de objeto`)
+  }
+  assert.equal(textoTemDocumento([{ tipo: "PJ", nome: "GRAFICA 2024 LTDA", valor: 123456789.12 }]), false)
+  assert.equal(textoTemDocumento({ fone: "(11) 98765-4321" }), false)
+  assert.equal(textoTemDocumento({ valor: 12345678901 }), true, "inteiro de 11 dígitos continua documento")
 })

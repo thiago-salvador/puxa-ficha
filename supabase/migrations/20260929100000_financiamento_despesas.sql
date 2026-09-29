@@ -96,6 +96,13 @@ CREATE TABLE IF NOT EXISTS public.financiamento_despesas (
       AND concentracao_despesas::text !~ '[0-9]{11}|[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}|[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}'
       AND maiores_fornecedores::text !~ '[0-9]{11}|[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}|[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}'
       AND doacoes_a_terceiros::text !~ '[0-9]{11}|[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}|[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}'
+      -- Textos do JSONB com os separadores de documento (espaço, ponto, barra,
+      -- hífen) colapsados: "123 456 789 01", "123.456.789/01" e
+      -- "12 345 678 0001 90" viram 11 ou 14 dígitos seguidos. Só as folhas de
+      -- texto entram, porque o ponto decimal de um valor não é separador.
+      AND regexp_replace(jsonb_path_query_array(concentracao_despesas, 'lax $.** ? (@.type() == "string")')::text, '([0-9])[[:space:]./-]+(?=[0-9])', '\1', 'g') !~ '[0-9]{11}'
+      AND regexp_replace(jsonb_path_query_array(maiores_fornecedores, 'lax $.** ? (@.type() == "string")')::text, '([0-9])[[:space:]./-]+(?=[0-9])', '\1', 'g') !~ '[0-9]{11}'
+      AND regexp_replace(jsonb_path_query_array(doacoes_a_terceiros, 'lax $.** ? (@.type() == "string")')::text, '([0-9])[[:space:]./-]+(?=[0-9])', '\1', 'g') !~ '[0-9]{11}'
     ),
   CONSTRAINT financiamento_despesas_fonte_check
     CHECK (btrim(fonte) <> ''),

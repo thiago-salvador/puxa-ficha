@@ -148,11 +148,39 @@ export interface ResultadoHistorico {
   ambiguos: Array<{ sq_prestador: string; motivo: "prestador_com_varias_candidaturas" | "candidatura_com_varios_prestadores" }>
   conservacao_pagas: { linhas_lidas: number; linhas_atribuidas: number; linhas_isoladas: number; centavos_lidos: number; centavos_atribuidos: number; centavos_isolados: number; linhas_invalidas: number }
   membros_lidos: string[]
+  /**
+   * Membros de despesa esperados e ausentes do pacote. Não vazio = cobertura
+   * não comprovada: nenhuma candidatura sai como lida e toda a coorte do ano
+   * fica em `nao_encontradas`, para ir inteira à revisão.
+   */
+  membros_faltando: string[]
 }
 
 export type AbrirMembro = (nome: string) => AsyncIterable<Buffer | string>
 
 const AMBIGUO = "\u0000ambiguo"
+
+/**
+ * Partes esperadas em cada pacote de 2018 a 2024, conforme o levantamento dos
+ * pacotes oficiais (membros_despesa): 26 UFs mais BRASIL, para contratadas e
+ * para pagas. O Distrito Federal não tem arquivo próprio nesses pacotes.
+ */
+const PARTES_PACOTE_DESPESAS = [
+  "AC", "AL", "AM", "AP", "BA", "CE", "ES", "GO", "MA", "MG", "MS", "MT", "PA",
+  "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC", "SE", "SP", "TO", "BRASIL",
+] as const
+
+/** Nomes (sem pasta) dos membros de despesa que um pacote completo do ano precisa ter. */
+export function membrosDespesaEsperados(ano: number): string[] {
+  return ["despesas_contratadas", "despesas_pagas"].flatMap((prefixo) =>
+    PARTES_PACOTE_DESPESAS.map((parte) => `${prefixo}_candidatos_${ano}_${parte}.csv`),
+  )
+}
+
+function membrosFaltando(membros: readonly string[], ano: number): string[] {
+  const presentes = new Set(membros.map((m) => (m.split("/").pop() ?? m).toLowerCase()))
+  return membrosDespesaEsperados(ano).filter((nome) => !presentes.has(nome.toLowerCase()))
+}
 
 function membrosDo(membros: readonly string[], prefixo: string, ano: number): string[] {
   const padrao = new RegExp(`(?:^|/)${prefixo}_candidatos_${ano}_[A-Z]{2,6}\\.csv$`, "i")
@@ -175,6 +203,20 @@ export async function lerDespesasHistoricas(entrada: {
   const pagas = membrosDo(entrada.membros, "despesas_pagas", ano)
   const receitas = membrosDo(entrada.membros, "receitas", ano)
   if (!contratadas.length || !pagas.length) throw new Error(`pacote ${ano} sem membros de despesas contratadas e pagas`)
+  const faltando = membrosFaltando(entrada.membros, ano)
+  if (faltando.length) {
+    // Pacote parcial (ex.: só AP): uma candidatura lida aqui pareceria completa
+    // sem ser. Nada é lido e o ano inteiro vai para revisão.
+    return {
+      ano,
+      candidaturas: [],
+      nao_encontradas: [...coorteSq].sort(),
+      ambiguos: [],
+      conservacao_pagas: { linhas_lidas: 0, linhas_atribuidas: 0, linhas_isoladas: 0, centavos_lidos: 0, centavos_atribuidos: 0, centavos_isolados: 0, linhas_invalidas: 0 },
+      membros_lidos: [],
+      membros_faltando: faltando,
+    }
+  }
 
   // prestador -> SQ (ou AMBIGUO), para todas as linhas do país: a prova 1:1
   // precisa enxergar também candidaturas fora da coorte.
@@ -334,6 +376,7 @@ export async function lerDespesasHistoricas(entrada: {
     ambiguos: ambiguosUnicos,
     conservacao_pagas: conservacao,
     membros_lidos: [...contratadas, ...receitas, ...pagas],
+    membros_faltando: [],
   }
 }
 

@@ -12,6 +12,11 @@
  * candidaturas ligadas no banco; a gravação exige `--apply` e o SHA-256 do
  * plano revisado no dry-run. Plano, coleta, recibo e state do Jev ficam fora do
  * repositório, em arquivos modo 0600.
+ *
+ * Depois de gravar, o escritor revalida a tag `public-candidato-ficha` pelo mesmo
+ * POST /api/revalidate dos jobs `revalidate` de ingest.yml e tse-2026-financas.yml
+ * (segredo em PF_REVALIDATE_SECRET). `--apply` sem o segredo é recusado antes de
+ * ler o banco; revalidação não confirmada sai com código 5.
  */
 import { chmodSync, mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { homedir } from "node:os"
@@ -93,7 +98,7 @@ export function lerArquivoColeta(caminho: string): ArquivoColetaDespesas {
   if (bruto?.schema !== SCHEMA_COLETA || !Array.isArray(bruto.candidaturas)) throw new Error(`${caminho}: arquivo de coleta inválido`)
   for (const c of bruto.candidaturas) {
     const linha = c.normalizado?.linha
-    if (linha && textoTemDocumento([linha.concentracao_despesas, linha.maiores_fornecedores, linha.doacoes_a_terceiros])) {
+    if (linha && textoTemDocumento([linha.concentracao_despesas, linha.maiores_fornecedores, linha.doacoes_a_terceiros, linha.cargo_candidatura, linha.fonte])) {
       throw new Error(`${caminho}: coleta com documento em campo público`)
     }
   }
@@ -124,13 +129,29 @@ async function selecionarTudo<T>(tabela: string, colunas: string, filtro: (q: Co
   }
 }
 
-type LinhaVinculo = { candidato_id: string; ano_eleicao: number; sq_candidato: string | null; uf_candidatura?: string | null }
+type LinhaVinculo = {
+  candidato_id: string
+  ano_eleicao: number
+  sq_candidato: string | null
+  uf_candidatura?: string | null
+  cargo_candidatura?: string | null
+}
+
+/** Valor que nunca bate com a coleta: duas fontes do vínculo discordam. */
+const CONTEXTO_EM_CONFLITO = "(conflito entre financiamento e verificações)"
+
+function mesclarContexto(atual: string | null, novo: string | null | undefined): string | null {
+  const limpo = typeof novo === "string" && novo.trim() ? novo.trim() : null
+  if (atual === null) return limpo
+  if (limpo === null || limpo.toUpperCase() === atual.toUpperCase()) return atual
+  return CONTEXTO_EM_CONFLITO
+}
 
 /**
  * Candidaturas já ligadas a candidatos públicos da coorte: SQ gravado em
  * `financiamento` (linha publicada) ou em `financiamento_verificacoes`.
  */
-export async function carregarVinculadas(anos: readonly number[]): Promise<Array<CandidaturaVinculada & { uf: string | null }>> {
+export async function carregarVinculadas(anos: readonly number[]): Promise<CandidaturaVinculada[]> {
   const { aplicarCoorteAtualizacao } = await import("./lib/coorte-atualizacao")
   const publicos = await aplicarCoorteAtualizacao(
     await selecionarTudo<{ id: string; slug: string }>("candidatos_publico", "id, slug", (q) => q.order("slug")),
@@ -139,16 +160,24 @@ export async function carregarVinculadas(anos: readonly number[]): Promise<Array
   const slugPorId = new Map(publicos.map((p) => [p.id, p.slug]))
   const filtro = (q: Consulta) => q.in("ano_eleicao", anos).not("sq_candidato", "is", null).order("id")
   const [financiamento, verificacoes] = await Promise.all([
-    selecionarTudo<LinhaVinculo>("financiamento", "candidato_id, ano_eleicao, sq_candidato, uf_candidatura", (q) => filtro(q).is("despublicado_em", null)),
-    selecionarTudo<LinhaVinculo>("financiamento_verificacoes", "candidato_id, ano_eleicao, sq_candidato, uf_candidatura", filtro),
+    selecionarTudo<LinhaVinculo>("financiamento", "candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura", (q) => filtro(q).is("despublicado_em", null)),
+    selecionarTudo<LinhaVinculo>("financiamento_verificacoes", "candidato_id, ano_eleicao, sq_candidato, uf_candidatura, cargo_candidatura", filtro),
   ])
-  const unicas = new Map<string, CandidaturaVinculada & { uf: string | null }>()
+  const unicas = new Map<string, CandidaturaVinculada>()
   for (const linha of [...financiamento, ...verificacoes]) {
     const slug = slugPorId.get(linha.candidato_id)
     const sq = typeof linha.sq_candidato === "string" ? linha.sq_candidato.trim() : ""
     if (!slug || !/^\d{5,20}$/.test(sq)) continue
     const k = `${linha.candidato_id}|${linha.ano_eleicao}|${sq}`
-    if (!unicas.has(k)) unicas.set(k, { candidato_id: linha.candidato_id, slug, ano_eleicao: linha.ano_eleicao, sq_candidato: sq, uf: linha.uf_candidatura ?? null })
+    const atual = unicas.get(k)
+    unicas.set(k, {
+      candidato_id: linha.candidato_id,
+      slug,
+      ano_eleicao: linha.ano_eleicao,
+      sq_candidato: sq,
+      uf: mesclarContexto(atual?.uf ?? null, linha.uf_candidatura),
+      cargo_candidatura: mesclarContexto(atual?.cargo_candidatura ?? null, linha.cargo_candidatura),
+    })
   }
   return [...unicas.values()]
 }
@@ -161,7 +190,9 @@ async function coletar(opcoes: OpcoesDespesas): Promise<number> {
   if (opcoes.fonte === "2026") {
     const { coletarDespesas2026 } = await import("./tse-local/divulga-despesas")
     const vinculadas = (await carregarVinculadas([2026])).filter((v) => !opcoes.slugs || opcoes.slugs.includes(v.slug))
-    const candidatos = vinculadas.flatMap((v) => (v.uf ? [{ slug: v.slug, uf: v.uf, sqCandidato: v.sq_candidato }] : []))
+    const candidatos = vinculadas.flatMap((v) =>
+      v.uf && v.uf !== CONTEXTO_EM_CONFLITO ? [{ slug: v.slug, uf: v.uf, sqCandidato: v.sq_candidato }] : [],
+    )
     const coletas = await coletarDespesas2026(candidatos)
     const arquivo: ArquivoColetaDespesas = {
       schema: SCHEMA_COLETA,
@@ -189,7 +220,7 @@ async function coletar(opcoes: OpcoesDespesas): Promise<number> {
       if (!coorteSq.size) continue
       const lido = await coletarDespesasHistoricas({ manifestoPath: opcoes.manifest, ano, coorteSq })
       arquivo.pacotes!.push({ ano, ...lido.pacote })
-      leituras.push({ ano, nao_encontradas: lido.leitura.nao_encontradas.length, ambiguos: lido.leitura.ambiguos.length, conservacao_pagas: lido.leitura.conservacao_pagas })
+      leituras.push({ ano, nao_encontradas: lido.leitura.nao_encontradas.length, membros_faltando: lido.leitura.membros_faltando, ambiguos: lido.leitura.ambiguos.length, conservacao_pagas: lido.leitura.conservacao_pagas })
       for (const c of lido.candidaturas) {
         arquivo.candidaturas.push({
           ano_eleicao: ano,
@@ -200,8 +231,10 @@ async function coletar(opcoes: OpcoesDespesas): Promise<number> {
         })
       }
       // SQ da coorte ausente do pacote: cobertura não comprovada, nunca "sem despesa".
+      // Pacote sem todas as UFs esperadas: o ano inteiro vai para revisão.
+      const motivo = lido.leitura.membros_faltando.length ? "pacote_sem_todas_as_ufs" : "sq_ausente_do_pacote"
       for (const sq of lido.leitura.nao_encontradas) {
-        arquivo.candidaturas.push({ ano_eleicao: ano, sq_candidato: sq, resultado: "erro", motivo: "sq_ausente_do_pacote", normalizado: null })
+        arquivo.candidaturas.push({ ano_eleicao: ano, sq_candidato: sq, resultado: "erro", motivo, normalizado: null })
       }
     }
     const caminho = salvarPrivado(opcoes.out, `coleta-historico-${gerado_em.replace(/[:.]/g, "-")}.json`, arquivo)
@@ -217,6 +250,48 @@ function contarResultados(arquivo: ArquivoColetaDespesas): Record<string, number
 
 // ---------------------------------------------------------------------------
 // Plano e gravação
+
+export const REVALIDATE_URL = "https://puxaficha.com.br/api/revalidate"
+export const TAG_FICHA_PUBLICA = "public-candidato-ficha"
+/** Código de saída quando a gravação entrou mas a revalidação não foi confirmada. */
+export const CODIGO_REVALIDACAO_NAO_CONFIRMADA = 5
+
+export type ResultadoRevalidacao = { confirmada: true } | { confirmada: false; motivo: string }
+
+/**
+ * Mesmo POST /api/revalidate dos jobs `revalidate` de ingest.yml e
+ * tse-2026-financas.yml. Confirmada só com HTTP 200, `ok: true` e a tag da ficha
+ * em `revalidated`; qualquer outra resposta é falha explícita.
+ */
+export async function revalidarFichasPublicas(opcoes: {
+  segredo: string | undefined
+  fetcher?: typeof fetch
+  url?: string
+}): Promise<ResultadoRevalidacao> {
+  const segredo = opcoes.segredo?.trim()
+  if (!segredo) return { confirmada: false, motivo: "PF_REVALIDATE_SECRET ausente" }
+  let resposta: Response
+  try {
+    resposta = await (opcoes.fetcher ?? fetch)(opcoes.url ?? REVALIDATE_URL, {
+      method: "POST",
+      headers: { "content-type": "application/json", "x-pf-revalidate-secret": segredo },
+      body: JSON.stringify({ tags: [TAG_FICHA_PUBLICA] }),
+    })
+  } catch (erro) {
+    return { confirmada: false, motivo: `POST falhou: ${erro instanceof Error ? erro.message : String(erro)}` }
+  }
+  let corpo: unknown = null
+  try { corpo = await resposta.json() } catch { corpo = null }
+  const revalidadas = (corpo as { revalidated?: unknown } | null)?.revalidated
+  const ok = (corpo as { ok?: unknown } | null)?.ok === true
+  if (resposta.status !== 200 || !ok || !Array.isArray(revalidadas) || !revalidadas.includes(TAG_FICHA_PUBLICA)) {
+    return { confirmada: false, motivo: `HTTP ${resposta.status}, resposta sem confirmação de ${TAG_FICHA_PUBLICA}` }
+  }
+  return { confirmada: true }
+}
+
+const MENSAGEM_REVALIDACAO_MANUAL =
+  "gravação feita, mas o cache público NÃO foi revalidado; rode `gh workflow run revalidate-cache.yml --ref main -f tags=public-candidato-ficha` e confira a ficha"
 
 export function resumoPublicoDoPlano(plano: PlanoDespesas, sha: string) {
   return { plano_sha256: sha, versao: plano.versao, resumo: plano.resumo }
@@ -247,17 +322,29 @@ async function gravarAcoes(plano: PlanoDespesas): Promise<{ gravadas: number; fa
   return { gravadas, falhas }
 }
 
-async function planejarEAplicar(opcoes: OpcoesDespesas): Promise<number> {
+export async function planejarEAplicar(
+  opcoes: OpcoesDespesas,
+  dependencias: {
+    gravar?: (plano: PlanoDespesas) => Promise<{ gravadas: number; falhas: Array<{ slug: string; ano: number; erro: string }> }>
+    carregar?: (anos: readonly number[]) => Promise<CandidaturaVinculada[]>
+    revalidar?: () => Promise<ResultadoRevalidacao>
+  } = {},
+): Promise<number> {
   if (!opcoes.coletas.length) throw new Error("informe --coleta=<arquivo de coleta>")
   // Recusa cedo: --apply sem SHA não chega a ler o banco.
   if (opcoes.aplicar && !opcoes.expectedPlanSha) {
     console.error(decidirAplicacao(opcoes, "", 0).motivo)
     return 2
   }
+  // Recusa cedo: sem o segredo a revalidação não teria como ser confirmada.
+  if (opcoes.aplicar && !dependencias.revalidar && !process.env.PF_REVALIDATE_SECRET?.trim()) {
+    console.error("--apply exige PF_REVALIDATE_SECRET para revalidar a ficha pública depois da gravação; nada gravado")
+    return 2
+  }
   const arquivos = opcoes.coletas.map(lerArquivoColeta)
   const coletas = arquivos.flatMap((a) => a.candidaturas)
   const anos = [...new Set(coletas.map((c) => c.ano_eleicao))].filter((ano) => (ANOS_DESPESAS as readonly number[]).includes(ano))
-  const vinculadas = await carregarVinculadas(anos)
+  const vinculadas = await (dependencias.carregar ?? carregarVinculadas)(anos)
   const plano = planejarDespesas({ vinculadas, coletas })
   const sha = shaDoPlanoDespesas(plano)
   const carimbo = new Date().toISOString().replace(/[:.]/g, "-")
@@ -272,9 +359,23 @@ async function planejarEAplicar(opcoes: OpcoesDespesas): Promise<number> {
     if (opcoes.aplicar) console.error(`${decisao.motivo}; nada gravado`)
     return decisao.codigo
   }
-  const resultado = await gravarAcoes(plano)
-  const recibo = salvarPrivado(opcoes.out, `recibo-despesas-${carimbo}.json`, { plano_sha256: sha, aplicado_em: new Date().toISOString(), ...resultado })
-  console.log(JSON.stringify({ gravadas: resultado.gravadas, falhas: resultado.falhas.length, recibo }, null, 2))
+  const resultado = await (dependencias.gravar ?? gravarAcoes)(plano)
+  // Como o job `revalidate` do Actions: revalida mesmo com falha parcial, para
+  // publicar o que chegou ao banco.
+  const revalidacao = resultado.gravadas > 0
+    ? await (dependencias.revalidar ?? (() => revalidarFichasPublicas({ segredo: process.env.PF_REVALIDATE_SECRET })))()
+    : null
+  const recibo = salvarPrivado(opcoes.out, `recibo-despesas-${carimbo}.json`, {
+    plano_sha256: sha,
+    aplicado_em: new Date().toISOString(),
+    ...resultado,
+    revalidacao: revalidacao ?? { confirmada: false, motivo: "nada gravado" },
+  })
+  console.log(JSON.stringify({ gravadas: resultado.gravadas, falhas: resultado.falhas.length, revalidacao, recibo }, null, 2))
+  if (revalidacao && !revalidacao.confirmada) {
+    console.error(`FALHA: ${MENSAGEM_REVALIDACAO_MANUAL} (${revalidacao.motivo})`)
+    return CODIGO_REVALIDACAO_NAO_CONFIRMADA
+  }
   return resultado.falhas.length ? 4 : 0
 }
 

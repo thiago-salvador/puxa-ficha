@@ -43,6 +43,20 @@ function semDespesasDeclaradas(row: FinanciamentoDespesasPublico): boolean {
   )
 }
 
+/**
+ * Entrega existente com total ainda null e nenhum item: o TSE recebeu a
+ * prestação mas não informou valor. Não é "nenhuma despesa declarada".
+ */
+function totalAindaNaoInformado(row: FinanciamentoDespesasPublico): boolean {
+  return (
+    row.estado_coleta === "declarado" &&
+    row.total_despesas_contratadas === null &&
+    row.concentracao_despesas.length === 0 &&
+    row.maiores_fornecedores.length === 0 &&
+    row.doacoes_a_terceiros.length === 0
+  )
+}
+
 /** Candidaturas com algo a mostrar: série a partir de 2018, sem falha de coleta. */
 export function despesasVisiveis(
   despesas: FinanciamentoDespesasPublico[] | null | undefined,
@@ -60,6 +74,7 @@ export function despesasVisiveis(
 function DespesaCard({ row }: { row: FinanciamentoDespesasPublico }) {
   const data = dataReferencia(row)
   const vazio = semDespesasDeclaradas(row)
+  const semTotal = !vazio && totalAindaNaoInformado(row)
   const fonteHref = safeHref(row.fonte_url)
   const temRecursos = row.recursos_financeiros !== null || row.recursos_estimaveis !== null
   const pjs = row.maiores_fornecedores.flatMap((item) => (item.tipo === "PJ" ? [item] : []))
@@ -69,7 +84,7 @@ function DespesaCard({ row }: { row: FinanciamentoDespesasPublico }) {
     <div
       data-pf-despesas-card
       data-pf-despesas-ano={row.ano_eleicao}
-      data-pf-despesas-estado={vazio ? "sem_despesas_declaradas" : "publicado"}
+      data-pf-despesas-estado={vazio ? "sem_despesas_declaradas" : semTotal ? "total_nao_informado" : "publicado"}
       className="space-y-4 rounded-[16px] border border-border/50 px-5 py-5"
     >
       <p className="text-[length:var(--text-eyebrow)] font-bold tracking-[0.04em] text-foreground">
@@ -89,6 +104,10 @@ function DespesaCard({ row }: { row: FinanciamentoDespesasPublico }) {
       {vazio ? (
         <p data-pf-despesas-vazio className="text-[length:var(--text-body)] font-semibold text-foreground">
           Nenhuma despesa declarada até {data}.
+        </p>
+      ) : semTotal ? (
+        <p data-pf-despesas-sem-total className="text-[length:var(--text-body)] font-semibold text-foreground">
+          Total ainda não informado pelo TSE até {data}.
         </p>
       ) : (
         <>
@@ -130,7 +149,7 @@ function DespesaCard({ row }: { row: FinanciamentoDespesasPublico }) {
           {(pjs.length > 0 || pf) && (
             <div className="border-t border-border/50 pt-3" data-pf-despesas-fornecedores>
               <p className="mb-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-                Maiores fornecedores (empresas)
+                Maiores fornecedores (até 10 empresas)
               </p>
               <div className="space-y-1.5">
                 {pjs.map((item, index) => (

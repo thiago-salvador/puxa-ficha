@@ -6,10 +6,11 @@ import {
   centavosDoCsv,
   lerDespesasHistoricas,
   lerRegistrosCsv,
+  membrosDespesaEsperados,
   normalizarCandidaturaHistorica,
 } from "../scripts/lib/despesas-historico"
 import { CATEGORIA_NAO_INFORMADA, textoTemDocumento } from "../scripts/lib/despesas-normalizar"
-import { abrirMembroFixture, DIR_HISTORICO_2022 } from "./fixtures/despesas/carregar"
+import { abrirMembroFixture, DIR_HISTORICO_2022, membrosPacoteCompleto2022 } from "./fixtures/despesas/carregar"
 
 const SQ_A = "7000000101"
 const SQ_B = "7000000102"
@@ -20,7 +21,7 @@ async function lerFixture() {
   return lerDespesasHistoricas({
     ano: 2022,
     coorteSq: new Set([SQ_A, SQ_B, SQ_C, SQ_AUSENTE]),
-    membros: readdirSync(DIR_HISTORICO_2022),
+    membros: membrosPacoteCompleto2022(),
     abrirMembro: abrirMembroFixture,
   })
 }
@@ -122,7 +123,31 @@ test("cabeçalho sem coluna exigida falha em vez de ler errado", async () => {
   await assert.rejects(lerDespesasHistoricas({
     ano: 2022,
     coorteSq: new Set([SQ_A]),
-    membros: ["despesas_contratadas_candidatos_2022_AP.csv", "despesas_pagas_candidatos_2022_AP.csv"],
+    membros: membrosDespesaEsperados(2022),
     abrirMembro: () => pedacos("\"SQ_CANDIDATO\";\"VR_DESPESA_CONTRATADA\"\r\n1;2\r\n"),
   }), /cabeçalho sem/)
+})
+
+test("pacote só com os arquivos do AP: cobertura não comprovada, o ano inteiro vai para revisão", async () => {
+  const coorte = new Set([SQ_A, SQ_B, SQ_C, SQ_AUSENTE])
+  const abertos: string[] = []
+  const r = await lerDespesasHistoricas({
+    ano: 2022,
+    coorteSq: coorte,
+    membros: readdirSync(DIR_HISTORICO_2022),
+    abrirMembro: (nome) => { abertos.push(nome); return abrirMembroFixture(nome) },
+  })
+  assert.deepEqual(r.candidaturas, [], "nenhuma candidatura sai como lida")
+  assert.deepEqual(r.nao_encontradas, [...coorte].sort(), "toda a coorte do ano fica para revisão")
+  assert.equal(r.membros_faltando.length, 52, "26 partes de contratadas e 26 de pagas faltando")
+  assert.ok(r.membros_faltando.includes("despesas_contratadas_candidatos_2022_RJ.csv"))
+  assert.ok(r.membros_faltando.includes("despesas_pagas_candidatos_2022_BRASIL.csv"))
+  assert.deepEqual(abertos, [], "nada do pacote parcial é lido")
+})
+
+test("pacote completo: nenhuma parte faltando e as candidaturas do AP são lidas", async () => {
+  const r = await lerFixture()
+  assert.deepEqual(r.membros_faltando, [])
+  assert.ok(r.candidaturas.length > 0)
+  assert.equal(membrosDespesaEsperados(2022).length, 54)
 })

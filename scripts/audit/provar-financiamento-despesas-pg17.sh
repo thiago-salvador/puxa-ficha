@@ -188,6 +188,9 @@ BEGIN
     '[{"tipo":"PJ","nome":"JOAO DA SILVA 12345678909","quantidade":1,"valor":1}]',
     '[{"tipo":"PJ","nome":"MEI 123.456.789-09","quantidade":1,"valor":1}]',
     '[{"tipo":"PJ","nome":"EMPRESA 12.345.678/0001-90","quantidade":1,"valor":1}]',
+    '[{"tipo":"PJ","nome":"MEI 123 456 789 09","quantidade":1,"valor":1}]',
+    '[{"tipo":"PJ","nome":"MEI 123.456.789/09","quantidade":1,"valor":1}]',
+    '[{"tipo":"PJ","nome":"EMPRESA 12 345 678 0001 90","quantidade":1,"valor":1}]',
     '{"tipo":"PJ"}'
   ] LOOP
     BEGIN
@@ -199,6 +202,22 @@ BEGIN
       NULL;
     END;
   END LOOP;
+
+  -- Valor decimal grande é legítimo: o ponto decimal não é separador de
+  -- documento, e só as folhas de texto passam pelo colapso. A inserção é
+  -- desfeita pela exceção de controle do próprio bloco.
+  BEGIN
+    INSERT INTO public.financiamento_despesas
+      (candidato_id, ano_eleicao, sq_candidato, estado_coleta, maiores_fornecedores, fonte, coletado_em)
+    VALUES ('00000000-0000-4000-8000-000000000001', 2024, '250002000009', 'declarado',
+      '[{"tipo":"PJ","nome":"GRAFICA 2024 LTDA","quantidade":1,"valor":123456789.12}]'::jsonb, 'TSE', now());
+    RAISE EXCEPTION 'valor_decimal_aceito';
+  EXCEPTION
+    WHEN check_violation THEN
+      RAISE EXCEPTION 'CHECK recusou valor decimal grande legitimo';
+    WHEN raise_exception THEN
+      IF SQLERRM <> 'valor_decimal_aceito' THEN RAISE; END IF;
+  END;
 
   BEGIN
     INSERT INTO public.financiamento_despesas
