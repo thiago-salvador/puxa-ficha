@@ -8,20 +8,20 @@ import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { truncateOnWordBoundary } from "@/lib/text-truncate"
 import { CandidatoFichaView } from "./CandidatoFichaView"
 
-// Bloco 7 do review 2026-04-24: a rota preserva cache nos recursos da ficha,
-// e a página em si segue dinâmica. O RootLayout não lê mais `headers()` (nonce
-// removido em 2026-09-25), mas `getCandidatoBySlugResource` ainda lê `headers()`
-// no bypass de release-verify em Preview; tirar o `force-dynamic` antes de
-// isolar esse bypass repetiria o 500 de 2026-08-03 fora de produção. O cache
-// de dados segue em src/lib/api.ts via unstable_cache.
-// `searchParams.tab` deixou de ser lido no servidor (o que tornava a rota
-// dinâmica em Next 15); agora a aba inicial vinda de `?tab=` é resolvida
-// no client por `CandidatoProfile`.
-// O caminho de bypass do release-verify (header `x-pf-release-verify-cache-bypass`)
-// só existe fora de produção: desde a queda de 2026-08-03, `VERCEL_ENV=production`
-// ignora o bypass mesmo com `PF_ALLOW_RELEASE_VERIFY_CACHE_BYPASS_IN_PRODUCTION`
-// setada. Verificação de release com bypass roda em Preview.
-export const dynamic = "force-dynamic"
+// ISR sob demanda (G3, 2026-09-29): era force-dynamic e custava ~34 mil
+// execuções de função por dia. Nenhuma ficha é gerada no build (lista vazia);
+// cada slug é renderizado na primeira visita e servido do cache depois. O
+// frescor pós-escrita vem das tags de `unstable_cache` em src/lib/api.ts: o
+// POST /api/revalidate expira `public-candidato-ficha` e a página junto.
+// Nada nesta árvore pode ler `headers()`, `cookies()` ou `searchParams` no
+// servidor: isso dispara `app-static-to-dynamic-error` (HTTP 500, queda de
+// 2026-08-03). O bypass do release-verify saiu daqui e mora no handler de
+// /api/candidato-profile/[slug]. A aba inicial de `?tab=` é resolvida no client.
+export const revalidate = 43200
+
+export function generateStaticParams(): Array<{ slug: string }> {
+  return []
+}
 
 export async function generateMetadata({
   params,
@@ -88,5 +88,5 @@ export default async function CandidatoPage({
   // Bloco 7 do review 2026-04-24: aba inicial vinda de `?tab=` é resolvida no
   // client (`CandidatoProfile` lê `window.location.search` no mount). Não
   // lemos `searchParams` aqui para preservar SSG/ISR.
-  return <CandidatoFichaView slug={slug} />
+  return <CandidatoFichaView slug={slug} throwWhenSourceUnavailable />
 }

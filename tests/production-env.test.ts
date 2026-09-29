@@ -194,11 +194,17 @@ describe("bypass de cache do release-verify", () => {
     assert.equal(resolveReleaseVerifyCacheBypassToken(), null)
   })
 
-  it("a ficha lê headers() apenas atrás do gate, sem consultar o opt-in", () => {
+  // G3 (2026-09-29): a ficha é ISR e não lê request; o bypass mora no handler
+  // de /api/candidato-profile/[slug], sempre atrás do mesmo gate.
+  it("o bypass fica só no handler do perfil, atrás do gate, sem consultar o opt-in", () => {
     const api = readFileSync("src/lib/api.ts", "utf8")
+    const handler = readFileSync("src/lib/candidato-profile-route.ts", "utf8")
 
-    assert.match(api, /const cacheBypass = resolveReleaseVerifyCacheBypassToken\(\)/)
-    assert.doesNotMatch(api, /PF_ALLOW_RELEASE_VERIFY_CACHE_BYPASS_IN_PRODUCTION/)
-    assert.doesNotMatch(api, /process\.env\.PF_RELEASE_VERIFY_CACHE_BYPASS/)
+    assert.doesNotMatch(api, /from "next\/headers"/)
+    assert.match(handler, /resolveReleaseVerifyCacheBypassToken/)
+    for (const src of [api, handler]) {
+      assert.doesNotMatch(src, /PF_ALLOW_RELEASE_VERIFY_CACHE_BYPASS_IN_PRODUCTION/)
+      assert.doesNotMatch(src, /process\.env\.PF_RELEASE_VERIFY_CACHE_BYPASS/)
+    }
   })
 })
