@@ -92,26 +92,24 @@ BEGIN
 
   SELECT count(*) INTO n FROM public.compromisso_evidencia_publica WHERE id IN ('dbfd69d8-e997-4b32-9f01-e1282675dbee'::uuid);
   IF n <> 1 THEN RAISE EXCEPTION 'readback l8-mesa: verificados públicos=%', n; END IF;
-  SELECT count(*) INTO n FROM public.compromisso_evidencia_publica WHERE id IN ('0d02ea00-c2d5-4516-a604-d459c1b2c93f'::uuid, '16eb95a6-5b7a-4e56-8e58-663223761fb7'::uuid, '238ccde5-9ac1-41b0-9e92-a0c17581abcd'::uuid, '679a3cf3-9f11-494d-97a7-b4609615af15'::uuid, '9bc9faef-6188-493a-a724-e8f4a75b63d6'::uuid, 'a1e9b99d-485a-4322-b4e5-598923155243'::uuid, 'a72a3378-6665-4582-966b-f907139490d6'::uuid, 'cfc91569-d469-45e7-acd9-7fd1a6f5111a'::uuid, 'e7046002-6714-4af5-9cd5-736a25d22e94'::uuid, 'f9a2d1cf-271f-4ad2-bbcb-9c6686cb6caa'::uuid, 'f9f0ba63-04f1-4ce0-a7b9-ab1b2b1df451'::uuid, '3531eebb-c738-4c59-b130-4a8bffc18481'::uuid, 'b0e63924-e06d-452c-a215-1418eb8e0710'::uuid, '502908ac-a0be-47fb-8f9e-ed40d591942b'::uuid);
+  SELECT count(*) INTO n FROM public.compromisso_evidencia_publica WHERE id IN ('0d02ea00-c2d5-4516-a604-d459c1b2c93f'::uuid, '16eb95a6-5b7a-4e56-8e58-663223761fb7'::uuid, '238ccde5-9ac1-41b0-9e92-a0c17581abcd'::uuid, '9bc9faef-6188-493a-a724-e8f4a75b63d6'::uuid, 'a1e9b99d-485a-4322-b4e5-598923155243'::uuid, 'a72a3378-6665-4582-966b-f907139490d6'::uuid, 'e7046002-6714-4af5-9cd5-736a25d22e94'::uuid, '3531eebb-c738-4c59-b130-4a8bffc18481'::uuid, 'b0e63924-e06d-452c-a215-1418eb8e0710'::uuid, '502908ac-a0be-47fb-8f9e-ed40d591942b'::uuid);
   IF n <> 0 THEN RAISE EXCEPTION 'readback l8-mesa: retirados ainda públicos=%', n; END IF;
   WITH e(programa_chave, tema_id, tipo_evidencia, evidencia_ref) AS (VALUES
     ('2026:GOVERNADOR:RN:200002547826', 'moradia-digna', 'fala', '2805d974aeff7863f9769409edb482bde2cb8bfeb347dde5db30e7df783ffa2b'),
-    ('2026:GOVERNADOR:PB:150002538692', 'politica-tributaria', 'projeto_lei', '504d29ec-5965-4b8e-81e9-ac6c89e31870'),
     ('2026:GOVERNADOR:PB:150002538692', 'politica-tributaria', 'projeto_lei', '36646024-ab20-4ad9-8923-2cd87c920c51'),
     ('2026:GOVERNADOR:PB:150002538692', 'politica-tributaria', 'projeto_lei', '375b10b7-af00-4c58-87b0-0b6dc78f6e32'),
     ('2026:PRESIDENTE:BR:280002551544', 'economia-tributaria', 'votacao_chave', 'fc47ff55-3557-4ff1-8c93-d594246ece96'),
-    ('2026:GOVERNADOR:RS:210002547857', 'orientacao-economica', 'projeto_lei', '09363c2d-a6af-40b2-9b32-2ac277755e83'),
     ('2026:GOVERNADOR:RS:210002547857', 'orientacao-economica', 'projeto_lei', '9a68aca1-b817-4bd4-a492-527c59c4ad63'),
     ('2026:GOVERNADOR:RS:210002547857', 'orientacao-economica', 'votacao_chave', 'b56782fc-7a9f-476e-9946-3536edc1b332')
   ) SELECT count(*) INTO n FROM e JOIN public.compromisso_evidencia_publica p
     ON p.programa_chave = e.programa_chave AND p.tema_id = e.tema_id
    AND p.tipo_evidencia = e.tipo_evidencia AND p.evidencia_ref = e.evidencia_ref;
-  IF n <> 8 THEN RAISE EXCEPTION 'readback l8-mesa: vínculos novos públicos=%', n; END IF;
+  IF n <> 6 THEN RAISE EXCEPTION 'readback l8-mesa: vínculos novos públicos=%', n; END IF;
   SELECT count(*) INTO n FROM public.projetos_lei
    WHERE id IN ('a98a7316-6f21-400d-85a5-4c1859fccf79'::uuid) AND metadata->'autoria'->>'papel' = 'signatario';
   IF n <> 1 THEN RAISE EXCEPTION 'readback l8-mesa: autoria=%', n; END IF;
   SELECT count(*) INTO n FROM public.coleta_log WHERE execucao = 'migration:20260929020000' AND fonte = 'curadoria-l8-mesa';
   IF n <> 1 THEN RAISE EXCEPTION 'readback l8-mesa: recibo global=%', n; END IF;
-  RAISE NOTICE 'readback l8-mesa: 31 CNJs novos, 6 completados, 26 recibos, promessas 1+8/-14, autoria 1';
+  RAISE NOTICE 'readback l8-mesa: 31 CNJs novos, 6 completados, 26 recibos, promessas 1+6/-10, autoria 1';
 END
 $readback$;
