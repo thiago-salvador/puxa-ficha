@@ -93,6 +93,27 @@ export function buildColinhaUrl(base: string, state: ColinhaState): string {
   return url.toString()
 }
 
+/**
+ * Ordem neutra da lista: continua alfabética, mas a letra por onde ela começa
+ * troca a cada LIST_START_HOURS, igual para todo mundo na mesma hora. A
+ * sequência de letras foi embaralhada uma vez e fica fixa neste arquivo, para
+ * que qualquer data possa ser conferida com antecedência. Nada do candidato
+ * (partido, número, situação) entra na conta.
+ */
+export const LIST_START_ORDER = [
+  "M", "C", "T", "F", "R", "B", "J", "P", "E", "W", "S", "G", "N",
+  "A", "L", "V", "D", "K", "O", "H", "U", "I", "Z", "Q", "Y", "X",
+] as const
+export const LIST_START_HOURS = 5
+/** 29/09/2026, 0h de Brasília. */
+export const LIST_START_ANCHOR = Date.UTC(2026, 8, 29, 3, 0, 0)
+
+export function listStartLetter(now: Date = new Date()): string {
+  const slot = Math.floor((now.getTime() - LIST_START_ANCHOR) / (LIST_START_HOURS * 3_600_000))
+  const size = LIST_START_ORDER.length
+  return LIST_START_ORDER[((slot % size) + size) % size]
+}
+
 /** Situação é sempre exibida. Estes estados jamais entram no PNG. */
 export function isCandidateBlocked(status: string): boolean {
   return /indeferid|cassad|renunci|cancelad|substitu/i.test(stripAccents(status))
