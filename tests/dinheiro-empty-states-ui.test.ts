@@ -4,6 +4,7 @@ import { createElement } from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 import { MoneyTabSection } from "@/components/CandidatoProfileSections"
 import type { Financiamento, Patrimonio, PatrimonioEleicaoPublico } from "@/lib/types"
+import type { FinanciamentoDespesasPublico } from "@/lib/public-profile-dto"
 
 function patrimonioRow(partial: Partial<Patrimonio> & Pick<Patrimonio, "id">): Patrimonio {
   return {
@@ -54,6 +55,53 @@ function renderMoneyTab(args: {
       historicoLength: args.historicoLength,
       suggestion: null,
       patrimonioEleicoes: args.patrimonioEleicoes,
+    })
+  )
+}
+
+function despesaPublica(partial: Partial<FinanciamentoDespesasPublico> = {}): FinanciamentoDespesasPublico {
+  return {
+    id: "desp-1-abc",
+    ano_eleicao: 2026,
+    uf: "SP",
+    cargo_candidatura: "Governador",
+    estado_coleta: "declarado",
+    total_despesas_contratadas: 42_000,
+    total_despesas_pagas: 40_000,
+    total_doacoes_a_terceiros: 0,
+    recursos_financeiros: null,
+    recursos_estimaveis: null,
+    divida_campanha: null,
+    sobra_financeira: null,
+    concentracao_despesas: [{ tipo: "Publicidade", quantidade: 1, valor: 42_000 }],
+    maiores_fornecedores: [],
+    doacoes_a_terceiros: [],
+    prestacao_parcial: false,
+    data_entrega: "2026-09-20",
+    fonte: "TSE",
+    fonte_url: null,
+    coletado_em: "2026-09-28T12:00:00.000Z",
+    ...partial,
+  }
+}
+
+function renderMoneyTabComDespesas(args: {
+  patrimonio: Patrimonio[]
+  financiamento: Financiamento[]
+  despesas: FinanciamentoDespesasPublico[] | null
+  despesasStatus: "ok" | "indisponivel"
+}) {
+  return renderToStaticMarkup(
+    createElement(MoneyTabSection, {
+      patrimonio: args.patrimonio,
+      financiamento: args.financiamento,
+      historico: [],
+      gastos: [],
+      historicoLength: 1,
+      suggestion: null,
+      patrimonioEleicoes: [],
+      despesas: args.despesas,
+      despesasStatus: args.despesasStatus,
     })
   )
 }
@@ -295,4 +343,49 @@ test("MoneyTabSection mostra empty state só de financiamento quando há patrim�
     html.includes("Patrimônio declarado"),
     "deve renderizar a seção real de patrimônio"
   )
+})
+
+test("candidato com despesas e sem receitas não cai no estado 'sem financiamento'", () => {
+  const html = renderMoneyTabComDespesas({
+    patrimonio: [patrimonioRow({ id: "pat-1" })],
+    financiamento: [],
+    despesas: [despesaPublica()],
+    despesasStatus: "ok",
+  })
+  assert.ok(!html.includes("Sem financiamento de campanha nesta ficha"), "despesas declaradas contam como dado financeiro")
+  assert.ok(html.includes("Despesas de campanha"), "a seção de despesas aparece")
+})
+
+test("sem despesas e sem receitas o estado 'sem financiamento' continua aparecendo", () => {
+  const html = renderMoneyTabComDespesas({
+    patrimonio: [patrimonioRow({ id: "pat-1" })],
+    financiamento: [],
+    despesas: [],
+    despesasStatus: "ok",
+  })
+  assert.ok(html.includes("Sem financiamento de campanha nesta ficha"))
+  assert.ok(!html.includes("Despesas de campanha"))
+})
+
+test("despesas indisponíveis não escondem nem alteram o estado 'sem financiamento'", () => {
+  const html = renderMoneyTabComDespesas({
+    patrimonio: [patrimonioRow({ id: "pat-1" })],
+    financiamento: [],
+    despesas: null,
+    despesasStatus: "indisponivel",
+  })
+  assert.ok(html.includes("Sem financiamento de campanha nesta ficha"))
+  assert.ok(!html.includes("Nenhuma despesa declarada"))
+})
+
+test("sem patrimônio nem receitas mas com despesas: some o cartão 'Dados financeiros' e o patrimônio segue explicado", () => {
+  const html = renderMoneyTabComDespesas({
+    patrimonio: [],
+    financiamento: [],
+    despesas: [despesaPublica()],
+    despesasStatus: "ok",
+  })
+  assert.ok(!html.includes("Dados financeiros"))
+  assert.ok(html.includes("Despesas de campanha"))
+  assert.ok(html.includes("Patrimônio ainda não coletado") || html.includes("Sem pleito com declaração de bens"))
 })

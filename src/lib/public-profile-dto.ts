@@ -24,6 +24,15 @@ import { anosDePleitoDisputado } from "@/lib/pleitos-disputados"
 import { gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { publicDoadorRecorrente } from "@/lib/doador-recorrente-publico"
+import {
+  DESPESAS_ESTADOS_COLETA,
+  type DespesaConcentracaoItem,
+  type DespesaDoacaoTerceiroItem,
+  type DespesaFornecedorItem,
+  type DespesasEstadoColeta,
+  type DespesasLeituraStatus,
+  type FinanciamentoDespesas,
+} from "@/lib/financiamento-despesas-contrato"
 import { processoPodeContarComoCriminal } from "@/lib/processos-display"
 import { nivelFonteProcesso } from "@/lib/djen-consulta-url"
 import { pareceNomeDeInstituicao } from "@/lib/formacao-display"
@@ -343,6 +352,111 @@ function publicFinanciamento(row: Financiamento, index: number) {
       valor: doador.valor,
       tipo: doador.tipo,
     })),
+  }
+}
+
+/**
+ * Despesas de campanha no payload público. Campo a campo, sem spread: nada de
+ * `candidato_id`, `sq_candidato` ou `municipio_codigo` (identificadores de
+ * cadastro) e, dentro dos jsonb, só as chaves listadas abaixo.
+ */
+export interface FinanciamentoDespesasPublico {
+  id: string
+  ano_eleicao: number
+  uf: string | null
+  cargo_candidatura: string | null
+  estado_coleta: DespesasEstadoColeta
+  total_despesas_contratadas: number | null
+  total_despesas_pagas: number | null
+  total_doacoes_a_terceiros: number | null
+  recursos_financeiros: number | null
+  recursos_estimaveis: number | null
+  divida_campanha: number | null
+  sobra_financeira: number | null
+  concentracao_despesas: DespesaConcentracaoItem[]
+  maiores_fornecedores: DespesaFornecedorItem[]
+  doacoes_a_terceiros: DespesaDoacaoTerceiroItem[]
+  prestacao_parcial: boolean
+  data_entrega: string | null
+  fonte: string
+  fonte_url: string | null
+  coletado_em: string
+}
+
+function publicDespesaConcentracao(item: DespesaConcentracaoItem): DespesaConcentracaoItem {
+  return { tipo: maskDocumentLikeSequences(item.tipo), quantidade: item.quantidade, valor: item.valor }
+}
+
+function publicDespesaFornecedor(item: DespesaFornecedorItem): DespesaFornecedorItem {
+  if (item.tipo === "PJ") {
+    return { tipo: "PJ", nome: maskDocumentLikeSequences(item.nome), quantidade: item.quantidade, valor: item.valor }
+  }
+  return {
+    tipo: "PF_agregado",
+    quantidade_prestadores: item.quantidade_prestadores,
+    quantidade: item.quantidade,
+    valor: item.valor,
+  }
+}
+
+function maskTextoDespesa(value: string | null | undefined): string | null {
+  return value == null ? null : maskDocumentLikeSequences(value)
+}
+
+function publicDespesaDoacao(item: DespesaDoacaoTerceiroItem): DespesaDoacaoTerceiroItem {
+  return {
+    destinatario_tipo: item.destinatario_tipo,
+    destinatario_nome:
+      item.destinatario_tipo === "outro" ? null : maskTextoDespesa(item.destinatario_nome),
+    uf: item.uf,
+    cargo: maskTextoDespesa(item.cargo),
+    partido: maskTextoDespesa(item.partido),
+    valor: item.valor,
+    candidato_slug: item.candidato_slug,
+  }
+}
+
+function publicFinanciamentoDespesas(row: FinanciamentoDespesas, index: number): FinanciamentoDespesasPublico {
+  return {
+    id: compactPublicId("desp", row.id, index),
+    ano_eleicao: row.ano_eleicao,
+    uf: row.uf,
+    cargo_candidatura: maskTextoDespesa(row.cargo_candidatura),
+    estado_coleta: row.estado_coleta,
+    total_despesas_contratadas: row.total_despesas_contratadas,
+    total_despesas_pagas: row.total_despesas_pagas,
+    total_doacoes_a_terceiros: row.total_doacoes_a_terceiros,
+    recursos_financeiros: row.recursos_financeiros,
+    recursos_estimaveis: row.recursos_estimaveis,
+    divida_campanha: row.divida_campanha,
+    sobra_financeira: row.sobra_financeira,
+    concentracao_despesas: (row.concentracao_despesas ?? []).map(publicDespesaConcentracao),
+    maiores_fornecedores: (row.maiores_fornecedores ?? []).map(publicDespesaFornecedor),
+    doacoes_a_terceiros: (row.doacoes_a_terceiros ?? []).map(publicDespesaDoacao),
+    prestacao_parcial: row.prestacao_parcial === true,
+    data_entrega: row.data_entrega,
+    fonte: maskDocumentLikeSequences(row.fonte ?? ""),
+    fonte_url: row.fonte_url,
+    coletado_em: row.coletado_em,
+  }
+}
+
+/**
+ * Despesas + status da leitura. Status "indisponivel" (ou ausente) nunca leva
+ * linhas: o consumidor omite a seção e não afirma ausência.
+ */
+export function publicDespesasDaFicha(ficha: Pick<FichaCandidato, "financiamento_despesas" | "financiamento_despesas_status">): {
+  financiamento_despesas: FinanciamentoDespesasPublico[] | null
+  financiamento_despesas_status: DespesasLeituraStatus
+} {
+  const lido = ficha.financiamento_despesas_status === "ok" && Array.isArray(ficha.financiamento_despesas)
+  return {
+    financiamento_despesas: lido
+      ? (ficha.financiamento_despesas ?? [])
+          .filter((row) => DESPESAS_ESTADOS_COLETA.includes(row.estado_coleta))
+          .map(publicFinanciamentoDespesas)
+      : null,
+    financiamento_despesas_status: lido ? "ok" : "indisponivel",
   }
 }
 
@@ -801,6 +915,7 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
     return fonte_nivel ? [{ ...row, fonte_nivel }] : []
   })
   const processosOmitidos = (ficha.processos_omitidos_sem_fonte_oficial ?? 0) + processosBrutos.length - processosPublicos.length
+  const despesasPublicas = publicDespesasDaFicha(ficha)
 
   return {
     id: ficha.id,
@@ -866,6 +981,8 @@ export function toPublicCandidatoProfileDto(ficha: FichaCandidato) {
       buildFinanciamentoEleicoes(ficha.financiamento ?? [], ficha.historico ?? []),
     doadores_recorrentes:
       ficha.doadores_recorrentes == null ? null : ficha.doadores_recorrentes.map(publicDoadorRecorrente),
+    financiamento_despesas: despesasPublicas.financiamento_despesas,
+    financiamento_despesas_status: despesasPublicas.financiamento_despesas_status,
     votos: (ficha.votos ?? []).map(publicVoto),
     processos: processosPublicos.map(publicProcesso),
     processos_omitidos_sem_fonte_oficial: processosOmitidos,

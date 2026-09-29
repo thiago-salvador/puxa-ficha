@@ -126,6 +126,8 @@ async function main() {
             patrimonioEleicoes: dto.patrimonio_eleicoes ?? null,
             financiamento: dto.financiamento ?? [],
             financiamentoEleicoes: dto.financiamento_eleicoes ?? null,
+            despesas: dto.financiamento_despesas ?? null,
+            despesasStatus: dto.financiamento_despesas_status,
             historico: dto.historico ?? [],
             gastos: dto.gastos_parlamentares ?? [],
             historicoLength: dto.historico?.length ?? 0,

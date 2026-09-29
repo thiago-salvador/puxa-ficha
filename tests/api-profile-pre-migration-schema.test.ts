@@ -118,6 +118,7 @@ function postgrestError(code: string, message: string): Response {
 
 interface StubOptions {
   ausenciaError?: Response
+  despesasError?: Response
   selects: Record<string, string[]>
   projetosUrls?: string[]
 }
@@ -161,6 +162,9 @@ function stubPreMigrationDatabase(options: StubOptions): void {
         return postgrestError("42703", `column patrimonio_ausencia_oficial.${missing} does not exist`)
       }
       return json([AUSENCIA_PRE_MIGRATION])
+    }
+    if (table === "financiamento_despesas_publico" && options.despesasError) {
+      return options.despesasError.clone()
     }
     if (table === "financiamento_verificacoes_publico") {
       const missing = NEW_VERIFICACAO_COLUMNS.find((column) => select.includes(column))
@@ -267,6 +271,51 @@ describe("ficha antes das migrations de contexto eleitoral", () => {
       ausenciaSelects.every((select) => select.includes("ano_arquivo")),
       `42501 não pode disparar o retry pré-migration: ${JSON.stringify(ausenciaSelects)}`
     )
+  })
+
+  for (const [codigo, mensagem, status, leituras] of [
+    ["42P01", 'relation "public.financiamento_despesas_publico" does not exist', "ausente", 1],
+    ["42501", "permission denied for view financiamento_despesas_publico", "ausente", 1],
+    ["57014", "canceling statement due to statement timeout", "indisponivel", 2],
+  ] as const) {
+    it(`despesas com erro ${codigo}: a ficha carrega com status ${status} e a seção é omitida`, async () => {
+      const api = await loadApi()
+      const selects: Record<string, string[]> = {}
+      const warnings: string[] = []
+      console.warn = (...args: unknown[]) => {
+        warnings.push(args.map(String).join(" "))
+      }
+      console.error = () => {}
+      stubPreMigrationDatabase({ selects, despesasError: postgrestError(codigo, mensagem) })
+
+      const resource = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
+
+      assert.equal(resource.sourceStatus, "live", resource.sourceMessage ?? "")
+      assert.ok(resource.data, "a ficha precisa carregar mesmo sem a view de despesas")
+      assert.equal(resource.data.financiamento_despesas_status, status)
+      assert.equal(resource.data.financiamento_despesas, null)
+      assert.ok(
+        warnings.some((line) => line.includes("financiamento_despesas_publico") && line.includes("seção de despesas omitida")),
+        `esperado aviso de despesas omitidas, veio: ${JSON.stringify(warnings)}`,
+      )
+      // View ausente é estado estável: a ficha vai para o cache com uma leitura só.
+      // Falha transitória: o loader em cache lança e o wrapper refaz a leitura sem cache.
+      assert.equal((selects.financiamento_despesas_publico ?? []).length, leituras)
+    })
+  }
+
+  it("despesas lidas com sucesso: status ok e o payload entra no caminho normal do cache", async () => {
+    const api = await loadApi()
+    const selects: Record<string, string[]> = {}
+    console.warn = () => {}
+    console.error = () => {}
+    stubPreMigrationDatabase({ selects })
+
+    const resource = await api.getCandidatoBySlugResource(CANDIDATO_ROW.slug)
+
+    assert.equal(resource.data?.financiamento_despesas_status, "ok")
+    assert.deepEqual(resource.data?.financiamento_despesas, [])
+    assert.equal((selects.financiamento_despesas_publico ?? []).length, 1, "uma leitura só, sem refazer")
   })
 
   it("preview omite projeto despublicado da lista e das três contagens", async () => {
