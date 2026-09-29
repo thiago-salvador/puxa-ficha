@@ -11,6 +11,7 @@ type ShareButtonsProps = {
   variant?: "card" | "compact"
   slug?: string
   candidateName?: string
+  cardVersion?: string | null
 }
 
 type FollowCandidateButtonProps = {

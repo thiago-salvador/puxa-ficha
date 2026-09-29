@@ -371,12 +371,6 @@ export async function ingestCamaraCotasCsv(options: { targetSlugs?: string[]; co
       // restaura estas preimages antes de devolver erro.
       for (const legacy of tombstonesToApply) {
         const isDuplicate = reconciliation.duplicates.some((row) => row.id === legacy.id)
-        if (emDryRun()) {
-          planejarEscrita({ fonte: "camara-cotas", tabela: "gastos_parlamentares", operacao: "update", alvo: candidate.slug,
-            identidade: `ideCadastro:${candidate.ids.camara}`, chave: { id: legacy.id, ano: legacy.ano, fonte: legacy.fonte },
-            valores: { despublicado_em: "now()", despublicacao_motivo: isDuplicate ? "camara-cota-csv: duplicata confirmada pelo total anual oficial" : "camara-cota-csv: ausência confirmada em fonte anual completa" } })
-          continue
-        }
         const explicitApiCasa = fonteCamaraApiId(legacy.fonte, candidate.ids.camara)
         const status = isDuplicate ? `duplicata de linha confirmada pelo total oficial de ${legacy.ano}` : officialTotals.has(legacy.ano)
           ? explicitApiCasa
@@ -386,6 +380,14 @@ export async function ingestCamaraCotasCsv(options: { targetSlugs?: string[]; co
             ? `URL oficial Câmara para ideCadastro ${candidate.ids.camara} confirma a Casa; linha ausente no CSV Cota completo de ${legacy.ano}`
             : `linha legada ausente no CSV oficial completo de ${legacy.ano}`
         const reason = `camara-cota-csv: ${status}; mantida para auditoria`
+        // O dry-run mostra o mesmo motivo que o apply grava: linha com total
+        // divergente não é "ausência confirmada".
+        if (emDryRun()) {
+          planejarEscrita({ fonte: "camara-cotas", tabela: "gastos_parlamentares", operacao: "update", alvo: candidate.slug,
+            identidade: `ideCadastro:${candidate.ids.camara}`, chave: { id: legacy.id, ano: legacy.ano, fonte: legacy.fonte },
+            valores: { despublicado_em: "now()", despublicacao_motivo: reason } })
+          continue
+        }
         let tombstone = supabase.from("gastos_parlamentares").update({ despublicado_em: new Date().toISOString(), despublicacao_motivo: reason })
           .eq("id", legacy.id).eq("candidato_id", candidateId).eq("ano", legacy.ano)
         tombstone = legacy.fonte === null ? tombstone.is("fonte", null) : tombstone.eq("fonte", legacy.fonte)

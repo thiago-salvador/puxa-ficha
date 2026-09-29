@@ -41,6 +41,7 @@ import {
 } from "./lib/tse-2026-financas-plano"
 import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { assertOutsideRepository } from "./audit/lib/private-output"
+import { infraErrorGraceDays } from "./audit/audit-cobertura-fichas"
 import { reciboBloqueadoPorIdentidade } from "./lib/tse-identidade-celulas"
 
 const SCRIPT = "tse-2026-financas"
@@ -89,7 +90,9 @@ export function lerArgs(argv: string[]): OpcoesCli {
   return {
     aplicar: argv.includes("--apply"),
     agendado: argv.includes("--agendado"),
-    out: valor("out"),
+    // Validado aqui, antes do try de main(): configuração errada não é falha
+    // de coleta e não pode gravar recibo de erro (run 36463854587, 28/09).
+    out: valor("out") === null ? null : assertOutsideRepository(valor("out")!, "--out"),
     expectedPlanSha: valor("expected-plan-sha"),
     backfillCategorias: argv.includes("--backfill-categorias"),
     backfillDryRun: valor("backfill-dry-run"),
@@ -105,6 +108,8 @@ type RespostaSelect = { data: unknown[] | null; error: { message: string } | nul
 /** Recorte mínimo do builder do PostgREST que a paginação usa. */
 interface ConsultaPaginavel {
   eq(coluna: string, valor: unknown): ConsultaPaginavel
+  in(coluna: string, valores: readonly unknown[]): ConsultaPaginavel
+  gte(coluna: string, valor: unknown): ConsultaPaginavel
   order(coluna: string): ConsultaPaginavel
   range(de: number, ate: number): PromiseLike<RespostaSelect>
 }
@@ -480,10 +485,33 @@ export function linhasDeReciboDeFalha(publicos: FichaPublica[], motivo: string, 
   )
 }
 
+/**
+ * Falha de rodada não grava `erro` por cima de prova válida: o par
+ * (fonte, ficha) com recibo conclusivo dentro do prazo da matriz de cobertura
+ * fica sem recibo novo. Puro, para teste.
+ */
+export function semProvaValida<T extends { fonte: string; alvo: string }>(linhas: T[], provas: ReadonlyArray<{ fonte: string; alvo: string }>): T[] {
+  const provadas = new Set(provas.map((p) => `${p.fonte}|${p.alvo}`))
+  return linhas.filter((l) => !provadas.has(`${l.fonte}|${l.alvo}`))
+}
+
+async function carregarProvasValidas(): Promise<Array<{ fonte: string; alvo: string }>> {
+  const dias = Math.min(infraErrorGraceDays("financiamento"), infraErrorGraceDays("patrimonio"))
+  const desde = new Date(Date.now() - dias * 86_400_000).toISOString()
+  return selecionarTudo<{ fonte: string; alvo: string }>("coleta_log", "fonte, alvo", (q) => q
+    .eq("escopo", "candidato")
+    .in("fonte", [FONTE_RECIBO_FINANCIAMENTO, FONTE_RECIBO_PATRIMONIO])
+    .in("resultado", ["encontrado", "publicado", "vazio_confirmado"])
+    .gte("executado_em", desde)
+    .order("id"))
+}
+
 async function gravarRecibosDeFalha(motivo: string, publicos: FichaPublica[] | null, identityRiskSlugs: ReadonlySet<string> = new Set()): Promise<void> {
   try {
     const lista = publicos ?? (await carregarPublicos())
-    const linhas = linhasDeReciboDeFalha(lista, motivo, identityRiskSlugs)
+    const todas = linhasDeReciboDeFalha(lista, motivo, identityRiskSlugs)
+    const linhas = semProvaValida(todas, await carregarProvasValidas())
+    if (linhas.length < todas.length) console.error(`recibos de erro não gravados por prova válida no prazo: ${todas.length - linhas.length}`)
     for (let i = 0; i < linhas.length; i += 200) {
       const { error } = await supabase.from("coleta_log").insert(linhas.slice(i, i + 200))
       if (error) throw new Error(error.message)

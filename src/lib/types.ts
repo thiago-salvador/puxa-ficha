@@ -845,6 +845,8 @@ export interface CandidatoComparavel {
   processos_omitidos_sem_fonte_oficial?: number;
   processos_verificacao?: ProcessosVerificacao | null;
   mudancas_partido: number;
+  /** Contagem afirmável: troca contada ou recibo de filiação conclusivo. Falso: "não verificado". */
+  mudancas_partido_verificado?: boolean;
   alertas_graves: number;
   patrimonio_declarado: number | null;
   /**

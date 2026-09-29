@@ -156,7 +156,7 @@ test("vinculo antigo sem impressao que a cascata nao reaprova: fica publicado, s
   assert.deepEqual(plano.retirar, [])
   assert.equal(plano.mantidosPorVariancia.length, 1)
   assert.equal(plano.mantidosPorVariancia[0].sem_impressao_anterior, true)
-  assert.deepEqual(Object.keys(plano).sort(), ["mantidosPorVariancia", "retirar"], "o plano nao tem caminho de carimbo")
+  assert.deepEqual(Object.keys(plano).sort(), ["mantidosPorDecisaoEditorial", "mantidosPorVariancia", "retirar"], "o plano nao tem caminho de carimbo")
   // Execucao seguinte com a mesma rejeicao: continua igual, ainda sem impressao.
   const seguinte = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [p] })
   assert.deepEqual(seguinte, plano)
@@ -171,7 +171,7 @@ test("vinculo antigo sem impressao que a cascata reaprova recebe a impressao pel
   const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
   const chave = [linha.programa_chave, linha.tema_id, linha.tipo_evidencia, linha.evidencia_ref].join("|")
   const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set([chave]), pares: [p] })
-  assert.deepEqual(plano, { retirar: [], mantidosPorVariancia: [] })
+  assert.deepEqual(plano, { retirar: [], mantidosPorVariancia: [], mantidosPorDecisaoEditorial: [] })
 })
 
 test("vinculo antigo sem impressao cujo par sumiu e retirado", () => {

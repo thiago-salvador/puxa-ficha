@@ -1,5 +1,5 @@
 import type { NextConfig } from "next"
-import { withSentryConfig } from "@sentry/nextjs"
+import { withSentryConfig } from "@sentry/nextjs/config"
 import { REMOTE_IMAGE_HOSTS } from "./src/lib/remote-image-hosts"
 import { getEmbedNoindexHeaderValue } from "./src/lib/preview-indexing"
 import ondaPRedirects from "./src/data/redirects-onda-p.json"
