@@ -155,12 +155,12 @@ BEGIN
     'SELECT id_ultima_entrega FROM public.financiamento_despesas',
     'SELECT tipo_entrega FROM public.financiamento_despesas',
     'SELECT * FROM public.financiamento_despesas',
-    $q$INSERT INTO public.financiamento_despesas (candidato_id, ano_eleicao, sq_candidato, estado_coleta, fonte, coletado_em) VALUES ('00000000-0000-4000-8000-000000000001', 2024, '1', 'declarado', 'x', now())$q$,
-    $q$UPDATE public.financiamento_despesas SET fonte = 'x'$q$,
-    $q$DELETE FROM public.financiamento_despesas$q$,
-    $q$INSERT INTO public.financiamento_despesas_publico (candidato_id, ano_eleicao, sq_candidato, estado_coleta, fonte, coletado_em) VALUES ('00000000-0000-4000-8000-000000000001', 2024, '1', 'declarado', 'x', now())$q$,
-    $q$UPDATE public.financiamento_despesas_publico SET fonte = 'x'$q$,
-    $q$DELETE FROM public.financiamento_despesas_publico$q$,
+    'INSERT INTO public.financiamento_despesas (candidato_id, ano_eleicao, sq_candidato, estado_coleta, fonte, coletado_em) VALUES (''00000000-0000-4000-8000-000000000001'', 2024, ''1'', ''declarado'', ''x'', now())',
+    'UPDATE public.financiamento_despesas SET fonte = ''x''',
+    'DELETE FROM public.financiamento_despesas',
+    'INSERT INTO public.financiamento_despesas_publico (candidato_id, ano_eleicao, sq_candidato, estado_coleta, fonte, coletado_em) VALUES (''00000000-0000-4000-8000-000000000001'', 2024, ''1'', ''declarado'', ''x'', now())',
+    'UPDATE public.financiamento_despesas_publico SET fonte = ''x''',
+    'DELETE FROM public.financiamento_despesas_publico',
     'TRUNCATE public.financiamento_despesas'
   ] LOOP
     BEGIN

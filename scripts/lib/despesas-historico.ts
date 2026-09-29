@@ -27,6 +27,7 @@ import { createReadStream, existsSync, lstatSync, readFileSync } from "node:fs"
 import { dirname, resolve } from "node:path"
 import type { Readable } from "node:stream"
 
+import { stripAccents } from "../../src/lib/strip-accents"
 import { normalizarDespesas, semSentinela, type DespesaItemEntrada, type ResultadoNormalizacao } from "./despesas-normalizar"
 
 export const ANOS_DESPESAS_HISTORICO = [2018, 2020, 2022, 2024] as const
@@ -118,7 +119,7 @@ export function centavosDoCsv(valor: string | undefined): number | null {
 }
 
 function semAcento(texto: string): string {
-  return texto.normalize("NFD").replace(/[̀-ͯ]/g, "")
+  return stripAccents(texto)
 }
 
 // ---------------------------------------------------------------------------

@@ -19,6 +19,7 @@ import { join, resolve } from "node:path"
 import { pathToFileURL } from "node:url"
 
 import { assertOutsideRepository } from "./audit/lib/private-output"
+import { escreverAuditado } from "./lib/escrita-auditada"
 import { ANOS_DESPESAS_HISTORICO, coletarDespesasHistoricas } from "./lib/despesas-historico"
 import { gravarEstadoJevDespesas, montarEstadoJevDespesas } from "./lib/despesas-jev"
 import { textoTemDocumento } from "./lib/despesas-normalizar"
@@ -227,9 +228,21 @@ async function gravarAcoes(plano: PlanoDespesas): Promise<{ gravadas: number; fa
   let gravadas = 0
   for (let offset = 0; offset < plano.acoes.length; offset += 25) {
     const lote = plano.acoes.slice(offset, offset + 25)
-    const { error } = await supabase.from(TABELA_DESPESAS).upsert(lote.map((a) => a.linha), { onConflict: CHAVE_UPSERT_DESPESAS })
-    if (error) for (const a of lote) falhas.push({ slug: a.slug, ano: a.linha.ano_eleicao, erro: error.message })
-    else gravadas += lote.length
+    try {
+      await escreverAuditado(
+        {
+          script: "tse-despesas",
+          tabela: TABELA_DESPESAS,
+          motivo: "publica despesas de campanha do TSE, com plano verificado por SHA",
+          recorte: `lote de ${lote.length} candidatura(s) a partir de ${lote[0].slug} ${lote[0].linha.ano_eleicao}`,
+        },
+        () => supabase.from(TABELA_DESPESAS).upsert(lote.map((a) => a.linha), { onConflict: CHAVE_UPSERT_DESPESAS }).select("id"),
+      )
+      gravadas += lote.length
+    } catch (erro) {
+      const mensagem = erro instanceof Error ? erro.message : String(erro)
+      for (const a of lote) falhas.push({ slug: a.slug, ano: a.linha.ano_eleicao, erro: mensagem })
+    }
   }
   return { gravadas, falhas }
 }

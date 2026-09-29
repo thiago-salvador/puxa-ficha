@@ -18,7 +18,7 @@ export function documentoPf(n: number | string): string {
   return "8".repeat(6) + String(n).padStart(5, "0")
 }
 
-export function reidratarTexto(texto: string): string {
+function reidratarTexto(texto: string): string {
   return texto
     .replace(/\{\{CPF-(\d+)\}\}/g, (_, n: string) => documentoPf(n))
     .replace(/\bPJ-(\d+)\b/g, (_, n: string) => documentoPj(n))

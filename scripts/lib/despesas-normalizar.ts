@@ -16,6 +16,7 @@
  * Nenhum documento sai deste módulo.
  */
 
+import { stripAccents } from "../../src/lib/strip-accents"
 import {
   removerDocumentosDoTexto,
   type DespesaConcentracaoItem,
@@ -164,7 +165,7 @@ const PADRAO_PARTIDO = /\b(?:partido|diretorio|direcao|comissao (?:provisoria|ex
 const PADRAO_CAMPANHA = /\beleic(?:ao|oes)\s+\d{4}\b/i
 
 function semAcento(texto: string): string {
-  return texto.normalize("NFD").replace(/[̀-ͯ]/g, "")
+  return stripAccents(texto)
 }
 
 export function ehDoacaoATerceiros(tipo: string | null): boolean {

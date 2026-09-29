@@ -445,7 +445,7 @@ function publicFinanciamentoDespesas(row: FinanciamentoDespesas, index: number):
  * Despesas + status da leitura. Status "indisponivel" (ou ausente) nunca leva
  * linhas: o consumidor omite a seção e não afirma ausência.
  */
-export function publicDespesasDaFicha(ficha: Pick<FichaCandidato, "financiamento_despesas" | "financiamento_despesas_status">): {
+function publicDespesasDaFicha(ficha: Pick<FichaCandidato, "financiamento_despesas" | "financiamento_despesas_status">): {
   financiamento_despesas: FinanciamentoDespesasPublico[] | null
   financiamento_despesas_status: DespesasLeituraStatus
 } {

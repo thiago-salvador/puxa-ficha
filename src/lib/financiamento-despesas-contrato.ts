@@ -109,7 +109,7 @@ export type DespesasLeituraStatus = "ok" | "ausente" | "indisponivel"
  * Sequências de 11 ou 14 dígitos, pontuadas ou não (CPF, CNPJ, razão social de MEI).
  * O padrão de CNPJ vem antes do de CPF para uma corrida de 14 dígitos não deixar resto.
  */
-export const DOCUMENTO_EM_TEXTO = /\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}|\d{3}\.?\d{3}\.?\d{3}-?\d{2}|\d{11,}/g
+const DOCUMENTO_EM_TEXTO = /\d{2}\.?\d{3}\.?\d{3}\/?\d{4}-?\d{2}|\d{3}\.?\d{3}\.?\d{3}-?\d{2}|\d{11,}/g
 
 export function removerDocumentosDoTexto(texto: string): string {
   return texto.replace(DOCUMENTO_EM_TEXTO, "").replace(/\s{2,}/g, " ").replace(/[\s\-–,.]+$/, "").trim()

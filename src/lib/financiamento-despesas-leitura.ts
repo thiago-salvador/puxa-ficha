@@ -27,7 +27,7 @@ import {
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const DESPESAS_VIEW_PUBLICA = "financiamento_despesas_publico"
-export const DESPESAS_TIPO_NAO_INFORMADO = "Não informada"
+const DESPESAS_TIPO_NAO_INFORMADO = "Não informada"
 
 export interface DespesasLeitura {
   status: DespesasLeituraStatus
@@ -87,7 +87,7 @@ function listaOuVazia(value: unknown): unknown[] {
   return Array.isArray(value) ? value : []
 }
 
-export function sanitizarConcentracao(value: unknown): DespesaConcentracaoItem[] {
+function sanitizarConcentracao(value: unknown): DespesaConcentracaoItem[] {
   const itens: DespesaConcentracaoItem[] = []
   for (const bruto of listaOuVazia(value)) {
     if (!ehRegistro(bruto)) continue
