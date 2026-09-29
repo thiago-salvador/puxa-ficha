@@ -364,8 +364,9 @@ describe("coletor TSE 2026: portão e argumentos", () => {
     const out = join(tmpdir(), "pf-tse-2026-out")
     assert.deepEqual(lerArgs(["--apply", "--agendado", `--out=${out}`, "--expected-plan-sha=abc"]), {
       aplicar: true, agendado: true, out, expectedPlanSha: "abc", backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null,
+      avaliarTravas: false, maxFichasAlteradas: null,
     })
-    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null })
+    assert.deepEqual(lerArgs([]), { aplicar: false, agendado: false, out: null, expectedPlanSha: null, backfillCategorias: false, backfillDryRun: null, reviewedPlan: null, expectedPlanFileSha: null, avaliarTravas: false, maxFichasAlteradas: null })
   })
 
   it("--out dentro do repositório falha em lerArgs, antes do try que grava recibo de erro", () => {
