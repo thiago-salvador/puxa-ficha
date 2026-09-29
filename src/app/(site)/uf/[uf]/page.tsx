@@ -40,6 +40,7 @@ import { loadStatePrograms } from "@/lib/state-programs"
 import { loadProgramRunningMates } from "@/lib/program-running-mates"
 import { loadStatePolls } from "@/lib/state-polls"
 import { isSenadoEnabled } from "@/lib/senado-feature"
+import { buildGuideColinhaHref } from "@/lib/guia-votacao"
 
 export async function generateStaticParams() {
   return getEstadoUFs().map((uf) => ({ uf }))
@@ -234,6 +235,7 @@ export default async function UfHubPage({
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
         <nav aria-label="Seções do estado" className="mt-4 flex flex-wrap gap-x-6 gap-y-2 border-b border-border pb-3 text-sm font-semibold">
           <a href="#candidatos" className="inline-flex min-h-11 items-center">Candidaturas</a>
+          <Link href={buildGuideColinhaHref(uf)} className="inline-flex min-h-11 items-center">Antes de votar</Link>
           {isSenadoEnabled() && <Link href={`/uf/${uf}/senado`} className="inline-flex min-h-11 items-center">Senado</Link>}
           <a href="#programas" className="inline-flex min-h-11 items-center">Programas por tema</a>
           <a href="#pesquisas" className="inline-flex min-h-11 items-center">Pesquisas</a>
