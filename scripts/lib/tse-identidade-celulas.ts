@@ -12,6 +12,41 @@ import { stripAccents } from "../../src/lib/strip-accents"
  */
 export const FAMILIAS_CELULA = ["financiamento", "patrimonio", "historico_politico"] as const
 export type FamiliaCelula = typeof FAMILIAS_CELULA[number]
+export type RiscoIdentidadePinado = {
+  schema_version: 1
+  kind: "tse-identidade-risco"
+  gerado_em: string
+  origem: string
+  slugs: string[]
+  celulas_liberadas: string[]
+}
+
+/** O agendado não aplica um plano quando o pin público de identidade é inválido. */
+export function parseRiscoIdentidadePinado(value: Uint8Array | string): RiscoIdentidadePinado {
+  const fail = (reason: string): never => { throw new Error(`pin de identidade inválido: ${reason}`) }
+  let parsed: unknown
+  try { parsed = JSON.parse(typeof value === "string" ? value : new TextDecoder().decode(value)) } catch { return fail("JSON") }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return fail("raiz")
+  const root = parsed as Record<string, unknown>
+  if (Object.keys(root).sort().join(",") !== "celulas_liberadas,gerado_em,kind,origem,schema_version,slugs"
+    || root.schema_version !== 1 || root.kind !== "tse-identidade-risco"
+    || typeof root.gerado_em !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(root.gerado_em)
+    || !Number.isFinite(Date.parse(`${root.gerado_em}T00:00:00Z`))
+    || new Date(`${root.gerado_em}T00:00:00Z`).toISOString().slice(0, 10) !== root.gerado_em
+    || typeof root.origem !== "string" || !root.origem.trim()
+    || !Array.isArray(root.slugs) || !Array.isArray(root.celulas_liberadas)) return fail("cabeçalho")
+  const slugs = root.slugs as unknown[]
+  if (slugs.some((slug) => typeof slug !== "string" || !/^[a-z0-9][a-z0-9-]{0,119}$/.test(slug))
+    || slugs.some((slug, index) => index > 0 && String(slugs[index - 1]) >= String(slug))) return fail("slugs")
+  const knownSlugs = new Set(slugs)
+  const cells = root.celulas_liberadas as unknown[]
+  if (cells.some((cell) => {
+    if (typeof cell !== "string") return true
+    const parts = cell.split("|")
+    return parts.length !== 2 || !knownSlugs.has(parts[0]) || !FAMILIAS_CELULA.includes(parts[1] as FamiliaCelula)
+  }) || cells.some((cell, index) => index > 0 && String(cells[index - 1]) >= String(cell))) return fail("células liberadas")
+  return root as RiscoIdentidadePinado
+}
 const DECISOES = ["publicar", "manter_oculto", "sem_mudanca"] as const
 export type DecisaoIdentidade = typeof DECISOES[number]
 export type LinhaTseChave = { ano: number; uf: string; municipio: string | null; sq: string }

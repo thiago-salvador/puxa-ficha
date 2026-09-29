@@ -97,6 +97,234 @@ export interface Comunicacao {
   destinatarios?: Array<{ nome?: string; polo?: string }>
 }
 
+export type PapelProcessual =
+  | "parte_passiva"
+  | "parte_ativa"
+  /** Qualificada com o próprio CPF colado ao nome, sem rótulo de polo nem de não-parte. */
+  | "parte_qualificada"
+  | "advogado"
+  | "vitima_ou_ofendido"
+  | "testemunha_ou_terceiro"
+  | "apenas_citado"
+  | "indeterminado"
+
+export interface DecisaoPapelProcessual {
+  papel: PapelProcessual
+  trecho: string
+}
+
+const PAPEL_PARTIDO_PASSIVO = /\b(?:REQUERID[OA]S?|R[ÉE]US?|EXECUTAD[OA]S?|DEMANDAD[OA]S?|DENUNCIAD[OA]S?|ACUSAD[OA]S?|RECORRID[OA]S?|APELAD[OA]S?|AGRAVAD[OA]S?|EMBARGAD[OA]S?|RECLAMAD[OA]S?|INVESTIGAD[OA]S?|QUERELAD[OA]S?|IMPETRAD[OA]S?|REPRESENTAD[OA]S?|PACIENTES?|DEVEDOR(?:A|ES|AS)?|EXECTD[OA]S?|REQD[OA]S?|RECD[OA]S?|APD[OA]S?|AGD[OA]S?|IMPD[OA]S?|EMBD[OA]S?|RECLD[OA]S?|PARTE\s+PASSIVA)\b/i
+const PAPEL_PARTIDO_ATIVO = /\b(?:AUTOR(?:A|ES|AS)?|REQUERENTES?|EXEQUENTES?|DEMANDANTES?|IMPETRANTES?|RECORRENTES?|APELANTES?|AGRAVANTES?|EMBARGANTES?|RECLAMANTES?|QUERELANTES?|CREDOR(?:A|ES|AS)?|EXEQTES?|REQTES?|RECTES?|APTES?|AGTES?|IMPTES?|EMBTES?|RECLTES?|PARTE\s+ATIVA)\b/i
+const PAPEL_ADVOGADO = /\b(?:ADVOGAD[OA](?:\(A\))?|ADV\.?|PROCURADOR(?:A)?|OAB\s*(?:[/:-]?\s*[A-Z]{2}\s*)?\d{3,7})\b|\(\s*OAB\b/i
+const PAPEL_VITIMA = /\b(?:V[ÍI]TIMA|OFENDID[OA](?:\(A\))?)\b/i
+const PAPEL_TESTEMUNHA = /\b(?:TESTEMUNH[AO]|TERCEIR[OA]\s+INTERESSAD[OA]|PERIT[OA])\b/i
+
+function papelDoPolo(polo: string | undefined): PapelProcessual | null {
+  const valor = normalizar(polo ?? "")
+  if (/^(?:A|ATIVO|ATIVA)$/.test(valor)) return "parte_ativa"
+  if (/^(?:P|PASSIVO|PASSIVA)$/.test(valor)) return "parte_passiva"
+  return null
+}
+
+const ROTULOS_PAPEL: ReadonlyArray<readonly [RegExp, PapelProcessual]> = [
+  [new RegExp(`${PAPEL_PARTIDO_PASSIVO.source}|\\bPOLO\\s+PASSIVO\\b`, "gi"), "parte_passiva"],
+  [new RegExp(`${PAPEL_PARTIDO_ATIVO.source}|\\bPOLO\\s+ATIVO\\b`, "gi"), "parte_ativa"],
+  [new RegExp(PAPEL_ADVOGADO.source, "gi"), "advogado"],
+  [new RegExp(PAPEL_VITIMA.source, "gi"), "vitima_ou_ofendido"],
+  [new RegExp(PAPEL_TESTEMUNHA.source, "gi"), "testemunha_ou_terceiro"],
+]
+
+/**
+ * Rótulo que apresenta esta menção: o mais próximo antes do nome, desde que o
+ * que sobra entre ele e o nome seja só separador ou, para rótulo de parte, uma
+ * lista de outros nomes ("REQUERIDOS: A, B E NOME"). Rótulo de outra pessoa,
+ * com número, OAB ou frase no meio, não vale para esta menção.
+ */
+function rotuloMaisProximo(antes: string): PapelProcessual | null {
+  let papel: PapelProcessual | null = null
+  let fim = -1
+  for (const [regex, candidato] of ROTULOS_PAPEL) {
+    for (const match of antes.matchAll(regex)) {
+      const termino = (match.index ?? 0) + match[0].length
+      if (termino > fim) { fim = termino; papel = candidato }
+    }
+  }
+  if (!papel) return null
+  const intervalo = antes.slice(fim)
+  if (/^[\s:\-–]*$/.test(intervalo)) return papel
+  return ehListaDeNomes(intervalo) && (papel === "parte_ativa" || papel === "parte_passiva") ? papel : null
+}
+
+/**
+ * "A, B E " antes do nome: só nomes separados por vírgula ou " E ", terminando
+ * no separador. Tokenizado, sem regex de repetição aninhada (evita ReDoS).
+ */
+function ehListaDeNomes(intervalo: string): boolean {
+  const corpo = intervalo.replace(/^[\s:\-–]+/, "")
+  if (!/(?:,| E)\s*$/.test(corpo)) return false
+  const itens = corpo.split(/,|\sE(?=\s|$)/).map((item) => item.trim())
+  itens.pop()
+  return itens.length > 0 && itens.every((item) => /^[A-Z][A-Z' ]{0,80}$/.test(item))
+}
+
+function papelEntreParentesesDaLista(depois: string): PapelProcessual | null {
+  const m = /^\s*(?:-\s*CPF:?[\dX*. -]{11,22})?\(([^()]{2,40})\)/i.exec(depois)
+  if (!m) return null
+  const rotulo = m[1]
+  for (const [regex, papel] of ROTULOS_PAPEL) if (new RegExp(`^(?:${regex.source})$`, "i").test(rotulo.trim())) return papel
+  return null
+}
+
+/** Aposto colado ao nome ("FULANO, OAB/MG 123", "FULANO (VÍTIMA)"); rótulo com dois-pontos apresenta a próxima pessoa. */
+function apostoDepoisDoNome(depois: string): PapelProcessual | null {
+  const semRotuloSeguinte = "(?!\\s*(?:\\(A\\))?\\s*:)"
+  // "FULANO, advogado" ou "FULANO (OAB ...)"; "FULANO ADVOGADO DO(A) REU: X" é o rótulo da próxima pessoa.
+  if (new RegExp(`^\\s*(?:[,\\-]\\s*)?(?:\\(\\s*)?OAB\\b|^\\s*[,(\\-]\\s*(?:ADVOGAD[OA]|ADV\\.?|PROCURADOR(?:A)?)\\b(?!\\s*(?:\\(A\\)\\s*)?D[OA]S?\\b)${semRotuloSeguinte}`, "i").test(depois)) return "advogado"
+  if (new RegExp(`^\\s*(?:[,(\\-]\\s*)?${PAPEL_VITIMA.source}${semRotuloSeguinte}`, "i").test(depois)) return "vitima_ou_ofendido"
+  if (new RegExp(`^\\s*(?:[,(\\-]\\s*)?${PAPEL_TESTEMUNHA.source}${semRotuloSeguinte}`, "i").test(depois)) return "testemunha_ou_terceiro"
+  if (new RegExp(`^\\s*(?:[,;\\-]\\s*)?${PAPEL_PARTIDO_PASSIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_passiva"
+  if (new RegExp(`^\\s*(?:[,;\\-]\\s*)?${PAPEL_PARTIDO_ATIVO.source}${semRotuloSeguinte}`, "i").test(depois)) return "parte_ativa"
+  return null
+}
+
+function trechoDecisivo(texto: string, nome: string, inicio?: number): string {
+  const t = normalizar(texto).replace(/CPF(?:\s*(?:N|NUMERO|NO))?\s*[:.]?\s*(?:\d[\d. -]{8,20}\d|[X*][X*. -]{8,20}[X*])/gi, "CPF [omitido]")
+  const alvo = normalizar(nome)
+  const pos = inicio ?? Math.max(0, t.indexOf(alvo))
+  const ini = Math.max(0, pos - 90)
+  const fim = Math.min(t.length, pos + alvo.length + 90)
+  return t.slice(ini, fim).replace(/\s+/g, " ").trim()
+}
+
+function ocorrenciasNomeNormalizado(texto: string, nome: string): number[] {
+  const regex = new RegExp(`\\b${escaparRegex(nome)}\\b`, "g")
+  return [...texto.matchAll(regex)].map((match) => match.index ?? 0)
+}
+
+/** Classifica o papel processual mostrado pela menção do nome. Falha fechando em revisão. */
+export function papelProcessualDoNome(
+  texto: string,
+  nome: string,
+  destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
+): PapelProcessual {
+  // Papel depende de pontuação (":", "(", ","), então o texto mantém a
+  // pontuação e o nome casa com qualquer separador entre as palavras.
+  const t = normalizarTextoJudicial(texto)
+  const n = normalizar(nome).trim()
+  if (!n) return "indeterminado"
+  const partesDestinatarios = destinatarios.map((d) => typeof d === "string" ? { nome: d } : d)
+  const destinatariosDoNome = partesDestinatarios.filter((d) => nomeDestinatario(d.nome) === n)
+  const nomeFlexivel = new RegExp(`(?<![A-Z0-9])${n.split(" ").map(escaparRegex).join("[^A-Z0-9]+")}(?![A-Z0-9])`, "g")
+  const achados = [...t.matchAll(nomeFlexivel)]
+  const ocorrencias = achados.map((m) => m.index ?? 0)
+  const tamanhoDe = new Map(achados.map((m) => [m.index ?? 0, m[0].length]))
+  if (ocorrencias.length === 0 && destinatariosDoNome.length === 0) return "indeterminado"
+  const papeis = new Set<PapelProcessual>()
+  for (const destinatario of destinatariosDoNome) {
+    const polo = papelDoPolo(destinatario.polo)
+    if (polo) papeis.add(polo)
+  }
+  const ehParte = (p: PapelProcessual) => p === "parte_ativa" || p === "parte_passiva" || p === "parte_qualificada"
+  const partesComCpf = new Set<PapelProcessual>()
+  for (const pos of ocorrencias) {
+    // O papel da menção é o do rótulo mais próximo antes do nome (o rótulo de
+    // outra pessoa, mais atrás, não conta) ou o de um aposto colado depois dele.
+    const fimNome = pos + (tamanhoDe.get(pos) ?? n.length)
+    const trechoDepois = t.slice(fimNome, Math.min(t.length, fimNome + 60))
+    // Lista "PARTE(S): [NOME - CPF: ... (AGRAVADO), ...]": o parêntese depois do
+    // nome é o papel desta menção; o rótulo antes dele é do item anterior.
+    const daLista = papelEntreParentesesDaLista(trechoDepois)
+    const antes = daLista ? null : rotuloMaisProximo(t.slice(Math.max(0, pos - 90), pos))
+    const depois = daLista ?? apostoDepoisDoNome(trechoDepois)
+    const daMencao = [antes, depois].filter((p): p is PapelProcessual => p !== null)
+    const cpfColado = /^\s*(?:[,(-]\s*)?(?:INSCRIT[OA]\s+NO\s+)?CPF\b/i.test(trechoDepois)
+    // "NOME, CPF ..., OAB/UF ..." é advogado com o próprio CPF.
+    if (cpfColado && /^\s*(?:[,(-]\s*)?(?:INSCRIT[OA]\s+NO\s+)?CPF[^A-Z]{0,30}OAB\b/i.test(trechoDepois)) daMencao.push("advogado")
+    if (daMencao.length === 0 && cpfColado) daMencao.push("parte_qualificada")
+    // A mesma menção dizendo parte e não-parte ("REQUERIDO: FULANO, advogado") falha fechando.
+    if (daMencao.some(ehParte) && daMencao.some((p) => !ehParte(p))) return "indeterminado"
+    for (const p of daMencao) papeis.add(p)
+    if (daMencao.some(ehParte) && cpfColado) {
+      for (const p of daMencao) partesComCpf.add(p)
+    }
+  }
+  // Parte identificada pelo próprio CPF que também advoga em causa própria em
+  // outra menção continua parte; sem o CPF colado à menção de parte, o misto vai à revisão.
+  if (partesComCpf.size === 1 && ![...papeis].some((p) => ehParte(p) && !partesComCpf.has(p))) return [...partesComCpf][0]
+  if (papeis.size === 0) return ocorrencias.length > 0 ? "apenas_citado" : "indeterminado"
+  if (papeis.has("parte_ativa") && papeis.has("parte_passiva")) return "indeterminado"
+  const partes = [...papeis].filter(ehParte)
+  const naoPartes = [...papeis].filter((p) => !ehParte(p))
+  if (partes.length > 0 && naoPartes.length > 0) return "indeterminado"
+  // Polo rotulado em uma menção e qualificação por CPF em outra: vale o polo.
+  if (partes.length > 0) return partes.find((p) => p !== "parte_qualificada") ?? "parte_qualificada"
+  if (papeis.has("advogado")) return "advogado"
+  if (papeis.has("vitima_ou_ofendido")) return "vitima_ou_ofendido"
+  return "testemunha_ou_terceiro"
+}
+
+export function decisaoPapelProcessualDoNome(
+  texto: string,
+  nome: string,
+  destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
+): DecisaoPapelProcessual {
+  const papel = papelProcessualDoNome(texto, nome, destinatarios)
+  const n = normalizar(nome)
+  const t = normalizar(texto)
+  const ocorrencias = ocorrenciasNomeNormalizado(t, n)
+  const decisiva = ocorrencias.find((pos) => papelProcessualDoNome(
+    t.slice(Math.max(0, pos - 120), Math.min(t.length, pos + n.length + 120)), n,
+  ) === papel)
+  return { papel, trecho: trechoDecisivo(t, n, decisiva ?? ocorrencias[0]) }
+}
+
+/** Gate único da atribuição DJEN: somente parte ativa/passiva pode ser achado. */
+export function atribuirProcessoPorPapel(
+  texto: string,
+  nome: string,
+  destinatarios: Array<{ nome?: string; polo?: string }> | string[] = [],
+): DecisaoPapelProcessual & { encontrado: boolean; motivo?: string } {
+  const decisao = decisaoPapelProcessualDoNome(texto, nome, destinatarios)
+  const encontrado = decisao.papel === "parte_ativa" || decisao.papel === "parte_passiva" || decisao.papel === "parte_qualificada"
+  return encontrado ? { ...decisao, encontrado } : { ...decisao, encontrado, motivo: `papel_processual:${decisao.papel}` }
+}
+
+export interface EstadoJevPapelProcessual {
+  candidatura: { nome: string; cargo: string }
+  processo: { numero_cnj: string; trecho: string; destinatarios: Array<{ nome?: string; polo?: string }> }
+}
+
+/** Monta somente o state mínimo para uma futura avaliação Jev em sombra. */
+export function estadoJevPapelProcessual(
+  item: {
+    candidatura?: { nome?: string; nome_completo?: string; cargo?: string }
+    processo?: { numero_cnj?: string; trecho?: string; trecho_papel?: string; contexto_identidade?: string; destinatarios?: Array<{ nome?: string; polo?: string }> }
+    processos?: Array<{ numero_cnj?: string; trecho?: string; trecho_papel?: string; contexto_identidade?: string; destinatarios?: Array<{ nome?: string; polo?: string }> }>
+    nome?: string
+    nome_completo?: string
+    cargo?: string
+    numero_cnj?: string
+    contexto_identidade?: string
+    trecho?: string
+    trecho_papel?: string
+    destinatarios?: Array<{ nome?: string; polo?: string }>
+  },
+  processo?: { numero_cnj?: string; trecho?: string; trecho_papel?: string; contexto_identidade?: string; destinatarios?: Array<{ nome?: string; polo?: string }> },
+): EstadoJevPapelProcessual {
+  const candidatura = item.candidatura ?? item
+  const p = processo ?? item.processo ?? item.processos?.[0] ?? item
+  return {
+    candidatura: { nome: String(candidatura.nome ?? candidatura.nome_completo ?? ""), cargo: String(candidatura.cargo ?? "") },
+    processo: {
+      numero_cnj: String(p.numero_cnj ?? ""),
+      trecho: String(p.trecho ?? p.trecho_papel ?? p.contexto_identidade ?? ""),
+      destinatarios: Array.isArray(p.destinatarios) ? p.destinatarios : [],
+    },
+  }
+}
+
+export const construirEstadoJevPapelProcessual = estadoJevPapelProcessual
+
 interface ProcessoAchado {
   numero_cnj: string
   tribunal: string
@@ -105,6 +333,8 @@ interface ProcessoAchado {
   polo: string | null
   url: string
   contexto_identidade: string
+  papel_processual?: PapelProcessual
+  trecho_papel?: string
   datajud: Record<string, unknown>
 }
 
@@ -1695,7 +1925,7 @@ export async function pesquisarCandidato(
         processos: [],
       }
     }
-    const encontrados = new Map<string, { item: Comunicacao; contexto: string; polo: string | null }>()
+    const encontrados = new Map<string, { item: Comunicacao; contexto: string; polo: string | null; papel: DecisaoPapelProcessual }>()
     const descartados = new Map<string, Record<string, unknown>>()
     const ambiguos = new Map<string, Record<string, unknown>>()
     const cpfCandidato = String(identidade.cpf ?? "")
@@ -1714,11 +1944,17 @@ export async function pesquisarCandidato(
     // não carrega confirmação editorial para esse CNJ (vai a revisão humana).
     // A marca acumula entre comunicações do mesmo número.
     const marcarAmbiguo = (numero: string, item: Comunicacao, registro: Record<string, unknown>): void => {
+      // O CNJ só é publicável quando todas as comunicações atribuíveis que o
+      // compõem passam pelo mesmo gate de papel. Uma ocorrência não-parte ou
+      // conflitante rebaixa qualquer achado anterior do mesmo CNJ.
+      encontrados.delete(numero)
       const destinatarios = (item.destinatarios ?? []).map((d) => String(d.nome ?? ""))
       const divergente = ambiguos.get(numero)?.cpf_divergente === true
         || cpfsRotuladosDoNome(djen.textosBrutos?.get(item.id) ?? "", nomeConsulta, destinatarios)
           .some((r) => r.tipo === "completo" && r.digitos !== cpfCandidato.replace(/\D/g, ""))
-      ambiguos.set(numero, divergente ? { ...registro, cpf_divergente: true } : registro)
+      const anterior = ambiguos.get(numero)
+      const prioritario = typeof anterior?.motivo === "string" && anterior.motivo.startsWith("papel_processual:") ? anterior : registro
+      ambiguos.set(numero, divergente ? { ...prioritario, cpf_divergente: true } : prioritario)
     }
     const porCpf = (item: Comunicacao): string | null => djen.textosBrutos
       ? contextoPorCpfNoTexto(djen.textosBrutos.get(item.id) ?? "", nomeConsulta, cpfCandidato, (item.destinatarios ?? []).map((d) => String(d.nome ?? "")))
@@ -1728,16 +1964,19 @@ export async function pesquisarCandidato(
       if (descartarSeCpfDiverge(item, numero)) continue
       // Fora dos destinatários, só o CPF completo da candidatura no texto atribui.
       const contextoCpf = cnjValido(numero) ? porCpf(item) : null
-      if (contextoCpf) {
-        encontrados.set(numero, { item, contexto: contextoCpf, polo: null })
+      const papel = atribuirProcessoPorPapel(djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, item.destinatarios ?? [])
+      if (contextoCpf && papel.encontrado && !ambiguos.has(numero)) {
+        encontrados.set(numero, { item, contexto: contextoCpf, polo: null, papel })
         continue
       }
       marcarAmbiguo(numero, item, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
-        motivo: mencionaNomeNoTexto(item, nome)
+        motivo: papel.motivo ?? (mencionaNomeNoTexto(item, nome)
           ? "nome exato no texto da comunicacao, fora dos destinatarios; identidade nao atribuida automaticamente"
-          : "comunicacao retornada pela busca do nome, sem o nome legivel no texto; identidade nao atribuida",
+          : "comunicacao retornada pela busca do nome, sem o nome legivel no texto; identidade nao atribuida"),
+        papel_processual: papel.papel,
+        trecho: papel.trecho,
       })
     }
     for (const item of exatos) {
@@ -1749,17 +1988,20 @@ export async function pesquisarCandidato(
       const parte = (item.destinatarios ?? []).some((d) => nomeDestinatario(d.nome) === nome && (d.polo === "A" || d.polo === "P"))
       const contexto = (parte ? contextoPolitico(c, snap, djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, identidade, (item.destinatarios ?? []).map((d) => String(d.nome ?? ""))) : null)
         ?? porCpf(item)
+      const papel = atribuirProcessoPorPapel(djen.textosBrutos?.get(item.id) ?? item.texto ?? "", nomeConsulta, item.destinatarios ?? [])
       const cnj = cnjValido(numero)
       // Sem texto bruto (cache sanitizado) o descarte por CPF não rodou: nada vira achado.
-      if (contexto && cnj && djen.textosBrutos) encontrados.set(numero, { item, contexto, polo })
+      if (contexto && papel.encontrado && cnj && djen.textosBrutos && !ambiguos.has(numero)) encontrados.set(numero, { item, contexto, polo, papel })
       else marcarAmbiguo(numero, item, {
         numero_cnj: numero,
         tribunal: item.siglaTribunal ?? null,
-        motivo: contexto && cnj
+        motivo: papel.motivo ?? (contexto && cnj
           ? "conferencia de CPF indisponivel no cache sanitizado; refazer a busca sem cache"
           : contexto
           ? "comunicacao oficial sem numero CNJ validavel"
-          : "nome exato sem segundo identificador oficial adjacente; identidade ambigua",
+          : "nome exato sem segundo identificador oficial adjacente; identidade ambigua"),
+        papel_processual: papel.papel,
+        trecho: papel.trecho,
       })
     }
     const processos: ProcessoAchado[] = []
@@ -1769,6 +2011,8 @@ export async function pesquisarCandidato(
         classe: achado.item.nomeClasse ?? null, orgao: achado.item.nomeOrgao ?? null,
         polo: achado.polo, url: urlOficial(achado.item, numero),
         contexto_identidade: achado.contexto,
+        papel_processual: achado.papel.papel,
+        trecho_papel: achado.papel.trecho,
         datajud: { status: "pendente_conferencia_lote" },
       })
     }
@@ -1867,17 +2111,28 @@ export async function pesquisarCandidatoPorCnjs(
       const itens = resposta.items.filter((item) =>
         item.ativo === true && String(item.numero_processo ?? item.numeroprocessocommascara ?? "").replace(/\D/g, "") === numero.replace(/\D/g, ""),
       )
-      const atribuivel = itens.find((item) =>
+      const candidatosAtribuiveis = itens.filter((item) =>
         (item.destinatarios ?? []).some((parte) => normalizar(parte.nome) === normalizar(nome))
         && identificadorForteNoTexto(c, item.texto ?? "", nome, identidade),
       )
-      if (atribuivel) {
+      const atribuivel = candidatosAtribuiveis.find((item) => atribuirProcessoPorPapel(item.texto ?? "", nome, item.destinatarios ?? []).encontrado)
+      const rejeitadoPorPapel = itens.find((item) =>
+        (item.destinatarios ?? []).some((parte) => normalizar(parte.nome) === normalizar(nome))
+        && !atribuirProcessoPorPapel(item.texto ?? "", nome, item.destinatarios ?? []).encontrado)
+      if (rejeitadoPorPapel) {
+        const papel = atribuirProcessoPorPapel(rejeitadoPorPapel.texto ?? "", nome, rejeitadoPorPapel.destinatarios ?? [])
+        semAtribuicao += 1
+        base.ocorrencias_ambiguas.push({ numero_cnj: numero, tribunal, motivo: papel.motivo, papel_processual: papel.papel, trecho: papel.trecho })
+      } else if (atribuivel) {
+        const papel = atribuirProcessoPorPapel(atribuivel.texto ?? "", nome, atribuivel.destinatarios ?? [])
         base.processos.push({
           numero_cnj: numero, tribunal, classe: atribuivel.nomeClasse ?? null,
           orgao: atribuivel.nomeOrgao ?? null,
           polo: atribuivel.destinatarios?.find((parte) => normalizar(parte.nome) === normalizar(nome))?.polo ?? null,
           url,
           contexto_identidade: "destinatario exato e CPF igual ou cargo estadual ligado a UF na comunicacao oficial; texto omitido",
+          papel_processual: papel.papel,
+          trecho_papel: papel.trecho,
           datajud: { status: "nao_consultado_em_monitoramento" },
         })
       } else {

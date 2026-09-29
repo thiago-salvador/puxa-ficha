@@ -1,0 +1,43 @@
+{
+  "papel": {
+    "type": "choice",
+    "instructions": "Leia `processo.trecho` e `candidatura.nome` no state. Escolha o papel processual que o trecho atribui ao nome. Use `processo.destinatarios` como contexto adicional quando houver polo. Escolha `indeterminado` somente quando o trecho não mostrar o papel; muitas opções plausíveis não são motivo para escolher `indeterminado`.",
+    "criteria": {
+      "parte_passiva": {
+        "cobre": "O nome aparece como requerido, réu, executado, demandado, acusado ou outro polo passivo explícito.",
+        "nao_cobre": "O nome é autor, advogado, vítima, testemunha, terceiro ou apenas citado.",
+        "exemplos": ["REQUERIDO: Fulano de Tal"]
+      },
+      "parte_ativa": {
+        "cobre": "O nome aparece como autor, requerente, exequente, demandante, impetrante ou outro polo ativo explícito.",
+        "nao_cobre": "O nome é requerido, advogado, vítima, testemunha, terceiro ou apenas citado.",
+        "exemplos": ["AUTOR: Fulano de Tal"]
+      },
+      "advogado": {
+        "cobre": "O nome aparece identificado como advogado, advogada, procurador ou por OAB.",
+        "nao_cobre": "O nome aparece como parte, vítima, testemunha, terceiro ou apenas citado.",
+        "exemplos": ["Fulano de Tal, ADVOGADO, OAB/SP 12345"]
+      },
+      "vitima_ou_ofendido": {
+        "cobre": "O nome aparece identificado como vítima ou ofendido.",
+        "nao_cobre": "O nome aparece como parte, advogado, testemunha, terceiro ou apenas citado.",
+        "exemplos": ["VÍTIMA: Fulano de Tal"]
+      },
+      "testemunha_ou_terceiro": {
+        "cobre": "O nome aparece como testemunha, terceiro interessado ou perito.",
+        "nao_cobre": "O nome aparece como parte, advogado, vítima ou apenas citado.",
+        "exemplos": ["TESTEMUNHA: Fulano de Tal"]
+      },
+      "apenas_citado": {
+        "cobre": "O nome aparece no texto sem rótulo processual que o coloque como parte, advogado, vítima, testemunha ou terceiro.",
+        "nao_cobre": "O trecho mostra qualquer papel processual explícito.",
+        "exemplos": ["O texto menciona Fulano de Tal ao narrar fatos, sem atribuir papel."]
+      },
+      "indeterminado": {
+        "cobre": "O trecho não mostra o papel ou mostra sinais conflitantes, como parte e advogado para a mesma ocorrência.",
+        "nao_cobre": "Há um papel claro no trecho, mesmo que outras opções pareçam plausíveis.",
+        "exemplos": ["Fulano de Tal aparece junto a sinais incompatíveis de parte e advogado."]
+      }
+    }
+  }
+}

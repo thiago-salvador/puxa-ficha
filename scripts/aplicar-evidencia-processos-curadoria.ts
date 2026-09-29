@@ -26,6 +26,7 @@ import {
 import { supabase } from "./lib/supabase"
 import { registrarColetaOuFalhar, type EntradaColeta } from "./lib/coleta-log"
 import { normalizarTextoJudicial } from "./curadoria-processos-lote"
+import { carregarDecisoes, decididoNaoPublicar } from "./lib/processos-decisao-editorial"
 import { stripAccents } from "../src/lib/strip-accents"
 
 const TOTAL_CANDIDATOS = 185
@@ -1014,6 +1015,33 @@ export interface RevisaoHumana {
   motivo: string
 }
 
+/** Um recibo é indivisível: se contém CNJ vetado, o plano inteiro vai à revisão. */
+export function bloquearPlanosPorDecisao(
+  planos: PlanoRegistro[],
+  cnjsPorSlug: ReadonlyMap<string, readonly string[]>,
+  decisoes: ReadonlySet<string>,
+): { planos: PlanoRegistro[]; revisaoHumana: RevisaoHumana[]; bloqueados: number } {
+  const permitidos: PlanoRegistro[] = []
+  const revisaoHumana: RevisaoHumana[] = []
+  let bloqueados = 0
+  for (const plano of planos) {
+    const cnjs = new Set([
+      ...(cnjsPorSlug.get(plano.slug) ?? []),
+      ...plano.args.flatMap((arg) => arg.match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []),
+    ])
+    const vetados = [...cnjs].filter((cnj) => decididoNaoPublicar(decisoes, plano.slug, cnj))
+    if (vetados.length === 0) {
+      permitidos.push(plano)
+      continue
+    }
+    bloqueados += vetados.length
+    revisaoHumana.push(...vetados.map((numero_cnj) => ({
+      slug: plano.slug, numero_cnj, motivo: "decisao_editorial_nao_publicar",
+    })))
+  }
+  return { planos: permitidos, revisaoHumana, bloqueados }
+}
+
 /** Quem pode registrar confirmação editorial de identidade. */
 export const DECISORES_EDITORIAIS: readonly string[] = ["Thiago Salvador"]
 
@@ -1322,6 +1350,7 @@ function lerOpcoes(argv: string[]): Opcoes {
 
 export async function main(argv = process.argv.slice(2)): Promise<void> {
   const opcoes = lerOpcoes(argv)
+  const decisoes = carregarDecisoes()
   const bruto = JSON.parse(readFileSync(opcoes.evidence, "utf8")) as unknown
   const evidencia = validarEvidencia(bruto)
   const planosCriados = criarPlanos(evidencia)
@@ -1340,6 +1369,22 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     planos = preservado.planos
     revisaoHumana = preservado.revisaoHumana
   }
+  const cnjsDosRecibos = new Map<string, string[]>()
+  for (const linha of existentesIniciais) {
+    const encontrados = linha.detalhe?.match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []
+    cnjsDosRecibos.set(linha.alvo, [...(cnjsDosRecibos.get(linha.alvo) ?? []), ...encontrados])
+  }
+  const cnjsPorSlug = new Map(evidencia.lotes.flatMap((lote) => lote.candidatos).map((candidato) => [
+    candidato.slug,
+    [
+      ...candidato.processos,
+      ...(candidato.ocorrencias_ambiguas ?? []),
+      ...candidato.homonimos_descartados,
+    ].map((item) => String(item.numero_cnj ?? "")).concat(cnjsDosRecibos.get(candidato.slug) ?? []),
+  ]))
+  const bloqueio = bloquearPlanosPorDecisao(planos, cnjsPorSlug, decisoes)
+  planos = bloqueio.planos
+  revisaoHumana.push(...bloqueio.revisaoHumana)
   if (!opcoes.apply && opcoes.somenteMudancas) {
     // Único dry-run que lê o banco: precisa do último recibo de cada alvo.
     const mudancas = filtrarMudancas(planos, existentesIniciais)
@@ -1348,6 +1393,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       evidence: opcoes.evidence,
       coorte_atual: evidencia.coorte_atual,
       candidatos_validados: planosCriados.length,
+      decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
       revisao_humana: revisaoHumana,
       mudancas: mudancas.map((plano) => ({ slug: plano.slug, resultado: plano.resultado, args: [...plano.args, "--dry-run"] })),
     }, null, 2))
@@ -1369,6 +1415,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
         return acc
       }, {}),
       candidatos_validados: planos.length,
+      decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
+      revisao_humana: revisaoHumana,
       lotes_validados: evidencia.lotes.length,
       planos_exibidos: selecionados.length,
       resumo: evidencia.resumo,
@@ -1407,6 +1455,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       modo: "apply",
       backup: backupPath,
       candidatos_validados: planosCriados.length,
+      decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
       candidatos_pulados: preflight.equivalentes.length,
       candidatos_inseridos: preflight.pendentes.length,
       lotes: evidencia.lotes.length,
