@@ -204,11 +204,14 @@ test("recursos financeiros e estimáveis aparecem juntos; dívida e sobra só qu
 })
 
 test("anos anteriores a 2018 ganham uma linha só; linhas de despesas dessa época não aparecem", () => {
-  const html = secao({ despesas: [linha({ ano_eleicao: 2014 })], status: "ok", anosComReceitas: [2010, 2014, 2022] })
+  const html = secao({ despesas: [linha({ ano_eleicao: 2014 }), linha({ id: "atual", ano_eleicao: 2022 })], status: "ok", anosComReceitas: [2010, 2014, 2022] })
   assert.equal((html.match(/Despesas disponíveis a partir de 2018\./g) ?? []).length, 1)
   assert.doesNotMatch(html, /Despesas de campanha em 2014/)
-  const soAntigo = secao({ despesas: [], status: "ok", anosComReceitas: [2006] })
-  assert.match(soAntigo, /Despesas disponíveis a partir de 2018\./)
+})
+
+test("receita antes de 2018 e 0 linhas de despesas: a seção é omitida (não lê como ausência de gasto)", () => {
+  assert.equal(secao({ despesas: [], status: "ok", anosComReceitas: [2006] }), "")
+  assert.equal(secao({ despesas: [linha({ ano_eleicao: 2014 })], status: "ok", anosComReceitas: [2010, 2014] }), "")
 })
 
 test("linhas saem da mais recente para a mais antiga", () => {
