@@ -61,9 +61,10 @@ describe("buildSalaUpdates", () => {
     { slug: "b", cargo: "Presidente", uf: null, fichaUrl: "/candidato/b" },
   ]
 
-  test("mostra as três mais recentes, com cargo e UF quando existem, sem o nome", () => {
+  test("mostra as três mais recentes, com o nome e com cargo e UF quando existem", () => {
     const items = buildSalaUpdates(updates, rows)
     assert.deepEqual(items.map((item) => item.id), ["1", "2", "3"])
+    assert.equal(items[0].name, "Nome Qualquer")
     assert.equal(items[0].context, "Governador · BA")
     assert.equal(items[0].change, "Situação da candidatura: de aguardando julgamento para indeferido com recurso")
     assert.equal(items[0].dateLabel, "23/09")
@@ -74,7 +75,7 @@ describe("buildSalaUpdates", () => {
     assert.equal(items[1].dateLabel, "15/09", "data no horário de Brasília")
     assert.equal(items[2].context, "Presidente")
     for (const item of items) {
-      assert.doesNotMatch(JSON.stringify(item), /Nome Qualquer/)
+      assert.equal(item.name, "Nome Qualquer")
       assert.doesNotMatch(item.change, DASHES)
     }
   })

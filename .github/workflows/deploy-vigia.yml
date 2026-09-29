@@ -3,9 +3,16 @@ name: Vigia do deploy de producao
 # Redispara o deploy da Vercel e o smoke de producao quando o merge na main
 # nao gerou nenhum dos dois (evento de push ou webhook perdido). Detalhes em
 # scripts/deploy-vigia.sh. Idempotente: so age quando o artefato nao existe.
+# O GitHub as vezes nao entrega o evento de push de um merge; por isso o vigia
+# tambem roda quando um PR para a main e fechado com merge. Nesse caminho espera
+# 180 s (tempo do deploy normal via git) e age sobre o topo ATUAL da main, nunca
+# sobre o SHA do PR: o script le o SHA de main pela API.
 on:
   schedule:
     - cron: "*/15 * * * *"
+  pull_request:
+    types: [closed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,11 +25,21 @@ concurrency:
 
 jobs:
   vigia:
+    # PR de fork nao recebe segredos; so PR do proprio repositorio e com merge.
+    if: >-
+      github.event_name != 'pull_request' ||
+      (github.event.pull_request.merged == true &&
+      github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
+      - name: Aguardar o deploy normal do merge
+        if: github.event_name == 'pull_request'
+        run: sleep 180
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          # No caminho de PR o codigo executado com segredos vem sempre da main.
+          ref: ${{ github.event_name == 'pull_request' && 'main' || github.ref }}
           persist-credentials: false
       - name: Conferir deploy e smoke do topo da main
         env:
@@ -31,4 +48,6 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_TEAM_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+          # Depois da espera de 180 s a carencia padrao de 300 s ainda nao teria passado.
+          VIGIA_CARENCIA_S: ${{ github.event_name == 'pull_request' && '120' || '300' }}
         run: bash scripts/deploy-vigia.sh
