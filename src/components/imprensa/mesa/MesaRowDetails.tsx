@@ -64,6 +64,9 @@ export function MesaRowDetails({ row, generatedAt, id }: { row: MesaRow; generat
           <p>{labelProcessState(processos.estado)}
             {processos.buscaEstado !== "encontrado" && processos.buscaEstado !== processos.estado ? `. Busca nominal: ${labelProcessState(processos.buscaEstado)}` : ""}.
             {" "}Processo não é condenação.</p>
+          {(processos.contagem?.disciplinares ?? 0) > 0 ? (
+            <p>{processos.contagem!.disciplinares} {processos.contagem!.disciplinares === 1 ? "processo disciplinar" : "processos disciplinares"} no Conselho de Ética, contados no total da ficha. Processo disciplinar não é processo judicial nem condenação.</p>
+          ) : null}
           <Link className={styles.sourceLink} href={`${row.fichaUrl}?tab=justica`}>Tribunais e números dos processos na aba Justiça</Link>
         </Source>
         <Source title="Sanções federais (CGU)">
