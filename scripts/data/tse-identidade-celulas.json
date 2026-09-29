@@ -22,7 +22,15 @@
       "slug": "andre-luis",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MA",
+          "municipio": null,
+          "sq": "100002544076",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -59,7 +67,15 @@
       "slug": "augusto-cury",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "BR",
+          "municipio": null,
+          "sq": "280002551547",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -131,6 +147,13 @@
           "municipio": null,
           "sq": "190001643311",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "AM",
+          "municipio": null,
+          "sq": "40002551740",
+          "decisao": "publicar"
         }
       ]
     },
@@ -169,7 +192,15 @@
       "slug": "cadu-xavier",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "RN",
+          "municipio": null,
+          "sq": "200002534001",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -206,7 +237,15 @@
       "slug": "camila-falcao",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PE",
+          "municipio": null,
+          "sq": "170002537320",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -299,6 +338,13 @@
           "municipio": null,
           "sq": "30001619676",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30002536311",
+          "decisao": "publicar"
         }
       ]
     },
@@ -356,6 +402,13 @@
           "uf": "GO",
           "municipio": null,
           "sq": "90001646327",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002540993",
           "decisao": "publicar"
         }
       ]
@@ -430,6 +483,13 @@
           "municipio": null,
           "sq": "140002359059",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "PA",
+          "municipio": null,
+          "sq": "140002549930",
+          "decisao": "publicar"
         }
       ]
     },
@@ -468,7 +528,15 @@
       "slug": "dr-helton-monteiro",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260002547415",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -547,6 +615,13 @@
           "municipio": null,
           "sq": "190000614721",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "BR",
+          "municipio": null,
+          "sq": "280002551544",
+          "decisao": "publicar"
         }
       ]
     },
@@ -590,6 +665,13 @@
           "uf": "MG",
           "municipio": null,
           "sq": "130002074700",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002549557",
           "decisao": "publicar"
         }
       ]
@@ -671,6 +753,13 @@
           "municipio": null,
           "sq": "240000621321",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002548628",
+          "decisao": "publicar"
         }
       ]
     },
@@ -694,7 +783,15 @@
       "slug": "gisvaldo-oliveira",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180002549970",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -744,6 +841,13 @@
           "uf": "RO",
           "municipio": null,
           "sq": "220001051415",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "RO",
+          "municipio": null,
+          "sq": "220002542916",
           "decisao": "publicar"
         }
       ]
@@ -817,6 +921,13 @@
           "uf": "DF",
           "municipio": null,
           "sq": "70001615918",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "DF",
+          "municipio": null,
+          "sq": "70002552586",
           "decisao": "publicar"
         }
       ]
@@ -897,6 +1008,13 @@
           "municipio": null,
           "sq": "210002355259",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "RS",
+          "municipio": null,
+          "sq": "210002551508",
+          "decisao": "publicar"
         }
       ]
     },
@@ -935,7 +1053,15 @@
       "slug": "lais-chaud",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002550544",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -1049,6 +1175,13 @@
           "municipio": null,
           "sq": "180002337603",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "PI",
+          "municipio": null,
+          "sq": "180002553722",
+          "decisao": "publicar"
         }
       ]
     },
@@ -1101,6 +1234,13 @@
           "municipio": null,
           "sq": "10001612477",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002544107",
+          "decisao": "publicar"
         }
       ]
     },
@@ -1139,7 +1279,15 @@
       "slug": "mauricio-coelho",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002553058",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -1176,7 +1324,15 @@
       "slug": "natasha-slhessarenko",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002544985",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -1243,7 +1399,15 @@
       "slug": "renato-gomes",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "MS",
+          "municipio": null,
+          "sq": "120002549681",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
@@ -1293,6 +1457,13 @@
           "uf": "RJ",
           "municipio": "RIO DE JANEIRO",
           "sq": "5159",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "DF",
+          "municipio": null,
+          "sq": "70002551557",
           "decisao": "publicar"
         }
       ]
@@ -1366,6 +1537,13 @@
           "uf": "PR",
           "municipio": null,
           "sq": "160001622302",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "PR",
+          "municipio": null,
+          "sq": "160002549553",
           "decisao": "publicar"
         }
       ]
@@ -1481,6 +1659,13 @@
           "uf": "AC",
           "municipio": null,
           "sq": "10001908807",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002544015",
           "decisao": "publicar"
         }
       ]
@@ -1598,6 +1783,13 @@
           "municipio": null,
           "sq": "10001601556",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "AC",
+          "municipio": null,
+          "sq": "10002535804",
+          "decisao": "publicar"
         }
       ]
     },
@@ -1670,6 +1862,13 @@
           "uf": "MT",
           "municipio": null,
           "sq": "280001027643",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002544986",
           "decisao": "publicar"
         }
       ]
@@ -1757,6 +1956,13 @@
           "uf": "MT",
           "municipio": null,
           "sq": "110001612757",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "MT",
+          "municipio": null,
+          "sq": "110002552693",
           "decisao": "publicar"
         }
       ]
@@ -1872,6 +2078,13 @@
           "uf": "MG",
           "municipio": null,
           "sq": "130002061515",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "MG",
+          "municipio": null,
+          "sq": "130002552186",
           "decisao": "publicar"
         }
       ]
@@ -1996,6 +2209,13 @@
           "uf": "PB",
           "municipio": null,
           "sq": "150002359729",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "PB",
+          "municipio": null,
+          "sq": "150002544909",
           "decisao": "publicar"
         }
       ]
@@ -2123,6 +2343,13 @@
           "municipio": null,
           "sq": "190001909316",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "RJ",
+          "municipio": null,
+          "sq": "190002545553",
+          "decisao": "publicar"
         }
       ]
     },
@@ -2249,6 +2476,13 @@
           "municipio": null,
           "sq": "20001653521",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "AL",
+          "municipio": null,
+          "sq": "20002553726",
+          "decisao": "publicar"
         }
       ]
     },
@@ -2342,6 +2576,13 @@
           "uf": "SC",
           "municipio": null,
           "sq": "240001679805",
+          "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "SC",
+          "municipio": null,
+          "sq": "240002548632",
           "decisao": "publicar"
         }
       ]
@@ -2511,6 +2752,13 @@
           "municipio": null,
           "sq": "30000607892",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "AP",
+          "municipio": null,
+          "sq": "30002530069",
+          "decisao": "publicar"
         }
       ]
     },
@@ -2640,6 +2888,13 @@
           "municipio": null,
           "sq": "50002002491",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "BA",
+          "municipio": null,
+          "sq": "50002536577",
+          "decisao": "publicar"
         }
       ]
     },
@@ -2764,6 +3019,13 @@
           "municipio": null,
           "sq": "90002233715",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "GO",
+          "municipio": null,
+          "sq": "90002543215",
+          "decisao": "publicar"
         }
       ]
     },
@@ -2851,6 +3113,13 @@
           "municipio": null,
           "sq": "260001935426",
           "decisao": "publicar"
+        },
+        {
+          "ano": 2026,
+          "uf": "SE",
+          "municipio": null,
+          "sq": "260002532010",
+          "decisao": "publicar"
         }
       ]
     },
@@ -2889,7 +3158,15 @@
       "slug": "witer-naves",
       "familia": "historico_politico",
       "decisao": "publicar",
-      "linhas": []
+      "linhas": [
+        {
+          "ano": 2026,
+          "uf": "TO",
+          "municipio": null,
+          "sq": "270002539187",
+          "decisao": "publicar"
+        }
+      ]
     },
     {
       "lote": "l8-20260929",
