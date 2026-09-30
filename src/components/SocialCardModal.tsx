@@ -3,6 +3,7 @@
 import { Download, ImageIcon, Share2, X } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
 import { socialCardVersionToken } from "@/lib/social-card-version"
+import type { FaseEleitoral2026 } from "@/lib/types"
 
 interface SocialCardModalProps {
   slug: string
@@ -14,6 +15,7 @@ interface SocialCardModalProps {
   initialFormat?: "feed" | "story"
   /** `ultima_atualizacao` da ficha: muda a URL do card quando a ficha muda. */
   cardVersion?: string | null
+  faseEleitoral?: FaseEleitoral2026 | null
 }
 
 export function SocialCardModal({
@@ -44,6 +46,7 @@ function SocialCardModalContent({
   onClose,
   initialFormat = "feed",
   cardVersion,
+  faseEleitoral,
 }: Omit<SocialCardModalProps, "open">) {
   const [format, setFormat] = useState<"feed" | "story">(initialFormat)
   const [imageStatus, setImageStatus] = useState({ src: "", loaded: false, error: false })
@@ -51,7 +54,7 @@ function SocialCardModalContent({
   const [copiedLink, setCopiedLink] = useState<"card" | "profile" | null>(null)
   const [retryKey, setRetryKey] = useState(0)
 
-  const cardPath = `/api/card/${slug}?format=${format}&v=${socialCardVersionToken(cardVersion)}`
+  const cardPath = `/api/card/${slug}?format=${format}&v=${socialCardVersionToken(cardVersion, faseEleitoral)}`
   const cardPreviewSrc = retryKey > 0 ? `${cardPath}&retry=${retryKey}` : cardPath
   const cardShareUrl = new URL(cardPath, shareUrl).toString()
   const imgLoaded = imageStatus.src === cardPreviewSrc && imageStatus.loaded

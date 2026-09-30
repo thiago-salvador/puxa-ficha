@@ -519,6 +519,7 @@ export async function CandidatoFichaView({
                   slug={slug}
                   candidateName={ficha.nome_urna}
                   cardVersion={ficha.ultima_atualizacao}
+                  faseEleitoral={ficha.fase_eleitoral_2026}
                 />
                 <DeferredFollowCandidateButton
                   candidateName={ficha.nome_urna}
@@ -561,6 +562,7 @@ export async function CandidatoFichaView({
           slug={slug}
           candidateName={ficha.nome_urna}
           cardVersion={ficha.ultima_atualizacao}
+          faseEleitoral={ficha.fase_eleitoral_2026}
         />
       </section>
 

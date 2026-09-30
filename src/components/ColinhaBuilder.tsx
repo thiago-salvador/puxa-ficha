@@ -31,8 +31,6 @@ const UFS = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "
 type CandidateResponse = { candidates?: ColinhaCandidate[]; unavailable?: boolean; snapshot?: string | null; listStart?: string | null; round?: ColinhaRoundInfo }
 const EMPTY_STATE: ColinhaState = { uf: null, df: null, de: null, s1: null, s2: null, g: null, p: null }
 const EMPTY_CHOICES: Record<SlotId, ColinhaCandidate | null> = { df: null, de: null, s1: null, s2: null, g: null, p: null }
-/** Passo final: conferência da lista, depois dos seis votos. */
-// O fluxo novo usa reviewIndex e activeSlots para trocar os cargos do 2º turno.
 /** Texto compilado da Lei 9.504/1997; o art. 91-A, parágrafo único, veda celular na cabine. */
 const CELL_PHONE_LAW_URL = "https://www.planalto.gov.br/ccivil_03/leis/l9504.htm"
 /** A API devolve no máximo 20 candidaturas por consulta. */
@@ -84,7 +82,8 @@ export function ColinhaBuilder() {
   const movedRef = useRef(false)
   const heroCopyRef = useRef<string | null>(null)
 
-  const secondRoundActive = state.turno === 2 && round?.status === "ready" && round.availableSlots.length > 0
+  const secondRoundAvailable = round?.status === "ready" && round.availableSlots.length > 0
+  const secondRoundActive = state.turno === 2 && secondRoundAvailable
   const activeSlots = useMemo(() => state.turno === 2 ? (secondRoundActive ? round!.availableSlots : []) : SLOT_ORDER, [state.turno, secondRoundActive, round])
   const reviewIndex = activeSlots.length
   const slot: SlotId | null = step < reviewIndex ? activeSlots[step] : null
@@ -111,9 +110,7 @@ export function ColinhaBuilder() {
     setMounted(true)
     const params = new URLSearchParams(window.location.search)
     const parsed = parseColinhaState(params)
-    const initial = parsed.turno === 2
-      ? { ...parsed, df: null, de: null, s1: null, s2: null, g: null, p: null } as ColinhaState
-      : parsed
+    const initial = parsed
     const nextIssues: Partial<Record<SlotId, string>> = {}
     for (const id of SLOT_ORDER) {
       const raw = params.get(id)
@@ -132,19 +129,11 @@ export function ColinhaBuilder() {
       .then((response) => response.ok ? response.json() as Promise<CandidateResponse> : Promise.reject(new Error("round unavailable")))
       .then((payload) => {
         if (cancelled) return
-        const nextRound = payload.round ?? null
-        setRound(nextRound)
-        const hasChoices = SLOT_ORDER.some((id) => state[id] !== null)
-        if (!state.turno && !hasChoices && nextRound?.status === "ready" && nextRound.availableSlots.length > 0) {
-          const nextState = { ...state, turno: 2 as const }
-          setState(nextState)
-          if (typeof window !== "undefined") window.history.replaceState(null, "", buildColinhaUrl(window.location.href, nextState))
-        }
+        setRound(payload.round ?? null)
       })
       .catch(() => { if (!cancelled) setRound(null) })
     return () => { cancelled = true }
     // The round request is keyed by UF; selected choices do not alter its result.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mounted, state.uf])
 
   useEffect(() => {
@@ -161,9 +150,18 @@ export function ColinhaBuilder() {
 
   // Reidrata as escolhas vindas do link. Sem escolhas, nada a consultar: a data
   // do snapshot chega pela lista do primeiro passo, sem aviso falso de parcial.
+  const hasSelection = SLOT_ORDER.some((id) => state[id])
   const selectionKey = SLOT_ORDER.map((id) => state[id] ?? "").join(",")
   useEffect(() => {
-    if (!mounted || !state.uf || (state.turno === 2 && !round) || !SLOT_ORDER.some((id) => state[id])) return
+    if (!mounted || !state.uf || state.turno || !secondRoundAvailable || hasSelection) return
+    const nextState = { ...EMPTY_STATE, uf: state.uf, turno: 2 as const }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setState(nextState)
+    if (typeof window !== "undefined") window.history.replaceState(null, "", buildColinhaUrl(window.location.href, nextState))
+  }, [mounted, state.uf, state.turno, hasSelection, secondRoundAvailable])
+
+  useEffect(() => {
+    if (!mounted || !state.uf || (state.turno === 2 && !secondRoundActive) || !hasSelection) return
     const requested = { ...state }
     let cancelled = false
     void fetch("/api/colinha/candidatos", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "selection", state: requested }) })
@@ -190,7 +188,7 @@ export function ColinhaBuilder() {
     return () => { cancelled = true }
     // selectionKey resume o estado; reconsultar a cada troca de passo seria desperdício.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mounted, state.uf, state.turno, selectionKey, round])
+  }, [mounted, state.uf, state.turno, selectionKey, hasSelection, secondRoundActive])
 
   useEffect(() => {
     const timer = window.setTimeout(() => setDebouncedQuery(query), 250)

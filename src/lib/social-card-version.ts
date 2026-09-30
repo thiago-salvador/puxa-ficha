@@ -1,8 +1,16 @@
-// O card fica 24 h no CDN (s-maxage de /api/card/[slug]). A versão na URL vem
-// da última atualização da ficha, então só uma escrita nova gera card novo; um
-// valor por abertura (como era o `Date.now()` do preview) furava o cache a cada
-// clique.
-export function socialCardVersionToken(cardVersion?: string | null): string {
+import type { FaseEleitoral2026 } from "@/lib/types"
+
+type CardPhase = Pick<FaseEleitoral2026, "fase_eleitoral" | "fase_turno">
+
+// O CDN guarda o card por 24 h. A versão inclui o layout, a atualização da
+// ficha e a fase oficial, que pode mudar sem uma nova atualização da ficha.
+export function socialCardVersionToken(
+  cardVersion?: string | null,
+  faseEleitoral?: CardPhase | null,
+): string {
   const ms = cardVersion ? Date.parse(cardVersion) : Number.NaN
-  return Number.isFinite(ms) ? Math.floor(ms / 1000).toString(36) : "3"
+  const version = Number.isFinite(ms) ? `3-${Math.floor(ms / 1000).toString(36)}` : "3"
+  return faseEleitoral && faseEleitoral.fase_eleitoral !== "em_disputa"
+    ? `${version}-${faseEleitoral.fase_eleitoral}-${faseEleitoral.fase_turno}`
+    : version
 }
