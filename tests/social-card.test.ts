@@ -15,6 +15,8 @@ import type { FichaCandidato } from "../src/lib/types"
 // ── Helpers ─────────────────────────────────────────────────
 
 describe("social card image fetch trust", () => {
+  const maxPhotoBytes = 2 * 1024 * 1024
+
   test("requests allowed images without following redirects and retains successful photos", async (t) => {
     const source = "https://www.camara.leg.br/photo.jpg"
     const calls: Array<{ url: string; init?: RequestInit }> = []
@@ -28,6 +30,111 @@ describe("social card image fetch trust", () => {
     assert.equal(calls[0].init?.redirect, "manual")
     assert.ok(calls[0].init?.signal instanceof AbortSignal)
   })
+
+  test("keeps the timeout active while a response body is stalled", async (t) => {
+    t.mock.timers.enable({ apis: ["setTimeout"] })
+    let signal: AbortSignal | undefined
+    let cancelled = false
+    const response = {
+      ok: true,
+      headers: new Headers({ "content-type": "image/png" }),
+      arrayBuffer: () => new Promise<ArrayBuffer>(() => {}),
+      body: {
+        getReader: () => ({
+          read: () => new Promise<ReadableStreamReadResult<Uint8Array>>(() => {}),
+          cancel: async () => { cancelled = true },
+          releaseLock: () => {},
+        }),
+      },
+    } as unknown as Response
+    t.mock.method(globalThis, "fetch", async (_url: string, init?: RequestInit) => {
+      signal = init?.signal as AbortSignal
+      return response
+    })
+
+    const pending = fetchPhotoAsBase64("https://www.camara.leg.br/photo.jpg")
+    await Promise.resolve()
+    t.mock.timers.tick(5_000)
+    assert.equal(await pending, null)
+    assert.equal(signal?.aborted, true)
+    assert.equal(cancelled, true)
+  })
+
+  test("times out even when fetch never resolves or observes abort", async (t) => {
+    t.mock.timers.enable({ apis: ["setTimeout"] })
+    let signal: AbortSignal | undefined
+    t.mock.method(globalThis, "fetch", async (_url: string, init?: RequestInit) => {
+      signal = init?.signal as AbortSignal
+      return new Promise<Response>(() => {})
+    })
+
+    const pending = fetchPhotoAsBase64("https://www.camara.leg.br/photo.jpg")
+    t.mock.timers.tick(5_000)
+    assert.equal(await pending, null)
+    assert.equal(signal?.aborted, true)
+  })
+
+  test("cancels the response reader and falls back when a body read errors", async (t) => {
+    let bodyCancelled = false
+    const response = {
+      ok: true,
+      headers: new Headers({ "content-type": "image/png" }),
+      body: {
+        getReader: () => ({
+          read: async () => { throw new Error("body read failed") },
+          cancel: async () => { bodyCancelled = true },
+          releaseLock: () => {},
+        }),
+      },
+    } as unknown as Response
+    t.mock.method(globalThis, "fetch", async () => response)
+
+    assert.equal(await fetchPhotoAsBase64("https://www.camara.leg.br/photo.jpg"), null)
+    assert.equal(bodyCancelled, true)
+  })
+
+  test("rejects an oversized declared body before reading it", async (t) => {
+    let bodyCancelled = false
+    let bodyRead = false
+    const body = {
+      getReader() {
+        bodyRead = true
+        throw new Error("oversized body must be rejected before acquiring a reader")
+      },
+      cancel: async () => { bodyCancelled = true },
+    } as unknown as ReadableStream<Uint8Array>
+    t.mock.method(globalThis, "fetch", async () => ({
+      ok: true,
+      headers: new Headers({
+        "content-length": String(maxPhotoBytes + 1),
+        "content-type": "image/png",
+      }),
+      body,
+    }) as Response)
+
+    assert.equal(await fetchPhotoAsBase64("https://www.camara.leg.br/photo.jpg"), null)
+    assert.equal(bodyRead, false)
+    assert.equal(bodyCancelled, true)
+  })
+
+  for (const { label, headers } of [
+    { label: "without Content-Length", headers: {} },
+    { label: "with a dishonest small Content-Length", headers: { "content-length": "1" } },
+  ]) {
+    test(`rejects a streamed body above the limit ${label}`, async (t) => {
+      let bodyCancelled = false
+      const body = new ReadableStream<Uint8Array>({
+        start(controller) {
+          controller.enqueue(new Uint8Array(maxPhotoBytes + 1))
+        },
+        cancel() { bodyCancelled = true },
+      })
+      t.mock.method(globalThis, "fetch", async () => new Response(body, { headers }))
+
+      assert.equal(await fetchPhotoAsBase64("https://www.camara.leg.br/photo.jpg"), null)
+      assert.equal(bodyCancelled, true)
+    })
+  }
 
   test("rejects redirects to untrusted hosts instead of requesting the redirect target", async (t) => {
     let calls = 0

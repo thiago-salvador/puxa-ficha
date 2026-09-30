@@ -82,7 +82,7 @@ export default function PrivacidadePage() {
             observar a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018).
           </P>
           <P>
-            Última atualização: 21 de maio de 2026.
+            Última atualização: 2 de setembro de 2026.
           </P>
         </div>
       </section>
