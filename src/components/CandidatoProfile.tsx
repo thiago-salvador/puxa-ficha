@@ -1305,7 +1305,7 @@ export function CandidatoProfile({
                         {ficha.tcu_verificacao.fontes.map((fonte) => (
                           <a
                             key={fonte.cadastro}
-                            href={fonte.url}
+                            href={safeHref(fonte.url) ?? undefined}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline underline-offset-2"
@@ -1317,7 +1317,7 @@ export function CandidatoProfile({
                       </div>
                     ) : safeHref(ficha.tcu_verificacao.url) ? (
                       <a
-                        href={ficha.tcu_verificacao.url!}
+                        href={safeHref(ficha.tcu_verificacao.url!) ?? undefined}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-2 inline-block text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2"
@@ -1478,7 +1478,7 @@ export function CandidatoProfile({
                           {/* Link oficial quando existe; sem ele, nada de link inventado. */}
                           {safeHref(declaracao.fonteUrl) ? (
                             <a
-                              href={declaracao.fonteUrl!}
+                              href={safeHref(declaracao.fonteUrl!) ?? undefined}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="mt-1 inline-block text-[length:var(--text-caption)] font-medium text-muted-foreground underline"

@@ -269,7 +269,7 @@ describe("alerts subscribe: resposta neutra contra enumeracao", () => {
   it("barra o reenvio do link de gestao pelo contador de banco, sem depender do balde em memoria", async () => {
     const ip = "203.0.113.30"
     const ipHash = hashTrustedClientIp(
-      new Headers({ "x-vercel-forwarded-for": ip }),
+      new Headers({ "x-vercel-forwarded-for": ip, "x-real-ip": ip }),
       "alerts-subscribe",
     )
     const fixture = new AlertsRouteFixture({
@@ -291,7 +291,7 @@ describe("alerts subscribe: resposta neutra contra enumeracao", () => {
   it("carimba o ip_hash do pedido no assinante que recebeu o email", async () => {
     const ip = "203.0.113.31"
     const ipHash = hashTrustedClientIp(
-      new Headers({ "x-vercel-forwarded-for": ip }),
+      new Headers({ "x-vercel-forwarded-for": ip, "x-real-ip": ip }),
       "alerts-subscribe",
     )
     const fixture = new AlertsRouteFixture({

@@ -1,3 +1,4 @@
+import { safeHref } from "@/lib/utils"
 import Link from "next/link"
 import { formatUpdateValue } from "@/lib/verified-candidate-updates"
 import { formatFullDate, updateFieldLabel, type UpdateRow } from "./updates-view"
@@ -29,7 +30,7 @@ export function UpdateItem({ row }: { row: UpdateRow }) {
         <span className={styles.after}><span className="sr-only">Depois: </span>{formatUpdateValue(row, row.after_value)}</span>
       </p>
       <div className={styles.itemLinks}>
-        <a href={row.source_url} target="_blank" rel="noreferrer">
+        <a href={safeHref(row.source_url) ?? undefined} target="_blank" rel="noreferrer">
           Fonte oficial no TSE<span className="sr-only"> (abre em nova aba)</span><span aria-hidden="true">&nbsp;↗</span>
         </a>
         <Link href={`/candidato/${row.candidate_slug}`}>Ver ficha</Link>

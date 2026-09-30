@@ -1,3 +1,4 @@
+import { safeHref } from "@/lib/utils"
 import Link from "next/link"
 import type { ReactNode } from "react"
 import { ImprensaCitationButton } from "@/components/ImprensaCitationButton"
@@ -28,7 +29,7 @@ function Source({ title, children }: { title: string; children: ReactNode }) {
 
 function SourceLink({ href, children }: { href: string | null | undefined; children: ReactNode }) {
   if (!href) return <span className={styles.muted}>Link da fonte não guardado.</span>
-  return <a className={styles.sourceLink} href={href} rel="noreferrer">{children}</a>
+  return <a className={styles.sourceLink} href={safeHref(href) ?? undefined} rel="noreferrer">{children}</a>
 }
 
 function Hash({ value }: { value: string | null }) {
@@ -97,7 +98,7 @@ export function MesaRowDetails({ row, generatedAt, id }: { row: MesaRow; generat
             : chapa.viceNome ? `${chapa.viceNome}${chapa.viceSituacao ? ` (${chapa.viceSituacao.label})` : ""}` : labelState(chapa.estado)}.
             {" "}{when("Arquivo oficial de", chapa.snapshotEm)}.</p>
           <SourceLink href={chapa.fonteUrl}>Composição no TSE</SourceLink>
-          {chapa.viceSituacao?.source_url && <a className={styles.sourceLink} href={chapa.viceSituacao.source_url} rel="noreferrer">Situação do vice no TSE</a>}
+          {chapa.viceSituacao?.source_url && <a className={styles.sourceLink} href={safeHref(chapa.viceSituacao.source_url) ?? undefined} rel="noreferrer">Situação do vice no TSE</a>}
           <Hash value={chapa.fonteSha256} />
           {chapa.fonteUrl && chapa.snapshotEm && <ImprensaCitationButton candidateName={row.nomeOriginal} section="chapa" slug={row.slug} sourceUrl={chapa.fonteUrl} collectedAt={dateLabel(chapa.snapshotEm)} collectionLabel="Arquivo oficial em" publishedLabel={chapa.estado === "indeferidos_comprovados" ? labelState(chapa.estado) : undefined} />}
         </Source>

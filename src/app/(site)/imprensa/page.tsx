@@ -1,3 +1,4 @@
+import { safeHref } from "@/lib/utils"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -138,7 +139,7 @@ export default async function ImprensaSala() {
                   </div>
                   <p className={styles.updateLinks}>
                     {item.fichaUrl ? <Link href={item.fichaUrl} aria-label={`Ficha de ${item.name}`}>Ficha</Link> : null}
-                    <a href={item.sourceUrl} target="_blank" rel="noreferrer">Fonte oficial<ArrowUpRight aria-hidden="true" className={styles.arrowSmall} /></a>
+                    <a href={safeHref(item.sourceUrl) ?? undefined} target="_blank" rel="noreferrer">Fonte oficial<ArrowUpRight aria-hidden="true" className={styles.arrowSmall} /></a>
                   </p>
                 </li>
               ))}
