@@ -75,7 +75,7 @@ export interface AuditoriaRodadaFalas {
   invalid_receipts: number
   complete: boolean
   missing_names: string[]
-  /** Início da janela de aspas da rodada (14 dias antes do início, inclusive). */
+  /** Início da janela de aspas da rodada (14 datas locais, incluindo o início). */
   quote_window_from: string
   found: number
   found_without_quote: number
@@ -83,8 +83,23 @@ export interface AuditoriaRodadaFalas {
   candidates: AuditoriaCandidatoRodada[]
 }
 
-/** Janela de busca das falas: 14 dias até o início da rodada (falas-rotina-48h.md). */
+/** Janela de busca das falas: 14 datas locais até o início da rodada (falas-rotina-48h.md). */
 export const JANELA_FALAS_DIAS = 14
+
+const SAO_PAULO_TIME_ZONE = "America/Sao_Paulo"
+
+function deslocarDataIso(dataIso: string, dias: number): string {
+  const [ano, mes, dia] = dataIso.split("-").map(Number)
+  const meioDiaUtc = new Date(Date.UTC(ano, mes - 1, dia, 12))
+  meioDiaUtc.setUTCDate(meioDiaUtc.getUTCDate() + dias)
+  return meioDiaUtc.toISOString().slice(0, 10)
+}
+
+/** Retorna as datas da janela na folha local de São Paulo. */
+export function janelaFalasDaRodada(roundStart: Date): { from: string; to: string } {
+  const to = roundStart.toLocaleDateString("en-CA", { timeZone: SAO_PAULO_TIME_ZONE })
+  return { from: deslocarDataIso(to, -(JANELA_FALAS_DIAS - 1)), to }
+}
 
 type CatalogQuote = { candidate_id?: unknown; candidate_slug?: unknown; occurred_on?: unknown; occurred_between?: unknown }
 
@@ -263,7 +278,7 @@ export function auditarRodadaFalas(input: {
     else { bucket.planned++; bucket.reasons.add("planned") }
   }
   const coveredKeys = catalogIdentities(input.catalog)
-  const quoteWindowFrom = new Date(start.getTime() - JANELA_FALAS_DIAS * 86_400_000).toISOString().slice(0, 10)
+  const quoteWindowFrom = janelaFalasDaRodada(start).from
   const windowKeys = windowQuoteIdentities(input.catalog, quoteWindowFrom)
   const candidates = input.roster.map((candidate) => {
     const key = identityKey(candidate.id, candidate.slug)
