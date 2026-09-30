@@ -53,17 +53,20 @@ export interface MesaQuery {
   com?: MesaCom
 }
 
-type NavEntry = { id: ImprensaNavId; label: string }
+type NavEntry = { id: ImprensaNavId; label: string; description: string }
 
-/** Ordem e rótulos da barra da seção. */
+/**
+ * Ordem, rótulos e descrição curta das páginas da seção. A barra usa o rótulo;
+ * o bloco "Nesta sala" usa também a descrição.
+ */
 export const IMPRENSA_NAV: readonly NavEntry[] = [
-  { id: "sala", label: "Sala" },
-  { id: "estado", label: "Seu estado" },
-  { id: "presidencia", label: "Presidência" },
-  { id: "mesa", label: "Mesa" },
-  { id: "atualizacoes", label: "O que mudou" },
-  { id: "frescor", label: "Como coletamos" },
-  { id: "kit", label: "Kit" },
+  { id: "sala", label: "Sala", description: "Fatos do dia, pacotes por estado e as mudanças mais recentes." },
+  { id: "estado", label: "Seu estado", description: "Fatos, candidatos, chapas e mudanças de cada UF, reunidos em um pacote." },
+  { id: "presidencia", label: "Presidência", description: "Pacote dos candidatos a presidente, com patrimônio, processos, vice e pesquisas registradas." },
+  { id: "mesa", label: "Mesa", description: "Uma linha por candidato, com fonte, data e grau de confirmação, para ordenar e filtrar." },
+  { id: "atualizacoes", label: "O que mudou", description: "Mudanças de candidatura, partido e patrimônio detectadas nas fontes oficiais, com antes e depois." },
+  { id: "frescor", label: "Como coletamos", description: "De onde vem cada dado, quando foi a última coleta de cada fonte e como tratamos homônimos." },
+  { id: "kit", label: "Kit", description: "Frase para citar, textos de apresentação, logo, arquivos e perguntas frequentes." },
 ]
 
 /** Páginas que filtram por cargo e UF na query. As demais ignoram o recorte. */
@@ -110,6 +113,7 @@ export function imprensaHref(path: ImprensaPath, recorte: ImprensaRecorte = {}, 
 export interface ImprensaNavItem {
   id: ImprensaNavId
   label: string
+  description: string
   href: string
 }
 
@@ -119,17 +123,17 @@ export interface ImprensaNavItem {
  */
 export function buildImprensaNav(recorte: ImprensaRecorte = {}): ImprensaNavItem[] {
   const uf = normalizeRecorteUf(recorte.uf)
-  return IMPRENSA_NAV.map(({ id, label }) => {
+  return IMPRENSA_NAV.map(({ id, label, description }) => {
     switch (id) {
-      case "sala": return { id, label, href: imprensaHref("/imprensa") }
+      case "sala": return { id, label, description, href: imprensaHref("/imprensa") }
       case "estado": return uf
-        ? { id, label: `${label} · ${uf}`, href: imprensaUfPath(uf) }
-        : { id, label, href: `/imprensa#${IMPRENSA_STATE_CHOOSER_ID}` }
-      case "presidencia": return { id, label, href: imprensaHref("/imprensa/presidencia") }
-      case "mesa": return { id, label, href: imprensaHref("/imprensa/mesa", recorte) }
-      case "atualizacoes": return { id, label, href: imprensaHref("/imprensa/atualizacoes", recorte) }
-      case "frescor": return { id, label, href: imprensaHref("/imprensa/frescor") }
-      case "kit": return { id, label, href: imprensaHref("/imprensa/kit") }
+        ? { id, label: `${label} · ${uf}`, description, href: imprensaUfPath(uf) }
+        : { id, label, description, href: `/imprensa#${IMPRENSA_STATE_CHOOSER_ID}` }
+      case "presidencia": return { id, label, description, href: imprensaHref("/imprensa/presidencia") }
+      case "mesa": return { id, label, description, href: imprensaHref("/imprensa/mesa", recorte) }
+      case "atualizacoes": return { id, label, description, href: imprensaHref("/imprensa/atualizacoes", recorte) }
+      case "frescor": return { id, label, description, href: imprensaHref("/imprensa/frescor") }
+      case "kit": return { id, label, description, href: imprensaHref("/imprensa/kit") }
     }
   })
 }
