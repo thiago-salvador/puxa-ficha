@@ -86,21 +86,49 @@ export function countDocumentLikeSequences(value: unknown, options: { bareDigits
 
 const MAX_ATTEMPTS = 5
 
+export interface KeyWindow {
+  /** Limite inferior inclusivo. */
+  lower: string
+  /** Limite superior exclusivo; `null` na última janela. */
+  upper: string | null
+}
+
 /**
- * Página por chave (`id > último id`, ordenado), não por OFFSET.
+ * Dezesseis janelas meio-abertas pelo primeiro dígito hexadecimal do uuid.
+ * Juntas cobrem todo o espaço de chave, sem sobreposição.
  *
- * Com OFFSET e sem ORDER BY, a página 137 de `projetos_lei` (~139 mil linhas)
- * custava ~2,6 s no papel anon, cujo statement_timeout é 3 s; no runner isso
- * virou HTTP 500 (run 36010547921). OFFSET sem ordem também não garante que
- * toda linha seja lida uma vez. A chave mantém cada página em tempo constante.
+ * A política de leitura pública chama `is_public_candidate` por linha, e essa
+ * função não entra em inline (tem `SET search_path`), então o planner estima
+ * ~270 linhas visíveis quando são ~157 mil. Sem limite superior no `id`, a
+ * página de `projetos_lei` virava seq scan da tabela inteira mais sort: 2,2 s
+ * com cache quente no papel anon, cujo statement_timeout é 3 s (run
+ * 36708157388, erro 57014). Com a janela limitada a 1/16 da chave, o planner
+ * volta ao index scan da pkey e a mesma página custa ~80 ms.
  */
-export function buildPageUrl(url: string, table: string, columns: string, afterId: string | null): URL {
+export const KEY_WINDOWS: readonly KeyWindow[] = Array.from({ length: 16 }, (_, index) => ({
+  lower: `${index.toString(16)}0000000-0000-0000-0000-000000000000`,
+  upper: index < 15 ? `${(index + 1).toString(16)}0000000-0000-0000-0000-000000000000` : null,
+}))
+
+/**
+ * Página por chave (`id > último id`, ordenado, dentro da janela), não por
+ * OFFSET. OFFSET sem ordem não garante que toda linha seja lida uma vez, e o
+ * custo dele cresce a cada página (run 36010547921).
+ */
+export function buildPageUrl(
+  url: string,
+  table: string,
+  columns: string,
+  afterId: string | null,
+  window: KeyWindow = KEY_WINDOWS[0]
+): URL {
   const endpoint = new URL(`${url}/rest/v1/${table}`)
   const selected = columns.split(",").map((column) => column.trim()).filter(Boolean)
   endpoint.searchParams.set("select", ["id", ...selected.filter((column) => column !== "id")].join(","))
   endpoint.searchParams.set("order", "id.asc")
   endpoint.searchParams.set("limit", String(PAGE_SIZE))
-  if (afterId !== null) endpoint.searchParams.set("id", `gt.${afterId}`)
+  endpoint.searchParams.append("id", afterId === null ? `gte.${window.lower}` : `gt.${afterId}`)
+  if (window.upper !== null) endpoint.searchParams.append("id", `lt.${window.upper}`)
   return endpoint
 }
 
@@ -111,9 +139,10 @@ export async function fetchPage(
   columns: string,
   afterId: string | null,
   fetcher: typeof fetch = fetch,
-  sleep: (ms: number) => Promise<void> = (ms) => new Promise((resolvePromise) => setTimeout(resolvePromise, ms))
+  sleep: (ms: number) => Promise<void> = (ms) => new Promise((resolvePromise) => setTimeout(resolvePromise, ms)),
+  window: KeyWindow = KEY_WINDOWS[0]
 ): Promise<Record<string, unknown>[]> {
-  const endpoint = buildPageUrl(url, table, columns, afterId)
+  const endpoint = buildPageUrl(url, table, columns, afterId, window)
 
   let response: Response | null = null
   let lastError: unknown = null
@@ -159,34 +188,44 @@ export async function scanTarget(
 ): Promise<TargetScan> {
   let tableRows = 0
   let tableFindings = 0
+  // As janelas vêm em ordem crescente, então o id cresce estritamente na
+  // varredura inteira: repetição ou página que não avança falha fechado.
+  let previousId: string | null = null
 
-  let afterId: string | null = null
-  for (;;) {
-    let rows: Record<string, unknown>[]
-    try {
-      rows = await fetchPage(url, key, target.table, target.columns, afterId, fetcher, sleep)
-    } catch (error) {
-      // 404 só é "pendente" na primeira página: no meio da leitura é falha.
-      const notFound = error instanceof Error && error.message.startsWith(`${target.table}: HTTP 404`)
-      if (target.pendingOn404 && afterId === null && notFound) {
-        return { rows: 0, findings: 0, pendingApply: true }
+  for (const [windowIndex, window] of KEY_WINDOWS.entries()) {
+    let afterId: string | null = null
+    for (;;) {
+      let rows: Record<string, unknown>[]
+      try {
+        rows = await fetchPage(url, key, target.table, target.columns, afterId, fetcher, sleep, window)
+      } catch (error) {
+        // 404 só é "pendente" na primeira página: no meio da leitura é falha.
+        const notFound = error instanceof Error && error.message.startsWith(`${target.table}: HTTP 404`)
+        if (target.pendingOn404 && windowIndex === 0 && afterId === null && notFound) {
+          return { rows: 0, findings: 0, pendingApply: true }
+        }
+        throw error
       }
-      throw error
+      for (const row of rows) {
+        const id = row.id
+        if (typeof id !== "string" || id < window.lower || (window.upper !== null && id >= window.upper)) {
+          throw new Error(`${target.table}: linha fora da janela de chave`)
+        }
+        if (previousId !== null && id <= previousId) {
+          throw new Error(`${target.table}: paginação repetiu ou não avançou`)
+        }
+        previousId = id
+      }
+      tableRows += rows.length
+      // O id é chave técnica, não texto publicado: fica fora da varredura.
+      tableFindings += rows.reduce(
+        (total, row) =>
+          total + countDocumentLikeSequences({ ...row, id: undefined }, { bareDigits: target.bareDigits }),
+        0
+      )
+      if (rows.length < PAGE_SIZE) break
+      afterId = String(rows[rows.length - 1].id)
     }
-    tableRows += rows.length
-    // O id é chave técnica, não texto publicado: fica fora da varredura.
-    tableFindings += rows.reduce(
-      (total, row) =>
-        total + countDocumentLikeSequences({ ...row, id: undefined }, { bareDigits: target.bareDigits }),
-      0
-    )
-    if (rows.length < PAGE_SIZE) break
-    const lastId = rows[rows.length - 1]?.id
-    if (typeof lastId !== "string" && typeof lastId !== "number") {
-      throw new Error(`${target.table}: página sem id para continuar a leitura`)
-    }
-    if (String(lastId) === afterId) throw new Error(`${target.table}: paginação não avançou`)
-    afterId = String(lastId)
   }
 
   return { rows: tableRows, findings: tableFindings, pendingApply: false }
