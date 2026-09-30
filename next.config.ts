@@ -99,6 +99,12 @@ export const puxaFichaNextConfig: NextConfig = {
         destination: "/alertas/gerenciar",
         permanent: true,
       },
+      {
+        // Endereço curto e estável do media kit; o arquivo pode ser trocado sem mudar o link.
+        source: "/media-kit",
+        destination: "/imprensa/media-kit.pdf",
+        permanent: false,
+      },
       ...["cargo", "uf"].map((key) => ({
         source: "/imprensa",
         has: [{ type: "query" as const, key }],
