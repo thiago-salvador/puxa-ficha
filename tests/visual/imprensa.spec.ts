@@ -126,7 +126,7 @@ test("Sala indexável apresenta os blocos, as tarefas do herói, exportação e 
   const headerBox = await page.locator("header").first().boundingBox()
   const noticeBox = await page.getByText("Confira os dados na fonte original antes de publicar.", { exact: true }).first().boundingBox()
   expect(headerBox && noticeBox && noticeBox.y >= headerBox.y + headerBox.height).toBe(true)
-  for (const id of ["numeros", "estados", "atualizacoes", "confianca", "ferramentas", "kit", "quem-faz"]) {
+  for (const id of ["numeros", "estados", "atualizacoes", "nesta-sala", "confianca", "ferramentas", "kit", "quem-faz"]) {
     await expect(page.locator(`#${id}`)).toBeAttached()
   }
   await expect(page.getByText("Confira os dados na fonte original antes de publicar.").first()).toBeVisible()

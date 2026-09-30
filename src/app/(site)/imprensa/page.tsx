@@ -8,6 +8,7 @@ import { ImprensaFacts } from "@/components/imprensa/ImprensaFacts"
 import { ImprensaSubnav } from "@/components/imprensa/ImprensaSubnav"
 import { SalaSearchTrigger } from "@/components/imprensa/SalaSearchTrigger"
 import { TrustFooter } from "@/components/imprensa/TrustFooter"
+import { SalaSectionsNav, type SalaSectionLive } from "@/components/imprensa/sala/SalaSectionsNav"
 import { buildSalaPromise, buildSalaUpdates, countSalaRecortes } from "@/components/imprensa/sala/sala-model"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import { getImprensaAtualizacoes } from "@/lib/imprensa-atualizacoes"
@@ -51,9 +52,15 @@ export default async function ImprensaSala() {
     ? facts!.porCargo.map((item) => item.cargo)
     : senateEnabled ? ["Presidente", "Governador", "Senador"] : ["Presidente", "Governador"]
   const promise = buildSalaPromise(dataset ? rows.length : null, promiseCargos)
-  const alerts = alertsEnabled
-    ? { href: "/imprensa/mesa#alertas", title: "Alerta por estado", text: "Mudanças verificadas do recorte, por email." }
-    : { href: imprensaHref("/imprensa/atualizacoes"), title: "Mudanças verificadas", text: "Registro público do que mudou nas fontes oficiais." }
+  const updatesTotal = atualizacoes.status === "available" && typeof atualizacoes.total === "number" ? atualizacoes.total : null
+  const sectionsLive: SalaSectionLive = {
+    estado: `${IMPRENSA_UFS.length} pacotes, um por UF`,
+    ...(recortes ? { presidencia: candidatos(recortes.presidencia) } : {}),
+    ...(dataset ? { mesa: `${candidatos(rows.length)} com linha pública` } : {}),
+    ...(updatesTotal !== null && updatesTotal > 0
+      ? { atualizacoes: `${NUMBER.format(updatesTotal)} ${updatesTotal === 1 ? "mudança" : "mudanças"}${updates[0] ? `, a última em ${updates[0].dateLabel}` : ""}` }
+      : {}),
+  }
 
   return (
     <div className={styles.shell}>
@@ -146,11 +153,19 @@ export default async function ImprensaSala() {
             </ol>
           )}
           <Link className={styles.moreLink} href={imprensaHref("/imprensa/atualizacoes")}>
-            {atualizacoes.status === "available" && typeof atualizacoes.total === "number" && atualizacoes.total > 0
-              ? `Ver as ${NUMBER.format(atualizacoes.total)} mudanças verificadas`
+            {updatesTotal !== null && updatesTotal > 0
+              ? `Ver as ${NUMBER.format(updatesTotal)} mudanças verificadas`
               : "Ver o registro de mudanças"}
             <ArrowRight aria-hidden="true" className={styles.arrow} />
           </Link>
+        </section>
+
+        <SlashDivider />
+
+        <section id="nesta-sala" className={styles.section} aria-labelledby="nesta-sala-title">
+          <SectionHead num="04" id="nesta-sala-title">Nesta sala</SectionHead>
+          <p className={styles.lead}>As outras páginas da seção de imprensa, com o que cada uma traz. Os números são os mesmos que esta página já mostra; sem consulta disponível, o card fica só com a descrição.</p>
+          <SalaSectionsNav live={sectionsLive} />
         </section>
       </div>
 
@@ -162,7 +177,6 @@ export default async function ImprensaSala() {
         <div className={styles.toolsInner}>
           <h2 id="ferramentas-title" className={styles.toolsTitle}>Para a matéria</h2>
           <ul className={styles.toolsList}>
-            <Tool title="Mesa de apuração" text="Ordenar, filtrar e abrir cada linha com as fontes." href={imprensaHref("/imprensa/mesa")} />
             <li>
               <strong>CSV e JSON</strong>
               <span>Todas as linhas da Mesa, com o estado de cada dado.</span>
@@ -181,8 +195,7 @@ export default async function ImprensaSala() {
             </li>
             <Tool title="Embed" text="Ficha ou comparação para colar na matéria." href="/embed" />
             <Tool title="Comparador" text="Candidatos lado a lado, com as mesmas fontes." href="/comparar" />
-            <Tool title={alerts.title} text={alerts.text} href={alerts.href} />
-            <Tool id="kit" title="Kit de imprensa" text="Textos, logo, capturas, PDF e perguntas frequentes." href={imprensaHref("/imprensa/kit")} />
+            {alertsEnabled ? <Tool title="Alerta por estado" text="Mudanças verificadas do recorte, por email." href="/imprensa/mesa#alertas" /> : null}
             <Tool title="Dados abertos" text="Cadastro de candidatos para baixar." href="/dados-abertos" />
           </ul>
           <p id="quem-faz" className={styles.whoMakes}>
@@ -202,9 +215,9 @@ function Unavailable({ title, children }: { title: string; children: React.React
   return <div role="status" className={styles.unavailable}><strong>{title}</strong><p>{children}</p></div>
 }
 
-function Tool({ id, title, text, href }: { id?: string; title: string; text: string; href: string }) {
+function Tool({ title, text, href }: { title: string; text: string; href: string }) {
   return (
-    <li id={id}>
+    <li>
       <Link href={href} className={styles.toolLink}><strong>{title}</strong><ArrowRight aria-hidden="true" className={styles.arrowSmall} /></Link>
       <span>{text}</span>
     </li>
