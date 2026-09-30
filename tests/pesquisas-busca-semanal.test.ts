@@ -123,7 +123,7 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
     assert.ok(list.every((p) => (p.publicationDate.value ?? "") <= (list[0].publicationDate.value ?? "")))
   }
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 28)
-  assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 25.8)
+  assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 32.6)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "RR").length, 0)
 })
 

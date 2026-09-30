@@ -1904,6 +1904,311 @@
         }
       },
       "consulted_at": "2026-09-28T12:18:53Z"
+    },
+    {
+      "id": "gerp-br-03929-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Gerp",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "admin.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-24",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 2400,
+        "method": "GerpCati (telefone)",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95.55,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-03929/2026",
+        "result_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/PRESIDENCIA-DO-BRASIL-29a-Relatorio-Presidencia-2026-DIVULGACAO-2-1.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-03929/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "c8ba88bda3876fc713fac312ccdf90cdc544bf9ee0100a205e004ecf62ee798d",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/PRESIDENCIA-DO-BRASIL-29a-Relatorio-Presidencia-2026-DIVULGACAO-2-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-42-das-intencoes-de-voto-no-1o-turno-lula-40/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/PRESIDENCIA-DO-BRASIL-29a-Relatorio-Presidencia-2026-DIVULGACAO-2-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-42-das-intencoes-de-voto-no-1o-turno-lula-40/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/PRESIDENCIA-DO-BRASIL-29a-Relatorio-Presidencia-2026-DIVULGACAO-2-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-42-das-intencoes-de-voto-no-1o-turno-lula-40/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/09/PRESIDENCIA-DO-BRASIL-29a-Relatorio-Presidencia-2026-DIVULGACAO-2-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/gerp-flavio-tem-42-das-intencoes-de-voto-no-1o-turno-lula-40/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "quaest-br-06520-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Globo e O Globo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-24",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-28",
+        "sample_size": 2004,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-06520/2026",
+        "result_url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/28/quaest-presidente-1o-turno-28-setembro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-06520/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "c533f42a2b60b37afc8d6303038a372bbce9cc817176d83cbb823d364b8ac9b7",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/28/quaest-presidente-1o-turno-28-setembro.ghtml"
+          ],
+          "note": "Modo de entrevista não comprovado na publicação consultada; método ausente ou descrição genérica preservado literalmente."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/28/quaest-presidente-1o-turno-28-setembro.ghtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/28/quaest-presidente-1o-turno-28-setembro.ghtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/09/28/quaest-presidente-1o-turno-28-setembro.ghtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "palver-br-02990-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Palver",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "palver.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-24",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 5000,
+        "method": "survey quantitativo online por questionário estruturado, com amostragem não probabilística baseada em recrutamento por anúncios em plataformas de redes sociais",
+        "margin_of_error_pp": 2.4,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-02990/2026",
+        "result_url": "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/report",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-02990/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "d5ad130435cedd2803243aea42c27dccd59533e4296e3e62e3d4183dd02a0ba0",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/report",
+            "https://www.palver.com/survey",
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/press-release"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/report",
+            "https://www.palver.com/survey",
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/press-release"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/report",
+            "https://www.palver.com/survey",
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/press-release"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/report",
+            "https://www.palver.com/survey",
+            "https://www.palver.com/api/surveys/voting-intention-2026-september-w5/press-release"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "atlasintel-bloomberg-br-04391-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel/Bloomberg",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "infomoney.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-23",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 5005,
+        "method": "recrutamento digital aleatório",
+        "margin_of_error_pp": 1,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-04391/2026",
+        "result_url": "https://www.infomoney.com.br/politica/atlasintel-lula-lidera-por-3-pontos-no-1o-turno-flavio-fica-01-a-frente-no-2o/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-04391/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "1889e8b32a6e809c7cdfdaf642d9bdd7b898e5bbc9774365074bee499ed429ac",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.infomoney.com.br/politica/atlasintel-lula-lidera-por-3-pontos-no-1o-turno-flavio-fica-01-a-frente-no-2o/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.infomoney.com.br/politica/atlasintel-lula-lidera-por-3-pontos-no-1o-turno-flavio-fica-01-a-frente-no-2o/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.infomoney.com.br/politica/atlasintel-lula-lidera-por-3-pontos-no-1o-turno-flavio-fica-01-a-frente-no-2o/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.infomoney.com.br/politica/atlasintel-lula-lidera-por-3-pontos-no-1o-turno-flavio-fica-01-a-frente-no-2o/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
     }
   ],
   "media_fallback_policy": {
