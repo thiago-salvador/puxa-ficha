@@ -124,7 +124,7 @@ export function listStartLetter(now: Date = new Date()): string {
 
 /** Situação é sempre exibida. Estes estados jamais entram no PNG. */
 /** Código da eleição geral de 2026 no DivulgaCandContas. */
-export const TSE_ELEICAO_2026 = "20322002026"
+const TSE_ELEICAO_2026 = "20322002026"
 
 /**
  * Foto exibida na colinha. Sem miniatura gravada, usa a foto oficial servida
