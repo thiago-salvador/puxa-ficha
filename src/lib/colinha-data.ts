@@ -54,9 +54,11 @@ async function fetchAllRows(build: () => PageQuery): Promise<RosterRow[] | null>
     if (error) return null
     const batch = (data ?? []) as unknown as RosterRow[]
     rows.push(...batch)
-    if (batch.length < PAGE_SIZE) break
+    // Página incompleta encerra a lista; um snapshot trocado entre páginas pode repetir linhas.
+    if (batch.length < PAGE_SIZE) return [...new Map(rows.map((row) => [row.sq_candidato, row])).values()]
   }
-  return rows
+  // Teto de páginas atingido com página cheia: lista possivelmente incompleta, falha fechada.
+  return null
 }
 
 async function enrichPublished(rows: RosterRow[], phases: FaseEleitoralPublica[] = []): Promise<ColinhaCandidate[]> {

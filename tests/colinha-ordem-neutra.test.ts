@@ -33,6 +33,9 @@ test("a consulta sem filtro traz a lista completa, da letra do momento até dar 
   assert.doesNotMatch(data, /\.limit\(/)
   assert.match(data, /\.range\(from, from \+ PAGE_SIZE - 1\)/)
   assert.match(data, /index \+= ENRICH_CHUNK/)
+  // Teto de páginas com página cheia não vira lista "completa"; linhas repetidas entre páginas saem.
+  assert.match(data, /Teto de páginas atingido com página cheia[^\n]*\n  return null/)
+  assert.match(data, /new Map\(rows\.map\(\(row\) => \[row\.sq_candidato, row\]\)\)/)
 })
 
 test("a caixa da lista mantém a altura de 20 candidaturas e rola para mostrar as demais", () => {
