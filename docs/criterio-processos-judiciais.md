@@ -128,11 +128,16 @@ fingir cobertura seria pior que declarar o limite.
   `homonimos_descartados`. CPF mascarado não decide nada.
 - O aplicador recusa `vazio_confirmado` para candidato que já tem linha em
   `processos`.
-- Falha da coleta vira recibo `erro` para cada alvo da execução, com o tipo
-  de falha de uma lista fechada, e o run fica vermelho. Recibo `erro` é
-  renovado na execução seguinte, em qualquer idade. Respostas 429 ou 5xx
-  respeitam `Retry-After`, esperam em progressão exponencial e, depois de
-  quatro seguidas, a coleta para. `check-processos-receipts.ts` roda antes e depois e reprova
-  candidato público sem recibo.
+- Respostas 429 ou 5xx, tempo esgotado e falha de rede ganham novas
+  tentativas por fonte, respeitam `Retry-After` e esperam em progressão
+  exponencial com jitter, dentro de um orçamento por execução. Fonte que
+  segue fora depois disso suspende a coleta inteira: o run fica vermelho,
+  nenhuma evidência é produzida e nenhum recibo `erro` é gravado, para não
+  sobrescrever recibo válido. Falha de outra natureza vira recibo `erro`, com
+  o tipo de falha de uma lista fechada, só para alvo sem recibo ou já em
+  `erro`; recibo válido nunca é rebaixado para `erro`, nem pelo aplicador.
+  Recibo `erro` é renovado na execução seguinte, em qualquer idade.
+  `check-processos-receipts.ts` roda antes e depois e reprova candidato
+  público sem recibo.
 - O catálogo de frescor separa a busca judicial (`processos-judiciais`, 336 h,
   semanal) da curadoria editorial, que segue com 1.800 h.

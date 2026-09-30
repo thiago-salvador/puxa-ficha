@@ -84,6 +84,11 @@ export function classificarFalhaColeta(erro: unknown): TipoFalhaColeta {
   const mensagem = mensagemDe(erro)
   const codigo = codigoDaCausa(erro)
   const nome = erro instanceof Error ? erro.name : ""
+  // Fonte suspensa pelo cliente resiliente já traz o tipo da última falha.
+  const tipoDeclarado = erro instanceof Error ? (erro as Error & { tipoFalha?: unknown }).tipoFalha : undefined
+  if (nome === "FonteSuspensaError" && typeof tipoDeclarado === "string" && (TIPOS_FALHA_COLETA as readonly string[]).includes(tipoDeclarado)) {
+    return tipoDeclarado as TipoFalhaColeta
+  }
   if (mensagem === DISJUNTOR_ABERTO || /\bHTTP 429\b/.test(mensagem)) return "limite_de_taxa"
   if (/^preflight[ :]/.test(mensagem)) return "preflight_banco"
   if (/^checkpoint:/.test(mensagem)) return "checkpoint"
