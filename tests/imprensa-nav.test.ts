@@ -51,7 +51,7 @@ describe("buildImprensaNav", () => {
 
   it("sem UF, Seu estado leva à escolha de estado na Sala", () => {
     const estado = buildImprensaNav().find((item) => item.id === "estado")
-    assert.deepEqual(estado, { id: "estado", label: "Seu estado", href: `/imprensa#${IMPRENSA_STATE_CHOOSER_ID}` })
+    assert.deepEqual(estado, { id: "estado", label: "Seu estado", description: IMPRENSA_NAV[1].description, href: `/imprensa#${IMPRENSA_STATE_CHOOSER_ID}` })
   })
 
   it("com UF, o recorte segue para o pacote, a Mesa e O que mudou", () => {
