@@ -155,9 +155,9 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     const pesquisas = listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "SP")
     const hero = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={pesquisas} />)
 
-    assert.match(hero, /Quaest/)
-    assert.match(hero, /44%/)
-    assert.equal(pesquisas[0]?.registration.code.value, "SP-01590/2026")
+    assert.match(hero, /Vox Brasil/)
+    assert.match(hero, /58,5%/)
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-01943/2026")
   })
 })
 
