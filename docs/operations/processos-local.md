@@ -33,8 +33,15 @@ workflow:
    A leitura das fontes nunca escreve no banco.
 5. Só `aplicar-evidencia-processos-curadoria.ts --apply` grava, e só em
    `coleta_log`, com backup, preflight e readback. Nunca grava em `processos`.
-6. Coleta interrompida vira recibo `erro` por alvo, pelo
-   `registrar-erro-coleta-processos.ts`, com o tipo de falha fechado.
+6. Fonte oficial instável: cada fonte tem estado próprio, o DJEN recebe uma
+   chamada por vez com 1 s de intervalo, e 429, 5xx, tempo esgotado ou rede
+   ganham até 5 novas tentativas com backoff exponencial e jitter, dentro de
+   um orçamento por execução. Se a fonte segue fora (três chamadas seguidas
+   esgotadas ou orçamento no fim), a coleta para sem evidência e sem recibo
+   `erro`: os recibos existentes ficam intactos e a próxima rodada tenta de
+   novo. Interrupção por outra causa vira recibo `erro`, pelo
+   `registrar-erro-coleta-processos.ts`, só para alvo sem recibo ou já em
+   `erro`. Nenhum caminho rebaixa recibo válido para `erro`.
 7. O diagnóstico saneado (`resumir-diagnostico-coleta-processos.ts`) fica em
    `diagnostico-publico/`.
 8. Confere os recibos depois. Falha de coleta, do aplicador ou dessa
