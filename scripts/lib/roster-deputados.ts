@@ -62,7 +62,8 @@ export interface RosterRecord {
   fonte_url: string
   sha256_pacote: string
   coletado_em: string
-  foto_path: null
+  // foto_path fica fora de propósito: o upsert agendado não pode apagar a
+  // miniatura oficial gravada por outra rotina (colinha, 30/09/2026).
   snapshot_em: string | null
 }
 
@@ -142,7 +143,7 @@ export function buildRoster(snapshot: SnapshotRow[], complement: ComplementRow[]
     const uf = upper(row.SG_UF)
     if (norm(row.ANO_ELEICAO) !== String(ROSTER_YEAR) || !cargo || (!options.includeMajoritarios && !ROSTER_CARGOS.includes(cargo as RosterCargo)) || !/^([A-Z]{2}|BR)$/.test(uf) || !sq) continue
     const complementRow = bySq.get(sq)
-    records.push({ ano: ROSTER_YEAR, sq_candidato: sq, uf, cargo, nome_urna: norm(row.NM_URNA_CANDIDATO), nome_completo: norm(row.NM_CANDIDATO), numero_urna: norm(row.NR_CANDIDATO), partido_sigla: upper(row.SG_PARTIDO), situacao_registro: statusFor(row, complementRow), fonte_url: source.sourceUrl ?? ROSTER_SOURCE_URL, sha256_pacote: source.sha256, coletado_em: source.collectedAt ?? new Date().toISOString(), foto_path: null, snapshot_em: snapshotEm })
+    records.push({ ano: ROSTER_YEAR, sq_candidato: sq, uf, cargo, nome_urna: norm(row.NM_URNA_CANDIDATO), nome_completo: norm(row.NM_CANDIDATO), numero_urna: norm(row.NR_CANDIDATO), partido_sigla: upper(row.SG_PARTIDO), situacao_registro: statusFor(row, complementRow), fonte_url: source.sourceUrl ?? ROSTER_SOURCE_URL, sha256_pacote: source.sha256, coletado_em: source.collectedAt ?? new Date().toISOString(), snapshot_em: snapshotEm })
     const replaced = norm(complementRow?.SQ_SUBSTITUIDO ?? row.SQ_SUBSTITUIDO)
     if (replaced && !new Set(["-1", "0", "#NULO#", "#NE#"]).has(replaced)) replacements.push({ sq_candidato: sq, sq_substituido: replaced, uf, cargo })
   }

@@ -123,6 +123,25 @@ export function listStartLetter(now: Date = new Date()): string {
 }
 
 /** Situação é sempre exibida. Estes estados jamais entram no PNG. */
+/** Código da eleição geral de 2026 no DivulgaCandContas. */
+export const TSE_ELEICAO_2026 = "20322002026"
+
+/**
+ * Foto exibida na colinha. Sem miniatura gravada, usa a foto oficial servida
+ * pelo DivulgaCandContas direto ao navegador. O TSE recusa requisição de
+ * servidor (403), então essa URL não pode passar pelo otimizador do Next nem
+ * pelo card PNG. Solução provisória até as miniaturas oficiais entrarem em
+ * `foto_path`.
+ */
+export function colinhaPhotoSrc(candidate: Pick<ColinhaCandidate, "foto_path" | "sq_candidato" | "uf">): { src: string | null; direct: boolean } {
+  if (candidate.foto_path) return { src: candidate.foto_path, direct: false }
+  if (!/^\d{6,15}$/.test(candidate.sq_candidato) || !/^[A-Z]{2}$/.test(candidate.uf)) return { src: null, direct: false }
+  return {
+    src: `https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/${TSE_ELEICAO_2026}/${candidate.sq_candidato}/${candidate.uf}`,
+    direct: true,
+  }
+}
+
 export function isCandidateBlocked(status: string): boolean {
   return /indeferid|cassad|renunci|cancelad|substitu/i.test(stripAccents(status))
 }

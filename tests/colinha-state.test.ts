@@ -2,6 +2,7 @@ import assert from "node:assert/strict"
 import { test } from "node:test"
 import {
   buildColinhaUrl,
+  colinhaPhotoSrc,
   describeSnapshotStatus,
   formatColinhaText,
   formatSnapshotDate,
@@ -107,4 +108,15 @@ test("describeSnapshotStatus nunca produz frase quebrada ou aviso falso antes da
   assert.equal(semData.showPartialWarning, true)
   const indisponivel = describeSnapshotStatus({ hasUf: true, checked: true, formattedDate: "23/09/2026", unavailable: true })
   assert.equal(indisponivel.showPartialWarning, true)
+})
+
+test("foto da colinha cai para a miniatura oficial do TSE sem foto gravada", () => {
+  const semFoto = candidate("250002547835", "deputado_federal", "SP", "1234")
+  assert.deepEqual(colinhaPhotoSrc(semFoto), {
+    src: "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/20322002026/250002547835/SP",
+    direct: true,
+  })
+  assert.deepEqual(colinhaPhotoSrc({ ...semFoto, foto_path: "/candidates/x.jpg" }), { src: "/candidates/x.jpg", direct: false })
+  assert.deepEqual(colinhaPhotoSrc({ ...semFoto, sq_candidato: "../x" }), { src: null, direct: false })
+  assert.deepEqual(colinhaPhotoSrc({ ...semFoto, uf: "sp/1" }), { src: null, direct: false })
 })
