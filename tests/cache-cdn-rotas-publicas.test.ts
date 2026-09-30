@@ -110,10 +110,10 @@ test("versão do card segue a última atualização da ficha", () => {
   const a = socialCardVersionToken("2026-09-29T10:00:00Z")
   const b = socialCardVersionToken("2026-09-29T10:00:01Z")
   assert.notEqual(a, b)
-  assert.match(a, /^3-/)
+  assert.match(a, /^4-/)
   assert.equal(a, socialCardVersionToken("2026-09-29T10:00:00.000Z"))
-  assert.equal(socialCardVersionToken(null), "3")
-  assert.equal(socialCardVersionToken("não é data"), "3")
+  assert.equal(socialCardVersionToken(null), "4")
+  assert.equal(socialCardVersionToken("não é data"), "4")
 })
 
 test("mudança de fase oficial invalida o card mesmo sem atualização da ficha", () => {

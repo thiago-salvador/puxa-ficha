@@ -4,7 +4,7 @@ import { getCandidatoBySlugResource } from "@/lib/api"
 import {
   buildSocialCard,
   extractCardData,
-  fetchPhotoAsBase64,
+  loadPhotoAsDataUri,
   type CardFormat,
 } from "@/lib/social-card"
 import {
@@ -26,7 +26,7 @@ const cardRateLimiter = createDistributedIpRateLimiter({
 
 interface CardRouteDeps {
   getCandidatoBySlugResource: typeof getCandidatoBySlugResource
-  fetchPhotoAsBase64: typeof fetchPhotoAsBase64
+  loadPhotoAsDataUri: typeof loadPhotoAsDataUri
   extractCardData: typeof extractCardData
   buildSocialCard: typeof buildSocialCard
   rateLimiter: DistributedRequestRateLimiter
@@ -35,7 +35,7 @@ interface CardRouteDeps {
 
 const defaultCardRouteDeps: CardRouteDeps = {
   getCandidatoBySlugResource,
-  fetchPhotoAsBase64,
+  loadPhotoAsDataUri,
   extractCardData,
   buildSocialCard,
   rateLimiter: cardRateLimiter,
@@ -89,7 +89,7 @@ export function createCardGetHandler(deps: CardRouteDeps = defaultCardRouteDeps)
           )
         }
 
-        const photoDataUri = await deps.fetchPhotoAsBase64(resource.data.foto_url)
+        const photoDataUri = await deps.loadPhotoAsDataUri(resource.data.foto_url)
         const cardData = deps.extractCardData(resource.data, photoDataUri)
         const img = await deps.buildSocialCard(cardData, format)
 

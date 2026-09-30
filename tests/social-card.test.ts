@@ -422,3 +422,15 @@ describe("buildSocialCardJsx", () => {
     })
   }
 })
+
+test("foto curada em public/ entra no card de perfil; caminho fora de public/ não", async () => {
+  const { loadPhotoAsDataUri } = await import("../src/lib/social-card")
+  const photo = await loadPhotoAsDataUri("/candidates/samara-martins.jpg")
+  assert.ok(photo?.startsWith("data:image/jpeg;base64,"))
+  assert.ok((photo?.length ?? 0) > 1000)
+  assert.equal(await loadPhotoAsDataUri("/../package.json"), null)
+  assert.equal(await loadPhotoAsDataUri("//evil.example/x.jpg"), null)
+  assert.equal(await loadPhotoAsDataUri("/candidates/nao-existe.jpg"), null)
+  assert.equal(await loadPhotoAsDataUri(null), null)
+  assert.equal(await loadPhotoAsDataUri("data:image/png;base64,AQID"), "data:image/png;base64,AQID")
+})
