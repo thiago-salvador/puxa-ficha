@@ -1,7 +1,7 @@
 "use client"
 // cspell:ignore exibicao contaveis
 
-// cspell:words atribuidas representacoes etica variacao
+// cspell:words atribuidas representacoes etica variacao partidario
 
 import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react"
 import dynamic from "next/dynamic"
@@ -80,6 +80,7 @@ import {
 } from "@/lib/candidato-profile-tabs"
 import type { TimelineNavigateOptions } from "./timeline/TimelineTooltip"
 import { buildTimelineEvents } from "@/lib/timeline-utils"
+import { buildCandidateBoxCard } from "@/lib/box-card-model"
 import { groupLegislacaoProfileItems } from "@/lib/legislacao-profile-groups"
 import { FollowCandidateButton } from "./alerts/FollowCandidateButton"
 import { SenadoRunningMates, type SenadoRunningMatesPayload } from "./SenadoRunningMates"
@@ -241,12 +242,30 @@ function subscribeToLocationSearch(onStoreChange: () => void): () => void {
   }
 }
 
+function subscribeToLocationHash(onStoreChange: () => void): () => void {
+  if (typeof window === "undefined") return () => {}
+  window.addEventListener("hashchange", onStoreChange)
+  window.addEventListener("popstate", onStoreChange)
+  return () => {
+    window.removeEventListener("hashchange", onStoreChange)
+    window.removeEventListener("popstate", onStoreChange)
+  }
+}
+
 function getLocationSearchSnapshot(): string {
   if (typeof window === "undefined") return ""
   return window.location.search
 }
 
 function getServerLocationSearchSnapshot(): string {
+  return ""
+}
+
+function getLocationHashSnapshot(): string {
+  return typeof window === "undefined" ? "" : window.location.hash
+}
+
+function getServerLocationHashSnapshot(): string {
   return ""
 }
 
@@ -544,6 +563,11 @@ export function CandidatoProfile({
     getLocationSearchSnapshot,
     getServerLocationSearchSnapshot,
   )
+  const locationHash = useSyncExternalStore(
+    subscribeToLocationHash,
+    getLocationHashSnapshot,
+    getServerLocationHashSnapshot,
+  )
   const tabParam = new URLSearchParams(locationSearch).get("tab") ?? undefined
   // O tab da URL sempre vence quando presente. `initialTab` (vindo do server, ex.
   // rota /candidato/[slug]/timeline) e apenas o fallback do primeiro paint, quando
@@ -662,6 +686,38 @@ export function CandidatoProfile({
       window.scrollTo({ top: Math.max(0, targetY), behavior: "instant" })
     }
   }, [activeTab, tabHighlightRef])
+
+  useLayoutEffect(() => {
+    if (!locationHash.startsWith("#box-")) return
+    const requestedTab = normalizeCandidatoProfileNavTab(new URLSearchParams(locationSearch).get("tab") ?? undefined)
+    if (!requestedTab || requestedTab !== activeTab) return
+    let id: string
+    try {
+      id = decodeURIComponent(locationHash.slice(1))
+    } catch {
+      return
+    }
+    const root = tabContentRef.current
+    if (!root) return
+    let observer: MutationObserver | null = null
+    let timeout = 0
+    const scrollIfMounted = () => {
+      const target = document.getElementById(id)
+      if (!target || !root.contains(target)) return false
+      target.scrollIntoView({ behavior: "instant", block: "start" })
+      observer?.disconnect()
+      if (timeout) window.clearTimeout(timeout)
+      return true
+    }
+    if (scrollIfMounted()) return
+    observer = new MutationObserver(() => { scrollIfMounted() })
+    observer.observe(root, { childList: true, subtree: true })
+    timeout = window.setTimeout(() => observer?.disconnect(), 3000)
+    return () => {
+      observer?.disconnect()
+      if (timeout) window.clearTimeout(timeout)
+    }
+  }, [activeTab, locationHash, locationSearch])
 
   useLayoutEffect(() => {
     if (!tabHighlightRef) return undefined
@@ -1011,6 +1067,7 @@ export function CandidatoProfile({
                 doadoresRecorrentes={ficha.doadores_recorrentes ?? null}
                 despesas={ficha.financiamento_despesas ?? null}
                 despesasStatus={ficha.financiamento_despesas_status}
+                despesasBoxCard={buildCandidateBoxCard("despesas-campanha", ficha)}
                 financiamentoEleicoes={financiamentoEleicoes}
                 historico={historico}
                 gastos={gastos}
@@ -1247,6 +1304,10 @@ export function CandidatoProfile({
             {/* TRAJETORIA TAB */}
             {activeTab === "trajetoria" && (
               <TrajectoryTabSection
+                boxCards={{
+                  "cargos-mandatos": buildCandidateBoxCard("cargos-mandatos", ficha),
+                  "historico-partidario": buildCandidateBoxCard("historico-partidario", ficha),
+                }}
                 historico={historico}
                 mudancas={mudancas}
                 historicoDescartado={historicoDescartado}

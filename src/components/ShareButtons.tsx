@@ -4,6 +4,7 @@ import { ImageIcon } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
 import { SocialCardModal } from "@/components/SocialCardModal"
 import type { FaseEleitoral2026 } from "@/lib/types"
+import type { BoxCardModel, ComparatorBoxCardContext } from "@/lib/box-card-model"
 
 interface ShareButtonsProps {
   shareUrl: string
@@ -17,6 +18,8 @@ interface ShareButtonsProps {
   /** `ultima_atualizacao` da ficha, versiona a URL do card */
   cardVersion?: string | null
   faseEleitoral?: FaseEleitoral2026 | null
+  boxCard?: BoxCardModel
+  boxCardScope?: Pick<ComparatorBoxCardContext, "axis" | "uf" | "cargo">
 }
 
 export function ShareButtons({
@@ -28,6 +31,8 @@ export function ShareButtons({
   candidateName,
   cardVersion,
   faseEleitoral,
+  boxCard,
+  boxCardScope,
 }: ShareButtonsProps) {
   const [canNativeShare, setCanNativeShare] = useState(false)
   const [cardModalOpen, setCardModalOpen] = useState(false)
@@ -63,25 +68,30 @@ export function ShareButtons({
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`${title} ${shareUrl}`)}`
   const btnClass =
     "inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted"
+  const canGenerateCard = Boolean(slug || boxCard)
 
   if (variant === "compact") {
     return (
       <>
-        {slug && (
+        {canGenerateCard && (
           <button
             type="button"
             onClick={() => setCardModalOpen(true)}
             className={`${btnClass} inline-flex items-center gap-2`}
+            aria-label={boxCard ? `Compartilhar ${boxCard.title}` : label}
+            data-pf-box-share={boxCard?.kind}
           >
             <ImageIcon className="size-4 shrink-0" aria-hidden />
             {label}
           </button>
         )}
 
-        {slug && (
+        {canGenerateCard && (
           <SocialCardModal
             slug={slug}
-            candidateName={candidateName ?? slug}
+            candidateName={candidateName ?? boxCard?.title ?? slug}
+            boxCard={boxCard}
+            boxCardScope={boxCardScope}
             cardVersion={cardVersion}
             faseEleitoral={faseEleitoral}
             shareUrl={shareUrl}
@@ -100,7 +110,7 @@ export function ShareButtons({
         {label}
       </p>
       <div className="mt-3 flex flex-wrap gap-2">
-        {slug && (
+        {slug && !boxCard && (
           <button
             type="button"
             onClick={() => setCardModalOpen(true)}
@@ -145,7 +155,7 @@ export function ShareButtons({
         </button>
       </div>
 
-      {slug && (
+      {slug && !boxCard && (
         <SocialCardModal
           slug={slug}
           candidateName={candidateName ?? slug}

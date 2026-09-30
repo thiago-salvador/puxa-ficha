@@ -31,6 +31,9 @@ import { FormattedNumber } from "./FormattedNumber"
 import { PatrimonioChart } from "./BarChart"
 import { DonutChart } from "./DonutChart"
 import { ChevronRight } from "lucide-react"
+import { buildCandidateBoxCard } from "@/lib/box-card-model"
+import type { BoxCardModel } from "@/lib/box-card-model"
+import { BoxShareButton } from "./BoxShareButton"
 import { ContradictionsHighlight } from "@/components/ContradictionsHighlight"
 import { PatrimonioEvolucaoAlerta } from "@/components/PatrimonioEvolucaoAlerta"
 import { isContradictionAttentionCategory } from "@/lib/attention-points"
@@ -209,6 +212,7 @@ function TeaserCard({
   className,
   moneyCardKind,
   badge,
+  boxCardModel,
 }: {
   title: string
   linkLabel: string
@@ -218,24 +222,39 @@ function TeaserCard({
   moneyCardKind?: "patrimonio" | "financiamento" | "gasto"
   /** Contagem ao lado do título (ex.: total de processos). */
   badge?: number
+  boxCardModel?: BoxCardModel | null
 }) {
   return (
     <div
       data-pf-money-overview-card={moneyCardKind}
-      className={`flex min-h-[220px] flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4 ${className ?? ""}`}
+      id={boxCardModel ? `box-${boxCardModel.kind}` : undefined}
+      className={`flex min-h-[220px] flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4 ${boxCardModel ? "scroll-mt-32" : ""} ${className ?? ""}`}
     >
       <div className="mb-3 flex items-center justify-between gap-3">
         <h2 className="flex min-w-0 items-center gap-2 text-[length:var(--text-body-sm)] font-semibold text-foreground">
           {title}
           {badge != null && <OverviewCountBadge value={badge} />}
         </h2>
-        <button
-          type="button"
-          onClick={onNavigate}
-          className="inline-flex min-h-11 items-center gap-0.5 rounded-[8px] px-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        >
-          {linkLabel} <ChevronRight className="size-3" />
-        </button>
+        {boxCardModel ? (
+          <div className="flex shrink-0 items-center gap-1">
+            <button
+              type="button"
+              onClick={onNavigate}
+              className="inline-flex min-h-11 items-center gap-0.5 rounded-[8px] px-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              {linkLabel} <ChevronRight className="size-3" />
+            </button>
+            <BoxShareButton model={boxCardModel} />
+          </div>
+        ) : (
+          <button
+            type="button"
+            onClick={onNavigate}
+            className="inline-flex min-h-11 items-center gap-0.5 rounded-[8px] px-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            {linkLabel} <ChevronRight className="size-3" />
+          </button>
+        )}
       </div>
       <div className="min-h-0 flex-1" data-pf-money-overview-content={moneyCardKind}>{children}</div>
     </div>
@@ -444,13 +463,16 @@ function PatrimonioTeaser({
   summary,
   eleicoes,
   onNavigate,
+  ficha,
 }: {
   patrimonio: Patrimonio[]
   summary: PatrimonioSummary
   eleicoes: PatrimonioEleicaoPublico[]
   onNavigate: () => void
+  ficha: FichaCandidato
 }) {
   const { latest, variacao, latestYear, latestCount } = summary
+  const patrimonioBox = buildCandidateBoxCard("patrimonio-resumo", ficha)
   if (!latest) {
     if (latestYear != null && latestCount > 1) {
       return (
@@ -459,6 +481,7 @@ function PatrimonioTeaser({
           linkLabel="DETALHES"
           onNavigate={onNavigate}
           moneyCardKind="patrimonio"
+          boxCardModel={patrimonioBox}
         >
           <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
             {latestCount} declarações
@@ -481,6 +504,7 @@ function PatrimonioTeaser({
         linkLabel="DETALHES"
         onNavigate={onNavigate}
         moneyCardKind="patrimonio"
+        boxCardModel={patrimonioBox}
       >
         <div className="space-y-2" data-pf-patrimonio-eleicoes-sem-dado={semDado.length}>
           {semDado.slice(0, 4).map((eleicao) => (
@@ -516,6 +540,7 @@ function PatrimonioTeaser({
         linkLabel="DETALHES"
         onNavigate={onNavigate}
         moneyCardKind="patrimonio"
+        boxCardModel={patrimonioBox}
       >
         <p className="text-[length:var(--text-caption)] font-semibold leading-snug text-foreground">
           Declarado em {latest.ano_eleicao}
@@ -537,6 +562,7 @@ function PatrimonioTeaser({
       linkLabel="DETALHES"
       onNavigate={onNavigate}
       moneyCardKind="patrimonio"
+      boxCardModel={buildCandidateBoxCard("evolucao-patrimonial-resumo", ficha)}
     >
       <div className="mb-3 flex items-baseline gap-3">
         <PatrimonioTeaserValor patrimonio={latest} as="span" />
@@ -638,11 +664,13 @@ function FinancingTeaser({
   pleitoLabel,
   segments,
   onNavigate,
+  ficha,
 }: {
   latestFin: Financiamento | null
   pleitoLabel: string | null
   segments: FinancingSegment[]
   onNavigate: () => void
+  ficha: FichaCandidato
 }) {
   if (!latestFin) return null
   return (
@@ -651,6 +679,7 @@ function FinancingTeaser({
       linkLabel="DETALHES"
       onNavigate={onNavigate}
       moneyCardKind="financiamento"
+      boxCardModel={buildCandidateBoxCard("financiamento-resumo", ficha)}
     >
       <p className="text-[length:var(--text-caption)] font-semibold leading-snug text-foreground">{pleitoLabel}</p>
       <p className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-snug text-muted-foreground">
@@ -807,14 +836,21 @@ function VotesTeaser({
   votos,
   contradicoes,
   onNavigate,
+  ficha,
 }: {
   votos: VotoCandidato[]
   contradicoes: VotoCandidato[]
   onNavigate: () => void
+  ficha: FichaCandidato
 }) {
   if (votos.length === 0) return null
   return (
-    <TeaserCard title={fixedCopy.keyVotes} linkLabel="TODAS" onNavigate={onNavigate}>
+    <TeaserCard
+      title={fixedCopy.keyVotes}
+      linkLabel="TODAS"
+      onNavigate={onNavigate}
+      boxCardModel={buildCandidateBoxCard("votacoes-resumo", ficha)}
+    >
       {contradicoes.length > 0 && (
         <div className="mb-3">
           <MetaBadge tone="caution">
@@ -929,9 +965,11 @@ function formatMesExtratoCurto(mesExtrato: string): string {
 function ParliamentarySpendingTeaser({
   topGastos,
   onNavigate,
+  ficha,
 }: {
   topGastos: GastoParlamentar | null
   onNavigate: () => void
+  ficha: FichaCandidato
 }) {
   if (!topGastos) return null
   const sortedDet = [...(topGastos.detalhamento ?? [])].sort((a, b) => b.valor - a.valor)
@@ -944,6 +982,7 @@ function ParliamentarySpendingTeaser({
       linkLabel="DETALHES"
       onNavigate={onNavigate}
       moneyCardKind="gasto"
+      boxCardModel={buildCandidateBoxCard("cota-resumo", ficha)}
     >
       <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-foreground">
         <FormattedNumber value={topGastos.total_gasto} />
@@ -1094,6 +1133,7 @@ export function ProfileOverview({
       patrimonio={patrimonio}
       summary={patrimonioSummary}
       eleicoes={patrimonioEleicoes}
+      ficha={ficha}
       onNavigate={() => onNavigateTab("dinheiro")}
     />,
     <FinancingTeaser
@@ -1101,6 +1141,7 @@ export function ProfileOverview({
       latestFin={latestFin}
       pleitoLabel={latestFinPleitoLabel}
       segments={finSegments}
+      ficha={ficha}
       onNavigate={() => onNavigateTab("dinheiro")}
     />,
     trailingCard,
@@ -1108,6 +1149,7 @@ export function ProfileOverview({
       key="cota"
       topGastos={topGastos}
       onNavigate={() => onNavigateTab("dinheiro")}
+      ficha={ficha}
     />,
     <ExecutiveSpendingTeaser
       key="gasto-executivo"
@@ -1135,6 +1177,7 @@ export function ProfileOverview({
       votos={votos}
       contradicoes={contradicoes}
       onNavigate={() => onNavigateTab("votos")}
+      ficha={ficha}
     />,
     <CareerTeaser
       key="carreira"

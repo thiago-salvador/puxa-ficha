@@ -49,6 +49,8 @@ import { BRAZIL_STATES } from "@/data/brazil-states"
 import { ANALYTICS_EVENTS } from "@/lib/analytics-events"
 import { readProofIdFromUrl, trackLaunchEvent } from "@/lib/analytics-client"
 import { observeAnalyticsResult } from "@/lib/analytics-visibility"
+import { buildComparatorBoxCard } from "@/lib/box-card-model"
+import { BoxShareButton } from "@/components/BoxShareButton"
 
 const VALID_UF_SIGLA = new Set<string>(BRAZIL_STATES.map((s) => s.sigla))
 
@@ -102,7 +104,12 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
     return { cargo: pathname.toLowerCase().includes("/senado") ? "Senador" : "Governador", uf }
   }, [pathname])
   const [selectedIds, setSelectedIds] = useState<string[]>(() =>
-    resolveInitialSelectedIds(candidatos, initialSelectedSlugs)
+    resolveInitialSelectedIds(
+      candidatos,
+      initialSelectedSlugs ?? ["c1", "c2", "c3", "c4"]
+        .map((key) => searchParams.get(key)?.trim())
+        .filter((slug): slug is string => Boolean(slug)),
+    )
   )
   const urlEixo = useMemo(
     () => normalizeComparadorEixo(searchParams.get("eixo") ?? initialEixo),
@@ -124,6 +131,15 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
         .map((id) => candidatos.find((c) => c.id === id))
         .filter((c): c is CandidatoComparavel => Boolean(c)),
     [candidatos, selectedIds]
+  )
+
+  const comparatorBoxCard = useMemo(
+    () => buildComparatorBoxCard(candidatos, {
+      slugs: selectedCandidatos.map((candidate) => candidate.slug),
+      axis: eixo,
+      ...(hubScope ? { uf: hubScope.uf, cargo: hubScope.cargo } : {}),
+    }),
+    [candidatos, eixo, hubScope, selectedCandidatos],
   )
 
   const showCongresso = useMemo(
@@ -193,7 +209,8 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
     const current = searchParams.toString()
     const qs = buildCompararQueryString(candidatos, selectedIds, eixo, hubScope, current)
     if (qs === current) return
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false })
+    const hash = typeof window === "undefined" ? "" : window.location.hash
+    router.replace(qs ? `${pathname}?${qs}${hash}` : `${pathname}${hash}`, { scroll: false })
   }, [candidatos, eixo, hubScope, pathname, router, searchParams, selectedIds])
 
   const shareUrl =
@@ -490,7 +507,8 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
       {isComparing && (
         <section
           ref={comparisonRef}
-          className="mx-auto max-w-7xl px-5 pb-12 md:px-12"
+          id={comparatorBoxCard ? "box-comparador" : undefined}
+          className="mx-auto max-w-7xl scroll-mt-32 px-5 pb-12 md:px-12"
           data-pf-comparacao-root
           data-pf-comparacao-count={selectedCandidatos.length}
           data-pf-comparacao-eixo={eixo}
@@ -505,9 +523,18 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
                   {eixoHint}
                 </p>
               </div>
-              <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-                {selectedCandidatos.length} candidatos
-              </span>
+              <div className="flex items-center gap-2">
+                <BoxShareButton
+                  model={comparatorBoxCard}
+                  scope={{
+                    axis: eixo,
+                    ...(hubScope ? { uf: hubScope.uf, cargo: hubScope.cargo } : {}),
+                  }}
+                />
+                <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  {selectedCandidatos.length} candidatos
+                </span>
+              </div>
             </div>
 
             <div className="mb-6">

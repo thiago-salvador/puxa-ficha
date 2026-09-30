@@ -8,6 +8,29 @@ import { isSenadoEnabled } from "../../../src/lib/senado-feature"
 import { buildGlobalSearchIndexItems } from "../../../src/lib/global-search"
 import { getFasesEleitorais2026 as loadDatabasePhases } from "../../../src/lib/api"
 import type { FaseEleitoralPublica } from "../../../src/lib/fase-eleitoral-publica"
+import { makeBoxCardCandidate, makeBoxCardComparables } from "../box-card"
+
+function boxFixture(slug: string): FichaCandidato | null {
+  if (slug !== "fixture-boxes" && slug !== "fixture-boxes-single") return null
+  const ficha = makeBoxCardCandidate({ slug, id: slug })
+  const gastos_parlamentares = ficha.gastos_parlamentares.map((row) => ({
+    ...row,
+    // Simula a leitura do objeto de armazenamento antes da validação/achatamento pelo DTO.
+    detalhamento: ({
+      categorias: row.detalhamento,
+      proveniencia: {
+        controle_independente: true,
+        fonte_url: "https://dadosabertos.camara.leg.br/api/v2/deputados/1/despesas",
+        consulta_snapshot_sha256: "a".repeat(64),
+        id_camara: 1,
+        consulta_paginas: 1,
+      },
+    } as unknown) as typeof row.detalhamento,
+  }))
+  return slug === "fixture-boxes-single"
+    ? { ...ficha, gastos_parlamentares, patrimonio: ficha.patrimonio.slice(-1) }
+    : { ...ficha, gastos_parlamentares }
+}
 
 function candidate(slug: string, nome: string, cargo: Candidato["cargo_disputado"], estado: string | null): Candidato {
   return {
@@ -51,22 +74,35 @@ async function select(cargo?: string, estado?: string) {
 }
 export async function getCandidatosResource(cargo?: string, estado?: string) { return liveResource(await select(cargo, estado)) }
 export async function getCandidatoNavResource(cargo?: string, estado?: string) { return liveResource((await select(cargo, estado)).map(({ slug, nome_urna }) => ({ slug, nome_urna }))) }
-export async function getCandidatoSlugStaticParams() { return (await select()).map(({ slug }) => ({ slug })) }
+export async function getCandidatoSlugStaticParams() {
+  return [...(await select()).map(({ slug }) => ({ slug })),
+    { slug: "fixture-boxes" }, { slug: "fixture-boxes-single" },
+  ]
+}
 export async function getGlobalSearchIndexResource() {
   return liveResource(buildGlobalSearchIndexItems(await select(), new Map()))
 }
-export async function getCandidatoMetadataResource(slug: string) { return liveResource((await select()).find((row) => row.slug === slug) ?? null) }
+export async function getCandidatoMetadataResource(slug: string) { return liveResource(boxFixture(slug) ?? (await select()).find((row) => row.slug === slug) ?? null) }
 export async function getCandidatosComResumoResource(cargo?: string, estado?: string) {
   return liveResource((await select(cargo, estado)).map((candidato) => ({ candidato, processos_ordenacao: 0, patrimonio: null, patrimonio_atipico: false, processos: 0, pontos_atencao: 0 })))
 }
 export async function getCandidatosComparaveisResource(cargo?: string, estado?: string) {
+  const boxes = new Map(makeBoxCardComparables().map((row) => [row.slug, row]))
   const rows: CandidatoComparavel[] = (await select(cargo, estado)).map((c) => ({
     ...c, total_processos: 0, mudancas_partido: 0, alertas_graves: 0, patrimonio_declarado: null,
     evolucao_patrimonial_pct: null, total_gasto_parlamentar: null, tem_historico_legislativo: false,
+    ...(boxes.has(c.slug) ? {
+      patrimonio_declarado: boxes.get(c.slug)!.patrimonio_declarado,
+      evolucao_patrimonial_pct: boxes.get(c.slug)!.evolucao_patrimonial_pct,
+      total_gasto_parlamentar: boxes.get(c.slug)!.total_gasto_parlamentar,
+      tem_historico_legislativo: boxes.get(c.slug)!.tem_historico_legislativo,
+    } : {}),
   }))
   return liveResource(rows)
 }
 export async function getCandidatoBySlugResource(slug: string) {
+  const boxes = boxFixture(slug)
+  if (boxes) return liveResource(boxes)
   const candidate = (await select()).find((row) => row.slug === slug)
   const ficha: FichaCandidato | null = candidate ? {
     ...candidate, historico: [], mudancas_partido: [], patrimonio: [], financiamento: [], votos: [],
