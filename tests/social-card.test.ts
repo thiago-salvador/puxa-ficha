@@ -7,11 +7,42 @@ import {
   extractCardData,
   buildSocialCardJsx,
   cardSourceLabelFromUrl,
+  fetchPhotoAsBase64,
   type CardFormat,
 } from "../src/lib/social-card"
 import type { FichaCandidato } from "../src/lib/types"
 
 // ── Helpers ─────────────────────────────────────────────────
+
+describe("social card image fetch trust", () => {
+  test("requests allowed images without following redirects and retains successful photos", async (t) => {
+    const source = "https://www.camara.leg.br/photo.jpg"
+    const calls: Array<{ url: string; init?: RequestInit }> = []
+    t.mock.method(globalThis, "fetch", async (url: string, init?: RequestInit) => {
+      calls.push({ url, init })
+      return new Response(new Uint8Array([1, 2, 3]), { headers: { "content-type": "image/png" } })
+    })
+    assert.equal(await fetchPhotoAsBase64(source), "data:image/png;base64,AQID")
+    assert.equal(calls.length, 1)
+    assert.equal(calls[0].url, source)
+    assert.equal(calls[0].init?.redirect, "manual")
+    assert.ok(calls[0].init?.signal instanceof AbortSignal)
+  })
+
+  test("rejects redirects to untrusted hosts instead of requesting the redirect target", async (t) => {
+    let calls = 0
+    t.mock.method(globalThis, "fetch", async (_url: string, init?: RequestInit) => {
+      calls += 1
+      assert.equal(init?.redirect, "manual")
+      return new Response(null, { status: 302, headers: { location: "http://127.0.0.1/private" } })
+    })
+    assert.equal(await fetchPhotoAsBase64("https://www.camara.leg.br/photo.jpg"), null)
+    assert.equal(calls, 1)
+    assert.equal(await fetchPhotoAsBase64("http://127.0.0.1/private"), null)
+    assert.equal(await fetchPhotoAsBase64(null), null)
+    assert.equal(calls, 1)
+  })
+})
 
 function makeFicha(overrides: Partial<FichaCandidato> = {}): FichaCandidato {
   return {

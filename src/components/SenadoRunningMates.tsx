@@ -1,3 +1,4 @@
+import { safeHref } from "@/lib/utils"
 import type { SenadoRunningMate, SenadoRunningMateAbsence } from "@/lib/senado-running-mates"
 
 /** Resultado de `loadSenadoRunningMates`, enviado do servidor para a ficha. */
@@ -68,7 +69,7 @@ export function SenadoRunningMates({
                           <span className="block font-semibold">{mate.nome_urna}</span>
                           <span className="block text-muted-foreground">Suplente {mate.ordem}{mate.situacao ? ` · ${mate.situacao}` : ""}</span>
                         </span>
-                        <a href={mate.fonte_url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 shrink-0 items-center font-semibold text-foreground underline">
+                        <a href={safeHref(mate.fonte_url) ?? undefined} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-6 shrink-0 items-center font-semibold text-foreground underline">
                           Fonte
                         </a>
                       </li>
@@ -78,7 +79,7 @@ export function SenadoRunningMates({
                   confirmedAbsence ? (
                     <div className="mt-3 space-y-2 text-sm font-medium text-muted-foreground">
                       <p>Os registros de suplência encontrados no arquivo consultado estão indeferidos.</p>
-                      <p>Fonte: <a href={confirmedAbsence.fonte_url} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline">TSE</a> · arquivo do TSE de {confirmedAbsence.fonte_data}</p>
+                      <p>Fonte: <a href={safeHref(confirmedAbsence.fonte_url) ?? undefined} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground underline">TSE</a> · arquivo do TSE de {confirmedAbsence.fonte_data}</p>
                     </div>
                   ) : (
                     <p className="mt-3 text-sm font-medium text-muted-foreground">

@@ -9,7 +9,7 @@ import type { ProgramaGovernoManifestoPublico, ProgramaGovernoResumo } from "@/l
 import { STATE_PROGRAM_CORE_THEMES, stateProgramTheme } from "@/lib/state-program-themes"
 import { IndicadorFonteTag } from "./IndicadorFonteTag"
 import { PartyLogoMark } from "./PartyLogoMark"
-import { getPartyLogoUrl } from "@/lib/utils"
+import { getPartyLogoUrl, safeHref } from "@/lib/utils"
 import styles from "./StatePrograms.module.css"
 
 export type StateProgramContext = { themeId: string; label: string; value: string; year: string; source: string }
@@ -26,7 +26,7 @@ function ProgramEvidence({ evidencias, manifesto }: {
       return <blockquote key={i}>
         <p>“{e.trecho}”</p>
         <footer>Página {e.pagina}{e.documentoId ? ` · Documento ${e.documentoId}` : ""}
-          {sourceUrl && <> · <a href={sourceUrl} target="_blank" rel="noopener noreferrer">Documento no TSE <ArrowUpRight size={14} aria-hidden="true" /></a></>}
+          {sourceUrl && <> · <a href={safeHref(sourceUrl) ?? undefined} target="_blank" rel="noopener noreferrer">Documento no TSE <ArrowUpRight size={14} aria-hidden="true" /></a></>}
         </footer>
       </blockquote>
     })}
@@ -126,7 +126,7 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
           <header className={styles.identity}>
             <h4 id={`program-${p.slug}-title`}><Link prefetch={false} href={`/candidato/${p.slug}`}>{p.nome_urna}</Link></h4>
             <p className={styles.runningMate}>Vice: {typeof runningMate === "object"
-              ? <>{runningMate.name} (<a href={runningMate.source_url} target="_blank" rel="noopener noreferrer" title={`Fonte consultada em ${runningMate.checked_at.slice(0, 10)}`}>{runningMate.status}</a>)</>
+              ? <>{runningMate.name} (<a href={safeHref(runningMate.source_url) ?? undefined} target="_blank" rel="noopener noreferrer" title={`Fonte consultada em ${runningMate.checked_at.slice(0, 10)}`}>{runningMate.status}</a>)</>
               : runningMate ?? "informação indisponível"}</p>
             {hasPartyLogo ? <span className={styles.partyLogo} role="img" aria-label={`Partido ${party}`}>
               <PartyLogoMark sigla={party} className="h-8 w-12 rounded-none border-0 p-0 shadow-none sm:h-8 sm:w-12 sm:rounded-none sm:p-0" />

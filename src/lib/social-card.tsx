@@ -34,7 +34,7 @@ export async function fetchPhotoAsBase64(url: string | null): Promise<string | n
   try {
     const controller = new AbortController()
     const timeout = setTimeout(() => controller.abort(), 5_000)
-    const res = await fetch(url, { signal: controller.signal })
+    const res = await fetch(url, { signal: controller.signal, redirect: "manual" })
     clearTimeout(timeout)
     if (!res.ok) return null
     const buf = Buffer.from(await res.arrayBuffer())

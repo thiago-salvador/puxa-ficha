@@ -2,6 +2,7 @@
 
 // cspell:words multidocument nivel secao secoes relacao confirmacao revisao
 
+import { safeHref } from "@/lib/utils"
 import {
   useCallback,
   useEffect,
@@ -83,7 +84,7 @@ function SourceLink({ fonte }: { fonte: ProgramaGovernoLinkFonte }) {
   const directPdf = Boolean(fonte.pdfOriginalUrl)
   return (
     <a
-      href={sourceHref(fonte)}
+      href={safeHref(sourceHref(fonte)) ?? undefined}
       target="_blank"
       rel="noreferrer"
       className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[8px] border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -195,7 +196,7 @@ function ProgramaEvidencias({ manifesto }: { manifesto: ProgramaGovernoManifesto
                       <>
                         {" "}
                         <a
-                          href={`${documento.pdfUrl}#page=${evidencia.pagina}`}
+                          href={safeHref(`${documento.pdfUrl}#page=${evidencia.pagina}`) ?? undefined}
                           target="_blank"
                           rel="noreferrer"
                           className="underline underline-offset-2 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -246,7 +247,7 @@ function ProgramStateNotice({ manifesto }: { manifesto: ProgramaGovernoManifesto
       </div>
       {manifesto.estado === "documento_anunciado" && manifesto.anuncio ? (
         <a
-          href={manifesto.anuncio.fonteUrl}
+          href={safeHref(manifesto.anuncio.fonteUrl) ?? undefined}
           target="_blank"
           rel="noreferrer"
           className="inline-flex min-h-11 items-center gap-2 rounded-[8px] border border-border px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
@@ -363,7 +364,7 @@ function ProgramaEvidenciasRelacionadas({
                             {item.tipo === "fala" ? `“${item.texto}”` : item.texto}
                           </p>
                           {item.url && (
-                            <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex min-h-11 items-center gap-1 text-xs font-semibold text-foreground underline underline-offset-2">
+                            <a href={safeHref(item.url) ?? undefined} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex min-h-11 items-center gap-1 text-xs font-semibold text-foreground underline underline-offset-2">
                               {compromissoEvidenciaCopy.fonte}
                               <ExternalLink className="size-3.5" aria-hidden="true" />
                               <span className="sr-only">(abre em nova aba)</span>
@@ -420,7 +421,7 @@ export function ProgramaGovernoPendente({ pendencia }: { pendencia: ProgramaGove
       <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{copy.description}</p>
       {pendencia.motivo === "registro_duplicado_tse" && (
         <a
-          href={pendencia.fonteUrl}
+          href={safeHref(pendencia.fonteUrl) ?? undefined}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-[8px] border border-border px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"

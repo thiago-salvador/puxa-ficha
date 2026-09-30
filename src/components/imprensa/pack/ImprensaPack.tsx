@@ -29,7 +29,7 @@ import {
 import type { ImprensaUfUpdates } from "@/lib/imprensa-uf-updates"
 import { formatUpdateValue } from "@/lib/verified-candidate-updates"
 import { formatDisplayName } from "@/lib/display-name"
-import { formatDate } from "@/lib/utils"
+import { formatDate, safeHref } from "@/lib/utils"
 import { PackCandidateCard } from "./PackCandidateCard"
 import styles from "./pack.module.css"
 
@@ -80,7 +80,7 @@ function PollRow({ poll }: { poll: RegisteredPoll }) {
       <span className={styles.pollDate}>{poll.publicationDate ? `Divulgada em ${formatDate(poll.publicationDate)}` : "Data de divulgação não informada"}</span>
       <span className={styles.pollReg}>
         {code && poll.registrationUrl
-          ? <a href={poll.registrationUrl} target="_blank" rel="noreferrer">Registro {code} no TSE</a>
+          ? <a href={safeHref(poll.registrationUrl) ?? undefined} target="_blank" rel="noreferrer">Registro {code} no TSE</a>
           : code ? `Registro ${code} no TSE` : "Número de registro não publicado na fonte"}
       </span>
     </li>
@@ -250,7 +250,7 @@ export function ImprensaPack({
                     <div className={styles.updateHead}><strong>{formatDisplayName(update.candidate_name)}</strong><time dateTime={update.detected_at}>Detectada em {formatDetectedAt(update.detected_at)}</time></div>
                     <p className={styles.updateField}>{fieldLabel(update.field)} · <span className={styles.num}>{update.year}</span></p>
                     <p className={styles.updateValues}>Antes: {formatUpdateValue(update, update.before_value)} · Depois: {formatUpdateValue(update, update.after_value)}</p>
-                    <a href={update.source_url} target="_blank" rel="noreferrer" className={styles.updateLink}>Ver fonte oficial</a>
+                    <a href={safeHref(update.source_url) ?? undefined} target="_blank" rel="noreferrer" className={styles.updateLink}>Ver fonte oficial</a>
                   </li>
                 ))}
               </ul>

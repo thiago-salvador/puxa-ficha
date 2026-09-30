@@ -2,6 +2,7 @@
 
 // cspell:ignore cenario cenarios periodo espontanea espontaneo rotulos
 
+import { safeHref } from "@/lib/utils"
 import { useState } from "react"
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react"
 import type { PesquisaEleitoralDoCandidato } from "@/lib/pesquisas-eleitorais"
@@ -124,7 +125,7 @@ export function PollIntentionCard({ pesquisas: todas, resultadoEleitoralPublicad
       <div className="mt-2 flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 sm:flex-nowrap">
         <a
           data-pf-pesquisa-link=""
-          href={pesquisa.provenance.resultUrl}
+          href={safeHref(pesquisa.provenance.resultUrl) ?? undefined}
           target="_blank"
           rel="noreferrer"
           className="inline-flex min-h-11 shrink-0 items-center gap-1 text-[length:var(--text-eyebrow)] font-bold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"

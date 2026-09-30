@@ -1,0 +1,45 @@
+/* Bloco "Nesta sala": mesma grade de bordas da escolha de estado. As cores vêm dos tokens da Sala. */
+.nav { margin-top: 24px; }
+.grid {
+  border-left: 1px solid var(--rule, #d9d7d0);
+  border-top: 1px solid var(--rule, #d9d7d0);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.cell { border-bottom: 1px solid var(--rule, #d9d7d0); border-right: 1px solid var(--rule, #d9d7d0); min-width: 0; scroll-margin-top: 128px; }
+.card {
+  color: var(--ink, #111111);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  min-height: 150px;
+  padding: 18px 20px 20px;
+  text-decoration: none;
+  transition: background-color .15s ease;
+}
+.card:hover { background: #f2f2f0; }
+.head { align-items: center; display: flex; gap: 12px; justify-content: space-between; }
+.title { font: 400 1.75rem/1 var(--font-anton), sans-serif; letter-spacing: .01em; text-transform: uppercase; }
+.arrow { flex-shrink: 0; height: 20px; transition: transform .15s ease; width: 20px; }
+.card:hover .arrow { transform: translateX(3px); }
+.text { color: var(--muted, #555555); display: flex; flex: 1 1 auto; flex-direction: column; font-size: 14px; line-height: 1.5; text-wrap: pretty; }
+.live { color: var(--ink, #111111); font-size: 13px; font-variant-numeric: tabular-nums; font-weight: 800; margin-top: auto; padding-top: 12px; }
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .card { min-height: 0; padding: 16px; }
+  .title { font-size: 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .arrow { transition-duration: .01ms; }
+  .card:hover .arrow { transform: none; }
+}

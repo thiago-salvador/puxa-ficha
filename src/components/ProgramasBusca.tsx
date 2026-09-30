@@ -2,6 +2,7 @@
 
 // cspell:words pesquisável
 
+import { safeHref } from "@/lib/utils"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState, type FormEvent, type ReactNode } from "react"
@@ -35,7 +36,7 @@ function Result({ resultado: r }: { resultado: ProgramaBuscaResultado }) {
         Versão {r.version} · SHA-256 {r.sourceSha256.slice(0, 8)} · Coletado em {new Intl.DateTimeFormat("pt-BR", { timeZone: "UTC" }).format(new Date(r.coletadoEm))}
       </p>
       <div className="mt-3 flex flex-wrap gap-3">
-        <a href={r.originalUrl} target="_blank" rel="noreferrer" className={linkClass}>
+        <a href={safeHref(r.originalUrl) ?? undefined} target="_blank" rel="noreferrer" className={linkClass}>
           {r.originalUrl.includes("/arquivo/doc/") ? "Abrir PDF original" : "Abrir pacote oficial do TSE"}<span className="sr-only">, abre em nova aba</span>
         </a>
         <Link href={r.fichaUrl} prefetch={false} className={linkClass}>Ver seção na ficha</Link>
