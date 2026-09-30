@@ -52,7 +52,7 @@ function assertSource(html: string, url: string, label: string) {
 
 test("tracked sources reject unsafe URLs without navigation, analytics or a caller click", (context) => {
   const requests: string[] = []
-  context.mock.method(globalThis, "fetch", async (_input, init) => {
+  context.mock.method(globalThis, "fetch", async (_input: RequestInfo | URL, init?: RequestInit) => {
     requests.push(String(init?.body))
     return new Response(null, { status: 204 })
   })
