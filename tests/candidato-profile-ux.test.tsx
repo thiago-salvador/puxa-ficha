@@ -113,7 +113,12 @@ describe("ondas de UX da ficha", () => {
     assert.match(programLoading, /motion-safe:animate-pulse/)
     assert.match(modalLoading, /Gerando prévia/)
     assert.match(modalLoading, /role="status"/)
-    assert.match(modalLoading, /motion-safe:animate-pulse/)
+    assert.match(modalLoading, /<svg[^>]*class="[^"]*size-8 text-muted-foreground motion-safe:animate-pulse"[^>]*aria-hidden="true"/)
+    assert.doesNotMatch(
+      modalLoading.match(/<div role="status"[^>]*class="([^"]*)"/)?.[1] ?? "",
+      /motion-safe:animate-pulse/,
+      "o container do texto mantém contraste estável enquanto a prévia carrega",
+    )
     assert.match(deferredProfile, /Carregando indicadores e seções da ficha/)
     assert.match(deferredProfile, /motion-safe:animate-pulse/)
     assert.match(follow, /Verificando alertas/)

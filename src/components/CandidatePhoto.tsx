@@ -25,6 +25,8 @@ interface CandidatePhotoProps {
   className?: string
   fallbackClassName?: string
   initialsClassName?: string
+  /** Força o carregamento direto pelo navegador, sem o otimizador do Next. */
+  unoptimized?: boolean
 }
 
 export function CandidatePhoto({
@@ -40,6 +42,7 @@ export function CandidatePhoto({
   className,
   fallbackClassName,
   initialsClassName,
+  unoptimized,
 }: CandidatePhotoProps) {
   const [failed, setFailed] = useState(false)
   const safeSrc = safeHref(src)
@@ -80,7 +83,7 @@ export function CandidatePhoto({
       sizes={sizes}
       priority={priority}
       fetchPriority={fetchPriority ?? (priority ? "high" : undefined)}
-      unoptimized={priority ? false : shouldBypassImageOptimization(displaySrc)}
+      unoptimized={unoptimized ?? (priority ? false : shouldBypassImageOptimization(displaySrc))}
       className={className}
       onError={() => setFailed(true)}
     />
