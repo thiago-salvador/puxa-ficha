@@ -11,6 +11,11 @@ import { processosOverviewDisplay } from "@/lib/processos-display"
 import { exibicaoProcessosJustica } from "@/lib/processos-justica-total"
 import { contarProcessosJusticaDoCandidato } from "@/lib/processos-justica-candidato"
 import { formatDate } from "@/lib/utils"
+import {
+  FONTE_RESULTADO_TSE_ROTULO,
+  FONTE_RESULTADO_TSE_URL,
+  rotuloFaseEleitoral,
+} from "@/lib/fase-eleitoral-publica"
 
 // ── Dimensions ────────────────────────────────────────────
 export type CardFormat = "feed" | "story"
@@ -194,6 +199,8 @@ interface CardData {
   fontes: string[]
   /** `ultima_atualizacao` da ficha em dd/mm/aaaa; null quando ausente ou inválida. */
   atualizadoEm: string | null
+  faseEleitoralLabel: string | null
+  faseEleitoralFonteUrl: string | null
   slug: string
 }
 
@@ -238,6 +245,7 @@ export function extractCardData(
   }
 
   const atualizadoEm = ficha.ultima_atualizacao ? formatDate(ficha.ultima_atualizacao) : null
+  const faseEleitoralLabel = rotuloFaseEleitoral(ficha)
 
   return {
     nome: ficha.nome_urna,
@@ -266,6 +274,8 @@ export function extractCardData(
       .map((v) => ({ titulo: sanitizePtBrText(v.votacao!.titulo), voto: v.voto })),
     fontes,
     atualizadoEm: atualizadoEm && atualizadoEm !== "Data indisponível" ? atualizadoEm : null,
+    faseEleitoralLabel,
+    faseEleitoralFonteUrl: faseEleitoralLabel ? FONTE_RESULTADO_TSE_URL : null,
     slug: ficha.slug,
   }
 }
@@ -330,6 +340,8 @@ interface CardScale {
   item: number
   itemLimit: number
   voteBadge: number
+  phaseLabel: number
+  phaseSource: number
   brand: number
   url: number
   meta: number
@@ -353,6 +365,8 @@ const SCALES: Record<CardFormat, CardScale> = {
     item: 22,
     itemLimit: 96,
     voteBadge: 14,
+    phaseLabel: 14,
+    phaseSource: 14,
     brand: 36,
     url: 17,
     meta: 16,
@@ -375,6 +389,8 @@ const SCALES: Record<CardFormat, CardScale> = {
     item: 36,
     itemLimit: 110,
     voteBadge: 22,
+    phaseLabel: 22,
+    phaseSource: 22,
     brand: 60,
     url: 26,
     meta: 26,
@@ -482,6 +498,49 @@ function CardHeader({ data, scale }: { data: CardData; scale: CardScale }) {
         }}
       >
         <Eyebrow text={eyebrow} size={scale.eyebrow} color={FOREGROUND} />
+        {data.faseEleitoralLabel && data.faseEleitoralFonteUrl ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "6px",
+              marginTop: "10px",
+              maxWidth: "100%",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                padding: "4px 10px",
+                borderRadius: "999px",
+                background: FOREGROUND,
+                color: BACKGROUND,
+                fontFamily: FONT_SANS,
+                fontSize: scale.phaseLabel,
+                fontWeight: 700,
+                lineHeight: 1.2,
+              }}
+            >
+              {data.faseEleitoralLabel}
+            </div>
+            <a
+              href={data.faseEleitoralFonteUrl}
+              style={{
+                display: "flex",
+                maxWidth: "100%",
+                fontFamily: FONT_SANS,
+                fontSize: scale.phaseSource,
+                fontWeight: 600,
+                lineHeight: 1.25,
+                color: MUTED,
+                textDecoration: "underline",
+              }}
+            >
+              {FONTE_RESULTADO_TSE_ROTULO}
+            </a>
+          </div>
+        ) : null}
         <div
           style={{
             display: "flex",

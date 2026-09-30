@@ -1,5 +1,5 @@
 import { parseColinhaState, SLOT_ORDER, type SlotId } from "@/lib/colinha"
-import { loadColinhaCandidatesForSelection, searchColinhaCandidates } from "@/lib/colinha-data"
+import { loadColinhaCandidatesForSelection, loadColinhaRound, searchColinhaCandidates } from "@/lib/colinha-data"
 import { createDistributedIpRateLimiter, rateLimitExceededResponse } from "@/lib/request-rate-limit"
 
 export const runtime = "nodejs"
@@ -38,14 +38,25 @@ export async function POST(request: Request): Promise<Response> {
     if (!input || typeof input !== "object" || Array.isArray(input)) return json({ error: "invalid_request" }, 400)
     const raw = input as Record<string, unknown>
     const params: Record<string, string | undefined> = {}
-    for (const key of ["uf", ...SLOT_ORDER]) {
+    for (const key of ["uf", "turno", ...SLOT_ORDER]) {
       const value = raw[key]
+      if (key === "turno") {
+        if (value !== undefined && value !== null && value !== 2 && value !== "2") return json({ error: "invalid_request" }, 400)
+        params[key] = value === 2 || value === "2" ? "2" : undefined
+        continue
+      }
       if (value !== undefined && value !== null && typeof value !== "string") return json({ error: "invalid_request" }, 400)
       params[key] = value ?? undefined
     }
     const state = parseColinhaState(params)
-    if (!state.uf) return json({ error: "invalid_request" }, 400)
+    if (!state.uf || (raw.turno !== undefined && raw.turno !== "2" && raw.turno !== 2)) return json({ error: "invalid_request" }, 400)
     return json(await loadColinhaCandidatesForSelection(state))
+  }
+
+  if (body.action === "round") {
+    const uf = typeof body.uf === "string" ? parseColinhaState({ uf: body.uf }).uf : null
+    if (!uf) return json({ error: "invalid_request" }, 400)
+    return json({ round: await loadColinhaRound(uf) })
   }
 
   if (body.action === "search") {
@@ -55,7 +66,9 @@ export async function POST(request: Request): Promise<Response> {
       || typeof body.query !== "string" || body.query.length > 80) {
       return json({ error: "invalid_request" }, 400)
     }
-    return json(await searchColinhaCandidates(uf, slot as SlotId, body.query))
+    const turno = body.turno === 2 ? 2 : 1
+    if (body.turno !== undefined && body.turno !== 1 && body.turno !== 2) return json({ error: "invalid_request" }, 400)
+    return json(await searchColinhaCandidates(uf, slot as SlotId, body.query, new Date(), turno))
   }
 
   return json({ error: "invalid_request" }, 400)

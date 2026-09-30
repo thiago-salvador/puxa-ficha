@@ -30,6 +30,7 @@ import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { comparadorToggleLabel } from "@/lib/comparador-labels"
 import { mergeComparadorQueryString } from "@/lib/comparador-query"
+import { ordenarPorFaseEleitoral } from "@/lib/fase-eleitoral-publica"
 import type { CandidatoComparavel } from "@/lib/types"
 import {
   COMPARADOR_EIXOS,
@@ -87,7 +88,8 @@ function resolveInitialSelectedIds(
   return next
 }
 
-export function ComparadorPanel({ candidatos, referenceNow, initialSelectedSlugs, initialEixo }: Props) {
+export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, initialSelectedSlugs, initialEixo }: Props) {
+  const candidatos = useMemo(() => ordenarPorFaseEleitoral(candidatosInput), [candidatosInput])
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()

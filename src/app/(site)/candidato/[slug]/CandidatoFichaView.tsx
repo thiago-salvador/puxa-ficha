@@ -55,6 +55,7 @@ import { programaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
 import { listarPesquisasSenadoPorSlug } from "@/lib/senado-polls"
 import { isSenadoEnabled } from "@/lib/senado-feature"
+import { FaseEleitoralSelo } from "@/components/FaseEleitoralSelo"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
 
@@ -430,6 +431,7 @@ export async function CandidatoFichaView({
                 Situação: {situacaoCandidaturaLabel}
               </span>
             )}
+            <FaseEleitoralSelo candidato={ficha} className="mt-1.5" />
             {notaAtualizacao && (
               <p
                 data-pf-update-closed={ficha.fase_eleitoral_2026?.atualizacao_encerrada_em ?? undefined}
@@ -449,7 +451,11 @@ export async function CandidatoFichaView({
               </h1>
               {/* No Senado, primeiro voto, segundo voto e o agregado dos dois são medidas
                   distintas; o destaque sem rótulo do cenário ficaria ambíguo. */}
-              {pesquisasEnabled && <PesquisasPresidenciaisHero pesquisas={pesquisas} />}
+              {pesquisasEnabled && (
+                ficha.fase_eleitoral_2026?.fase_eleitoral && ficha.fase_eleitoral_2026.fase_eleitoral !== "em_disputa"
+                  ? <PesquisasPresidenciaisHero pesquisas={pesquisas} resultadoEleitoralPublicado />
+                  : <PesquisasPresidenciaisHero pesquisas={pesquisas} />
+              )}
             </div>
 
             {ficha.chapa_2026 && (
@@ -513,6 +519,7 @@ export async function CandidatoFichaView({
                   slug={slug}
                   candidateName={ficha.nome_urna}
                   cardVersion={ficha.ultima_atualizacao}
+                  faseEleitoral={ficha.fase_eleitoral_2026}
                 />
                 <DeferredFollowCandidateButton
                   candidateName={ficha.nome_urna}
@@ -555,6 +562,7 @@ export async function CandidatoFichaView({
           slug={slug}
           candidateName={ficha.nome_urna}
           cardVersion={ficha.ultima_atualizacao}
+          faseEleitoral={ficha.fase_eleitoral_2026}
         />
       </section>
 

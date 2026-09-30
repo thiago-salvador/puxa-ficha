@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
 import { join, resolve } from "node:path"
-import { isCandidateBlocked, type ColinhaCandidate, type SlotId } from "@/lib/colinha"
+import { isCandidateBlocked, type ColinhaCandidate, type ColinhaTurno, type SlotId, SLOT_ORDER } from "@/lib/colinha"
 import { fetchPhotoAsBase64 } from "@/lib/social-card"
 
 export type ColinhaCardFormat = "feed" | "story"
@@ -50,9 +50,11 @@ export function buildColinhaCardJsx(
   format: ColinhaCardFormat,
   now = new Date(),
   photos: Partial<Record<SlotId, string>> = {},
+  options: { turno?: ColinhaTurno; slots?: readonly SlotId[]; message?: string } = {},
 ) {
   const isStory = format === "story"
-  const slots = Object.keys(COLINHA_SLOT_LABELS) as SlotId[]
+  const slots = options.slots ?? SLOT_ORDER
+  const turno = options.turno ?? 1
   const selected = slots.filter((slot) => choices[slot] && isColinhaCandidateAllowed(choices[slot]!))
   const shareUrlLines = splitColinhaShareUrl(shareUrl)
   const titleSize = isStory ? 58 : 52
@@ -69,11 +71,12 @@ export function buildColinhaCardJsx(
           PUXA FICHA
         </div>
         <div style={{ display: "flex", fontSize: titleSize, fontWeight: 800, marginTop: 18 }}>
-          Minha colinha {uf ? `· ${uf}` : ""}
+          {turno === 2 ? "Minha colinha · 2º turno" : "Minha colinha"} {uf ? `· ${uf}` : ""}
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#62605b", marginTop: 12 }}>
-          Eleições 2026 · seis escolhas na ordem da urna
+          {turno === 2 ? "Eleições 2026 · escolhas confirmadas para o 2º turno" : "Eleições 2026 · seis escolhas na ordem da urna"}
         </div>
+        {options.message ? <div style={{ display: "flex", fontSize: 21, color: "#62605b", marginTop: 16 }}>{options.message}</div> : null}
         <div style={{ display: "flex", flexDirection: "column", marginTop: 38, gap: 14 }}>
           {slots.map((slot) => {
             const candidate = choices[slot]
@@ -121,6 +124,7 @@ export async function buildColinhaCard(
   shareUrl: string,
   format: ColinhaCardFormat,
   now = new Date(),
+  options: { turno?: ColinhaTurno; slots?: readonly SlotId[]; message?: string } = {},
 ): Promise<ImageResponse> {
   const photos: Partial<Record<SlotId, string>> = {}
   await Promise.all((Object.keys(choices) as SlotId[]).map(async (slot) => {
@@ -129,7 +133,7 @@ export async function buildColinhaCard(
     const photo = await loadPhotoAsDataUri(candidate.foto_path)
     if (photo) photos[slot] = photo
   }))
-  return new ImageResponse(buildColinhaCardJsx(choices, uf, shareUrl, format, now, photos), {
+  return new ImageResponse(buildColinhaCardJsx(choices, uf, shareUrl, format, now, photos, options), {
     ...COLINHA_CARD_SIZES[format],
     headers: {
       "Cache-Control": "no-store",

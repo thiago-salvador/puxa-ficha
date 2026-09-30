@@ -247,16 +247,14 @@ describe("resultados TSE: plano", () => {
     assert.deepEqual(plano.mudancas.map((m) => [m.slug, m.fase_depois, m.encerra_atualizacao]), [["gov-2t-a", "eleito", true], ["gov-2t-b", "nao_eleito", true]])
   })
 
-  it("pendência executiva fica na coorte, sem bloquear mudanças resolvidas", () => {
+  it("pendência executiva impede gerar qualquer marcação de resultado", () => {
     const c = coorte()
     c[2] = { ...c[2], sq_candidato_2026: "999999999999" }
     const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
     assert.equal(plano.status, "parcial")
     assert.deepEqual(plano.pendentes, [{ slug: "gov-2t-a", cargo: "Governador", abrangencia: "SP", motivo: "SQ ausente do resultado oficial" }])
     assert.equal(plano.mudancas.some((m) => m.slug === "gov-2t-b"), true)
-    const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } })
-    assert.match(generated.migration, /escrita esperada=6/)
-    assert.doesNotMatch(generated.migration, /gov-2t-a/)
+    assert.throws(() => gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } }), /plano incompleto/)
   })
 })
 
@@ -264,13 +262,11 @@ describe("migration de resultado gerada", () => {
   const plano = () => montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: coorte(), leituras: leiturasOk(), agora: new Date("2026-10-05T12:00:00Z") })
   const predecessor = { version: "20260927050000", name: "candidaturas_fase_2026_schema" }
 
-  it("aceita apenas as mudanças resolvidas de um plano parcial", () => {
+  it("recusa todas as mudanças de um plano parcial", () => {
     const p = plano()
     p.status = "parcial"
     p.pendentes = [{ slug: "pres-nao-resolvido", cargo: "Presidente", abrangencia: "BR", motivo: "SQ ausente do resultado oficial" }]
-    const generated = gerarArquivosFase({ plano: p, version: "20261005120000", predecessor })
-    assert.match(generated.migration, /Pendências do plano \(1\) não são tocadas/)
-    assert.doesNotMatch(generated.migration, /pres-nao-resolvido/)
+    assert.throws(() => gerarArquivosFase({ plano: p, version: "20261005120000", predecessor }), /plano incompleto/)
   })
 
   it("recusa versão anterior ao predecessor", () => {
