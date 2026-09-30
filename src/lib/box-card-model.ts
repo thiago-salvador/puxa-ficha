@@ -41,11 +41,29 @@ export const BOX_CARD_KINDS = [
 
 export type BoxCardKind = (typeof BOX_CARD_KINDS)[number]
 
+export interface BoxCardSubject {
+  name: string
+  /** Partido, cargo e UF, na ordem em que aparecem na ficha. */
+  meta: string
+  /** Foto como a ficha a entrega (caminho de public/ ou URL remota); o card a lê no servidor. */
+  photoUrl: string | null
+}
+
+/**
+ * Versão do desenho do card. Entra no hash da revisão, que vai na URL do card:
+ * mudar o layout muda a URL e o CDN não serve a versão antiga por 24 h.
+ */
+const BOX_CARD_LAYOUT_VERSION = 2
+
 export interface BoxCardModel {
   kind: BoxCardKind
   title: string
   key: string
   identity: string
+  /** Quem é o assunto do card: um candidato, ou os candidatos do comparador. Fica fora da revisão. */
+  subjects?: BoxCardSubject[]
+  /** Avisos informativos de atualização da seção (não são alerta). Já contados na revisão via `warnings`. */
+  notes?: string[]
   rows: Array<{ label: string; value: string; detail?: string }>
   warnings: string[]
   sources: Array<{ label: string; url: string; collectedAt: string | null }>
@@ -90,9 +108,10 @@ function model(
   warnings: string[] = [],
   sources: BoxCardModel["sources"] = [],
   title = TITLES[kind],
+  subjects: BoxCardSubject[] = [],
 ): BoxCardModel {
   const projected = { kind, title, key, identity, rows, warnings, sources, deepLink }
-  return { ...projected, revision: fnv1a(JSON.stringify(projected)) }
+  return { ...projected, subjects, revision: fnv1a(JSON.stringify({ layout: BOX_CARD_LAYOUT_VERSION, ...projected })) }
 }
 
 function candidateSource(label: string, url: string | null | undefined, collectedAt: string | null = null) {
@@ -118,6 +137,28 @@ function candidateIdentity(ficha: FichaCandidato): string {
   const party = formatPartyPublicLabel(ficha.partido_sigla)
   const cargo = formatCargoDisputadoPublicLabel(ficha.cargo_disputado)
   return [ficha.nome_urna, party, cargo, ficha.estado].filter((value): value is string => typeof value === "string" && value.trim().length > 0).join(" · ")
+}
+
+function subjectMeta(partido: string | null | undefined, cargo: string | null | undefined, estado: string | null | undefined): string {
+  return [formatPartyPublicLabel(partido ?? ""), formatCargoDisputadoPublicLabel(cargo ?? ""), estado]
+    .filter((value): value is string => typeof value === "string" && value.trim().length > 0)
+    .join(" · ")
+}
+
+function candidateSubject(ficha: FichaCandidato): BoxCardSubject {
+  return {
+    name: ficha.nome_urna,
+    meta: subjectMeta(ficha.partido_sigla, ficha.cargo_disputado, ficha.estado),
+    photoUrl: typeof ficha.foto_url === "string" && ficha.foto_url.trim() ? ficha.foto_url : null,
+  }
+}
+
+/** Fonte do patrimônio: URL da própria declaração, ou o conjunto de dados abertos do TSE do ano mais recente. */
+function patrimonySources(ficha: FichaCandidato): BoxCardModel["sources"] {
+  const source = ficha.patrimonio_eleicoes?.find((item) => item.fonte_url)
+  if (source?.fonte_url) return candidateSource("Dados abertos de candidaturas do TSE", source.fonte_url, null)
+  const years = safeArray(ficha.patrimonio).map((item) => item.ano_eleicao).filter((year) => Number.isFinite(year))
+  return years.length ? [{ label: "Dados abertos de candidaturas do TSE", url: fonteDadosAbertosPatrimonioTse(Math.max(...years)), collectedAt: null }] : []
 }
 
 function candidateDeepLink(kind: BoxCardKind, ficha: FichaCandidato): string {
@@ -158,13 +199,14 @@ function evolutionRows(ficha: FichaCandidato) {
   if (comparable.length < 2) return null
   const variation = variacaoPatrimonialDaFicha(rows)
   if (!variation) return null
+  // Mais recente primeiro: se o card não couber tudo, o que fica de fora são os anos antigos.
   const projected: BoxCardModel["rows"] = [...comparable]
-    .sort((a, b) => a.ano_eleicao - b.ano_eleicao)
+    .sort((a, b) => b.ano_eleicao - a.ano_eleicao)
     .map((row) => ({
       label: String(row.ano_eleicao),
       value: formatCompact(row.valor_total),
     }))
-  projected[projected.length - 1].detail = `${variation.pct > 0 ? "↑ " : variation.pct < 0 ? "↓ " : ""}${Math.abs(variation.pct)}% entre ${variation.anterior.ano_eleicao} e ${variation.atual.ano_eleicao}`
+  projected[0].detail = `${variation.pct > 0 ? "↑ " : variation.pct < 0 ? "↓ " : ""}${Math.abs(variation.pct)}% entre ${variation.anterior.ano_eleicao} e ${variation.atual.ano_eleicao}`
   const series: PatrimonioAnoValor[] = comparable.map((row) => ({
     ano_eleicao: row.ano_eleicao,
     valor_total: row.valor_total,
@@ -352,19 +394,34 @@ function partyRows(ficha: FichaCandidato) {
 
 export function buildCandidateBoxCard(kind: BoxCardKind, ficha: FichaCandidato): BoxCardModel | null {
   if (!ficha || typeof ficha.slug !== "string" || !ficha.slug.trim()) return null
+  const built = buildCandidateBoxCardBody(kind, ficha)
+  if (!built) return null
+  // Mensagem de atualização da seção é informação, não alerta: o card a mostra em tom neutro.
+  const freshness = new Set(
+    Object.values(ficha.section_freshness ?? {})
+      .map((info) => info?.message)
+      .filter((message): message is string => typeof message === "string" && message.length > 0),
+  )
+  return {
+    ...built,
+    warnings: built.warnings.filter((warning) => !freshness.has(warning)),
+    notes: built.warnings.filter((warning) => freshness.has(warning)),
+    subjects: [candidateSubject(ficha)],
+  }
+}
+
+function buildCandidateBoxCardBody(kind: BoxCardKind, ficha: FichaCandidato): BoxCardModel | null {
   const link = candidateDeepLink(kind, ficha)
   switch (kind) {
     case "patrimonio-resumo": {
       const rows = patrimonyRows(ficha)
       if (!rows) return null
-      const source = ficha.patrimonio_eleicoes?.find((item) => item.fonte_url)
-      return model(kind, ficha.slug, candidateIdentity(ficha), link, rows, freshnessWarning(ficha, "patrimonio"), [...candidateSource("Dados abertos de candidaturas do TSE", source?.fonte_url, null), ...freshnessSources(ficha, "patrimonio")])
+      return model(kind, ficha.slug, candidateIdentity(ficha), link, rows, freshnessWarning(ficha, "patrimonio"), [...patrimonySources(ficha), ...freshnessSources(ficha, "patrimonio")])
     }
     case "evolucao-patrimonial-resumo": {
       const projection = evolutionRows(ficha)
       if (!projection) return null
-      const source = ficha.patrimonio_eleicoes?.find((item) => item.fonte_url)
-      return model(kind, ficha.slug, candidateIdentity(ficha), link, projection.rows, [...projection.warnings, ...freshnessWarning(ficha, "patrimonio")], [...candidateSource("Dados abertos de candidaturas do TSE", source?.fonte_url, null), ...freshnessSources(ficha, "patrimonio")])
+      return model(kind, ficha.slug, candidateIdentity(ficha), link, projection.rows, [...projection.warnings, ...freshnessWarning(ficha, "patrimonio")], [...patrimonySources(ficha), ...freshnessSources(ficha, "patrimonio")])
     }
     case "financiamento-resumo": {
       const projection = financingRows(ficha)
@@ -447,5 +504,11 @@ export function buildComparatorBoxCard(
         const label = id === "camara" ? `${source.label}: cota parlamentar` : source.label
         return [{ label, url: source.authorityUrl, collectedAt: null }]
       })
-  return model("comparador", slugs.join("~"), identity, link, rows, warnings, sources)
+  const subjects = selected.map((candidate) => ({
+    name: candidate.nome_urna,
+    meta: subjectMeta(candidate.partido_sigla, null, null),
+    photoUrl: typeof candidate.foto_url === "string" && candidate.foto_url.trim() ? candidate.foto_url : null,
+  }))
+  const title = axis === "patrimonio" ? "Patrimônio declarado" : "Gastos da cota parlamentar"
+  return model("comparador", slugs.join("~"), identity, link, rows, warnings, sources, title, subjects)
 }
