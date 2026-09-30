@@ -432,7 +432,7 @@ const entries = {
   },
   "garotinho": {
     identidade: {"ano":2026,"cargo":"GOVERNADOR","uf":"RJ","sqCandidato":"190002550196","slug":"garotinho","nomeUrna":"GAROTINHO","partido":"REPUBLICANOS"},
-    manifesto: {"estado":"sem_documento_oficial","fonte":{"ano":2026,"cargo":"GOVERNADOR","uf":"RJ","sqCandidato":"190002550196","slug":"garotinho","nomeUrna":"GAROTINHO","partido":"REPUBLICANOS","arquivoNome":null,"pacoteUrl":"https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip","datasetUrl":"https://dadosabertos.tse.jus.br/dataset/candidatos-2026","pdfOriginalUrl":null,"consultadoEm":"2026-08-30T19:05:43.166Z"}},
+    manifesto: {"estado":"documento_anunciado","fonte":{"ano":2026,"cargo":"GOVERNADOR","uf":"RJ","sqCandidato":"190002550196","slug":"garotinho","nomeUrna":"GAROTINHO","partido":"REPUBLICANOS","arquivoNome":null,"pacoteUrl":"https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip","datasetUrl":"https://dadosabertos.tse.jus.br/dataset/candidatos-2026","pdfOriginalUrl":null,"consultadoEm":"2026-09-30T11:24:01.355Z"},"anuncio":{"fonteUrl":"https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002550196","idArquivo":"190017144019","nomeArquivo":"pje-Programa de Governo - Anthony Garotinho2027.pdf","codTipo":"5","consultadoEm":"2026-09-30T11:24:01.355Z","payloadSha256":"dfc4d71a8281169719cb43eb899ee47efe132fe81217669282ee55ed80d56cca","evidenciaUrl":"https://github.com/thiago-salvador/puxa-ficha/actions/runs/36708154014","metadadosSha256":"1103548914fa445b8bddb5d3b84f6ca8f45eee2997552e80e6805e1d85e68b8c"}},
     load: () => import("./programas-governo/governadores-2026/garotinho.json"),
     documentoIds: [],
   },
