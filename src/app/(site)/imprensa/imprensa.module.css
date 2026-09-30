@@ -26,9 +26,9 @@
 }
 
 .topNotice {
-  background: #fff7ed;
-  border-bottom: 1px solid var(--rule);
-  color: #7c2d12;
+  background: #fffbeb;
+  border-bottom: 1px solid #fcd34d;
+  color: #451a03;
   font-size: 13px;
   font-weight: 800;
   line-height: 1.4;

@@ -189,10 +189,14 @@ const EMAIL_COLORS = {
   borderDark: "#2f2f2f",
 } as const
 
-/** Anton não carrega em cliente de email; o peso condensado vem de Arial Black. */
+/**
+ * Cliente de email não baixa a fonte do site, e link para fonte externa vazaria o
+ * IP de quem abre a mensagem. Anton e Inter entram primeiro para quem as tem
+ * instaladas; nos demais, o peso condensado vem de Arial Black.
+ */
 const EMAIL_FONT_HEADING =
-  "'Arial Black','Arial Bold',Arial,Helvetica,sans-serif"
-const EMAIL_FONT_BODY = "Arial,Helvetica,sans-serif"
+  "Anton,'Arial Black','Arial Bold',Arial,Helvetica,sans-serif"
+const EMAIL_FONT_BODY = "Inter,Arial,Helvetica,sans-serif"
 
 /** Equivalente textual da hachura de `SlashDivider`, que é gradiente CSS e não sobrevive ao email. */
 const EMAIL_SLASH_RULE = "/".repeat(60)
