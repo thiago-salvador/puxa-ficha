@@ -8,7 +8,7 @@
     { "id": "tse-2026-financas", "workflow": "tse-2026-financas.yml", "entradas": [] },
     { "id": "tse-cdn-watcher", "workflow": "tse-cdn-watcher.yml", "entradas": [] },
     { "id": "checagens", "workflow": "checagens-coleta.yml", "entradas": [] },
-    { "id": "processos", "workflow": "processos-coleta-judicial.yml", "entradas": [] },
+    { "id": "processos", "workflow": "processos-coleta-judicial.yml", "entradas": ["scripts/processos-local/coletar-local.sh"] },
     { "id": "promessa", "workflow": null, "entradas": ["scripts/promessa-evidencia-coletar.ts"] },
     { "id": "pesquisas", "workflow": "pesquisas-monitoramento.yml", "entradas": ["scripts/pesquisas-importar-manual.ts"] },
     { "id": "pesquisas-descoberta", "workflow": "pesquisas-descoberta-economica.yml", "entradas": [] },
