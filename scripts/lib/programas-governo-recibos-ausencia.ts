@@ -39,7 +39,9 @@ export const RECIBOS_AUSENCIA_SUPERADOS_SQS: ReadonlySet<string> = new Set([
 ])
 
 /** Anúncio posterior no DivulgaCand; não comprova conteúdo no pacote histórico. */
-export const RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS: ReadonlySet<string> = new Set()
+export const RECIBOS_AUSENCIA_SUPERADOS_POR_ANUNCIO_SQS: ReadonlySet<string> = new Set([
+  "190002550196", // Garotinho: arquivo 190017144019 em 2026-09-30.
+])
 
 /** Recibos ainda vinculados ao snapshot histórico do inventário de pacotes. */
 export const RECIBOS_AUSENCIA_VIGENTES_SQS: ReadonlySet<string> = new Set(
