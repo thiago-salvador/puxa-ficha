@@ -28,21 +28,91 @@ export const CARD_SIZES: Record<CardFormat, { width: number; height: number }> =
 
 // ── Photo utility ─────────────────────────────────────────
 
+// Existing candidate photos in the local corpus are below 500 KiB; 2 MiB
+// leaves generous room for larger source images while bounding stream/base64 memory.
+const SOCIAL_CARD_PHOTO_MAX_BYTES = 2 * 1024 * 1024
+const SOCIAL_CARD_PHOTO_TIMEOUT_MS = 5_000
+
 /** Fetch an external image and return a data-URI usable inside Satori JSX. */
 export async function fetchPhotoAsBase64(url: string | null): Promise<string | null> {
   if (!url) return null
   if (!isAllowedImageSource(url)) return null
-  try {
-    const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 5_000)
+
+  const controller = new AbortController()
+  let reader: ReadableStreamDefaultReader<Uint8Array> | null = null
+  let timedOut = false
+  let timeout: ReturnType<typeof setTimeout> | undefined
+
+  const timeoutPromise = new Promise<null>((resolve) => {
+    timeout = setTimeout(() => {
+      timedOut = true
+      controller.abort()
+      if (reader) void reader.cancel().catch(() => {})
+      resolve(null)
+    }, SOCIAL_CARD_PHOTO_TIMEOUT_MS)
+  })
+
+  const fetchAndEncode = async (): Promise<string | null> => {
     const res = await fetch(url, { signal: controller.signal, redirect: "manual" })
-    clearTimeout(timeout)
-    if (!res.ok) return null
-    const buf = Buffer.from(await res.arrayBuffer())
-    const ct = res.headers.get("content-type") ?? "image/jpeg"
-    return `data:${ct};base64,${buf.toString("base64")}`
+    if (!res.ok || timedOut) {
+      void res.body?.cancel().catch(() => {})
+      return null
+    }
+
+    const contentLength = res.headers.get("content-length")?.trim()
+    if (contentLength && /^\d+$/.test(contentLength) && Number(contentLength) > SOCIAL_CARD_PHOTO_MAX_BYTES) {
+      void res.body?.cancel().catch(() => {})
+      return null
+    }
+
+    const contentType = res.headers.get("content-type") ?? "image/jpeg"
+    if (!res.body) return null
+
+    reader = res.body.getReader()
+    const chunks: Uint8Array[] = []
+    let totalBytes = 0
+    try {
+      while (!timedOut) {
+        const { done, value } = await reader.read()
+        if (timedOut) return null
+        if (done) {
+          const buffer = Buffer.allocUnsafe(totalBytes)
+          let offset = 0
+          for (const chunk of chunks) {
+            buffer.set(chunk, offset)
+            offset += chunk.byteLength
+          }
+          return `data:${contentType};base64,${buffer.toString("base64")}`
+        }
+        if (!value) continue
+
+        if (value.byteLength > SOCIAL_CARD_PHOTO_MAX_BYTES - totalBytes) {
+          void reader.cancel().catch(() => {})
+          return null
+        }
+        totalBytes += value.byteLength
+        chunks.push(value)
+      }
+      return null
+    } catch (error) {
+      void reader.cancel().catch(() => {})
+      throw error
+    } finally {
+      try {
+        reader.releaseLock()
+      } catch {
+        // A timed out read may remain pending in a non-compliant fetch mock.
+      }
+      reader = null
+    }
+  }
+
+  try {
+    return await Promise.race([fetchAndEncode(), timeoutPromise])
   } catch {
     return null
+  } finally {
+    if (timeout) clearTimeout(timeout)
   }
 }
 

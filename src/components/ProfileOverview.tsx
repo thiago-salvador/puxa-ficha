@@ -230,8 +230,8 @@ function TeaserCard({
       id={boxCardModel ? `box-${boxCardModel.kind}` : undefined}
       className={`flex min-h-[220px] flex-col rounded-[12px] border border-border/50 bg-card px-5 py-4 ${boxCardModel ? "scroll-mt-32" : ""} ${className ?? ""}`}
     >
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 className="flex min-w-0 items-center gap-2 text-[length:var(--text-body-sm)] font-semibold text-foreground">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+        <h2 className="flex w-max max-w-full shrink-0 items-center gap-2 text-[length:var(--text-body-sm)] font-semibold text-foreground">
           {title}
           {badge != null && <OverviewCountBadge value={badge} />}
         </h2>
