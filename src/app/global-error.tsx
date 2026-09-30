@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import * as Sentry from "@sentry/nextjs"
+import { anton, inter } from "./fonts"
 import "./globals.css"
 
 /**
@@ -21,7 +22,7 @@ export default function GlobalError({
   }, [error])
 
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${inter.variable} ${anton.variable}`}>
       <body className="min-h-dvh bg-background text-foreground antialiased">
         <div className="flex min-h-screen flex-col items-center justify-center px-5">
           <h1 className="font-heading text-[48px] uppercase leading-[0.9] sm:text-[72px]">
