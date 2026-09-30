@@ -32,6 +32,7 @@ import { parseCSV } from "./lib/parse-csv-local"
 import { supabase } from "./lib/supabase"
 import { stripAccents } from "../src/lib/strip-accents"
 import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
+import { ColetorDiagnostico, DISJUNTOR_ABERTO, classificarFalhaColeta } from "./lib/diagnostico-coleta-processos"
 
 const DJEN = "https://comunicaapi.pje.jus.br"
 const DATAJUD = "https://api-publica.datajud.cnj.jus.br"
@@ -981,13 +982,28 @@ export class Disjuntor {
   get aberto(): boolean { return this.seguidas >= this.limite }
 }
 
-export const DISJUNTOR_ABERTO = "disjuntor aberto: respostas 429/5xx seguidas da fonte oficial"
+export { DISJUNTOR_ABERTO, classificarFalhaColeta }
+export type { TipoFalhaColeta } from "./lib/diagnostico-coleta-processos"
 const disjuntorFontes = new Disjuntor()
+/** Contagens agregadas por fonte e tipo; nunca nome, CPF, CNJ ou URL. */
+const diagnostico = new ColetorDiagnostico()
+
+/** fetch com contagem pública de status por fonte; a URL não é guardada. */
+async function fetchContado(url: string, init: RequestInit & { signal: AbortSignal }): Promise<Response> {
+  try {
+    const resposta = await fetch(url, { ...init, signal: init.signal })
+    diagnostico.registrarResposta(url, resposta.status)
+    return resposta
+  } catch (erro) {
+    diagnostico.registrarFalhaRede(url, erro)
+    throw erro
+  }
+}
 
 async function fetchJson<T>(url: string, init?: RequestInit, tentativas = 3, timeoutMs = 60_000): Promise<T> {
   for (let i = 0; i < tentativas; i += 1) {
     if (disjuntorFontes.aberto) throw new Error(DISJUNTOR_ABERTO)
-    const resposta = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) })
+    const resposta = await fetchContado(url, { ...init, signal: AbortSignal.timeout(timeoutMs) })
     if (resposta.status === 429 || resposta.status >= 500) {
       disjuntorFontes.registrarFalha()
       if (i + 1 < tentativas && !disjuntorFontes.aberto) {
@@ -1002,24 +1018,12 @@ async function fetchJson<T>(url: string, init?: RequestInit, tentativas = 3, tim
   throw new Error(`limite de tentativas em ${url}`)
 }
 
-export type TipoFalhaColeta = "limite_de_taxa" | "fonte_indisponivel" | "preflight_banco" | "identidade_tse" | "outro"
-
-/** Classificação fechada da falha fatal, lida pelo workflow sem grep de log. */
-export function classificarFalhaColeta(erro: unknown): TipoFalhaColeta {
-  const mensagem = erro instanceof Error ? erro.message : String(erro)
-  if (mensagem === DISJUNTOR_ABERTO || /HTTP 429/.test(mensagem)) return "limite_de_taxa"
-  if (/^preflight[ :]/.test(mensagem)) return "preflight_banco"
-  if (/consulta_cand|TSE/.test(mensagem)) return "identidade_tse"
-  if (/HTTP 5\d\d|fetch failed|timeout|aborted|ECONN|ENOTFOUND|DataJud|DJEN/i.test(mensagem)) return "fonte_indisponivel"
-  return "outro"
-}
-
 async function baixar(url: string, destino: string): Promise<void> {
   if (existsSync(destino)) return
   mkdirSync(dirname(destino), { recursive: true })
   const parcial = `${destino}.part`
   rmSync(parcial, { force: true })
-  const resposta = await fetch(url, { signal: AbortSignal.timeout(300_000) })
+  const resposta = await fetchContado(url, { signal: AbortSignal.timeout(300_000) })
   if (!resposta.ok || !resposta.body) throw new Error(`HTTP ${resposta.status} ao baixar ${url}`)
   await pipeline(Readable.fromWeb(resposta.body as Parameters<typeof Readable.fromWeb>[0]), createWriteStream(parcial))
   renameSync(parcial, destino)
@@ -1702,7 +1706,7 @@ export function identificadorForteNoTexto(
 }
 
 export async function chaveDatajud(): Promise<string> {
-  const texto = await (await fetch("https://datajud-wiki.cnj.jus.br/api-publica/acesso/", { signal: AbortSignal.timeout(30_000) })).text()
+  const texto = await (await fetchContado("https://datajud-wiki.cnj.jus.br/api-publica/acesso/", { signal: AbortSignal.timeout(30_000) })).text()
   const semHtml = texto.replace(/<[^>]+>/g, " ").replace(/&quot;/g, '"').replace(/\s+/g, " ")
   const match = semHtml.match(/Authorization:\s*APIKey\s+([A-Za-z0-9+/_=-]{20,})/)
   if (!match) throw new Error("chave publica do DataJud nao encontrada na documentacao oficial")
@@ -2411,6 +2415,7 @@ async function main(): Promise<void> {
             contexto.tribunais, cache,
           )
         console.error(`[processos] ${c.slug}: ${resultado.classificacao}`)
+        diagnostico.registrarCandidato(resultado.classificacao, resultado.motivo)
         return resultado
       })
       if (!somenteCnj) await conferirDatajudResultados(resultados, contexto.datajudKey!)
@@ -2452,13 +2457,19 @@ async function main(): Promise<void> {
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const argv = process.argv.slice(2)
+  const evidence = flags(argv).get("evidence")
+  const gravarNoRunner = Boolean(evidence) && flagPresente(argv, "coorte-atual")
   main().catch((erro) => {
     console.error(erro)
     process.exitCode = 1
-    const argv = process.argv.slice(2)
-    const evidence = flags(argv).get("evidence")
-    if (evidence && flagPresente(argv, "coorte-atual")) {
-      writeFileSync(`${resolve(evidence)}.falha.json`, `${JSON.stringify({ tipo: classificarFalhaColeta(erro), em: new Date().toISOString() })}\n`, { mode: 0o600 })
+    diagnostico.registrarFatal(erro)
+    if (gravarNoRunner) {
+      writeFileSync(`${resolve(evidence!)}.falha.json`, `${JSON.stringify({ tipo: classificarFalhaColeta(erro), em: new Date().toISOString() })}\n`, { mode: 0o600 })
+    }
+  }).finally(() => {
+    if (gravarNoRunner) {
+      writeFileSync(`${resolve(evidence!)}.diagnostico.json`, `${JSON.stringify(diagnostico.paraJson())}\n`, { mode: 0o600 })
     }
   })
 }

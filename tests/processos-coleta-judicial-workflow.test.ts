@@ -5,6 +5,7 @@ import { parse } from "yaml"
 
 import { argumentosErro, slugsDoSnapshot } from "../scripts/registrar-erro-coleta-processos"
 import freshnessCatalog from "../scripts/data/data-freshness-sources.json"
+import { TIPOS_FALHA_COLETA } from "../scripts/lib/diagnostico-coleta-processos"
 
 const source = readFileSync(".github/workflows/processos-coleta-judicial.yml", "utf8")
 type Step = { id?: string; name?: string; run?: string; uses?: string; env?: Record<string, string>; "continue-on-error"?: boolean }
@@ -52,9 +53,18 @@ describe("workflow agendado da coleta judicial", () => {
   })
 
   it("não publica evidência nominal em artefato do repositório público", () => {
-    assert.equal(steps.some((step) => String(step.uses ?? "").includes("upload-artifact")), false)
+    const uploads = steps.filter((step) => String(step.uses ?? "").includes("upload-artifact"))
+    // Único artifact: a pasta do diagnóstico saneado, retenção curta.
+    assert.equal(uploads.length, 1)
+    const com = (uploads[0] as Step & { with?: Record<string, unknown> }).with ?? {}
+    assert.equal(com.path, "${{ runner.temp }}/diagnostico-publico/")
+    assert.ok(Number(com["retention-days"]) <= 3)
     const coleta = steps.find((step) => step.id === "coleta")?.run ?? ""
     assert.match(coleta, /> "\$RUNNER_TEMP\/coleta-\$modo\.log" 2>&1/)
+    // Só o resumidor, que passa pela allowlist, escreve em diagnostico-publico.
+    const escritas = coleta.match(/diagnostico-publico[^\s"]*/g) ?? []
+    assert.deepEqual(escritas, ["diagnostico-publico/$modo.json"])
+    assert.match(coleta, /resumir-diagnostico-coleta-processos\.ts[\s\\]+--entrada="\$evidencia\.diagnostico\.json"/)
   })
 
   it("catálogo de frescor trata a busca judicial com o mesmo SLA do site", () => {
@@ -84,5 +94,12 @@ describe("recibo de erro quando a coleta cai", () => {
     assert.match(args.join(" "), /tipo_falha: limite_de_taxa/)
     assert.throws(() => argumentosErro("x", "HTTP 503 qualquer coisa", "vencendo"), /--tipo invalido/)
     assert.throws(() => argumentosErro("x", "outro", "vencendo; drop"), /--modo invalido/)
+  })
+
+  it("aceita todo tipo que o classificador da coleta pode emitir", () => {
+    for (const tipo of TIPOS_FALHA_COLETA) {
+      const args = argumentosErro("candidata-teste", tipo, "vencendo", new Date("2026-09-25T12:00:00Z"))
+      assert.match(args.join(" "), new RegExp(`tipo_falha: ${tipo};`))
+    }
   })
 })
