@@ -9210,6 +9210,837 @@
         }
       },
       "consulted_at": "2026-09-28T12:46:33Z"
+    },
+    {
+      "id": "parana-pesquisas-pr-02701-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "SEDEK Serviços, Tecnologia & Informação Ltda / SEDEK",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-28",
+        "sample_size": 1280,
+        "method": "entrevistas pessoais, domiciliares e presenciais",
+        "margin_of_error_pp": 2.8,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Paraná",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PR-02701/2026",
+        "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/09/PR_Set26-2.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PR-02701/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "88b86bed877b5645e8ff8cc7fcbcadac75e8b282eea859f84bd5d270d1edea8d",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/PR_Set26-2.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-parana-para-o-cargo-de-governador-registro-tse-n-o-pr-02701-2026-setembro-2026/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-parana-setembro-2026-3/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/PR_Set26-2.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-parana-para-o-cargo-de-governador-registro-tse-n-o-pr-02701-2026-setembro-2026/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-parana-setembro-2026-3/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/PR_Set26-2.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-parana-para-o-cargo-de-governador-registro-tse-n-o-pr-02701-2026-setembro-2026/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-parana-setembro-2026-3/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/PR_Set26-2.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-parana-para-o-cargo-de-governador-registro-tse-n-o-pr-02701-2026-setembro-2026/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/parana-pesquisas-governador-parana-setembro-2026-3/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "atlasintel-sp-01486-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-22",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1833,
+        "method": "recrutamento digital",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "São Paulo",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SP-01486/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/atlas-tarcisio-tem-533-no-1o-turno-em-sp-haddad-401/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SP-01486/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "aeddff0df4e377c1d503054a98253bbf8427100b411747b042ff2aef99e5cf3c",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-tarcisio-tem-533-no-1o-turno-em-sp-haddad-401/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-tarcisio-tem-533-no-1o-turno-em-sp-haddad-401/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-tarcisio-tem-533-no-1o-turno-em-sp-haddad-401/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlas-tarcisio-tem-533-no-1o-turno-em-sp-haddad-401/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "futura-100-cidades-sp-06753-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Futura/100% Cidades",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "diariodopoder.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-22",
+          "end": "2026-09-26"
+        },
+        "published_at": "2026-09-28",
+        "sample_size": 1600,
+        "method": "entrevistas assistidas por computador",
+        "margin_of_error_pp": 2.4,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "São Paulo",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SP-06753/2026",
+        "result_url": "https://www.diariodopoder.com.br/brasil-e-regioes/tarcisio-tem-548-em-1o-turno-e-582-em-2o-turno-para-o-governo-de-sp",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SP-06753/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "7088482a31eec3b39838a908f1e60155db88bdc909ea09c4932b219acdadc1de",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.diariodopoder.com.br/brasil-e-regioes/tarcisio-tem-548-em-1o-turno-e-582-em-2o-turno-para-o-governo-de-sp"
+          ],
+          "note": "Modo de entrevista não comprovado na publicação consultada; método ausente ou descrição genérica preservado literalmente."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diariodopoder.com.br/brasil-e-regioes/tarcisio-tem-548-em-1o-turno-e-582-em-2o-turno-para-o-governo-de-sp"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diariodopoder.com.br/brasil-e-regioes/tarcisio-tem-548-em-1o-turno-e-582-em-2o-turno-para-o-governo-de-sp"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diariodopoder.com.br/brasil-e-regioes/tarcisio-tem-548-em-1o-turno-e-582-em-2o-turno-para-o-governo-de-sp"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "quaest-sp-01590-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "redetv.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1800,
+        "method": "levantamento presencial",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "São Paulo",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SP-01590/2026",
+        "result_url": "https://www.redetv.uol.com.br/amp/redetvi-noticias/noticia/politica/tarcisio-de-freitas-lidera-disputa-pelo-governo-de-sp-contra-fernando-hadda",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SP-01590/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "bd1952d9ef6ace3858f6e4a01669e7dac1870174832379cdf7006bfad8671e73",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.redetv.uol.com.br/amp/redetvi-noticias/noticia/politica/tarcisio-de-freitas-lidera-disputa-pelo-governo-de-sp-contra-fernando-hadda"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.redetv.uol.com.br/amp/redetvi-noticias/noticia/politica/tarcisio-de-freitas-lidera-disputa-pelo-governo-de-sp-contra-fernando-hadda"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.redetv.uol.com.br/amp/redetvi-noticias/noticia/politica/tarcisio-de-freitas-lidera-disputa-pelo-governo-de-sp-contra-fernando-hadda"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.redetv.uol.com.br/amp/redetvi-noticias/noticia/politica/tarcisio-de-freitas-lidera-disputa-pelo-governo-de-sp-contra-fernando-hadda"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "quaest-rj-04419-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Globo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "band.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1302,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio de Janeiro",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RJ-04419/2026",
+        "result_url": "https://www.band.com.br/politica/eleicoes/quaest-paes-tem-34-das-intencoes-de-voto-no-rio-contra-25-de-douglas-ruas",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RJ-04419/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "dc0658e22f0460aae269c105077bbfd785d88477d9d4acdf410931697c07b211",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.band.com.br/politica/eleicoes/quaest-paes-tem-34-das-intencoes-de-voto-no-rio-contra-25-de-douglas-ruas",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-de-janeiro-setembro-2026-3/"
+          ],
+          "note": "Modo de entrevista não comprovado na publicação consultada; método ausente ou descrição genérica preservado literalmente."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.band.com.br/politica/eleicoes/quaest-paes-tem-34-das-intencoes-de-voto-no-rio-contra-25-de-douglas-ruas",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-de-janeiro-setembro-2026-3/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.band.com.br/politica/eleicoes/quaest-paes-tem-34-das-intencoes-de-voto-no-rio-contra-25-de-douglas-ruas",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-de-janeiro-setembro-2026-3/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.band.com.br/politica/eleicoes/quaest-paes-tem-34-das-intencoes-de-voto-no-rio-contra-25-de-douglas-ruas",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-rio-de-janeiro-setembro-2026-3/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "agili-pesquisas-e-marketing-pr-03158-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Ágili Pesquisas e Marketing",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "arede.info",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-23",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1200,
+        "method": "entrevistas por telefone pelo sistema CATI",
+        "margin_of_error_pp": 2.8,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Paraná",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PR-03158/2026",
+        "result_url": "https://arede.info/eleicoes/674335/agili-pesquisas-moro-tem-515-dos-votos-validos-requiao-243-e-sandro-alex-219?_=amp",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PR-03158/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "4529034f8679cf88d1dd94221d08f9ad37bd44dcbad5120bb1e15f443e66e369",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://arede.info/eleicoes/674335/agili-pesquisas-moro-tem-515-dos-votos-validos-requiao-243-e-sandro-alex-219?_=amp"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://arede.info/eleicoes/674335/agili-pesquisas-moro-tem-515-dos-votos-validos-requiao-243-e-sandro-alex-219?_=amp"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://arede.info/eleicoes/674335/agili-pesquisas-moro-tem-515-dos-votos-validos-requiao-243-e-sandro-alex-219?_=amp"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://arede.info/eleicoes/674335/agili-pesquisas-moro-tem-515-dos-votos-validos-requiao-243-e-sandro-alex-219?_=amp"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "parana-pesquisas-go-07040-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-28",
+        "sample_size": 1352,
+        "method": "Entrevistas pessoais, domiciliares e presenciais",
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Goiás",
+        "rounds": [
+          1
+        ],
+        "registration_id": "GO-07040/2026",
+        "result_url": "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-de-goias-para-o-cargo-de-governador-registro-tse-n-o-go-07040-2026-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "GO-07040/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "759b540c36d32fcc66e684892a9d67ef4c4f94c3caebae5f37da155cc17e7434",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-de-goias-para-o-cargo-de-governador-registro-tse-n-o-go-07040-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/GO_Set26-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-em-go-vilela-tem-456-morais-185-e-perillo-184/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-de-goias-para-o-cargo-de-governador-registro-tse-n-o-go-07040-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/GO_Set26-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-em-go-vilela-tem-456-morais-185-e-perillo-184/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-de-goias-para-o-cargo-de-governador-registro-tse-n-o-go-07040-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/GO_Set26-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-em-go-vilela-tem-456-morais-185-e-perillo-184/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-de-goias-para-o-cargo-de-governador-registro-tse-n-o-go-07040-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/GO_Set26-1.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/parana-pesquisas-em-go-vilela-tem-456-morais-185-e-perillo-184/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "ipen-am-00196-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Ipen",
+        "commissioner": "G6",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "amazonasatual.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-18",
+          "end": "2026-09-25"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1200,
+        "method": "Entrevistas presenciais",
+        "margin_of_error_pp": 2.8,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amazonas",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AM-00196/2026",
+        "result_url": "https://amazonasatual.com.br/pesquisa-ipen-omar-tem-326-e-cidade-233-para-o-governo-do-am/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AM-00196/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "38833cb6bf24d99ce561318cb8ef12ebe92899112cc48d833ddbd11f1fbce789",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://amazonasatual.com.br/pesquisa-ipen-omar-tem-326-e-cidade-233-para-o-governo-do-am/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://amazonasatual.com.br/pesquisa-ipen-omar-tem-326-e-cidade-233-para-o-governo-do-am/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://amazonasatual.com.br/pesquisa-ipen-omar-tem-326-e-cidade-233-para-o-governo-do-am/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://amazonasatual.com.br/pesquisa-ipen-omar-tem-326-e-cidade-233-para-o-governo-do-am/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "novo-ibrape-ms-01465-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Novo Ibrape",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "amp.campograndenews.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-23",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1000,
+        "method": null,
+        "margin_of_error_pp": 3.1,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Mato Grosso do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MS-01465/2026",
+        "result_url": "https://amp.campograndenews.com.br/politica/riedel-chega-a-65-3-dos-validos-na-reta-final",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MS-01465/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "0489d08f031a4103b285983fc42625d8d8a1265a2f7c145c6a017c74f765e4a0",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://amp.campograndenews.com.br/politica/riedel-chega-a-65-3-dos-validos-na-reta-final"
+          ],
+          "note": "Modo de entrevista não comprovado na publicação consultada; método ausente ou descrição genérica preservado literalmente."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://amp.campograndenews.com.br/politica/riedel-chega-a-65-3-dos-validos-na-reta-final"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://amp.campograndenews.com.br/politica/riedel-chega-a-65-3-dos-validos-na-reta-final"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://amp.campograndenews.com.br/politica/riedel-chega-a-65-3-dos-validos-na-reta-final"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "quaest-df-02515-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "jovempan.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1104,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          1
+        ],
+        "registration_id": "DF-02515/2026",
+        "result_url": "https://jovempan.com.br/politica/quaest-celina-leao-registra-39-leandro-grass-23-no-1o-turno-do-df/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-02515/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "863691e8cb7d61ab79f7554b9ab474bb0b749ea9ba0d13ccc5ced8c963878686",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://jovempan.com.br/politica/quaest-celina-leao-registra-39-leandro-grass-23-no-1o-turno-do-df/",
+            "https://eleicoes.mrtnews.com.br/governador/df/registros/"
+          ],
+          "note": "Modo de entrevista não comprovado na publicação consultada; método ausente ou descrição genérica preservado literalmente."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://jovempan.com.br/politica/quaest-celina-leao-registra-39-leandro-grass-23-no-1o-turno-do-df/",
+            "https://eleicoes.mrtnews.com.br/governador/df/registros/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://jovempan.com.br/politica/quaest-celina-leao-registra-39-leandro-grass-23-no-1o-turno-do-df/",
+            "https://eleicoes.mrtnews.com.br/governador/df/registros/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://jovempan.com.br/politica/quaest-celina-leao-registra-39-leandro-grass-23-no-1o-turno-do-df/",
+            "https://eleicoes.mrtnews.com.br/governador/df/registros/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "atlasintel-pi-07497-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "websocket.meionorte.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-23",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1218,
+        "method": "Recrutamento digital aleatório (Atlas RDR)",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Piauí",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PI-07497/2026",
+        "result_url": "https://websocket.meionorte.com/politica/eleicoes-2026/nova-pesquisa-atlasintel-rafael-fonteles-tem-70-1-dos-votos-validos-no-piaui-joel-26-5-576705",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PI-07497/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T02:13:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e registro lidos na publicação indicada; campos não informados preservados como ausentes. Captura literal identificada por hash.",
+        "capture_sha256": "0a61087747fd47eb1f79c23396d2c2a3cc0e7cd1ee796c9fb15ced426b1d8eaf",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://websocket.meionorte.com/politica/eleicoes-2026/nova-pesquisa-atlasintel-rafael-fonteles-tem-70-1-dos-votos-validos-no-piaui-joel-26-5-576705"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://websocket.meionorte.com/politica/eleicoes-2026/nova-pesquisa-atlasintel-rafael-fonteles-tem-70-1-dos-votos-validos-no-piaui-joel-26-5-576705"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://websocket.meionorte.com/politica/eleicoes-2026/nova-pesquisa-atlasintel-rafael-fonteles-tem-70-1-dos-votos-validos-no-piaui-joel-26-5-576705"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://websocket.meionorte.com/politica/eleicoes-2026/nova-pesquisa-atlasintel-rafael-fonteles-tem-70-1-dos-votos-validos-no-piaui-joel-26-5-576705"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T02:13:54Z"
     }
   ]
 }
