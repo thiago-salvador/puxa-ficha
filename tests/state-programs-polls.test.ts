@@ -36,21 +36,28 @@ test("all 27 UF charts default to an available stimulated scenario and SP preser
 
       const weekOfSep28 = groups[0].weeks.find(week => week.date === "2026-09-28")
       assert.ok(weekOfSep28)
-      assert.equal(weekOfSep28.polls.length, 1)
-      assert.equal(weekOfSep28.polls[0].id, "quaest-sp-01590-2026")
-      assert.equal(weekOfSep28.polls[0].instituto.value, "Quaest")
+      assert.equal(weekOfSep28.polls.length, 2)
+      assert.deepEqual(
+        weekOfSep28.polls
+          .map(({ id, instituto }) => [id, instituto.value] as const)
+          .sort(([a], [b]) => String(a).localeCompare(String(b))),
+        [
+          ["quaest-sp-01590-2026", "Quaest"],
+          ["vox-brasil-sp-01943-2026", "Vox Brasil"],
+        ],
+      )
       assert.equal(weekOfSep28.results.length, 6)
       assert.deepEqual(
         weekOfSep28.results
           .map(({ result, value }) => [result.candidateSlug, value] as const)
           .sort(([a], [b]) => String(a).localeCompare(String(b))),
         [
-          ["carlos-machado", 1],
-          ["haddad-gov-sp", 24],
-          ["izadora-dias", 1],
-          ["tarcisio-gov-sp", 44],
-          ["vera-lucia", 1],
-          ["vivian-mendes", 1],
+          ["carlos-machado", 0.85],
+          ["haddad-gov-sp", 30.1],
+          ["izadora-dias", 0.6],
+          ["tarcisio-gov-sp", 51.25],
+          ["vera-lucia", 0.75],
+          ["vivian-mendes", 0.6],
         ],
       )
     }
