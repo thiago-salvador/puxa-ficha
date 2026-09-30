@@ -44,4 +44,3 @@ export function FaseEleitoralSelo({ candidato, compact = false, className = "" }
     </div>
   )
 }
-
