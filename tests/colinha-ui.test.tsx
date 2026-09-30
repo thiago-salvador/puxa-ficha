@@ -55,12 +55,13 @@ test("patrimônio usa o formatador monetário compartilhado do site, não toLoca
 
 test("fluxo guiado: estado primeiro, um cargo por passo na ordem da urna, conferência no fim", () => {
   assert.match(builder, /Em que estado você vota\?/)
-  assert.match(builder, /const REVIEW_STEP = SLOT_ORDER\.length/)
-  assert.match(builder, /Voto \{step \+ 1\} de 6/)
+  assert.match(builder, /const activeSlots = useMemo\(/)
+  assert.match(builder, /const reviewIndex = activeSlots\.length/)
+  assert.match(builder, /Voto \{step \+ 1\} de \{activeSlots\.length\}/)
   assert.match(builder, /aria-current=\{current \? "step" : undefined\}/)
   assert.match(builder, /Pular este voto/)
   // escolher avança sozinho para o próximo voto vazio, ou para a conferência
-  assert.match(builder, /goTo\(after === -1 \? REVIEW_STEP : after\)/)
+  assert.match(builder, /goTo\(after === -1 \? reviewIndex : after\)/)
   // cada troca de passo leva o painel para a vista e o foco para o título
   assert.match(builder, /scrollIntoView/)
   assert.match(builder, /headingRef\.current\?\.focus/)
@@ -68,7 +69,7 @@ test("fluxo guiado: estado primeiro, um cargo por passo na ordem da urna, confer
 
 test("lista do cargo carrega sozinha ao entrar no passo e filtra enquanto digita, sem botão Buscar", () => {
   assert.match(builder, /action: "search", uf: state\.uf, slot, query: debouncedQuery\.trim\(\)/)
-  assert.match(builder, /\[mounted, state\.uf, slot, debouncedQuery, retry\]/)
+  assert.match(builder, /\[mounted, state\.uf, slot, state\.turno, debouncedQuery, retry, secondRoundActive\]/)
   assert.match(builder, /AbortController/)
   assert.doesNotMatch(builder, />Buscar<\/button>/)
   assert.match(builder, /Tentar de novo/)
@@ -80,7 +81,7 @@ test("candidaturas bloqueadas ficam escondidas por padrão, com opção de mostr
 })
 
 test("sem escolhas não há consulta de seleção, então o aviso de parcial não aparece antes da hora", () => {
-  assert.match(builder, /if \(!mounted \|\| !state\.uf \|\| !SLOT_ORDER\.some\(\(id\) => state\[id\]\)\) return/)
+  assert.match(builder, /if \(!mounted \|\| !state\.uf \|\| \(state\.turno === 2 && !round\) \|\| !SLOT_ORDER\.some\(\(id\) => state\[id\]\)\) return/)
 })
 
 test("compartilhar só aparece na conferência e com pelo menos um voto", () => {
@@ -101,7 +102,7 @@ test("guia de votação segue o Manual do Eleitor do TSE: ordem, dígitos e dois
   assert.deepEqual([...SLOT_ORDER], ["df", "de", "s1", "s2", "g", "p"])
   assert.deepEqual(SLOT_DIGITS, { df: 4, de: 5, s1: 3, s2: 3, g: 2, p: 2 })
   assert.match(VOTING_GUIDE_SOURCE_URL, /^https:\/\/www\.tse\.jus\.br\//)
-  assert.match(builder, /<ol[^>]*>\{\[\.\.\.SLOT_ORDER, "conferir" as const\]\.map/)
+  assert.match(builder, /<ol[^>]*>\{\[\.\.\.activeSlots, "conferir" as const\]\.map/)
   assert.match(builder, /não é a tela da urna/)
   assert.match(builder, /dois votos para senador precisam ser em candidatos diferentes/)
   assert.match(builder, /formatSlotDigits\(slot\)\} na urna/)
@@ -120,4 +121,10 @@ test("conferência avisa que celular não entra na cabine e põe a impressão em
 test("lista sem filtro explica a ordem rotativa com a letra que veio do servidor", () => {
   assert.match(builder, /setListStart\(payload\.listStart \?\? null\)/)
   assert.match(builder, /Agora a lista começa pela letra \{listStart\}/)
+})
+
+test("2º turno explica cargos já decididos durante a escolha e atualiza o hero", () => {
+  assert.match(builder, /secondRoundActive && round\?\.message && <p/)
+  assert.match(builder, /data-colinha-hero/)
+  assert.match(builder, /heroCopy\.textContent = `2º turno\./)
 })

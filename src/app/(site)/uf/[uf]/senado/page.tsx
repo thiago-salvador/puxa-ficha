@@ -16,6 +16,7 @@ import { StatePolls } from "@/components/StatePolls"
 import { SenadoRunningMates } from "@/components/SenadoRunningMates"
 import {
   getCandidatosComResumoResource,
+  getFasesEleitorais2026,
   getCandidatosComparaveisResource,
   getEstadoNome,
   getEstadoUFs,
@@ -59,11 +60,16 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
   const nome = getEstadoNome(uf)
   if (!nome) notFound()
 
-  const [resumosResource, comparaveisResource] = await Promise.all([
+  const [resumosResource, comparaveisResource, fasesEleitorais] = await Promise.all([
     getCandidatosComResumoResource("Senador", uf.toUpperCase()),
     getCandidatosComparaveisResource("Senador", uf.toUpperCase()),
+    getFasesEleitorais2026(),
   ])
-  const candidatos = resumosResource.data.map((r) => r.candidato)
+  const fasePorSlug = new Map(fasesEleitorais.map((fase) => [fase.slug, fase]))
+  const candidatos = resumosResource.data.map((r) => {
+    const fase = fasePorSlug.get(r.candidato.slug)
+    return fase ? { ...r.candidato, fase_eleitoral_2026: fase } : r.candidato
+  })
   const comparaveis = comparaveisResource.data
   const { processos, processosContagem, patrimonios, processSortCounts, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumosResource.data)
@@ -128,7 +134,7 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
       )}
       <div className="mx-auto max-w-7xl space-y-12 px-5 py-12 md:px-12">
         <SlashDivider />
-        <StatePolls office="Senador" polls={pollsResource.data} unavailable={pollsResource.unavailable} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} />
+        <StatePolls office="Senador" polls={pollsResource.data} unavailable={pollsResource.unavailable} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} resultadoEleitoralPublicado={candidatos.some((candidato) => Boolean(candidato.fase_eleitoral_2026))} />
       </div>
       {candidatos.length > 0 && comparaveis.length >= 2 && (
         <>

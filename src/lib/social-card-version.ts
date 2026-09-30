@@ -4,5 +4,5 @@
 // clique.
 export function socialCardVersionToken(cardVersion?: string | null): string {
   const ms = cardVersion ? Date.parse(cardVersion) : Number.NaN
-  return Number.isFinite(ms) ? Math.floor(ms / 1000).toString(36) : "2"
+  return Number.isFinite(ms) ? Math.floor(ms / 1000).toString(36) : "3"
 }

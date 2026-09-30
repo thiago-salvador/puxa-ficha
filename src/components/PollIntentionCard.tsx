@@ -22,8 +22,10 @@ function formatarMargem(pesquisa: PesquisaEleitoralDoCandidato): string {
 }
 
 // O Senado tem turno único; o selo "1º turno" sugeriria uma segunda votação.
-function turnoLabel(pesquisa: PesquisaEleitoralDoCandidato): string {
-  return pesquisa.office === "Senador" ? "Turno único" : `${pesquisa.cenario.turn}º turno`
+function turnoLabel(pesquisa: PesquisaEleitoralDoCandidato, resultadoEleitoralPublicado: boolean): string {
+  if (pesquisa.office === "Senador") return resultadoEleitoralPublicado ? "Turno único · pesquisa do 1º turno" : "Turno único"
+  if (pesquisa.cenario.turn === 1 && resultadoEleitoralPublicado) return "pesquisa do 1º turno"
+  return `${pesquisa.cenario.turn}º turno`
 }
 
 function modalidadeLabel(pesquisa: PesquisaEleitoralDoCandidato): string | null {
@@ -42,7 +44,7 @@ const NAV_BUTTON_CLASS =
  * pergunta espontânea), da mais recente para a mais antiga. Cada número vale
  * só para o cenário descrito ao lado dele.
  */
-export function PollIntentionCard({ pesquisas: todas }: { pesquisas: PesquisaEleitoralDoCandidato[] }) {
+export function PollIntentionCard({ pesquisas: todas, resultadoEleitoralPublicado = false }: { pesquisas: PesquisaEleitoralDoCandidato[]; resultadoEleitoralPublicado?: boolean }) {
   const pesquisas = ordenarPesquisasDoCard(todas)
   const rotulos = rotulosDosCenariosDoCard(pesquisas)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -70,7 +72,7 @@ export function PollIntentionCard({ pesquisas: todas }: { pesquisas: PesquisaEle
           data-pf-pesquisa-turno-label=""
           className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground"
         >
-          {turnoLabel(pesquisa)}
+          {turnoLabel(pesquisa, resultadoEleitoralPublicado)}
         </span>
       </div>
 

@@ -67,6 +67,7 @@ export function gerarArquivosFase(input: {
   predecessor: { version: string; name: string }
 }): ArquivosFase {
   const { plano, version } = input
+  if (plano.status !== "completo" || plano.pendentes.length > 0) throw new Error("plano incompleto: nenhuma candidatura pode ser marcada")
   assertVersion(version, "versão")
   assertVersion(input.predecessor.version, "predecessor")
   if (version <= input.predecessor.version) throw new Error("versão precisa ser posterior ao predecessor")

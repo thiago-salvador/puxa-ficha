@@ -28,6 +28,14 @@ test("fixture build aceita marcador VERCEL=0 usado no checkout local", () => {
   assert.doesNotThrow(() => visualFixtureBuildConfig({ CI: "true", VERCEL: "0", VERCEL_ENV: "local", PF_VISUAL_FIXTURE_BUILD: "1" }))
 })
 
+test("ensaio de fase admite somente o endpoint local descartável, nunca produção", () => {
+  const env = { CI: "true", PF_VISUAL_FIXTURE_BUILD: "1" }
+  assert.doesNotThrow(() => visualFixtureBuildConfig({ ...env, SUPABASE_URL: "http://127.0.0.1:54331" }))
+  for (const url of ["http://localhost:54331", "http://127.0.0.1:54332", "https://production.supabase.co"]) {
+    assert.throws(() => visualFixtureBuildConfig({ ...env, SUPABASE_URL: url }))
+  }
+})
+
 test("busca em interactions tem fixture local e não depende de produção", () => {
   const source = readFileSync("tests/visual/interactions.spec.ts", "utf8")
   assert.equal(/page\.route\("\*\*\/api\/search-index"/.test(source), true)
