@@ -989,6 +989,28 @@ export function filtrarMudancas(planos: PlanoRegistro[], existentes: LinhaExiste
 }
 
 /**
+ * Falha de consulta nunca rebaixa recibo: plano `erro` só é gravado para alvo
+ * sem recibo ou cujo último recibo já é `erro`. Nos demais, o recibo anterior
+ * (encontrado, vazio, indeterminado) fica intacto e a próxima execução tenta
+ * de novo; o SLA de 14 dias continua sendo cobrado pela conferência.
+ */
+export function descartarErroSobreRecibo(
+  planos: PlanoRegistro[],
+  existentes: LinhaExistentePreflight[],
+): { planos: PlanoRegistro[]; mantidos: string[] } {
+  const ultimo = ultimoReciboPorAlvo(existentes)
+  const mantidos: string[] = []
+  const saida = planos.filter((plano) => {
+    if (plano.resultado !== "erro") return true
+    const linha = ultimo.get(plano.slug)
+    if (!linha || linha.resultado === "erro") return true
+    mantidos.push(plano.slug)
+    return false
+  })
+  return { planos: saida, mantidos }
+}
+
+/**
  * Último recibo de cada alvo. Empate de `executado_em` fica com a linha que
  * vem depois (as linhas chegam por `id` ascendente).
  */
@@ -1362,12 +1384,16 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   // alvo sobrevive; alvo com prova contra ela vai a revisão humana, sem linha nova.
   let revisaoHumana: RevisaoHumana[] = []
   let existentesIniciais: LinhaExistentePreflight[] = []
+  let mantidosSemRebaixar = 0
   if (evidencia.coorte_atual && (opcoes.apply || opcoes.somenteMudancas)) {
     existentesIniciais = await linhasExistentesPreflight(planos.map((plano) => plano.slug))
     const candidatos = new Map(evidencia.lotes.flatMap((lote) => lote.candidatos).map((candidato) => [candidato.slug, candidato]))
     const preservado = preservarConfirmacaoEditorial(planos, candidatos, existentesIniciais)
     planos = preservado.planos
     revisaoHumana = preservado.revisaoHumana
+    const semRebaixar = descartarErroSobreRecibo(planos, existentesIniciais)
+    planos = semRebaixar.planos
+    mantidosSemRebaixar = semRebaixar.mantidos.length
   }
   const cnjsDosRecibos = new Map<string, string[]>()
   for (const linha of existentesIniciais) {
@@ -1458,6 +1484,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
       candidatos_pulados: preflight.equivalentes.length,
       candidatos_inseridos: preflight.pendentes.length,
+      mantidos_sem_rebaixar: mantidosSemRebaixar,
       lotes: evidencia.lotes.length,
       readback,
       revisao_humana: revisaoHumana,
