@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { AlertTriangle, ArrowLeft, ArrowRight, Check, Copy, ExternalLink, Printer, Search, Share2, Smartphone, X } from "lucide-react"
 import {
   buildColinhaUrl,
+  colinhaPhotoSrc,
   type ColinhaRoundInfo,
   describeSnapshotStatus,
   formatColinhaText,
@@ -33,8 +34,8 @@ const EMPTY_STATE: ColinhaState = { uf: null, df: null, de: null, s1: null, s2: 
 const EMPTY_CHOICES: Record<SlotId, ColinhaCandidate | null> = { df: null, de: null, s1: null, s2: null, g: null, p: null }
 /** Texto compilado da Lei 9.504/1997; o art. 91-A, parágrafo único, veda celular na cabine. */
 const CELL_PHONE_LAW_URL = "https://www.planalto.gov.br/ccivil_03/leis/l9504.htm"
-/** A API devolve no máximo 20 candidaturas por consulta. */
-const SEARCH_LIMIT = 20
+/** A caixa da lista tem a altura de 20 candidaturas; as demais aparecem com a barra de rolagem. */
+const VISIBLE_ROWS = 20
 
 function status(candidate: ColinhaCandidate) {
   return candidate.situacao_registro || "Situação não informada"
@@ -343,6 +344,7 @@ export function ColinhaBuilder() {
       const label = id === "conferir" ? "Conferir e compartilhar" : SLOT_LABELS[id]
       return <li key={id}><button type="button" onClick={() => goTo(index)} aria-current={current ? "step" : undefined} aria-label={`${index + 1}. ${label}${done ? ", escolhido" : ""}`} className="group block w-full py-2"><span className={`block h-1.5 rounded-full ${current ? "bg-foreground" : done ? "bg-emerald-600" : "bg-secondary group-hover:bg-muted-foreground/40"}`} /></button></li>
     })}</ol>
+    {slot && <button type="button" onClick={() => goTo(reviewIndex)} className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-foreground px-4 text-sm font-bold text-background lg:hidden">Conferir e compartilhar<ArrowRight aria-hidden="true" className="size-4" /></button>}
   </nav>
 
   const pair = slot ? otherSenator(slot) : null
@@ -366,7 +368,7 @@ export function ColinhaBuilder() {
     {pair && <p className="mt-3 text-sm text-muted-foreground">São dois votos para senador, e eles precisam ser em candidatos diferentes.</p>}
     {issue && <p className="mt-4 flex items-start gap-2 rounded-lg bg-amber-50 p-3 text-sm font-semibold text-amber-900"><AlertTriangle aria-hidden="true" className="mt-0.5 size-4 shrink-0" />{issue} Escolha outra candidatura abaixo.</p>}
     {choice && <div className="mt-5 flex flex-wrap items-center gap-3 rounded-xl border-2 border-foreground p-4">
-      <CandidatePhoto src={choice.foto_path} alt={imageAlt(choice)} name={choice.nome_urna} width={48} height={60} sizes="48px" className="size-12 shrink-0 rounded-md object-cover" initialsClassName="text-xs" />
+      <CandidatePhoto src={colinhaPhotoSrc(choice).src} unoptimized={colinhaPhotoSrc(choice).direct || undefined} alt={imageAlt(choice)} name={choice.nome_urna} width={48} height={60} sizes="48px" className="size-12 shrink-0 rounded-md object-cover" initialsClassName="text-xs" />
       <div className="min-w-[9rem] flex-1"><p className="text-xs font-bold uppercase tracking-[0.08em] text-emerald-700">Sua escolha</p><p className="truncate font-bold text-foreground">{choice.numero_urna} · {choice.nome_urna}</p><p className="text-sm text-muted-foreground">{choice.partido_sigla} · {status(choice)}</p>{renderSummary(choice)}</div>
       <button type="button" onClick={() => clearSlot(slot)} className="inline-flex min-h-11 items-center gap-1 px-2 text-xs font-bold text-muted-foreground underline underline-offset-2 hover:text-foreground"><X aria-hidden="true" className="size-3.5" />Remover</button>
     </div>}
@@ -376,18 +378,17 @@ export function ColinhaBuilder() {
       <input id="colinha-busca" type="search" value={query} onChange={(event) => setQuery(event.target.value)} maxLength={70} autoComplete="off" placeholder="Ex.: nome, 13, PT" className="min-h-11 min-w-0 flex-1 self-stretch bg-transparent text-base outline-none placeholder:text-muted-foreground" />
       <span aria-live="polite" className="shrink-0 text-xs text-muted-foreground">{loading ? "Consultando…" : ""}</span>
     </div>
-    {settled && !debouncedQuery.trim() && listStart && <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Agora a lista começa pela letra {listStart} e dá a volta no alfabeto. A letra inicial troca a cada {LIST_START_HOURS} horas, igual para todo mundo, para nenhuma candidatura ficar sempre no topo.{results.length === SEARCH_LIMIT ? " Mostramos 20 por vez: digite o nome ou o número para achar a sua." : ""}</p>}
+    {settled && !debouncedQuery.trim() && listStart && <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Agora a lista começa pela letra {listStart} e dá a volta no alfabeto. A letra inicial troca a cada {LIST_START_HOURS} horas, igual para todo mundo, para nenhuma candidatura ficar sempre no topo.{results.length > VISIBLE_ROWS ? " Mostramos 20 por vez: digite o nome ou o número para achar a sua." : ""}</p>}
     {unavailable && settled && <p className="mt-4 flex flex-wrap items-center gap-2 text-sm font-semibold text-amber-800"><AlertTriangle aria-hidden="true" className="size-4 shrink-0" />Fonte indisponível. A cobertura desta escolha aparece como parcial.<button type="button" onClick={() => setRetry((value) => value + 1)} className="min-h-6 underline underline-offset-2">Tentar de novo</button></p>}
     {!settled && results.length === 0 && <ul className="mt-4 space-y-2" aria-hidden="true">{[0, 1, 2, 3].map((index) => <li key={index} className="h-16 animate-pulse rounded-lg bg-secondary" />)}</ul>}
     {settled && !unavailable && visible.length === 0 && blocked.length === 0 && <p className="mt-4 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">{debouncedQuery.trim() ? `Nenhuma candidatura encontrada para “${debouncedQuery.trim()}”.` : "Nenhuma candidatura registrada para este cargo neste snapshot."}</p>}
-    {visible.length > 0 && <ul className={`mt-4 divide-y divide-border rounded-xl border border-border bg-card ${settled ? "" : "opacity-60"}`} aria-label={`Candidaturas para ${SLOT_LABELS[slot]}`}>{visible.map((candidate) => {
+    {visible.length > 0 && <ul key={resultsKey ?? ""} className={`mt-4 max-h-[81.25rem] divide-y divide-border overflow-y-auto rounded-xl scrollbar-visible border border-border bg-card ${settled ? "" : "opacity-60"}`} aria-label={`Candidaturas para ${SLOT_LABELS[slot]}`}>{visible.map((candidate) => {
       const isBlocked = isCandidateBlocked(candidate.situacao_registro)
       const duplicate = pair !== null && state[pair] === candidate.sq_candidato
       const selected = choice?.sq_candidato === candidate.sq_candidato
-      return <li key={candidate.sq_candidato} className="flex items-center gap-1 pr-2"><button type="button" disabled={isBlocked || duplicate} onClick={() => selectCandidate(candidate)} aria-pressed={selected} className={`flex min-h-16 min-w-0 flex-1 items-center gap-3 rounded-lg px-3 py-2 text-left hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent ${selected ? "bg-secondary" : ""}`}><CandidatePhoto src={candidate.foto_path} alt={imageAlt(candidate)} name={candidate.nome_urna} width={40} height={48} sizes="40px" className="size-10 shrink-0 rounded object-cover" initialsClassName="text-xs" /><span className="min-w-0 flex-1"><span className="block truncate font-bold text-foreground">{candidate.nome_urna}</span><span className="block text-xs text-muted-foreground">{candidate.partido_sigla} · {status(candidate)}{duplicate ? ` · já escolhido para ${SLOT_LABELS[pair!]}` : ""}</span></span><span className="shrink-0 font-heading text-xl tabular-nums text-foreground">{candidate.numero_urna}</span>{selected && <Check aria-hidden="true" className="size-5 shrink-0 text-emerald-600" />}</button>{candidate.slug && <Link href={`/candidato/${candidate.slug}`} target="_blank" className="grid size-11 shrink-0 place-items-center text-muted-foreground hover:text-foreground" aria-label={`Abrir ficha de ${candidate.nome_urna}`}><ExternalLink aria-hidden="true" className="size-4" /></Link>}</li>
+      return <li key={candidate.sq_candidato} className="flex items-center gap-1 pr-2"><button type="button" disabled={isBlocked || duplicate} onClick={() => selectCandidate(candidate)} aria-pressed={selected} className={`flex min-h-16 min-w-0 flex-1 items-center gap-3 rounded-lg px-3 py-2 text-left hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent ${selected ? "bg-secondary" : ""}`}><CandidatePhoto src={colinhaPhotoSrc(candidate).src} unoptimized={colinhaPhotoSrc(candidate).direct || undefined} alt={imageAlt(candidate)} name={candidate.nome_urna} width={40} height={48} sizes="40px" className="size-10 shrink-0 rounded object-cover" initialsClassName="text-xs" /><span className="min-w-0 flex-1"><span className="block truncate font-bold text-foreground">{candidate.nome_urna}</span><span className="block text-xs text-muted-foreground">{candidate.partido_sigla} · {status(candidate)}{duplicate ? ` · já escolhido para ${SLOT_LABELS[pair!]}` : ""}</span></span><span className="shrink-0 font-heading text-xl tabular-nums text-foreground">{candidate.numero_urna}</span>{selected && <Check aria-hidden="true" className="size-5 shrink-0 text-emerald-600" />}</button>{candidate.slug && <Link href={`/candidato/${candidate.slug}`} target="_blank" className="grid size-11 shrink-0 place-items-center text-muted-foreground hover:text-foreground" aria-label={`Abrir ficha de ${candidate.nome_urna}`}><ExternalLink aria-hidden="true" className="size-4" /></Link>}</li>
     })}</ul>}
     {settled && blocked.length > 0 && <button type="button" onClick={() => setShowBlocked((value) => !value)} className="mt-3 min-h-11 text-sm font-semibold text-muted-foreground underline underline-offset-2 hover:text-foreground">{showBlocked ? "Esconder" : "Mostrar"} {blocked.length} {blocked.length === 1 ? "candidatura" : "candidaturas"} com registro indeferido, renúncia ou cassação</button>}
-    {settled && debouncedQuery.trim() && results.length === SEARCH_LIMIT && <p className="mt-3 text-xs text-muted-foreground">Mostrando as 20 primeiras em ordem alfabética. Refine o filtro se não encontrar.</p>}
   </div>
 
   // Resumo lateral no desktop: cada linha volta ao passo daquele voto.
@@ -410,7 +411,7 @@ export function ColinhaBuilder() {
       const picked = choices[id]
       return <li key={id} className="flex items-center gap-3 p-4">
         <span className="w-6 shrink-0 font-heading text-lg tabular-nums text-muted-foreground">{index + 1}</span>
-        {picked ? <CandidatePhoto src={picked.foto_path} alt={imageAlt(picked)} name={picked.nome_urna} width={40} height={48} sizes="40px" className="size-10 shrink-0 rounded object-cover" initialsClassName="text-xs" /> : <span className="size-10 shrink-0 rounded border border-dashed border-border" aria-hidden="true" />}
+        {picked ? <CandidatePhoto src={colinhaPhotoSrc(picked).src} unoptimized={colinhaPhotoSrc(picked).direct || undefined} alt={imageAlt(picked)} name={picked.nome_urna} width={40} height={48} sizes="40px" className="size-10 shrink-0 rounded object-cover" initialsClassName="text-xs" /> : <span className="size-10 shrink-0 rounded border border-dashed border-border" aria-hidden="true" />}
         <div className="min-w-0 flex-1"><p className="text-xs font-semibold text-muted-foreground">{SLOT_LABELS[id]} · {formatSlotDigits(id)}</p>{picked ? <><p className="truncate font-bold text-foreground">{picked.nome_urna}</p><p className="text-xs text-muted-foreground">{picked.partido_sigla} · {status(picked)}</p>{renderSummary(picked)}</> : <p className="font-semibold text-muted-foreground">{issues[id] ?? "Sem escolha"}</p>}</div>
         {picked && <span className="shrink-0 font-heading text-2xl tabular-nums text-foreground">{picked.numero_urna}</span>}
         <button type="button" onClick={() => goTo(index)} aria-label={`${picked ? "Trocar" : "Escolher"} candidato para ${SLOT_LABELS[id]}`} className="min-h-11 shrink-0 px-1 text-xs font-bold text-muted-foreground underline underline-offset-2 hover:text-foreground">{picked ? "Trocar" : "Escolher"}</button>

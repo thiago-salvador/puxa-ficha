@@ -5,6 +5,8 @@ import { NoticePanel } from "./NoticePanel"
 import { SectionLabel, SectionTitle } from "./SectionHeader"
 import { TrackedExternalSourceLink } from "./TrackedExternalSourceLink"
 import { formatBRL, formatDate, safeHref } from "@/lib/utils"
+import type { BoxCardModel } from "@/lib/box-card-model"
+import { BoxShareButton } from "@/components/BoxShareButton"
 import { DESPESAS_ANO_INICIAL_DA_SERIE, type DespesasLeituraStatus } from "@/lib/financiamento-despesas-contrato"
 import type { FinanciamentoDespesasPublico } from "@/lib/public-profile-dto"
 
@@ -273,11 +275,13 @@ export function DespesasCampanhaSection({
   despesas,
   status,
   anosComReceitas = [],
+  boxCardModel,
 }: {
   despesas?: FinanciamentoDespesasPublico[] | null
   status?: DespesasLeituraStatus
   /** Anos em que a ficha tem receitas; os anteriores a 2018 ganham a linha de cobertura. */
   anosComReceitas?: number[]
+  boxCardModel?: BoxCardModel | null
 }) {
   if (status !== "ok") return null
   const linhas = despesasVisiveis(despesas, status)
@@ -286,9 +290,21 @@ export function DespesasCampanhaSection({
   if (linhas.length === 0) return null
 
   return (
-    <div data-pf-despesas-secao>
-      <SectionLabel>Despesas de campanha</SectionLabel>
-      <SectionTitle>Gastos declarados pela campanha</SectionTitle>
+    <div data-pf-despesas-secao id={boxCardModel ? `box-${boxCardModel.kind}` : undefined} className="scroll-mt-32">
+      {boxCardModel ? (
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <SectionLabel>Despesas de campanha</SectionLabel>
+            <SectionTitle>Gastos declarados pela campanha</SectionTitle>
+          </div>
+          <BoxShareButton model={boxCardModel} />
+        </div>
+      ) : (
+        <>
+          <SectionLabel>Despesas de campanha</SectionLabel>
+          <SectionTitle>Gastos declarados pela campanha</SectionTitle>
+        </>
+      )}
       {linhas.length > 0 && (
         <div className="mt-6 space-y-6">
           {linhas.map((row) => (

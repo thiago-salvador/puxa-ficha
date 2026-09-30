@@ -1,4 +1,5 @@
 "use client"
+// cspell:words partidario
 
 import { EmptyState, getTrajetoriaEmptyState } from "./EmptyState"
 import { NoticePanel } from "./NoticePanel"
@@ -11,6 +12,8 @@ import { countPartySwitches, formatPartyTransitionLabel, hasSameYearPartyReversa
 import { isUncertainParty, normalizePartySigla } from "@/lib/party-utils"
 import { prepareHistoricoPoliticoPublicDisplayList } from "@/lib/trajetoria-public-display"
 import type { SuggestAction } from "./candidato-profile-section-types"
+import type { BoxCardModel } from "@/lib/box-card-model"
+import { BoxShareButton } from "@/components/BoxShareButton"
 
 function formatYearList(years: number[]) {
   if (years.length <= 2) return years.join(" e ")
@@ -18,6 +21,7 @@ function formatYearList(years: number[]) {
 }
 
 interface TrajectoryTabSectionProps {
+  boxCards?: Partial<Record<"cargos-mandatos" | "historico-partidario", BoxCardModel | null>>
   historico: HistoricoPolitico[]
   mudancas: MudancaPartido[]
   historicoDescartado: number
@@ -38,6 +42,7 @@ interface TrajectoryTabSectionProps {
   }
 }
 export function TrajectoryTabSection({
+  boxCards,
   historico,
   mudancas,
   historicoDescartado,
@@ -74,6 +79,8 @@ export function TrajectoryTabSection({
   // Phase 0 containment: block sections with structural contradictions until
   // editorial curation lands.
   const partyTimelineBlocked = hasSameYearPartyReversal(mudancas)
+  const careerBox = boxCards?.["cargos-mandatos"] ?? null
+  const partyBox = partyTimelineBlocked ? null : boxCards?.["historico-partidario"] ?? null
 
   return (
     <div className="space-y-12">
@@ -125,9 +132,21 @@ export function TrajectoryTabSection({
       )}
 
       {historico.length > 0 && (
-        <div data-pf-trajetoria-count={historicoOrdenado.length}>
-          <SectionLabel>Trajetória política</SectionLabel>
-          <SectionTitle>Cargos e mandatos</SectionTitle>
+        <div data-pf-trajetoria-count={historicoOrdenado.length} id={careerBox ? `box-${careerBox.kind}` : undefined} className="scroll-mt-32">
+          {careerBox ? (
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <SectionLabel>Trajetória política</SectionLabel>
+                <SectionTitle>Cargos e mandatos</SectionTitle>
+              </div>
+              <BoxShareButton model={careerBox} />
+            </div>
+          ) : (
+            <>
+              <SectionLabel>Trajetória política</SectionLabel>
+              <SectionTitle>Cargos e mandatos</SectionTitle>
+            </>
+          )}
           <div className="mt-4">
             <DataFreshnessNotice info={freshness?.historico_politico} />
           </div>
@@ -192,19 +211,41 @@ export function TrajectoryTabSection({
       )}
 
       {shouldShowPartySection && !partyTimelineBlocked && (
-        <div data-pf-partidos-count={partySwitchesVerified ? mudancasEfetivas : "nao_coletado"}>
-          <SectionLabel>Histórico partidário</SectionLabel>
-          <SectionTitle>
-            {!partySwitchesVerified
-              ? "Trocas de partido não verificadas"
-              : mudancasEfetivas === 0
-              ? partyAttemptInconclusive
-                ? "Partido declarado na candidatura"
-                : "Partidos confirmados"
-              : mudancasEfetivas === 1
-                ? "1 troca de partido"
-                : `${mudancasEfetivas} trocas de partido`}
-          </SectionTitle>
+        <div data-pf-partidos-count={partySwitchesVerified ? mudancasEfetivas : "nao_coletado"} id={partyBox ? `box-${partyBox.kind}` : undefined} className="scroll-mt-32">
+          {partyBox ? (
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <SectionLabel>Histórico partidário</SectionLabel>
+                <SectionTitle>
+                  {!partySwitchesVerified
+                    ? "Trocas de partido não verificadas"
+                    : mudancasEfetivas === 0
+                    ? partyAttemptInconclusive
+                      ? "Partido declarado na candidatura"
+                      : "Partidos confirmados"
+                    : mudancasEfetivas === 1
+                      ? "1 troca de partido"
+                      : `${mudancasEfetivas} trocas de partido`}
+                </SectionTitle>
+              </div>
+              <BoxShareButton model={partyBox} />
+            </div>
+          ) : (
+            <>
+              <SectionLabel>Histórico partidário</SectionLabel>
+              <SectionTitle>
+                {!partySwitchesVerified
+                  ? "Trocas de partido não verificadas"
+                  : mudancasEfetivas === 0
+                  ? partyAttemptInconclusive
+                    ? "Partido declarado na candidatura"
+                    : "Partidos confirmados"
+                  : mudancasEfetivas === 1
+                    ? "1 troca de partido"
+                    : `${mudancasEfetivas} trocas de partido`}
+              </SectionTitle>
+            </>
+          )}
           {mudancas.length > 0 ? (
             <>
               <div className="mt-4">
