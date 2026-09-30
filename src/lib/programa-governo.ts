@@ -270,6 +270,7 @@ export type ProgramaGovernoManifestoPublico = {
   resumo?: ProgramaGovernoResumo
   paginas?: number
   documentos?: ProgramaGovernoDocumentoPublico[]
+  sourceSha256?: string
   reviewedAt?: string
 }
 
@@ -1096,6 +1097,7 @@ export function toProgramaGovernoManifestoPublico(value: unknown): ProgramaGover
     paginas: value.extracao?.paginas
       ?? value.documentos!.reduce((total, documento) => total + documento.extracao.paginas, 0),
     ...(documentos ? { documentos } : {}),
+    ...(value.extracao ? { sourceSha256: value.extracao.sourceSha256 } : {}),
     reviewedAt: value.revisao.reviewedAt,
   }
 }
