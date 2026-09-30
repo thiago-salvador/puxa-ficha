@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, type FocusEvent, type KeyboardEvent } from "react"
 import type { QuizPergunta, RespostaLikert } from "@/data/quiz/perguntas"
-import { cn } from "@/lib/utils"
+import { cn, safeHref } from "@/lib/utils"
 
 const OPTIONS: { value: RespostaLikert; label: string }[] = [
   { value: "concordo_total", label: "Concordo totalmente" },
@@ -106,7 +106,7 @@ export function QuizQuestion({ pergunta, initialAnswer, onSubmit, onBack, reduce
           <p className="mt-2 text-xs text-muted-foreground">
             Fonte:{" "}
             <a
-              href={pergunta.o_que_e.fonte.url}
+              href={safeHref(pergunta.o_que_e.fonte.url) ?? undefined}
               target="_blank"
               rel="noopener noreferrer"
               className="underline underline-offset-2 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

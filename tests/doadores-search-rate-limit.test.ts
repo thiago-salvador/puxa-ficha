@@ -9,7 +9,7 @@ import {
 
 function headersComIp(ip: string): Pick<Headers, "get"> {
   return {
-    get: (name: string) => (name.toLowerCase() === "x-vercel-forwarded-for" ? ip : null),
+    get: (name: string) => (["x-real-ip", "x-vercel-forwarded-for"].includes(name.toLowerCase()) ? ip : null),
   }
 }
 

@@ -101,13 +101,30 @@ describe("helper de acesso ao preview", () => {
     assert.equal(PREVIEW_COOKIE_NAME, CANONICAL_PREVIEW_COOKIE_NAME)
   })
 
-  it("mantém o fallback de conveniência só fora da Vercel", async () => {
-    assert.equal(resolvePreviewToken({}), "local-preview")
-    assert.equal(
-      await hasPreviewAccess({ cookieToken: await cookieDeToken("local-preview") }, {}),
-      true,
-    )
-    assert.equal(await hasPreviewAccess({ cookieToken: "qualquer-coisa" }, {}), false)
+  it("mantém o fallback só em development ou test fora da Vercel", async () => {
+    for (const NODE_ENV of ["development", "test"]) {
+      const env = { NODE_ENV }
+      assert.equal(resolvePreviewToken(env), "local-preview")
+      assert.equal(
+        await hasPreviewAccess({ cookieToken: await cookieDeToken("local-preview") }, env),
+        true,
+      )
+      assert.equal(await hasPreviewAccess({ cookieToken: "qualquer-coisa" }, env), false)
+      assert.equal(resolvePreviewToken({ ...env, VERCEL: "1" }), null)
+    }
+  })
+
+  it("recusa o fallback em produção ou runtime desconhecido sem Vercel", async () => {
+    for (const env of [{ NODE_ENV: "production" }, {}, { NODE_ENV: "staging" }]) {
+      assert.equal(resolvePreviewToken(env), null)
+      assert.equal(await hasPreviewAccess({ queryToken: "local-preview" }, env), false)
+      assert.equal(
+        await hasPreviewAccess({ cookieToken: await cookieDeToken("local-preview") }, env),
+        false,
+      )
+      assert.equal(resolvePreviewToken({ ...env, PF_PREVIEW_TOKEN: "  " }), null)
+      assert.equal(resolvePreviewToken({ ...env, PF_PREVIEW_TOKEN: TOKEN_FORTE }), TOKEN_FORTE)
+    }
   })
 })
 

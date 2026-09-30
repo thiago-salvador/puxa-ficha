@@ -1,3 +1,4 @@
+import { safeHref } from "@/lib/utils"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import {
@@ -470,7 +471,7 @@ export async function CandidatoFichaView({
                 ) : (
                   `${ficha.chapa_2026.vice_nome_urna} (${ficha.chapa_2026.vice_partido_sigla})`
                 )}
-                {viceOfficialStatus && <> (<a href={viceOfficialStatus.source_url} target="_blank" rel="noopener noreferrer"
+                {viceOfficialStatus && <> (<a href={safeHref(viceOfficialStatus.source_url) ?? undefined} target="_blank" rel="noopener noreferrer"
                   className="underline underline-offset-4" title={`Fonte consultada em ${viceOfficialStatus.checked_at.slice(0, 10)}`}>
                   {viceOfficialStatus.label}
                 </a>)</>}

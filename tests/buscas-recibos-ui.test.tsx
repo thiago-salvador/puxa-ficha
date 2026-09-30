@@ -93,8 +93,11 @@ describe("aba Checagens com recibo", () => {
 describe("card de Falas com recibo", () => {
   it("mostra busca vazia só com recibo válido e sem aspa", () => {
     const html = renderToStaticMarkup(<CandidateDebatesBentoCard candidateSlug="leonardo-avalanche" candidateId="11aeff6f-ce8d-45bb-a4d1-a798b160e2fe" />)
-    assert.match(html, /data-pf-falas-busca-vazia="2026-09-24T08:33:51.000Z"/)
-    assert.match(html, /Busca feita em 24\/09\/2026, cobrindo 10\/09\/2026 a 24\/09\/2026: nenhuma fala com aspas conferida para esta ficha\./)
+    const leonardoReceipt = falasReceipts.receipts.find((receipt) => receipt.candidate_slug === "leonardo-avalanche")
+    assert.ok(leonardoReceipt)
+    assert.ok(html.includes(`data-pf-falas-busca-vazia="${leonardoReceipt.searched_at}"`))
+    const janela = `cobrindo ${formatarDataBusca(leonardoReceipt.window_from)} a ${formatarDataBusca(leonardoReceipt.window_to)}`
+    assert.ok(html.includes(`Busca feita em ${formatarDataBusca(leonardoReceipt.searched_at)}, ${janela}: nenhuma fala com aspas conferida para esta ficha.`))
     assert.equal(hasCandidateFalasCard("leonardo-avalanche", "11aeff6f-ce8d-45bb-a4d1-a798b160e2fe"), true)
   })
 
@@ -131,6 +134,10 @@ describe("auditoria da rodada confere found contra aspa publicada", () => {
     assert.deepEqual(exported.receipts.map((receipt) => [receipt.candidate_slug, receipt.result, receipt.searched_at]), [
       ["ana-silva", "com_fala", "2026-09-20T10:00:00.000Z"],
       ["bia-souza", "sem_fala", "2026-09-20T10:00:00.000Z"],
+    ])
+    assert.deepEqual(exported.receipts.map((receipt) => [receipt.candidate_slug, receipt.window_from, receipt.window_to]), [
+      ["ana-silva", "2026-09-06", "2026-09-19"],
+      ["bia-souza", "2026-09-06", "2026-09-19"],
     ])
   })
 
