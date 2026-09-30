@@ -159,7 +159,7 @@ export class ClienteFontesOficiais {
 
   constructor(deps: Partial<DependenciasCliente> = {}) {
     this.deps = {
-      fetch: deps.fetch ?? ((url, init) => fetch(url, init)),
+      fetch: deps.fetch ?? ((url, init) => fetch(url, { ...init, signal: init.signal })),
       dormir: deps.dormir ?? ((ms) => new Promise((resolve) => setTimeout(resolve, ms))),
       agora: deps.agora ?? Date.now,
       aleatorio: deps.aleatorio ?? Math.random,
