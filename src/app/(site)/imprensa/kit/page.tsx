@@ -106,7 +106,21 @@ export default async function ImprensaKit() {
           </Section>
 
           <Section index={4} id="imagens" title="Imagens e arquivos">
-            <p className={styles.intro}>Capturas da Sala e uma versão em PDF de uma página, gerada a partir da própria Sala. A página ao vivo pode mostrar dados mais recentes.</p>
+            <p className={styles.intro}>O media kit do projeto, capturas da Sala e uma versão em PDF de uma página, gerada a partir da própria Sala. A página ao vivo pode mostrar dados mais recentes.</p>
+            <div className={styles.mediaKit}>
+              <a className={styles.mediaKitPreview} href="/media-kit" target="_blank" rel="noopener noreferrer" aria-label="Abrir o media kit em PDF">
+                <Image src="/imprensa/media-kit-paginas.jpg" width={1888} height={458} sizes="(max-width: 900px) 100vw, 66vw" alt="As dez páginas do media kit do Puxa Ficha em miniatura" loading="lazy" />
+              </a>
+              <div className={styles.mediaKitText}>
+                <strong>Media kit · PDF</strong>
+                <span>Apresentação do projeto em 10 páginas</span>
+                <p>O que é, para quem, funcionalidades, números, como os dados são conferidos e quem faz.</p>
+                <div className={styles.mediaKitLinks}>
+                  <a href="/media-kit" target="_blank" rel="noopener noreferrer">Abrir ↗</a>
+                  <a href="/imprensa/media-kit.pdf" download="Puxa-Ficha-Media-Kit-2026.pdf">Baixar PDF ↗</a>
+                </div>
+              </div>
+            </div>
             <div className={styles.assetGrid}>
               <a className={styles.asset} href="/imprensa/sala-desktop.png" download>
                 <Image src="/imprensa/sala-desktop.png" width={1440} height={2613} sizes="(max-width: 800px) 100vw, 60vw" alt="Prévia da Sala de imprensa no desktop" loading="lazy" />
