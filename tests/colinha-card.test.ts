@@ -61,3 +61,12 @@ test("PNG feed e story são gerados com a foto disponível", async () => {
     assert.equal(response.headers.get("x-robots-tag"), "noindex, nofollow, noarchive")
   }
 })
+
+test("cartão segue o design system do site: Inter e Anton, sem Arial nem paleta própria", () => {
+  const choices = Object.fromEntries(SLOT_ORDER.map((slot) => [slot, null])) as Record<typeof SLOT_ORDER[number], ColinhaCandidate | null>
+  choices.df = candidate()
+  const tree = JSON.stringify(buildColinhaCardJsx(choices, "SP", "https://puxaficha.com.br/colinha?uf=SP&df=101", "feed", new Date("2026-09-22T12:00:00-03:00")))
+  assert.match(tree, /"fontFamily":"Inter"/)
+  assert.match(tree, /"fontFamily":"Anton"/)
+  assert.doesNotMatch(tree, /Arial|#f7f5ef|#d14b2f/i)
+})
