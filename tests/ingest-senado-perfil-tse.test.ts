@@ -49,6 +49,7 @@ function listaEmExercicio(codigos: string[]) {
 async function perfilGravado(
   atual: Record<string, unknown>,
   listaAtual: ListaAtual = ["9999", ...OUTROS_80],
+  perfil: unknown = PERFIL_SENADO,
 ): Promise<{ patch: Record<string, unknown>; errors: string[] }> {
   const previousFetch = globalThis.fetch
   const previousUrl = process.env.SUPABASE_URL
@@ -66,7 +67,7 @@ async function perfilGravado(
         if (listaAtual === "falha") return new Response("indisponivel", { status: 503 })
         return response(listaEmExercicio(listaAtual))
       }
-      if (url.pathname.endsWith("/9999.json")) return response(PERFIL_SENADO)
+      if (url.pathname.endsWith("/9999.json")) return response(perfil)
       if (url.pathname.endsWith("/9999/mandatos.json")) return response({})
       if (url.pathname.endsWith("/9999/autorias.json")) return response({})
       throw new Error(`Unexpected Senate request: ${url.pathname}`)
@@ -193,4 +194,20 @@ test("Senado: lista em exercício indisponível não grava nem limpa cargo_atual
   assert.deepEqual(errors, [])
   assert.equal("cargo_atual" in patch, false)
   assert.equal("partido_sigla" in patch, false)
+})
+
+test("Senado: nome parlamentar antigo com nome completo só na identificação não quebra a identidade", async () => {
+  const { IdentificacaoParlamentar, DadosBasicosParlamentar } = PERFIL_SENADO.DetalheParlamentar.Parlamentar
+  const { NomeCompletoParlamentar, ...basicosSemNome } = DadosBasicosParlamentar
+  const perfil = {
+    DetalheParlamentar: {
+      Parlamentar: {
+        IdentificacaoParlamentar: { ...IdentificacaoParlamentar, NomeParlamentar: "Parlamentar Gomes", NomeCompletoParlamentar },
+        DadosBasicosParlamentar: basicosSemNome,
+      },
+    },
+  }
+  const { patch, errors } = await perfilGravado({ foto_url: null, sq_candidato_2026: "999999999472" }, undefined, perfil)
+  assert.deepEqual(errors, [])
+  assert.equal(patch.cargo_atual, "Senador(a)")
 })

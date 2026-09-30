@@ -157,6 +157,10 @@ async function ingestPerfil(
   const dadosBasicos = parlamentar.DadosBasicosParlamentar as Record<string, unknown> | undefined
   const observedNames = [
     ident?.NomeParlamentar ? String(ident.NomeParlamentar) : null,
+    // A API publica o nome completo em IdentificacaoParlamentar; em alguns
+    // perfis DadosBasicosParlamentar vem sem ele (ex.: nome parlamentar de
+    // mandato anterior diferente do nome de urna atual).
+    ident?.NomeCompletoParlamentar ? String(ident.NomeCompletoParlamentar) : null,
     dadosBasicos?.NomeCompletoParlamentar ? String(dadosBasicos.NomeCompletoParlamentar) : null,
   ]
 
