@@ -5,56 +5,56 @@ import { parse } from "yaml"
 
 import { argumentosErro, slugsDoSnapshot } from "../scripts/registrar-erro-coleta-processos"
 import freshnessCatalog from "../scripts/data/data-freshness-sources.json"
+import { TIPOS_FALHA_COLETA } from "../scripts/lib/diagnostico-coleta-processos"
 
 const source = readFileSync(".github/workflows/processos-coleta-judicial.yml", "utf8")
 type Step = { id?: string; name?: string; run?: string; uses?: string; env?: Record<string, string>; "continue-on-error"?: boolean }
 const workflow = parse(source) as {
-  on: { schedule: Array<{ cron: string }>; workflow_dispatch: { inputs: Record<string, { default?: unknown }> } }
+  on: { schedule: Array<{ cron: string }>; workflow_dispatch: { inputs?: Record<string, unknown> } | null }
   permissions: Record<string, string>
-  jobs: { coletar: { steps: Step[] } }
+  jobs: Record<string, { steps: Step[] }>
 }
-const steps = workflow.jobs.coletar.steps
+const steps = workflow.jobs.conferir.steps
 
 describe("workflow agendado da coleta judicial", () => {
-  it("roda duas vezes por semana, antes de qualquer recibo passar de 14 dias", () => {
-    assert.deepEqual(workflow.on.schedule.map((item) => item.cron), ["17 9 * * 1,4"])
-    // Maior intervalo entre execuções (quinta -> segunda) = 4 dias; margem 5 cobre com folga.
-    assert.equal(workflow.on.workflow_dispatch.inputs.aplicar.default, false)
+  it("roda depois da coleta local, sem inputs de escrita", () => {
+    // Coleta local segunda e quinta 09:17 UTC; a conferência vem 3 h depois.
+    assert.deepEqual(workflow.on.schedule.map((item) => item.cron), ["17 12 * * 1,4"])
+    assert.equal(workflow.on.workflow_dispatch?.inputs, undefined)
     assert.deepEqual(workflow.permissions, { contents: "read" })
+    assert.deepEqual(Object.keys(workflow.jobs), ["conferir"])
   })
 
-  it("coleta em dry-run de escrita e só grava recibos pelo aplicador auditado", () => {
-    const coleta = steps.find((step) => step.id === "coleta")?.run ?? ""
-    assert.match(coleta, /PF_DRY_RUN=1 node --import tsx scripts\/curadoria-processos-lote\.ts/)
-    assert.match(coleta, /--coorte-atual --dry-run "\$@"/)
-    assert.match(coleta, /--margem-dias="\$MARGEM_DIAS"/)
-    assert.doesNotMatch(coleta, /\$extra/)
-    assert.match(coleta, /--tipo="\$tipo" --modo="\$modo"/)
-    assert.doesNotMatch(coleta, /grep -m1/)
-    assert.match(coleta, /for modo in vencendo sem-recibo/)
-    assert.match(coleta, /aplicar-evidencia-processos-curadoria\.ts --apply/)
-    assert.match(coleta, /registrar-erro-coleta-processos\.ts --apply/)
+  it("não consulta o DJEN nem roda a coleta, o aplicador ou o registrador de erro", () => {
+    const comandos = steps.map((step) => step.run ?? "").join("\n")
+    for (const proibido of [
+      /curadoria-processos-lote/,
+      /aplicar-evidencia-processos-curadoria/,
+      /registrar-erro-coleta-processos/,
+      /resumir-diagnostico-coleta-processos/,
+      /comunicaapi|DJEN|DataJud|datajud/,
+      /--apply/,
+    ]) assert.doesNotMatch(comandos, proibido)
+    // Só a URL do banco para ler; nenhuma credencial de escrita pela API.
+    assert.doesNotMatch(source, /SUPABASE_SERVICE_ROLE_KEY|secrets\.SUPABASE_URL/)
     assert.doesNotMatch(source, /from\("processos"\)|insert into (public\.)?processos/i)
+    assert.equal(steps.some((step) => String(step.uses ?? "").includes("upload-artifact")), false)
   })
 
-  it("confere recibos antes e depois com o checker de 14 dias", () => {
-    for (const id of ["antes", "depois"]) {
-      const run = steps.find((step) => step.id === id)?.run ?? ""
-      assert.match(run, /processos-coverage-snapshot\.sql/)
-      assert.match(run, /check-processos-receipts\.ts/)
-    }
+  it("mantém a conferência de 14 dias como guarda que reprova", () => {
+    const recibos = steps.find((step) => step.id === "recibos")
+    assert.ok(recibos)
+    assert.notEqual(recibos["continue-on-error"], true)
+    assert.match(recibos.run ?? "", /set -euo pipefail/)
+    assert.match(recibos.run ?? "", /processos-coverage-snapshot\.sql/)
+    assert.match(recibos.run ?? "", /check-processos-receipts\.ts/)
   })
 
-  it("compartilha o grupo do ingest sem cancelar execução em curso", () => {
+  it("compartilha o grupo do ingest sem cancelar execução em curso e aponta o agente local", () => {
     const bruto = parse(source) as { concurrency: { group: string; "cancel-in-progress": boolean } }
     assert.deepEqual(bruto.concurrency, { group: "ingest-pipeline", "cancel-in-progress": false })
-    assert.match(source, /backup pré-escrita que o aplicador grava no runner é descartado/)
-  })
-
-  it("não publica evidência nominal em artefato do repositório público", () => {
-    assert.equal(steps.some((step) => String(step.uses ?? "").includes("upload-artifact")), false)
-    const coleta = steps.find((step) => step.id === "coleta")?.run ?? ""
-    assert.match(coleta, /> "\$RUNNER_TEMP\/coleta-\$modo\.log" 2>&1/)
+    assert.match(source, /scripts\/processos-local\//)
+    assert.match(source, /docs\/operations\/processos-local\.md/)
   })
 
   it("catálogo de frescor trata a busca judicial com o mesmo SLA do site", () => {
@@ -84,5 +84,12 @@ describe("recibo de erro quando a coleta cai", () => {
     assert.match(args.join(" "), /tipo_falha: limite_de_taxa/)
     assert.throws(() => argumentosErro("x", "HTTP 503 qualquer coisa", "vencendo"), /--tipo invalido/)
     assert.throws(() => argumentosErro("x", "outro", "vencendo; drop"), /--modo invalido/)
+  })
+
+  it("aceita todo tipo que o classificador da coleta pode emitir", () => {
+    for (const tipo of TIPOS_FALHA_COLETA) {
+      const args = argumentosErro("candidata-teste", tipo, "vencendo", new Date("2026-09-25T12:00:00Z"))
+      assert.match(args.join(" "), new RegExp(`tipo_falha: ${tipo};`))
+    }
   })
 })

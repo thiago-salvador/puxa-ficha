@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Agente launchd da coleta judicial por candidato. Modelo: instalar-agente.sh troca
+  os marcadores (SCRIPT, REPO, WEEKDAY_A/B, HOUR_A/B, MINUTE_A/B, LOG) e grava o
+  resultado em ~/Library/LaunchAgents/.
+  Horário: segunda e quinta 09:17 UTC (06:17 em Brasília), convertido para o fuso
+  local na instalação.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>br.com.puxaficha.processos-local</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__SCRIPT__</string>
+    <string>__REPO__</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Weekday</key>
+      <integer>__WEEKDAY_A__</integer>
+      <key>Hour</key>
+      <integer>__HOUR_A__</integer>
+      <key>Minute</key>
+      <integer>__MINUTE_A__</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key>
+      <integer>__WEEKDAY_B__</integer>
+      <key>Hour</key>
+      <integer>__HOUR_B__</integer>
+      <key>Minute</key>
+      <integer>__MINUTE_B__</integer>
+    </dict>
+  </array>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>ProcessType</key>
+  <string>Background</string>
+  <key>StandardOutPath</key>
+  <string>__LOG__</string>
+  <key>StandardErrorPath</key>
+  <string>__LOG__</string>
+</dict>
+</plist>

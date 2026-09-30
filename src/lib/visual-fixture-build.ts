@@ -8,7 +8,8 @@ export function visualFixtureBuildConfig(env: Readonly<Record<string, string | u
     throw new Error("PF_VISUAL_FIXTURE_BUILD exige CI=true e é proibido na Vercel")
   }
   for (const key of ["SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_URL"]) {
-    if (env[key] && env[key] !== "https://placeholder.supabase.co") {
+    // O ensaio de fase usa apenas o PostgREST descartável nesta porta local.
+    if (env[key] && env[key] !== "https://placeholder.supabase.co" && env[key] !== "http://127.0.0.1:54331") {
       throw new Error("Build E2E não pode carregar uma conexão real de banco")
     }
   }

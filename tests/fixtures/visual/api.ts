@@ -6,6 +6,8 @@ import type { QuizAlignmentDataset } from "../../../src/lib/quiz-types"
 import { liveResource } from "../../../src/lib/data-resource"
 import { isSenadoEnabled } from "../../../src/lib/senado-feature"
 import { buildGlobalSearchIndexItems } from "../../../src/lib/global-search"
+import { getFasesEleitorais2026 as loadDatabasePhases } from "../../../src/lib/api"
+import type { FaseEleitoralPublica } from "../../../src/lib/fase-eleitoral-publica"
 
 function candidate(slug: string, nome: string, cargo: Candidato["cargo_disputado"], estado: string | null): Candidato {
   return {
@@ -26,32 +28,46 @@ const candidates = [
   candidate("fixture-senado-beta", "Fixture Senador Beta", "Senador", "SP"),
   candidate("fixture-senado-erro", "Fixture Senador Erro", "Senador", "RJ"),
 ]
-function select(cargo?: string, estado?: string) {
-  return candidates.filter((row) =>
+export async function getFasesEleitorais2026(): Promise<FaseEleitoralPublica[]> {
+  return process.env.SUPABASE_URL === "http://127.0.0.1:54331" ? loadDatabasePhases() : []
+}
+async function select(cargo?: string, estado?: string) {
+  const fases = await getFasesEleitorais2026()
+  const bySlug = new Map(fases.map(f => [f.slug, f]))
+  const all = process.env.SUPABASE_URL === "http://127.0.0.1:54331" ? [...candidates,
+    candidate("fixture-pres-fora", "Pessoa Zeta", "Presidente", null),
+    candidate("fixture-gov-eleito", "Pessoa Épsilon", "Governador", "MG"),
+    candidate("fixture-gov-fora", "Pessoa Ômega", "Governador", "MG"),
+    candidate("fixture-senado-fora", "Fixture Senado Zeta", "Senador", "SP"),
+  ] : candidates
+  return all.map(row => {
+    const fase = bySlug.get(row.slug)
+    return fase ? { ...row, id: fase.candidato_id, fase_eleitoral_2026: fase } : row
+  }).filter((row) =>
     (!cargo || row.cargo_disputado === cargo) &&
-    (!estado || row.estado === estado) &&
+    (!estado || row.estado === estado.toUpperCase()) &&
     (isSenadoEnabled() || row.cargo_disputado !== "Senador"),
   )
 }
-export async function getCandidatosResource(cargo?: string, estado?: string) { return liveResource(select(cargo, estado)) }
-export async function getCandidatoNavResource(cargo?: string, estado?: string) { return liveResource(select(cargo, estado).map(({ slug, nome_urna }) => ({ slug, nome_urna }))) }
-export async function getCandidatoSlugStaticParams() { return select().map(({ slug }) => ({ slug })) }
+export async function getCandidatosResource(cargo?: string, estado?: string) { return liveResource(await select(cargo, estado)) }
+export async function getCandidatoNavResource(cargo?: string, estado?: string) { return liveResource((await select(cargo, estado)).map(({ slug, nome_urna }) => ({ slug, nome_urna }))) }
+export async function getCandidatoSlugStaticParams() { return (await select()).map(({ slug }) => ({ slug })) }
 export async function getGlobalSearchIndexResource() {
-  return liveResource(buildGlobalSearchIndexItems(select(), new Map()))
+  return liveResource(buildGlobalSearchIndexItems(await select(), new Map()))
 }
-export async function getCandidatoMetadataResource(slug: string) { return liveResource(candidates.find((row) => row.slug === slug) ?? null) }
+export async function getCandidatoMetadataResource(slug: string) { return liveResource((await select()).find((row) => row.slug === slug) ?? null) }
 export async function getCandidatosComResumoResource(cargo?: string, estado?: string) {
-  return liveResource(select(cargo, estado).map((candidato) => ({ candidato, processos_ordenacao: 0, patrimonio: null, patrimonio_atipico: false, processos: 0, pontos_atencao: 0 })))
+  return liveResource((await select(cargo, estado)).map((candidato) => ({ candidato, processos_ordenacao: 0, patrimonio: null, patrimonio_atipico: false, processos: 0, pontos_atencao: 0 })))
 }
 export async function getCandidatosComparaveisResource(cargo?: string, estado?: string) {
-  const rows: CandidatoComparavel[] = select(cargo, estado).map((c) => ({
+  const rows: CandidatoComparavel[] = (await select(cargo, estado)).map((c) => ({
     ...c, total_processos: 0, mudancas_partido: 0, alertas_graves: 0, patrimonio_declarado: null,
     evolucao_patrimonial_pct: null, total_gasto_parlamentar: null, tem_historico_legislativo: false,
   }))
   return liveResource(rows)
 }
 export async function getCandidatoBySlugResource(slug: string) {
-  const candidate = candidates.find((row) => row.slug === slug)
+  const candidate = (await select()).find((row) => row.slug === slug)
   const ficha: FichaCandidato | null = candidate ? {
     ...candidate, historico: [], mudancas_partido: [], patrimonio: [], financiamento: [], votos: [],
     processos: [], pontos_atencao: [], projetos_lei: [], legislacao_mandato_executivo: [],
@@ -63,7 +79,7 @@ export async function getCandidatoBySlugResource(slug: string) {
 }
 export async function getQuizAlignmentDatasetResource(cargo?: string, estado?: string) {
   const dataset: QuizAlignmentDataset = {
-    candidatos: select(cargo || "Presidente", estado).map((c) => ({ ...c, votos: {} })),
+    candidatos: (await select(cargo || "Presidente", estado)).map((c) => ({ ...c, votos: {} })),
     votacoes_mapeadas: [], votacao_titulo_to_id: {}, votacao_fonte_por_titulo: {},
   }
   return liveResource(dataset)

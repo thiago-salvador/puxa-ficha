@@ -5,9 +5,10 @@ import { loadPresidentialPolls, loadPresidentialPrograms } from "@/lib/president
 import type { StateProgramCandidate } from "@/lib/state-programs"
 import { loadProgramRunningMates } from "@/lib/program-running-mates"
 
-export async function PresidentialElectionSections({ candidates, unavailable = false }: {
+export async function PresidentialElectionSections({ candidates, unavailable = false, resultadoEleitoralPublicado = false }: {
   candidates: (StateProgramCandidate & { foto_url?: string | null })[]
   unavailable?: boolean
+  resultadoEleitoralPublicado?: boolean
 }) {
   const [programs, polls, runningMates] = await Promise.all([
     loadPresidentialPrograms(candidates)
@@ -29,6 +30,6 @@ export async function PresidentialElectionSections({ candidates, unavailable = f
     <SlashDivider />
     <StatePrograms scopeTitle="Presidência da República" programs={programs.data} runningMates={runningMates} unavailable={unavailable || programs.unavailable} showContext={false} />
     <SlashDivider />
-    <StatePolls polls={polls.data} candidates={candidates} unavailable={polls.unavailable} />
+    <StatePolls polls={polls.data} candidates={candidates} unavailable={polls.unavailable} resultadoEleitoralPublicado={resultadoEleitoralPublicado} />
   </div>
 }

@@ -104,14 +104,18 @@ fingir cobertura seria pior que declarar o limite.
 ## Renovação agendada dos recibos (2026-09-25)
 
 - A ficha só afirma zero com recibo `vazio_confirmado` de até 14 dias. O
-  workflow `processos-coleta-judicial.yml` roda segunda e quinta e renova, antes
+  agente local `scripts/processos-local/` roda segunda e quinta e renova, antes
   do prazo, todo recibo conclusivo (`encontrado` ou `vazio_confirmado`) com 9
   dias ou mais; na mesma execução busca os candidatos públicos sem recibo.
 - A busca continua sendo a do coletor (`curadoria-processos-lote.ts
   --coorte-atual`): DJEN por nome completo exato, identidade eleitoral oficial e
-  DataJud só por CNJ encontrado. O workflow grava apenas recibos em
+  DataJud só por CNJ encontrado. O agente grava apenas recibos em
   `coleta_log`, pelo aplicador auditado (backup, preflight e readback). Nenhuma
   linha de `processos` é criada ou alterada fora da revisão editorial.
+- Desde 30/09/2026 a coleta roda no Mac porque a API do DJEN responde HTTP 403
+  ao runner hospedado do GitHub (issue #582). O workflow
+  `processos-coleta-judicial.yml` ficou só com a conferência dos recibos.
+  Runbook: `docs/operations/processos-local.md`.
 - Nome exato fora dos destinatários também conta como ocorrência. Uma
   comunicação em que o nome aparece no texto (a intimação costuma ir ao
   advogado), em que o destinatário traz o nome seguido de apelido entre

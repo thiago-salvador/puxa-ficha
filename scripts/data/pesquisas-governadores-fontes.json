@@ -10041,6 +10041,467 @@
         }
       },
       "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "parana-pesquisas-pe-01835-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "Diario de Pernambuco",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "diariodepernambuco.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-27",
+          "end": "2026-09-29"
+        },
+        "published_at": "2026-09-30",
+        "sample_size": 1352,
+        "method": "Entrevistas pessoais, domiciliares e presenciais",
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pernambuco",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PE-01835/2026",
+        "result_url": "https://www.diariodepernambuco.com.br/politica/2026/09/11725314-diario-parana-pesquisas-joao-tem-491-e-raquel-486-dos-votos-validos-para-governo-de-pe.html",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PE-01835/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T12:28:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "0be0a38264e858c1b386f56ae5b4eb908e13d8018c5f848f9548cdfa9dd6fd84",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diariodepernambuco.com.br/politica/2026/09/11725314-diario-parana-pesquisas-joao-tem-491-e-raquel-486-dos-votos-validos-para-governo-de-pe.html"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diariodepernambuco.com.br/politica/2026/09/11725314-diario-parana-pesquisas-joao-tem-491-e-raquel-486-dos-votos-validos-para-governo-de-pe.html"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diariodepernambuco.com.br/politica/2026/09/11725314-diario-parana-pesquisas-joao-tem-491-e-raquel-486-dos-votos-validos-para-governo-de-pe.html"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.diariodepernambuco.com.br/politica/2026/09/11725314-diario-parana-pesquisas-joao-tem-491-e-raquel-486-dos-votos-validos-para-governo-de-pe.html"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T12:28:54Z"
+    },
+    {
+      "id": "vox-brasil-sp-01943-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Vox Brasil",
+        "commissioner": "recursos do próprio instituto",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-27",
+          "end": "2026-09-29"
+        },
+        "published_at": "2026-09-30",
+        "sample_size": 1480,
+        "method": "Entrevista presencial",
+        "margin_of_error_pp": 2.55,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "São Paulo",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SP-01943/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/vox-tarcisio-tem-585-no-1o-turno-ao-governo-de-sp-haddad-362/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SP-01943/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T12:28:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "59e87cad7f0915266bfe7f84fd84e223d6c628c9a160fcde1ad09556a0a3576f",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-tarcisio-tem-585-no-1o-turno-ao-governo-de-sp-haddad-362/",
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/30/novas-pesquisas-sao-divulgadas-hoje-quarta-30-09-saiba-quais.html"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-tarcisio-tem-585-no-1o-turno-ao-governo-de-sp-haddad-362/",
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/30/novas-pesquisas-sao-divulgadas-hoje-quarta-30-09-saiba-quais.html"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-tarcisio-tem-585-no-1o-turno-ao-governo-de-sp-haddad-362/",
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/30/novas-pesquisas-sao-divulgadas-hoje-quarta-30-09-saiba-quais.html"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-tarcisio-tem-585-no-1o-turno-ao-governo-de-sp-haddad-362/",
+            "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/30/novas-pesquisas-sao-divulgadas-hoje-quarta-30-09-saiba-quais.html"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T12:28:54Z"
+    },
+    {
+      "id": "atlasintel-rn-04187-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "AtlasIntel/MeioNorte",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-23",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1207,
+        "method": "Recrutamento digital aleatório (Atlas RDR)",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RN-04187/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/atlasintel-rn-cadu-lidera-1o-turno-no-2o-vence-dias-e-empata-com-allyson/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-04187/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T12:28:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "17113e1ff06d634cd2a852f6c1a5f1e1fb4909a5f1f312c0662e87e54ab6b641",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlasintel-rn-cadu-lidera-1o-turno-no-2o-vence-dias-e-empata-com-allyson/",
+            "https://cdn1.atlasintel.org/pesquisa_atlas__eleicoes_rio_grande_do_norte_260928_ee8ca2ce363b3c06.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlasintel-rn-cadu-lidera-1o-turno-no-2o-vence-dias-e-empata-com-allyson/",
+            "https://cdn1.atlasintel.org/pesquisa_atlas__eleicoes_rio_grande_do_norte_260928_ee8ca2ce363b3c06.pdf"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlasintel-rn-cadu-lidera-1o-turno-no-2o-vence-dias-e-empata-com-allyson/",
+            "https://cdn1.atlasintel.org/pesquisa_atlas__eleicoes_rio_grande_do_norte_260928_ee8ca2ce363b3c06.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/atlasintel-rn-cadu-lidera-1o-turno-no-2o-vence-dias-e-empata-com-allyson/",
+            "https://cdn1.atlasintel.org/pesquisa_atlas__eleicoes_rio_grande_do_norte_260928_ee8ca2ce363b3c06.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T12:28:54Z"
+    },
+    {
+      "id": "quaest-mg-02019-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Globo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1506,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Minas Gerais",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MG-02019/2026",
+        "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/29/quaest-mg-governo-e-senado.ghtm",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MG-02019/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T12:28:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "3e883b6f35f09c761b23897cf9dcd82e37f98c23b8743c73835f274d6c5bdcb4",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/29/quaest-mg-governo-e-senado.ghtm",
+            "https://especiaisg1.globo/mg/minas-gerais/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/"
+          ],
+          "note": "Metadados metodológicos ausentes na publicação consultada; aprovação restrita ao registro e à captura revisados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/29/quaest-mg-governo-e-senado.ghtm",
+            "https://especiaisg1.globo/mg/minas-gerais/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/29/quaest-mg-governo-e-senado.ghtm",
+            "https://especiaisg1.globo/mg/minas-gerais/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.uol.com.br/eleicoes/2026/09/29/quaest-mg-governo-e-senado.ghtm",
+            "https://especiaisg1.globo/mg/minas-gerais/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T12:28:54Z"
+    },
+    {
+      "id": "ranking-brasil-inteligencia-ms-09415-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Ranking Brasil Inteligência",
+        "commissioner": "Rede Top FM",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "topfm.top",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-25"
+        },
+        "published_at": "2026-09-26",
+        "sample_size": 2000,
+        "method": "Questionários estruturados, sistema CAT, abordagem pessoal em pontos de fluxo populacional e visitas domiciliares",
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Mato Grosso do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MS-09415/2026",
+        "result_url": "https://topfm.top/noticias/pesquisa-para-governador-de-mato-grosso-do-sul/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MS-09415/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T12:28:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "f3e4de7508c9f6eeb709b4d53775f40bdcfbd43bc17831025a6e6533d0e1d1e6",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://topfm.top/noticias/pesquisa-para-governador-de-mato-grosso-do-sul/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/registros/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://topfm.top/noticias/pesquisa-para-governador-de-mato-grosso-do-sul/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/registros/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://topfm.top/noticias/pesquisa-para-governador-de-mato-grosso-do-sul/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/registros/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://topfm.top/noticias/pesquisa-para-governador-de-mato-grosso-do-sul/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/registros/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T12:28:54Z"
+    },
+    {
+      "id": "quaest-ms-09580-2026-revisao-20260930",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Televisão Ponta Porã Ltda/TV Morena",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-21",
+          "end": "2026-09-24"
+        },
+        "published_at": "2026-09-25",
+        "sample_size": 804,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Mato Grosso do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MS-09580/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-mato-grosso-do-sul-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MS-09580/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-09-30T12:28:54Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "b3c36d47acbb915abb7bab752a9d912cdfb76de96e8a34a8e95cc1a5e6b4a95c",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-mato-grosso-do-sul-setembro-2026/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/"
+          ],
+          "note": "Metadados metodológicos ausentes na publicação consultada; aprovação restrita ao registro e à captura revisados."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-mato-grosso-do-sul-setembro-2026/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/"
+          ]
+        },
+        "sample_identification": {
+          "pass": false,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-mato-grosso-do-sul-setembro-2026/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/"
+          ],
+          "note": "População-alvo não especificada na publicação consultada; campo mantido ausente."
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-mato-grosso-do-sul-setembro-2026/",
+            "https://eleicoes.mrtnews.com.br/governador/ms/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-09-30T12:28:54Z"
     }
   ]
 }

@@ -32,7 +32,7 @@ describe("Sanitizacao publica de partido centralizada em src/lib/api.ts", () => 
   it("getCandidatosResource retorna lista sanitizada via helper", () => {
     assert.match(
       apiSrc,
-      /return\s+liveResource\(sanitizePublicDisplayNameFieldsList\(sanitizePublicPartyFieldsList\(data as Candidato\[\]\)\)\)/,
+      /return\s+liveResource\(await anexarFasesEleitorais\(sanitizePublicDisplayNameFieldsList\(sanitizePublicPartyFieldsList\(data as Candidato\[\]\)\)\)\)/,
       "getCandidatosResourceUncached deve sanitizar a lista (partido e nome_urna) no exit",
     )
   })
