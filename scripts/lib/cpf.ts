@@ -74,8 +74,8 @@ export const MINIMO_DIGITOS_CPF_TSE = 9
  *
  * O DEFEITO QUE ISTO CORRIGE (medido em 2026-08-10): o publicador do TSE trata
  * `NR_CPF_CANDIDATO` como número, não como texto, e come os zeros à esquerda. O
- * candidato `alex-pucineli` aparece no `consulta_cand_2012` como `690013167`,
- * nove dígitos. O CPF dele é `00690013167`, e o dígito verificador fecha. Os
+ * candidato `alex-pucineli` aparece no `consulta_cand_2012` com nove dígitos;
+ * com os dois zeros de volta, o dígito verificador fecha. Os
  * três leitores de CPF do TSE exigiam 11 dígitos crus e descartavam a linha em
  * silêncio: CPF verdadeiro jogado fora por formatação da fonte, e a ficha
  * seguia na lista de "não consultáveis" da varredura de sanções.

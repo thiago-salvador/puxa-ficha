@@ -31,7 +31,7 @@
         "extractionVersion": "programa-governo-extracao-v2",
         "method": "pdftotext-pagewise-with-ocr-fallback",
         "sourceSha256": "8e41a0158c92bbeb9a694df21f5009a1dee4349b4be5ee4b09eb91dcd3f3c7c3",
-        "extractedTextSha256": "f29b00ce93457017b8dea1519e2798f3a91d2ca5e2515f91dfe0a61968619bbc",
+        "extractedTextSha256": "124ad59e76dc440bcebcb74bf102aaa5bcbc85bfa8350786a22aa61a003fca6f",
         "paginas": 32,
         "secoes": [
           {
@@ -320,7 +320,7 @@
             "paginaInicial": 32,
             "paginaFinal": 32,
             "origem": "pdftotext",
-            "conteudo": "DECLARAÇÃO DE INTEGRIDADE DO DOCUMENTO\nEste documento consolida as propostas defendidas para o Governo do Estado do Tocantins\nno período 2027–2030. Sua execução observará a Constituição Federal, a Constituição do\nEstado do Tocantins, a legislação eleitoral, fiscal, orçamentária e administrativa, bem como as\ncompetências dos Poderes e dos entes federativos. Metas quantitativas que dependam de linha\nde base, disponibilidade orçamentária, estudos técnicos, licenciamento, contratação ou\ncooperação institucional serão detalhadas nos instrumentos oficiais de planejamento e\norçamento.\n\nPalmas – Tocantins, 03 de agosto de 2026\n\nde forma\nATAIDES DE Assinado\ndigital por ATAIDES DE\nOLIVEIRA:14 OLIVEIRA:14721929153\nDados: 2026.08.06\n721929153 03:43:49 -03'00'\n\nATAÍDES DE OLIVEIRA\nCandidato ao Governo do Estado do Tocantins\n\nROSILÉIA DIAS CARNEIRO\nCandidata a Vice-Governadora do Estado do Tocantins\n\nEleições 2026 | Página 32"
+            "conteudo": "DECLARAÇÃO DE INTEGRIDADE DO DOCUMENTO\nEste documento consolida as propostas defendidas para o Governo do Estado do Tocantins\nno período 2027–2030. Sua execução observará a Constituição Federal, a Constituição do\nEstado do Tocantins, a legislação eleitoral, fiscal, orçamentária e administrativa, bem como as\ncompetências dos Poderes e dos entes federativos. Metas quantitativas que dependam de linha\nde base, disponibilidade orçamentária, estudos técnicos, licenciamento, contratação ou\ncooperação institucional serão detalhadas nos instrumentos oficiais de planejamento e\norçamento.\n\nPalmas – Tocantins, 03 de agosto de 2026\n\nde forma\nATAIDES DE Assinado\ndigital por ATAIDES DE\nOLIVEIRA:14 OLIVEIRA:[CPF removido]\nDados: 2026.08.06\n721929153 03:43:49 -03'00'\n\nATAÍDES DE OLIVEIRA\nCandidato ao Governo do Estado do Tocantins\n\nROSILÉIA DIAS CARNEIRO\nCandidata a Vice-Governadora do Estado do Tocantins\n\nEleições 2026 | Página 32"
           }
         ],
         "pageMap": [
@@ -482,7 +482,7 @@
           {
             "pagina": 32,
             "origem": "pdftotext",
-            "textSha256": "60ec2ac20798be01e222ef4e60a650c5d58c7692b8787acba8b7827f6eedc80d"
+            "textSha256": "2df6578ee71fae7bc86b78788f98f7b0cd40006a4b3549cf05c5bf164733a60c"
           }
         ]
       }
@@ -1137,9 +1137,9 @@
     "reviewer": "Thiago Salvador",
     "reviewedAt": "2026-08-28T18:01:09Z",
     "sourceSha256": "8e41a0158c92bbeb9a694df21f5009a1dee4349b4be5ee4b09eb91dcd3f3c7c3",
-    "extractedTextSha256": "f29b00ce93457017b8dea1519e2798f3a91d2ca5e2515f91dfe0a61968619bbc",
+    "extractedTextSha256": "124ad59e76dc440bcebcb74bf102aaa5bcbc85bfa8350786a22aa61a003fca6f",
     "documentCount": 1,
-    "documentSetSha256": "5aa552ff37b8556541b5992bc3c5180ae563ad407d21f0a63f74d2176001305f",
-    "contentSha256": "935cffb9e67f964b4152520037602bceed3ad51ff4eac0f2c6735df04a46a653"
+    "documentSetSha256": "7d197b6953df97318d748babefe96ff7c06f80d52a99cf27ccab357de01b7bfb",
+    "contentSha256": "38c00fb4c76efca2c6be75a122eb21f65d37e2e819b8a03754fe3780e2475424"
   }
 }

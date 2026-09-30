@@ -5651,7 +5651,7 @@
       },
       "transparencia-sanctions": {
         "volume": 0,
-        "detalhe": "CPF 01542149142 (SQ 280002552484); CEIS=0, CNEP=0, CEAF=0, TCU inabilitados=0, CADIRREG 404=sem registro; CPF do consulta_cand_2026 oficial (zip 15/08 16:35 BRT), identidade por SQ 2026 + nome completo",
+        "detalhe": "CPF [CPF removido] (SQ 280002552484); CEIS=0, CNEP=0, CEAF=0, TCU inabilitados=0, CADIRREG 404=sem registro; CPF do consulta_cand_2026 oficial (zip 15/08 16:35 BRT), identidade por SQ 2026 + nome completo",
         "resultado": "vazio_confirmado",
         "executado_em": "2026-08-15T22:15:00+00:00"
       }
@@ -22172,7 +22172,7 @@
       },
       "transparencia-sanctions": {
         "volume": 0,
-        "detalhe": "CPF 69469857100 (consulta_cand_2018 GO, dep federal); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG 404=sem registro (semantica canonica ingest-tcu); CPF obtido do consulta_cand oficial local com identidade por nome completo + data de nascimento + UF; consulta 2026-08-15",
+        "detalhe": "CPF [CPF removido] (consulta_cand_2018 GO, dep federal); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG 404=sem registro (semantica canonica ingest-tcu); CPF obtido do consulta_cand oficial local com identidade por nome completo + data de nascimento + UF; consulta 2026-08-15",
         "resultado": "vazio_confirmado",
         "executado_em": "2026-08-15T15:45:00+00:00"
       }
@@ -27728,7 +27728,7 @@
       },
       "transparencia-sanctions": {
         "volume": 0,
-        "detalhe": "CPF 01321223161 (consulta_cand_2026 BR pos-prazo, SQ 280002553884); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG=0 (5 rotas por codigo/CPF, sha256 em entregas/NACIONAL/marcal-mecanica/sancoes-5-rotas.json)",
+        "detalhe": "CPF [CPF removido] (consulta_cand_2026 BR pos-prazo, SQ 280002553884); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG=0 (5 rotas por codigo/CPF, sha256 em entregas/NACIONAL/marcal-mecanica/sancoes-5-rotas.json)",
         "resultado": "vazio_confirmado",
         "executado_em": "2026-08-16T18:02:07.454221+00:00"
       },
@@ -28741,7 +28741,7 @@
       },
       "transparencia-sanctions": {
         "volume": 0,
-        "detalhe": "CPF 26339384854 (consulta_cand_2026 SP pos-prazo, SQ 250002548080, primeiro CPF publico da candidata); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG=0 (5 rotas por codigo/CPF, sha256 por resposta em entregas/ONDA-G/SP/sancoes-recibos.json); primeira varredura de sancoes da ficha",
+        "detalhe": "CPF [CPF removido] (consulta_cand_2026 SP pos-prazo, SQ 250002548080, primeiro CPF publico da candidata); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG=0 (5 rotas por codigo/CPF, sha256 por resposta em entregas/ONDA-G/SP/sancoes-recibos.json); primeira varredura de sancoes da ficha",
         "resultado": "vazio_confirmado",
         "executado_em": "2026-08-16T01:47:54.947485+00:00"
       }
@@ -39803,7 +39803,7 @@
       },
       "transparencia-sanctions": {
         "volume": 0,
-        "detalhe": "CPF 11777433886 (consulta_cand_2022 SP, SQ 250001676832); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG 404=sem registro (semantica canonica ingest-tcu); CPF obtido do consulta_cand oficial local com identidade por nome completo + data de nascimento + UF; consulta 2026-08-15",
+        "detalhe": "CPF [CPF removido] (consulta_cand_2022 SP, SQ 250001676832); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG 404=sem registro (semantica canonica ingest-tcu); CPF obtido do consulta_cand oficial local com identidade por nome completo + data de nascimento + UF; consulta 2026-08-15",
         "resultado": "vazio_confirmado",
         "executado_em": "2026-08-15T15:45:00+00:00"
       }
