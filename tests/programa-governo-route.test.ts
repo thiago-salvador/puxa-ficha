@@ -155,8 +155,28 @@ test("todos os estados não aprovados são explícitos e não vazam rascunho", a
   }
 })
 
-test("duas candidaturas ainda sem codTipo 5 retornam estado explícito, não 404", async () => {
-  for (const slug of ["garotinho", "policial-edjane"]) {
+test("rota de Garotinho entrega o anúncio do TSE sem resumo nem PDF", async () => {
+  const resource = await getProgramaGovernoPublicResource("garotinho")
+  assert.equal(resource.known, true)
+  if (!resource.known) return
+  assert.equal(resource.manifesto.estado, "documento_anunciado")
+  assert.equal(resource.data, null)
+  const handler = createProgramaGovernoGetHandler({
+    rateLimiter: createFixedWindowIpRateLimiter({ namespace: "programa-route-anuncio-garotinho", max: 5, windowMs: 60_000 }),
+    getProgramaGovernoPublicResource: async () => resource,
+  })
+  const response = await handler(request("garotinho"), params("garotinho"))
+  const body = await response.json()
+  assert.equal(response.status, 200)
+  assert.equal(body.estado, "documento_anunciado")
+  assert.equal(body.data, null)
+  assert.equal(body.anuncio?.idArquivo, "190017144019")
+  assert.equal(body.fonte.pdfOriginalUrl, null)
+  assert.doesNotMatch(JSON.stringify(body), /Candidatura não encontrada|resumo|secoes/)
+})
+
+test("candidatura ainda sem codTipo 5 retorna estado explícito, não 404", async () => {
+  for (const slug of ["policial-edjane"]) {
     const resource = await getProgramaGovernoPublicResource(slug)
     assert.equal(resource.known, true, slug)
     if (!resource.known) continue
