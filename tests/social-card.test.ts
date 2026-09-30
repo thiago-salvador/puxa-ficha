@@ -208,6 +208,47 @@ describe("extractCardData", () => {
     const data = extractCardData(makeFicha(), null)
     assert.equal(data.photoDataUri, null)
   })
+
+  test("extracts the recorded election phase and its TSE source only when available", () => {
+    const data = extractCardData(
+      makeFicha({
+        cargo_disputado: "Governador",
+        fase_eleitoral_2026: {
+          fase_eleitoral: "segundo_turno",
+          fase_turno: 1,
+          atualizacao_encerrada_em: "2026-10-05",
+        },
+      }),
+      null,
+    )
+    assert.equal(data.faseEleitoralLabel, "Vai ao 2º turno")
+    assert.equal(data.faseEleitoralFonteUrl, "https://resultados.tse.jus.br")
+
+    const html = renderToStaticMarkup(buildSocialCardJsx(data, "feed"))
+    assert.match(html, /Vai ao 2º turno/)
+    assert.match(html, /href="https:\/\/resultados\.tse\.jus\.br"/)
+    assert.match(html, /Fonte: TSE, resultado oficial do 1º turno/)
+    assert.doesNotMatch(html, /2026-10-05/)
+  })
+
+  test("does not add phase data to a card without a recorded public result", () => {
+    const data = extractCardData(
+      makeFicha({
+        cargo_disputado: "Senador",
+        fase_eleitoral_2026: {
+          fase_eleitoral: "fora_da_disputa",
+          fase_turno: 1,
+          atualizacao_encerrada_em: "2026-10-05",
+        },
+      }),
+      null,
+    )
+    assert.equal(data.faseEleitoralLabel, null)
+    assert.equal(data.faseEleitoralFonteUrl, null)
+    const html = renderToStaticMarkup(buildSocialCardJsx(data, "story"))
+    assert.doesNotMatch(html, /Vai ao 2º turno|Venceu no|Não foi ao|Não se elegeu/)
+    assert.doesNotMatch(html, /Fonte: TSE, resultado oficial do 1º turno/)
+  })
 })
 
 // ── cardSourceLabelFromUrl ──────────────────────────────────

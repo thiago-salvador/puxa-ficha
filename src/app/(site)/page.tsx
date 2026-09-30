@@ -1,6 +1,7 @@
 import {
   getCandidatosComResumoResource,
   getCandidatosComparaveisResource,
+  getFasesEleitorais2026,
   mergeSourceMessages,
   mergeSourceStatuses,
 } from "@/lib/api"
@@ -32,6 +33,7 @@ import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildCandidatoGridMaps } from "@/lib/candidato-grid-maps"
 import { formatCompact } from "@/lib/utils"
 import { PROCESSO_DISCIPLINAR_AVISO } from "@/lib/processos-justica-total"
+import { SegundoTurnoSection } from "@/components/SegundoTurnoSection"
 
 export default async function Home() {
   const { props: heroImage } = getImageProps({
@@ -54,11 +56,19 @@ export default async function Home() {
     imageSrcSet: heroImage.srcSet, imageSizes: heroImage.sizes,
   })
 
-  const [todosResumosResource, comparaveisResource] = await Promise.all([
+  const [todosResumosResource, comparaveisResource, fasesEleitorais] = await Promise.all([
     getCandidatosComResumoResource(),
     getCandidatosComparaveisResource("Presidente"),
+    getFasesEleitorais2026(),
   ])
   const todosResumos = todosResumosResource.data
+  const fasePorSlug = new Map(fasesEleitorais.map((fase) => [fase.slug, fase]))
+  const todosCandidatos = todosResumos.map((resumo) => {
+    const fase = fasePorSlug.get(resumo.candidato.slug)
+    return fase
+      ? { ...resumo.candidato, fase_eleitoral_2026: fase }
+      : resumo.candidato
+  })
   const resumosPresidencia = todosResumos.filter(
     (resumo) => resumo.candidato.cargo_disputado === "Presidente"
   )
@@ -76,7 +86,7 @@ export default async function Home() {
     a.candidato.nome_urna.localeCompare(b.candidato.nome_urna, "pt-BR")
   )
 
-  const candidatos = resumosPresidencia.map((r) => r.candidato)
+  const candidatos = resumosPresidencia.map((r) => todosCandidatos.find((candidato) => candidato.id === r.candidato.id) ?? r.candidato)
   const { processos, processosContagem, patrimonios, processSortCounts, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumosPresidencia)
 
@@ -137,6 +147,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-background">
       <JsonLd data={schema} />
+      <SegundoTurnoSection candidatos={todosCandidatos} className="pt-24" />
       {/* Hero — dossiê image background */}
       <section className="relative overflow-hidden bg-black">
         {/* Background image */}
@@ -270,7 +281,7 @@ export default async function Home() {
       </section>
 
       <Suspense fallback={<p role="status" className="mx-auto max-w-7xl px-5 py-12 text-sm text-muted-foreground md:px-12">Carregando programas e pesquisas...</p>}>
-        <PresidentialElectionSections candidates={candidatos.map(({ slug, nome_urna, foto_url, partido_sigla }) => ({ slug, nome_urna, foto_url, partido_sigla }))} unavailable={todosResumosResource.sourceStatus !== "live"} />
+        <PresidentialElectionSections candidates={candidatos.map(({ slug, nome_urna, foto_url, partido_sigla }) => ({ slug, nome_urna, foto_url, partido_sigla }))} unavailable={todosResumosResource.sourceStatus !== "live"} resultadoEleitoralPublicado={todosCandidatos.some((candidato) => Boolean(candidato.fase_eleitoral_2026))} />
       </Suspense>
 
       <Suspense fallback={<HomeRecentUpdates />}>

@@ -11180,7 +11180,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|ES|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-f9ea91a17ebc0a1d",
+      "exact_aliases_version": "monitor-2026-23a57e937ce7a85f",
       "exact_aliases": [
         {
           "raw_label": "Breno Barcelos",
@@ -11408,6 +11408,51 @@
           "geography": "Espírito Santo",
           "turn": 1,
           "scenario_id": "quaest-es-01978-2026-1t"
+        },
+        {
+          "raw_label": "Ricardo Ferraço (MDB)",
+          "candidate_slug": "ricardo-ferraco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-es-01627-2026-1t"
+        },
+        {
+          "raw_label": "Lorenzo Pazolini (Republicanos)",
+          "candidate_slug": "pazolini",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-es-01627-2026-1t"
+        },
+        {
+          "raw_label": "Helder Salomão (PT)",
+          "candidate_slug": "helder-salomao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-es-01627-2026-1t"
+        },
+        {
+          "raw_label": "Breno Barcelos (Missão)",
+          "candidate_slug": "breno-barcelar",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-es-01627-2026-1t"
+        },
+        {
+          "raw_label": "Rafael Demuner (UP)",
+          "candidate_slug": "rafael-demuner",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-es-01627-2026-1t"
         }
       ],
       "pesquisas": [
@@ -12129,6 +12174,152 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 11,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-es-01627-2026",
+          "source_id": "real-time-big-data-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-25",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-29",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-30",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "ES-01627/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Espírito Santo",
+            "code": "ES"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.cartacapital.com.br/politica/ferraco-lidera-disputa-pela-reeleicao-no-es-indica-real-time-big-data/",
+            "supporting_urls": [
+              "https://eleicoes.mrtnews.com.br/governador/es/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-30T12:28:54Z",
+            "capture": {
+              "format": "text",
+              "sha256": "5b020c5f66eb76891825ab86bf2dc9674b91ead86fc15c9bad82a989aa9ea22d",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-es-01627-2026-1t",
+              "turn": 1,
+              "geography": "Espírito Santo",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|ES|1|estimulada|777fd26f1357dcc99b2241d275f689373de4d3a90a9e31039f1b020dd0d379ab|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Ricardo Ferraço (MDB)",
+                  "candidate_slug": "ricardo-ferraco",
+                  "match_status": "exact_alias",
+                  "value_percent": 45,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Lorenzo Pazolini (Republicanos)",
+                  "candidate_slug": "pazolini",
+                  "match_status": "exact_alias",
+                  "value_percent": 37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Helder Salomão (PT)",
+                  "candidate_slug": "helder-salomao",
+                  "match_status": "exact_alias",
+                  "value_percent": 14,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Breno Barcelos (Missão)",
+                  "candidate_slug": "breno-barcelar",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rafael Demuner (UP)",
+                  "candidate_slug": "rafael-demuner",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
                   "status": "publicado"
                 }
               ]
@@ -16375,7 +16566,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|MS|1|estimulada|lista-atlasintel-2026-09-03-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-06ad33095a52b9c1",
+      "exact_aliases_version": "monitor-2026-3ba0f4c5ea461e67",
       "exact_aliases": [
         {
           "raw_label": "Daniel Lemes",
@@ -16720,6 +16911,240 @@
           "geography": "Mato Grosso do Sul",
           "turn": 1,
           "scenario_id": "novo-ibrape-ms-01465-2026-1t"
+        },
+        {
+          "raw_label": "Eduardo Riedel (PP)",
+          "candidate_slug": "eduardo-riedel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Fábio Trad (PT)",
+          "candidate_slug": "fabio-trad",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Delcídio do Amaral (PRD)",
+          "candidate_slug": "delcidio-amaral",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Renato Gomes (DC)",
+          "candidate_slug": "renato-gomes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "João Henrique Catan (Novo)",
+          "candidate_slug": "joao-henrique-catan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Jefferson Bezerra (AGIR)",
+          "candidate_slug": "jeferson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Lucien Rezende (PSOL)",
+          "candidate_slug": "lucien-rezende",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Eduardo Riedel (PP)",
+          "candidate_slug": "eduardo-riedel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "Fábio Trad (PT)",
+          "candidate_slug": "fabio-trad",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "Delcídio do Amaral (PRD)",
+          "candidate_slug": "delcidio-amaral",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "Renato Gomes (DC)",
+          "candidate_slug": "renato-gomes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "João Henrique Catan (Novo)",
+          "candidate_slug": "joao-henrique-catan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "Jefferson Bezerra (AGIR)",
+          "candidate_slug": "jeferson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "Lucien Rezende (PSOL)",
+          "candidate_slug": "lucien-rezende",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "Daniel Lemes (PCO)",
+          "candidate_slug": "daniel-lemes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "ranking-brasil-inteligencia-ms-09415-2026-1t"
+        },
+        {
+          "raw_label": "Eduardo Riedel (PP)",
+          "candidate_slug": "eduardo-riedel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Fábio Trad (PT)",
+          "candidate_slug": "fabio-trad",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "João Henrique Catan (Novo)",
+          "candidate_slug": "joao-henrique-catan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Eduardo Riedel (PP)",
+          "candidate_slug": "eduardo-riedel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
+        },
+        {
+          "raw_label": "Fábio Trad (PT)",
+          "candidate_slug": "fabio-trad",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
+        },
+        {
+          "raw_label": "Delcídio Amaral (PRD)",
+          "candidate_slug": "delcidio-amaral",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
+        },
+        {
+          "raw_label": "João Henrique Catan (NOVO)",
+          "candidate_slug": "joao-henrique-catan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
+        },
+        {
+          "raw_label": "Jeferson Bezerra (Agir)",
+          "candidate_slug": "jeferson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
+        },
+        {
+          "raw_label": "Lucien Rezende (PSOL)",
+          "candidate_slug": "lucien-rezende",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
+        },
+        {
+          "raw_label": "Economista Renato Gomes (DC)",
+          "candidate_slug": "renato-gomes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
+        },
+        {
+          "raw_label": "Daniel Lemes (PCO)",
+          "candidate_slug": "daniel-lemes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Mato Grosso do Sul",
+          "turn": 1,
+          "scenario_id": "quaest-ms-09580-2026-1t"
         }
       ],
       "pesquisas": [
@@ -17955,6 +18380,471 @@
               ]
             }
           ]
+        },
+        {
+          "id": "ranking-brasil-inteligencia-ms-09415-2026",
+          "source_id": "ranking-brasil-inteligencia-ms-09415-2026-revisao-20260930",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Ranking Brasil Inteligência",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Rede Top FM",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-21",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-25",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-26",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 2000,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "moradores com 16 anos ou mais, distribuídos em 30 municípios de Mato Grosso do Sul",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Questionários estruturados, sistema CAT, abordagem pessoal em pontos de fluxo populacional e visitas domiciliares",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "MS-09415/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Mato Grosso do Sul",
+            "code": "MS"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://topfm.top/noticias/pesquisa-para-governador-de-mato-grosso-do-sul/",
+            "supporting_urls": [
+              "https://eleicoes.mrtnews.com.br/governador/ms/registros/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-30T12:28:54Z",
+            "capture": {
+              "format": "text",
+              "sha256": "f3e4de7508c9f6eeb709b4d53775f40bdcfbd43bc17831025a6e6533d0e1d1e6",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "ranking-brasil-inteligencia-ms-09415-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Mato Grosso do Sul",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MS|1|espontanea|70696b8a09c95e22251f58b0389acdf73b59d02d3e116593d88f4a28ced69592|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Eduardo Riedel (PP)",
+                  "candidate_slug": "eduardo-riedel",
+                  "match_status": "exact_alias",
+                  "value_percent": 27.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Fábio Trad (PT)",
+                  "candidate_slug": "fabio-trad",
+                  "match_status": "exact_alias",
+                  "value_percent": 13,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delcídio do Amaral (PRD)",
+                  "candidate_slug": "delcidio-amaral",
+                  "match_status": "exact_alias",
+                  "value_percent": 6.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Renato Gomes (DC)",
+                  "candidate_slug": "renato-gomes",
+                  "match_status": "exact_alias",
+                  "value_percent": 2.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "João Henrique Catan (Novo)",
+                  "candidate_slug": "joao-henrique-catan",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jefferson Bezerra (AGIR)",
+                  "candidate_slug": "jeferson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Lucien Rezende (PSOL)",
+                  "candidate_slug": "lucien-rezende",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros nomes",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco / Nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 20,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabem / Não responderam",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 27,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "ranking-brasil-inteligencia-ms-09415-2026-1t",
+              "turn": 1,
+              "geography": "Mato Grosso do Sul",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MS|1|estimulada|a74640fe5fb49dbc89817c3b5f55414f16ce4f26b51595ff58299c759027d423|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Eduardo Riedel (PP)",
+                  "candidate_slug": "eduardo-riedel",
+                  "match_status": "exact_alias",
+                  "value_percent": 50,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Fábio Trad (PT)",
+                  "candidate_slug": "fabio-trad",
+                  "match_status": "exact_alias",
+                  "value_percent": 18,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delcídio do Amaral (PRD)",
+                  "candidate_slug": "delcidio-amaral",
+                  "match_status": "exact_alias",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Renato Gomes (DC)",
+                  "candidate_slug": "renato-gomes",
+                  "match_status": "exact_alias",
+                  "value_percent": 4.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "João Henrique Catan (Novo)",
+                  "candidate_slug": "joao-henrique-catan",
+                  "match_status": "exact_alias",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jefferson Bezerra (AGIR)",
+                  "candidate_slug": "jeferson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 1.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Lucien Rezende (PSOL)",
+                  "candidate_slug": "lucien-rezende",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Daniel Lemes (PCO)",
+                  "candidate_slug": "daniel-lemes",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco / Nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabem / Não responderam",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6.5,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-ms-09580-2026",
+          "source_id": "quaest-ms-09580-2026-revisao-20260930",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Televisão Ponta Porã Ltda/TV Morena",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-21",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-24",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-25",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 804,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "MS-09580/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Mato Grosso do Sul",
+            "code": "MS"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-mato-grosso-do-sul-setembro-2026/",
+            "supporting_urls": [
+              "https://eleicoes.mrtnews.com.br/governador/ms/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-30T12:28:54Z",
+            "capture": {
+              "format": "text",
+              "sha256": "b3c36d47acbb915abb7bab752a9d912cdfb76de96e8a34a8e95cc1a5e6b4a95c",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-ms-09580-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Mato Grosso do Sul",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MS|1|espontanea|8ad414d089b96db19df1ca2ae61f45b6fc838eea437b81cf885076d82d62d589|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Eduardo Riedel (PP)",
+                  "candidate_slug": "eduardo-riedel",
+                  "match_status": "exact_alias",
+                  "value_percent": 34,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Fábio Trad (PT)",
+                  "candidate_slug": "fabio-trad",
+                  "match_status": "exact_alias",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "João Henrique Catan (Novo)",
+                  "candidate_slug": "joao-henrique-catan",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 55,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "quaest-ms-09580-2026-1t",
+              "turn": 1,
+              "geography": "Mato Grosso do Sul",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MS|1|estimulada|a74640fe5fb49dbc89817c3b5f55414f16ce4f26b51595ff58299c759027d423|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Eduardo Riedel (PP)",
+                  "candidate_slug": "eduardo-riedel",
+                  "match_status": "exact_alias",
+                  "value_percent": 51,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Fábio Trad (PT)",
+                  "candidate_slug": "fabio-trad",
+                  "match_status": "exact_alias",
+                  "value_percent": 12,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delcídio Amaral (PRD)",
+                  "candidate_slug": "delcidio-amaral",
+                  "match_status": "exact_alias",
+                  "value_percent": 6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "João Henrique Catan (NOVO)",
+                  "candidate_slug": "joao-henrique-catan",
+                  "match_status": "exact_alias",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jeferson Bezerra (Agir)",
+                  "candidate_slug": "jeferson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Lucien Rezende (PSOL)",
+                  "candidate_slug": "lucien-rezende",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Economista Renato Gomes (DC)",
+                  "candidate_slug": "renato-gomes",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Daniel Lemes (PCO)",
+                  "candidate_slug": "daniel-lemes",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 15,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -17977,7 +18867,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|MG|1|estimulada|lista-quaest-2026-09-08-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-33fa279415c8cff7",
+      "exact_aliases_version": "monitor-2026-8bdbce45e5aa48f2",
       "exact_aliases": [
         {
           "raw_label": "Alexandre Kalil",
@@ -18422,6 +19312,105 @@
           "geography": "Minas Gerais",
           "turn": 1,
           "scenario_id": "real-time-big-data-mg-03351-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Cleitinho Azevedo (Republicanos)",
+          "candidate_slug": "cleitinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Patrus Ananias (PT)",
+          "candidate_slug": "patrus-ananias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Alexandre Kalil (PDT)",
+          "candidate_slug": "alexandre-kalil",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Mateus Simões (PSD)",
+          "candidate_slug": "mateus-simoes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Flávio Roscoe (PL)",
+          "candidate_slug": "flavio-roscoe",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Gabriel Azevedo (MDB)",
+          "candidate_slug": "gabriel-azevedo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Ben Mendes (Missão)",
+          "candidate_slug": "ben-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Professor Túlio Lopes (PCB)",
+          "candidate_slug": "tulio-lopes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Indira Xavier (UP)",
+          "candidate_slug": "indira-xavier",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Rafael Duda (PSTU)",
+          "candidate_slug": "rafael-duda",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Henrique Áreas (PCO)",
+          "candidate_slug": "henrique-areas",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "quaest-mg-02019-2026-1t"
         }
       ],
       "pesquisas": [
@@ -19934,6 +20923,194 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 43,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-mg-02019-2026",
+          "source_id": "quaest-mg-02019-2026-revisao-20260930",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Globo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-25",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-28",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-29",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1506,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores de 16 anos ou mais",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "MG-02019/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Minas Gerais",
+            "code": "MG"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.uol.com.br/eleicoes/2026/09/29/quaest-mg-governo-e-senado.ghtm",
+            "supporting_urls": [
+              "https://especiaisg1.globo/mg/minas-gerais/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-30T12:28:54Z",
+            "capture": {
+              "format": "text",
+              "sha256": "3e883b6f35f09c761b23897cf9dcd82e37f98c23b8743c73835f274d6c5bdcb4",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-mg-02019-2026-1t",
+              "turn": 1,
+              "geography": "Minas Gerais",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|MG|1|estimulada|0451e159c31896b1dd8ef0a3e76d1eea28679c67b65b694cbb74d6fbbd678562|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Cleitinho Azevedo (Republicanos)",
+                  "candidate_slug": "cleitinho",
+                  "match_status": "exact_alias",
+                  "value_percent": 37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Patrus Ananias (PT)",
+                  "candidate_slug": "patrus-ananias",
+                  "match_status": "exact_alias",
+                  "value_percent": 18,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Alexandre Kalil (PDT)",
+                  "candidate_slug": "alexandre-kalil",
+                  "match_status": "exact_alias",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Mateus Simões (PSD)",
+                  "candidate_slug": "mateus-simoes",
+                  "match_status": "exact_alias",
+                  "value_percent": 6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Flávio Roscoe (PL)",
+                  "candidate_slug": "flavio-roscoe",
+                  "match_status": "exact_alias",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel Azevedo (MDB)",
+                  "candidate_slug": "gabriel-azevedo",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ben Mendes (Missão)",
+                  "candidate_slug": "ben-mendes",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Túlio Lopes (PCB)",
+                  "candidate_slug": "tulio-lopes",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indira Xavier (UP)",
+                  "candidate_slug": "indira-xavier",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rafael Duda (PSTU)",
+                  "candidate_slug": "rafael-duda",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Henrique Áreas (PCO)",
+                  "candidate_slug": "henrique-areas",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 11,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/não vai votar",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9,
                   "status": "publicado"
                 }
               ]
@@ -25451,7 +26628,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|PE|1|estimulada|lista-quaest-2026-09-08-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-704d9283e62f946d",
+      "exact_aliases_version": "monitor-2026-3c03e436eff5415c",
       "exact_aliases": [
         {
           "raw_label": "Guilherme Fonseca",
@@ -25899,6 +27076,87 @@
           "geography": "Pernambuco",
           "turn": 1,
           "scenario_id": "instituto-revista-total-pe-03150-2026-1t"
+        },
+        {
+          "raw_label": "João Campos",
+          "candidate_slug": "joao-campos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t"
+        },
+        {
+          "raw_label": "Raquel Lyra",
+          "candidate_slug": "raquel-lyra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t"
+        },
+        {
+          "raw_label": "Ivan Moraes",
+          "candidate_slug": "ivan-moraes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t"
+        },
+        {
+          "raw_label": "Professora Camila",
+          "candidate_slug": "camila-falcao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t"
+        },
+        {
+          "raw_label": "Renan",
+          "candidate_slug": "renan-hallais",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t"
+        },
+        {
+          "raw_label": "Victor Assis",
+          "candidate_slug": "victor-assis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t"
+        },
+        {
+          "raw_label": "Guilherme Fonseca",
+          "candidate_slug": "guilherme-fonseca",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t"
+        },
+        {
+          "raw_label": "João Campos",
+          "candidate_slug": "joao-campos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Raquel Lyra",
+          "candidate_slug": "raquel-lyra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pernambuco",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-pe-01835-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -27368,6 +28626,191 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 0.49,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parana-pesquisas-pe-01835-2026",
+          "source_id": "parana-pesquisas-pe-01835-2026-revisao-20260930",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Paraná Pesquisas",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Diario de Pernambuco",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-27",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-29",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-30",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1352,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.7,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas pessoais, domiciliares e presenciais",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "PE-01835/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Pernambuco",
+            "code": "PE"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.diariodepernambuco.com.br/politica/2026/09/11725314-diario-parana-pesquisas-joao-tem-491-e-raquel-486-dos-votos-validos-para-governo-de-pe.html",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-30T12:28:54Z",
+            "capture": {
+              "format": "text",
+              "sha256": "0be0a38264e858c1b386f56ae5b4eb908e13d8018c5f848f9548cdfa9dd6fd84",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "parana-pesquisas-pe-01835-2026-1t",
+              "turn": 1,
+              "geography": "Pernambuco",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PE|1|estimulada|401ee20c55f4336551e35d109cc639b76feff2350f7f4031046df9cf372807b3|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "João Campos",
+                  "candidate_slug": "joao-campos",
+                  "match_status": "exact_alias",
+                  "value_percent": 45.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Raquel Lyra",
+                  "candidate_slug": "raquel-lyra",
+                  "match_status": "exact_alias",
+                  "value_percent": 44.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ivan Moraes",
+                  "candidate_slug": "ivan-moraes",
+                  "match_status": "exact_alias",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Camila",
+                  "candidate_slug": "camila-falcao",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Renan",
+                  "candidate_slug": "renan-hallais",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Victor Assis",
+                  "candidate_slug": "victor-assis",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Guilherme Fonseca",
+                  "candidate_slug": "guilherme-fonseca",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "parana-pesquisas-pe-01835-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Pernambuco",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PE|1|espontanea|9f197495684f002ac86eb8ac66483e1168db120fa051a2acb9a38767857d4889|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "João Campos",
+                  "candidate_slug": "joao-campos",
+                  "match_status": "exact_alias",
+                  "value_percent": 36.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Raquel Lyra",
+                  "candidate_slug": "raquel-lyra",
+                  "match_status": "exact_alias",
+                  "value_percent": 36.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Brancos/nulos/em ninguém",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Os que não sabem/não opinaram",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 20.6,
                   "status": "publicado"
                 }
               ]
@@ -30903,7 +32346,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|RN|1|estimulada|lista-instituto-exatus-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-e175b818a821eed1",
+      "exact_aliases_version": "monitor-2026-ab8e510c8419c45e",
       "exact_aliases": [
         {
           "raw_label": "Allyson Bezerra",
@@ -31309,6 +32752,78 @@
           "geography": "Rio Grande do Norte",
           "turn": 1,
           "scenario_id": "quaest-rn-01492-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Cadu de Lula",
+          "candidate_slug": "cadu-xavier",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
+        },
+        {
+          "raw_label": "Álvaro Dias",
+          "candidate_slug": "alvaro-dias-rn",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
+        },
+        {
+          "raw_label": "Allyson (União Brasil)",
+          "candidate_slug": "alysson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
+        },
+        {
+          "raw_label": "Arinalda do MLB",
+          "candidate_slug": "arinalda-do-mlb",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
+        },
+        {
+          "raw_label": "Professor Robério Paulino",
+          "candidate_slug": "roberio-paulino",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
+        },
+        {
+          "raw_label": "Rodrigo de Bolsonaro",
+          "candidate_slug": "rodrigo-bolsonaro",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
+        },
+        {
+          "raw_label": "Godeiro Linhares (DC)",
+          "candidate_slug": "godeiro-linharess",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
+        },
+        {
+          "raw_label": "Henrique Lyra",
+          "candidate_slug": "henrique-lyra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 1,
+          "scenario_id": "atlasintel-rn-04187-2026-1t"
         }
       ],
       "pesquisas": [
@@ -32268,6 +33783,173 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 6,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "atlasintel-rn-04187-2026",
+          "source_id": "atlasintel-rn-04187-2026-revisao-20260930",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "AtlasIntel",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "AtlasIntel/MeioNorte",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-23",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-28",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-29",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1207,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores com 16 anos ou mais",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Recrutamento digital aleatório (Atlas RDR)",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "RN-04187/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio Grande do Norte",
+            "code": "RN"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.cnnbrasil.com.br/eleicoes/atlasintel-rn-cadu-lidera-1o-turno-no-2o-vence-dias-e-empata-com-allyson/",
+            "supporting_urls": [
+              "https://cdn1.atlasintel.org/pesquisa_atlas__eleicoes_rio_grande_do_norte_260928_ee8ca2ce363b3c06.pdf"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-30T12:28:54Z",
+            "capture": {
+              "format": "text",
+              "sha256": "17113e1ff06d634cd2a852f6c1a5f1e1fb4909a5f1f312c0662e87e54ab6b641",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "atlasintel-rn-04187-2026-1t",
+              "turn": 1,
+              "geography": "Rio Grande do Norte",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": "Em quem você votaria para governador do estado do Rio Grande do Norte?",
+                "status": "publicado"
+              },
+              "comparability_key": "2026|Governador|RN|1|estimulada|cc5ea534ae9d6ac8c996c2f2a1f509a9a9385824f043d5ff6774e556dcd7e980|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Cadu de Lula",
+                  "candidate_slug": "cadu-xavier",
+                  "match_status": "exact_alias",
+                  "value_percent": 37.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Álvaro Dias",
+                  "candidate_slug": "alvaro-dias-rn",
+                  "match_status": "exact_alias",
+                  "value_percent": 27.3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Allyson (União Brasil)",
+                  "candidate_slug": "alysson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 27.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Arinalda do MLB",
+                  "candidate_slug": "arinalda-do-mlb",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professor Robério Paulino",
+                  "candidate_slug": "roberio-paulino",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Rodrigo de Bolsonaro",
+                  "candidate_slug": "rodrigo-bolsonaro",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Godeiro Linhares (DC)",
+                  "candidate_slug": "godeiro-linharess",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Henrique Lyra",
+                  "candidate_slug": "henrique-lyra",
+                  "match_status": "exact_alias",
+                  "value_percent": 0,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Brancos/nulos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.9,
                   "status": "publicado"
                 }
               ]
@@ -38057,7 +39739,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|SP|1|estimulada|lista-quaest-2026-09-08-cenario-2|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-e23e45d7311969a5",
+      "exact_aliases_version": "monitor-2026-ecc1c7f22bc63d0b",
       "exact_aliases": [
         {
           "raw_label": "Carlos Machado",
@@ -38663,6 +40345,60 @@
           "geography": "São Paulo",
           "turn": 1,
           "scenario_id": "datafolha-sp-03730-2026-1t"
+        },
+        {
+          "raw_label": "Tarcísio de Freitas",
+          "candidate_slug": "tarcisio-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "vox-brasil-sp-01943-2026-1t"
+        },
+        {
+          "raw_label": "Fernando Haddad",
+          "candidate_slug": "haddad-gov-sp",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "vox-brasil-sp-01943-2026-1t"
+        },
+        {
+          "raw_label": "Carlos Machado",
+          "candidate_slug": "carlos-machado",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "vox-brasil-sp-01943-2026-1t"
+        },
+        {
+          "raw_label": "Vera Lúcia",
+          "candidate_slug": "vera-lucia",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "vox-brasil-sp-01943-2026-1t"
+        },
+        {
+          "raw_label": "Vivian Mendes",
+          "candidate_slug": "vivian-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "vox-brasil-sp-01943-2026-1t"
+        },
+        {
+          "raw_label": "Izadora Dias",
+          "candidate_slug": "izadora-dias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "São Paulo",
+          "turn": 1,
+          "scenario_id": "vox-brasil-sp-01943-2026-1t"
         }
       ],
       "pesquisas": [
@@ -40549,6 +42285,159 @@
               ]
             }
           ]
+        },
+        {
+          "id": "vox-brasil-sp-01943-2026",
+          "source_id": "vox-brasil-sp-01943-2026-revisao-20260930",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Vox Brasil",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "recursos do próprio instituto",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-27",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-29",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-30",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1480,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.55,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevista presencial",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "SP-01943/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "São Paulo",
+            "code": "SP"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.cnnbrasil.com.br/eleicoes/vox-tarcisio-tem-585-no-1o-turno-ao-governo-de-sp-haddad-362/",
+            "supporting_urls": [
+              "https://www.opovo.com.br/noticias/politica/eleicoes/2026/09/30/novas-pesquisas-sao-divulgadas-hoje-quarta-30-09-saiba-quais.html"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-09-30T12:28:54Z",
+            "capture": {
+              "format": "text",
+              "sha256": "59e87cad7f0915266bfe7f84fd84e223d6c628c9a160fcde1ad09556a0a3576f",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "vox-brasil-sp-01943-2026-1t",
+              "turn": 1,
+              "geography": "São Paulo",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|SP|1|estimulada|62dd3bab2391b0e1477e42d19bd093b372fe8dbdd850d264f364e5e08c96aa7b|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Tarcísio de Freitas",
+                  "candidate_slug": "tarcisio-gov-sp",
+                  "match_status": "exact_alias",
+                  "value_percent": 58.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Fernando Haddad",
+                  "candidate_slug": "haddad-gov-sp",
+                  "match_status": "exact_alias",
+                  "value_percent": 36.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Carlos Machado",
+                  "candidate_slug": "carlos-machado",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vera Lúcia",
+                  "candidate_slug": "vera-lucia",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vivian Mendes",
+                  "candidate_slug": "vivian-mendes",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Izadora Dias",
+                  "candidate_slug": "izadora-dias",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Votos nulos, brancos ou em nenhum candidato",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabem ou não opinaram",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.2,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -42425,69 +44314,6 @@
           "geography": "Tocantins",
           "turn": 1,
           "scenario_id": "quaest-to-00371-2026-1t"
-        },
-        {
-          "raw_label": "Professora Dorinha",
-          "candidate_slug": "professora-dorinha",
-          "year": 2026,
-          "office": "Governador",
-          "geography": "Tocantins",
-          "turn": 1,
-          "scenario_id": "real-time-big-data-to-04340-2026-1t"
-        },
-        {
-          "raw_label": "Vicentinho",
-          "candidate_slug": "vicentinho-junior",
-          "year": 2026,
-          "office": "Governador",
-          "geography": "Tocantins",
-          "turn": 1,
-          "scenario_id": "real-time-big-data-to-04340-2026-1t"
-        },
-        {
-          "raw_label": "Laurez Moreira (PSD)",
-          "candidate_slug": "laurez-moreira",
-          "year": 2026,
-          "office": "Governador",
-          "geography": "Tocantins",
-          "turn": 1,
-          "scenario_id": "real-time-big-data-to-04340-2026-1t"
-        },
-        {
-          "raw_label": "Ataides de Oliveira (Novo)",
-          "candidate_slug": "ataides-oliveira",
-          "year": 2026,
-          "office": "Governador",
-          "geography": "Tocantins",
-          "turn": 1,
-          "scenario_id": "real-time-big-data-to-04340-2026-1t"
-        },
-        {
-          "raw_label": "Prof. Witer Naves (PSOL)",
-          "candidate_slug": "witer-naves",
-          "year": 2026,
-          "office": "Governador",
-          "geography": "Tocantins",
-          "turn": 1,
-          "scenario_id": "real-time-big-data-to-04340-2026-1t"
-        },
-        {
-          "raw_label": "Siqueira Campos Jr (Democrata)",
-          "candidate_slug": "siqueira-campos-jr",
-          "year": 2026,
-          "office": "Governador",
-          "geography": "Tocantins",
-          "turn": 1,
-          "scenario_id": "real-time-big-data-to-04340-2026-1t"
-        },
-        {
-          "raw_label": "Du Pereira (DC)",
-          "candidate_slug": "du-pereira",
-          "year": 2026,
-          "office": "Governador",
-          "geography": "Tocantins",
-          "turn": 1,
-          "scenario_id": "real-time-big-data-to-04340-2026-1t"
         }
       ],
       "pesquisas": [
@@ -43487,166 +45313,6 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 4,
-                  "status": "publicado"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "real-time-big-data-to-04340-2026",
-          "source_id": "real-time-big-data-estaduais-2026",
-          "source_status": "aprovado",
-          "publishable_by_default": true,
-          "state": "publicado",
-          "instituto": {
-            "value": "Real Time Big Data",
-            "status": "publicado"
-          },
-          "contratante": {
-            "value": "recursos do próprio instituto",
-            "status": "publicado"
-          },
-          "fieldwork": {
-            "start": {
-              "value": "2026-09-21",
-              "status": "publicado"
-            },
-            "end": {
-              "value": "2026-09-24",
-              "status": "publicado"
-            }
-          },
-          "publication_date": {
-            "value": "2026-09-25",
-            "status": "publicado"
-          },
-          "sample": {
-            "size": {
-              "value": 1600,
-              "status": "publicado"
-            },
-            "population": {
-              "value": "eleitores",
-              "status": "publicado"
-            }
-          },
-          "margin_error_pp": {
-            "value": 2,
-            "status": "publicado"
-          },
-          "confidence_percent": {
-            "value": 95,
-            "status": "publicado"
-          },
-          "method": {
-            "value": null,
-            "status": "indeterminado"
-          },
-          "registration": {
-            "code": {
-              "value": "TO-04340/2026",
-              "status": "publicado"
-            },
-            "url": {
-              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
-              "status": "publicado"
-            }
-          },
-          "geography": {
-            "type": "unidade_federativa",
-            "label": "Tocantins",
-            "code": "TO"
-          },
-          "office": "Governador",
-          "provenance": {
-            "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-em-tocantins-dorinha-tem-45-no-2o-turno-vicentinho-42/",
-            "supporting_urls": [
-              "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
-            ],
-            "source_kind": "divulgacao_jornalistica_publica",
-            "route_class": "importacao_manual_auditada",
-            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
-            "consulted_at": "2026-09-28T12:46:33Z",
-            "capture": {
-              "format": "text",
-              "sha256": "e2f0d31a1dfe218d9abded084d8776c4e8139dcad64e25ef15b537cf4440770a",
-              "status": "publicado"
-            }
-          },
-          "cenarios": [
-            {
-              "id": "real-time-big-data-to-04340-2026-1t",
-              "turn": 1,
-              "geography": "Tocantins",
-              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
-              "question": {
-                "value": null,
-                "status": "indeterminado"
-              },
-              "comparability_key": "2026|Governador|TO|1|estimulada|f2d21f32e61f707585f84d5d173f1f510d5320d95f243dfcbd57075144a22ad8|total_amostra",
-              "resultados": [
-                {
-                  "raw_label": "Professora Dorinha",
-                  "candidate_slug": "professora-dorinha",
-                  "match_status": "exact_alias",
-                  "value_percent": 40,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "Vicentinho",
-                  "candidate_slug": "vicentinho-junior",
-                  "match_status": "exact_alias",
-                  "value_percent": 33,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "Laurez Moreira (PSD)",
-                  "candidate_slug": "laurez-moreira",
-                  "match_status": "exact_alias",
-                  "value_percent": 7,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "Ataides de Oliveira (Novo)",
-                  "candidate_slug": "ataides-oliveira",
-                  "match_status": "exact_alias",
-                  "value_percent": 5,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "Prof. Witer Naves (PSOL)",
-                  "candidate_slug": "witer-naves",
-                  "match_status": "exact_alias",
-                  "value_percent": 3,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "Siqueira Campos Jr (Democrata)",
-                  "candidate_slug": "siqueira-campos-jr",
-                  "match_status": "exact_alias",
-                  "value_percent": 2,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "Du Pereira (DC)",
-                  "candidate_slug": "du-pereira",
-                  "match_status": "exact_alias",
-                  "value_percent": 0,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "Votos nulos ou brancos",
-                  "candidate_slug": null,
-                  "match_status": "not_candidate",
-                  "value_percent": 5,
-                  "status": "publicado"
-                },
-                {
-                  "raw_label": "os que não sabem ou não responderam",
-                  "candidate_slug": null,
-                  "match_status": "not_candidate",
-                  "value_percent": 5,
                   "status": "publicado"
                 }
               ]

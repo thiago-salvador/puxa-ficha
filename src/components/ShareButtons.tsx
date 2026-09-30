@@ -3,6 +3,7 @@
 import { ImageIcon } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
 import { SocialCardModal } from "@/components/SocialCardModal"
+import type { FaseEleitoral2026 } from "@/lib/types"
 
 interface ShareButtonsProps {
   shareUrl: string
@@ -15,6 +16,7 @@ interface ShareButtonsProps {
   candidateName?: string
   /** `ultima_atualizacao` da ficha, versiona a URL do card */
   cardVersion?: string | null
+  faseEleitoral?: FaseEleitoral2026 | null
 }
 
 export function ShareButtons({
@@ -25,6 +27,7 @@ export function ShareButtons({
   slug,
   candidateName,
   cardVersion,
+  faseEleitoral,
 }: ShareButtonsProps) {
   const [canNativeShare, setCanNativeShare] = useState(false)
   const [cardModalOpen, setCardModalOpen] = useState(false)
@@ -80,6 +83,7 @@ export function ShareButtons({
             slug={slug}
             candidateName={candidateName ?? slug}
             cardVersion={cardVersion}
+            faseEleitoral={faseEleitoral}
             shareUrl={shareUrl}
             shareTitle={title}
             open={cardModalOpen}
@@ -146,6 +150,7 @@ export function ShareButtons({
           slug={slug}
           candidateName={candidateName ?? slug}
           cardVersion={cardVersion}
+          faseEleitoral={faseEleitoral}
           shareUrl={shareUrl}
           shareTitle={title}
           open={cardModalOpen}

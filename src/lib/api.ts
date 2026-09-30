@@ -1,4 +1,6 @@
 import "server-only"
+import { unstable_rethrow } from "next/navigation"
+import { validarLeituraFases, type FaseEleitoralPublica } from "@/lib/fase-eleitoral-publica"
 import { anosGastosParlamentaresEmRevisao, gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
 import { cache } from "react"
 import { unstable_noStore as noStore } from "next/cache"
@@ -86,7 +88,7 @@ export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
 export { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 
 /** Único ponto de bump para invalidar todas as superfícies públicas em cache. */
-export const CURRENT_DATA_WAVE = "judicial-selo-20260927"
+export const CURRENT_DATA_WAVE = "fase-publica-20260929"
 
 const supabaseUrl = getAppSupabaseUrl()
 const USE_MOCK = !supabaseUrl || supabaseUrl.includes("placeholder")
@@ -380,7 +382,7 @@ async function getCandidatosResourceUncached(
   // (substitui as 4 fronteiras do Bloco 1: CandidatoFichaView, embed/page.tsx,
   // uf/[uf]/page.tsx, preview/candidato/[slug]/page.tsx). Ver
   // src/lib/public-candidate-sanitize.ts.
-  return liveResource(sanitizePublicDisplayNameFieldsList(sanitizePublicPartyFieldsList(data as Candidato[])))
+  return liveResource(await anexarFasesEleitorais(sanitizePublicDisplayNameFieldsList(sanitizePublicPartyFieldsList(data as Candidato[]))))
 }
 
 const getCachedCandidatosResource = unstableCacheWithSingleFlight(
@@ -976,27 +978,47 @@ async function fetchChapa2026(
 
 /**
  * Fase eleitoral 2026 da ficha (coorte de atualização pós-turno). Sem linha na
- * view = em disputa, nota nenhuma. View ausente (banco antes da migration
- * 20260927050000) degrada para `null`, como a de chapas; outro erro propaga.
+ * view, leitura parcial ou falha da consulta deixam a fase ausente, sem selo.
  */
 async function fetchFaseEleitoral2026(
   candidatoId: string,
   cacheMode: "no-store" | undefined,
 ): Promise<FaseEleitoral2026 | null> {
-  const client = createServerSupabaseClient(cacheMode ? { cacheMode } : undefined)
-  const { data, error } = await withSupabaseRetry(
-    `candidaturas_fase_2026_publico(${candidatoId})`,
-    async (signal) =>
-      client
-        .from("candidaturas_fase_2026_publico")
-        .select("fase_eleitoral, fase_turno, atualizacao_encerrada_em")
-        .eq("candidato_id", candidatoId)
-        .abortSignal(signal)
-        .maybeSingle(),
-  )
-  if (isMissingFaseEleitoralViewError(error)) return null
-  if (error) throw new Error(`candidaturas_fase_2026_publico: ${error.message ?? error.code ?? "erro"}`)
-  return (data as FaseEleitoral2026 | null) ?? null
+  const fases = await getFasesEleitorais2026(cacheMode)
+  const row = fases.find(f => f.candidato_id === candidatoId)
+  return row ? { fase_eleitoral: row.fase_eleitoral, fase_turno: row.fase_turno, atualizacao_encerrada_em: row.atualizacao_encerrada_em } : null
+}
+
+/** Leitura única e completa; falha, truncamento ou shape inválido deixam todos sem fase. */
+export const getFasesEleitorais2026 = cache(async (
+  cacheMode: "no-store" | undefined = undefined,
+): Promise<FaseEleitoralPublica[]> => {
+  if (USE_MOCK) return []
+  try {
+    const client = createServerSupabaseClient({ cacheMode, tags: ["public-candidato-ficha", "public-candidatos", "public-candidatos-comparaveis", "public-candidatos-resumo"] })
+    const { data, error, count } = await withSupabaseRetry("candidaturas_fase_2026_publico", async signal =>
+      client.from("candidaturas_fase_2026_publico")
+        .select("candidato_id,slug,cargo_disputado,fase_eleitoral,fase_turno,atualizacao_encerrada_em", { count: "exact" })
+        .order("candidato_id").range(0, 999).abortSignal(signal).throwOnError(),
+    )
+    if (error) return []
+    return validarLeituraFases(data, count ?? null)
+  } catch (error) {
+    unstable_rethrow(error)
+    return []
+  }
+})
+
+async function anexarFasesEleitorais<T extends { id: string; slug: string; cargo_disputado: string | null }>(candidatos: T[]): Promise<T[]> {
+  const fases = await getFasesEleitorais2026()
+  if (fases.length === 0) return candidatos
+  const byId = new Map(fases.map(f => [f.candidato_id, f]))
+  return candidatos.map(c => {
+    const f = byId.get(c.id)
+    return f && f.cargo_disputado === c.cargo_disputado && f.slug === c.slug
+      ? { ...c, fase_eleitoral_2026: { fase_eleitoral: f.fase_eleitoral, fase_turno: f.fase_turno, atualizacao_encerrada_em: f.atualizacao_encerrada_em } }
+      : c
+  })
 }
 
 export function isMissingFaseEleitoralViewError(
@@ -2667,7 +2689,7 @@ async function getCandidatosComparaveisResourceUncached(
 
   // Sanitiza partido_sigla/partido_atual antes do payload publico sair
   // (substitui mapping pontual em ComparadorPanel/RankingTable defensivos).
-  return liveResource(sanitizePublicDisplayNameFieldsList(sanitizePublicPartyFieldsList(normalizedRows as CandidatoComparavel[])))
+  return liveResource(await anexarFasesEleitorais(sanitizePublicDisplayNameFieldsList(sanitizePublicPartyFieldsList(normalizedRows as CandidatoComparavel[]))))
 }
 
 const getCachedCandidatosComparaveisResource = unstableCacheWithSingleFlight(

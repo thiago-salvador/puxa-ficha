@@ -894,7 +894,11 @@ export function CandidatoProfile({
                 <ProfileOverview
                   ficha={ficha}
                   onNavigateTab={navigateToTab}
-                  pollCard={pesquisas.length > 0 ? <PollIntentionCard pesquisas={pesquisas} /> : undefined}
+                  pollCard={pesquisas.length > 0
+                    ? ficha.fase_eleitoral_2026?.fase_eleitoral && ficha.fase_eleitoral_2026.fase_eleitoral !== "em_disputa"
+                      ? <PollIntentionCard pesquisas={pesquisas} resultadoEleitoralPublicado />
+                      : <PollIntentionCard pesquisas={pesquisas} />
+                    : undefined}
                   trailingCard={
                     programaEnabled && programaGoverno ? (
                       <ProgramaGovernoOverview

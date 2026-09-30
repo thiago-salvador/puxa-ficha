@@ -8,9 +8,10 @@ import { groupWeeklyPollSeries } from "@/lib/poll-weeks"
 import { PollTrendChart } from "./PollTrendChart"
 import styles from "./StatePolls.module.css"
 
-export function StatePolls({ polls, unavailable = false, candidates = [], office = "Governador" }: {
+export function StatePolls({ polls, unavailable = false, candidates = [], office = "Governador", resultadoEleitoralPublicado = false }: {
   polls: StatePollScenario[]; unavailable?: boolean; candidates?: PollCandidate[]
   office?: "Governador" | "Senador"
+  resultadoEleitoralPublicado?: boolean
 }) {
   const id = useId()
   const [turn, setTurn] = useState<1 | 2>(1)
@@ -33,7 +34,7 @@ export function StatePolls({ polls, unavailable = false, candidates = [], office
   const monthLabel = (month: string) => new Date(`${month}-01T12:00:00Z`).toLocaleDateString("pt-BR", { month: "long", year: "numeric", timeZone: "UTC" })
 
   return <section id="pesquisas" className={styles.section} aria-labelledby={`${id}-title`} data-pf-polls="">
-    <header className={styles.heading}><p>Eleições · {isSenado ? "Senado · Pesquisas" : "Pesquisas"}</p><h2 id={`${id}-title`}>{isSenado ? "A disputa pelas duas vagas" : "A evolução da disputa"}</h2><div>{isSenado ? "Dois votos por eleitor. Sem segundo turno." : "Uma linha por candidato. Um ponto por semana."}</div><p>Cobertura parcial: esta seção não reúne todas as pesquisas divulgadas.</p></header>
+    <header className={styles.heading}><p>Eleições · {isSenado ? "Senado · Pesquisas" : "Pesquisas"}</p><h2 id={`${id}-title`}>{isSenado ? "A disputa pelas duas vagas" : "A evolução da disputa"}</h2><div>{isSenado ? "Dois votos por eleitor. Sem segundo turno." : "Uma linha por candidato. Um ponto por semana."}</div>{resultadoEleitoralPublicado && activeTurn === 1 && <p data-pf-pesquisa-resultado-turno="">pesquisa do 1º turno</p>}<p>Cobertura parcial: esta seção não reúne todas as pesquisas divulgadas.</p></header>
     <div className={styles.toolbar}>
       <div className={styles.viewLabel}><TrendingUp size={20} aria-hidden="true" />Evolução</div>
       <button className={styles.filterToggle} type="button" aria-label="Filtros de pesquisa" aria-expanded={filtersExpanded} aria-controls={`${id}-filters`} onClick={() => setFiltersExpanded(value => !value)}><SlidersHorizontal size={18} aria-hidden="true" /></button>

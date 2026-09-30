@@ -8,6 +8,7 @@ import type { ProcessosJusticaContagem } from "@/lib/processos-justica-total";
 
 // --- Candidato ---
 export interface Candidato {
+  fase_eleitoral_2026?: FaseEleitoral2026 | null;
   id: string;
   nome_completo: string;
   nome_urna: string;
@@ -831,6 +832,7 @@ export interface FichaCandidato extends Candidato {
 }
 
 export interface CandidatoComparavel {
+  fase_eleitoral_2026?: FaseEleitoral2026 | null;
   id: string;
   nome_urna: string;
   slug: string;

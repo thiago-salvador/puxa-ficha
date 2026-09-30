@@ -10,6 +10,7 @@ import type {
 
 interface PesquisasProps {
   pesquisas: PesquisaEleitoralDoCandidato[]
+  resultadoEleitoralPublicado?: boolean
 }
 
 const ESTADO_LABEL: Record<EstadoPesquisa, string> = {
@@ -56,7 +57,7 @@ function doGrupo(
   return pesquisas.filter((pesquisa) => (pesquisa.grupo ?? "recente") === grupo)
 }
 
-export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
+export function PesquisasPresidenciaisHero({ pesquisas, resultadoEleitoralPublicado = false }: PesquisasProps) {
   const primeiroTurno = doGrupo(pesquisas, "recente").filter(
     (pesquisa) => pesquisa.cenario.turn === 1 && resultadoPublicado(pesquisa),
   )
@@ -95,6 +96,7 @@ export function PesquisasPresidenciaisHero({ pesquisas }: PesquisasProps) {
           {resultadoLabel(pesquisa)}
         </p>
       </div>
+      {resultadoEleitoralPublicado && <p data-pf-pesquisa-resultado-turno="" className="mt-2 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground">pesquisa do 1º turno</p>}
     </div>
   )
 }

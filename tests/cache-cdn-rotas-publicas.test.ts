@@ -110,15 +110,30 @@ test("versão do card segue a última atualização da ficha", () => {
   const a = socialCardVersionToken("2026-09-29T10:00:00Z")
   const b = socialCardVersionToken("2026-09-29T10:00:01Z")
   assert.notEqual(a, b)
+  assert.match(a, /^3-/)
   assert.equal(a, socialCardVersionToken("2026-09-29T10:00:00.000Z"))
-  assert.equal(socialCardVersionToken(null), "2")
-  assert.equal(socialCardVersionToken("não é data"), "2")
+  assert.equal(socialCardVersionToken(null), "3")
+  assert.equal(socialCardVersionToken("não é data"), "3")
+})
+
+test("mudança de fase oficial invalida o card mesmo sem atualização da ficha", () => {
+  const updated = "2026-09-29T10:00:00Z"
+  const finalist = { fase_eleitoral: "segundo_turno", fase_turno: 1 } as const
+  const elected = { fase_eleitoral: "eleito", fase_turno: 2 } as const
+  const neutral = { fase_eleitoral: "em_disputa", fase_turno: 1 } as const
+  const before = socialCardVersionToken(updated)
+  const after = socialCardVersionToken(updated, finalist)
+  assert.notEqual(before, after)
+  assert.notEqual(after, socialCardVersionToken(updated, elected))
+  assert.equal(after, socialCardVersionToken(updated, { ...finalist }))
+  assert.equal(before, socialCardVersionToken(updated, neutral))
+  assert.notEqual(socialCardVersionToken(null), socialCardVersionToken(null, finalist))
 })
 
 test("o card não fura o CDN com valor por abertura", () => {
   const src = code("src/components/SocialCardModal.tsx")
   assert.doesNotMatch(src, /Date\.now\(\)/)
-  assert.doesNotMatch(src, /v=2`/)
+  assert.doesNotMatch(src, /v=3`/)
 })
 
 test("a ficha é ISR sob demanda e não lê request no servidor", () => {
@@ -146,4 +161,3 @@ test("o revalidate apaga as mesmas tags no CDN e falha alto se não conseguir", 
   assert.match(route, /await dangerouslyDeleteByTag\(\[\.\.\.result\.revalidated\]\)/)
   assert.match(route, /cdn_purge_failed/)
 })
-
