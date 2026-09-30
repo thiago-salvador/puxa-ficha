@@ -92,7 +92,7 @@ const CARD_NOTICE = "Confira os dados na fonte original antes de publicar."
 
 function CardNotice({ size }: { size: number }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", background: "#fff7ed", border: "1px solid #111111", padding: `${Math.round(size * 0.65)}px ${Math.round(size * 0.9)}px`, color: "#7c2d12", fontFamily: FONT_SANS, fontSize: size, fontWeight: 700, lineHeight: 1.2 }}>
+    <div style={{ display: "flex", alignItems: "center", background: "#fffbeb", border: "1px solid #fcd34d", padding: `${Math.round(size * 0.65)}px ${Math.round(size * 0.9)}px`, color: "#451a03", fontFamily: FONT_SANS, fontSize: size, fontWeight: 700, lineHeight: 1.2 }}>
       {CARD_NOTICE}
     </div>
   )
