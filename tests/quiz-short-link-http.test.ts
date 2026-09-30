@@ -219,15 +219,16 @@ describe("quiz short-link HTTP route", () => {
     assert.deepEqual(await readJson(response), { error: "Cross-site request blocked" })
   })
 
-  it("uses x-vercel-forwarded-for over x-forwarded-for when both are present", async () => {
+  it("ignores spoofed x-vercel-forwarded-for outside Vercel", async () => {
     await enableFileStore()
 
-    // Hit the same bucket 24 times via x-vercel-forwarded-for — x-forwarded-for (spoofable)
-    // varia mas não pode permitir bypass do rate limit quando o header confiável existe.
+    // O IP local continua no mesmo balde quando os headers encaminhados variam.
+    // Fora da plataforma, x-vercel-forwarded-for não pode contornar o limite.
     for (let index = 0; index < 24; index += 1) {
       const response = await POST(
         request(VALID_QUERY, {
-          "x-vercel-forwarded-for": "198.51.100.9",
+          "x-real-ip": "198.51.100.9",
+          "x-vercel-forwarded-for": `198.51.100.${index + 1}`,
           "x-forwarded-for": `10.0.0.${index + 1}`,
         }),
       )
@@ -236,7 +237,8 @@ describe("quiz short-link HTTP route", () => {
 
     const limited = await POST(
       request(VALID_QUERY, {
-        "x-vercel-forwarded-for": "198.51.100.9",
+        "x-real-ip": "198.51.100.9",
+        "x-vercel-forwarded-for": "198.51.100.99",
         "x-forwarded-for": "10.0.0.99",
       }),
     )
