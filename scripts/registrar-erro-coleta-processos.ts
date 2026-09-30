@@ -1,7 +1,9 @@
 /**
- * Quando a coleta judicial agendada cai antes de produzir evidência, grava um
- * recibo `erro` para cada alvo do snapshot da execução. A ficha passa a dizer
- * que a última busca falhou, em vez de manter silêncio até o SLA vencer.
+ * Quando a coleta judicial agendada cai antes de produzir evidência por falha
+ * que não é da fonte oficial (código, banco, checkpoint), grava um recibo
+ * `erro` para os alvos do snapshot sem recibo ou cujo último recibo já é
+ * `erro`. Recibo válido nunca é rebaixado, e falha de acesso à fonte não grava
+ * nada (ver FALHAS_DE_FONTE): a próxima execução tenta de novo.
  *
  * Padrão dry-run. `--apply` grava pelo registrador canônico, um alvo por vez.
  *
@@ -29,6 +31,40 @@ export function slugsDoSnapshot(valor: unknown): string[] {
   })
   if (new Set(slugs).size !== slugs.length) throw new Error("snapshot invalido: slug repetido")
   return slugs
+}
+
+/**
+ * Falhas de acesso à fonte oficial (limite, bloqueio, indisponibilidade, tempo,
+ * DNS, rede). Nelas a coleta falha fechada: nenhum recibo `erro` é gravado, os
+ * recibos existentes ficam como estão e a próxima execução tenta de novo.
+ */
+export const FALHAS_DE_FONTE: ReadonlySet<string> = new Set([
+  "limite_de_taxa", "bloqueio_http", "fonte_indisponivel", "tempo_esgotado", "dns", "rede",
+])
+
+/**
+ * Quais alvos podem ganhar recibo `erro`. Nunca rebaixa: só alvo sem recibo
+ * (`ultimo_recibo: null`) ou cujo último recibo já é `erro`. Alvo sem o campo
+ * no snapshot conta como desconhecido e fica de fora.
+ */
+export function planejarRecibosErro(valor: unknown, tipo: string): { slugs: string[]; mantidos: number; motivo: string | null } {
+  const slugs = slugsDoSnapshot(valor)
+  if (FALHAS_DE_FONTE.has(tipo)) {
+    return { slugs: [], mantidos: slugs.length, motivo: "fonte oficial indisponivel: recibos existentes mantidos, nenhum recibo erro gravado" }
+  }
+  const alvos = (valor as { alvos: Array<Record<string, unknown>> }).alvos
+  const permitidos = slugs.filter((_, indice) => {
+    const alvo = alvos[indice]
+    if (!("ultimo_recibo" in alvo)) return false
+    const ultimo = alvo.ultimo_recibo
+    if (ultimo === null) return true
+    return Boolean(ultimo && typeof ultimo === "object" && (ultimo as Record<string, unknown>).resultado === "erro")
+  })
+  return {
+    slugs: permitidos,
+    mantidos: slugs.length - permitidos.length,
+    motivo: permitidos.length < slugs.length ? "alvos com recibo nao-erro mantidos sem rebaixar" : null,
+  }
 }
 
 export const TIPOS_FALHA: Readonly<Record<string, string>> = Object.freeze({
@@ -71,13 +107,14 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   const modo = argv.find((arg) => arg.startsWith("--modo="))?.slice("--modo=".length)
   if (!snapshot || !tipo || !modo) throw new Error("uso: --snapshot=<arquivo> --tipo=<enum> --modo=<modo> [--apply]")
   const apply = argv.includes("--apply")
-  const slugs = slugsDoSnapshot(JSON.parse(readFileSync(snapshot, "utf8")))
-  const planos = slugs.map((slug) => argumentosErro(slug, tipo, modo))
+  if (!TIPOS_FALHA[tipo]) throw new Error(`--tipo invalido: ${tipo}`)
+  const plano = planejarRecibosErro(JSON.parse(readFileSync(snapshot, "utf8")), tipo)
+  const planos = plano.slugs.map((slug) => argumentosErro(slug, tipo, modo))
   if (apply) {
     for (const args of planos) await registrarRevisao([...args, "--apply"])
   }
   // Só contagem: o log do Actions é público.
-  console.log(JSON.stringify({ modo: apply ? "apply" : "dry-run", recibos_erro: planos.length }))
+  console.log(JSON.stringify({ modo: apply ? "apply" : "dry-run", recibos_erro: planos.length, mantidos: plano.mantidos, motivo: plano.motivo }))
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

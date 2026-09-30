@@ -33,6 +33,7 @@ import { supabase } from "./lib/supabase"
 import { stripAccents } from "../src/lib/strip-accents"
 import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { ColetorDiagnostico, DISJUNTOR_ABERTO, classificarFalhaColeta } from "./lib/diagnostico-coleta-processos"
+import { ClienteFontesOficiais, eFonteSuspensa } from "./lib/fonte-oficial-resiliente"
 
 const DJEN = "https://comunicaapi.pje.jus.br"
 const DATAJUD = "https://api-publica.datajud.cnj.jus.br"
@@ -920,11 +921,19 @@ export async function processarComDoisWorkers<T, R>(
 ): Promise<R[]> {
   const resultados = new Array<R>(itens.length)
   let proximo = 0
+  let interrompido = false
   const trabalhador = async (): Promise<void> => {
-    while (proximo < itens.length) {
+    // Falha fatal num trabalhador (ex.: fonte suspensa) impede o outro de
+    // começar itens novos; o item já em curso termina ou falha sozinho.
+    while (!interrompido && proximo < itens.length) {
       const indice = proximo
       proximo += 1
-      resultados[indice] = await processar(itens[indice], indice)
+      try {
+        resultados[indice] = await processar(itens[indice], indice)
+      } catch (erro) {
+        interrompido = true
+        throw erro
+      }
     }
   }
   await Promise.all([trabalhador(), trabalhador()])
@@ -958,33 +967,9 @@ export function ordenar(coorte: SnapshotCandidato[]): SnapshotCandidato[] {
   return [...coorte].sort((a, b) => prioridade(a) - prioridade(b) || a.slug.localeCompare(b.slug))
 }
 
-/** Espera antes de nova tentativa: respeita Retry-After (s ou data HTTP), senão 30 s, 60 s, 120 s... teto 300 s. */
-export function esperaRetry(tentativa: number, retryAfter: string | null, agora = Date.now()): number {
-  const teto = 300_000
-  if (retryAfter) {
-    const segundos = Number(retryAfter)
-    if (Number.isFinite(segundos) && segundos >= 0) return Math.min(teto, Math.ceil(segundos * 1000))
-    const data = Date.parse(retryAfter)
-    if (Number.isFinite(data)) return Math.min(teto, Math.max(0, data - agora))
-  }
-  return Math.min(teto, 30_000 * 2 ** tentativa)
-}
-
-/**
- * Disjuntor por fonte: depois de N respostas 429/5xx seguidas (somando
- * chamadas diferentes), a coleta para em vez de insistir contra o tribunal.
- */
-export class Disjuntor {
-  private seguidas = 0
-  constructor(readonly limite = 4) {}
-  registrarFalha(): void { this.seguidas += 1 }
-  registrarSucesso(): void { this.seguidas = 0 }
-  get aberto(): boolean { return this.seguidas >= this.limite }
-}
-
 export { DISJUNTOR_ABERTO, classificarFalhaColeta }
+export { Disjuntor, esperaRetry } from "./lib/fonte-oficial-resiliente"
 export type { TipoFalhaColeta } from "./lib/diagnostico-coleta-processos"
-const disjuntorFontes = new Disjuntor()
 /** Contagens agregadas por fonte e tipo; nunca nome, CPF, CNJ ou URL. */
 const diagnostico = new ColetorDiagnostico()
 
@@ -1000,22 +985,25 @@ async function fetchContado(url: string, init: RequestInit & { signal: AbortSign
   }
 }
 
-async function fetchJson<T>(url: string, init?: RequestInit, tentativas = 3, timeoutMs = 60_000): Promise<T> {
-  for (let i = 0; i < tentativas; i += 1) {
-    if (disjuntorFontes.aberto) throw new Error(DISJUNTOR_ABERTO)
-    const resposta = await fetchContado(url, { ...init, signal: AbortSignal.timeout(timeoutMs) })
-    if (resposta.status === 429 || resposta.status >= 500) {
-      disjuntorFontes.registrarFalha()
-      if (i + 1 < tentativas && !disjuntorFontes.aberto) {
-        await new Promise((resolve) => setTimeout(resolve, esperaRetry(i, resposta.headers.get("retry-after"))))
-        continue
-      }
-    }
-    if (!resposta.ok) throw new Error(`HTTP ${resposta.status} em ${url}`)
-    disjuntorFontes.registrarSucesso()
-    return await resposta.json() as T
-  }
-  throw new Error(`limite de tentativas em ${url}`)
+/**
+ * Cliente das fontes oficiais: estado por fonte, intervalo mínimo entre
+ * chamadas, backoff com jitter e orçamento de novas tentativas. Fonte
+ * suspensa para a execução (FonteSuspensaError) em vez de virar `erro` em
+ * cada candidato restante. Regras em scripts/lib/fonte-oficial-resiliente.ts.
+ */
+const fontesOficiais = new ClienteFontesOficiais({
+  fetch: fetchContado,
+  aoEsperar: ({ fonte, status, esperaMs, novaTentativa }) => {
+    console.error(`[fontes] ${fonte}: ${status}; nova tentativa ${novaTentativa} em ${Math.round(esperaMs / 1000)} s`)
+  },
+})
+
+/** `tentativas` conta a primeira chamada; omitido, vale a política da fonte. */
+async function fetchJson<T>(url: string, init?: RequestInit, tentativas?: number, timeoutMs = 60_000): Promise<T> {
+  return await fontesOficiais.json<T>(url, init, {
+    novasTentativas: tentativas === undefined ? undefined : Math.max(0, tentativas - 1),
+    timeoutMs,
+  })
 }
 
 async function baixar(url: string, destino: string): Promise<void> {
@@ -2048,6 +2036,9 @@ export async function pesquisarCandidato(
       processos,
     }
   } catch (erro) {
+    // Fonte suspensa não é resultado do candidato: a execução inteira para, e
+    // quem não chegou a ser consultado não ganha recibo `erro`.
+    if (eFonteSuspensa(erro)) throw erro
     return {
       ...baseConfirmada,
       identidade,
@@ -2144,6 +2135,7 @@ export async function pesquisarCandidatoPorCnjs(
         base.ocorrencias_ambiguas.push({ numero_cnj: numero, tribunal, motivo: "CNJ oficial sem segundo identificador suficiente para atribuir a pessoa" })
       }
     } catch (erro) {
+      if (eFonteSuspensa(erro)) throw erro
       const mensagem = erro instanceof Error ? erro.message : String(erro)
       const fonteSuspensa = mensagem === DJEN_NUMERO_SUSPENSO
       if (fonteSuspensa) {
