@@ -2,6 +2,7 @@
 
 // cspell:ignore Transcricao
 
+import { safeHref } from "@/lib/utils"
 import { useEffect, useMemo, useState } from "react"
 import { ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from "lucide-react"
 
@@ -106,7 +107,7 @@ function QuoteSource({ quote }: { quote: DebatePressQuote }) {
         {quote.source_credit && <span className="mt-1 block">Crédito da matéria: {quote.source_credit}.</span>}
       </p>
       <a
-        href={mediaUrl?.toString() ?? quote.article_url}
+        href={safeHref(mediaUrl?.toString() ?? quote.article_url) ?? undefined}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex min-h-10 items-center gap-1.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

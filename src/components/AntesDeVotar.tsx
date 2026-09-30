@@ -1,5 +1,6 @@
 "use client"
 
+import { safeHref } from "@/lib/utils"
 import { useEffect, useMemo, useState } from "react"
 import {
   TIME_ZONE_EVIDENCE,
@@ -18,7 +19,7 @@ function formatCheckedAt(value: string): string {
 }
 
 function sourceLink(href: string, children: string) {
-  return <a href={href} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer" aria-label={`${children} (abre em nova aba)`} className="underline underline-offset-2">{children}</a>
+  return <a href={safeHref(href) ?? undefined} target="_blank" rel="noopener noreferrer" referrerPolicy="no-referrer" aria-label={`${children} (abre em nova aba)`} className="underline underline-offset-2">{children}</a>
 }
 
 export function AntesDeVotar({ uf }: { uf: string | null }) {

@@ -1,6 +1,7 @@
 "use client"
 
 import type { AnchorHTMLAttributes, MouseEvent } from "react"
+import { safeHref } from "@/lib/utils"
 import { ANALYTICS_EVENTS, getAnalyticsHostname } from "@/lib/analytics-events"
 import { trackLaunchEvent } from "@/lib/analytics-client"
 
@@ -16,16 +17,19 @@ export function TrackedExternalSourceLink({
   children,
   ...props
 }: TrackedExternalSourceLinkProps) {
+  const sourceHref = safeHref(href)
+  if (!sourceHref) return <>{children}</>
+
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     trackLaunchEvent(ANALYTICS_EVENTS.externalSourceClick, {
       area,
-      host: getAnalyticsHostname(href),
+      host: getAnalyticsHostname(sourceHref),
     })
     onClick?.(event)
   }
 
   return (
-    <a href={href} onClick={handleClick} {...props}>
+    <a href={sourceHref} onClick={handleClick} {...props}>
       {children}
     </a>
   )

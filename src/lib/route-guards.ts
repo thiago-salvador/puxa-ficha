@@ -25,7 +25,7 @@ export const ROUTE_GUARDS = [
     prefixes: ["/preview"],
     match: "subpath-only",
     environments:
-      "all; deployed Vercel requires PF_PREVIEW_TOKEN with at least 24 characters; local non-Vercel may use local-preview",
+      "all; deployed Vercel requires PF_PREVIEW_TOKEN with at least 24 characters; local development/test may use local-preview",
     allow: "matching bootstrap token or derived pf_preview_token cookie",
     deny: "404 Not Found",
   },
@@ -130,5 +130,6 @@ export function resolvePreviewToken(env: RouteGuardEnv = process.env): string | 
     return configuredToken
   }
 
-  return configuredToken || "local-preview"
+  const isLocalRuntime = env.NODE_ENV === "development" || env.NODE_ENV === "test"
+  return configuredToken || (isLocalRuntime ? "local-preview" : null)
 }
