@@ -11,6 +11,7 @@ const EXACT = new Set([
   "Settings/AUTOMATIONS_AND_ENVIRONMENTS.md",
   "docs/operations/programas-governo-presidencia-eval.md",
   "docs/operations/programa-ben-mendes-anuncio-2026-09-04.md",
+  "docs/operations/programa-garotinho-anuncio-2026-09-30.md",
   "docs/operations/programas-governo-governadores-2026-escala.md",
   "docs/operations/programas-governo-governadores-2026-eval.md",
   "docs/operations/programas-governo-governadores-2026-inventario.md",

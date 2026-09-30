@@ -160,7 +160,8 @@ test("gera os estados públicos sem documento dos recibos vigentes, sem inventar
   const records = buildProgramAbsencePublicRecords(INVENTORY_PATH, RECEIPT_PATH);
   // O snapshot do pacote continua datado; o anúncio posterior impede restaurar
   // a ausência antiga na ficha, sem alegar que houve download do PDF.
-  assert.deepEqual(records.map((entry) => entry.slug), [...CURRENT.values()].filter((slug) => slug !== "ben-mendes").sort((a, b) => a.localeCompare(b, "pt-BR")));
+  // Garotinho: arquivo 190017144019 anunciado em 2026-09-30, ausente do pacote.
+  assert.deepEqual(records.map((entry) => entry.slug), [...CURRENT.values()].filter((slug) => slug !== "garotinho").sort((a, b) => a.localeCompare(b, "pt-BR")));
   for (const entry of records) {
     assert.equal(entry.record.estado, "sem_documento_oficial");
     assert.equal("resumo" in entry.record, false);

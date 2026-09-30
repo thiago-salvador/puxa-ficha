@@ -29,7 +29,18 @@
     {
       "profile_slug": "garotinho",
       "sq_candidato": "190002550196",
-      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002550196"
+      "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/RJ/20322002026/candidato/190002550196",
+      "revisoes": [
+        {
+          "id_arquivo": "190017144019",
+          "revisado_em": "2026-09-30",
+          "pacote_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_RJ.zip",
+          "pacote_sha256": "2bc1d76d697ed9f7595a77541e12dc1d5b468576e05392c714694bf90eb4ad7f",
+          "pacote_last_modified": "2026-09-29T06:48:46Z",
+          "resultado": "ausente_do_pacote",
+          "referencia": "docs/operations/programa-garotinho-anuncio-2026-09-30.md"
+        }
+      ]
     },
     {
       "profile_slug": "policial-edjane",
