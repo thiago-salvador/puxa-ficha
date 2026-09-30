@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { AlertTriangle, ArrowLeft, ArrowRight, Check, Copy, ExternalLink, Printer, Search, Share2, Smartphone, X } from "lucide-react"
 import {
   buildColinhaUrl,
+  type ColinhaRoundInfo,
   describeSnapshotStatus,
   formatColinhaText,
   formatSlotDigits,
@@ -27,11 +28,9 @@ import { formatBRL } from "@/lib/utils"
 import { AntesDeVotar } from "@/components/AntesDeVotar"
 
 const UFS = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"]
-type CandidateResponse = { candidates?: ColinhaCandidate[]; unavailable?: boolean; snapshot?: string | null; listStart?: string | null }
+type CandidateResponse = { candidates?: ColinhaCandidate[]; unavailable?: boolean; snapshot?: string | null; listStart?: string | null; round?: ColinhaRoundInfo }
 const EMPTY_STATE: ColinhaState = { uf: null, df: null, de: null, s1: null, s2: null, g: null, p: null }
 const EMPTY_CHOICES: Record<SlotId, ColinhaCandidate | null> = { df: null, de: null, s1: null, s2: null, g: null, p: null }
-/** Passo final: conferência da lista, depois dos seis votos. */
-const REVIEW_STEP = SLOT_ORDER.length
 /** Texto compilado da Lei 9.504/1997; o art. 91-A, parágrafo único, veda celular na cabine. */
 const CELL_PHONE_LAW_URL = "https://www.planalto.gov.br/ccivil_03/leis/l9504.htm"
 /** A caixa da lista tem a altura de 20 candidaturas; as demais aparecem com a barra de rolagem. */
@@ -77,14 +76,20 @@ export function ColinhaBuilder() {
   const [loading, setLoading] = useState(false)
   const [retry, setRetry] = useState(0)
   const [copied, setCopied] = useState(false)
+  const [round, setRound] = useState<ColinhaRoundInfo | null>(null)
   const headingRef = useRef<HTMLHeadingElement>(null)
   const panelRef = useRef<HTMLDivElement>(null)
   const movedRef = useRef(false)
+  const heroCopyRef = useRef<string | null>(null)
 
-  const slot: SlotId | null = step < REVIEW_STEP ? SLOT_ORDER[step] : null
-  const filled = SLOT_ORDER.filter((id) => choices[id]).length
+  const secondRoundAvailable = round?.status === "ready" && round.availableSlots.length > 0
+  const secondRoundActive = state.turno === 2 && secondRoundAvailable
+  const activeSlots = useMemo(() => state.turno === 2 ? (secondRoundActive ? round!.availableSlots : []) : SLOT_ORDER, [state.turno, secondRoundActive, round])
+  const reviewIndex = activeSlots.length
+  const slot: SlotId | null = step < reviewIndex ? activeSlots[step] : null
+  const filled = activeSlots.filter((id) => choices[id]).length
   const shareUrl = useMemo(() => mounted ? buildColinhaUrl(window.location.href, state) : "", [mounted, state])
-  const text = useMemo(() => formatColinhaText(state, choices, shareUrl), [state, choices, shareUrl])
+  const text = useMemo(() => formatColinhaText(state, choices, shareUrl, secondRoundActive ? { slots: activeSlots, message: round?.message ?? undefined } : undefined), [state, choices, shareUrl, secondRoundActive, activeSlots, round?.message])
   const snapshotCopy = useMemo(() => describeSnapshotStatus({
     hasUf: Boolean(state.uf),
     checked: snapshotChecked,
@@ -104,7 +109,8 @@ export function ColinhaBuilder() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
     const params = new URLSearchParams(window.location.search)
-    const initial = parseColinhaState(params)
+    const parsed = parseColinhaState(params)
+    const initial = parsed
     const nextIssues: Partial<Record<SlotId, string>> = {}
     for (const id of SLOT_ORDER) {
       const raw = params.get(id)
@@ -113,14 +119,49 @@ export function ColinhaBuilder() {
     setState(initial)
     setIssues(nextIssues)
     // Link com escolhas abre na conferência; link vazio começa no primeiro voto.
-    setStep(SLOT_ORDER.some((id) => initial[id] !== null) ? REVIEW_STEP : 0)
+    setStep(SLOT_ORDER.some((id) => initial[id] !== null) ? SLOT_ORDER.length : 0)
   }, [])
+
+  useEffect(() => {
+    if (!mounted || !state.uf) return
+    let cancelled = false
+    void fetch("/api/colinha/candidatos", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "round", uf: state.uf }) })
+      .then((response) => response.ok ? response.json() as Promise<CandidateResponse> : Promise.reject(new Error("round unavailable")))
+      .then((payload) => {
+        if (cancelled) return
+        setRound(payload.round ?? null)
+      })
+      .catch(() => { if (!cancelled) setRound(null) })
+    return () => { cancelled = true }
+    // The round request is keyed by UF; selected choices do not alter its result.
+  }, [mounted, state.uf])
+
+  useEffect(() => {
+    if (!mounted) return
+    const heroCopy = document.querySelector<HTMLElement>("[data-colinha-hero] p:last-of-type")
+    if (!heroCopy) return
+    if (heroCopyRef.current === null) heroCopyRef.current = heroCopy.textContent ?? ""
+    if (secondRoundActive && round?.message) {
+      heroCopy.textContent = `2º turno. ${round.message} Escolha os votos confirmados e confira número e partido antes de votar.`
+    } else if (heroCopy.textContent !== heroCopyRef.current) {
+      heroCopy.textContent = heroCopyRef.current
+    }
+  }, [mounted, secondRoundActive, round?.message])
 
   // Reidrata as escolhas vindas do link. Sem escolhas, nada a consultar: a data
   // do snapshot chega pela lista do primeiro passo, sem aviso falso de parcial.
+  const hasSelection = SLOT_ORDER.some((id) => state[id])
   const selectionKey = SLOT_ORDER.map((id) => state[id] ?? "").join(",")
   useEffect(() => {
-    if (!mounted || !state.uf || !SLOT_ORDER.some((id) => state[id])) return
+    if (!mounted || !state.uf || state.turno || !secondRoundAvailable || hasSelection) return
+    const nextState = { ...EMPTY_STATE, uf: state.uf, turno: 2 as const }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setState(nextState)
+    if (typeof window !== "undefined") window.history.replaceState(null, "", buildColinhaUrl(window.location.href, nextState))
+  }, [mounted, state.uf, state.turno, hasSelection, secondRoundAvailable])
+
+  useEffect(() => {
+    if (!mounted || !state.uf || (state.turno === 2 && !secondRoundActive) || !hasSelection) return
     const requested = { ...state }
     let cancelled = false
     void fetch("/api/colinha/candidatos", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "selection", state: requested }) })
@@ -139,6 +180,7 @@ export function ColinhaBuilder() {
         setChoices(selected)
         setIssues((current) => ({ ...current, ...nextIssues }))
         if (payload.snapshot) setSnapshot(payload.snapshot)
+        if (payload.round) setRound(payload.round)
         setUnavailable(Boolean(payload.unavailable))
         setSnapshotChecked(true)
       })
@@ -146,7 +188,7 @@ export function ColinhaBuilder() {
     return () => { cancelled = true }
     // selectionKey resume o estado; reconsultar a cada troca de passo seria desperdício.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mounted, state.uf, selectionKey])
+  }, [mounted, state.uf, state.turno, selectionKey, hasSelection, secondRoundActive])
 
   useEffect(() => {
     const timer = window.setTimeout(() => setDebouncedQuery(query), 250)
@@ -160,12 +202,13 @@ export function ColinhaBuilder() {
     const controller = new AbortController()
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true)
-    void fetch("/api/colinha/candidatos", { method: "POST", signal: controller.signal, headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "search", uf: state.uf, slot, query: debouncedQuery.trim() }) })
+    void fetch("/api/colinha/candidatos", { method: "POST", signal: controller.signal, headers: { "content-type": "application/json" }, body: JSON.stringify({ action: "search", uf: state.uf, slot, query: debouncedQuery.trim(), turno: secondRoundActive ? 2 : 1 }) })
       .then((response) => response.json() as Promise<CandidateResponse>)
       .then((payload) => {
         setResults(payload.candidates ?? [])
         setResultsKey(key)
         setListStart(payload.listStart ?? null)
+        if (payload.round) setRound(payload.round)
         if (payload.snapshot) setSnapshot(payload.snapshot)
         setUnavailable(Boolean(payload.unavailable))
         setSnapshotChecked(true)
@@ -180,7 +223,7 @@ export function ColinhaBuilder() {
         setLoading(false)
       })
     return () => controller.abort()
-  }, [mounted, state.uf, slot, debouncedQuery, retry])
+  }, [mounted, state.uf, slot, state.turno, debouncedQuery, retry, secondRoundActive])
 
   // Cada troca de passo leva o topo do painel para a vista e o foco para o título,
   // para quem usa leitor de tela saber em que voto está.
@@ -199,7 +242,7 @@ export function ColinhaBuilder() {
 
   function goTo(next: number) {
     movedRef.current = true
-    setStep(Math.max(0, Math.min(REVIEW_STEP, next)))
+    setStep(Math.max(0, Math.min(reviewIndex, next)))
     setQuery("")
     setDebouncedQuery("")
     setShowBlocked(false)
@@ -215,6 +258,7 @@ export function ColinhaBuilder() {
     setSnapshot(null)
     setSnapshotChecked(false)
     setUnavailable(false)
+    setRound(null)
     goTo(0)
   }
 
@@ -229,6 +273,20 @@ export function ColinhaBuilder() {
     setSnapshot(null)
     setSnapshotChecked(false)
     setUnavailable(false)
+    setRound(null)
+  }
+
+  function startSecondRound() {
+    if (!state.uf || !round || round.status !== "ready" || round.availableSlots.length === 0) return
+    const next = { ...EMPTY_STATE, uf: state.uf, turno: 2 as const }
+    updateState(next)
+    setChoices(EMPTY_CHOICES)
+    setIssues({})
+    setResults([])
+    setResultsKey(null)
+    setStep(0)
+    setQuery("")
+    setDebouncedQuery("")
   }
 
   function selectCandidate(candidate: ColinhaCandidate) {
@@ -239,8 +297,8 @@ export function ColinhaBuilder() {
     updateState(next)
     setChoices((current) => ({ ...current, [slot]: candidate }))
     setIssues((current) => ({ ...current, [slot]: undefined }))
-    const after = SLOT_ORDER.findIndex((id, index) => index > step && next[id] === null)
-    goTo(after === -1 ? REVIEW_STEP : after)
+    const after = activeSlots.findIndex((id, index) => index > step && next[id] === null)
+    goTo(after === -1 ? reviewIndex : after)
   }
 
   function clearSlot(id: SlotId) {
@@ -276,10 +334,10 @@ export function ColinhaBuilder() {
   // Barra de progresso: seis votos mais a conferência, cada segmento leva ao passo.
   const progress = <nav aria-label="Progresso da colinha" className="rounded-xl border border-border bg-card p-3">
     <div className="flex items-center justify-between gap-3 text-xs font-semibold text-muted-foreground">
-      <span>{filled} de 6 escolhidos</span>
+      <span>{filled} de {activeSlots.length} escolhidos</span>
       <button type="button" onClick={resetUf} className="min-h-6 underline underline-offset-2 hover:text-foreground">Estado: {state.uf} · trocar</button>
     </div>
-    <ol className="mt-2 grid grid-cols-7 gap-1">{[...SLOT_ORDER, "conferir" as const].map((id, index) => {
+    <ol className={`mt-2 grid gap-1 ${activeSlots.length === 1 ? "grid-cols-2" : activeSlots.length === 2 ? "grid-cols-3" : "grid-cols-7"}`}>{[...activeSlots, "conferir" as const].map((id, index) => {
       const current = index === step
       const done = id !== "conferir" && Boolean(choices[id])
       const label = id === "conferir" ? "Conferir e compartilhar" : SLOT_LABELS[id]
@@ -302,8 +360,9 @@ export function ColinhaBuilder() {
       <button type="button" onClick={() => goTo(step - 1)} disabled={step === 0} className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground disabled:invisible"><ArrowLeft aria-hidden="true" className="size-4" />Voltar</button>
       <button type="button" onClick={() => goTo(step + 1)} className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground">{choice ? "Continuar" : "Pular este voto"}<ArrowRight aria-hidden="true" className="size-4" /></button>
     </div>
-    <Eyebrow>Voto {step + 1} de 6 · {formatSlotDigits(slot)} na urna</Eyebrow>
+    <Eyebrow>Voto {step + 1} de {activeSlots.length} · {formatSlotDigits(slot)} na urna</Eyebrow>
     <h2 ref={headingRef} tabIndex={-1} className="mt-2 font-heading text-[length:var(--text-heading-sm)] uppercase leading-none text-foreground outline-none sm:text-[length:var(--text-heading)]">{SLOT_LABELS[slot]}</h2>
+    {secondRoundActive && round?.message && <p className="mt-3 rounded-lg border border-border p-3 text-sm font-semibold leading-relaxed text-foreground">{round.message}</p>}
     {pair && <p className="mt-3 text-sm text-muted-foreground">São dois votos para senador, e eles precisam ser em candidatos diferentes.</p>}
     {issue && <p className="mt-4 flex items-start gap-2 rounded-lg bg-amber-50 p-3 text-sm font-semibold text-amber-900"><AlertTriangle aria-hidden="true" className="mt-0.5 size-4 shrink-0" />{issue} Escolha outra candidatura abaixo.</p>}
     {choice && <div className="mt-5 flex flex-wrap items-center gap-3 rounded-xl border-2 border-foreground p-4">
@@ -334,17 +393,19 @@ export function ColinhaBuilder() {
   const sidebar = <aside className="hidden h-fit rounded-xl border border-border bg-card p-5 lg:sticky lg:top-24 lg:block">
     <Eyebrow>Até agora</Eyebrow>
     <h2 className="mt-1 font-heading text-2xl uppercase leading-none text-foreground">Sua colinha</h2>
-    <ol className="mt-4 space-y-1">{SLOT_ORDER.map((id, index) => <li key={id}><button type="button" onClick={() => goTo(index)} aria-current={index === step ? "step" : undefined} className={`flex w-full items-start justify-between gap-3 rounded-lg px-2 py-2 text-left text-sm hover:bg-secondary ${index === step ? "bg-secondary" : ""}`}><span className="text-muted-foreground">{index + 1}. {SLOT_LABELS[id]}</span><span className="text-right font-bold text-foreground">{choices[id] ? `${choices[id]!.numero_urna} · ${choices[id]!.nome_urna}` : "—"}</span></button></li>)}</ol>
-    <button type="button" onClick={() => goTo(REVIEW_STEP)} className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-foreground px-4 text-sm font-bold text-background">Conferir e compartilhar<ArrowRight aria-hidden="true" className="size-4" /></button>
+    <ol className="mt-4 space-y-1">{activeSlots.map((id, index) => <li key={id}><button type="button" onClick={() => goTo(index)} aria-current={index === step ? "step" : undefined} className={`flex w-full items-start justify-between gap-3 rounded-lg px-2 py-2 text-left text-sm hover:bg-secondary ${index === step ? "bg-secondary" : ""}`}><span className="text-muted-foreground">{index + 1}. {SLOT_LABELS[id]}</span><span className="text-right font-bold text-foreground">{choices[id] ? `${choices[id]!.numero_urna} · ${choices[id]!.nome_urna}` : "—"}</span></button></li>)}</ol>
+    <button type="button" onClick={() => goTo(reviewIndex)} className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-foreground px-4 text-sm font-bold text-background">Conferir e compartilhar<ArrowRight aria-hidden="true" className="size-4" /></button>
     <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{snapshotCopy.message}</p>
   </aside>
 
-  const reviewStep = <div className="mx-auto max-w-3xl">
-    <button type="button" onClick={() => goTo(REVIEW_STEP - 1)} className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground"><ArrowLeft aria-hidden="true" className="size-4" />Voltar</button>
-    <Eyebrow>Conferência · {state.uf}</Eyebrow>
+  const reviewPanel = <div className="mx-auto max-w-3xl">
+    <button type="button" onClick={() => goTo(reviewIndex - 1)} className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-muted-foreground hover:text-foreground"><ArrowLeft aria-hidden="true" className="size-4" />Voltar</button>
+    <Eyebrow>Conferência · {state.uf}{secondRoundActive ? " · 2º turno" : ""}</Eyebrow>
     <h2 ref={headingRef} tabIndex={-1} className="mt-2 font-heading text-[length:var(--text-heading-sm)] uppercase leading-none text-foreground outline-none sm:text-[length:var(--text-heading)]">Sua colinha</h2>
-    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{filled === 6 ? "Os seis votos estão escolhidos, na ordem em que aparecem na urna." : `${filled} de 6 votos escolhidos. Toque em um cargo para escolher ou trocar.`}</p>
-    <ol className="mt-6 divide-y divide-border rounded-xl border border-border bg-card">{SLOT_ORDER.map((id, index) => {
+    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{filled === activeSlots.length ? (secondRoundActive ? "Os votos confirmados para o 2º turno estão prontos para conferência." : "Os seis votos estão escolhidos, na ordem em que aparecem na urna.") : `${filled} de ${activeSlots.length} votos escolhidos. Toque em um cargo para escolher ou trocar.`}</p>
+    {state.turno === 2 && round && !secondRoundActive && <p className="mt-3 rounded-lg bg-amber-50 p-3 text-sm font-semibold leading-relaxed text-amber-900">{round.message ?? "Não foi possível confirmar os cargos do 2º turno para este estado."}</p>}
+    {!state.turno && round?.hasOfficialPhase && <p className="mt-3 rounded-lg border border-border p-3 text-sm leading-relaxed text-foreground">Esta colinha é do 1º turno.{round.status === "ready" && round.availableSlots.length > 0 ? <> A apuração oficial já confirmou o 2º turno para este estado.<button type="button" onClick={startSecondRound} className="mt-2 inline-flex min-h-11 items-center gap-2 font-bold underline underline-offset-2">Montar colinha do 2º turno<ArrowRight aria-hidden="true" className="size-4" /></button></> : <> {round.message ?? "A confirmação oficial do 2º turno para este estado está incompleta."}</>}</p>}
+    <ol className="mt-6 divide-y divide-border rounded-xl border border-border bg-card">{activeSlots.map((id, index) => {
       const picked = choices[id]
       return <li key={id} className="flex items-center gap-3 p-4">
         <span className="w-6 shrink-0 font-heading text-lg tabular-nums text-muted-foreground">{index + 1}</span>
@@ -372,7 +433,7 @@ export function ColinhaBuilder() {
 
     <section aria-labelledby="colinha-urna" className="mt-8 rounded-xl bg-secondary/60 p-4">
       <h3 id="colinha-urna" className="text-sm font-bold text-foreground">Na hora de votar</h3>
-      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">A urna pede os seis votos nesta mesma ordem. Os dois votos para senador precisam ser em candidatos diferentes. Antes de apertar Confirma, confira foto, nome e partido na tela da urna. Resumo do <a href={VOTING_GUIDE_SOURCE_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Manual do Eleitor do TSE</a>; não é a tela da urna.</p>
+      <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{secondRoundActive ? "A urna pede os votos do 2º turno confirmados acima. Antes de apertar Confirma, confira foto, nome e partido na tela da urna." : "A urna pede os seis votos nesta mesma ordem. Os dois votos para senador precisam ser em candidatos diferentes. Antes de apertar Confirma, confira foto, nome e partido na tela da urna."} Resumo do <a href={VOTING_GUIDE_SOURCE_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Manual do Eleitor do TSE</a>; não é a tela da urna.</p>
     </section>
   </div>
 
@@ -382,13 +443,13 @@ export function ColinhaBuilder() {
         {!state.uf ? ufStep : <>
           <div className={slot ? "" : "mx-auto max-w-3xl"}>{progress}</div>
           <div className={slot ? "mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]" : "mt-6"}>
-            {slot ? <>{slotStep}{sidebar}</> : reviewStep}
+            {slot ? <>{slotStep}{sidebar}</> : reviewPanel}
           </div>
         </>}
         <div className="mx-auto mt-6 max-w-3xl"><AntesDeVotar uf={state.uf} /></div>
       </div>
     </section>
-    <div className="colinha-print-sheet" aria-hidden="true"><h1>Minha colinha para 2026{state.uf ? ` · ${state.uf}` : ""}</h1>{SLOT_ORDER.map((id) => { const picked = choices[id]; return <div key={id} className="colinha-print-choice"><strong>{SLOT_LABELS[id]} <em>({formatSlotDigits(id)})</em></strong><span>{picked ? `${picked.numero_urna} · ${picked.nome_urna} (${picked.partido_sigla})` : "a escolher"}</span>{picked && <small>{status(picked)}</small>}</div> })}<p>Ordem na urna: deputado federal, deputado estadual ou distrital, primeiro senador, segundo senador (outro candidato), governador e presidente. Confira foto, nome e partido na urna antes de confirmar e a situação do registro antes de votar.</p></div>
+    <div className="colinha-print-sheet" aria-hidden="true"><h1>Minha colinha{secondRoundActive ? " para o 2º turno" : " para 2026"}{state.uf ? ` · ${state.uf}` : ""}</h1>{activeSlots.map((id) => { const picked = choices[id]; return <div key={id} className="colinha-print-choice"><strong>{SLOT_LABELS[id]} <em>({formatSlotDigits(id)})</em></strong><span>{picked ? `${picked.numero_urna} · ${picked.nome_urna} (${picked.partido_sigla})` : "a escolher"}</span>{picked && <small>{status(picked)}</small>}</div> })}<p>{secondRoundActive ? "Confira foto, nome e partido na urna antes de confirmar e a situação do registro antes de votar." : "Ordem na urna: deputado federal, deputado estadual ou distrital, primeiro senador, segundo senador (outro candidato), governador e presidente. Confira foto, nome e partido na urna antes de confirmar e a situação do registro antes de votar."}</p></div>
     <style jsx global>{`@media screen { .colinha-print-sheet { display:none; } } @media print { @page { size:A4; margin:18mm; } body * { visibility:hidden !important; } body:has(.colinha-print-sheet) { background:#fff !important; } body:has(.colinha-print-sheet) :is(header,footer,nav,[data-colinha-hero],[data-colinha-screen]) { display:none !important; } [data-colinha-page], #main-content { min-height:0 !important; margin:0 !important; padding:0 !important; } .colinha-print-sheet, .colinha-print-sheet * { visibility:visible !important; } .colinha-print-sheet { display:block !important; position:fixed; top:0; left:0; width:100%; color:#111; font-family:Arial,sans-serif; } .colinha-print-sheet h1 { font-size:24pt; margin:0 0 18pt; } .colinha-print-choice { display:grid; grid-template-columns: 42% 58%; gap:6pt; border-bottom:1px solid #bbb; padding:10pt 0; font-size:13pt; } .colinha-print-choice em { font-style:normal; font-weight:400; color:#555; font-size:10pt; } .colinha-print-choice small { grid-column:2; font-size:9pt; color:#555; } .colinha-print-sheet p { margin-top:20pt; font-size:10pt; color:#555; } }`}</style>
   </>
 }

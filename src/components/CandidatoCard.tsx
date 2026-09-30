@@ -19,9 +19,11 @@ import {
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
+import { FaseEleitoralSelo } from "@/components/FaseEleitoralSelo"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import type { Candidato } from "@/lib/types"
+import { rotuloFaseEleitoral } from "@/lib/fase-eleitoral-publica"
 import { Scale, Landmark, ArrowRight, Briefcase, GraduationCap } from "lucide-react"
 
 interface CandidatoCardProps {
@@ -85,7 +87,7 @@ export const CandidatoCard = memo(function CandidatoCard({
     return () => observer.disconnect()
   }, [deferPhotoUntilVisible, photoAllowed])
 
-  return (
+  const card = (
     <Link
       href={`/candidato/${candidato.slug}`}
       prefetch={false}
@@ -267,5 +269,15 @@ export const CandidatoCard = memo(function CandidatoCard({
         </div>
       </div>
     </Link>
+  )
+
+  const faseLabel = rotuloFaseEleitoral(candidato)
+  if (!faseLabel) return card
+
+  return (
+    <div className="min-w-0" data-pf-card-with-fase="">
+      <FaseEleitoralSelo candidato={candidato} className="mb-2 min-h-7" />
+      {card}
+    </div>
   )
 })

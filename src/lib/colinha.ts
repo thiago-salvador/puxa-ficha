@@ -1,8 +1,10 @@
 /** Estado público de uma colinha. A URL contém escolhas e deve ser tratada como dado sensível. */
 import { stripAccents } from "@/lib/strip-accents"
+import type { FaseEleitoral2026 } from "@/lib/types"
 
 export const SLOT_ORDER = ["df", "de", "s1", "s2", "g", "p"] as const
 export type SlotId = (typeof SLOT_ORDER)[number]
+export type ColinhaTurno = 1 | 2
 
 export const SLOT_LABELS: Record<SlotId, string> = {
   df: "Deputado federal",
@@ -38,6 +40,8 @@ const SQ_PATTERN = /^\d{1,20}$/
 
 export interface ColinhaState extends Record<SlotId, string | null> {
   uf: string | null
+  /** Ausente em links legados; só o valor 2 altera o modo da colinha. */
+  turno?: 2
 }
 
 export interface ColinhaCandidate {
@@ -52,6 +56,8 @@ export interface ColinhaCandidate {
   foto_path: string | null
   slug?: string | null
   resumo?: { patrimonio: number | null; processos: number | null; pontos_atencao: number | null } | null
+  /** Preenchido somente pelo cruzamento server-side SQ -> slug -> fase oficial. */
+  fase_eleitoral_2026?: FaseEleitoral2026 | null
 }
 
 type SearchInput = URLSearchParams | Record<string, string | string[] | undefined>
@@ -69,6 +75,7 @@ export function parseColinhaState(input: SearchInput): ColinhaState {
   const ufRaw = one(input, "uf")?.toUpperCase() ?? ""
   const uf = UFS.has(ufRaw) ? ufRaw : null
   const state: ColinhaState = { uf, df: null, de: null, s1: null, s2: null, g: null, p: null }
+  if (one(input, "turno") === "2") state.turno = 2
   if (!uf) return state
   for (const slot of SLOT_ORDER) {
     const value = one(input, slot)
@@ -83,6 +90,7 @@ export function buildColinhaUrl(base: string, state: ColinhaState): string {
   url.search = ""
   if (state.uf && UFS.has(state.uf)) {
     url.searchParams.set("uf", state.uf)
+    if (state.turno === 2) url.searchParams.set("turno", "2")
     for (const slot of SLOT_ORDER) {
       const value = state[slot]
       if (value && SQ_PATTERN.test(value) && !(slot === "s2" && value === state.s1)) {
@@ -181,19 +189,94 @@ export function resolveColinhaChoices(
     if (!sq || (slot === "s2" && sq === state.s1)) continue
     choices[slot] = candidates.find((candidate) =>
       candidate.sq_candidato === sq && matchesSlot(candidate, slot, state.uf!)
+      && (state.turno !== 2
+        || ((slot === "p" || slot === "g")
+          && candidate.fase_eleitoral_2026?.fase_eleitoral === "segundo_turno"
+          && candidate.fase_eleitoral_2026.fase_turno === 1))
       && !isCandidateBlocked(candidate.situacao_registro)
     ) ?? null
   }
   return choices
 }
 
+export type ColinhaRoundStatus = "legacy" | "ready" | "partial"
+export type ColinhaGovernorOutcome = "second_turno" | "eleito_primeiro_turno" | "unknown"
+
+/** Estado oficial do 2º turno, derivado somente de fases e identidades exatas. */
+export interface ColinhaRoundInfo {
+  status: ColinhaRoundStatus
+  hasOfficialPhase: boolean
+  availableSlots: SlotId[]
+  presidentFinalistSlugs: string[]
+  governorFinalistSlugs: string[]
+  presidentFinalistSqs: string[]
+  governorFinalistSqs: string[]
+  governorOutcome: ColinhaGovernorOutcome
+  message: string | null
+}
+
+export function deriveColinhaRoundInfo(
+  phases: Array<Pick<FaseEleitoral2026, "fase_eleitoral" | "fase_turno"> & { candidato_id?: string; slug: string; cargo_disputado: string }>,
+  candidates: Array<Pick<ColinhaCandidate, "slug" | "uf" | "cargo" | "sq_candidato" | "nome_urna"> & { candidato_id?: string }>,
+  uf: string,
+): ColinhaRoundInfo {
+  const legacy: ColinhaRoundInfo = {
+    status: "legacy", hasOfficialPhase: false, availableSlots: [...SLOT_ORDER],
+    presidentFinalistSlugs: [], governorFinalistSlugs: [], presidentFinalistSqs: [], governorFinalistSqs: [], governorOutcome: "unknown", message: null,
+  }
+  if (phases.length === 0) return legacy
+  const bySlug = new Map(candidates.filter((candidate) => candidate.slug).map((candidate) => [candidate.slug!, candidate]))
+  const valid = (phase: typeof phases[number], candidate: typeof candidates[number] | undefined) => {
+    if (!candidate || candidate.slug !== phase.slug) return false
+    const cargo = candidate.cargo.toLowerCase()
+    const candidateId = (candidate as { candidato_id?: string }).candidato_id
+    if (candidateId && phase.candidato_id !== candidateId) return false
+    return phase.cargo_disputado === "Presidente" ? cargo === "presidente" : cargo === "governador"
+  }
+  const presidentRows = phases.filter((phase) => phase.cargo_disputado === "Presidente")
+  const governorRows = phases.filter((phase) => phase.cargo_disputado === "Governador")
+  const presidentFinalists = presidentRows.filter((phase) => phase.fase_eleitoral === "segundo_turno" && valid(phase, bySlug.get(phase.slug)))
+    .map((phase) => phase.slug).sort((a, b) => (bySlug.get(a)?.nome_urna ?? a).localeCompare(bySlug.get(b)?.nome_urna ?? b, "pt-BR"))
+  const governorsInUf = governorRows.filter((phase) => bySlug.get(phase.slug)?.uf === uf)
+  const governorFinalists = governorsInUf.filter((phase) => phase.fase_eleitoral === "segundo_turno" && valid(phase, bySlug.get(phase.slug)))
+    .map((phase) => phase.slug).sort((a, b) => (bySlug.get(a)?.nome_urna ?? a).localeCompare(bySlug.get(b)?.nome_urna ?? b, "pt-BR"))
+  const presidentReady = presidentFinalists.length === 2
+  const governorWinner = governorsInUf.some((phase) => phase.fase_eleitoral === "eleito" && phase.fase_turno === 1 && valid(phase, bySlug.get(phase.slug)))
+  const governorReady = governorFinalists.length === 2
+  const governorKnown = governorWinner || governorReady
+  const presidentKnown = presidentRows.length > 0 && presidentRows.every((phase) => valid(phase, bySlug.get(phase.slug)))
+  const availableSlots: SlotId[] = []
+  if (presidentReady) availableSlots.push("p")
+  if (governorReady) availableSlots.push("g")
+  // Ausência de uma linha estadual não prova que o estado não terá 2º turno:
+  // sem identidade/fase estadual completa, mantemos o estado parcial.
+  const partial = (!presidentReady && !presidentKnown) || !governorKnown
+  const presidentWinner = presidentRows.some((phase) => phase.fase_eleitoral === "eleito" && phase.fase_turno === 1 && valid(phase, bySlug.get(phase.slug)))
+  const noSecondRoundConfirmed = presidentWinner && governorWinner && presidentKnown && !partial
+  const status: ColinhaRoundStatus = availableSlots.length > 0 ? (partial ? "partial" : "ready") : noSecondRoundConfirmed ? "ready" : "partial"
+  const message = governorWinner && presidentReady
+    ? "Seu estado já elegeu governador no 1º turno. Esta colinha tem apenas presidente."
+    : noSecondRoundConfirmed ? "A fase oficial não habilita cargos do 2º turno para este estado."
+    : status === "partial" ? "Ainda não foi possível confirmar todos os cargos do 2º turno para este estado." : null
+  return {
+    status, hasOfficialPhase: true, availableSlots, presidentFinalistSlugs: presidentFinalists,
+    governorFinalistSlugs: governorFinalists,
+    presidentFinalistSqs: presidentFinalists.map((slug) => bySlug.get(slug)?.sq_candidato).filter((sq): sq is string => Boolean(sq)),
+    governorFinalistSqs: governorFinalists.map((slug) => bySlug.get(slug)?.sq_candidato).filter((sq): sq is string => Boolean(sq)),
+    governorOutcome: governorReady ? "second_turno" : governorWinner ? "eleito_primeiro_turno" : "unknown", message,
+  }
+}
+
 export function formatColinhaText(
   state: ColinhaState,
   choices: Record<SlotId, ColinhaCandidate | null>,
   url: string,
+  options: { slots?: readonly SlotId[]; message?: string } = {},
 ): string {
-  const lines = [`Minha colinha para 2026${state.uf ? ` · ${state.uf}` : ""}`]
-  for (const slot of SLOT_ORDER) {
+  const slots = options.slots ?? SLOT_ORDER
+  const lines = [state.turno === 2 ? `Minha colinha para o 2º turno${state.uf ? ` · ${state.uf}` : ""}` : `Minha colinha para 2026${state.uf ? ` · ${state.uf}` : ""}`]
+  if (options.message) lines.push(options.message)
+  for (const slot of slots) {
     const candidate = choices[slot]
     lines.push(`${SLOT_LABELS[slot]}: ${candidate ? `${candidate.numero_urna} · ${candidate.nome_urna} (${candidate.partido_sigla})` : "a escolher"}`)
   }
