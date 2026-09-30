@@ -343,6 +343,7 @@ export function ColinhaBuilder() {
       const label = id === "conferir" ? "Conferir e compartilhar" : SLOT_LABELS[id]
       return <li key={id}><button type="button" onClick={() => goTo(index)} aria-current={current ? "step" : undefined} aria-label={`${index + 1}. ${label}${done ? ", escolhido" : ""}`} className="group block w-full py-2"><span className={`block h-1.5 rounded-full ${current ? "bg-foreground" : done ? "bg-emerald-600" : "bg-secondary group-hover:bg-muted-foreground/40"}`} /></button></li>
     })}</ol>
+    {slot && <button type="button" onClick={() => goTo(reviewIndex)} className="mt-3 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-foreground px-4 text-sm font-bold text-background lg:hidden">Conferir e compartilhar<ArrowRight aria-hidden="true" className="size-4" /></button>}
   </nav>
 
   const pair = slot ? otherSenator(slot) : null

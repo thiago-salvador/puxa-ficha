@@ -37,7 +37,9 @@ const ROUND = {
 }
 
 type ColinhaAction = "round" | "selection" | "search"
-type AnalyticsRequest = { path: string; query: string; referer: string; eventName: string; payload: unknown }
+type AnalyticsEnvelope = { eventName: string; payload: unknown }
+type AnalyticsRequest = { path: string; query: string; referer: string; method: string; contentType: string; envelope?: AnalyticsEnvelope }
+type AnalyticsBeacon = { url: string; accepted: boolean; body: string }
 
 async function installColinhaMocks(page: Page, options: { deferRound?: boolean } = {}) {
   const actions: ColinhaAction[] = []
@@ -45,6 +47,23 @@ async function installColinhaMocks(page: Page, options: { deferRound?: boolean }
   let requestLimitExceeded = false
   let releaseRound!: () => void
   const roundGate = new Promise<void>(resolve => { releaseRound = resolve })
+
+  await page.addInitScript(() => {
+    type BeaconCapture = { url: string; accepted: boolean; body: string }
+    const pageWindow = window as Window & { __colinhaAnalyticsBeacons?: BeaconCapture[] }
+    pageWindow.__colinhaAnalyticsBeacons = []
+    const nativeSendBeacon = navigator.sendBeacon.bind(navigator)
+    Object.defineProperty(navigator, "sendBeacon", {
+      configurable: true,
+      value: (url: string | URL, data?: BodyInit | null) => {
+        if (String(url) !== "/api/analytics/event") return nativeSendBeacon(url, data)
+        const body = data instanceof Blob ? data.text() : Promise.resolve(typeof data === "string" ? data : "")
+        const accepted = nativeSendBeacon(url, data)
+        void body.then((text) => pageWindow.__colinhaAnalyticsBeacons?.push({ url: String(url), accepted, body: text }))
+        return accepted
+      },
+    })
+  })
 
   await page.route("**/api/colinha/candidatos", async (route) => {
     const body = JSON.parse(route.request().postData() ?? "{}") as {
@@ -77,13 +96,25 @@ async function installColinhaMocks(page: Page, options: { deferRound?: boolean }
     const request = route.request()
     const url = new URL(request.url())
     const referer = request.headers().referer ?? ""
-    const envelope = JSON.parse(request.postData() ?? "{}") as { eventName?: string; payload?: unknown }
+    let envelope: AnalyticsEnvelope | undefined
+    const postData = request.postData()
+    if (postData) {
+      try {
+        const candidate = JSON.parse(postData) as Partial<AnalyticsEnvelope>
+        if (typeof candidate.eventName === "string" && candidate.payload && typeof candidate.payload === "object") {
+          envelope = candidate as AnalyticsEnvelope
+        }
+      } catch {
+        // Um Beacon pode chegar ao route hook sem body legível no WebKit.
+      }
+    }
     analytics.push({
       path: url.pathname,
       query: url.search,
       referer,
-      eventName: envelope.eventName ?? "",
-      payload: envelope.payload ?? {},
+      method: request.method(),
+      contentType: request.headers()["content-type"] ?? "",
+      ...(envelope ? { envelope } : {}),
     })
     await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ ok: true }) })
   })
@@ -92,6 +123,10 @@ async function installColinhaMocks(page: Page, options: { deferRound?: boolean }
   return {
     actions,
     analytics,
+    beacons: () => page.evaluate(() => {
+      const pageWindow = window as Window & { __colinhaAnalyticsBeacons?: AnalyticsBeacon[] }
+      return pageWindow.__colinhaAnalyticsBeacons ?? []
+    }),
     releaseRound,
     requestLimitExceeded: () => requestLimitExceeded,
   }
@@ -122,13 +157,21 @@ test("link de turno 1 preserva escolha, mostra aviso e analytics envia só o for
   await popup.close()
 
   await expect.poll(() => mock.analytics.length).toBe(1)
-  const event = mock.analytics[0]
-  expect(event.path).toBe("/api/analytics/event")
-  expect(event.query).toBe("")
-  expect(event.referer).not.toContain("/colinha")
+  await expect.poll(async () => (await mock.beacons()).length).toBe(1)
+  const request = mock.analytics[0]
+  const beacon = (await mock.beacons())[0]
+  const event = JSON.parse(beacon.body) as AnalyticsEnvelope
+  expect(request.path).toBe("/api/analytics/event")
+  expect(request.query).toBe("")
+  expect(request.referer).not.toContain("/colinha")
+  expect(request.method).toBe("POST")
+  expect(request.contentType).toBe("application/json")
+  expect(beacon.url).toBe("/api/analytics/event")
+  expect(beacon.accepted).toBe(true)
   expect(event.eventName).toBe("Colinha Share")
   expect(event.payload).toEqual({ format: "feed" })
-  expect(JSON.stringify(event)).not.toContain(PICKED)
+  if (request.envelope) expect(request.envelope).toEqual(event)
+  expect(JSON.stringify({ request, beacon, event })).not.toContain(PICKED)
   expect(mock.requestLimitExceeded()).toBe(false)
 })
 
@@ -180,5 +223,52 @@ test("resposta tardia de segundo turno não apaga escolha feita durante consulta
   expect(url.searchParams.get("df")).toBe(DEPUTY.sq_candidato)
   expect(url.searchParams.has("turno")).toBe(false)
   await expect.poll(() => counts(mock.actions)).toEqual({ round: 1, selection: 1, search: 2 })
+  expect(mock.requestLimitExceeded()).toBe(false)
+})
+
+test("turno 2 iniciado na tela permite escolher finalista, conferir e gerar imagem", async ({ page }) => {
+  const mock = await installColinhaMocks(page)
+  await page.goto(`/colinha?uf=SP&p=${PICKED}`)
+  await expect(page.getByRole("navigation", { name: "Progresso da colinha" })).toBeVisible()
+  await expect(page.getByRole("button", { name: "Montar colinha do 2º turno" })).toBeVisible()
+
+  await page.getByRole("button", { name: "Montar colinha do 2º turno" }).click()
+  await expect(page).toHaveURL(/turno=2/)
+  expect(new URL(page.url()).searchParams.has("p")).toBe(false)
+  await expect(page.getByRole("button", { name: "Conferir e compartilhar", exact: true })).toBeVisible()
+  await test.info().attach("colinha-segundo-turno-cta-mobile", {
+    body: await page.screenshot({ fullPage: true }),
+    contentType: "image/png",
+  })
+  await page.getByRole("button", { name: "Conferir e compartilhar", exact: true }).click()
+  await expect(page.getByText("Conferência · SP · 2º turno", { exact: true })).toBeVisible()
+  await page.getByRole("button", { name: "Escolher candidato para Presidente" }).click()
+  await expect(page.getByRole("button", { name: new RegExp(CANDIDATE.nome_urna) })).toBeVisible()
+  await page.getByRole("button", { name: new RegExp(CANDIDATE.nome_urna) }).click()
+  await expect(page).toHaveURL(/turno=2/)
+  expect(new URL(page.url()).searchParams.get("p")).toBe(PICKED)
+  await expect(page.getByText("Conferência · SP · 2º turno", { exact: true })).toBeVisible()
+  await expect(page.getByText(CANDIDATE.nome_urna, { exact: true })).toBeVisible()
+  await expect(page.getByRole("link", { name: /Gerar imagem para feed/ })).toBeVisible()
+  await test.info().attach("colinha-segundo-turno-conferencia", {
+    body: await page.screenshot({ fullPage: true }),
+    contentType: "image/png",
+  })
+
+  const popupPromise = page.waitForEvent("popup")
+  await page.getByRole("link", { name: /Gerar imagem para feed/ }).click()
+  const popup = await popupPromise
+  await popup.close()
+  await expect.poll(() => mock.analytics.length).toBe(1)
+  await expect.poll(async () => (await mock.beacons()).length).toBe(1)
+  const request = mock.analytics[0]
+  const beacon = (await mock.beacons())[0]
+  const event = JSON.parse(beacon.body) as AnalyticsEnvelope
+  expect(request.path).toBe("/api/analytics/event")
+  expect(request.query).toBe("")
+  expect(request.referer).not.toContain("/colinha")
+  expect(beacon.accepted).toBe(true)
+  expect(event).toEqual({ eventName: "Colinha Share", payload: { format: "feed" } })
+  expect(JSON.stringify({ request, beacon, event })).not.toContain(PICKED)
   expect(mock.requestLimitExceeded()).toBe(false)
 })
