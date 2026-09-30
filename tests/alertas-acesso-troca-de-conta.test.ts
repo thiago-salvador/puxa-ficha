@@ -195,6 +195,38 @@ describe("GET /alertas/acesso com sessão de outra conta", () => {
     assert.equal(inscricoes[0].subscriber_id, "sub_atual", "o seguir caiu na conta do link, não na do navegador")
   })
 
+  it("cookie pendente é Lax (chega na confirmação vindo do email), httpOnly, Secure em produção, path restrito e 10 min", async () => {
+    const { fixture } = cenario()
+    const acesso = createAlertsAcessoHandler(deps(fixture))
+    const jar = new CookieJar()
+    jar.set(SESSION_COOKIE, TOKEN_ATUAL)
+
+    const vercelEnvAntes = process.env.VERCEL_ENV
+    process.env.VERCEL_ENV = "production"
+    let setCookies: string[]
+    try {
+      const resposta = await acesso(abrirLink(jar, `manage=${TOKEN_OUTRO}`))
+      setCookies = resposta.headers.getSetCookie()
+    } finally {
+      if (vercelEnvAntes === undefined) delete process.env.VERCEL_ENV
+      else process.env.VERCEL_ENV = vercelEnvAntes
+    }
+
+    const pendente = setCookies.find((cookie) => cookie.startsWith(`${PENDING_COOKIE}=`))
+    assert.ok(pendente, `sem Set-Cookie do pendente: ${JSON.stringify(setCookies)}`)
+    const atributos = pendente.split(";").map((part) => part.trim().toLowerCase())
+    assert.ok(atributos.includes("samesite=lax"), `SameSite precisa ser Lax: ${pendente}`)
+    assert.ok(!atributos.includes("samesite=strict"), `Strict quebra a chegada pelo email: ${pendente}`)
+    assert.ok(atributos.includes("httponly"), `falta HttpOnly: ${pendente}`)
+    assert.ok(atributos.includes("secure"), `falta Secure em produção: ${pendente}`)
+    assert.ok(atributos.includes("path=/alertas/acesso"), `path errado: ${pendente}`)
+    assert.ok(atributos.includes("max-age=600"), `validade errada: ${pendente}`)
+    assert.ok(
+      !setCookies.some((cookie) => cookie.startsWith(`${SESSION_COOKIE}=`)),
+      "o GET não pode mexer no cookie de sessão quando pede confirmação",
+    )
+  })
+
   it("falha ao resolver a sessão atual preserva o cookie (fail-closed)", async () => {
     const { fixture } = cenario()
     const base = deps(fixture)
