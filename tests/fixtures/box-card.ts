@@ -1,0 +1,110 @@
+import type { CandidatoComparavel, FichaCandidato } from "@/lib/types"
+
+const empty = [] as never[]
+
+export function makeBoxCardCandidate(overrides: Partial<FichaCandidato> = {}): FichaCandidato {
+  return {
+    id: "fixture-boxes-id",
+    nome_completo: "Pessoa Fictícia para Testes",
+    nome_urna: "Candidata Exemplo",
+    slug: "fixture-boxes",
+    data_nascimento: null,
+    idade: null,
+    naturalidade: null,
+    formacao: null,
+    profissao_declarada: null,
+    cargo_disputado: "Deputado Federal",
+    estado: "SP",
+    status: "candidato",
+    partido_atual: "Partido Exemplo",
+    partido_sigla: "PX",
+    cargo_atual: "Deputada Federal",
+    foto_url: null,
+    site_campanha: null,
+    redes_sociais: {},
+    fonte_dados: [],
+    ultima_atualizacao: "2026-01-02T00:00:00.000Z",
+    historico: [{
+      id: "career-1", candidato_id: "fixture-boxes-id", cargo: "Deputada Federal",
+      periodo_inicio: 2023, periodo_fim: 2026, partido: "PX", estado: "SP", eleito_por: "",
+      observacoes: "Resultado fictício de teste: eleita.", tipo_evento: "mandato",
+    }],
+    mudancas_partido: [{
+      id: "party-1", candidato_id: "fixture-boxes-id", partido_anterior: "PY", partido_novo: "PX",
+      data_mudanca: "2024-03-01", ano: 2024, contexto: "Mudança fictícia para teste.",
+    }],
+    filiacao_verificacao: { resultado: "encontrado", volume: 1, fonte: "fixture", executado_em: "2026-01-02T00:00:00.000Z" } as never,
+    patrimonio: [
+      { id: "wealth-2022", candidato_id: "fixture-boxes-id", ano_eleicao: 2022, valor_total: 100000, bens: [] },
+      { id: "wealth-2026", candidato_id: "fixture-boxes-id", ano_eleicao: 2026, valor_total: 125000, bens: [] },
+    ],
+    patrimonio_eleicoes: [{
+      ano: 2026, estado: "publicado", fonte_url: "https://example.test/tse/patrimonio", verificado_em: "2026-01-02T00:00:00.000Z",
+    }],
+    financiamento: [{
+      id: "funding-1", candidato_id: "fixture-boxes-id", ano_eleicao: 2026,
+      cargo_candidatura: "Deputado Federal", total_arrecadado: 12500,
+      total_fundo_partidario: 3000, total_fundo_eleitoral: 4000,
+      total_pessoa_fisica: 3500, total_recursos_proprios: 2000,
+      categorias_origem: null,
+      maiores_doadores: [{ nome: "NOME DE DOADOR QUE NÃO PODE SER PUBLICADO", valor: 500, tipo: "PF" }],
+    }],
+    financiamento_despesas_status: "ok",
+    financiamento_despesas: [{
+      id: "expense-1", candidato_id: "fixture-boxes-id", ano_eleicao: 2026, sq_candidato: "test-sq",
+      uf: "SP", municipio_codigo: null, cargo_candidatura: "Deputado Federal", estado_coleta: "declarado",
+      total_despesas_contratadas: 4200, total_despesas_pagas: 3000, total_doacoes_a_terceiros: null,
+      recursos_financeiros: null, recursos_estimaveis: null, divida_campanha: null, sobra_financeira: null,
+      concentracao_despesas: [{ tipo: "Publicidade", quantidade: 2, valor: 4200 }],
+      maiores_fornecedores: [{ tipo: "PJ", nome: "FORNECEDOR DE TESTE NÃO PUBLICÁVEL", quantidade: 2, valor: 4200 }],
+      doacoes_a_terceiros: [], prestacao_parcial: true, data_entrega: "2026-01-02",
+      fonte: "TSE fixture", fonte_url: "https://example.test/tse/despesas", coletado_em: "2026-01-02T00:00:00.000Z",
+    }],
+    gastos_parlamentares: [{
+      id: "ceap-1", candidato_id: "fixture-boxes-id", ano: 2025, total_gasto: 5000,
+      detalhamento: [{ categoria: "Publicidade", valor: 3000 }, { categoria: "Transporte", valor: 2000 }],
+      gastos_destaque: [], fonte: "Câmara dos Deputados", coletado_em: "2026-01-02T00:00:00.000Z",
+    }],
+    votos: [{
+      id: "vote-1", candidato_id: "fixture-boxes-id", votacao_id: "vote-fixture", voto: "sim",
+      contradicao: false, contradicao_descricao: null,
+      votacao: { id: "vote-fixture", titulo: "Projeto de teste", descricao: "Descrição fictícia.", data_votacao: "2025-05-02", casa: "Câmara", tema: "Teste", impacto_popular: "Teste", fonte: "fixture", proposicao_id: "fixture-proposicao", votacao_id_api: "fixture-votacao" },
+    }],
+    processos: empty,
+    pontos_atencao: empty,
+    projetos_lei: empty,
+    legislacao_mandato_executivo: empty,
+    gastos_executivo: empty,
+    sancoes_administrativas: empty,
+    noticias: empty,
+    total_processos: 0,
+    processos_criminais: 0,
+    total_mudancas_partido: 1,
+    total_pontos_atencao: 0,
+    pontos_criticos: 0,
+    total_sancoes: 0,
+    ...overrides,
+  } as FichaCandidato
+}
+
+export function makeBoxCardComparables(): CandidatoComparavel[] {
+  return ["alfa", "beta", "gama", "delta"].map((suffix, index) => ({
+    id: `fixture-${suffix}`,
+    slug: `fixture-${suffix}`,
+    nome_urna: `Candidatura ${suffix.toUpperCase()}`,
+    partido_sigla: "PX",
+    cargo_disputado: "Deputado Federal",
+    cargo_atual: null,
+    estado: "SP",
+    foto_url: null,
+    idade: null,
+    formacao: null,
+    total_processos: 0,
+    mudancas_partido: 0,
+    alertas_graves: 0,
+    patrimonio_declarado: index === 3 ? null : index * 1000,
+    evolucao_patrimonial_pct: null,
+    total_gasto_parlamentar: index === 3 ? null : index * 500,
+    tem_historico_legislativo: false,
+  })) as CandidatoComparavel[]
+}

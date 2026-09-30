@@ -105,7 +105,7 @@ let socialCardFontsPromise: Promise<{
   heading: ArrayBuffer
 }> | null = null
 
-async function getSocialCardFonts() {
+export async function getSocialCardFonts() {
   if (!socialCardFontsPromise) {
     socialCardFontsPromise = Promise.all([
       readFile(new URL("../assets/fonts/Inter-Regular.ttf", import.meta.url)),

@@ -29,13 +29,45 @@ export interface ColinhaCandidatesResult {
   round?: ColinhaRoundInfo
 }
 
-const SEARCH_LIMIT = 20
+/** Teto de linhas por resposta do PostgREST (max_rows); a lista completa pagina. */
+const PAGE_SIZE = 1000
+/** SP tem mais de mil candidaturas a deputado estadual; dez páginas dão folga. */
+const MAX_PAGES = 10
+/** Lote do enriquecimento: mantém o filtro `in` curto o bastante para a URL. */
+const ENRICH_CHUNK = 200
 
 function empty(unavailable = false): ColinhaCandidatesResult {
   return { candidates: [], unavailable, snapshot: null }
 }
 
+type PageQuery = {
+  range: (from: number, to: number) => {
+    abortSignal: (signal: AbortSignal) => PromiseLike<{ data: unknown[] | null; error: unknown }>
+  }
+}
+
+async function fetchAllRows(build: () => PageQuery): Promise<RosterRow[] | null> {
+  const rows: RosterRow[] = []
+  for (let page = 0; page < MAX_PAGES; page += 1) {
+    const from = page * PAGE_SIZE
+    const { data, error } = await build().range(from, from + PAGE_SIZE - 1).abortSignal(supabaseQueryTimeoutSignal())
+    if (error) return null
+    const batch = (data ?? []) as unknown as RosterRow[]
+    rows.push(...batch)
+    // Página incompleta encerra a lista; um snapshot trocado entre páginas pode repetir linhas.
+    if (batch.length < PAGE_SIZE) return [...new Map(rows.map((row) => [row.sq_candidato, row])).values()]
+  }
+  // Teto de páginas atingido com página cheia: lista possivelmente incompleta, falha fechada.
+  return null
+}
+
 async function enrichPublished(rows: RosterRow[], phases: FaseEleitoralPublica[] = []): Promise<ColinhaCandidate[]> {
+  const chunks: RosterRow[][] = []
+  for (let index = 0; index < rows.length; index += ENRICH_CHUNK) chunks.push(rows.slice(index, index + ENRICH_CHUNK))
+  return (await Promise.all(chunks.map((chunk) => enrichChunk(chunk, phases)))).flat()
+}
+
+async function enrichChunk(rows: RosterRow[], phases: FaseEleitoralPublica[]): Promise<ColinhaCandidate[]> {
   if (rows.length === 0) return []
   const client = createServerSupabaseClient({ cacheMode: "no-store" })
   const sqs = rows.map((row) => row.sq_candidato)
@@ -184,26 +216,20 @@ export async function searchColinhaCandidates(
     const safe = query.normalize("NFKC").replace(/[^\p{L}\p{N} -]/gu, "").trim().slice(0, 70)
     if (safe) {
       // Com filtro, a ordem alfabética simples: quem digita já escolheu o recorte.
-      const { data, error } = await scoped(base())
+      const rows = await fetchAllRows(() => scoped(base())
         .or(`nome_urna.ilike.%${safe}%,nome_completo.ilike.%${safe}%,numero_urna.ilike.%${safe}%,partido_sigla.ilike.%${safe}%`)
-        .order("nome_urna").limit(SEARCH_LIMIT)
-        .abortSignal(supabaseQueryTimeoutSignal())
-      if (error) return empty(true)
-      const rows = (data ?? []) as unknown as RosterRow[]
+        .order("nome_urna").order("sq_candidato"))
+      if (!rows) return empty(true)
       return { ...result(rows, await enrichPublished(rows, official?.phases ?? [])), ...(official ? { round: official.round } : {}) }
     }
-    // Sem filtro, a lista começa na letra do momento e dá a volta no alfabeto.
+    // Sem filtro, a lista completa começa na letra do momento e dá a volta no alfabeto.
     const start = listStartLetter(now)
-    const head = await scoped(base()).gte("nome_urna", start).order("nome_urna").limit(SEARCH_LIMIT)
-      .abortSignal(supabaseQueryTimeoutSignal())
-    if (head.error) return empty(true)
-    let rows = (head.data ?? []) as unknown as RosterRow[]
-    if (rows.length < SEARCH_LIMIT) {
-      const tail = await scoped(base()).lt("nome_urna", start).order("nome_urna").limit(SEARCH_LIMIT - rows.length)
-        .abortSignal(supabaseQueryTimeoutSignal())
-      if (tail.error) return empty(true)
-      rows = [...rows, ...((tail.data ?? []) as unknown as RosterRow[])]
-    }
+    const [head, tail] = await Promise.all([
+      fetchAllRows(() => scoped(base()).gte("nome_urna", start).order("nome_urna").order("sq_candidato")),
+      fetchAllRows(() => scoped(base()).lt("nome_urna", start).order("nome_urna").order("sq_candidato")),
+    ])
+    if (!head || !tail) return empty(true)
+    const rows = [...head, ...tail]
     return { ...result(rows, await enrichPublished(rows, official?.phases ?? [])), listStart: start, ...(official ? { round: official.round } : {}) }
   } catch {
     return empty(true)

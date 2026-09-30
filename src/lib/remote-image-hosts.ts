@@ -38,7 +38,9 @@ const _httpAllowedHosts = new Set(["www.senado.leg.br"])
 
 const _allowedHosts = new Set<string>(REMOTE_IMAGE_HOSTS)
 
-const _sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+// No servidor, `SUPABASE_URL` cobre o deploy sem a variável pública (mesmo
+// fallback do CSP); sem isso o card PNG recusa fotos do Storage em silêncio.
+const _sbUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL
 const _sbHostname = (() => {
   if (!_sbUrl || _sbUrl.includes("placeholder")) return null
   try { return new URL(_sbUrl).hostname } catch { return null }
