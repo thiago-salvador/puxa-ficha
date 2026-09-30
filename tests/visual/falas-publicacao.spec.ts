@@ -23,6 +23,9 @@ test.describe("publicação de falas verificadas", () => {
     test(`${quote.candidate_slug}: ${quote.id.slice(0, 12)}`, async ({ page }, testInfo) => {
       test.setTimeout(60_000)
       await page.goto(`/candidato/${quote.candidate_slug}`, { waitUntil: "domcontentloaded" })
+      const mediaTab = page.getByRole("tab", { name: /^Mídia/ })
+      await expect(mediaTab).toBeVisible({ timeout: 30_000 })
+      await mediaTab.click()
       const card = page.locator("[data-pf-debates-card]")
       await expect(card).toBeVisible({ timeout: 30_000 })
       // Quote IDs and navigation are public DOM attributes, not bundle inspection.

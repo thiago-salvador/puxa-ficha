@@ -69,4 +69,14 @@ describe("aba Mídia da ficha do candidato", () => {
     assert.match(html, /data-pf-media-empty="true"/)
     assert.match(html, /Ainda não há notícias exibidas nesta ficha\./)
   })
+
+  test("exibe falas na aba Mídia sem recolocar o card na Visão geral", () => {
+    const ficha = { ...buildFicha(), id: "5a4d76d2-6243-41b9-88b2-e94c68383e52", slug: "augusto-cury" }
+    const overviewHtml = renderToStaticMarkup(<CandidatoProfile ficha={ficha} initialTab="geral" />)
+    const mediaHtml = renderToStaticMarkup(<CandidatoProfile ficha={ficha} initialTab="media" />)
+
+    assert.doesNotMatch(overviewHtml, /data-pf-debates-card/)
+    assert.match(mediaHtml, /data-pf-debates-card/)
+    assert.match(mediaHtml, /As bets têm que ser enquadradas mesmo/)
+  })
 })
