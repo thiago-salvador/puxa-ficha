@@ -68,6 +68,12 @@ export interface RemoteIdentity {
   aliases: string[]
   /** UF quando disponivel (Camara: siglaUf, Senado: UfParlamentar). */
   uf?: string
+  /** Campos verificaveis para excecoes de UF por contexto de mandato. */
+  sourceId?: number
+  civilName?: string
+  legislatureId?: number
+  statusDate?: string
+  status?: string
   /** Metadata bruto pra debug; nao e parte do contrato estavel. */
   raw?: Record<string, unknown>
 }
@@ -138,7 +144,13 @@ export function extractCamaraIdentity(raw: unknown): RemoteIdentity | null {
   }
   if (typeof ultimoStatus?.nome === "string" && ultimoStatus.nome !== name) aliases.push(ultimoStatus.nome)
   const uf = typeof ultimoStatus?.siglaUf === "string" ? ultimoStatus.siglaUf : undefined
-  return { name, aliases, uf }
+  const id = typeof dep.id === "number" ? dep.id : undefined
+  const legislatureId =
+    typeof ultimoStatus?.idLegislatura === "number" ? ultimoStatus.idLegislatura : undefined
+  const statusDate = typeof ultimoStatus?.data === "string" ? ultimoStatus.data : undefined
+  const status = typeof ultimoStatus?.situacao === "string" ? ultimoStatus.situacao : undefined
+  const civilName = typeof dep.nomeCivil === "string" ? dep.nomeCivil : undefined
+  return { name, aliases, uf, sourceId: id, civilName, legislatureId, statusDate, status }
 }
 
 /**
@@ -185,6 +197,8 @@ export function extractSenadoIdentity(raw: unknown): RemoteIdentity | null {
 export function classifyMatch(
   seed: { nome_completo: string; nome_urna: string; estado: string | null },
   remote: RemoteIdentity,
+  context?: { slug: string; source: "camara" | "senado"; id: number },
+  ufContextExceptions: UFContextException[] = [],
 ): { status: "ok" | "mismatch"; reasons: string[] } {
   const reasons: string[] = []
   const nameOk = namesLookCompatible(
@@ -203,9 +217,57 @@ export function classifyMatch(
       reasons.push(`uf_mismatch:seed=${seed.estado} remote=${remote.uf}`)
     }
   }
-  // So name_mismatch e uf_mismatch contam como mismatch. uf_unknown e nota.
-  const isMismatch = reasons.some((r) => r.startsWith("name_mismatch:") || r.startsWith("uf_mismatch:"))
+  const ufMismatchIsMandateContext =
+    !!context && ufContextExceptions.some((exception) => matchesUFContextException(seed, remote, context, exception))
+  if (ufMismatchIsMandateContext) reasons.push("uf_mismatch_context:legislative_mandate")
+  // A reason uf_mismatch permanece no relatorio; apenas a excecao documental
+  // exata muda seu efeito no gate. Divergencias de nome continuam falhando.
+  const isMismatch = reasons.some(
+    (r) => r.startsWith("name_mismatch:") || (r.startsWith("uf_mismatch:") && !ufMismatchIsMandateContext),
+  )
   return { status: isMismatch ? "mismatch" : "ok", reasons }
+}
+
+export interface UFContextException {
+  slug: string
+  source: "camara"
+  id: number
+  seedUF: string
+  remoteUF: string
+  civilName: string
+  legislatureId: number
+  statusDate: string
+  status: string
+}
+
+function matchesUFContextException(
+  seed: { nome_completo: string; nome_urna: string; estado: string | null },
+  remote: RemoteIdentity,
+  context: { slug: string; source: "camara" | "senado"; id: number },
+  exception: UFContextException,
+): boolean {
+  return (
+    context.source === exception.source &&
+    context.slug === exception.slug &&
+    context.id === exception.id &&
+    remote.sourceId === exception.id &&
+    !!seed.estado &&
+    normalizeForMatch(seed.estado) === normalizeForMatch(exception.seedUF) &&
+    !!remote.uf &&
+    normalizeForMatch(remote.uf) === normalizeForMatch(exception.remoteUF) &&
+    !!remote.civilName &&
+    normalizeForMatch(seed.nome_completo) === normalizeForMatch(exception.civilName) &&
+    normalizeForMatch(remote.civilName) === normalizeForMatch(exception.civilName) &&
+    remote.legislatureId === exception.legislatureId &&
+    remote.statusDate === exception.statusDate &&
+    remote.status === exception.status
+  )
+}
+
+export function loadUFContextExceptions(): UFContextException[] {
+  const path = resolve(process.cwd(), "data/ids-uf-context-exceptions.json")
+  const parsed = JSON.parse(readFileSync(path, "utf-8")) as { exceptions?: UFContextException[] }
+  return Array.isArray(parsed.exceptions) ? parsed.exceptions : []
 }
 
 // ── HTTP (isolado) ────────────────────────────────────────────────
@@ -712,6 +774,7 @@ async function checkOne(
   seed: CheckResult["seed"],
   opts: CliOptions,
   client: RemoteFetchClient,
+  ufContextExceptions: UFContextException[],
 ): Promise<CheckResult> {
   if (opts.skipRemote) {
     return {
@@ -768,7 +831,7 @@ async function checkOne(
       error: "unexpected_payload",
     }
   }
-  const { status, reasons } = classifyMatch(seed, remote)
+  const { status, reasons } = classifyMatch(seed, remote, { slug, source, id }, ufContextExceptions)
   return { slug, source, id, status, seed, remote, reasons, http_status: outcome.http_status }
 }
 
@@ -808,6 +871,7 @@ function formatHuman(results: CheckResult[], summary: Record<CheckStatus, number
 async function runCli() {
   const opts = parseCliArgs(process.argv.slice(2))
   const seed = loadSeed()
+  const ufContextExceptions = loadUFContextExceptions()
   const slugs = opts.slugFilter
   const items = seed.filter((c) => !slugs || slugs.has(c.slug))
 
@@ -838,13 +902,13 @@ async function runCli() {
     if ((opts.only === null || opts.only === "camara") && c.ids?.camara != null) {
       camaraCount++
       const r = alcanceCamara.ok
-        ? await checkOne(c.slug, "camara", c.ids.camara, seedShape, opts, client)
+        ? await checkOne(c.slug, "camara", c.ids.camara, seedShape, opts, client, ufContextExceptions)
         : checkCamaraInalcancavel(c.slug, c.ids.camara, seedShape, alcanceCamara.motivo)
       results.push(r)
     }
     if ((opts.only === null || opts.only === "senado") && c.ids?.senado != null) {
       senadoCount++
-      const r = await checkOne(c.slug, "senado", c.ids.senado, seedShape, opts, client)
+      const r = await checkOne(c.slug, "senado", c.ids.senado, seedShape, opts, client, ufContextExceptions)
       results.push(r)
     }
     // Candidatos sem camara/senado sao skipped silenciosamente (nao e gap do

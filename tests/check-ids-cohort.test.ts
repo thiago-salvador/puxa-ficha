@@ -7,6 +7,7 @@ import {
   contarCamaraInalcancavel,
   extractCamaraIdentity,
   extractSenadoIdentity,
+  loadUFContextExceptions,
   namesLookCompatible,
   parseCliArgs,
   RemoteFetchClient,
@@ -89,6 +90,28 @@ test("extractCamaraIdentity: payload completo com ultimoStatus.nome", () => {
   assert.equal(got.name, "CIRO GOMES")
   assert.equal(got.uf, "CE")
   assert.ok(got.aliases.includes("CIRO FERREIRA GOMES"), "nome civil entra em aliases")
+})
+
+test("extractCamaraIdentity: captura contexto de legislatura sem alterar identidade", () => {
+  const got = extractCamaraIdentity({
+    dados: {
+      id: 204444,
+      nomeCivil: "HELIO FERNANDO BARBOSA LOPES",
+      ultimoStatus: {
+        nome: "HELIO LOPES",
+        siglaUf: "RJ",
+        idLegislatura: 57,
+        data: "2023-02-01",
+        situacao: "Exercício",
+      },
+    },
+  })
+  assert.ok(got)
+  assert.equal(got.sourceId, 204444)
+  assert.equal(got.civilName, "HELIO FERNANDO BARBOSA LOPES")
+  assert.equal(got.legislatureId, 57)
+  assert.equal(got.statusDate, "2023-02-01")
+  assert.equal(got.status, "Exercício")
 })
 
 test("extractCamaraIdentity: fallback para nomeEleitoral quando nome ausente", () => {
@@ -204,6 +227,53 @@ test("classifyMatch: UF diverge e vira mismatch com reason uf_mismatch", () => {
   )
   assert.equal(got.status, "mismatch")
   assert.ok(got.reasons.some((r) => r.startsWith("uf_mismatch:")))
+})
+
+test("classifyMatch: excecao documental do mandato aceita apenas o registro exato", () => {
+  const [exception] = loadUFContextExceptions()
+  const seed = {
+    nome_completo: "HELIO FERNANDO BARBOSA LOPES",
+    nome_urna: "HELIO LOPES",
+    estado: "RR",
+  }
+  const remote = {
+    name: "HELIO LOPES",
+    aliases: ["HELIO FERNANDO BARBOSA LOPES"],
+    uf: "RJ",
+    sourceId: 204444,
+    civilName: "HELIO FERNANDO BARBOSA LOPES",
+    legislatureId: 57,
+    statusDate: "2023-02-01",
+    status: "Exercício",
+  }
+  const context = { slug: "tse-2026-230002534806", source: "camara" as const, id: 204444 }
+  const accepted = classifyMatch(seed, remote, context, [exception])
+  assert.equal(accepted.status, "ok")
+  assert.ok(accepted.reasons.some((reason) => reason.startsWith("uf_mismatch:")))
+  assert.ok(accepted.reasons.includes("uf_mismatch_context:legislative_mandate"))
+
+  const mutations = [
+    { context: { ...context, id: 999 }, remote, seed },
+    { context: { ...context, slug: "slug-alterado" }, remote, seed },
+    { context: { ...context, source: "senado" as const }, remote, seed },
+    { context, remote, seed: { ...seed, estado: "AM" } },
+    { context, remote: { ...remote, sourceId: 999 }, seed },
+    { context, remote: { ...remote, uf: "SP" }, seed },
+    { context, remote: { ...remote, civilName: "OUTRO NOME" }, seed },
+    { context, remote: { ...remote, name: "OUTRO NOME", aliases: [] }, seed },
+    { context, seed: { ...seed, nome_completo: "OUTRO NOME" }, remote },
+    { context, remote: { ...remote, legislatureId: 56 }, seed },
+    { context, remote: { ...remote, statusDate: "2023-02-02" }, seed },
+    { context, remote: { ...remote, status: "Licença" }, seed },
+    { context, remote: { ...remote, legislatureId: undefined }, seed },
+    { context, remote: { ...remote, statusDate: undefined }, seed },
+    { context, remote: { ...remote, status: undefined }, seed },
+  ]
+  for (const mutation of mutations) {
+    const rejected = classifyMatch(mutation.seed, mutation.remote, mutation.context, [exception])
+    assert.equal(rejected.status, "mismatch")
+    assert.ok(rejected.reasons.some((reason) => reason.startsWith("uf_mismatch:")))
+  }
 })
 
 test("classifyMatch: UF divergencia so conta se seed tem estado", () => {
