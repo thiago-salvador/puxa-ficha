@@ -79,7 +79,7 @@ export interface ComparadorPairOgOptions {
   headers?: Record<string, string>
 }
 
-export function buildComparadorPairOg({
+export async function buildComparadorPairOg({
   eyebrow,
   subtitle,
   left,
@@ -101,11 +101,10 @@ export function buildComparadorPairOg({
       <div
         style={{
           display: "flex",
-          fontSize: 38,
-          lineHeight: 1.05,
+          fontFamily: FONT_HEADING,
+          fontSize: 48,
+          lineHeight: 1,
           textTransform: "uppercase",
-          fontWeight: 900,
-          letterSpacing: "-0.03em",
         }}
       >
         {side.nome}
@@ -137,9 +136,9 @@ export function buildComparadorPairOg({
       <div
         style={{
           display: "flex",
-          fontSize: 44,
-          fontWeight: 800,
-          letterSpacing: "-0.02em",
+          fontFamily: FONT_HEADING,
+          fontSize: 60,
+          lineHeight: 1,
           color: "#ffffff",
         }}
       >
@@ -147,6 +146,8 @@ export function buildComparadorPairOg({
       </div>
     </div>
   )
+
+  const fonts = await getOgFonts()
 
   return new ImageResponse(
     (
@@ -158,9 +159,9 @@ export function buildComparadorPairOg({
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "48px 40px 56px",
-          background:
-            "linear-gradient(135deg, #050505 0%, #171717 45%, #3f3f46 100%)",
+          background: "#0a0a0a",
           color: "#ffffff",
+          fontFamily: FONT_SANS,
         }}
       >
         <div
@@ -247,7 +248,7 @@ export function buildComparadorPairOg({
             marginTop: "28px",
           }}
         >
-          <div style={{ display: "flex", fontSize: 26, fontWeight: 800, letterSpacing: "-0.03em" }}>
+          <div style={{ display: "flex", fontFamily: FONT_HEADING, fontSize: 30, textTransform: "uppercase", letterSpacing: "0.02em" }}>
             Puxa Ficha
           </div>
           <div
@@ -267,6 +268,11 @@ export function buildComparadorPairOg({
     {
       ...ogSize,
       headers,
+      fonts: [
+        { name: FONT_SANS, data: fonts.sansRegular, weight: 400, style: "normal" },
+        { name: FONT_SANS, data: fonts.sansBold, weight: 700, style: "normal" },
+        { name: FONT_HEADING, data: fonts.heading, weight: 400, style: "normal" },
+      ],
     }
   )
 }
