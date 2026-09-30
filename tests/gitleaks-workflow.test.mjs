@@ -198,8 +198,8 @@ test("allowlists require exact public values and exact paths", () => {
 
   assert.doesNotMatch(config, /^\[allowlist\]$/m)
   assert.doesNotMatch(config, /regexTarget\s*=\s*"line"/)
-  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 12)
-  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 11)
+  assert.equal((config.match(/condition\s*=\s*"AND"/g) ?? []).length, 13)
+  assert.equal((config.match(/regexTarget\s*=\s*"secret"/g) ?? []).length, 12)
   // Única exceção por padrão: o par api_sha256 com hex, alvo "match", num único recibo.
   assert.equal((config.match(/regexTarget\s*=\s*"match"/g) ?? []).length, 1)
   assert.match(
@@ -334,6 +334,40 @@ test("only exact known false positives at their exact paths are allowed", () => 
     )
   } finally {
     rmSync(directory, { recursive: true, force: true })
+  }
+})
+
+test("synthetic vote fixture exception is limited to the exact value and path", () => {
+  const allowedPath = "tests/box-card-model.test.ts"
+  const allowedValue = "fixture-votacao-2"
+  const apiField = ["votacao", "id", "api"].join("_")
+  const allowedContents = `${apiField}: "${allowedValue}"\n`
+
+  const allowedDirectory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
+  try {
+    writeFixture(allowedDirectory, allowedPath, allowedContents)
+    const result = scan(allowedDirectory)
+    assert.ifError(result.error)
+    assert.equal(result.status, 0, `${result.output}${JSON.stringify(findingMetadata(result.findings))}`)
+  } finally {
+    rmSync(allowedDirectory, { recursive: true, force: true })
+  }
+
+  for (const [file, contents] of [
+    [allowedPath, `${apiField}: "fixture-votacao-3"\n`],
+    ["tests/other-box-card-model.test.ts", allowedContents],
+  ]) {
+    const directory = mkdtempSync(path.join(tmpdir(), "puxa-ficha-gitleaks-"))
+    try {
+      writeFixture(directory, file, contents)
+      const result = scan(directory)
+      assert.ifError(result.error)
+      assert.equal(result.status, 17, `${file}: ${JSON.stringify(findingMetadata(result.findings))}`)
+      assert.ok(result.findings.some((finding) => finding.RuleID === "generic-api-key"))
+      assert.equal(`${result.output}${result.report}`.includes(allowedValue), false)
+    } finally {
+      rmSync(directory, { recursive: true, force: true })
+    }
   }
 })
 

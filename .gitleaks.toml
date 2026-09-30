@@ -36,6 +36,13 @@ id = "generic-api-key"
   paths = ['''^supabase/rollback/20260811100000_votacoes_senado_chave_exata\.rollback\.sql$''']
 
   [[rules.allowlists]]
+  description = "ID sintético de votação usado na regressão do card público, não uma credencial"
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = ['''^fixture-votacao-2$''']
+  paths = ['''^tests/box-card-model\.test\.ts$''']
+
+  [[rules.allowlists]]
   description = "UUID público do evento histórico de Ariel Capistrano e sua regressão de caminho"
   condition = "AND"
   regexTarget = "secret"
