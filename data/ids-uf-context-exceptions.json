@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "exceptions": [
+    {
+      "slug": "tse-2026-230002534806",
+      "source": "camara",
+      "id": 204444,
+      "seedUF": "RR",
+      "remoteUF": "RJ",
+      "civilName": "HELIO FERNANDO BARBOSA LOPES",
+      "legislatureId": 57,
+      "statusDate": "2023-02-01",
+      "status": "Exercício",
+      "evidence": {
+        "tseSnapshotUrl": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+        "tseSnapshotSha256": "fd2192b265ed80de599b235f164609b67ae500961db47925c0607470eb177edd",
+        "tseSnapshotGeneratedAt": "2026-09-29T19:30:26-03:00",
+        "camaraApiUrl": "https://dadosabertos.camara.leg.br/api/v2/deputados/204444",
+        "interpretation": "UF da candidatura TSE difere da UF do mandato parlamentar ativo; identidade civil e ID coincidem."
+      }
+    }
+  ]
+}
