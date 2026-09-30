@@ -111,6 +111,7 @@ async function loadOfficialRound(uf: string): Promise<{ round: ColinhaRoundInfo;
     .abortSignal(supabaseQueryTimeoutSignal())
   if (error) return { round: deriveColinhaRoundInfo(phases, [], uf), phases }
   const published = await client.from("candidatos_publico").select("slug").in("slug", slugs)
+    .abortSignal(supabaseQueryTimeoutSignal())
   if (published.error) return { round: deriveColinhaRoundInfo(phases, [], uf), phases }
   const publishedSlugs = new Set((published.data ?? []).map((row) => String(row.slug)))
   const identities: PhaseIdentity[] = (data ?? []).map((row) => {

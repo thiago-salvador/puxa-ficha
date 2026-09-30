@@ -19,6 +19,7 @@ import {
   rateLimitExceededResponse,
   type DistributedRequestRateLimiter,
 } from "@/lib/request-rate-limit"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -99,8 +100,10 @@ async function queryRosterCandidates(ids: string[]): Promise<ColinhaCandidate[]>
   const rows = (result.data ?? []) as ColinhaCandidate[]
   if (rows.length === 0) return rows
   const identities = await client.from("candidatos").select("sq_candidato_2026,slug").in("sq_candidato_2026", ids)
+    .abortSignal(supabaseQueryTimeoutSignal())
   if (identities.error) throw identities.error
   const published = await client.from("candidatos_publico").select("slug").in("slug", (identities.data ?? []).map((row) => String(row.slug)))
+    .abortSignal(supabaseQueryTimeoutSignal())
   if (published.error) throw published.error
   const publicSlugs = new Set((published.data ?? []).map((row) => String(row.slug)))
   const slugBySq = new Map((identities.data ?? []).map((row) => [String(row.sq_candidato_2026), String(row.slug)]))
