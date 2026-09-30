@@ -1,4 +1,4 @@
-import type { AuditoriaRodadaFalas } from "./falas-rodada"
+import { janelaFalasDaRodada, type AuditoriaRodadaFalas } from "./falas-rodada"
 
 /**
  * Recibo público da busca de falas, versionado no repositório.
@@ -34,7 +34,7 @@ export function consolidarRecibosFalas(
 ): CatalogoRecibosFalas {
   const porChave = new Map<string, ReciboFalasPublico>()
   for (const recibo of anterior?.receipts ?? []) porChave.set(`${recibo.candidate_id}\u0000${recibo.candidate_slug}`, recibo)
-  const windowTo = auditoria.round_start.slice(0, 10)
+  const windowTo = janelaFalasDaRodada(new Date(auditoria.round_start)).to
   for (const candidato of auditoria.candidates) {
     if (!candidato.searched || !candidato.searched_at) continue
     const chave = `${candidato.candidate_id}\u0000${candidato.candidate_slug}`

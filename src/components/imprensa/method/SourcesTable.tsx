@@ -1,3 +1,4 @@
+import { safeHref } from "@/lib/utils"
 import {
   METHOD_SITUACAO_LABELS,
   methodCadenceLabel,
@@ -45,7 +46,7 @@ export function SourcesTable({ rows }: { rows: readonly MethodSourceRow[] }) {
                   </span>
                 </td>
                 <td data-label="Fonte oficial">
-                  <a className={styles.sourceLink} href={source.authorityUrl} target="_blank" rel="noreferrer">
+                  <a className={styles.sourceLink} href={safeHref(source.authorityUrl) ?? undefined} target="_blank" rel="noreferrer">
                     Abrir<span className="sr-only"> {source.label} (abre em nova aba)</span>
                     <span aria-hidden="true">&nbsp;↗</span>
                   </a>

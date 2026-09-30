@@ -29,6 +29,7 @@
     "backup-db.yml": "backup do banco inteiro; não seleciona candidatos",
     "ci.yml": "integração contínua do repositório",
     "codeql.yml": "análise estática de segurança",
+    "tse-julgamento-dry-run.yml": "execução manual de dry-run de julgamento eleitoral; consulta sem persistência no banco",
     "checagens-rotas-smoke.yml": "sonda semanal e manual das fontes externas; não coleta nem atualiza dado de candidato",
     "cron-watchdog.yml": "vigia de falha de workflows agendados",
     "gitleaks.yml": "varredura de segredos",

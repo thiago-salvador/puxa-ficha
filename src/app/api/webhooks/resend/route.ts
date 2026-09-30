@@ -108,7 +108,7 @@ export function createResendWebhookHandler(deps: ResendWebhookDeps) {
           event: "resend_webhook_falha_supabase",
           level: "error",
           httpStatus: 500,
-          detail: { type: event.type, emailHashPrefix: emailHash.slice(0, 12), message: error instanceof Error ? error.message : String(error) },
+          detail: { type: event.type, message: error instanceof Error ? error.message : String(error) },
         })
         // 500 faz a Resend reenviar: o desligamento nao pode se perder por falha transitoria.
         return NextResponse.json({ ok: false, error: "falha ao registrar" }, { status: 500 })

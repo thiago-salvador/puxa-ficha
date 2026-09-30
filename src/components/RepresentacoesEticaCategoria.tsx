@@ -1,7 +1,7 @@
 // cspell:words representacoes representacao etica camara
 import { representacaoTitulo, type RepresentacaoEticaAprovada } from "@/lib/representacoes-etica"
 import { FASE_REPRESENTACAO_LABEL } from "@/lib/representacoes-etica-fase"
-import { formatDate } from "@/lib/utils"
+import { formatDate, safeHref } from "@/lib/utils"
 
 /**
  * Categoria "processos disciplinares" dentro da seção de processos da aba
@@ -43,7 +43,7 @@ export function RepresentacoesEticaCategoria({ representacoes }: { representacoe
                   Último andamento em {formatDate(item.ultimo_andamento_em)} · Verificado em {formatDate(item.verificado_em)}
                 </p>
                 <a
-                  href={item.url_oficial}
+                  href={safeHref(item.url_oficial) ?? undefined}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2"
@@ -80,7 +80,7 @@ export function RepresentacoesEticaCategoria({ representacoes }: { representacoe
                   Último andamento em {formatDate(item.ultimo_andamento_em)} · Verificado em {formatDate(item.verificado_em)}
                 </p>
                 <a
-                  href={item.url_oficial}
+                  href={safeHref(item.url_oficial) ?? undefined}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 inline-flex text-[length:var(--text-caption)] font-bold text-foreground underline underline-offset-2"

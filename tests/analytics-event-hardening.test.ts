@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { createRequire } from "node:module"
-import { beforeEach, describe, it } from "node:test"
+import { afterEach, beforeEach, describe, it } from "node:test"
 
 // Mesmo padrao dos outros testes de rota: o store importa `server-only`, que
 // lanca quando carregado direto no runner.
@@ -199,9 +199,17 @@ describe("/api/analytics/event limita por camada duravel", () => {
 
 describe("hashTrustedClientIp", () => {
   let headers: Headers
+  let savedVercel: string | undefined
 
   beforeEach(() => {
+    savedVercel = process.env.VERCEL
+    process.env.VERCEL = "1"
     headers = new Headers({ "x-vercel-forwarded-for": IP })
+  })
+
+  afterEach(() => {
+    if (savedVercel === undefined) delete process.env.VERCEL
+    else process.env.VERCEL = savedVercel
   })
 
   it("nao carrega o IP em claro", () => {

@@ -13,7 +13,7 @@ import { createHash } from "node:crypto"
  */
 export function extractTrustedClientIp(headers: Pick<Headers, "get">): string {
   const vercel = headers.get("x-vercel-forwarded-for")?.trim()
-  if (vercel) {
+  if (process.env.VERCEL === "1" && vercel) {
     const first = vercel.split(",")[0]?.trim()
     if (first) return first
   }

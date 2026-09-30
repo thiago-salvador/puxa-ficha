@@ -2,6 +2,7 @@
 
 // cspell:words timecode atribuidas
 
+import { safeHref } from "@/lib/utils"
 import { useState } from "react"
 import { ExternalLink } from "lucide-react"
 
@@ -32,7 +33,7 @@ function SourceList({ label, sources }: { label: string; sources: AttributedChec
         {sources.map((source) => (
           <li key={source.url ?? source.title}>
             {source.url ? <a
-              href={source.url}
+              href={safeHref(source.url) ?? undefined}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex max-w-full items-center gap-1 text-[length:var(--text-caption)] font-semibold text-foreground underline decoration-border underline-offset-4 hover:decoration-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -99,7 +100,7 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
           {check.corrections.map((correction, index) => (
             <span key={`${correction.version}-${correction.publishedAt}`}>
               {index > 0 ? " " : ""}{correction.version}, {formatDate(correction.publishedAt)}: {correction.summary}{" "}
-              <a href={correction.url} target="_blank" rel="noopener noreferrer" className="font-bold underline underline-offset-2">
+              <a href={safeHref(correction.url) ?? undefined} target="_blank" rel="noopener noreferrer" className="font-bold underline underline-offset-2">
                 Ver registro
               </a>
             </span>
@@ -160,7 +161,7 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
 
       <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-4">
         <a
-          href={check.originalUrl}
+          href={safeHref(check.originalUrl) ?? undefined}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-1.5 rounded-[8px] border border-border px-3 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -168,7 +169,7 @@ function AttributedFactCheckCard({ check }: { check: AttributedFactCheck }) {
           Ler checagem original <ExternalLink className="size-3.5" aria-hidden="true" />
         </a>
         <a
-          href={check.methodologyUrl}
+          href={safeHref(check.methodologyUrl) ?? undefined}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex min-h-11 items-center gap-1.5 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.06em] text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

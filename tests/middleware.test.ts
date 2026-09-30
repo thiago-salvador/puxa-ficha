@@ -37,6 +37,34 @@ describe("middleware route protection", () => {
     globalThis.fetch = savedFetch
   })
 
+  it("recusa local-preview em produção e runtime desconhecido fora da Vercel", async () => {
+    delete env.VERCEL
+    delete env.VERCEL_ENV
+    delete env.PF_PREVIEW_TOKEN
+    const cookie = await deriveAccessCookieValue("local-preview", "preview")
+    for (const nodeEnv of ["production", "staging", undefined]) {
+      if (nodeEnv === undefined) delete env.NODE_ENV
+      else env.NODE_ENV = nodeEnv
+      const query = await middleware(request("http://localhost/preview/candidato/lula?token=local-preview"))
+      const stored = await middleware(request("http://localhost/preview/candidato/lula", `pf_preview_token=${cookie}`))
+      assert.equal(query.status, 404)
+      assert.equal(stored.status, 404)
+      assert.equal(query.headers.get("set-cookie"), null)
+    }
+  })
+
+  it("mantém o bootstrap local em development e test", async () => {
+    delete env.VERCEL
+    delete env.VERCEL_ENV
+    delete env.PF_PREVIEW_TOKEN
+    for (const nodeEnv of ["development", "test"]) {
+      env.NODE_ENV = nodeEnv
+      const response = await middleware(request("http://localhost/preview/candidato/lula?token=local-preview"))
+      assert.equal(response.status, 307)
+      assert.match(response.headers.get("set-cookie") ?? "", /pf_preview_token=/)
+    }
+  })
+
   it("returns 404 for preview routes without a token", async () => {
     env.NODE_ENV = "production"
     env.VERCEL_ENV = "production"
