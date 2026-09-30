@@ -33,9 +33,16 @@ export function slugsDoSnapshot(valor: unknown): string[] {
 
 export const TIPOS_FALHA: Readonly<Record<string, string>> = Object.freeze({
   limite_de_taxa: "fonte oficial respondeu com limite de taxa (HTTP 429) repetido; disjuntor aberto",
-  fonte_indisponivel: "fonte oficial (DJEN ou DataJud) indisponivel, com erro 5xx ou tempo esgotado",
+  bloqueio_http: "fonte oficial recusou o acesso (HTTP 401, 403 ou 407) a partir do executor da coleta",
+  fonte_indisponivel: "fonte oficial (DJEN ou DataJud) indisponivel, com erro HTTP ou tentativas esgotadas",
+  tempo_esgotado: "fonte oficial nao respondeu dentro do tempo limite",
+  dns: "falha de resolucao de nome ao acessar a fonte oficial",
+  rede: "falha de conexao de rede com a fonte oficial",
+  resposta_invalida: "fonte oficial devolveu resposta em formato inesperado ou incompleta",
   preflight_banco: "leitura da coorte ou dos recibos no banco falhou antes da busca",
   identidade_tse: "base de candidaturas do TSE indisponivel para confirmar a identidade",
+  checkpoint: "gravacao da evidencia local da coleta falhou",
+  erro_codigo: "erro interno do coletor",
   outro: "falha nao classificada; ver log privado da execucao",
   sem_classificacao: "coleta caiu sem registrar o tipo de falha",
 })
