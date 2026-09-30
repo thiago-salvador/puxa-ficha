@@ -19,13 +19,43 @@ export interface ColinhaCandidatesResult {
   listStart?: string | null
 }
 
-const SEARCH_LIMIT = 20
+/** Teto de linhas por resposta do PostgREST (max_rows); a lista completa pagina. */
+const PAGE_SIZE = 1000
+/** SP tem mais de mil candidaturas a deputado estadual; dez páginas dão folga. */
+const MAX_PAGES = 10
+/** Lote do enriquecimento: mantém o filtro `in` curto o bastante para a URL. */
+const ENRICH_CHUNK = 200
 
 function empty(unavailable = false): ColinhaCandidatesResult {
   return { candidates: [], unavailable, snapshot: null }
 }
 
+type PageQuery = {
+  range: (from: number, to: number) => {
+    abortSignal: (signal: AbortSignal) => PromiseLike<{ data: unknown[] | null; error: unknown }>
+  }
+}
+
+async function fetchAllRows(build: () => PageQuery): Promise<RosterRow[] | null> {
+  const rows: RosterRow[] = []
+  for (let page = 0; page < MAX_PAGES; page += 1) {
+    const from = page * PAGE_SIZE
+    const { data, error } = await build().range(from, from + PAGE_SIZE - 1).abortSignal(supabaseQueryTimeoutSignal())
+    if (error) return null
+    const batch = (data ?? []) as unknown as RosterRow[]
+    rows.push(...batch)
+    if (batch.length < PAGE_SIZE) break
+  }
+  return rows
+}
+
 async function enrichPublished(rows: RosterRow[]): Promise<ColinhaCandidate[]> {
+  const chunks: RosterRow[][] = []
+  for (let index = 0; index < rows.length; index += ENRICH_CHUNK) chunks.push(rows.slice(index, index + ENRICH_CHUNK))
+  return (await Promise.all(chunks.map(enrichChunk))).flat()
+}
+
+async function enrichChunk(rows: RosterRow[]): Promise<ColinhaCandidate[]> {
   if (rows.length === 0) return []
   const client = createServerSupabaseClient({ cacheMode: "no-store" })
   const sqs = rows.map((row) => row.sq_candidato)
@@ -118,26 +148,20 @@ export async function searchColinhaCandidates(
     const safe = query.normalize("NFKC").replace(/[^\p{L}\p{N} -]/gu, "").trim().slice(0, 70)
     if (safe) {
       // Com filtro, a ordem alfabética simples: quem digita já escolheu o recorte.
-      const { data, error } = await base()
+      const rows = await fetchAllRows(() => base()
         .or(`nome_urna.ilike.%${safe}%,nome_completo.ilike.%${safe}%,numero_urna.ilike.%${safe}%,partido_sigla.ilike.%${safe}%`)
-        .order("nome_urna").limit(SEARCH_LIMIT)
-        .abortSignal(supabaseQueryTimeoutSignal())
-      if (error) return empty(true)
-      const rows = (data ?? []) as unknown as RosterRow[]
+        .order("nome_urna").order("sq_candidato"))
+      if (!rows) return empty(true)
       return result(rows, await enrichPublished(rows))
     }
-    // Sem filtro, a lista começa na letra do momento e dá a volta no alfabeto.
+    // Sem filtro, a lista completa começa na letra do momento e dá a volta no alfabeto.
     const start = listStartLetter(now)
-    const head = await base().gte("nome_urna", start).order("nome_urna").limit(SEARCH_LIMIT)
-      .abortSignal(supabaseQueryTimeoutSignal())
-    if (head.error) return empty(true)
-    let rows = (head.data ?? []) as unknown as RosterRow[]
-    if (rows.length < SEARCH_LIMIT) {
-      const tail = await base().lt("nome_urna", start).order("nome_urna").limit(SEARCH_LIMIT - rows.length)
-        .abortSignal(supabaseQueryTimeoutSignal())
-      if (tail.error) return empty(true)
-      rows = [...rows, ...((tail.data ?? []) as unknown as RosterRow[])]
-    }
+    const [head, tail] = await Promise.all([
+      fetchAllRows(() => base().gte("nome_urna", start).order("nome_urna").order("sq_candidato")),
+      fetchAllRows(() => base().lt("nome_urna", start).order("nome_urna").order("sq_candidato")),
+    ])
+    if (!head || !tail) return empty(true)
+    const rows = [...head, ...tail]
     return { ...result(rows, await enrichPublished(rows)), listStart: start }
   } catch {
     return empty(true)

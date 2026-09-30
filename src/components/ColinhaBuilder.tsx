@@ -34,8 +34,8 @@ const EMPTY_CHOICES: Record<SlotId, ColinhaCandidate | null> = { df: null, de: n
 const REVIEW_STEP = SLOT_ORDER.length
 /** Texto compilado da Lei 9.504/1997; o art. 91-A, parágrafo único, veda celular na cabine. */
 const CELL_PHONE_LAW_URL = "https://www.planalto.gov.br/ccivil_03/leis/l9504.htm"
-/** A API devolve no máximo 20 candidaturas por consulta. */
-const SEARCH_LIMIT = 20
+/** A caixa da lista tem a altura de 20 candidaturas; as demais aparecem com a barra de rolagem. */
+const VISIBLE_ROWS = 20
 
 function status(candidate: ColinhaCandidate) {
   return candidate.situacao_registro || "Situação não informada"
@@ -317,18 +317,17 @@ export function ColinhaBuilder() {
       <input id="colinha-busca" type="search" value={query} onChange={(event) => setQuery(event.target.value)} maxLength={70} autoComplete="off" placeholder="Ex.: nome, 13, PT" className="min-h-11 min-w-0 flex-1 self-stretch bg-transparent text-base outline-none placeholder:text-muted-foreground" />
       <span aria-live="polite" className="shrink-0 text-xs text-muted-foreground">{loading ? "Consultando…" : ""}</span>
     </div>
-    {settled && !debouncedQuery.trim() && listStart && <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Agora a lista começa pela letra {listStart} e dá a volta no alfabeto. A letra inicial troca a cada {LIST_START_HOURS} horas, igual para todo mundo, para nenhuma candidatura ficar sempre no topo.{results.length === SEARCH_LIMIT ? " Mostramos 20 por vez: digite o nome ou o número para achar a sua." : ""}</p>}
+    {settled && !debouncedQuery.trim() && listStart && <p className="mt-2 text-xs leading-relaxed text-muted-foreground">Agora a lista começa pela letra {listStart} e dá a volta no alfabeto. A letra inicial troca a cada {LIST_START_HOURS} horas, igual para todo mundo, para nenhuma candidatura ficar sempre no topo.{results.length > VISIBLE_ROWS ? " Mostramos 20 por vez: digite o nome ou o número para achar a sua." : ""}</p>}
     {unavailable && settled && <p className="mt-4 flex flex-wrap items-center gap-2 text-sm font-semibold text-amber-800"><AlertTriangle aria-hidden="true" className="size-4 shrink-0" />Fonte indisponível. A cobertura desta escolha aparece como parcial.<button type="button" onClick={() => setRetry((value) => value + 1)} className="min-h-6 underline underline-offset-2">Tentar de novo</button></p>}
     {!settled && results.length === 0 && <ul className="mt-4 space-y-2" aria-hidden="true">{[0, 1, 2, 3].map((index) => <li key={index} className="h-16 animate-pulse rounded-lg bg-secondary" />)}</ul>}
     {settled && !unavailable && visible.length === 0 && blocked.length === 0 && <p className="mt-4 rounded-lg border border-dashed border-border p-4 text-sm text-muted-foreground">{debouncedQuery.trim() ? `Nenhuma candidatura encontrada para “${debouncedQuery.trim()}”.` : "Nenhuma candidatura registrada para este cargo neste snapshot."}</p>}
-    {visible.length > 0 && <ul className={`mt-4 divide-y divide-border rounded-xl border border-border bg-card ${settled ? "" : "opacity-60"}`} aria-label={`Candidaturas para ${SLOT_LABELS[slot]}`}>{visible.map((candidate) => {
+    {visible.length > 0 && <ul key={resultsKey ?? ""} className={`mt-4 max-h-[81.25rem] divide-y divide-border overflow-y-auto rounded-xl scrollbar-visible border border-border bg-card ${settled ? "" : "opacity-60"}`} aria-label={`Candidaturas para ${SLOT_LABELS[slot]}`}>{visible.map((candidate) => {
       const isBlocked = isCandidateBlocked(candidate.situacao_registro)
       const duplicate = pair !== null && state[pair] === candidate.sq_candidato
       const selected = choice?.sq_candidato === candidate.sq_candidato
       return <li key={candidate.sq_candidato} className="flex items-center gap-1 pr-2"><button type="button" disabled={isBlocked || duplicate} onClick={() => selectCandidate(candidate)} aria-pressed={selected} className={`flex min-h-16 min-w-0 flex-1 items-center gap-3 rounded-lg px-3 py-2 text-left hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent ${selected ? "bg-secondary" : ""}`}><CandidatePhoto src={candidate.foto_path} alt={imageAlt(candidate)} name={candidate.nome_urna} width={40} height={48} sizes="40px" className="size-10 shrink-0 rounded object-cover" initialsClassName="text-xs" /><span className="min-w-0 flex-1"><span className="block truncate font-bold text-foreground">{candidate.nome_urna}</span><span className="block text-xs text-muted-foreground">{candidate.partido_sigla} · {status(candidate)}{duplicate ? ` · já escolhido para ${SLOT_LABELS[pair!]}` : ""}</span></span><span className="shrink-0 font-heading text-xl tabular-nums text-foreground">{candidate.numero_urna}</span>{selected && <Check aria-hidden="true" className="size-5 shrink-0 text-emerald-600" />}</button>{candidate.slug && <Link href={`/candidato/${candidate.slug}`} target="_blank" className="grid size-11 shrink-0 place-items-center text-muted-foreground hover:text-foreground" aria-label={`Abrir ficha de ${candidate.nome_urna}`}><ExternalLink aria-hidden="true" className="size-4" /></Link>}</li>
     })}</ul>}
     {settled && blocked.length > 0 && <button type="button" onClick={() => setShowBlocked((value) => !value)} className="mt-3 min-h-11 text-sm font-semibold text-muted-foreground underline underline-offset-2 hover:text-foreground">{showBlocked ? "Esconder" : "Mostrar"} {blocked.length} {blocked.length === 1 ? "candidatura" : "candidaturas"} com registro indeferido, renúncia ou cassação</button>}
-    {settled && debouncedQuery.trim() && results.length === SEARCH_LIMIT && <p className="mt-3 text-xs text-muted-foreground">Mostrando as 20 primeiras em ordem alfabética. Refine o filtro se não encontrar.</p>}
   </div>
 
   // Resumo lateral no desktop: cada linha volta ao passo daquele voto.
