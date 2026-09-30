@@ -1,8 +1,7 @@
 import { ImageResponse } from "next/og"
 import { readFile } from "node:fs/promises"
-import { join, resolve } from "node:path"
 import { formatSlotDigits, isCandidateBlocked, type ColinhaCandidate, type ColinhaTurno, type SlotId, SLOT_ORDER } from "@/lib/colinha"
-import { fetchPhotoAsBase64, getSocialCardFonts } from "@/lib/social-card"
+import { getSocialCardFonts, loadPhotoAsDataUri } from "@/lib/social-card"
 
 export type ColinhaCardFormat = "feed" | "story"
 
@@ -189,20 +188,4 @@ export async function buildColinhaCard(
       "Referrer-Policy": "no-referrer",
     },
   })
-}
-
-async function loadPhotoAsDataUri(path: string): Promise<string | null> {
-  if (path.startsWith("data:image/")) return path
-  if (path.startsWith("/") && !path.includes("..")) {
-    try {
-      const filePath = resolve(join(process.cwd(), "public", path.slice(1)))
-      if (!filePath.startsWith(resolve(join(process.cwd(), "public")) + "/")) return null
-      const data = await readFile(filePath)
-      const extension = path.toLowerCase().endsWith(".png") ? "png" : "jpeg"
-      return `data:image/${extension};base64,${data.toString("base64")}`
-    } catch {
-      return null
-    }
-  }
-  return fetchPhotoAsBase64(path)
 }

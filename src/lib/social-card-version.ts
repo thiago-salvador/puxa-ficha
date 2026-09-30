@@ -9,7 +9,8 @@ export function socialCardVersionToken(
   faseEleitoral?: CardPhase | null,
 ): string {
   const ms = cardVersion ? Date.parse(cardVersion) : Number.NaN
-  const version = Number.isFinite(ms) ? `3-${Math.floor(ms / 1000).toString(36)}` : "3"
+  // 4: foto curada em public/ passou a entrar no card (antes saíam as iniciais).
+  const version = Number.isFinite(ms) ? `4-${Math.floor(ms / 1000).toString(36)}` : "4"
   return faseEleitoral && faseEleitoral.fase_eleitoral !== "em_disputa"
     ? `${version}-${faseEleitoral.fase_eleitoral}-${faseEleitoral.fase_turno}`
     : version

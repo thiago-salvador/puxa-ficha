@@ -1,4 +1,5 @@
 import { readFile } from "node:fs/promises"
+import { join, resolve } from "node:path"
 import { ImageResponse } from "next/og"
 import type { FichaCandidato } from "./types"
 import { classifyAttentionPoints } from "./attention-points"
@@ -43,6 +44,31 @@ export async function fetchPhotoAsBase64(url: string | null): Promise<string | n
   } catch {
     return null
   }
+}
+
+/**
+ * Foto do candidato como data URI, aceitando os três formatos que chegam da base:
+ * data URI, arquivo curado em `public/` (`/candidates/slug.jpg`) e URL remota de
+ * host permitido. O card de perfil só aceitava URL remota e perdia a foto de
+ * toda ficha com foto curada, trocando-a pelas iniciais.
+ */
+export async function loadPhotoAsDataUri(path: string | null): Promise<string | null> {
+  if (!path) return null
+  if (path.startsWith("data:image/")) return path
+  if (path.startsWith("/") && !path.startsWith("//") && !path.includes("..")) {
+    try {
+      const publicDir = resolve(join(process.cwd(), "public"))
+      const filePath = resolve(join(publicDir, path.slice(1).split(/[?#]/)[0]))
+      if (!filePath.startsWith(publicDir + "/")) return null
+      const data = await readFile(filePath)
+      const lower = filePath.toLowerCase()
+      const mime = lower.endsWith(".png") ? "png" : lower.endsWith(".webp") ? "webp" : "jpeg"
+      return `data:image/${mime};base64,${data.toString("base64")}`
+    } catch {
+      return null
+    }
+  }
+  return fetchPhotoAsBase64(path)
 }
 
 // ── Formatting helpers (pure, no external import for Satori compat) ──

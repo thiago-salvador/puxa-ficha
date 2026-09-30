@@ -311,7 +311,7 @@ describe("fixed-window IP rate limit", () => {
         reads += 1
         return { data: { foto_url: null } }
       },
-      fetchPhotoAsBase64: async () => null,
+      loadPhotoAsDataUri: async () => null,
       extractCardData: () => ({}),
       buildSocialCard: async () => {
         generated += 1
@@ -347,7 +347,7 @@ describe("fixed-window IP rate limit", () => {
         reads += 1
         return { data: { foto_url: null } }
       },
-      fetchPhotoAsBase64: async () => null,
+      loadPhotoAsDataUri: async () => null,
       extractCardData: () => ({}),
       buildSocialCard: async () => new Response("card"),
       startSpan: (_context: unknown, callback: () => Promise<Response>) => callback(),
@@ -368,7 +368,7 @@ describe("fixed-window IP rate limit", () => {
       createCardGetHandler({
         rateLimiter: { check: () => ({ allowed: true }), reset: () => undefined },
         getCandidatoBySlugResource: async () => ({ data: null, sourceStatus }),
-        fetchPhotoAsBase64: async () => null,
+        loadPhotoAsDataUri: async () => null,
         extractCardData: () => ({}),
         buildSocialCard: async () => new Response("card"),
         startSpan: (_context: unknown, callback: () => Promise<Response>) => callback(),
