@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { describe, it } from "node:test"
-import { auditarRodadaFalas, type ReciboBuscaFalas } from "../scripts/lib/falas-rodada"
+import { auditarRodadaFalas, janelaFalasDaRodada, type ReciboBuscaFalas } from "../scripts/lib/falas-rodada"
 import type { CandidatoFalas } from "../scripts/lib/falas-monitoramento"
 
 const start = "2026-09-20T00:00:00Z"
@@ -13,6 +13,25 @@ const receipt = (candidate: CandidatoFalas, changes: Partial<ReciboBuscaFalas> =
 })
 
 describe("auditoria da rodada de busca de falas", () => {
+  it("calcula a janela inclusiva pela data local de São Paulo", () => {
+    assert.deepEqual(janelaFalasDaRodada(new Date("2026-09-30T03:00:00Z")), { from: "2026-09-17", to: "2026-09-30" })
+    assert.deepEqual(janelaFalasDaRodada(new Date("2026-09-20T00:00:00Z")), { from: "2026-09-06", to: "2026-09-19" })
+  })
+
+  it("inclui 17/09 e exclui 16/09 na auditoria da rodada de 30/09", () => {
+    const result = auditarRodadaFalas({
+      roster: [ana, bia], roundStart: "2026-09-30T03:00:00Z", now: "2026-09-30T12:00:00Z",
+      receipts: [receipt(ana, { observed_at: "2026-09-30T03:01:00Z" }), receipt(bia, { observed_at: "2026-09-30T03:01:00Z" })],
+      catalog: { quotes: [
+        { candidate_id: ana.id, candidate_slug: ana.slug, occurred_on: "2026-09-16" },
+        { candidate_id: bia.id, candidate_slug: bia.slug, occurred_on: "2026-09-17" },
+      ] },
+    })
+    assert.equal(result.quote_window_from, "2026-09-17")
+    assert.equal(result.candidates.find((candidate) => candidate.candidate_id === ana.id)?.has_window_quote, false)
+    assert.equal(result.candidates.find((candidate) => candidate.candidate_id === bia.id)?.has_window_quote, true)
+  })
+
   it("não reutiliza recibo antigo para candidato coberto", () => {
     const result = auditarRodadaFalas({ roster: [ana], roundStart: start, now, receipts: [receipt(ana, { observed_at: "2026-09-19T23:59:59Z" })], catalog: { quotes: [{ candidate_id: ana.id, candidate_slug: ana.slug }] } })
     assert.equal(result.covered, 1)
