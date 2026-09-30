@@ -10,6 +10,8 @@ import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { buildTwitterMetadata } from "@/lib/metadata"
 import {
   getCandidatoCountByEstadoResource,
+  getCandidatosComResumoResource,
+  getFasesEleitorais2026,
   getIndicadoresAllEstadosResource,
 } from "@/lib/api"
 import { buildIndicadoresPorEstadoForMap } from "@/lib/brazil-map-preview"
@@ -47,12 +49,25 @@ export const metadata: Metadata = {
 export default async function GovernadoresPage() {
   // O mapa só precisa da contagem por UF: mesmo loader enxuto de /parlamentares,
   // sem trazer todas as colunas dos candidatos para o Data Cache.
-  const [indRes, countRes] = await Promise.all([
+  const [indRes, countRes, fasesEleitorais, governadoresRes] = await Promise.all([
     getIndicadoresAllEstadosResource(),
     getCandidatoCountByEstadoResource("Governador"),
+    getFasesEleitorais2026(),
+    getCandidatosComResumoResource("Governador"),
   ])
   const indicadoresPorEstado = buildIndicadoresPorEstadoForMap(indRes.data)
   const candidatosPorEstado = countRes.data
+  const fasePorSlug = new Map(fasesEleitorais.map((fase) => [fase.slug, fase]))
+  const fasesPorUf = new Map<string, Array<(typeof governadoresRes.data)[number]["candidato"]>>()
+  for (const resumo of governadoresRes.data) {
+    const candidato = resumo.candidato
+    if (candidato.cargo_disputado !== "Governador" || !candidato.estado) continue
+    const fase = fasePorSlug.get(candidato.slug) ?? candidato.fase_eleitoral_2026
+    if (!fase || fase.fase_eleitoral === "em_disputa") continue
+    const grupo = fasesPorUf.get(candidato.estado) ?? []
+    grupo.push({ ...candidato, fase_eleitoral_2026: fase })
+    fasesPorUf.set(candidato.estado, grupo)
+  }
 
   const schema = {
     "@context": "https://schema.org",
@@ -133,6 +148,32 @@ export default async function GovernadoresPage() {
           indicadoresPorEstado={indicadoresPorEstado}
           candidatosPorEstado={candidatosPorEstado}
         />
+        {fasesPorUf.size > 0 && (
+          <section className="mt-10" aria-labelledby="resultado-governadores-titulo" data-pf-governadores-resultado="">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">Resultado oficial</p>
+                <h2 id="resultado-governadores-titulo" className="mt-1 font-heading text-3xl uppercase text-foreground">Estados com fase publicada</h2>
+              </div>
+              <a href="https://resultados.tse.jus.br" target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-foreground underline underline-offset-4">Fonte: TSE, resultado oficial do 1º turno</a>
+            </div>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {[...fasesPorUf.entries()].sort(([a], [b]) => a.localeCompare(b, "pt-BR")).map(([uf, candidatos]) => {
+                const vencedor = candidatos.some((candidato) => candidato.fase_eleitoral_2026?.fase_eleitoral === "eleito")
+                const finalistas = candidatos.filter((candidato) => candidato.fase_eleitoral_2026?.fase_eleitoral === "segundo_turno").length
+                const visiveis = candidatos.filter((candidato) => candidato.fase_eleitoral_2026?.fase_eleitoral === "eleito" || candidato.fase_eleitoral_2026?.fase_eleitoral === "segundo_turno")
+                return (
+                  <Link key={uf} href={`/uf/${uf.toLowerCase()}`} className="rounded-[12px] border border-border bg-card p-4 transition-colors hover:bg-secondary">
+                    <p className="font-heading text-xl uppercase text-foreground">{uf}</p>
+                    <p className="mt-1 text-sm font-semibold text-muted-foreground">{vencedor ? "Vencedor definido" : finalistas === 2 ? "Dois finalistas" : "Fase publicada"}</p>
+                    {visiveis.length > 0 && <p className="mt-2 text-xs font-medium text-foreground">{visiveis.map((candidato) => candidato.nome_urna).join(" · ")}</p>}
+                    <p className="mt-2 text-xs text-muted-foreground">Ver candidatos e resultado do estado</p>
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        )}
         <div className="mt-10 max-w-3xl">
           <PublicDataSourcesNote variant="governadores" />
         </div>

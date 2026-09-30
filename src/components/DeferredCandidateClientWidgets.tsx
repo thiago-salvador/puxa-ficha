@@ -3,6 +3,7 @@
 import { Bell, ImageIcon } from "lucide-react"
 import { useEffect, useState, type ComponentType } from "react"
 import { Button } from "@/components/ui/button"
+import type { FaseEleitoral2026 } from "@/lib/types"
 
 type ShareButtonsProps = {
   shareUrl: string
@@ -12,6 +13,7 @@ type ShareButtonsProps = {
   slug?: string
   candidateName?: string
   cardVersion?: string | null
+  faseEleitoral?: FaseEleitoral2026 | null
 }
 
 type FollowCandidateButtonProps = {

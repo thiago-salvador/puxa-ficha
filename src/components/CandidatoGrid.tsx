@@ -23,6 +23,7 @@ import {
 } from "lucide-react"
 
 import { CandidatoCard } from "@/components/CandidatoCard"
+import { FaseEleitoralSelo } from "@/components/FaseEleitoralSelo"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
 import { GlobalSearchToolbarButton } from "@/components/GlobalSearchProvider"
 import { PartyCombobox } from "@/components/PartyCombobox"
@@ -45,6 +46,7 @@ import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import { normalizeForSearch } from "@/lib/search-normalize"
 import { legendaProcessosJustica, type ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 import type { Candidato } from "@/lib/types"
+import { rotuloFaseEleitoral, ordenarPorFaseEleitoral } from "@/lib/fase-eleitoral-publica"
 import { readPartyFilterFromSearchParams, replacePartyFilterInBrowserUrl, subscribeToPartyFilterUrlChanges } from "@/lib/party-filter-url"
 
 interface CandidatoGridProps {
@@ -97,7 +99,7 @@ export function ordenarCandidatosGrid(
     patrimoniosAtipicos?: Record<string, boolean>
   },
 ): Candidato[] {
-  return [...candidatos].sort((a, b) => {
+  const ordenados = [...candidatos].sort((a, b) => {
     const byName = a.nome_urna.localeCompare(b.nome_urna, "pt-BR")
     if (sort === "nome") return byName
     if (sort === "patrimonio") {
@@ -111,6 +113,7 @@ export function ordenarCandidatosGrid(
     const values = processSortCounts ?? processos
     return compareCandidateSortValues(values[a.slug], values[b.slug]) || byName
   })
+  return ordenarPorFaseEleitoral(ordenados)
 }
 
 type ViewMode = "grid" | "list"
@@ -139,7 +142,7 @@ function CandidatoListItem({
   index,
 }: ListItemProps) {
   const processosLegenda = processosContagem ? legendaProcessosJustica(processosContagem) : undefined
-  return (
+  const row = (
     <Link
       href={`/candidato/${candidato.slug}`}
       prefetch={false}
@@ -210,6 +213,15 @@ function CandidatoListItem({
         Ficha
       </span>
     </Link>
+  )
+
+  const faseLabel = rotuloFaseEleitoral(candidato)
+  if (!faseLabel) return row
+  return (
+    <div className="min-w-0" data-pf-lista-with-fase="">
+      <FaseEleitoralSelo candidato={candidato} className="mb-1.5 min-h-6 px-4 sm:px-5" compact />
+      {row}
+    </div>
   )
 }
 
@@ -330,7 +342,7 @@ export function CandidatoGrid({
   const rowVirtualizer = useVirtualizer({
     count: shouldVirtualizeList ? filtered.length : 0,
     getScrollElement: () => listParentRef.current,
-    estimateSize: () => 94,
+    estimateSize: (index) => rotuloFaseEleitoral(filtered[index]) ? 124 : 94,
     overscan: 6,
   })
 
