@@ -16,6 +16,7 @@ import { ExternalLink } from "lucide-react"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
 import { DespesasCampanhaSection, despesasVisiveis } from "./DespesasCampanhaSection"
 import type { DespesasLeituraStatus } from "@/lib/financiamento-despesas-contrato"
+import type { BoxCardModel } from "@/lib/box-card-model"
 import { PatrimonioEvolucaoAlerta } from "./PatrimonioEvolucaoAlerta"
 import { formatFinanciamentoPleitoPublicLabelForRow } from "@/lib/financiamento-pleito-public-label"
 import { buildFinanciamentoEleicoes, descreverFinanciamentoEleicao, type FinanciamentoEleicaoPublico } from "@/lib/financiamento-eleicoes"
@@ -706,6 +707,7 @@ interface MoneyTabSectionProps {
     gastos_parlamentares?: SectionFreshnessInfo
     gastos_executivo?: SectionFreshnessInfo
   }
+  despesasBoxCard?: BoxCardModel | null
 }
 
 export function MoneyTabSection({
@@ -725,6 +727,7 @@ export function MoneyTabSection({
   highlightTimelineRef,
   expandAllForAudit = false,
   freshness,
+  despesasBoxCard,
 }: MoneyTabSectionProps) {
   /**
    * Eleições aplicáveis sem valor publicado. O filtro fica aqui, e não só
@@ -1015,6 +1018,7 @@ export function MoneyTabSection({
         despesas={despesas}
         status={despesasStatus}
         anosComReceitas={financiamento.map((item) => item.ano_eleicao)}
+        boxCardModel={despesasBoxCard}
       />
 
       {patrimonio.length === 0 && financiamento.length === 0 && !temDespesas && (
