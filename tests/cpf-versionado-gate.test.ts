@@ -3,8 +3,10 @@ import { resolve } from "node:path"
 import { describe, it } from "node:test"
 
 import {
+  aplicarExcecoes,
   auditarCpfVersionado,
   cpfEhSinteticoPermitido,
+  excecoesDivergentes,
   MARCADOR_CPF_REMOVIDO,
   varrerTextoPorCpf,
 } from "../scripts/audit/lib/cpf-versionado-gate"
@@ -79,13 +81,32 @@ describe("gate de CPF versionado: casos que passam", () => {
   })
 })
 
+describe("gate de CPF versionado: exceções declaradas", () => {
+  const excecao = { arquivo: "m.sql", ocorrencias: 2, motivo: "migration aplicada" }
+  const achado = (arquivo: string) => ({ arquivo, linha: 1, coluna: 1, contexto: "rotulo" as const })
+
+  it("cobre só o arquivo declarado e confere a contagem exata", () => {
+    const { achados, excecoes } = aplicarExcecoes([achado("m.sql"), achado("m.sql"), achado("outro.json")], [excecao])
+    assert.deepEqual(achados.map((a) => a.arquivo), ["outro.json"])
+    assert.deepEqual(excecoesDivergentes(excecoes), [])
+  })
+
+  it("reprova CPF novo no arquivo excetuado e exceção que já não descreve o repositório", () => {
+    const aMais = aplicarExcecoes([achado("m.sql"), achado("m.sql"), achado("m.sql")], [excecao])
+    assert.equal(excecoesDivergentes(aMais.excecoes).length, 1)
+    const obsoleta = aplicarExcecoes([], [excecao])
+    assert.equal(excecoesDivergentes(obsoleta.excecoes).length, 1)
+  })
+})
+
 describe("gate de CPF versionado: repositório", () => {
-  it("nenhum arquivo rastreado carrega CPF válido em contexto explícito", () => {
+  it("nenhum arquivo rastreado carrega CPF válido em contexto explícito fora das exceções", () => {
     const resultado = auditarCpfVersionado(ROOT)
     assert.ok(resultado.arquivosLidos >= 1000, `gate cego: só ${resultado.arquivosLidos} arquivo(s) lidos`)
     assert.deepEqual(
       resultado.achados.map((achado) => `${achado.arquivo}:${achado.linha} (${achado.contexto})`),
       [],
     )
+    assert.deepEqual(excecoesDivergentes(resultado.excecoes), [])
   })
 })

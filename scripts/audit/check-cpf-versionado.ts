@@ -9,7 +9,7 @@
  *   npx tsx scripts/audit/check-cpf-versionado.ts
  */
 
-import { auditarCpfVersionado, MARCADOR_CPF_REMOVIDO } from "./lib/cpf-versionado-gate"
+import { auditarCpfVersionado, excecoesDivergentes, MARCADOR_CPF_REMOVIDO } from "./lib/cpf-versionado-gate"
 
 // Piso de sanidade: varredura que não lê nada é indistinguível de repositório
 // limpo. O repositório tem milhares de arquivos de texto rastreados.
@@ -22,7 +22,20 @@ function main(): void {
       `${resultado.binariosIgnorados} binário(s) fora da varredura`,
   )
 
+  console.log(`\nexceções declaradas (${resultado.excecoes.length}):`)
+  for (const excecao of resultado.excecoes) {
+    console.log(`  ${excecao.arquivo}: ${excecao.encontradas}/${excecao.ocorrencias} ocorrência(s)`)
+    console.log(`    ${excecao.motivo}`)
+  }
+
   const problemas: string[] = []
+  const divergentes = excecoesDivergentes(resultado.excecoes)
+  if (divergentes.length > 0) {
+    problemas.push(
+      `${divergentes.length} exceção(ões) com contagem diferente da declarada: ` +
+        `${divergentes.map((e) => `${e.arquivo} (${e.encontradas} encontrada(s), ${e.ocorrencias} declarada(s))`).join(", ")}`,
+    )
+  }
   if (resultado.arquivosLidos < MINIMO_DE_ARQUIVOS_LIDOS) {
     problemas.push(
       `varredura leu só ${resultado.arquivosLidos} arquivo(s), abaixo do piso de ` +

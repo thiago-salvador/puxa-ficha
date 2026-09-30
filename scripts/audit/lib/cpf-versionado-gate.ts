@@ -118,10 +118,62 @@ export function varrerTextoPorCpf(texto: string, arquivo: string): AchadoCpf[] {
   return achados
 }
 
+/**
+ * Arquivo que não pode ser reescrito e por isso carrega CPF de propósito, com
+ * o número exato de ocorrências. Migration já aplicada em produção entra aqui
+ * quando o CPF está em SQL executável: trocar o literal mudaria o que um
+ * replay ou uma reconstrução do banco grava, e o arquivo deixaria de bater com
+ * o digest registrado no ledger da aplicação. A exposição fica no arquivo e no
+ * histórico até decisão sobre reescrita de histórico. Contagem diferente da
+ * declarada reprova nos dois sentidos: CPF novo no arquivo, ou exceção que já
+ * não descreve o repositório.
+ */
+export interface ExcecaoCpfVersionado {
+  arquivo: string
+  ocorrencias: number
+  motivo: string
+}
+
+export const EXCECOES_CPF_VERSIONADO: readonly ExcecaoCpfVersionado[] = [
+  {
+    arquivo: "supabase/migrations/20260918120000_issue_378_superficie_marcador_e_trajetoria.sql",
+    ocorrencias: 5,
+    motivo:
+      "migration aplicada em produção: dois CPFs no literal `motivo_trajetoria`, gravado por UPDATE em " +
+      "mudancas_partido.despublicacao_motivo (linhas despublicadas, fora da leitura anon pela política " +
+      "publicacao_sem_despublicados), e os mesmos dois em três linhas de comentário. Mantida byte a byte.",
+  },
+]
+
+export interface ExcecaoConferida extends ExcecaoCpfVersionado {
+  encontradas: number
+}
+
 export interface ResultadoCpfVersionado {
+  /** CPF fora de exceção declarada. É o que reprova. */
   achados: AchadoCpf[]
+  /** Exceções declaradas com a contagem encontrada; divergência reprova. */
+  excecoes: ExcecaoConferida[]
   arquivosLidos: number
   binariosIgnorados: number
+}
+
+/** Separa achados cobertos por exceção declarada e confere a contagem de cada uma. */
+export function aplicarExcecoes(
+  achados: readonly AchadoCpf[],
+  excecoes: readonly ExcecaoCpfVersionado[] = EXCECOES_CPF_VERSIONADO,
+): { achados: AchadoCpf[]; excecoes: ExcecaoConferida[] } {
+  const porArquivo = new Map(excecoes.map((excecao) => [excecao.arquivo, excecao]))
+  const restantes = achados.filter((achado) => !porArquivo.has(achado.arquivo))
+  const conferidas = excecoes.map((excecao) => ({
+    ...excecao,
+    encontradas: achados.filter((achado) => achado.arquivo === excecao.arquivo).length,
+  }))
+  return { achados: restantes, excecoes: conferidas }
+}
+
+export function excecoesDivergentes(excecoes: readonly ExcecaoConferida[]): ExcecaoConferida[] {
+  return excecoes.filter((excecao) => excecao.encontradas !== excecao.ocorrencias)
 }
 
 function arquivosRastreados(raiz: string): string[] {
@@ -150,5 +202,5 @@ export function auditarCpfVersionado(raiz: string): ResultadoCpfVersionado {
     arquivosLidos += 1
     achados.push(...varrerTextoPorCpf(conteudo.toString("utf8"), arquivo))
   }
-  return { achados, arquivosLidos, binariosIgnorados }
+  return { ...aplicarExcecoes(achados), arquivosLidos, binariosIgnorados }
 }
