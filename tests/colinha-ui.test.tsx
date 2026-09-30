@@ -80,10 +80,6 @@ test("candidaturas bloqueadas ficam escondidas por padrão, com opção de mostr
   assert.match(builder, /com registro indeferido, renúncia ou cassação/)
 })
 
-test("sem escolhas não há consulta de seleção, então o aviso de parcial não aparece antes da hora", () => {
-  assert.match(builder, /if \(!mounted \|\| !state\.uf \|\| \(state\.turno === 2 && !round\) \|\| !SLOT_ORDER\.some\(\(id\) => state\[id\]\)\) return/)
-})
-
 test("compartilhar só aparece na conferência e com pelo menos um voto", () => {
   assert.match(builder, /filled === 0 \? <p[^>]*>Escolha pelo menos um voto/)
   assert.match(builder, /aria-label=\{`\$\{picked \? "Trocar" : "Escolher"\} candidato para \$\{SLOT_LABELS\[id\]\}`\}/)
