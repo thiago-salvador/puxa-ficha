@@ -25,8 +25,8 @@ test("a letra vale 5 horas a partir de 29/09/2026 0h de Brasília e dá a volta"
 test("a consulta sem filtro traz a lista completa, da letra do momento até dar a volta no alfabeto", () => {
   const data = readFileSync(new URL("../src/lib/colinha-data.ts", import.meta.url), "utf8")
   assert.match(data, /const start = listStartLetter\(now\)/)
-  assert.match(data, /fetchAllRows\(\(\) => base\(\)\.gte\("nome_urna", start\)\.order\("nome_urna"\)/)
-  assert.match(data, /fetchAllRows\(\(\) => base\(\)\.lt\("nome_urna", start\)\.order\("nome_urna"\)/)
+  assert.match(data, /fetchAllRows\(\(\) => scoped\(base\(\)\)\.gte\("nome_urna", start\)\.order\("nome_urna"\)/)
+  assert.match(data, /fetchAllRows\(\(\) => scoped\(base\(\)\)\.lt\("nome_urna", start\)\.order\("nome_urna"\)/)
   assert.match(data, /const rows = \[\.\.\.head, \.\.\.tail\]/)
   assert.match(data, /listStart: start/)
   // Sem corte em 20: pagina além do max_rows do PostgREST e enriquece em lotes.
