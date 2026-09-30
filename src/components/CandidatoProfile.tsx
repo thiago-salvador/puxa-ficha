@@ -48,6 +48,7 @@ import { rotuloDoAcervo } from "@/lib/proposicao-natureza"
 import { ProfileTabs, type Tab } from "./ProfileTabs"
 import { GravityBadge } from "./GravityBadge"
 import { NewsSection } from "./NewsSection"
+import { CandidateDebatesBentoCard, hasCandidateFalasCard } from "./CandidateDebatesBentoCard"
 import { SancoesSection } from "./SancoesSection"
 import { DataFreshnessNotice } from "./DataFreshnessNotice"
 import { SectionLabel, SectionTitle } from "./SectionHeader"
@@ -498,6 +499,7 @@ export function CandidatoProfile({
       ? getReciboChecagens({ candidate_id: ficha.id, candidate_slug: ficha.slug })
       : null
   const checagensEnabled = attributedChecks.length > 0 || checagensReceipt !== null
+  const falasEnabled = hasCandidateFalasCard(ficha.slug, ficha.id)
   const representacoesEtica = getProcessosDisciplinaresContaveis(ficha.slug)
   // Um total só para o KPI do topo, o badge da aba e o card da visão geral.
   const processosJustica = contarProcessosJustica({ judiciais: processos.length, disciplinares: representacoesEtica })
@@ -967,20 +969,23 @@ export function CandidatoProfile({
 
             {/* MÍDIA TAB */}
             {activeTab === "media" && (
-              (ficha.noticias && ficha.noticias.length > 0) || new URLSearchParams(locationSearch).has("noticia") ? (
-                <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} nextCursor={ficha.noticias_cursor ?? null} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
-              ) : (
-                <div data-pf-media-empty>
-                  <SectionLabel>Mídia</SectionLabel>
-                  <SectionTitle>Notícias recentes</SectionTitle>
-                  <NoticePanel
-                    className="mt-6"
-                    tone="neutral"
-                    rail={false}
-                    description="Ainda não há notícias exibidas nesta ficha."
-                  />
-                </div>
-              )
+              <div className="space-y-6">
+                {falasEnabled && <CandidateDebatesBentoCard candidateSlug={ficha.slug} candidateId={ficha.id} />}
+                {(ficha.noticias && ficha.noticias.length > 0) || new URLSearchParams(locationSearch).has("noticia") ? (
+                  <NewsSection key={ficha.slug} noticias={ficha.noticias ?? []} nextCursor={ficha.noticias_cursor ?? null} candidateSlug={ficha.slug} selectedNewsId={new URLSearchParams(locationSearch).get("noticia")} />
+                ) : (
+                  <div data-pf-media-empty>
+                    <SectionLabel>Mídia</SectionLabel>
+                    <SectionTitle>Notícias recentes</SectionTitle>
+                    <NoticePanel
+                      className="mt-6"
+                      tone="neutral"
+                      rail={false}
+                      description="Ainda não há notícias exibidas nesta ficha."
+                    />
+                  </div>
+                )}
+              </div>
             )}
 
             {/* TIMELINE TAB */}
