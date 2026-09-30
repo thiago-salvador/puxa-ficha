@@ -12,7 +12,7 @@ const { loadStatePrograms } = require("../src/lib/state-programs") as typeof imp
 const { loadStatePolls } = require("../src/lib/state-polls") as typeof import("../src/lib/state-polls")
 const { carregarPesquisasGovernadores } = require("../src/lib/pesquisas-eleitorais") as typeof import("../src/lib/pesquisas-eleitorais")
 
-test("all 27 UF charts default to an available stimulated scenario and SP averages its latest week across institutes", () => {
+test("all 27 UF charts default to an available stimulated scenario and SP preserves prior weekly averages while showing its latest poll", () => {
   const catalogs = carregarPesquisasGovernadores()
   assert.equal(catalogs.size, 27)
   for (const [uf, catalog] of catalogs) {
@@ -21,13 +21,38 @@ test("all 27 UF charts default to an available stimulated scenario and SP averag
     const groups = groupWeeklyPollSeries(polls)
     if (stimulated.length) assert.match(groups[0].polls[0].scenario.comparabilityKey.split("|")[4], /^estimulad[ao]$/, uf)
     if (uf === "SP") {
-      const rows = groups[0].weeks.at(-1)!.results
+      const priorPollIds = new Set(["parana-pesquisas-sp-03057-2026", "quaest-sp-02456-2026"])
+      const priorSeries = groupWeeklyPollSeries(polls.filter(poll => priorPollIds.has(poll.id)))[0]
+      assert.ok(priorSeries)
+      const weekOfSep21 = priorSeries.weeks.find(week => week.date === "2026-09-21")
+      assert.ok(weekOfSep21)
+      const rows = weekOfSep21.results
       assert.equal(rows.length, 7)
       // Week of 21/09: Paraná Pesquisas (50.7/33.3) and Quaest (44/27) averaged across institutes.
-      assert.equal(groups[0].weeks.at(-1)!.polls.length, 2)
+      assert.equal(weekOfSep21.polls.length, 2)
       assert.equal(rows.find(r => r.result.candidateSlug === "vivian-mendes")?.value, 0.3)
       assert.equal(rows.find(r => r.result.candidateSlug === "tarcisio-gov-sp")?.value, 47.35)
       assert.equal(rows.find(r => r.result.candidateSlug === "haddad-gov-sp")?.value, 30.15)
+
+      const weekOfSep28 = groups[0].weeks.find(week => week.date === "2026-09-28")
+      assert.ok(weekOfSep28)
+      assert.equal(weekOfSep28.polls.length, 1)
+      assert.equal(weekOfSep28.polls[0].id, "quaest-sp-01590-2026")
+      assert.equal(weekOfSep28.polls[0].instituto.value, "Quaest")
+      assert.equal(weekOfSep28.results.length, 6)
+      assert.deepEqual(
+        weekOfSep28.results
+          .map(({ result, value }) => [result.candidateSlug, value] as const)
+          .sort(([a], [b]) => String(a).localeCompare(String(b))),
+        [
+          ["carlos-machado", 1],
+          ["haddad-gov-sp", 24],
+          ["izadora-dias", 1],
+          ["tarcisio-gov-sp", 44],
+          ["vera-lucia", 1],
+          ["vivian-mendes", 1],
+        ],
+      )
     }
   }
 })

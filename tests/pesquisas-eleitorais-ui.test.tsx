@@ -157,7 +157,7 @@ describe("experiência v2 de pesquisas presidenciais", () => {
 
     assert.match(hero, /Quaest/)
     assert.match(hero, /44%/)
-    assert.equal(pesquisas[0]?.registration.code.value, "SP-02456/2026")
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-01590/2026")
   })
 })
 
