@@ -1,5 +1,6 @@
 "use client"
 
+import { safeHref } from "@/lib/utils"
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
 import { Check, ChevronLeft, ChevronRight, ExternalLink, UserRound, X } from "lucide-react"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
@@ -155,7 +156,7 @@ export function PollTrendChart({ weeks, candidates }: {
               const coverage = active.results.find(result => resultKey(result.result) === resultKey(item.result))
               return <li key={resultKey(item.result)}><span className={styles.colorDot} style={{ backgroundColor: item.color }} /><span>{item.result.rawLabel}{coverage && coverage.count < coverage.total && <small className={styles.resultCoverage}>{coverage.count} de {coverage.total} pesquisas com resultado</small>}</span><strong>{point.value === null ? "Sem resultado" : formatPercent(point.value)}</strong></li>
             })}</ul>
-            {active.polls.map(poll => <a key={poll.id} className={styles.textLink} href={poll.provenance.resultUrl} target="_blank" rel="noopener noreferrer">Fonte: {poll.instituto.value} <ExternalLink size={14} aria-hidden="true" /></a>)}
+            {active.polls.map(poll => <a key={poll.id} className={styles.textLink} href={safeHref(poll.provenance.resultUrl) ?? undefined} target="_blank" rel="noopener noreferrer">Fonte: {poll.instituto.value} <ExternalLink size={14} aria-hidden="true" /></a>)}
           </div>}
         </div>
       </div>

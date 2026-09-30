@@ -106,6 +106,28 @@ describe("rota /api/webhooks/resend", () => {
     assert.equal(chamadas, 0)
   })
 
+  test("falha no Supabase preserva o retry sem registrar o hash do destinatário", async (t) => {
+    const logs: string[] = []
+    t.mock.method(console, "error", (...args: unknown[]) => { logs.push(args.map(String).join(" ")) })
+    const hashes: string[] = []
+    const handler = createResendWebhookHandler({
+      secret: SECRET,
+      desligarCanal: async (hash) => { hashes.push(hash); throw new Error("timeout") },
+      now: () => NOW,
+    })
+    const email = "recipient@example.com"
+    const payload = JSON.stringify({ type: "email.complained", data: { to: [email] } })
+    const response = await handler(request(payload, headers(payload)))
+    assert.equal(response.status, 500)
+    assert.equal(hashes.length, 1)
+    assert.equal(logs.length, 1)
+    assert.match(logs[0], /resend_webhook_falha_supabase/)
+    assert.match(logs[0], /timeout/)
+    assert.equal(logs[0].includes(email), false)
+    assert.equal(logs[0].includes(hashes[0].slice(0, 12)), false)
+    assert.equal(logs[0].includes("emailHashPrefix"), false)
+  })
+
   test("bounce transitorio e outros eventos sao ignorados com 200; falha no Supabase responde 500 para a Resend reenviar", async () => {
     const handler = createResendWebhookHandler({ secret: SECRET, desligarCanal: async () => { throw new Error("timeout") }, now: () => NOW })
     const transitorio = JSON.stringify({ type: "email.bounced", data: { to: ["a@b.c"], bounce: { type: "Transient" } } })
