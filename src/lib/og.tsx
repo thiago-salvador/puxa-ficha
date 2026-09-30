@@ -54,6 +54,15 @@ async function getOgFonts() {
   return ogFontsPromise
 }
 
+// Coluna preta tem 326 px úteis: sem escala, uma biografia de 170 caracteres
+// passava da altura do painel e encostava no rodapé.
+function getEditorialSubtitleSize(subtitle: string): number {
+  const length = subtitle.trim().length
+  if (length <= 115) return 31
+  if (length <= 145) return 26
+  return 23
+}
+
 function getEditorialTitleSize(title: string): number {
   const length = title.trim().length
   if (length <= 12) return 116
@@ -485,7 +494,7 @@ export async function buildEditorialOg({
               <div
                 style={{
                   display: "flex",
-                  fontSize: 31,
+                  fontSize: getEditorialSubtitleSize(subtitle),
                   lineHeight: 1.18,
                   fontWeight: 700,
                   color: "#ffffff",
