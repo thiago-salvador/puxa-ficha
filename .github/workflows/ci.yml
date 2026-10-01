@@ -94,6 +94,12 @@ jobs:
       - name: Escrita auditada (trilha obrigatória)
         run: npm run audit:escrita-auditada:gate
 
+      # O repositório é público: CPF de pessoa real em arquivo rastreado fica
+      # legível por qualquer um. A varredura é estática (git ls-files, sem rede
+      # nem segredo) e a saída mostra só arquivo e linha, nunca o número.
+      - name: CPF em arquivo versionado
+        run: npm run audit:cpf-versionado:gate
+
       # Migration de dados nova exige três coisas no mesmo PR: anotações `@write`,
       # allowlist que autorize os pares (tabela, slug, campos) e entrada em
       # `recortes.json` ligando a janela à allowlist. O comando é estático, não

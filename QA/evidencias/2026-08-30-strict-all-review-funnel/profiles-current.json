@@ -11293,7 +11293,7 @@
       },
       "transparencia-sanctions": {
         "volume": 0,
-        "detalhe": "CPF 01321223161 (consulta_cand_2026 BR pos-prazo, SQ 280002553884); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG=0 (5 rotas por codigo/CPF, sha256 em entregas/NACIONAL/marcal-mecanica/sancoes-5-rotas.json)",
+        "detalhe": "CPF [CPF removido] (consulta_cand_2026 BR pos-prazo, SQ 280002553884); CEIS codigoSancionado=0, CNEP codigoSancionado=0, CEAF cpfSancionado=0, TCU inabilitados=0, TCU CADIRREG=0 (5 rotas por codigo/CPF, sha256 em entregas/NACIONAL/marcal-mecanica/sancoes-5-rotas.json)",
         "resultado": "vazio_confirmado",
         "executado_em": "2026-08-16T18:02:07.454221+00:00"
       },

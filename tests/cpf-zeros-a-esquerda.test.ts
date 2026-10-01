@@ -12,12 +12,14 @@ import { MINIMO_DIGITOS_CPF_TSE, cpfEhValido, normalizarCpfTse, somenteDigitos }
  * lista de "não consultáveis" da varredura de sanções.
  *
  * Caso real de regressão: `alex-pucineli`, que o `consulta_cand_2012` publica
- * como `690013167`. O CPF é `00690013167` e o dígito verificador fecha.
+ * com nove dígitos. O valor abaixo é sintético, com a mesma forma (dois zeros
+ * comidos e dígito verificador que fecha): CPF real não entra no repositório,
+ * e `npm run audit:cpf-versionado:gate` reprova quem tentar.
  */
 
-/** CPF do caso real, como o TSE publica e como ele é de verdade. */
-const PUCINELI_COMO_O_TSE_PUBLICA = "690013167"
-const PUCINELI_REAL = "00690013167"
+/** CPF sintético com a forma do caso real, como o TSE publica e como ele é. */
+const PUCINELI_COMO_O_TSE_PUBLICA = "123456797"
+const PUCINELI_REAL = "00123456797"
 
 describe("normalizarCpfTse: zeros à esquerda comidos pela fonte", () => {
   it("regressão alex-pucineli: 9 dígitos do consulta_cand 2012 viram o CPF real de 11", () => {
@@ -56,9 +58,10 @@ describe("normalizarCpfTse: o risco oposto, lixo curto não vira CPF", () => {
     // A fonte danifica CPF até 6 dígitos, e esses valores são CPF de verdade
     // (medição de 2026-08-10 no consulta_cand_2012_MT). O piso em 9 abre mão
     // deles porque afrouxá-lo não fechou nenhum alvo a mais na medição, e o
-    // teste existe para que a escolha seja explícita e não acidente.
-    assert.equal(cpfEhValido("00060214171"), true)
-    assert.equal(normalizarCpfTse("60214171"), "")
+    // teste existe para que a escolha seja explícita e não acidente. O valor
+    // abaixo é sintético, com a mesma forma (três zeros comidos, DV válido).
+    assert.equal(cpfEhValido("00012345601"), true)
+    assert.equal(normalizarCpfTse("12345601"), "")
   })
 
   it("lixo curto que passaria no DV depois do padding continua recusado", () => {
@@ -87,9 +90,9 @@ describe("normalizarCpfTse: o risco oposto, lixo curto não vira CPF", () => {
 
 describe("normalizarCpfTse: dígito verificador manda na reconstrução", () => {
   it("9 dígitos cujo DV não fecha depois do padding é recusado", () => {
-    // Mesmo prefixo do caso real com o último dígito trocado: 00690013168.
-    assert.equal(cpfEhValido("00690013168"), false)
-    assert.equal(normalizarCpfTse("690013168"), "")
+    // Mesmo prefixo do caso sintético com o último dígito trocado: 00123456798.
+    assert.equal(cpfEhValido("00123456798"), false)
+    assert.equal(normalizarCpfTse("123456798"), "")
   })
 
   it("10 dígitos cujo DV não fecha depois do padding é recusado", () => {

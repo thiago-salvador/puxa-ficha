@@ -10458,9 +10458,9 @@
   ],
   "recibosSemProgramaOficial": {
     "arquivo": "QA/evidencias/2026-08-30-programas-ausentes/receipt.json",
-    "arquivo_sha256": "40225995d8eceb03fba04e55ceb8faa46abf6dd18f5c6bd69df94de7ae77d97d",
+    "arquivo_sha256": "12d34651ad98064de1bc2d863fa2bdf7ca129d961ab4dfa29c252f9cdc7da52f",
     "receipt_set_id": "programas-governo-ausentes:2026-08-30",
-    "receipt_sha256": "5b4a96419e7cfb770286c50b33b09e05f5e48ec431bb7589e5e1702a1327bc4e",
+    "receipt_sha256": "bfc5a1798d3a911b5fc999c63856a183914df03d48aa7d39d08807665305eb16",
     "generated_at": "2026-08-30T19:05:43.502Z",
     "receipt_ids": [
       "programa-governo-ausente:2026:60002553922",
