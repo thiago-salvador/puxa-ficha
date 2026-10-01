@@ -6,6 +6,7 @@ import {
   aplicarExcecoes,
   auditarCpfVersionado,
   cpfEhSinteticoPermitido,
+  EXCECOES_CPF_VERSIONADO,
   excecoesDivergentes,
   MARCADOR_CPF_REMOVIDO,
   varrerTextoPorCpf,
@@ -108,5 +109,10 @@ describe("gate de CPF versionado: repositório", () => {
       [],
     )
     assert.deepEqual(excecoesDivergentes(resultado.excecoes), [])
+  })
+
+  it("não há exceção declarada: zero CPF no repositório inteiro", () => {
+    assert.deepEqual(EXCECOES_CPF_VERSIONADO, [])
+    assert.deepEqual(auditarCpfVersionado(ROOT).excecoes, [])
   })
 })

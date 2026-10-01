@@ -134,16 +134,12 @@ export interface ExcecaoCpfVersionado {
   motivo: string
 }
 
-export const EXCECOES_CPF_VERSIONADO: readonly ExcecaoCpfVersionado[] = [
-  {
-    arquivo: "supabase/migrations/20260918120000_issue_378_superficie_marcador_e_trajetoria.sql",
-    ocorrencias: 5,
-    motivo:
-      "migration aplicada em produção: dois CPFs no literal `motivo_trajetoria`, gravado por UPDATE em " +
-      "mudancas_partido.despublicacao_motivo (linhas despublicadas, fora da leitura anon pela política " +
-      "publicacao_sem_despublicados), e os mesmos dois em três linhas de comentário. Mantida byte a byte.",
-  },
-]
+// Lista vazia desde 01/10/2026: a única exceção, a migration 20260918120000
+// (issue #378), teve os CPFs trocados pelo marcador, e a 20261001100000 converge
+// as linhas já gravadas em produção para o mesmo texto. O gate passa a exigir
+// zero ocorrência no repositório inteiro; entrada nova aqui precisa de motivo
+// que sobreviva à mesma pergunta: por que o texto não pode ser trocado?
+export const EXCECOES_CPF_VERSIONADO: readonly ExcecaoCpfVersionado[] = []
 
 export interface ExcecaoConferida extends ExcecaoCpfVersionado {
   encontradas: number
