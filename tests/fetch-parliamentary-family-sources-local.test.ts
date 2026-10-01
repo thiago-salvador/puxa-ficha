@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { camaraLegislatureForYear, capturePageIsComplete, cotaYearCompleteness, familySource, fetchOfficialWithRetry, filterBundlePages, filterCandidatesBySlugs, jevAllowlistedEnv, JEV_SCRIPT_SHA256_PIN, loadCachedCotaYear, pinnedJevScriptMatches, parseSenadoVoteIds, parseSlugList, senateAuthorshipRows, senateRecordFromRoster, senatorNameFromRoster, senatorNamesFromLegislatureRoster, validateContentLength, validateCotaYearRowCount } from "../scripts/audit/fetch-parliamentary-family-sources-local"
+import { camaraLegislatureForYear, camaraVoteListIsComplete, camaraVoteListUrl, captureFamiliesIndependently, capturePageIsComplete, cotaYearCompleteness, familySource, fetchOfficialWithRetry, filterBundlePages, filterCandidatesBySlugs, jevAllowlistedEnv, JEV_SCRIPT_SHA256_PIN, loadCachedCotaYear, pinnedJevScriptMatches, parseSenadoVoteIds, parseSlugList, senateAuthorshipRows, senateRecordFromRoster, senatorNameFromRoster, senatorNamesFromLegislatureRoster, unsettledFamilies, validateContentLength, validateCotaYearRowCount } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 test("lista privada seleciona candidatos e falha em slug desconhecido", () => {
   const candidates = [{ slug: "ana-silva" }, { slug: "bia-souza" }]
@@ -117,4 +117,54 @@ test("votos nominais Câmara preservam ausência como lista completa sem linha s
     value: { dados: [{ deputado_: { id: 456 }, voto: "Sim" }], links: [] },
   }], "456")
   assert.deepEqual((present[0]?.value as { dados: Array<Record<string, unknown>> }).dados, [{ deputado_: { id: 456 }, voto: "Sim", vote_id_api: "123-4" }])
+})
+
+test("lista nominal Câmara é pedida sem pagina/itens e fechada pela resposta única", () => {
+  // Em 30/09/2026 a API respondeu `GET /votacoes/14493-503/votos?itens=100&pagina=1`
+  // com HTTP 400 {"detail":"Parâmetro(s) inválido(s).","instance":"pagina, itens"}
+  // e `GET /votacoes/14493-503/votos` com HTTP 200, 485 linhas e só o link `self`.
+  const url = camaraVoteListUrl("14493-503")
+  assert.equal(url, "https://dadosabertos.camara.leg.br/api/v2/votacoes/14493-503/votos")
+  assert.equal(new URL(url).searchParams.has("pagina"), false)
+  assert.equal(new URL(url).searchParams.has("itens"), false)
+  assert.throws(() => camaraVoteListUrl("14493-503/../x"), /ID de votação/)
+
+  const single = { dados: Array.from({ length: 485 }, (_, i) => ({ tipoVoto: "Sim", deputado_: { id: i + 1 } })), links: [{ rel: "self", href: url }] }
+  assert.equal(camaraVoteListIsComplete(single, url), true)
+  assert.equal(camaraVoteListIsComplete({ dados: [], links: [{ rel: "self", href: url }] }, url), false)
+  assert.equal(camaraVoteListIsComplete({ ...single, links: [...single.links, { rel: "next", href: `${url}?pagina=2` }] }, url), false)
+  assert.equal(camaraVoteListIsComplete({ ...single, links: [{ rel: "self", href: `${url}?pagina=1` }] }, url), false)
+  assert.equal(camaraVoteListIsComplete(single, `${url}?itens=100&pagina=1`), false)
+  assert.equal(camaraVoteListIsComplete({ dados: {} }, url), false)
+  // O caminho paginado antigo nunca fecharia uma lista de 485 linhas numa página.
+  assert.equal(capturePageIsComplete(single, 485, 1, url), false)
+})
+
+test("falha de votos da Câmara não vira falha de projetos nem de gastos já capturados", async () => {
+  // Run 36408077467 (28/09/2026): o catch externo copiou o HTTP 400 dos votos
+  // para projetos_lei e gastos_parlamentares, que já tinham observação.
+  const observations: Array<{ house: string; family: string; official_id: string }> = []
+  const pending: Array<{ house: string; family: string; official_id: string; reason: string; source: string }> = []
+  const votesError = "https://dadosabertos.camara.leg.br/api/v2/votacoes/14493-503/votos?itens=100&pagina=1: HTTP 400"
+  await captureFamiliesIndependently([
+    { family: "projetos_lei", source: "proposicoes", run: async () => { observations.push({ house: "camara", family: "projetos_lei", official_id: "204554" }) } },
+    { family: "gastos_parlamentares", source: "cota", run: async () => { observations.push({ house: "camara", family: "gastos_parlamentares", official_id: "204554" }) } },
+    { family: "votos_candidato", source: "votos", run: async () => { throw new Error(votesError) } },
+  ], (family, source, reason) => pending.push({ house: "camara", family, official_id: "204554", reason, source }))
+  assert.deepEqual(observations.map((item) => item.family), ["projetos_lei", "gastos_parlamentares"])
+  assert.deepEqual(pending, [{ house: "camara", family: "votos_candidato", official_id: "204554", reason: votesError, source: "votos" }])
+
+  // Uma família que falha antes das outras não impede as seguintes.
+  const order: string[] = []
+  await captureFamiliesIndependently([
+    { family: "projetos_lei", source: "p", run: async () => { throw "texto" } },
+    { family: "gastos_parlamentares", source: "g", run: async () => { order.push("gastos") } },
+  ], (family, _source, reason) => order.push(`${family}:${reason}`))
+  assert.deepEqual(order, ["projetos_lei:texto", "gastos"])
+
+  // O catch externo só preenche famílias sem observação nem pendência própria.
+  assert.deepEqual(unsettledFamilies("camara", "204554", observations, pending), [])
+  assert.deepEqual(unsettledFamilies("camara", "204554", observations.slice(0, 1), []), ["votos_candidato", "gastos_parlamentares"])
+  assert.deepEqual(unsettledFamilies("camara", "999", observations, pending), ["projetos_lei", "votos_candidato", "gastos_parlamentares"])
+  assert.deepEqual(unsettledFamilies("senado", "204554", observations, pending), ["projetos_lei", "votos_candidato", "gastos_parlamentares"])
 })

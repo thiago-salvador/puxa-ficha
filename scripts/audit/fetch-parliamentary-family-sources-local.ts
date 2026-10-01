@@ -644,6 +644,46 @@ async function capturePaginated(destination: string, relative: string, baseUrl: 
   }
 }
 
+/**
+ * A lista nominal `GET /votacoes/{id}/votos` da Câmara não aceita o protocolo
+ * `pagina`/`itens`: em 30/09/2026, `?itens=100&pagina=1` respondeu HTTP 400
+ * ("Parâmetro(s) inválido(s)", instance "pagina, itens") para toda votação, e
+ * a URL sem parâmetros respondeu 200 com a lista inteira (485 linhas em
+ * 14493-503) e só o link `self`. A lista é pedida sem parâmetros.
+ */
+export function camaraVoteListUrl(voteId: string): string {
+  if (!/^\d+-\d+$/.test(voteId)) throw new Error(`ID de votação da Câmara inválido: ${voteId}`)
+  return `${CAMARA}/votacoes/${voteId}/votos`
+}
+
+/**
+ * Resposta única completa: `dados` é array não vazio, a URL pedida e os links
+ * não carregam paginação, e não há link `next`/`last`. Lista vazia não fecha a
+ * prova: votação nominal sem nenhum voto indica resposta errada, não ausência.
+ */
+export function camaraVoteListIsComplete(value: unknown, requestUrl: string): boolean {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false
+  const root = value as Record<string, unknown>
+  if (!Array.isArray(root.dados) || root.dados.length === 0) return false
+  const paginated = (href: string): boolean => {
+    try {
+      const url = new URL(href, requestUrl)
+      return url.searchParams.has("pagina") || url.searchParams.has("itens")
+    } catch { return true }
+  }
+  if (paginated(requestUrl)) return false
+  if (root.links === undefined) return true
+  if (!Array.isArray(root.links)) return false
+  return (root.links as Array<{ rel?: unknown; href?: unknown }>).every((link) =>
+    link.rel === "self" && typeof link.href === "string" && !paginated(link.href))
+}
+
+async function captureCamaraVoteList(destination: string, relative: string, voteId: string): Promise<Page & { value: unknown }> {
+  const url = camaraVoteListUrl(voteId)
+  const captured = await capturePage(destination, relative, 1, url)
+  return { ...captured, complete: camaraVoteListIsComplete(captured.value, url) }
+}
+
 function writeBundle(destination: string, relative: string, pages: Array<Page & { value: unknown }>): { path: string; sha256: string; bytes: number } {
   const rows = pages.flatMap((page) => rowsOf(page.value))
   const groups = new Map<string, Array<Page & { value: unknown }>>()
@@ -691,6 +731,41 @@ export function filterBundlePages(pages: Array<Page & { value: unknown }>, offic
     }
     return { ...page, value }
   })
+}
+
+const FAMILIES = ["projetos_lei", "votos_candidato", "gastos_parlamentares"] as const satisfies readonly Family[]
+
+export type FamilyCapture = { family: Family; source: string; run: () => Promise<void> }
+
+/**
+ * Cada família tem o próprio desfecho: uma falha vira pendência só daquela
+ * família e não interrompe as seguintes. Antes, uma exceção dos votos subia ao
+ * catch do parlamentar e marcava projetos e gastos já capturados como falha.
+ */
+export async function captureFamiliesIndependently(
+  captures: readonly FamilyCapture[],
+  onFailure: (family: Family, source: string, reason: string) => void,
+): Promise<void> {
+  for (const capture of captures) {
+    try {
+      await capture.run()
+    } catch (error) {
+      onFailure(capture.family, capture.source, error instanceof Error ? error.message : String(error))
+    }
+  }
+}
+
+/** Famílias do parlamentar que ainda não têm observação nem pendência própria. */
+export function unsettledFamilies(
+  house: string,
+  officialId: string,
+  observations: ReadonlyArray<{ house?: unknown; family?: unknown; official_id?: unknown }>,
+  pending: ReadonlyArray<{ house?: unknown; family?: unknown; official_id?: unknown }>,
+): Family[] {
+  const settled = new Set([...observations, ...pending]
+    .filter((item) => item.house === house && String(item.official_id ?? "") === officialId)
+    .map((item) => item.family))
+  return FAMILIES.filter((family) => !settled.has(family))
 }
 
 export function familySource(house: House, family: Family, officialId: string): string {
@@ -770,61 +845,65 @@ async function main(): Promise<void> {
       const rosterRef = { roster_url: rosterUrl, roster_revision: `captured:${roster.sha256}`, roster_path: roster.path, scope: "cohort_id_identity_only", historical_completeness: "unresolved" }
 
       if (house === "camara") {
-        const projects = await capturePaginated(destination, `familias/${house}/${officialId}/projetos_lei`, `${CAMARA}/proposicoes`, { idDeputadoAutor: officialId, ordem: "DESC", ordenarPor: "id" })
-        const projectsBundle = writeBundle(destination, `familias/${house}/${officialId}/projetos_lei`, projects as Array<Page & { value: unknown }>)
-        addObservation({ house, family: "projetos_lei", officialId, sourceUrl: familySource(house, "projetos_lei", officialId), sourcePath: projectsBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: (projects as Array<Page & { value: unknown }>).map(stripValue), bundleSha256: projectsBundle.sha256 })
-
-        const revisions: Array<{ url: string; sha256: string; year: number; source_rows: number }> = []
-        const aggregates: Record<string, unknown>[] = []
-        const cotaYears = Array.from({ length: 19 }, (_, index) => 2008 + index)
-        for (const year of cotaYears) {
-          const url = CAMARA_COTA_CSV_URL(year)
-          let annual = camaraCotaCache.get(year)
-          if (!annual) {
-            annual = await loadCachedCotaYear(year, camaraCotaCache, camaraCotaFailures, async () => {
-              const zip = await fetchZip(url)
-              const digest = sha256(zip)
-              const parsed = aggregateCamaraCotaCsv(unzipCsv(zip).toString("utf8"), year)
-              const sourceRows = validateCotaYearRowCount(parsed, year)
-              return { digest, parsed, sourceRows }
-            })
-          }
-          revisions.push({ url, sha256: annual.digest, year, source_rows: annual.sourceRows })
-          const aggregate = annual.parsed.get(officialId)
-          if (aggregate) aggregates.push({ ideCadastro: officialId, ano: year, ...cotaYearCompleteness(year), source_rows: aggregate.rowCount, total_gasto: aggregate.totalLiquido, categorias: [...aggregate.categories].map(([categoria, valor]) => ({ categoria, valor })) })
-        }
-        const csvPages = await writeCotaAggregatePages(destination, officialId, aggregates, revisions)
-        const expensesBundle = writeBundle(destination, `familias/${house}/${officialId}/gastos_parlamentares`, csvPages)
-        addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: CAMARA_COTA_CSV_URL(cotaYears[0]!), sourcePath: expensesBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: csvPages.map(stripValue), bundleSha256: expensesBundle.sha256, extra: { years: cotaYears, year_completeness: Object.fromEntries(cotaYears.map((year) => [year, cotaYearCompleteness(year)])), source_revisions: revisions, source_kind: "camara-cota-csv" } })
-        if (camaraVoteIds.length === 0) {
-          pending.push({ house, family: "votos_candidato", official_id: officialId, reason: "IDs exatos de votações-chave da Câmara não foram fornecidos", source: familySource(house, "votos_candidato", officialId) })
-        } else {
-          const pages: Array<Page & { value: unknown }> = []
-          const voteCatalog: Array<{ vote_id_api: string; url: string; path: string; sha256: string }> = []
-          for (const voteId of camaraVoteIds) {
-            const base = `${CAMARA}/votacoes/${voteId}/votos`
-            const collection = await capturePaginated(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}`, base, {}) as Array<Page & { value: unknown }>
-            if (collection.length === 0 || collection.some((page) => {
-              const rows = (page.value as Record<string, unknown>)?.dados
-              return !Array.isArray(rows)
-            })) throw new Error(`lista nominal oficial vazia/inválida para votação ${voteId}`)
-            // A lista nominal é a fonte da presença/ausência. Uma lista completa
-            // sem a linha do deputado prova que ele não aparece naquela votação.
-            pages.push(...filterBundlePages(collection, officialId))
-            const metaUrl = `${CAMARA}/votacoes/${voteId}`
-            const meta = await capturePage(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}-metadata`, 1, metaUrl)
-            const metaDados = (meta.value as Record<string, unknown>)?.dados as Record<string, unknown> | undefined
-            if (!metaDados || String(metaDados.id) !== voteId || typeof metaDados.data !== "string") throw new Error(`metadados oficiais inválidos para votação ${voteId}`)
-            voteCatalog.push({ vote_id_api: voteId, url: metaUrl, path: meta.path, sha256: meta.sha256 })
-          }
-          const filteredPages = pages
-          const bundle = writeBundle(destination, `familias/${house}/${officialId}/votos_candidato`, filteredPages)
-          const sourceRevisions = [
-            ...filteredPages.map((page) => ({ url: page.url, sha256: page.sha256 })),
-            ...voteCatalog.map(({ url, sha256 }) => ({ url, sha256 })),
-          ]
-          addObservation({ house, family: "votos_candidato", officialId, sourceUrl: `${CAMARA}/votacoes/{votacao_id}/votos`, sourcePath: bundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: filteredPages.map(stripValue), bundleSha256: bundle.sha256, extra: { vote_ids: camaraVoteIds, vote_catalog: voteCatalog, source_revisions: sourceRevisions } })
-        }
+        await captureFamiliesIndependently([
+          { family: "projetos_lei", source: familySource(house, "projetos_lei", officialId), run: async () => {
+            const projects = await capturePaginated(destination, `familias/${house}/${officialId}/projetos_lei`, `${CAMARA}/proposicoes`, { idDeputadoAutor: officialId, ordem: "DESC", ordenarPor: "id" })
+            const projectsBundle = writeBundle(destination, `familias/${house}/${officialId}/projetos_lei`, projects as Array<Page & { value: unknown }>)
+            addObservation({ house, family: "projetos_lei", officialId, sourceUrl: familySource(house, "projetos_lei", officialId), sourcePath: projectsBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: (projects as Array<Page & { value: unknown }>).map(stripValue), bundleSha256: projectsBundle.sha256 })
+          } },
+          { family: "gastos_parlamentares", source: familySource(house, "gastos_parlamentares", officialId), run: async () => {
+            const revisions: Array<{ url: string; sha256: string; year: number; source_rows: number }> = []
+            const aggregates: Record<string, unknown>[] = []
+            const cotaYears = Array.from({ length: 19 }, (_, index) => 2008 + index)
+            for (const year of cotaYears) {
+              const url = CAMARA_COTA_CSV_URL(year)
+              let annual = camaraCotaCache.get(year)
+              if (!annual) {
+                annual = await loadCachedCotaYear(year, camaraCotaCache, camaraCotaFailures, async () => {
+                  const zip = await fetchZip(url)
+                  const digest = sha256(zip)
+                  const parsed = aggregateCamaraCotaCsv(unzipCsv(zip).toString("utf8"), year)
+                  const sourceRows = validateCotaYearRowCount(parsed, year)
+                  return { digest, parsed, sourceRows }
+                })
+              }
+              revisions.push({ url, sha256: annual.digest, year, source_rows: annual.sourceRows })
+              const aggregate = annual.parsed.get(officialId)
+              if (aggregate) aggregates.push({ ideCadastro: officialId, ano: year, ...cotaYearCompleteness(year), source_rows: aggregate.rowCount, total_gasto: aggregate.totalLiquido, categorias: [...aggregate.categories].map(([categoria, valor]) => ({ categoria, valor })) })
+            }
+            const csvPages = await writeCotaAggregatePages(destination, officialId, aggregates, revisions)
+            const expensesBundle = writeBundle(destination, `familias/${house}/${officialId}/gastos_parlamentares`, csvPages)
+            addObservation({ house, family: "gastos_parlamentares", officialId, sourceUrl: CAMARA_COTA_CSV_URL(cotaYears[0]!), sourcePath: expensesBundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: csvPages.map(stripValue), bundleSha256: expensesBundle.sha256, extra: { years: cotaYears, year_completeness: Object.fromEntries(cotaYears.map((year) => [year, cotaYearCompleteness(year)])), source_revisions: revisions, source_kind: "camara-cota-csv" } })
+          } },
+          { family: "votos_candidato", source: familySource(house, "votos_candidato", officialId), run: async () => {
+            if (camaraVoteIds.length === 0) {
+              pending.push({ house, family: "votos_candidato", official_id: officialId, reason: "IDs exatos de votações-chave da Câmara não foram fornecidos", source: familySource(house, "votos_candidato", officialId) })
+            } else {
+              const pages: Array<Page & { value: unknown }> = []
+              const voteCatalog: Array<{ vote_id_api: string; url: string; path: string; sha256: string }> = []
+              for (const voteId of camaraVoteIds) {
+                const list = await captureCamaraVoteList(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}`, voteId)
+                if (!list.complete) throw new Error(`lista nominal oficial vazia/inválida para votação ${voteId}`)
+                const collection = [list]
+                // A lista nominal é a fonte da presença/ausência. Uma lista completa
+                // sem a linha do deputado prova que ele não aparece naquela votação.
+                pages.push(...filterBundlePages(collection, officialId))
+                const metaUrl = `${CAMARA}/votacoes/${voteId}`
+                const meta = await capturePage(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}-metadata`, 1, metaUrl)
+                const metaDados = (meta.value as Record<string, unknown>)?.dados as Record<string, unknown> | undefined
+                if (!metaDados || String(metaDados.id) !== voteId || typeof metaDados.data !== "string") throw new Error(`metadados oficiais inválidos para votação ${voteId}`)
+                voteCatalog.push({ vote_id_api: voteId, url: metaUrl, path: meta.path, sha256: meta.sha256 })
+              }
+              const filteredPages = pages
+              const bundle = writeBundle(destination, `familias/${house}/${officialId}/votos_candidato`, filteredPages)
+              const sourceRevisions = [
+                ...filteredPages.map((page) => ({ url: page.url, sha256: page.sha256 })),
+                ...voteCatalog.map(({ url, sha256 }) => ({ url, sha256 })),
+              ]
+              addObservation({ house, family: "votos_candidato", officialId, sourceUrl: `${CAMARA}/votacoes/{votacao_id}/votos`, sourcePath: bundle.path, rowsPath: ["dados"], roster: rosterRef, rawPages: filteredPages.map(stripValue), bundleSha256: bundle.sha256, extra: { vote_ids: camaraVoteIds, vote_catalog: voteCatalog, source_revisions: sourceRevisions } })
+            }
+          } },
+        ], (family, source, reason) => pending.push({ house, family, official_id: officialId, reason, source }))
       } else {
         for (const [family, url] of [["projetos_lei", `${SENADO}/senador/${officialId}/autorias.json`], ["votos_candidato", `${SENADO}/senador/${officialId}/votacoes.json`]] as const) {
           try {
@@ -930,8 +1009,10 @@ async function main(): Promise<void> {
         }
       }
       } catch (error) {
+        // Só falha comum a todas as famílias (roster) ou não tratada chega
+        // aqui; família que já tem observação ou pendência própria fica como está.
         const reason = error instanceof Error ? error.message : String(error)
-        for (const family of ["projetos_lei", "votos_candidato", "gastos_parlamentares"] as const) {
+        for (const family of unsettledFamilies(house, officialId, observations, pending)) {
           pending.push({ house, family, official_id: officialId, reason, source: familySource(house, family, officialId) })
         }
       }
