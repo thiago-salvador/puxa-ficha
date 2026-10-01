@@ -194,7 +194,7 @@ const CARGO_DISPUTADO_PROVENIENCIA_NOTA: Record<CargoDisputadoProveniencia, stri
     "O pedido de registro consta no snapshot do TSE, mas a situação ainda não foi informada. Isso não equivale a candidatura deferida nem a julgamento pendente.",
   registro_tse: "Candidatura registrada no TSE.",
   registro_tse_indeferido:
-    "O pedido de registro consta no TSE e foi indeferido. Indeferimento não equivale a estar fora da urna: o TSE pode seguir classificando a candidatura como concorrendo enquanto couber recurso.",
+    "O pedido de registro consta no TSE e foi indeferido. Indeferimento do registro não determina, por si só, exclusão da disputa.",
 }
 
 export function buildCargoDisputadoProvenienceLabel(

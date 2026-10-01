@@ -1,0 +1,229 @@
+{
+  "policy": {
+    "version": 2,
+    "role": "Advisory factual review; human user explicitly authorizes publication conditional on principal and Jev review; Jev never grants authority or performs writes.",
+    "objective": "Publish a correction separating TSE registration judgment, competition status, aptitude flags and appeal, preserving unresolved official disagreement.",
+    "rules": [
+      "Candidate identity is anchored by exact election2026, SQ, office and UF, never by name alone.",
+      "Different official judgments are shown together as Fontes oficiais divergentes; do not choose one as definitive.",
+      "Indeferido and Concorrendo may coexist. Do not infer exclusion from the judgment.",
+      "Apto=false and inapto=false remain literal flags; neither implies removal.",
+      "An absent appeal field means Desconhecido; it does not establish no appeal or an appeal.",
+      "Only existing situacao_candidatura and verificacao_campos are updated. Other metadata/status/publicavel must be preserved.",
+      "Publishing means code through PR/CI/deploy, then exactly3 existing DB rows via transaction+before-value CAS, followed by cache/public visual proof. Issue remains open because Ricardo conflict persists."
+    ],
+    "evaluation": {
+      "target_min_probability": 0.8,
+      "negative_control_max_probability": 0.35,
+      "positive_control_min_probability": 0.8,
+      "mode": "consultative probe with synthetic controls; not a calibrated automated production judge",
+      "stop_on_uncertainty": true
+    },
+    "field_glossary": {
+      "registration": "Julgamento do pedido de registro. Compare the literal official description, case-insensitively. It is separate from competition or aptitude. Do not interpret detail API numericcodes as packagecodes.",
+      "competition": "Last verified competition/totalization descriptor, displayed with that observation timestamp; not a claim it was refetched now.",
+      "aptitude": "Display the exact independent boolean flags apto and inapto. Both false is allowed.",
+      "appeal": "There is no explicit appeal descriptor or interposto boolean in these observations. Desconhecido preserves absence of evidence; Nenhum recurso interposto or Recurso interposto would invent a conclusion."
+    }
+  },
+  "cases": {
+    "ricardo": {
+      "observations": [
+        {
+          "identity": {
+            "sq": "260002549466",
+            "office": "Governador",
+            "uf": "SE"
+          },
+          "source": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+          "verified_at": "2026-10-01T19:12:48.131Z",
+          "registration_judgment_literal": "Indeferido",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.131Z",
+          "explicit_appeal_field": null
+        },
+        {
+          "identity": {
+            "sq": "260002549466",
+            "office": "Governador",
+            "uf": "SE"
+          },
+          "source": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+          "verified_at": "2026-10-01T19:51:24.126Z",
+          "registration_judgment_literal": "INDEFERIDO",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.131Z",
+          "explicit_appeal_field": null
+        }
+      ],
+      "proposed": {
+        "registration": "Indeferido",
+        "competition": "Concorrendo",
+        "aptitude": "Apto: não; inapto: não",
+        "appeal": "Desconhecido"
+      }
+    },
+    "major": {
+      "observations": [
+        {
+          "identity": {
+            "sq": "180002544457",
+            "office": "Senador",
+            "uf": "PI"
+          },
+          "source": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544457",
+          "verified_at": "2026-10-01T19:12:48.176Z",
+          "registration_judgment_literal": "Indeferido",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.176Z",
+          "explicit_appeal_field": null
+        },
+        {
+          "identity": {
+            "sq": "180002544457",
+            "office": "Senador",
+            "uf": "PI"
+          },
+          "source": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+          "verified_at": "2026-10-01T19:51:24.126Z",
+          "registration_judgment_literal": "INDEFERIDO",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.176Z",
+          "explicit_appeal_field": null
+        }
+      ],
+      "proposed": {
+        "registration": "Indeferido",
+        "competition": "Concorrendo",
+        "aptitude": "Apto: não; inapto: não",
+        "appeal": "Desconhecido"
+      }
+    },
+    "toinho": {
+      "observations": [
+        {
+          "identity": {
+            "sq": "180002544459",
+            "office": "Senador",
+            "uf": "PI"
+          },
+          "source": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544459",
+          "verified_at": "2026-10-01T19:12:48.221Z",
+          "registration_judgment_literal": "Indeferido",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.221Z",
+          "explicit_appeal_field": null
+        },
+        {
+          "identity": {
+            "sq": "180002544459",
+            "office": "Senador",
+            "uf": "PI"
+          },
+          "source": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+          "verified_at": "2026-10-01T19:51:24.126Z",
+          "registration_judgment_literal": "INDEFERIDO",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.221Z",
+          "explicit_appeal_field": null
+        }
+      ],
+      "proposed": {
+        "registration": "Indeferido",
+        "competition": "Concorrendo",
+        "aptitude": "Apto: não; inapto: não",
+        "appeal": "Desconhecido"
+      }
+    },
+    "holdout_coexistence": {
+      "observations": [
+        {
+          "registration_judgment_literal": "INDEFERIDO",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "explicit_appeal_field": null
+        }
+      ],
+      "proposed": {
+        "registration": "Indeferido",
+        "competition": "Concorrendo",
+        "aptitude": "Apto: não; inapto: não",
+        "appeal": "Desconhecido"
+      }
+    },
+    "holdout_appeal_absence": {
+      "observations": [
+        {
+          "registration_judgment_literal": "INDEFERIDO",
+          "explicit_appeal_field": null
+        }
+      ],
+      "proposed": {
+        "appeal": "Nenhum recurso interposto"
+      }
+    },
+    "holdout_aptitude_inference": {
+      "observations": [
+        {
+          "registration_judgment_literal": "INDEFERIDO",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false
+        }
+      ],
+      "proposed": {
+        "competition": "Não concorre; excluído definitivamente"
+      }
+    },
+    "holdout_unresolved": {
+      "observations": [
+        {
+          "identity": {
+            "sq": "260002549466",
+            "office": "Governador",
+            "uf": "SE"
+          },
+          "source": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+          "verified_at": "2026-10-01T19:12:48.131Z",
+          "registration_judgment_literal": "Indeferido",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.131Z",
+          "explicit_appeal_field": null
+        },
+        {
+          "identity": {
+            "sq": "260002549466",
+            "office": "Governador",
+            "uf": "SE"
+          },
+          "source": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+          "verified_at": "2026-10-01T19:12:45.596Z",
+          "registration_judgment_literal": "DEFERIDO",
+          "competition": "Concorrendo",
+          "apto": false,
+          "inapto": false,
+          "competition_verified_at": "2026-10-01T19:12:48.131Z",
+          "explicit_appeal_field": null
+        }
+      ],
+      "proposed": {
+        "registration": "Deferido sem divergência entre as fontes"
+      }
+    }
+  }
+}

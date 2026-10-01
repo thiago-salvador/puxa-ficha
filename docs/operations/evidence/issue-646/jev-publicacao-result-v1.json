@@ -1,0 +1,18 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "ricardo": 0.84,
+    "major": 0.73,
+    "toinho": 0.78,
+    "positive_coexistence": 0.91,
+    "negative_exclusion": 0.02,
+    "negative_appeal": 0.03,
+    "negative_conflict_erasure": 0.02
+  },
+  "usage": {
+    "input_tokens": 8760,
+    "output_tokens": 133
+  },
+  "elapsed_ms": 734,
+  "result": "HOLD: two targets below predefined0.80; controls pass"
+}

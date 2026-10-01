@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "role": "Advisory factual review; human user explicitly authorizes publication conditional on principal and Jev review; Jev never grants authority or performs writes.",
+  "objective": "Publish a correction separating TSE registration judgment, competition status, aptitude flags and appeal, preserving unresolved official disagreement.",
+  "rules": [
+    "Candidate identity is anchored by exact election2026, SQ, office and UF, never by name alone.",
+    "Different official judgments are shown together as Fontes oficiais divergentes; do not choose one as definitive.",
+    "Indeferido and Concorrendo may coexist. Do not infer exclusion from the judgment.",
+    "Apto=false and inapto=false remain literal flags; neither implies removal.",
+    "An absent appeal field means Desconhecido; it does not establish no appeal or an appeal.",
+    "Only existing situacao_candidatura and verificacao_campos are updated. Other metadata/status/publicavel must be preserved.",
+    "Publishing means code through PR/CI/deploy, then exactly3 existing DB rows via transaction+before-value CAS, followed by cache/public visual proof. Issue remains open because Ricardo conflict persists."
+  ],
+  "evaluation": {
+    "target_min_probability": 0.8,
+    "negative_control_max_probability": 0.35,
+    "positive_control_min_probability": 0.8,
+    "mode": "consultative probe with synthetic controls; not a calibrated automated production judge",
+    "stop_on_uncertainty": true
+  }
+}

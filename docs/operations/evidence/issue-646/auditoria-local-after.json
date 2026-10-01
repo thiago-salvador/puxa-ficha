@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "mode": "local_replay",
+  "production_changed": false,
+  "refetched_for_replay": false,
+  "status": "review_required",
+  "expected_exit_code": 1,
+  "baseline": {
+    "fichas": 512,
+    "por_cargo": {
+      "PRESIDENTE": 13,
+      "GOVERNADOR": 191,
+      "SENADOR": 308
+    },
+    "identidade_sem_match": 0,
+    "bloqueantes": 3,
+    "com_divergencia_informativa": 30,
+    "nome_civil_divergente_banco": 0,
+    "nome_civil_divergente_seed": 0
+  },
+  "after": {
+    "fichas": 512,
+    "por_cargo": {
+      "PRESIDENTE": 13,
+      "GOVERNADOR": 191,
+      "SENADOR": 308
+    },
+    "identidade_sem_match": 0,
+    "bloqueantes": 1,
+    "com_divergencia_informativa": 30,
+    "nome_civil_divergente_banco": 0,
+    "nome_civil_divergente_seed": 0
+  },
+  "checks": [
+    {
+      "slug": "ricardo-marques",
+      "checks": {
+        "nome_urna": "ok",
+        "partido_sigla": "ok",
+        "situacao": "divergente",
+        "numero_urna": "ok",
+        "sites": "ok",
+        "chapa_vice": "ok"
+      }
+    },
+    {
+      "slug": "tse-2026-180002544457",
+      "checks": {
+        "nome_urna": "ok",
+        "partido_sigla": "ok",
+        "situacao": "ok",
+        "numero_urna": "ok",
+        "sites": "ok",
+        "chapa_vice": "nao_aplicavel"
+      }
+    },
+    {
+      "slug": "tse-2026-180002544459",
+      "checks": {
+        "nome_urna": "ok",
+        "partido_sigla": "ok",
+        "situacao": "ok",
+        "numero_urna": "ok",
+        "sites": "ok",
+        "chapa_vice": "nao_aplicavel"
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "diff.json": "e719017f45fc86171a7fef9c725e22fffcd7d6214981bc914203a4ef9a134f28",
+    "source.json": "0b611855b875d4d2c0f34380977192cb781769dfaf6af896456557cb901df09b",
+    "summary.md": "832093c7b8ab835f223377a4222b4b74bcd9b7e35bf8f2681313c1a653695c92",
+    "universe.json": "4330cd1057201bc1c67ae4e0b0cd0db54421b469fa5d0479f39eb8980ad7bf24"
+  },
+  "limitations": [
+    "Ricardo: detalhe Indeferido vs pacote complementar DEFERIDO; revisar sem escolher julgamento definitivo",
+    "Replay usa fontes oficiais verificadas na mesma sessão; não mede estado de produção após aplicação",
+    "17 fontes com dívida técnica e 30 divergências informativas permanecem fora do escopo"
+  ]
+}

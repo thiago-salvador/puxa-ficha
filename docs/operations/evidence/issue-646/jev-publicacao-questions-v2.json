@@ -1,0 +1,130 @@
+{
+  "ricardo_registration": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.registration` factually supported by `cases.ricardo.observations` for the registration field? Use `policy.field_glossary.registration` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed registration label agrees with all literal registration descriptions. Capitalization can change; conflicting descriptions require an explicit unresolved conflict label.",
+      "false": "The label disagrees with a literal registration description, erases a conflict or draws a conclusion absent from the observations."
+    }
+  },
+  "ricardo_competition": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.competition` factually supported by `cases.ricardo.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "ricardo_aptitude": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.aptitude` factually supported by `cases.ricardo.observations` for the aptitude field? Use `policy.field_glossary.aptitude` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output displays the exact two independent boolean flags from the observations: false means não; null/absent means desconhecido.",
+      "false": "The output changes either flag, collapses the flags into exclusion/aptitude, or invents an absent flag."
+    }
+  },
+  "ricardo_appeal": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.appeal` factually supported by `cases.ricardo.observations` for the appeal field? Use `policy.field_glossary.appeal` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "major_registration": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.registration` factually supported by `cases.major.observations` for the registration field? Use `policy.field_glossary.registration` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed registration label agrees with all literal registration descriptions. Capitalization can change; conflicting descriptions require an explicit unresolved conflict label.",
+      "false": "The label disagrees with a literal registration description, erases a conflict or draws a conclusion absent from the observations."
+    }
+  },
+  "major_competition": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.competition` factually supported by `cases.major.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "major_aptitude": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.aptitude` factually supported by `cases.major.observations` for the aptitude field? Use `policy.field_glossary.aptitude` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output displays the exact two independent boolean flags from the observations: false means não; null/absent means desconhecido.",
+      "false": "The output changes either flag, collapses the flags into exclusion/aptitude, or invents an absent flag."
+    }
+  },
+  "major_appeal": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.appeal` factually supported by `cases.major.observations` for the appeal field? Use `policy.field_glossary.appeal` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "toinho_registration": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.registration` factually supported by `cases.toinho.observations` for the registration field? Use `policy.field_glossary.registration` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed registration label agrees with all literal registration descriptions. Capitalization can change; conflicting descriptions require an explicit unresolved conflict label.",
+      "false": "The label disagrees with a literal registration description, erases a conflict or draws a conclusion absent from the observations."
+    }
+  },
+  "toinho_competition": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.competition` factually supported by `cases.toinho.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "toinho_aptitude": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.aptitude` factually supported by `cases.toinho.observations` for the aptitude field? Use `policy.field_glossary.aptitude` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output displays the exact two independent boolean flags from the observations: false means não; null/absent means desconhecido.",
+      "false": "The output changes either flag, collapses the flags into exclusion/aptitude, or invents an absent flag."
+    }
+  },
+  "toinho_appeal": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.appeal` factually supported by `cases.toinho.observations` for the appeal field? Use `policy.field_glossary.appeal` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "holdout_coexistence": {
+    "type": "noul",
+    "instructions": "Is `cases.holdout_coexistence.proposed.competition` factually supported by `cases.holdout_coexistence.observations`? Use `policy.field_glossary.competition`, preserve missing evidence and any conflict.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "holdout_appeal_absence": {
+    "type": "noul",
+    "instructions": "Is `cases.holdout_appeal_absence.proposed.appeal` factually supported by `cases.holdout_appeal_absence.observations`? Use `policy.field_glossary.appeal`, preserve missing evidence and any conflict.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "holdout_aptitude_inference": {
+    "type": "noul",
+    "instructions": "Is `cases.holdout_aptitude_inference.proposed.competition` factually supported by `cases.holdout_aptitude_inference.observations`? Use `policy.field_glossary.competition`, preserve missing evidence and any conflict.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "holdout_unresolved": {
+    "type": "noul",
+    "instructions": "Is `cases.holdout_unresolved.proposed.registration` factually supported by `cases.holdout_unresolved.observations`? Use `policy.field_glossary.registration`, preserve missing evidence and any conflict.",
+    "criteria": {
+      "true": "The proposed registration label agrees with all literal registration descriptions. Capitalization can change; conflicting descriptions require an explicit unresolved conflict label.",
+      "false": "The label disagrees with a literal registration description, erases a conflict or draws a conclusion absent from the observations."
+    }
+  }
+}

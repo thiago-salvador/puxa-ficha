@@ -40,6 +40,7 @@ import {
   buildCargoDisputadoProvenienceNote,
   resolveCargoDisputadoProveniencia,
 } from "@/lib/candidatura-proveniencia"
+import { resolverSituacaoCandidaturaPublica } from "@/lib/candidatura-situacao-evidencia"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { publicTaxonomyValue } from "@/lib/public-profile-dto"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
@@ -212,8 +213,19 @@ export async function CandidatoFichaView({
   const cargoProveniencia = resolveCargoDisputadoProveniencia(ficha)
   const cargoProvenienciaLabel = buildCargoDisputadoProvenienceLabel(cargoProveniencia)
   const cargoProvenienciaNota = buildCargoDisputadoProvenienceNote(cargoProveniencia)
-  const situacaoCandidaturaLabel = ficha.situacao_candidatura
-    ? sanitizePtBrText(ficha.situacao_candidatura)
+  const hasStatusReceipt = Object.prototype.hasOwnProperty.call(
+    ficha.verificacao_campos ?? {},
+    "candidatura_situacao",
+  )
+  const situacaoCandidaturaLabel = ficha.situacao_candidatura || hasStatusReceipt
+    ? resolverSituacaoCandidaturaPublica(
+        ficha.verificacao_campos?.candidatura_situacao,
+        ficha.situacao_candidatura,
+        "sq_candidato" in ficha && typeof ficha.sq_candidato === "string"
+          ? ficha.sq_candidato
+          : null,
+        ficha.id,
+      ).julgamento
     : ""
   // Coorte de atualização: ficha que saiu da disputa continua no ar, congelada,
   // com a data da última atualização. Sem fase gravada, nenhuma nota.
@@ -425,10 +437,10 @@ export async function CandidatoFichaView({
             <span className="sr-only">{cargoProvenienciaNota}</span>
             {situacaoCandidaturaLabel && (
               <span
-                data-pf-candidacy-situation={ficha.situacao_candidatura}
+                data-pf-candidacy-situation={situacaoCandidaturaLabel}
                 className="mt-1.5 inline-flex w-fit items-center rounded-full border border-border bg-background px-2.5 py-1 text-[length:var(--text-eyebrow)] font-semibold text-foreground"
               >
-                Situação: {situacaoCandidaturaLabel}
+                Julgamento do registro: {situacaoCandidaturaLabel}
               </span>
             )}
             <FaseEleitoralSelo candidato={ficha} className="mt-1.5" />

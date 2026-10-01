@@ -3,6 +3,10 @@ import Link from "next/link"
 import { formacaoPublicaDe } from "@/lib/formacao-display"
 import { sanitizeFontePublica } from "@/lib/observacao-publica"
 import { formatPartyPublicLabel } from "@/lib/party-utils"
+import {
+  resolverSituacaoCandidaturaPublica,
+  rotuloJulgamentoCandidatura,
+} from "@/lib/candidatura-situacao-evidencia"
 import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { publicTaxonomyValue } from "@/lib/public-profile-dto"
 import type { Candidato } from "@/lib/types"
@@ -13,6 +17,7 @@ const NOT_INFORMED = "Não informado"
 
 type CandidateGeneralDataFields = Pick<
   Candidato,
+  | "id"
   | "nome_completo"
   | "idade"
   | "naturalidade"
@@ -25,8 +30,10 @@ type CandidateGeneralDataFields = Pick<
   | "partido_sigla"
   | "cargo_disputado"
   | "situacao_candidatura"
+  | "verificacao_campos"
 >
   & Partial<Pick<Candidato, "fonte_dados" | "ultima_atualizacao">>
+  & { sq_candidato?: string | null }
 
 function publicText(value: string | null | undefined): string {
   if (!value?.trim()) return NOT_INFORMED
@@ -49,7 +56,28 @@ function publicSourceLabel(source: string): string | null {
   }
 }
 
+function candidaturaSourceName(sourceUrl: string): string {
+  try {
+    const hostname = new URL(sourceUrl).hostname.toLowerCase()
+    if (hostname === "divulgacandcontas.tse.jus.br") return "DivulgaCandContas"
+    if (hostname === "dadosabertos.tse.jus.br") return "dados abertos TSE"
+    return "TSE"
+  } catch {
+    return "TSE"
+  }
+}
+
 export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFields }) {
+  const status = resolverSituacaoCandidaturaPublica(
+    ficha.verificacao_campos?.candidatura_situacao,
+    ficha.situacao_candidatura,
+    ficha.sq_candidato,
+    ficha.id,
+  )
+  const hasStatusReceipt = Object.prototype.hasOwnProperty.call(
+    ficha.verificacao_campos ?? {},
+    "candidatura_situacao",
+  )
   const formacao = formacaoPublicaDe(ficha)
   const sources = Array.from(
     new Set((ficha.fonte_dados ?? []).map(publicSourceLabel).filter((source) => source !== null)),
@@ -87,10 +115,41 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
       value: publicText(formatCargoDisputadoPublicLabel(ficha.cargo_disputado)),
     },
     {
-      key: "situacao-candidatura",
-      label: "Situação da candidatura",
-      value: publicText(ficha.situacao_candidatura),
+      key: "julgamento-registro",
+      label: "Julgamento do registro",
+      value: status.julgamento,
+      fonte: status.julgamentoFonte,
+      verificadoEm: status.julgamentoVerificadoEm,
+      fontesJulgamento: status.julgamentoFontes,
+      nota: status.ressalvaIndeferimento
+        ? "Indeferimento do registro não determina, por si só, exclusão da disputa."
+        : null,
     },
+    ...(hasStatusReceipt
+      ? [
+          {
+            key: "situacao-concorrencia",
+            label: "Situação de concorrência",
+            value: status.concorrencia,
+            fonte: status.concorrenciaFonte,
+            verificadoEm: status.concorrenciaVerificadoEm,
+          },
+          {
+            key: "aptidao-tse",
+            label: "Aptidão no TSE",
+            value: status.aptidao,
+            fonte: status.aptidaoFonte,
+            verificadoEm: status.aptidaoVerificadoEm,
+          },
+          {
+            key: "recurso-tse",
+            label: "Recurso",
+            value: status.recurso,
+            fonte: status.recursoFonte,
+            verificadoEm: status.recursoVerificadoEm,
+          },
+        ]
+      : []),
   ]
   const fieldColumns = [fields.slice(0, 5), fields.slice(5)]
 
@@ -123,12 +182,59 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
                 </dt>
                 <dd className="min-w-0 break-words text-[length:var(--text-body-sm)] text-foreground [overflow-wrap:anywhere]">
                   {field.value}
+                  {"nota" in field && field.nota ? (
+                    <span className="mt-1 block text-muted-foreground">{field.nota}</span>
+                  ) : null}
+                  {"fonte" in field && field.fonte && field.verificadoEm ? (
+                    <span className="mt-1 block text-[length:var(--text-eyebrow)] text-muted-foreground">
+                      Verificado em {field.verificadoEm}. Fonte: {field.fonte}
+                    </span>
+                  ) : null}
+                  {"fontesJulgamento" in field && field.fontesJulgamento && field.fontesJulgamento.length > 0 ? (
+                    <ul className="mt-1 space-y-1 text-[length:var(--text-eyebrow)] text-muted-foreground">
+                      {field.fontesJulgamento.map((source) => (
+                        <li key={`${source.valor}:${source.fonte_url}:${source.verificado_em}`}>
+                          <span className="font-semibold">
+                            {rotuloJulgamentoCandidatura(source.valor)[0]?.toLocaleUpperCase("pt-BR")}{rotuloJulgamentoCandidatura(source.valor).slice(1)} ({candidaturaSourceName(source.fonte_url)})
+                          </span>
+                          {" · Verificado em "}{source.verificado_em}{" · "}
+                          <a className="underline underline-offset-2" href={source.fonte_url} target="_blank" rel="noreferrer">
+                            Fonte
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </dd>
               </dl>
             ))}
           </div>
         ))}
       </div>
+
+      {status.observacoes.length > 0 ? (
+        <div className="mt-3 border-t border-border/70 pt-3" data-pf-candidacy-observations="">
+          <h3 className="text-[length:var(--text-body-sm)] font-semibold text-foreground">
+            Observações oficiais
+          </h3>
+          <ul className="mt-2 space-y-2">
+            {status.observacoes.map((observation) => (
+              <li
+                key={`${observation.descricao}:${observation.fonte_url}:${observation.verificado_em}`}
+                className="text-[length:var(--text-body-sm)] text-foreground"
+              >
+                <p>{publicText(observation.descricao)}</p>
+                <p className="mt-0.5 text-[length:var(--text-eyebrow)] text-muted-foreground">
+                  Verificado em {observation.verificado_em}. Fonte: {" "}
+                  <a className="underline underline-offset-2" href={observation.fonte_url} target="_blank" rel="noreferrer">
+                    {candidaturaSourceName(observation.fonte_url)}
+                  </a>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
 
       <div className="mt-2 flex flex-col gap-2 border-t border-border pt-4 text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <p

@@ -1,0 +1,127 @@
+{
+  "captured_at_utc": "2026-10-01T19:58:00Z",
+  "privacy": "Allowlisted candidate status fields only; no CPF or raw API body/ZIP persisted.",
+  "official_portal": {
+    "base_url": "https://divulgacandcontas.tse.jus.br/divulga/#/home",
+    "home_last_update_local": "01/10/2026 16:10",
+    "candidate_pages": [
+      {
+        "sq_candidato": "260002549466",
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SE/SE/20322002026/260002549466/2026/SE",
+        "name_on_page": "RICARDO MARQUES",
+        "last_update_local": "01/10/2026 13:12",
+        "badge": "Inapto",
+        "urna": "Consta da urna",
+        "situacao_candidato": "Indeferido",
+        "situacao_candidatura_visible": [
+          "Outros",
+          "Indeferido"
+        ],
+        "explicit_appeal_field": null,
+        "totalizacao_visible": null
+      },
+      {
+        "sq_candidato": "180002544457",
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/PI/PI/20322002026/180002544457/2026/PI",
+        "name_on_page": "MAJOR PAULO ROBERTO",
+        "last_update_local": "01/10/2026 12:30",
+        "badge": "Inapto",
+        "urna": "Consta da urna",
+        "situacao_candidato": "Indeferido",
+        "situacao_candidatura_visible": [
+          "Indeferimento do DRAP do partido político/federação/coligação",
+          "Indeferido"
+        ],
+        "explicit_appeal_field": null,
+        "totalizacao_visible": null
+      },
+      {
+        "sq_candidato": "180002544459",
+        "url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/PI/PI/20322002026/180002544459/2026/PI",
+        "name_on_page": "TOINHO DUFRANGO",
+        "last_update_local": "01/10/2026 12:27",
+        "badge": "Inapto",
+        "urna": "Consta da urna",
+        "situacao_candidato": "Indeferido",
+        "situacao_candidatura_visible": [
+          "Indeferimento do DRAP do partido político/federação/coligação",
+          "Indeferido"
+        ],
+        "explicit_appeal_field": null,
+        "totalizacao_visible": null
+      }
+    ]
+  },
+  "latest_successful_detail_api_snapshot": {
+    "checked_at_utc": "2026-10-01T19:12:48.131Z-2026-10-01T19:12:48.221Z",
+    "note": "Prior successful direct detail observations; not refreshed in this collection. Preserve as older evidence only.",
+    "per_sq_flags": {
+      "260002549466": {
+        "descricaoSituacao": "Indeferido",
+        "codigoSituacaoCandidato": 14,
+        "descricaoSituacaoCandidato": "Consta da urna",
+        "descricaoTotalizacao": "Concorrendo",
+        "candidatoApto": false,
+        "isCandidatoInapto": false,
+        "st_SUBSTITUIDO": false,
+        "recurso": null
+      },
+      "180002544457": {
+        "descricaoSituacao": "Indeferido",
+        "codigoSituacaoCandidato": 14,
+        "descricaoSituacaoCandidato": "Consta da urna",
+        "descricaoTotalizacao": "Concorrendo",
+        "candidatoApto": false,
+        "isCandidatoInapto": false,
+        "st_SUBSTITUIDO": false,
+        "recurso": null
+      },
+      "180002544459": {
+        "descricaoSituacao": "Indeferido",
+        "codigoSituacaoCandidato": 14,
+        "descricaoSituacaoCandidato": "Consta da urna",
+        "descricaoTotalizacao": "Concorrendo",
+        "candidatoApto": false,
+        "isCandidatoInapto": false,
+        "st_SUBSTITUIDO": false,
+        "recurso": null
+      }
+    }
+  },
+  "latest_detail_api_attempt": {
+    "http_status": 403,
+    "note": "The current detail API request in this preflight was blocked, including a retry with the previous collector User-Agent/referer/Accept headers; no current raw payload or hashes are available. Do not promote prior API flags to current."
+  },
+  "current_complementary_package": {
+    "path": "/tmp/puxa-ficha-issue-646.TY5KiD/complementary-current-20261001.json",
+    "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+    "checked_at_utc": "2026-10-01T19:51:24.126Z",
+    "http_status": 200,
+    "sha256": "ea3a680575653ea7d5a33e428e9af7aa93c93b74a14012f3d507ab3a5bdb8c04",
+    "judgments": {
+      "260002549466": {
+        "CD_SITUACAO_JULGAMENTO": "14",
+        "DS_SITUACAO_JULGAMENTO": "INDEFERIDO"
+      },
+      "180002544457": {
+        "CD_SITUACAO_JULGAMENTO": "14",
+        "DS_SITUACAO_JULGAMENTO": "INDEFERIDO"
+      },
+      "180002544459": {
+        "CD_SITUACAO_JULGAMENTO": "14",
+        "DS_SITUACAO_JULGAMENTO": "INDEFERIDO"
+      }
+    }
+  },
+  "database_preflight": {
+    "path": "/tmp/puxa-ficha-issue-646.TY5KiD/db-preflight-current-20261001.json",
+    "queried_at_utc": "2026-10-01 19:50:47.668401+00 through 19:50:47.668801+00",
+    "changed_vs_db_before_complete": false,
+    "current_labels": {
+      "260002549466": "deferido",
+      "180002544457": "indeferido com recurso",
+      "180002544459": "indeferido com recurso"
+    },
+    "all_status_candidato_and_publicavel_true": true
+  }
+}
