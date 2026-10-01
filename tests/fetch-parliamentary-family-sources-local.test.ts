@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import test from "node:test"
-import { camaraLegislatureForYear, camaraVoteListIsComplete, camaraVoteListUrl, capturePageIsComplete, cotaYearCompleteness, familySource, fetchOfficialWithRetry, filterBundlePages, filterCandidatesBySlugs, jevAllowlistedEnv, JEV_SCRIPT_SHA256_PIN, loadCachedCotaYear, pinnedJevScriptMatches, parseSenadoVoteIds, parseSlugList, senateAuthorshipRows, senateRecordFromRoster, senatorNameFromRoster, senatorNamesFromLegislatureRoster, validateContentLength, validateCotaYearRowCount } from "../scripts/audit/fetch-parliamentary-family-sources-local"
+import { camaraLegislatureForYear, camaraVoteListIsComplete, camaraVoteListUrl, captureFamiliesIndependently, capturePageIsComplete, cotaYearCompleteness, familySource, fetchOfficialWithRetry, filterBundlePages, filterCandidatesBySlugs, jevAllowlistedEnv, JEV_SCRIPT_SHA256_PIN, loadCachedCotaYear, pinnedJevScriptMatches, parseSenadoVoteIds, parseSlugList, senateAuthorshipRows, senateRecordFromRoster, senatorNameFromRoster, senatorNamesFromLegislatureRoster, unsettledFamilies, validateContentLength, validateCotaYearRowCount } from "../scripts/audit/fetch-parliamentary-family-sources-local"
 
 test("lista privada seleciona candidatos e falha em slug desconhecido", () => {
   const candidates = [{ slug: "ana-silva" }, { slug: "bia-souza" }]
@@ -138,4 +138,33 @@ test("lista nominal Câmara é pedida sem pagina/itens e fechada pela resposta �
   assert.equal(camaraVoteListIsComplete({ dados: {} }, url), false)
   // O caminho paginado antigo nunca fecharia uma lista de 485 linhas numa página.
   assert.equal(capturePageIsComplete(single, 485, 1, url), false)
+})
+
+test("falha de votos da Câmara não vira falha de projetos nem de gastos já capturados", async () => {
+  // Run 36408077467 (28/09/2026): o catch externo copiou o HTTP 400 dos votos
+  // para projetos_lei e gastos_parlamentares, que já tinham observação.
+  const observations: Array<{ house: string; family: string; official_id: string }> = []
+  const pending: Array<{ house: string; family: string; official_id: string; reason: string; source: string }> = []
+  const votesError = "https://dadosabertos.camara.leg.br/api/v2/votacoes/14493-503/votos?itens=100&pagina=1: HTTP 400"
+  await captureFamiliesIndependently([
+    { family: "projetos_lei", source: "proposicoes", run: async () => { observations.push({ house: "camara", family: "projetos_lei", official_id: "204554" }) } },
+    { family: "gastos_parlamentares", source: "cota", run: async () => { observations.push({ house: "camara", family: "gastos_parlamentares", official_id: "204554" }) } },
+    { family: "votos_candidato", source: "votos", run: async () => { throw new Error(votesError) } },
+  ], (family, source, reason) => pending.push({ house: "camara", family, official_id: "204554", reason, source }))
+  assert.deepEqual(observations.map((item) => item.family), ["projetos_lei", "gastos_parlamentares"])
+  assert.deepEqual(pending, [{ house: "camara", family: "votos_candidato", official_id: "204554", reason: votesError, source: "votos" }])
+
+  // Uma família que falha antes das outras não impede as seguintes.
+  const order: string[] = []
+  await captureFamiliesIndependently([
+    { family: "projetos_lei", source: "p", run: async () => { throw "texto" } },
+    { family: "gastos_parlamentares", source: "g", run: async () => { order.push("gastos") } },
+  ], (family, _source, reason) => order.push(`${family}:${reason}`))
+  assert.deepEqual(order, ["projetos_lei:texto", "gastos"])
+
+  // O catch externo só preenche famílias sem observação nem pendência própria.
+  assert.deepEqual(unsettledFamilies("camara", "204554", observations, pending), [])
+  assert.deepEqual(unsettledFamilies("camara", "204554", observations.slice(0, 1), []), ["votos_candidato", "gastos_parlamentares"])
+  assert.deepEqual(unsettledFamilies("camara", "999", observations, pending), ["projetos_lei", "votos_candidato", "gastos_parlamentares"])
+  assert.deepEqual(unsettledFamilies("senado", "204554", observations, pending), ["projetos_lei", "votos_candidato", "gastos_parlamentares"])
 })
