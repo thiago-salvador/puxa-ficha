@@ -644,6 +644,46 @@ async function capturePaginated(destination: string, relative: string, baseUrl: 
   }
 }
 
+/**
+ * A lista nominal `GET /votacoes/{id}/votos` da Câmara não aceita o protocolo
+ * `pagina`/`itens`: em 30/09/2026, `?itens=100&pagina=1` respondeu HTTP 400
+ * ("Parâmetro(s) inválido(s)", instance "pagina, itens") para toda votação, e
+ * a URL sem parâmetros respondeu 200 com a lista inteira (485 linhas em
+ * 14493-503) e só o link `self`. A lista é pedida sem parâmetros.
+ */
+export function camaraVoteListUrl(voteId: string): string {
+  if (!/^\d+-\d+$/.test(voteId)) throw new Error(`ID de votação da Câmara inválido: ${voteId}`)
+  return `${CAMARA}/votacoes/${voteId}/votos`
+}
+
+/**
+ * Resposta única completa: `dados` é array não vazio, a URL pedida e os links
+ * não carregam paginação, e não há link `next`/`last`. Lista vazia não fecha a
+ * prova: votação nominal sem nenhum voto indica resposta errada, não ausência.
+ */
+export function camaraVoteListIsComplete(value: unknown, requestUrl: string): boolean {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false
+  const root = value as Record<string, unknown>
+  if (!Array.isArray(root.dados) || root.dados.length === 0) return false
+  const paginated = (href: string): boolean => {
+    try {
+      const url = new URL(href, requestUrl)
+      return url.searchParams.has("pagina") || url.searchParams.has("itens")
+    } catch { return true }
+  }
+  if (paginated(requestUrl)) return false
+  if (root.links === undefined) return true
+  if (!Array.isArray(root.links)) return false
+  return (root.links as Array<{ rel?: unknown; href?: unknown }>).every((link) =>
+    link.rel === "self" && typeof link.href === "string" && !paginated(link.href))
+}
+
+async function captureCamaraVoteList(destination: string, relative: string, voteId: string): Promise<Page & { value: unknown }> {
+  const url = camaraVoteListUrl(voteId)
+  const captured = await capturePage(destination, relative, 1, url)
+  return { ...captured, complete: camaraVoteListIsComplete(captured.value, url) }
+}
+
 function writeBundle(destination: string, relative: string, pages: Array<Page & { value: unknown }>): { path: string; sha256: string; bytes: number } {
   const rows = pages.flatMap((page) => rowsOf(page.value))
   const groups = new Map<string, Array<Page & { value: unknown }>>()
@@ -802,12 +842,9 @@ async function main(): Promise<void> {
           const pages: Array<Page & { value: unknown }> = []
           const voteCatalog: Array<{ vote_id_api: string; url: string; path: string; sha256: string }> = []
           for (const voteId of camaraVoteIds) {
-            const base = `${CAMARA}/votacoes/${voteId}/votos`
-            const collection = await capturePaginated(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}`, base, {}) as Array<Page & { value: unknown }>
-            if (collection.length === 0 || collection.some((page) => {
-              const rows = (page.value as Record<string, unknown>)?.dados
-              return !Array.isArray(rows)
-            })) throw new Error(`lista nominal oficial vazia/inválida para votação ${voteId}`)
+            const list = await captureCamaraVoteList(destination, `familias/${house}/${officialId}/votos_candidato/${voteId}`, voteId)
+            if (!list.complete) throw new Error(`lista nominal oficial vazia/inválida para votação ${voteId}`)
+            const collection = [list]
             // A lista nominal é a fonte da presença/ausência. Uma lista completa
             // sem a linha do deputado prova que ele não aparece naquela votação.
             pages.push(...filterBundlePages(collection, officialId))

@@ -19,7 +19,7 @@ import { publicFamilyPayloadSha256 } from "./lib/coverage-source-proof"
 import { parseSenadoLegislatureRoster, SENADO_EXPENSE_LEGISLATURES, senadoLegislatureRosterUrl } from "../lib/senado-legislature-roster"
 import { normalizeForMatch } from "../lib/normalize-for-match"
 import { stripAccents } from "../../src/lib/strip-accents"
-import { capturePageIsComplete } from "./fetch-parliamentary-family-sources-local"
+import { camaraVoteListIsComplete, capturePageIsComplete } from "./fetch-parliamentary-family-sources-local"
 
 export const PARLIAMENTARY_FAMILIES = [
   "projetos_lei",
@@ -587,9 +587,14 @@ function reconstructFromRawPages(bundle: Record<string, unknown>, observation: P
       const links = object(value)?.links
       const rawRows = object(value)?.dados
       const pageItemCount = Array.isArray(rawRows) ? rawRows.length : pageRows.length
-      const expectedComplete = Array.isArray(links) && links.length > 0
-        ? capturePageIsComplete(value, pageItemCount, page.page, page.url)
-        : pageItemCount < 100
+      // Lista nominal de votação sem `pagina`/`itens` é resposta única (a API
+      // recusa esses parâmetros desde 30/09/2026); URL paginada segue a regra antiga.
+      const singleVoteList = observation.family === "votos_candidato" && !new URL(page.url).search
+      const expectedComplete = singleVoteList
+        ? camaraVoteListIsComplete(value, page.url)
+        : Array.isArray(links) && links.length > 0
+          ? capturePageIsComplete(value, pageItemCount, page.page, page.url)
+          : pageItemCount < 100
       if (page.complete !== expectedComplete) {
         throw new Error("marcador de exaustão diverge da resposta bruta")
       }

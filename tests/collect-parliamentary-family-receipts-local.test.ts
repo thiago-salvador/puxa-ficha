@@ -720,3 +720,40 @@ test("paginação com página 10 preserva a ordem capturada", () => {
     assert.equal(result.receipts[0]?.resultado, "encontrado", result.errors.join("; "))
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
+
+test("recibo de votos Câmara aceita a lista nominal inteira em resposta única sem pagina/itens", () => {
+  // A API passou a recusar `pagina`/`itens` em /votacoes/{id}/votos (HTTP 400 em
+  // 30/09/2026); a lista inteira chega numa resposta com só o link `self`.
+  const { dir, observation } = camaraVoteFixture(true)
+  try {
+    const source = JSON.parse(readFileSync(observation.source.source_path, "utf8")) as {
+      derived_from_pages: Array<{ path: string; url: string; bytes: number; sha256: string; complete: boolean }>
+    }
+    const otherVote = { deputado_: { id: 77777, nome: "Outro deputado" }, tipoVoto: "Não" }
+    for (const page of source.derived_from_pages) {
+      const revision = observation.source.source_revisions?.find((item) => item.url === page.url)
+      assert.ok(revision)
+      const url = page.url.replace(/\?.*$/, "")
+      const original = JSON.parse(readFileSync(page.path, "utf8")) as { dados: Array<Record<string, unknown>> }
+      const bytes = Buffer.from(JSON.stringify({ dados: [...original.dados, ...Array.from({ length: 484 }, () => otherVote)], links: [{ rel: "self", href: url }] }))
+      writeFileSync(page.path, bytes)
+      Object.assign(page, { url, bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex"), complete: true })
+      Object.assign(revision, { url, sha256: page.sha256 })
+    }
+    writeFileSync(observation.source.source_path, JSON.stringify(source))
+    const result = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(result.receipts[0]?.resultado, "encontrado", result.errors.join("; "))
+
+    const first = source.derived_from_pages[0]!
+    const raw = JSON.parse(readFileSync(first.path, "utf8")) as { dados: unknown[]; links: unknown[] }
+    const bytes = Buffer.from(JSON.stringify({ ...raw, links: [...raw.links, { rel: "next", href: `${first.url}?pagina=2` }] }))
+    writeFileSync(first.path, bytes)
+    first.bytes = bytes.length
+    first.sha256 = createHash("sha256").update(bytes).digest("hex")
+    observation.source.source_revisions!.find((item) => item.url === first.url)!.sha256 = first.sha256
+    writeFileSync(observation.source.source_path, JSON.stringify(source))
+    const rejected = collectParliamentaryFamilyReceipts([candidate], [observation])
+    assert.equal(rejected.receipts.length, 0)
+    assert.match(rejected.errors.join("; "), /marcador de exaustão diverge da resposta bruta/)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})
