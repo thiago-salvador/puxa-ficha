@@ -33,9 +33,11 @@ test("candidate projections preserve the public UI formatting and ordering", () 
   assert.equal(patrimoine.deepLink, "/candidato/fixture-boxes?tab=geral#box-patrimonio-resumo")
 
   const evolution = buildCandidateBoxCard("evolucao-patrimonial-resumo", ficha)!
-  assert.deepEqual(evolution.rows.map(({ label }) => label), ["2022", "2026"])
-  assert.deepEqual(evolution.rows.map(({ value }) => value), [formatCompact(100000), formatCompact(125000)])
-  assert.equal(evolution.rows[1]?.detail, "↑ 25% entre 2022 e 2026")
+  // Mais recente primeiro: se o card cortar linhas, some o ano mais antigo, nunca o atual.
+  assert.deepEqual(evolution.rows.map(({ label }) => label), ["2026", "2022"])
+  assert.deepEqual(evolution.rows.map(({ value }) => value), [formatCompact(125000), formatCompact(100000)])
+  assert.equal(evolution.rows[0]?.detail, "↑ 25% entre 2022 e 2026")
+  assert.deepEqual(evolution.subjects, [{ name: ficha.nome_urna, meta: "PX · Deputado Federal · SP", photoUrl: ficha.foto_url ?? null }])
 
   const financing = buildCandidateBoxCard("financiamento-resumo", ficha)!
   assert.equal(financing.rows[0]?.label, formatFinanciamentoPleitoPublicLabelForRow(ficha.financiamento[0]!, ficha.historico))

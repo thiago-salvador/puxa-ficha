@@ -42,10 +42,6 @@ function pngDimensions(data: Uint8Array): { width: number; height: number } {
   }
 }
 
-function chunks(value: string, size: number): string[] {
-  return Array.from({ length: Math.ceil(value.length / size) }, (_, index) => value.slice(index * size, (index + 1) * size))
-}
-
 test("long names, rows, sources, URLs, and coverage warnings fit without dropping warnings or reordering rows", async () => {
   const artifactDir = resolve(process.cwd(), "output/box-sharing/png")
   await mkdir(artifactDir, { recursive: true })
@@ -65,9 +61,9 @@ test("long names, rows, sources, URLs, and coverage warnings fit without droppin
     for (const warning of stressFixture.warnings) assert.ok(markup.includes(warning))
     assert.ok(markup.includes(`+${plan.hiddenRows} itens no site`))
     assert.ok(markup.includes(`+${plan.hiddenSources} fontes no site`))
-    for (const source of plan.sources) {
-      for (const chunk of chunks(source.url, format === "story" ? 52 : 58)) assert.ok(markup.includes(chunk))
-    }
+    // A URL pode quebrar em qualquer separador, mas precisa sair inteira e na ordem.
+    const text = markup.replace(/<[^>]+>/g, "").replaceAll("&amp;", "&")
+    for (const source of plan.sources) assert.ok(text.includes(source.url), source.url)
     for (const [index] of stressFixture.sources.slice(plan.sources.length).entries()) {
       const hiddenIndex = plan.sources.length + index + 1
       assert.ok(!markup.includes(`${hiddenIndex}.html`))
@@ -101,5 +97,29 @@ test("missing source footer states the provenance gap and keeps the candidate pa
     assert.ok(plan.estimatedHeight <= plan.availableHeight)
     assert.ok(markup.includes("Fonte original e data de coleta não informadas na base."))
     assert.ok(visibleText.includes("puxaficha.com.br/candidato/ana-silva?tab=trajetoria#box-cargos-mandatos"))
+  }
+})
+
+test("card de box identifica o candidato: foto, nome e partido no topo; iniciais sem foto", () => {
+  const withSubject = {
+    ...stressFixture,
+    kind: "evolucao-patrimonial-resumo" as const,
+    subjects: [{ name: "Candidata Exemplo", meta: "PX · Deputado Federal · SP", photoUrl: "/candidates/x.jpg" }],
+    notes: ["Dado mais recente disponível: eleição de 2026."],
+  }
+  for (const format of ["feed", "story"] as const) {
+    const plan = planBoxCardLayout(withSubject, format)
+    assert.equal(planBoxCardLayout({ ...withSubject, rows: withSubject.rows.slice(0, 2), warnings: [], sources: withSubject.sources.slice(0, 1) }, format).compact, false)
+    assert.ok(plan.estimatedHeight <= plan.availableHeight, `${format}: ${plan.estimatedHeight} > ${plan.availableHeight}`)
+    const photo = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+    const withPhoto = renderToStaticMarkup(buildBoxCardJsx(withSubject, format, [photo]))
+    assert.ok(withPhoto.includes("Candidata Exemplo"))
+    assert.ok(withPhoto.includes("PX · Deputado Federal · SP"))
+    assert.ok(withPhoto.includes(photo))
+    // Conteúdo extremo cai no modo compacto: a nota neutra sai, os alertas nunca.
+    assert.equal(withPhoto.includes("Dado mais recente disponível: eleição de 2026."), !plan.compact)
+    for (const warning of withSubject.warnings) assert.ok(withPhoto.includes(warning))
+    const withoutPhoto = renderToStaticMarkup(buildBoxCardJsx(withSubject, format, [null]))
+    assert.ok(withoutPhoto.includes(">CE<"))
   }
 })
