@@ -171,10 +171,24 @@ describe("seleção estadual por UF", () => {
     assert.equal(listarPesquisasGovernadorPorSlug("juliana-brizola", "CE").length, 0)
   })
 
-  it("preserva zeros publicados e retorna vazio somente para slug sem vínculo exato", () => {
+  it("preserva zeros publicados e seleciona o valor atual pela identidade exata", () => {
+    const assertAtlasCE = (slug: string, valuePercent: number) => {
+      const [selected] = listarPesquisasGovernadorPorSlug(slug, "CE")
+      assert.ok(selected, `${slug} deve ter pesquisa selecionada no Ceará`)
+      assert.equal(selected.id, "atlasintel-ce-01709-2026")
+      assert.equal(selected.electionYear, 2026)
+      assert.equal(selected.office, "Governador")
+      assert.equal(selected.geography.code, "CE")
+      assert.equal(selected.cenario.turn, 1)
+      assert.equal(selected.resultado.candidateSlug, slug)
+      assert.equal(selected.resultado.valuePercent, valuePercent)
+    }
+
+    assertAtlasCE("serley-leal", 0.1)
+    assertAtlasCE("ze-batista", 0.1)
+    assertAtlasCE("ieri-braga", 0)
+
     assert.equal(listarPesquisasGovernadorPorSlug("henrique-areas", "MG")[0]?.resultado.valuePercent, 0)
-    assert.equal(listarPesquisasGovernadorPorSlug("serley-leal", "CE")[0]?.resultado.valuePercent, 0)
-    assert.equal(listarPesquisasGovernadorPorSlug("ze-batista", "CE")[0]?.resultado.valuePercent, 0)
     assert.deepEqual(listarPesquisasGovernadorPorSlug("governador-inexistente", "SP"), [])
   })
 
