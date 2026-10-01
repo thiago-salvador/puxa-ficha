@@ -42,6 +42,7 @@ import {
   FONTES_POR_COLUNA,
   ROTULO_PROVENIENCIA as ROTULOS_DO_MODULO,
   type ColetaPorFonte,
+  type UltimaColeta,
   type VeredictoProveniencia
 } from "./coleta-proveniencia"
 import { FONTE_CAMARA_PROPOSICOES } from "../../lib/coleta-log"
@@ -226,6 +227,15 @@ export interface CandidatoCoverage {
    * "está completo".
    */
   projetosCamara?: number
+  /**
+   * Último recibo de `camara-proposicoes` gravado pelo ingest da Câmara, o
+   * único escritor cujo `volume` é o total que a Câmara declara. O coletor de
+   * prova de cobertura grava na mesma fonte com outra semântica (contagem do
+   * DTO público, ou 0 numa falha de prova), então o último registro da fonte em
+   * `coletas` não serve de denominador. `undefined`: snapshot anterior ao
+   * campo, e a leitura cai em `coletas`; `null`: nenhum recibo de ingest.
+   */
+  camaraProposicoesCardinalidade?: UltimaColeta | null
   /** Ao menos um recorte público de autoria parlamentar está marcado como completo. */
   projetosTemInventarioCompleto?: boolean
   /**
@@ -538,10 +548,26 @@ function cell(state: CellState, text: string, tip?: string): Cell {
  * `null` quando o log não foi lido, quando o candidato nunca teve ingest da
  * Câmara depois desta mudança, ou quando a tentativa falhou. Nos três casos a
  * resposta honesta é "não sei", nunca "está completo".
+ *
+ * O recibo vem do campo dedicado do snapshot, que só lê o ingest. Snapshot
+ * anterior ao campo cai no último registro da fonte, e aí recibo do coletor de
+ * prova (falha ou prova positiva) também é "não sei": o `volume` dele não é o
+ * total declarado pela Câmara.
  */
-function declaradoNaCamara(coletas: ColetaPorFonte | undefined): number | null {
-  const registro = coletas?.[FONTE_CAMARA_PROPOSICOES]
+function isCoverageProofReceiptDetail(detalhe: string | null | undefined): boolean {
+  return typeof detalhe === "string" && COVERAGE_PROOF_RECEIPT_DETAIL.test(detalhe)
+}
+
+const COVERAGE_PROOF_RECEIPT_DETAIL =
+  /"(?:kind|contrato)"\s*:\s*"(?:parlamentar-falha|parliamentary-family-receipt-v1)"/
+
+function declaradoNaCamara(
+  coletas: ColetaPorFonte | undefined,
+  cardinalidade: UltimaColeta | null | undefined
+): number | null {
+  const registro = cardinalidade !== undefined ? cardinalidade : coletas?.[FONTE_CAMARA_PROPOSICOES]
   if (!registro) return null
+  if (isCoverageProofReceiptDetail(registro.detalhe)) return null
   if (registro.resultado === "erro" || registro.resultado === "indeterminado") return null
   const volume = registro.volume
   return typeof volume === "number" && Number.isFinite(volume) && volume >= 0 ? volume : null
@@ -842,7 +868,7 @@ export function calcularCelulas(c: CandidatoCoverage): Record<string, Cell> {
       ? cell("ok", String(c.alertas))
       : cellZero("alertas", c, "nenhum ponto de atenção público")
 
-  const declaradoCamara = declaradoNaCamara(c.coletas)
+  const declaradoCamara = declaradoNaCamara(c.coletas, c.camaraProposicoesCardinalidade)
   // Vistoria dos PRs #141/#142: o denominador da Câmara só se compara com as
   // linhas de fonte Câmara. `c.projetos` soma Senado e curadoria, então 100 da
   // Câmara + 104 do Senado passariam por 204 declaradas, o falso completo de
