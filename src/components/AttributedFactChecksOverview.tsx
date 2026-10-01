@@ -32,8 +32,8 @@ export function AttributedFactChecksOverview({
       aria-labelledby="attributed-checks-overview-title"
       className="min-w-0 rounded-[12px] border border-border/50 bg-card px-5 py-4"
     >
-      <div className="mb-3 flex items-start justify-between gap-3">
-        <div className="min-w-0">
+      <div className="mb-3 flex flex-wrap items-start justify-between gap-x-3 gap-y-2">
+        <div className="w-max min-w-0 max-w-full shrink-0">
           <h2
             id="attributed-checks-overview-title"
             className="flex items-center gap-2 text-[length:var(--text-body-sm)] font-semibold text-foreground"
