@@ -11,7 +11,7 @@ import { sanitizePtBrText } from "@/lib/ptbr-text"
 import { publicTaxonomyValue } from "@/lib/public-profile-dto"
 import type { Candidato } from "@/lib/types"
 import { formatCargoDisputadoPublicLabel } from "@/lib/ui-labels"
-import { formatDate } from "@/lib/utils"
+import { formatDate, safeHref } from "@/lib/utils"
 
 const NOT_INFORMED = "Não informado"
 
@@ -56,6 +56,7 @@ function publicSourceLabel(source: string): string | null {
   }
 }
 
+// cspell:ignore divulgacandcontas dadosabertos
 function candidaturaSourceName(sourceUrl: string): string {
   try {
     const hostname = new URL(sourceUrl).hostname.toLowerCase()
@@ -85,6 +86,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
   const sourceLabel = sources.length > 0 ? sources.join(", ") : "Não informadas"
   const updatedAt = ficha.ultima_atualizacao?.trim() ?? ""
   const updatedAtLabel = updatedAt ? formatDate(updatedAt) : "Data indisponível"
+  // cspell:ignore concorrencia aptidao
   const fields = [
     { key: "nome-completo", label: "Nome completo", value: publicText(ficha.nome_completo) },
     {
@@ -115,7 +117,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
       value: publicText(formatCargoDisputadoPublicLabel(ficha.cargo_disputado)),
     },
     {
-      key: "julgamento-registro",
+      key: "situacao-candidatura",
       label: "Julgamento do registro",
       value: status.julgamento,
       fonte: status.julgamentoFonte,
@@ -198,7 +200,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
                             {rotuloJulgamentoCandidatura(source.valor)[0]?.toLocaleUpperCase("pt-BR")}{rotuloJulgamentoCandidatura(source.valor).slice(1)} ({candidaturaSourceName(source.fonte_url)})
                           </span>
                           {" · Verificado em "}{source.verificado_em}{" · "}
-                          <a className="underline underline-offset-2" href={source.fonte_url} target="_blank" rel="noreferrer">
+                          <a className="underline underline-offset-2" href={safeHref(source.fonte_url)} target="_blank" rel="noreferrer">
                             Fonte
                           </a>
                         </li>
@@ -226,7 +228,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
                 <p>{publicText(observation.descricao)}</p>
                 <p className="mt-0.5 text-[length:var(--text-eyebrow)] text-muted-foreground">
                   Verificado em {observation.verificado_em}. Fonte: {" "}
-                  <a className="underline underline-offset-2" href={observation.fonte_url} target="_blank" rel="noreferrer">
+                  <a className="underline underline-offset-2" href={safeHref(observation.fonte_url)} target="_blank" rel="noreferrer">
                     {candidaturaSourceName(observation.fonte_url)}
                   </a>
                 </p>

@@ -1,6 +1,7 @@
 import { SITUACAO_CANDIDATURA_DOMINIO } from "@/lib/situacao-candidatura"
 import { lerEvidenciaSituacaoCandidatura } from "@/lib/candidatura-situacao-evidencia"
 import { mapearJulgamento } from "./tse-situacao-julgamento"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 export interface CandidaturaSituacaoDbRow {
   id: string
@@ -54,7 +55,7 @@ export interface SituacaoCandidaturaCasPlan {
 }
 
 const normalize = (value: string | null | undefined): string =>
-  (value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLocaleLowerCase("pt-BR")
+  stripAccents(value ?? "").trim().toLocaleLowerCase("pt-BR")
 
 function normalizeCargo(value: string | null | undefined): string | null {
   const cargo = normalize(value).replace(/\s+/g, " ")

@@ -14,7 +14,7 @@ for (const candidate of cases) {
     await expect(page.getByRole("heading", { level: 1 })).toContainText(candidate.nome)
     const data = page.locator("[data-pf-candidate-general-data]")
     await expect(data).toBeVisible()
-    const judgment = data.locator('[data-pf-candidate-general-field="julgamento-registro"]')
+    const judgment = data.locator('[data-pf-candidate-general-field="situacao-candidatura"]')
     if (candidate.conflito) {
       await expect(judgment).toContainText("Fontes oficiais divergentes")
       await expect(judgment).toContainText("Indeferido")

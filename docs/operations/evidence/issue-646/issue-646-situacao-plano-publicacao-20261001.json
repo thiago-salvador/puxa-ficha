@@ -155,7 +155,7 @@
                 "content_type": "application/zip",
                 "data_geracao": "15/09/2026 12:31:31",
                 "payload_raw_sha256": "46a86e3646e5cf93bbe39cfd11b5b9221547f7a614336fe5923712818a66dcc2",
-                "source_artifact_path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha/.artifacts/senado-completude/resolucao/fontes/tse-roster-20260915.zip"
+                "source_artifact_path": "<private-local-source>"
               },
               {
                 "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
@@ -463,7 +463,7 @@
                 "content_type": "application/zip",
                 "data_geracao": "15/09/2026 12:31:31",
                 "payload_raw_sha256": "46a86e3646e5cf93bbe39cfd11b5b9221547f7a614336fe5923712818a66dcc2",
-                "source_artifact_path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha/.artifacts/senado-completude/resolucao/fontes/tse-roster-20260915.zip"
+                "source_artifact_path": "<private-local-source>"
               },
               {
                 "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
@@ -675,7 +675,7 @@
                 "content_type": "application/zip",
                 "data_geracao": "15/09/2026 12:31:31",
                 "payload_raw_sha256": "46a86e3646e5cf93bbe39cfd11b5b9221547f7a614336fe5923712818a66dcc2",
-                "source_artifact_path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha/.artifacts/senado-completude/resolucao/fontes/tse-roster-20260915.zip"
+                "source_artifact_path": "<private-local-source>"
               },
               {
                 "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
@@ -983,7 +983,7 @@
                 "content_type": "application/zip",
                 "data_geracao": "15/09/2026 12:31:31",
                 "payload_raw_sha256": "46a86e3646e5cf93bbe39cfd11b5b9221547f7a614336fe5923712818a66dcc2",
-                "source_artifact_path": "/Users/thiagosalvador/Documents/Apps/Puxa Ficha/puxa-ficha/.artifacts/senado-completude/resolucao/fontes/tse-roster-20260915.zip"
+                "source_artifact_path": "<private-local-source>"
               },
               {
                 "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
@@ -1444,5 +1444,9 @@
       "reasons": [],
       "ambiguities": []
     }
-  ]
+  ],
+  "artifact_redaction": {
+    "local_source_paths": 4,
+    "description": "Local filesystem paths redacted only in this versioned receipt. Exact preconditions and approved publication plan remain in the private CAS inputs; this sanitized receipt must not be used as a persistence input."
+  }
 }
