@@ -19,3 +19,7 @@ Jorginho Mello, SC, SQ 240002537073, é o controle positivo do mesmo contrato: o
 As cinco respostas não contêm `codTipo 5`. Isso prova apenas a ausência de programa oficial no escopo e horário registrados, não ausência universal. O conjunto está pronto para publicar, para cada candidatura, o estado explícito `sem_documento_oficial`, sem resumo, documento ou conteúdo inventado. Nenhuma linha do banco de produção foi alterada e nenhum deploy foi executado por esta evidência.
 
 Fonte do transporte: workflow `33329832043`, executado no SHA `ee5158e253d9c90069cad2a9186ec12fd8acf38c`. O monitor TSE terminou `ok`; a falha geral do run veio do gate de freshness já existente para outra fonte.
+
+## Dados pessoais removidos (2026-09-30)
+
+Os campos `cpf` e `tituloEleitor` dos payloads em `raw/` foram trocados por marcador (`[CPF removido]`, `[removido]`). A troca muda os bytes, então os arquivos foram renomeados pelo SHA-256 novo, o `report_sha256` do monitor foi recalculado, e o `receipt.json` e o inventário foram regenerados pelos geradores do repositório. Nenhum outro campo mudou: a prova de ausência de `codTipo 5` continua a mesma.

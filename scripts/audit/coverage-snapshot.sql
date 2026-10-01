@@ -82,6 +82,26 @@ from (
         'detalhe', u.detalhe))
       from coleta_log_ultima u
       where u.escopo = 'candidato' and u.alvo = c.slug), '{}'::jsonb),
+    -- Denominador da regua de projetos (issue #138): ultimo recibo de
+    -- camara-proposicoes gravado pelo ingest da Camara, o unico escritor cujo
+    -- volume e o total declarado pela fonte. O coletor de prova de cobertura
+    -- (cobertura-coleta-agendada.yml) grava na mesma fonte com outra semantica:
+    -- volume do DTO publico, ou 0 numa falha de prova. Sem este filtro, a
+    -- falha de prova de 28/09 apagou o denominador de 66 fichas completas.
+    -- Filtro por texto, nao por cast: ha detalhe que nao e JSON.
+    'camaraProposicoesCardinalidade', (
+      select jsonb_build_object(
+        'resultado', l.resultado,
+        'volume', l.volume,
+        'executado_em', l.executado_em)
+      from coleta_log l
+      where l.fonte = 'camara-proposicoes'
+        and l.escopo = 'candidato'
+        and l.alvo = c.slug
+        and l.natureza = 'coleta'
+        and coalesce(l.detalhe, '') !~ '"(kind|contrato)"\s*:\s*"(parlamentar-falha|parliamentary-family-receipt-v1)"'
+      order by l.executado_em desc
+      limit 1),
     -- @coleta-opcional-fim
     'historico', coalesce((
       select jsonb_agg(jsonb_build_object(

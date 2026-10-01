@@ -880,6 +880,113 @@ test("sem registro camara-proposicoes no log, projetos positivos não viram ok",
   assert.match(cel.tip ?? "", /sem cardinalidade declarada/)
 })
 
+/**
+ * Desde 28/09 o coletor de prova de cobertura (`cobertura-coleta-agendada.yml`,
+ * job parlamentares) também grava na fonte `camara-proposicoes`, com outra
+ * semântica: `volume` é a contagem do DTO público (ou 0 numa falha de prova),
+ * nunca o total que a Câmara declara. Recibo dele como último registro da fonte
+ * apagava o denominador do ingest e levava 66 fichas completas a partial.
+ */
+const RECIBO_FALHA_PROVA = JSON.stringify({
+  contract_version: 1,
+  kind: "parlamentar-falha",
+  family: "projetos_lei",
+  house: "camara",
+  official_id: "141413",
+  tipo: "prova",
+  motivo: "https://dadosabertos.camara.leg.br/api/v2/votacoes/1-1/votos?itens=100&pagina=1: HTTP 400",
+})
+const RECIBO_PROVA_POSITIVA = JSON.stringify({
+  contrato: "parliamentary-family-receipt-v1",
+  casa: "camara",
+  official_id: "141413",
+  familia: "projetos_lei",
+})
+
+test("recibo do coletor de prova não substitui a cardinalidade declarada pelo ingest", () => {
+  const coletas: ColetaPorFonte = {
+    "camara-proposicoes": { resultado: "indeterminado", volume: 0, detalhe: RECIBO_FALHA_PROVA }
+  }
+  const cel = calcularCelulas(
+    candidato({
+      projetos: 325,
+      projetosCamara: 325,
+      coletas,
+      camaraProposicoesCardinalidade: { resultado: "encontrado", volume: 325 }
+    })
+  ).projetos
+  assert.equal(cel.state, "ok")
+
+  // O mesmo denominador continua pegando truncamento de verdade.
+  const truncada = calcularCelulas(
+    candidato({
+      projetos: 100,
+      projetosCamara: 100,
+      coletas,
+      camaraProposicoesCardinalidade: { resultado: "encontrado", volume: 325 }
+    })
+  ).projetos
+  assert.equal(truncada.state, "partial")
+  assert.match(truncada.text, /100\/325/)
+})
+
+test("sem recibo de ingest, cardinalidade nula continua dizendo que não sabe", () => {
+  const cel = calcularCelulas(
+    candidato({ projetos: 325, projetosCamara: 325, camaraProposicoesCardinalidade: null })
+  ).projetos
+  assert.equal(cel.state, "partial")
+  assert.match(cel.tip ?? "", /sem cardinalidade declarada/)
+})
+
+test("snapshot antigo: recibo de prova no log não vale como total declarado pela Câmara", () => {
+  for (const [resultado, volume, detalhe] of [
+    ["indeterminado", 0, RECIBO_FALHA_PROVA],
+    ["encontrado", 25, RECIBO_PROVA_POSITIVA],
+  ] as const) {
+    const cel = calcularCelulas(
+      candidato({
+        projetos: 25,
+        projetosCamara: 25,
+        coletas: { "camara-proposicoes": { resultado, volume, detalhe } }
+      })
+    ).projetos
+    assert.equal(cel.state, "partial", `${resultado} do coletor de prova virou denominador`)
+    assert.match(cel.tip ?? "", /sem cardinalidade declarada/)
+  }
+})
+
+test("o snapshot lê a cardinalidade da Câmara só de recibo do ingest", () => {
+  const sql = readFileSync(
+    join(import.meta.dirname, "..", "scripts", "audit", "coverage-snapshot.sql"),
+    "utf8"
+  )
+  const inicio = sql.indexOf("-- @coleta-opcional-inicio")
+  const fim = sql.indexOf("-- @coleta-opcional-fim")
+  const bloco = sql.slice(inicio, fim)
+  assert.match(bloco, /'camaraProposicoesCardinalidade'/)
+  assert.match(bloco, /natureza = 'coleta'/)
+  assert.match(bloco, /parlamentar-falha/)
+  assert.match(bloco, /parliamentary-family-receipt-v1/)
+  // Banco sem coleta_log: o strip do bloco opcional leva o campo junto.
+  assert.doesNotMatch(removerBlocoDeColeta(sql), /camaraProposicoesCardinalidade/)
+})
+
+test("lerSnapshot repassa a cardinalidade dedicada e preserva a ausência em snapshot antigo", () => {
+  const dir = mkdtempSync(join(tmpdir(), "cobertura-cardinalidade-"))
+  const path = join(dir, "snapshot.json")
+  const base = { ...candidato(), slug: "zz-sem-seed" } as Record<string, unknown>
+  delete base.coletas
+  writeFileSync(path, JSON.stringify([
+    { ...base, slug: "zz-novo", camaraProposicoesCardinalidade: { resultado: "encontrado", volume: 7 } },
+    { ...base, slug: "zz-nulo", camaraProposicoesCardinalidade: null },
+    { ...base, slug: "zz-antigo" },
+  ]))
+  const lidos = new Map(lerSnapshot(path).map((c) => [c.slug, c]))
+  assert.deepEqual(lidos.get("zz-novo")?.camaraProposicoesCardinalidade, { resultado: "encontrado", volume: 7 })
+  assert.equal(lidos.get("zz-nulo")?.camaraProposicoesCardinalidade, null)
+  assert.equal(lidos.get("zz-antigo")?.camaraProposicoesCardinalidade, undefined)
+})
+
 test("o snapshot expõe a contagem por fonte da Câmara", () => {
   const sql = readFileSync(
     join(import.meta.dirname, "..", "scripts", "audit", "coverage-snapshot.sql"),
