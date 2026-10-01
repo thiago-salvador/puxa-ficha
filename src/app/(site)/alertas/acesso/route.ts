@@ -10,13 +10,24 @@ import {
   ALERT_COHORT_UFS,
   resolveAlertCohort,
 } from "@/lib/alerts-cohort"
-import { setAlertManageTokenCookie } from "@/lib/alerts-session"
+import {
+  clearAlertPendingManageTokenCookie,
+  readAlertManageTokenCookie,
+  readAlertPendingManageTokenCookie,
+  setAlertManageTokenCookie,
+  setAlertPendingManageTokenCookie,
+} from "@/lib/alerts-session"
 import {
   normalizeCandidateSlug,
   normalizeOpaqueToken,
   parseAlertCohortAccessParam,
 } from "@/lib/alerts-shared"
-import { createDistributedIpRateLimiter } from "@/lib/request-rate-limit"
+import { getCrossSiteWriteBlockReason } from "@/lib/cross-site-write-guard"
+import { isRequestBodyTooLargeError, readTextBodyWithLimit } from "@/lib/request-body"
+import {
+  createDistributedIpRateLimiter,
+  rateLimitExceededResponse,
+} from "@/lib/request-rate-limit"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
 export const runtime = "nodejs"
@@ -38,6 +49,46 @@ function buildRedirectUrl(req: NextRequest, verifyToken: string | null, hash: st
   const url = new URL(target, req.nextUrl.origin)
   if (!verifyToken && hash) url.hash = hash
   return url
+}
+
+type AcessoHash = "deletar-dados" | "cancelar-tudo"
+
+function parseAcessoHash(raw: string | null | undefined): AcessoHash | null {
+  return raw === "deletar-dados" || raw === "cancelar-tudo" ? raw : null
+}
+
+/**
+ * Pagina de confirmacao da troca de conta. O manage token do link NAO viaja
+ * nesta URL (fica no cookie pendente); so o destino final (verify/hash), que a
+ * pagina devolve no POST para o redirect depois da troca.
+ */
+function buildConfirmUrl(req: NextRequest, verifyToken: string | null, hash: string | null): URL {
+  const url = new URL("/alertas/acesso/confirmar", req.nextUrl.origin)
+  if (verifyToken) url.searchParams.set("verify", verifyToken)
+  else if (hash) url.searchParams.set("hash", hash)
+  return url
+}
+
+/**
+ * O navegador ja tem uma sessao de alertas de OUTRO assinante? So nesse caso a
+ * troca pede confirmacao. Cookie que nao corresponde a ninguem (token apagado ou
+ * rotacionado) nao e identidade a preservar, e segue o caminho de quem chega sem
+ * cookie. Falha do banco ao resolver o cookie atual preserva a sessao existente:
+ * na duvida, pedir confirmacao e mais barato que trocar a conta de alguem.
+ */
+async function sessionBelongsToAnotherSubscriber(
+  deps: Pick<AlertsAcessoDeps, "findSubscriberByManageToken">,
+  currentToken: string | null,
+  linkManageToken: string,
+  linkSubscriberId: string,
+): Promise<boolean> {
+  if (!currentToken || currentToken === linkManageToken) return false
+  try {
+    const current = await deps.findSubscriberByManageToken(currentToken)
+    return current !== null && current.id !== linkSubscriberId
+  } catch {
+    return true
+  }
 }
 
 /**
@@ -66,8 +117,7 @@ export function createAlertsAcessoHandler(deps: AlertsAcessoDeps = defaultAcesso
     const verifyToken = normalizeOpaqueToken(req.nextUrl.searchParams.get("verify") ?? "")
     const followSlug = normalizeCandidateSlug(req.nextUrl.searchParams.get("follow") ?? "")
     const cohortParam = parseAlertCohortAccessParam(req.nextUrl.searchParams.get("cohort"))
-    const hashRaw = req.nextUrl.searchParams.get("hash") ?? ""
-    const hash = hashRaw === "deletar-dados" || hashRaw === "cancelar-tudo" ? hashRaw : null
+    const hash = parseAcessoHash(req.nextUrl.searchParams.get("hash"))
 
     const response = NextResponse.redirect(buildRedirectUrl(req, verifyToken, hash))
     if (!manageToken) return response
@@ -170,8 +220,96 @@ export function createAlertsAcessoHandler(deps: AlertsAcessoDeps = defaultAcesso
       }
     }
 
+    // TROCA DE CONTA SEM CONFIRMACAO. Validar o token prova que o link existe,
+    // nao que quem abriu quis trocar de conta. Se este navegador ja tem sessao de
+    // outro assinante, o GET preserva a sessao atual e manda para a confirmacao;
+    // a troca so acontece no POST da propria origem. Mesmo assinante, ou
+    // navegador sem sessao, segue direto como sempre.
+    const currentToken = readAlertManageTokenCookie(req)
+    if (await sessionBelongsToAnotherSubscriber(deps, currentToken, manageToken, subscriber.id)) {
+      deps.logAlertsApiExit("alertas-acesso", 307, "troca_de_conta_pendente")
+      const confirmResponse = NextResponse.redirect(buildConfirmUrl(req, verifyToken, hash))
+      return setAlertPendingManageTokenCookie(confirmResponse, manageToken)
+    }
+
     return setAlertManageTokenCookie(response, manageToken)
   }
 }
 
+/**
+ * POST /alertas/acesso: confirmacao explicita da troca de conta.
+ *
+ * Exige `Origin` da propria origem (form POST de navegador sempre manda) e
+ * rejeita Sec-Fetch-Site cross-site: sem isso, qualquer pagina externa poderia
+ * submeter o form em nome de quem abriu o link. O token vem do cookie pendente,
+ * nunca do body, e e revalidado contra o banco antes de virar sessao.
+ */
+export function createAlertsAcessoConfirmHandler(
+  deps: Pick<AlertsAcessoDeps, "findSubscriberByManageToken" | "logAlertsApiExit"> = defaultAcessoDeps,
+) {
+  return async function POST(req: NextRequest) {
+    const blockReason = getCrossSiteWriteBlockReason(req.headers, req.nextUrl.origin, {
+      requireOrigin: true,
+    })
+    if (blockReason) {
+      deps.logAlertsApiExit("alertas-acesso-confirmar", 403, blockReason)
+      return NextResponse.json({ error: "Cross-site request blocked" }, { status: 403 })
+    }
+
+    const decision = await acessoRateLimiter.check(req.headers)
+    if (!decision.allowed) {
+      deps.logAlertsApiExit(
+        "alertas-acesso-confirmar",
+        decision.unavailable ? 503 : 429,
+        "rate_limited",
+      )
+      return rateLimitExceededResponse(decision)
+    }
+
+    let form: URLSearchParams
+    try {
+      form = new URLSearchParams(await readTextBodyWithLimit(req))
+    } catch (error) {
+      if (isRequestBodyTooLargeError(error)) {
+        deps.logAlertsApiExit("alertas-acesso-confirmar", 413, "body_too_large")
+        return NextResponse.json({ error: "Payload too large" }, { status: 413 })
+      }
+      form = new URLSearchParams()
+    }
+    const verifyToken = normalizeOpaqueToken(form.get("verify") ?? "")
+    const hash = parseAcessoHash(form.get("hash"))
+
+    // Sem pedido pendente valido nada e trocado: a pessoa cai na gestao com a
+    // sessao que ja tinha. 303 para o navegador seguir com GET.
+    const keepCurrent = clearAlertPendingManageTokenCookie(
+      NextResponse.redirect(new URL("/alertas/gerenciar", req.nextUrl.origin), 303),
+    )
+
+    const pendingToken = readAlertPendingManageTokenCookie(req)
+    if (!pendingToken) {
+      deps.logAlertsApiExit("alertas-acesso-confirmar", 303, "sem_troca_pendente")
+      return keepCurrent
+    }
+
+    let subscriber = null
+    try {
+      subscriber = await deps.findSubscriberByManageToken(pendingToken)
+    } catch {
+      deps.logAlertsApiExit("alertas-acesso-confirmar", 303, "lookup_falhou")
+      return keepCurrent
+    }
+    if (!subscriber) {
+      deps.logAlertsApiExit("alertas-acesso-confirmar", 303, "troca_pendente_invalida")
+      return keepCurrent
+    }
+
+    deps.logAlertsApiExit("alertas-acesso-confirmar", 303, "troca_de_conta_confirmada")
+    const switched = clearAlertPendingManageTokenCookie(
+      NextResponse.redirect(buildRedirectUrl(req, verifyToken, hash), 303),
+    )
+    return setAlertManageTokenCookie(switched, pendingToken)
+  }
+}
+
 export const GET = createAlertsAcessoHandler()
+export const POST = createAlertsAcessoConfirmHandler()

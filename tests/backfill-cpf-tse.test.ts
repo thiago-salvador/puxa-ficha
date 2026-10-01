@@ -74,7 +74,7 @@ describe("decidirCpfDoCandidato", () => {
   it("rota sq com CPFs distintos entre anos é conflito", () => {
     const decisao = decidirCpfDoCandidato([
       hit({ ano: 2022, cpf: "52998224725" }),
-      hit({ ano: 2018, cpf: "15350946056" }),
+      hit({ ano: 2018, cpf: "39053344705" }),
     ])
     assert.equal(decisao.decisao, "conflito")
   })
@@ -82,7 +82,7 @@ describe("decidirCpfDoCandidato", () => {
   it("sq e nome-nascimento divergindo é conflito, não escolha", () => {
     const decisao = decidirCpfDoCandidato([
       hit({ metodo: "sq", cpf: "52998224725" }),
-      hit({ metodo: "nome-nascimento", cpf: "15350946056" }),
+      hit({ metodo: "nome-nascimento", cpf: "39053344705" }),
     ])
     assert.equal(decisao.decisao, "conflito")
   })
@@ -101,8 +101,8 @@ describe("decidirCpfDoCandidato", () => {
     // ter vindo do mesmo casamento por nome que a rota estaria confirmando
     // (validação circular). Sem SQ, o CPF é sugestão para humano, não escrita.
     const decisao = decidirCpfDoCandidato([
-      hit({ metodo: "nome-nascimento", cpf: "15350946056", ano: 2014 }),
-      hit({ metodo: "nome-nascimento", cpf: "15350946056", ano: 2010 }),
+      hit({ metodo: "nome-nascimento", cpf: "39053344705", ano: 2014 }),
+      hit({ metodo: "nome-nascimento", cpf: "39053344705", ano: 2010 }),
     ])
     assert.equal(decisao.decisao, "revisao")
     if (decisao.decisao === "revisao") {
@@ -113,7 +113,7 @@ describe("decidirCpfDoCandidato", () => {
   it("homônimo com mesma data de nascimento (CPFs distintos) é conflito", () => {
     const decisao = decidirCpfDoCandidato([
       hit({ metodo: "nome-nascimento", cpf: "52998224725" }),
-      hit({ metodo: "nome-nascimento", cpf: "15350946056" }),
+      hit({ metodo: "nome-nascimento", cpf: "39053344705" }),
     ])
     assert.equal(decisao.decisao, "conflito")
   })

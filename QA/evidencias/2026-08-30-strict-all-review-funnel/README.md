@@ -58,3 +58,7 @@ npm run prove:strict-all:pg17
 A prova PostgreSQL 17 usa dados fictícios e container descartável. Ela cobre três ações, despublicação, receipts, ledger, readback anterior recusado, rollback adulterado recusado e linha-controle preservada.
 
 Nenhuma migration de ficha real foi criada, pois ainda não há decisões humanas registradas para um lote autorizado.
+
+## Dados pessoais removidos (2026-09-30)
+
+Números de CPF citados no texto de detalhe foram trocados por `[CPF removido]` no snapshot, na fila, em `profiles-current.json` e em `p0.html`. Os hashes gravados em `input-receipt.json` descrevem o snapshot original e não foram reescritos.
