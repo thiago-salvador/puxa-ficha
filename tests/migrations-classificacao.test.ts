@@ -517,7 +517,8 @@ describe("classificador puro (#136)", () => {
     // L8 Mesa (20260929020000), DML com guarda pf.replay: 431 + 105 = 536.
     // Despesas de campanha (20260929100000), DDL da tabela financiamento_despesas: 432 + 105 = 537.
     // G5 (20260929110000), 1 processo em 2 fichas, DML com guarda pf.replay: 433 + 105 = 538.
-    assert.equal(manifesto.aplicadas_esperadas, 433)
+    // CPF removido do motivo da #378 (20261001100000), DML com guarda pf.replay: 434 + 105 = 539.
+    assert.equal(manifesto.aplicadas_esperadas, 434)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
@@ -672,6 +673,40 @@ describe("classificador puro (#136)", () => {
     assert.match(migration, /CNJ já existe na ficha; recusar duplicação/)
     assert.doesNotMatch(migration, /^\s*(UPDATE|DELETE)\b/im)
     assert.doesNotMatch(migration, /\b\d{3}\.\d{3}\.\d{3}-\d{2}\b/)
+    assert.equal(
+      TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === arquivo)?.replaySchema,
+      false,
+    )
+  })
+
+  test("20261001100000 troca só o CPF do motivo da #378, idempotente e sem schema", () => {
+    const arquivo = "20261001100000_cpf_removido_motivo_trajetoria.sql"
+    const migration = readFileSync(join("supabase", "migrations", arquivo), "utf8")
+    const classificacao = classificarMigration(arquivo, migration)
+    assert.equal(classificacao.classe, "curadoria")
+    assert.equal(classificacao.replay, "replicavel")
+    assert.equal(classificacao.temGuard, true)
+    assert.equal((migration.match(/^  -- @write tabela=mudancas_partido slug=andre-do-prado campos=despublicacao_motivo$/gm) ?? []).length, 1)
+    // Só despublicacao_motivo muda: nenhuma atribuição a despublicado_em.
+    assert.doesNotMatch(migration, /despublicado_em\s*=(?!\s*timestamptz '2026-09-18T00:00:00Z')/)
+    assert.doesNotMatch(migration, /^\s*(DELETE|INSERT INTO public\.mudancas_partido)\b/im)
+    assert.match(migration, /RAISE EXCEPTION 'cpf-motivo: despublicacao_motivo ainda contem CPF valido'/)
+    assert.match(migration, /IF antigas \+ convergidas <> 7 THEN/)
+    assert.doesNotMatch(migration, /\b\d{3}\.?\d{3}\.?\d{3}-?\d{2}\b/)
+    assert.doesNotMatch(migration, /\bmd5\s*\(|sha256|digest\s*\(/i)
+    // Produção e replay novo convergem para o mesmo texto: o literal da
+    // 20260918120000 é idêntico ao texto novo desta migration.
+    const antiga = readFileSync(
+      join("supabase", "migrations", "20260918120000_issue_378_superficie_marcador_e_trajetoria.sql"),
+      "utf8",
+    )
+    const literal = (sql: string, variavel: string) =>
+      sql.match(new RegExp(`${variavel} (?:constant )?text := '((?:[^']|'')*)';`))?.[1]
+    const novo = literal(migration, "motivo_novo")
+    assert.ok(novo)
+    assert.equal(literal(antiga, "motivo_trajetoria"), novo)
+    assert.equal((novo.match(/CPF \[CPF removido\]/g) ?? []).length, 2)
+    assert.doesNotMatch(antiga, /CPF \d{11}/)
     assert.equal(
       TODAS_COM_REPLAY_SCHEMA.find((item) => item.arquivo === arquivo)?.replaySchema,
       false,

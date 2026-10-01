@@ -1,6 +1,7 @@
 {
   "_comentario": "Conjunto FECHADO das migrations que falham no replay linear REAL (tolerante) em banco vazio, medido pelo harness scripts/audit/replay-migrations.sh. O modo --gate compara o resultado de uma execucao real contra esta lista: falha NOVA e regressao de replay em qualquer posicao (inclusive depois da 179a, que o modo estrito nunca alcanca); falha que sumiu exige regenerar este manifesto deliberadamente no mesmo PR. Regenerar: scripts/audit/replay-migrations.sh linear --tolerante e copiar os nomes.",
-  "aplicadas_esperadas": 433,
+  "aplicadas_esperadas": 434,
+  "_comentario_20261001100000": "CPF removido do motivo de despublicacao da #378: DML guardado por pf.replay antes do primeiro acesso a candidatos; 433 aplicadas -> 434 + 105 falhas historicas = 539 migrations, a confirmar pelo gate linear PostgreSQL 17.",
   "_comentario_20260929110000": "G5 (1 processo em 2 fichas) e DML guardado por pf.replay antes do primeiro acesso a candidatos; 432 aplicadas -> 433 + 105 falhas historicas = 538 migrations, a confirmar pelo gate linear PostgreSQL 17.",
   "_comentario_20260929020000": "L8 Mesa (processos, promessas e autoria) e DML guardado por pf.replay antes do primeiro acesso a candidatos; 431 aplicadas + 105 falhas historicas = 536 migrations, a confirmar pelo gate linear PostgreSQL 17.",
   "_comentario_20260929010000": "L7 editorial e DML guardado por pf.replay; gate linear PostgreSQL 17 mediu 430 aplicadas + 105 falhas historicas = 535 migrations, conjunto de falhas inalterado.",

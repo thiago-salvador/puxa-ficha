@@ -1,0 +1,24 @@
+{
+  "_comentario": "LOTE APROVADO E NAO APLICADO. Autoriza a escrita nominal da migration 20261001100000: troca do CPF pelo marcador \"[CPF removido]\" em despublicacao_motivo das sete linhas de mudancas_partido de andre-do-prado despublicadas pela 20260918120000, mais 1 recibo global. despublicado_em e as demais colunas ficam intactos. Aplicar continua sendo ato externo separado.",
+  "versao": "2026-10-01",
+  "recorte": "cpf-removido-motivo-trajetoria-20261001",
+  "migration": "20261001100000_cpf_removido_motivo_trajetoria.sql",
+  "fonte": "Gate audit:cpf-versionado:gate (scripts/audit/lib/cpf-versionado-gate.ts) e o texto que a 20260918120000 gravou em produção.",
+  "coorte": ["andre-do-prado"],
+  "fora_por_construcao": { "slugs": [] },
+  "entries": [
+    {
+      "tabela": "mudancas_partido",
+      "slug": "andre-do-prado",
+      "campos": ["despublicacao_motivo"],
+      "max_registros": 7
+    }
+  ],
+  "referencias": [
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20261001100000",
+      "campos": ["fonte", "escopo", "alvo", "resultado", "volume", "detalhe", "url", "execucao", "natureza"]
+    }
+  ]
+}

@@ -2,6 +2,11 @@
 -- fichas que entraram no recorte publicado entre 12/09 e 17/09/2026 (208 ->
 -- 514 fichas). O dado e antigo; so a publicacao e nova.
 --
+-- 01/10/2026: os CPFs que este arquivo citava (comentarios e literal
+-- `motivo_trajetoria`) foram trocados por "[CPF removido]". A migration
+-- 20261001100000_cpf_removido_motivo_trajetoria.sql converge as sete linhas
+-- ja gravadas em producao para o mesmo texto; replay novo grava direto.
+--
 -- Evidencia: run 35232081515 do workflow "Qualidade de dados", passo
 -- "Julgar superficie (script puro)":
 --   [R6_marcador_tse] dr-fernando-maximo: maiores_doadores.nome contem marcador tecnico do TSE
@@ -34,7 +39,7 @@
 -- 1996 a 2024 por CPF; o pacote de 2004, que fecha o caso, tem SHA-256
 -- 917c224c0c5de85b3f75e56ed6c5723840d04486ed28c6679894723be06194d5:
 --
---   CPF 08518353840  ANDRE LUIS DO PRADO, o titular desta ficha
+--   CPF [CPF removido]  ANDRE LUIS DO PRADO, o titular desta ficha
 --     2000  Vice-Prefeito   Guararema/SP     PL
 --     2004  Prefeito        Guararema/SP     PL
 --     2010  Dep. Estadual   SP               PR
@@ -42,7 +47,7 @@
 --     2018  Dep. Estadual   SP               PR
 --     2022  Dep. Estadual   SP               PL
 --
---   CPF 25093218898  ANDRE LUIS DO PRADO, urna "ANDRE PRADO"/"ANDRE LUIS"
+--   CPF [CPF removido]  ANDRE LUIS DO PRADO, urna "ANDRE PRADO"/"ANDRE LUIS"
 --     2000  Vereador        Ribeirao Preto   PSTU
 --     2004  Vereador        Ribeirao Preto   PSTU
 --     2012  Vice-Prefeito   Ribeirao Preto   PSTU
@@ -50,7 +55,7 @@
 -- Em 2004 os dois concorreram ao mesmo tempo, em municipios diferentes e por
 -- partidos diferentes, o que produziu o par impossivel que a auditoria acusou
 -- (PSTU->PL e PL->PSTU no mesmo ano). Todo PSTU da trajetoria publicada vem do
--- CPF 25093218898.
+-- CPF [CPF removido].
 --
 -- O titular nunca trocou de partido: PL e PR sao a mesma legenda em
 -- HISTORICAL_SAME_PARTY_GROUPS (scripts/lib/party-timeline-consistency.ts,
@@ -94,7 +99,7 @@ DO $apply$
 DECLARE
   quantidade integer;
   verificado_em timestamptz := timestamptz '2026-09-18T00:00:00Z';
-  motivo_trajetoria text := 'Trajetoria derivada de homonimo: as linhas vieram de ANDRE LUIS DO PRADO CPF 25093218898 (PSTU, Ribeirao Preto, 2000/2004/2012), pessoa distinta do titular desta ficha, CPF 08518353840 (Guararema e ALESP). Conferido em 18/09/2026 nos pacotes consulta_cand do TSE de 1996 a 2024. O titular nunca trocou de partido: PL e PR sao a mesma legenda, entao a derivacao vigente emite zero mudancas. Issue #378, violacao R8_reversao_mesmo_ano. Reversivel: linhas preservadas.';
+  motivo_trajetoria text := 'Trajetoria derivada de homonimo: as linhas vieram de ANDRE LUIS DO PRADO CPF [CPF removido] (PSTU, Ribeirao Preto, 2000/2004/2012), pessoa distinta do titular desta ficha, CPF [CPF removido] (Guararema e ALESP). Conferido em 18/09/2026 nos pacotes consulta_cand do TSE de 1996 a 2024. O titular nunca trocou de partido: PL e PR sao a mesma legenda, entao a derivacao vigente emite zero mudancas. Issue #378, violacao R8_reversao_mesmo_ano. Reversivel: linhas preservadas.';
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM public.candidatos) THEN
     RAISE NOTICE 'issue-378: coorte ausente; correcao ignorada (replay)';

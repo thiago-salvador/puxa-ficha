@@ -788,6 +788,13 @@
       "ate": "20260929110000",
       "allowlist": "scripts/audit/allowlist-g5-processo-hana-helder-20260929.json",
       "divida": null
+    },
+    {
+      "nome": "cpf-removido-motivo-trajetoria-20261001",
+      "desde": "20261001100000",
+      "ate": "20261001100000",
+      "allowlist": "scripts/audit/allowlist-cpf-removido-motivo-trajetoria-20261001.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
