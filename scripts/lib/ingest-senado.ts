@@ -35,6 +35,16 @@ export function withinSenadoUnpublishCaps(candidateUnpublishes: number, runUnpub
     && candidateUnpublishes <= Math.floor(candidateLegacyRows * 0.1)
 }
 
+// Teto de reescrita de texto (tipo/número/ano/ementa) de proposições já
+// publicadas, por candidato e por rodada. O Senado edita ementas de vez em
+// quando, uma ou poucas matérias; payload malformado mexeria em quase todas.
+// Regra conservadora: no máximo 10% das linhas publicadas com a mesma chave,
+// com piso de 3 (acervo pequeno ainda corrige uma edição real) e teto absoluto
+// de 50. Acima disso nada é atualizado e tudo fica em revisão.
+export function withinSenadoTextoUpdateCap(divergentes: number, publicadasComMesmaChave: number): boolean {
+  return divergentes <= Math.min(50, Math.max(3, Math.floor(publicadasComMesmaChave * 0.1)))
+}
+
 async function persist(
   query: PromiseLike<{ error: { message: string } | null }>,
   table: string,
@@ -792,8 +802,71 @@ async function ingestAutorias(
     })
   }
   const sourceRows = [...rowsByMatterId.values()]
+
+  // Texto oficial editado pelo Senado numa matéria já publicada (ex.: ementa
+  // de RQS reescrita). O upsert abaixo ignora conflito de propósito, para nunca
+  // republicar tombstone; sem esta etapa a linha publicada mantinha o texto
+  // antigo e o readback recusava a matéria em toda rodada. Só linha publicada
+  // (despublicado_em null) com a mesma chave é atualizada, com concorrência
+  // otimista sobre os quatro campos antigos. Tombstone já saiu do payload via
+  // materiasPersistidas e o filtro despublicado_em null impede tocá-lo aqui.
+  type TextoPublicado = { id: string; proposicao_id_api: string | null; tipo: string | null; numero: string | null; ano: number | null; ementa: string | null }
+  const publicadasPorMateria = new Map<string, TextoPublicado>()
+  for (let offset = 0; offset < sourceRows.length; offset += SENADO_AUTORIA_CHUNK_SIZE) {
+    context.signal.throwIfAborted()
+    const ids = sourceRows.slice(offset, offset + SENADO_AUTORIA_CHUNK_SIZE).map((row) => row.proposicao_id_api)
+    const { data, error: readError } = await supabase.from("projetos_lei")
+      .select("id,proposicao_id_api,tipo,numero,ano,ementa")
+      .eq("candidato_id", candidatoId).eq("fonte", "Senado").is("despublicado_em", null).in("proposicao_id_api", ids)
+      .abortSignal(context.signal)
+    if (readError) throw new Error(`projetos_lei: falha ao ler texto publicado do Senado: ${readError.message}`)
+    for (const row of (data ?? []) as TextoPublicado[]) if (row.proposicao_id_api != null) publicadasPorMateria.set(String(row.proposicao_id_api), row)
+  }
+  const divergentes = sourceRows.flatMap((source) => {
+    const row = publicadasPorMateria.get(source.proposicao_id_api)
+    return row && (row.tipo !== source.tipo || row.numero !== source.numero || row.ano !== source.ano || row.ementa !== source.ementa) ? [{ row, source }] : []
+  })
+  // Matéria cuja atualização não foi confirmada sai do lote com erro explícito;
+  // no lote ela viraria "readback ausente", que não diz o que aconteceu.
+  const textoPendente = new Map<string, string>()
+  const textoDentroDoTeto = withinSenadoTextoUpdateCap(divergentes.length, publicadasPorMateria.size)
+  for (const { row, source } of divergentes) {
+    context.signal.throwIfAborted()
+    const id = source.proposicao_id_api
+    if (!textoDentroDoTeto) {
+      textoPendente.set(id, `teto de reescrita de texto excedido: ${divergentes.length} de ${publicadasPorMateria.size} proposições publicadas divergem da fonte; nenhuma atualizada, revisão necessária`)
+      continue
+    }
+    if ((row.tipo && !source.tipo) || (row.numero && !source.numero) || (row.ano != null && source.ano == null) || (row.ementa && !source.ementa)) {
+      textoPendente.set(id, `proposição ${id}: fonte apagaria texto publicado; revisão necessária`)
+      continue
+    }
+    let update = supabase.from("projetos_lei").update({ tipo: source.tipo, numero: source.numero, ano: source.ano, ementa: source.ementa })
+      .eq("id", row.id).eq("candidato_id", candidatoId).eq("fonte", "Senado").eq("proposicao_id_api", id).is("despublicado_em", null)
+    update = row.tipo == null ? update.is("tipo", null) : update.eq("tipo", row.tipo)
+    update = row.numero == null ? update.is("numero", null) : update.eq("numero", row.numero)
+    update = row.ano == null ? update.is("ano", null) : update.eq("ano", row.ano)
+    update = row.ementa == null ? update.is("ementa", null) : update.eq("ementa", row.ementa)
+    let outcome: Array<{ id: string }>
+    try {
+      outcome = await escreverAuditado(
+        { script: "ingest-senado", tabela: "projetos_lei", motivo: "Atualizar texto da proposição conforme endpoint oficial do Senado", recorte: `${slug}:${id}` },
+        () => update.select("id").abortSignal(context.signal),
+      )
+    } catch (err) {
+      if (context.signal.aborted) throw new Error(`${context.signal.reason instanceof Error ? context.signal.reason.message : String(context.signal.reason)}; projetos_lei: atualização de texto em voo sem confirmação, conferir no banco`)
+      textoPendente.set(id, `proposição ${id}: atualização de texto falhou: ${err instanceof Error ? err.message : String(err)}`)
+      continue
+    }
+    if (outcome.length !== 1) textoPendente.set(id, `proposição ${id}: atualização de texto não casou com a linha publicada (mudou ou foi despublicada durante a coleta); revisão necessária`)
+  }
+  for (const erro of textoPendente.values()) { recusados++; primeiroErro ??= erro }
+  if (textoPendente.size > 0) warn("senado", `  ${slug}: ${[...new Set(textoPendente.values())].join("; ")}`)
+
+  // Atualizadas seguem no lote: o upsert ignora o conflito e o readback
+  // independente abaixo confirma os quatro campos novos.
   const batchResult = await persistSenadoAutoriaChunks({
-    rows: sourceRows,
+    rows: sourceRows.filter((row) => !textoPendente.has(row.proposicao_id_api)),
     chunkSize: SENADO_AUTORIA_CHUNK_SIZE,
     signal: context.signal,
     apply: async (chunk) => {
