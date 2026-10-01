@@ -1,0 +1,26 @@
+{
+  "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+  "checked_at": "2026-10-01T19:51:24.126Z",
+  "http_status": 200,
+  "bytes": 1289218,
+  "sha256": "ea3a680575653ea7d5a33e428e9af7aa93c93b74a14012f3d507ab3a5bdb8c04",
+  "csv_member": "consulta_cand_complementar_2026_BRASIL.csv",
+  "records": [
+    {
+      "SQ_CANDIDATO": "180002544457",
+      "CD_SITUACAO_JULGAMENTO": "14",
+      "DS_SITUACAO_JULGAMENTO": "INDEFERIDO"
+    },
+    {
+      "SQ_CANDIDATO": "180002544459",
+      "CD_SITUACAO_JULGAMENTO": "14",
+      "DS_SITUACAO_JULGAMENTO": "INDEFERIDO"
+    },
+    {
+      "SQ_CANDIDATO": "260002549466",
+      "CD_SITUACAO_JULGAMENTO": "14",
+      "DS_SITUACAO_JULGAMENTO": "INDEFERIDO"
+    }
+  ],
+  "privacy": "Only allowlisted fields saved; no raw ZIP persisted."
+}

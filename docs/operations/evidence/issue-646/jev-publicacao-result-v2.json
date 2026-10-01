@@ -1,0 +1,74 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "ricardo_registration": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "ricardo_competition": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "ricardo_aptitude": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "ricardo_appeal": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_registration": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_competition": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_aptitude": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_appeal": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_registration": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_competition": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_aptitude": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_appeal": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "holdout_coexistence": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "holdout_appeal_absence": {
+      "type": "noul",
+      "noul": 0.02
+    },
+    "holdout_aptitude_inference": {
+      "type": "noul",
+      "noul": 0.02
+    },
+    "holdout_unresolved": {
+      "type": "noul",
+      "noul": 0.02
+    }
+  },
+  "usage": {
+    "input_tokens": 5090,
+    "output_tokens": 321
+  },
+  "_ms": 415
+}

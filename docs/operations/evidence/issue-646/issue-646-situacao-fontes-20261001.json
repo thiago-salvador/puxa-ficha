@@ -1,0 +1,134 @@
+[
+  {
+    "sq": "260002549466",
+    "cargo": "Governador",
+    "uf": "SE",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "6a7486fadd1f75d24463c42a3d518c14beb31b6bf4717a3b5c46c4795d5654f2",
+      "verificado_em": "2026-10-01T19:12:48.131Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "6a7486fadd1f75d24463c42a3d518c14beb31b6bf4717a3b5c46c4795d5654f2",
+      "verificado_em": "2026-10-01T19:12:48.131Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    }
+  },
+  {
+    "sq": "260002549466",
+    "cargo": "Governador",
+    "uf": "SE",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "6a7486fadd1f75d24463c42a3d518c14beb31b6bf4717a3b5c46c4795d5654f2",
+      "verificado_em": "2026-10-01T19:12:48.131Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "ecf36a4beb11aa87fb6e2ffe66b367c48be45a2828785f344b4657eebdd0eeca",
+      "verificado_em": "2026-10-01T19:12:45.596Z",
+      "codigo": "2",
+      "descricao": "DEFERIDO",
+      "valor": "deferido"
+    }
+  },
+  {
+    "sq": "180002544457",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544457",
+      "fonte_sha256": "1733d9fc9e16184409109825c98f67b6a3247b26c3b58ccee4759815baa41476",
+      "verificado_em": "2026-10-01T19:12:48.176Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544457",
+      "fonte_sha256": "1733d9fc9e16184409109825c98f67b6a3247b26c3b58ccee4759815baa41476",
+      "verificado_em": "2026-10-01T19:12:48.176Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    }
+  },
+  {
+    "sq": "180002544457",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544457",
+      "fonte_sha256": "1733d9fc9e16184409109825c98f67b6a3247b26c3b58ccee4759815baa41476",
+      "verificado_em": "2026-10-01T19:12:48.176Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "ecf36a4beb11aa87fb6e2ffe66b367c48be45a2828785f344b4657eebdd0eeca",
+      "verificado_em": "2026-10-01T19:12:45.596Z",
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido"
+    }
+  },
+  {
+    "sq": "180002544459",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544459",
+      "fonte_sha256": "31e51a7b3aafdd267fca2af28ea0c72c7e69ebeba040079d40ffd29af2efd000",
+      "verificado_em": "2026-10-01T19:12:48.221Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544459",
+      "fonte_sha256": "31e51a7b3aafdd267fca2af28ea0c72c7e69ebeba040079d40ffd29af2efd000",
+      "verificado_em": "2026-10-01T19:12:48.221Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    }
+  },
+  {
+    "sq": "180002544459",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544459",
+      "fonte_sha256": "31e51a7b3aafdd267fca2af28ea0c72c7e69ebeba040079d40ffd29af2efd000",
+      "verificado_em": "2026-10-01T19:12:48.221Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "ecf36a4beb11aa87fb6e2ffe66b367c48be45a2828785f344b4657eebdd0eeca",
+      "verificado_em": "2026-10-01T19:12:45.596Z",
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido"
+    }
+  }
+]

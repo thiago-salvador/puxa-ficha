@@ -9,6 +9,7 @@ import { buildGlobalSearchIndexItems } from "../../../src/lib/global-search"
 import { getFasesEleitorais2026 as loadDatabasePhases } from "../../../src/lib/api"
 import type { FaseEleitoralPublica } from "../../../src/lib/fase-eleitoral-publica"
 import { makeBoxCardCandidate, makeBoxCardComparables } from "../box-card"
+import { candidaturaSituacaoFixture, situacaoFixtureCases } from "./candidatura-situacao"
 
 function boxFixture(slug: string): FichaCandidato | null {
   if (slug !== "fixture-boxes" && slug !== "fixture-boxes-single") return null
@@ -77,12 +78,13 @@ export async function getCandidatoNavResource(cargo?: string, estado?: string) {
 export async function getCandidatoSlugStaticParams() {
   return [...(await select()).map(({ slug }) => ({ slug })),
     { slug: "fixture-boxes" }, { slug: "fixture-boxes-single" },
+    ...situacaoFixtureCases.map(row => ({ slug: `fixture-646-${row.sq}` })),
   ]
 }
 export async function getGlobalSearchIndexResource() {
   return liveResource(buildGlobalSearchIndexItems(await select(), new Map()))
 }
-export async function getCandidatoMetadataResource(slug: string) { return liveResource(boxFixture(slug) ?? (await select()).find((row) => row.slug === slug) ?? null) }
+export async function getCandidatoMetadataResource(slug: string) { return liveResource(candidaturaSituacaoFixture(slug) ?? boxFixture(slug) ?? (await select()).find((row) => row.slug === slug) ?? null) }
 export async function getCandidatosComResumoResource(cargo?: string, estado?: string) {
   return liveResource((await select(cargo, estado)).map((candidato) => ({ candidato, processos_ordenacao: 0, patrimonio: null, patrimonio_atipico: false, processos: 0, pontos_atencao: 0 })))
 }
@@ -101,6 +103,8 @@ export async function getCandidatosComparaveisResource(cargo?: string, estado?: 
   return liveResource(rows)
 }
 export async function getCandidatoBySlugResource(slug: string) {
+  const situacao = candidaturaSituacaoFixture(slug)
+  if (situacao) return liveResource(situacao)
   const boxes = boxFixture(slug)
   if (boxes) return liveResource(boxes)
   const candidate = (await select()).find((row) => row.slug === slug)

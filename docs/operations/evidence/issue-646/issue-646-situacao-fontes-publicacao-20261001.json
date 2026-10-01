@@ -1,0 +1,158 @@
+[
+  {
+    "sq": "260002549466",
+    "cargo": "Governador",
+    "uf": "SE",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "6a7486fadd1f75d24463c42a3d518c14beb31b6bf4717a3b5c46c4795d5654f2",
+      "verificado_em": "2026-10-01T19:12:48.131Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "6a7486fadd1f75d24463c42a3d518c14beb31b6bf4717a3b5c46c4795d5654f2",
+      "verificado_em": "2026-10-01T19:12:48.131Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    }
+  },
+  {
+    "sq": "260002549466",
+    "cargo": "Governador",
+    "uf": "SE",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "6a7486fadd1f75d24463c42a3d518c14beb31b6bf4717a3b5c46c4795d5654f2",
+      "verificado_em": "2026-10-01T19:12:48.131Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "ea3a680575653ea7d5a33e428e9af7aa93c93b74a14012f3d507ab3a5bdb8c04",
+      "verificado_em": "2026-10-01T19:51:24.126Z",
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido"
+    },
+    "observacoes": [
+      {
+        "descricao": "Portal do TSE: Inapto; Consta da urna. A API havia mostrado Concorrendo, candidatoApto=false e isCandidatoInapto=false às 19:12 UTC. A reconsulta da API retornou HTTP 403; as flags permanecem como observação anterior. Esses campos não determinam, por si, exclusão definitiva da disputa.",
+        "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/SE/SE/20322002026/260002549466/2026/SE",
+        "fonte_sha256": "7dcbdbf0cd1552e76effe1e27bf2aca24aa5562193559cdf39b42acfb0bf2c69",
+        "verificado_em": "2026-10-01T19:58:00Z"
+      }
+    ]
+  },
+  {
+    "sq": "180002544457",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544457",
+      "fonte_sha256": "1733d9fc9e16184409109825c98f67b6a3247b26c3b58ccee4759815baa41476",
+      "verificado_em": "2026-10-01T19:12:48.176Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544457",
+      "fonte_sha256": "1733d9fc9e16184409109825c98f67b6a3247b26c3b58ccee4759815baa41476",
+      "verificado_em": "2026-10-01T19:12:48.176Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    }
+  },
+  {
+    "sq": "180002544457",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544457",
+      "fonte_sha256": "1733d9fc9e16184409109825c98f67b6a3247b26c3b58ccee4759815baa41476",
+      "verificado_em": "2026-10-01T19:12:48.176Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "ea3a680575653ea7d5a33e428e9af7aa93c93b74a14012f3d507ab3a5bdb8c04",
+      "verificado_em": "2026-10-01T19:51:24.126Z",
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido"
+    },
+    "observacoes": [
+      {
+        "descricao": "Portal do TSE: Inapto; Consta da urna. A API havia mostrado Concorrendo, candidatoApto=false e isCandidatoInapto=false às 19:12 UTC. A reconsulta da API retornou HTTP 403; as flags permanecem como observação anterior. Esses campos não determinam, por si, exclusão definitiva da disputa.",
+        "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/PI/PI/20322002026/180002544457/2026/PI",
+        "fonte_sha256": "7dcbdbf0cd1552e76effe1e27bf2aca24aa5562193559cdf39b42acfb0bf2c69",
+        "verificado_em": "2026-10-01T19:58:00Z"
+      }
+    ]
+  },
+  {
+    "sq": "180002544459",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544459",
+      "fonte_sha256": "31e51a7b3aafdd267fca2af28ea0c72c7e69ebeba040079d40ffd29af2efd000",
+      "verificado_em": "2026-10-01T19:12:48.221Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544459",
+      "fonte_sha256": "31e51a7b3aafdd267fca2af28ea0c72c7e69ebeba040079d40ffd29af2efd000",
+      "verificado_em": "2026-10-01T19:12:48.221Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    }
+  },
+  {
+    "sq": "180002544459",
+    "cargo": "Senador",
+    "uf": "PI",
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PI/20322002026/candidato/180002544459",
+      "fonte_sha256": "31e51a7b3aafdd267fca2af28ea0c72c7e69ebeba040079d40ffd29af2efd000",
+      "verificado_em": "2026-10-01T19:12:48.221Z",
+      "descricao": "Concorrendo",
+      "apto": false,
+      "inapto": false
+    },
+    "recurso": null,
+    "julgamento": {
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "ea3a680575653ea7d5a33e428e9af7aa93c93b74a14012f3d507ab3a5bdb8c04",
+      "verificado_em": "2026-10-01T19:51:24.126Z",
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido"
+    },
+    "observacoes": [
+      {
+        "descricao": "Portal do TSE: Inapto; Consta da urna. A API havia mostrado Concorrendo, candidatoApto=false e isCandidatoInapto=false às 19:12 UTC. A reconsulta da API retornou HTTP 403; as flags permanecem como observação anterior. Esses campos não determinam, por si, exclusão definitiva da disputa.",
+        "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/#/candidato/PI/PI/20322002026/180002544459/2026/PI",
+        "fonte_sha256": "7dcbdbf0cd1552e76effe1e27bf2aca24aa5562193559cdf39b42acfb0bf2c69",
+        "verificado_em": "2026-10-01T19:58:00Z"
+      }
+    ]
+  }
+]

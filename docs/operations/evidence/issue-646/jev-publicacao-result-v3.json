@@ -1,0 +1,94 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "ricardo_registration": {
+      "type": "noul",
+      "noul": 0.95
+    },
+    "ricardo_competition": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "ricardo_aptitude": {
+      "type": "noul",
+      "noul": 0.97
+    },
+    "ricardo_appeal": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_registration": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_competition": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_aptitude": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "major_appeal": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_registration": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_competition": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_aptitude": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "toinho_appeal": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "ricardo_portal_note": {
+      "type": "noul",
+      "noul": 0.89
+    },
+    "major_portal_note": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "toinho_portal_note": {
+      "type": "noul",
+      "noul": 0.93
+    },
+    "final_positive": {
+      "type": "noul",
+      "noul": 0.98
+    },
+    "final_negative_exclusion": {
+      "type": "noul",
+      "noul": 0.02
+    },
+    "final_negative_appeal": {
+      "type": "noul",
+      "noul": 0.01
+    },
+    "final_negative_api_recency": {
+      "type": "noul",
+      "noul": 0.01
+    }
+  },
+  "usage": {
+    "input_tokens": 7005,
+    "output_tokens": 370
+  },
+  "_ms": 340,
+  "gate": {
+    "advisory": true,
+    "passed": true,
+    "target_min": 0.89,
+    "negative_max": 0.02,
+    "principal_review": "APPROVED: exact SQ/cargo/UF, 3 judgments INDEFERIDO with current complementary package and portal; older API flags dated, no appeal/exclusion inferred; preserve other DB metadata/status/publicavel.",
+    "human_authorization": "Se você e o Jev confiam, pode publicar."
+  }
+}

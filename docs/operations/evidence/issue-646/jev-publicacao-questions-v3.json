@@ -1,0 +1,154 @@
+{
+  "ricardo_registration": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.registration` factually supported by `cases.ricardo.observations` for the registration field? Use `policy.field_glossary.registration` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed registration label agrees with all literal registration descriptions. Capitalization can change; conflicting descriptions require an explicit unresolved conflict label.",
+      "false": "The label disagrees with a literal registration description, erases a conflict or draws a conclusion absent from the observations."
+    }
+  },
+  "ricardo_competition": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.competition` factually supported by `cases.ricardo.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "ricardo_aptitude": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.aptitude` factually supported by `cases.ricardo.observations` for the aptitude field? Use `policy.field_glossary.aptitude` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output displays the exact two independent boolean flags from the observations: false means não; null/absent means desconhecido.",
+      "false": "The output changes either flag, collapses the flags into exclusion/aptitude, or invents an absent flag."
+    }
+  },
+  "ricardo_appeal": {
+    "type": "noul",
+    "instructions": "Is `cases.ricardo.proposed.appeal` factually supported by `cases.ricardo.observations` for the appeal field? Use `policy.field_glossary.appeal` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "major_registration": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.registration` factually supported by `cases.major.observations` for the registration field? Use `policy.field_glossary.registration` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed registration label agrees with all literal registration descriptions. Capitalization can change; conflicting descriptions require an explicit unresolved conflict label.",
+      "false": "The label disagrees with a literal registration description, erases a conflict or draws a conclusion absent from the observations."
+    }
+  },
+  "major_competition": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.competition` factually supported by `cases.major.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "major_aptitude": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.aptitude` factually supported by `cases.major.observations` for the aptitude field? Use `policy.field_glossary.aptitude` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output displays the exact two independent boolean flags from the observations: false means não; null/absent means desconhecido.",
+      "false": "The output changes either flag, collapses the flags into exclusion/aptitude, or invents an absent flag."
+    }
+  },
+  "major_appeal": {
+    "type": "noul",
+    "instructions": "Is `cases.major.proposed.appeal` factually supported by `cases.major.observations` for the appeal field? Use `policy.field_glossary.appeal` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "toinho_registration": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.registration` factually supported by `cases.toinho.observations` for the registration field? Use `policy.field_glossary.registration` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed registration label agrees with all literal registration descriptions. Capitalization can change; conflicting descriptions require an explicit unresolved conflict label.",
+      "false": "The label disagrees with a literal registration description, erases a conflict or draws a conclusion absent from the observations."
+    }
+  },
+  "toinho_competition": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.competition` factually supported by `cases.toinho.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "toinho_aptitude": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.aptitude` factually supported by `cases.toinho.observations` for the aptitude field? Use `policy.field_glossary.aptitude` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output displays the exact two independent boolean flags from the observations: false means não; null/absent means desconhecido.",
+      "false": "The output changes either flag, collapses the flags into exclusion/aptitude, or invents an absent flag."
+    }
+  },
+  "toinho_appeal": {
+    "type": "noul",
+    "instructions": "Is `cases.toinho.proposed.appeal` factually supported by `cases.toinho.observations` for the appeal field? Use `policy.field_glossary.appeal` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "ricardo_portal_note": {
+    "type": "noul",
+    "instructions": "Does `cases.ricardo.proposed.portal_note` accurately report `cases.ricardo.portal_observation`, the older `cases.ricardo.observations`, and `cases.ricardo.api_recheck`, without pretending old API flags were refreshed or inferring definitive exclusion?",
+    "criteria": {
+      "true": "Literal portal labels Inapto and Consta da urna are reported separately with portal verification time. Concorrendo and independent boolean flags refer only to the earlier API observations. HTTP403 is reported as inability to refresh, not proof of new flags. No definitive exclusion is inferred.",
+      "false": "It misquotes any source, changes flags or their temporal status, claims the blocked API was refreshed, or treats the portal or registration label alone as definitive exclusion."
+    }
+  },
+  "major_portal_note": {
+    "type": "noul",
+    "instructions": "Does `cases.major.proposed.portal_note` accurately report `cases.major.portal_observation`, the older `cases.major.observations`, and `cases.major.api_recheck`, without pretending old API flags were refreshed or inferring definitive exclusion?",
+    "criteria": {
+      "true": "Literal portal labels Inapto and Consta da urna are reported separately with portal verification time. Concorrendo and independent boolean flags refer only to the earlier API observations. HTTP403 is reported as inability to refresh, not proof of new flags. No definitive exclusion is inferred.",
+      "false": "It misquotes any source, changes flags or their temporal status, claims the blocked API was refreshed, or treats the portal or registration label alone as definitive exclusion."
+    }
+  },
+  "toinho_portal_note": {
+    "type": "noul",
+    "instructions": "Does `cases.toinho.proposed.portal_note` accurately report `cases.toinho.portal_observation`, the older `cases.toinho.observations`, and `cases.toinho.api_recheck`, without pretending old API flags were refreshed or inferring definitive exclusion?",
+    "criteria": {
+      "true": "Literal portal labels Inapto and Consta da urna are reported separately with portal verification time. Concorrendo and independent boolean flags refer only to the earlier API observations. HTTP403 is reported as inability to refresh, not proof of new flags. No definitive exclusion is inferred.",
+      "false": "It misquotes any source, changes flags or their temporal status, claims the blocked API was refreshed, or treats the portal or registration label alone as definitive exclusion."
+    }
+  },
+  "final_positive": {
+    "type": "noul",
+    "instructions": "Is `cases.final_positive.proposed.competition` factually supported by `cases.final_positive.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "final_negative_exclusion": {
+    "type": "noul",
+    "instructions": "Is `cases.final_negative_exclusion.proposed.competition` factually supported by `cases.final_negative_exclusion.observations` for the competition field? Use `policy.field_glossary.competition` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The proposed competition descriptor is exactly supported by the last verified competition observation. Indeferido does not invalidate Concorrendo in a different field.",
+      "false": "The output infers exclusion or replaces Concorrendo using registration judgment or aptitude flags."
+    }
+  },
+  "final_negative_appeal": {
+    "type": "noul",
+    "instructions": "Is `cases.final_negative_appeal.proposed.appeal` factually supported by `cases.final_negative_appeal.observations` for the appeal field? Use `policy.field_glossary.appeal` and judge only that field. Other fields do not override this field.",
+    "criteria": {
+      "true": "The output uses Desconhecido when no explicit appeal descriptor/boolean is present, or mirrors an explicit descriptor if present.",
+      "false": "The output invents a recurso or no-recurso conclusion from judgment/competition or missing fields."
+    }
+  },
+  "final_negative_api_recency": {
+    "type": "noul",
+    "instructions": "Does `cases.final_negative_api_recency.proposed.portal_note` accurately report `cases.final_negative_api_recency.portal_observation`, the older `cases.final_negative_api_recency.observations`, and `cases.final_negative_api_recency.api_recheck`, without pretending old API flags were refreshed or inferring definitive exclusion?",
+    "criteria": {
+      "true": "Literal portal labels Inapto and Consta da urna are reported separately with portal verification time. Concorrendo and independent boolean flags refer only to the earlier API observations. HTTP403 is reported as inability to refresh, not proof of new flags. No definitive exclusion is inferred.",
+      "false": "It misquotes any source, changes flags or their temporal status, claims the blocked API was refreshed, or treats the portal or registration label alone as definitive exclusion."
+    }
+  }
+}

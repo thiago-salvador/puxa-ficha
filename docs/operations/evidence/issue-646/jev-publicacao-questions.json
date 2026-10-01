@@ -1,0 +1,58 @@
+{
+  "ricardo": {
+    "type": "noul",
+    "instructions": "Consider `policy.rules` and the explicit TSE observations in `cases.ricardo.evidence`. Are ALL factual claims in `cases.ricardo.proposed_public_output` supported by those observations, with any conflict or absent appeal kept explicit? Judge the proposed output, not whether publication was authorized. Synthetic controls are evaluated by the same rule.",
+    "criteria": {
+      "true": "Every factual output is supported by the identified observations. Conflicting registration sources are shown together as unresolved. Competition and literal aptitude flags remain separate from registration judgment. Unknown appeal remains unknown. Indeferido plus Concorrendo is consistent across separate domains.",
+      "false": "At least one claim invents or overstates evidence: infers exclusion from Indeferido, infers appeal or no appeal from missing field, erases official disagreement by choosing a definitive judgment, or mixes one candidate's source with another identity."
+    }
+  },
+  "major": {
+    "type": "noul",
+    "instructions": "Consider `policy.rules` and the explicit TSE observations in `cases.major.evidence`. Are ALL factual claims in `cases.major.proposed_public_output` supported by those observations, with any conflict or absent appeal kept explicit? Judge the proposed output, not whether publication was authorized. Synthetic controls are evaluated by the same rule.",
+    "criteria": {
+      "true": "Every factual output is supported by the identified observations. Conflicting registration sources are shown together as unresolved. Competition and literal aptitude flags remain separate from registration judgment. Unknown appeal remains unknown. Indeferido plus Concorrendo is consistent across separate domains.",
+      "false": "At least one claim invents or overstates evidence: infers exclusion from Indeferido, infers appeal or no appeal from missing field, erases official disagreement by choosing a definitive judgment, or mixes one candidate's source with another identity."
+    }
+  },
+  "toinho": {
+    "type": "noul",
+    "instructions": "Consider `policy.rules` and the explicit TSE observations in `cases.toinho.evidence`. Are ALL factual claims in `cases.toinho.proposed_public_output` supported by those observations, with any conflict or absent appeal kept explicit? Judge the proposed output, not whether publication was authorized. Synthetic controls are evaluated by the same rule.",
+    "criteria": {
+      "true": "Every factual output is supported by the identified observations. Conflicting registration sources are shown together as unresolved. Competition and literal aptitude flags remain separate from registration judgment. Unknown appeal remains unknown. Indeferido plus Concorrendo is consistent across separate domains.",
+      "false": "At least one claim invents or overstates evidence: infers exclusion from Indeferido, infers appeal or no appeal from missing field, erases official disagreement by choosing a definitive judgment, or mixes one candidate's source with another identity."
+    }
+  },
+  "positive_coexistence": {
+    "type": "noul",
+    "instructions": "Consider `policy.rules` and the explicit TSE observations in `cases.positive_coexistence.evidence`. Are ALL factual claims in `cases.positive_coexistence.proposed_public_output` supported by those observations, with any conflict or absent appeal kept explicit? Judge the proposed output, not whether publication was authorized. Synthetic controls are evaluated by the same rule.",
+    "criteria": {
+      "true": "Every factual output is supported by the identified observations. Conflicting registration sources are shown together as unresolved. Competition and literal aptitude flags remain separate from registration judgment. Unknown appeal remains unknown. Indeferido plus Concorrendo is consistent across separate domains.",
+      "false": "At least one claim invents or overstates evidence: infers exclusion from Indeferido, infers appeal or no appeal from missing field, erases official disagreement by choosing a definitive judgment, or mixes one candidate's source with another identity."
+    }
+  },
+  "negative_exclusion": {
+    "type": "noul",
+    "instructions": "Consider `policy.rules` and the explicit TSE observations in `cases.negative_exclusion.evidence`. Are ALL factual claims in `cases.negative_exclusion.proposed_public_output` supported by those observations, with any conflict or absent appeal kept explicit? Judge the proposed output, not whether publication was authorized. Synthetic controls are evaluated by the same rule.",
+    "criteria": {
+      "true": "Every factual output is supported by the identified observations. Conflicting registration sources are shown together as unresolved. Competition and literal aptitude flags remain separate from registration judgment. Unknown appeal remains unknown. Indeferido plus Concorrendo is consistent across separate domains.",
+      "false": "At least one claim invents or overstates evidence: infers exclusion from Indeferido, infers appeal or no appeal from missing field, erases official disagreement by choosing a definitive judgment, or mixes one candidate's source with another identity."
+    }
+  },
+  "negative_appeal": {
+    "type": "noul",
+    "instructions": "Consider `policy.rules` and the explicit TSE observations in `cases.negative_appeal.evidence`. Are ALL factual claims in `cases.negative_appeal.proposed_public_output` supported by those observations, with any conflict or absent appeal kept explicit? Judge the proposed output, not whether publication was authorized. Synthetic controls are evaluated by the same rule.",
+    "criteria": {
+      "true": "Every factual output is supported by the identified observations. Conflicting registration sources are shown together as unresolved. Competition and literal aptitude flags remain separate from registration judgment. Unknown appeal remains unknown. Indeferido plus Concorrendo is consistent across separate domains.",
+      "false": "At least one claim invents or overstates evidence: infers exclusion from Indeferido, infers appeal or no appeal from missing field, erases official disagreement by choosing a definitive judgment, or mixes one candidate's source with another identity."
+    }
+  },
+  "negative_conflict_erasure": {
+    "type": "noul",
+    "instructions": "Consider `policy.rules` and the explicit TSE observations in `cases.negative_conflict_erasure.evidence`. Are ALL factual claims in `cases.negative_conflict_erasure.proposed_public_output` supported by those observations, with any conflict or absent appeal kept explicit? Judge the proposed output, not whether publication was authorized. Synthetic controls are evaluated by the same rule.",
+    "criteria": {
+      "true": "Every factual output is supported by the identified observations. Conflicting registration sources are shown together as unresolved. Competition and literal aptitude flags remain separate from registration judgment. Unknown appeal remains unknown. Indeferido plus Concorrendo is consistent across separate domains.",
+      "false": "At least one claim invents or overstates evidence: infers exclusion from Indeferido, infers appeal or no appeal from missing field, erases official disagreement by choosing a definitive judgment, or mixes one candidate's source with another identity."
+    }
+  }
+}

@@ -49,7 +49,7 @@ test("renderiza os dados gerais públicos com fonte e atualização", () => {
   assert.match(html, /<dd[^>]*>Luiz Inácio Lula da Silva<\/dd>/)
   assert.match(html, /<dt[^>]*>Formação<\/dt>/)
   assert.match(html, /<dd[^>]*>Primário<\/dd>/)
-  assert.match(html, /<dt[^>]*>Situação da candidatura<\/dt>/)
+  assert.match(html, /<dt[^>]*>Julgamento do registro<\/dt>/)
   assert.match(html, /Pedido de registro no TSE/)
   assert.match(html, /Fontes: TSE, Curadoria Puxa Ficha\./)
   assert.match(html, /Atualizado em 19\/08\/2026\./)
@@ -77,7 +77,9 @@ test("mantém ausência explícita e não inventa TSE quando a fonte não existe
     />,
   )
 
-  assert.equal((html.match(/Não informado/g) ?? []).length, 10)
+  assert.equal((html.match(/Não informado/g) ?? []).length, 9)
+  assert.match(html, /<dt[^>]*>Julgamento do registro<\/dt>/)
+  assert.match(html, /Desconhecido/)
   assert.match(html, /Fontes: Não informadas\./)
   assert.match(html, /Atualizado em Data indisponível\./)
   assert.doesNotMatch(html, /Fontes: TSE/)

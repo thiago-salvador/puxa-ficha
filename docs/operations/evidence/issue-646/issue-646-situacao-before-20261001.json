@@ -1,0 +1,409 @@
+[
+  {
+    "id": "890b980d-68f3-4832-bee7-bff3cf037ac3",
+    "slug": "tse-2026-180002544457",
+    "sq_candidato_2026": "180002544457",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "situacao_candidatura": "indeferido com recurso",
+    "status": "candidato",
+    "publicavel": true,
+    "verificacao_campos": {
+      "photo": {
+        "fonte": "Foto oficial de candidatura (TSE 2026)",
+        "escopo": "membro FPI180002544457_div.jpg extraído do arquivo oficial por UF; hash JPEG 35d107ecb8a0f5960f1357990989597cbab9594efeb37e304021d93ce7bc1ffb",
+        "estado": "publicado",
+        "verificado_em": "2026-09-14T21:44:38.415Z",
+        "fontes_consultadas": [
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/fotos/foto_cand2026_PI_div.zip",
+            "bytes": 2309431,
+            "escopo": "arquivo oficial de fotos TSE 2026 PI; resposta integral conferida; cache íntegro; membros selecionados por SQ; membro FPI180002544457_div.jpg; SQ_CANDIDATO 180002544457",
+            "checked_at": "2026-09-14T21:44:38.415Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "artifact_path": ".artifacts/senado-completude/coleta/fotos/foto_cand2026_PI_div.zip",
+            "payload_raw_sha256": "221b09fccbdc8fb607c9289f1c9aaa989393cb65407a4543a75dd526483ec800"
+          }
+        ]
+      },
+      "federal_acervo": {
+        "camara": {
+          "url": "https://www.camara.leg.br/deputados/quem-sao",
+          "fonte": "camara",
+          "escopo": "registro nominal da Câmara dos Deputados atual e histórico retornado pelas listas oficiais",
+          "detalhe": "Nenhum vínculo nominal foi retornado no escopo oficial para PAULO ROBERTO BEZERRA DE OLIVEIRA (PI); não há linha atribuível no acervo dependente e isso não cobre atividade política fora do recorte federal.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "camara-parliamentarian-registry-all-legislatures",
+            "camara-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www.camara.leg.br/deputados/quem-sao",
+            "https://dadosabertos.camara.leg.br/api/v2/deputados?itens=100&ordem=ASC&ordenarPor=id"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        },
+        "jarbas": {
+          "url": "https://www.camara.leg.br/deputados/quem-sao",
+          "fonte": "jarbas",
+          "escopo": "registro nominal da Câmara dos Deputados atual e histórico retornado pelas listas oficiais; Jarbas somente para identidade de deputada federal",
+          "detalhe": "Nenhum vínculo nominal de deputada federal foi retornado no escopo oficial para PAULO ROBERTO BEZERRA DE OLIVEIRA (PI); nenhuma consulta Jarbas é atribuída sem identidade Câmara e isso não afirma ausência universal de reembolsos.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "camara-parliamentarian-registry-all-legislatures",
+            "camara-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www.camara.leg.br/deputados/quem-sao",
+            "https://dadosabertos.camara.leg.br/api/v2/deputados?itens=100&ordem=ASC&ordenarPor=id"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        },
+        "senado": {
+          "url": "https://www25.senado.leg.br/web/senadores/pesquisa",
+          "fonte": "senado",
+          "escopo": "registro nominal do Senado Federal atual e histórico retornado pelas listas oficiais",
+          "detalhe": "Nenhum vínculo nominal foi retornado no escopo oficial para PAULO ROBERTO BEZERRA DE OLIVEIRA (PI); não há linha atribuível no acervo dependente e isso não cobre atividade política fora do recorte federal.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "senado-parliamentarian-registry-all-legislatures",
+            "senado-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www25.senado.leg.br/web/senadores/pesquisa",
+            "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/1/57"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        },
+        "ceaps-senado": {
+          "url": "https://www25.senado.leg.br/web/senadores/pesquisa",
+          "fonte": "ceaps-senado",
+          "escopo": "registro nominal do Senado Federal atual e histórico retornado pelas listas oficiais; CEAPS somente para identidade de senadora",
+          "detalhe": "Nenhum vínculo nominal de senadora foi retornado no escopo oficial para PAULO ROBERTO BEZERRA DE OLIVEIRA (PI); CEAPS não recebe ID inventado e não afirma ausência universal de despesas.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "senado-parliamentarian-registry-all-legislatures",
+            "senado-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www25.senado.leg.br/web/senadores/pesquisa",
+            "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/1/57"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        }
+      },
+      "candidate_complement": {
+        "fonte": "TSE",
+        "escopo": "inscrição titular 180002544457; dados declarados de nascimento, formação e ocupação",
+        "estado": "publicado",
+        "verificado_em": "2026-09-14T14:00:34.000Z",
+        "fontes_consultadas": [
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+            "bytes": 3153573,
+            "escopo": "cadastro oficial TSE 2026; SQ_CANDIDATO 180002544457",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "payload_raw_sha256": "209f6c5868a2572f13a3cd69a1c77e4e4e64c242d48fb8afd993a3734496215b"
+          },
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+            "bytes": 1237837,
+            "escopo": "complemento oficial TSE 2026; SQ_CANDIDATO 180002544457",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "payload_raw_sha256": "4fa5f436c94a4fd3df5da7b4799d3c01d7e298e8500a829fe97ee7c075f66c08"
+          }
+        ]
+      },
+      "candidate_registration": {
+        "fonte": "TSE",
+        "escopo": "inscrição titular 180002544457; julgamento AGUARDANDO JULGAMENTO",
+        "estado": "publicado",
+        "verificado_em": "2026-09-14T14:00:34.000Z",
+        "fontes_consultadas": [
+          {
+            "uf": "PI",
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+            "bytes": 3153573,
+            "cargo": "SENADOR",
+            "escopo": "cadastro oficial TSE 2026; SQ_CANDIDATO 180002544457; membro_csv=consulta_cand_2026_BRASIL.csv; UF=PI; cargo=SENADOR; data_geracao=15/09/2026 12:31:31",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "membro_csv": "consulta_cand_2026_BRASIL.csv",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "data_geracao": "15/09/2026 12:31:31",
+            "payload_raw_sha256": "46a86e3646e5cf93bbe39cfd11b5b9221547f7a614336fe5923712818a66dcc2",
+            "source_artifact_path": "<private-local-source>"
+          },
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+            "bytes": 1237837,
+            "escopo": "complemento oficial TSE 2026; SQ_CANDIDATO 180002544457",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "payload_raw_sha256": "4fa5f436c94a4fd3df5da7b4799d3c01d7e298e8500a829fe97ee7c075f66c08"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "902078e9-cf70-46ca-a279-d609ef743208",
+    "slug": "tse-2026-180002544459",
+    "sq_candidato_2026": "180002544459",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "situacao_candidatura": "indeferido com recurso",
+    "status": "candidato",
+    "publicavel": true,
+    "verificacao_campos": {
+      "photo": {
+        "fonte": "Foto oficial de candidatura (TSE 2026)",
+        "escopo": "membro FPI180002544459_div.jpg extraído do arquivo oficial por UF; hash JPEG b95b35ec56bbc1b58a7100341fbd41f525ab9790e176ff239fc1d393eca5d1da",
+        "estado": "publicado",
+        "verificado_em": "2026-09-14T21:44:38.415Z",
+        "fontes_consultadas": [
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2026/fotos/foto_cand2026_PI_div.zip",
+            "bytes": 2309431,
+            "escopo": "arquivo oficial de fotos TSE 2026 PI; resposta integral conferida; cache íntegro; membros selecionados por SQ; membro FPI180002544459_div.jpg; SQ_CANDIDATO 180002544459",
+            "checked_at": "2026-09-14T21:44:38.415Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "artifact_path": ".artifacts/senado-completude/coleta/fotos/foto_cand2026_PI_div.zip",
+            "payload_raw_sha256": "221b09fccbdc8fb607c9289f1c9aaa989393cb65407a4543a75dd526483ec800"
+          }
+        ]
+      },
+      "federal_acervo": {
+        "camara": {
+          "url": "https://www.camara.leg.br/deputados/quem-sao",
+          "fonte": "camara",
+          "escopo": "registro nominal da Câmara dos Deputados atual e histórico retornado pelas listas oficiais",
+          "detalhe": "Nenhum vínculo nominal foi retornado no escopo oficial para ANTONIO ALMEIDA DE SOUSA (PI); não há linha atribuível no acervo dependente e isso não cobre atividade política fora do recorte federal.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "camara-parliamentarian-registry-all-legislatures",
+            "camara-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www.camara.leg.br/deputados/quem-sao",
+            "https://dadosabertos.camara.leg.br/api/v2/deputados?itens=100&ordem=ASC&ordenarPor=id"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        },
+        "jarbas": {
+          "url": "https://www.camara.leg.br/deputados/quem-sao",
+          "fonte": "jarbas",
+          "escopo": "registro nominal da Câmara dos Deputados atual e histórico retornado pelas listas oficiais; Jarbas somente para identidade de deputada federal",
+          "detalhe": "Nenhum vínculo nominal de deputada federal foi retornado no escopo oficial para ANTONIO ALMEIDA DE SOUSA (PI); nenhuma consulta Jarbas é atribuída sem identidade Câmara e isso não afirma ausência universal de reembolsos.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "camara-parliamentarian-registry-all-legislatures",
+            "camara-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www.camara.leg.br/deputados/quem-sao",
+            "https://dadosabertos.camara.leg.br/api/v2/deputados?itens=100&ordem=ASC&ordenarPor=id"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        },
+        "senado": {
+          "url": "https://www25.senado.leg.br/web/senadores/pesquisa",
+          "fonte": "senado",
+          "escopo": "registro nominal do Senado Federal atual e histórico retornado pelas listas oficiais",
+          "detalhe": "Nenhum vínculo nominal foi retornado no escopo oficial para ANTONIO ALMEIDA DE SOUSA (PI); não há linha atribuível no acervo dependente e isso não cobre atividade política fora do recorte federal.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "senado-parliamentarian-registry-all-legislatures",
+            "senado-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www25.senado.leg.br/web/senadores/pesquisa",
+            "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/1/57"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        },
+        "ceaps-senado": {
+          "url": "https://www25.senado.leg.br/web/senadores/pesquisa",
+          "fonte": "ceaps-senado",
+          "escopo": "registro nominal do Senado Federal atual e histórico retornado pelas listas oficiais; CEAPS somente para identidade de senadora",
+          "detalhe": "Nenhum vínculo nominal de senadora foi retornado no escopo oficial para ANTONIO ALMEIDA DE SOUSA (PI); CEAPS não recebe ID inventado e não afirma ausência universal de despesas.",
+          "resultado": "nao_aplicavel",
+          "source_ids": [
+            "senado-parliamentarian-registry-all-legislatures",
+            "senado-parliamentarian-registry-scope-control"
+          ],
+          "source_urls": [
+            "https://www25.senado.leg.br/web/senadores/pesquisa",
+            "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/1/57"
+          ],
+          "executado_em": "2026-09-15T21:00:09.736Z",
+          "verificado_em": "2026-09-15T12:51:37.617Z"
+        }
+      },
+      "candidate_complement": {
+        "fonte": "TSE",
+        "escopo": "inscrição titular 180002544459; dados declarados de nascimento, formação e ocupação",
+        "estado": "publicado",
+        "verificado_em": "2026-09-14T14:00:34.000Z",
+        "fontes_consultadas": [
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+            "bytes": 3153573,
+            "escopo": "cadastro oficial TSE 2026; SQ_CANDIDATO 180002544459",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "payload_raw_sha256": "209f6c5868a2572f13a3cd69a1c77e4e4e64c242d48fb8afd993a3734496215b"
+          },
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+            "bytes": 1237837,
+            "escopo": "complemento oficial TSE 2026; SQ_CANDIDATO 180002544459",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "payload_raw_sha256": "4fa5f436c94a4fd3df5da7b4799d3c01d7e298e8500a829fe97ee7c075f66c08"
+          }
+        ]
+      },
+      "candidate_registration": {
+        "fonte": "TSE",
+        "escopo": "inscrição titular 180002544459; julgamento AGUARDANDO JULGAMENTO",
+        "estado": "publicado",
+        "verificado_em": "2026-09-14T14:00:34.000Z",
+        "fontes_consultadas": [
+          {
+            "uf": "PI",
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_2026.zip",
+            "bytes": 3153573,
+            "cargo": "SENADOR",
+            "escopo": "cadastro oficial TSE 2026; SQ_CANDIDATO 180002544459; membro_csv=consulta_cand_2026_BRASIL.csv; UF=PI; cargo=SENADOR; data_geracao=15/09/2026 12:31:31",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "membro_csv": "consulta_cand_2026_BRASIL.csv",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "data_geracao": "15/09/2026 12:31:31",
+            "payload_raw_sha256": "46a86e3646e5cf93bbe39cfd11b5b9221547f7a614336fe5923712818a66dcc2",
+            "source_artifact_path": "<private-local-source>"
+          },
+          {
+            "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+            "bytes": 1237837,
+            "escopo": "complemento oficial TSE 2026; SQ_CANDIDATO 180002544459",
+            "checked_at": "2026-09-14T14:00:34.000Z",
+            "http_status": 200,
+            "content_type": "application/zip",
+            "payload_raw_sha256": "4fa5f436c94a4fd3df5da7b4799d3c01d7e298e8500a829fe97ee7c075f66c08"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "2ae1d014-8791-4eb4-817a-5ac85bf4fbd6",
+    "slug": "ricardo-marques",
+    "sq_candidato_2026": "260002549466",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "situacao_candidatura": "deferido",
+    "status": "candidato",
+    "publicavel": true,
+    "verificacao_campos": {
+      "bio": {
+        "fonte": "wikidata-politico",
+        "estado": "nao_aplicavel",
+        "verificado_em": "2026-08-05"
+      },
+      "sancoes": {
+        "fonte": "transparencia-sanctions",
+        "estado": "vazio_confirmado",
+        "verificado_em": "2026-08-16"
+      },
+      "noticias": {
+        "fonte": "google-news",
+        "estado": "encontrado",
+        "verificado_em": "2026-08-16"
+      },
+      "patrimonio": {
+        "fonte": "tse-consulta-cand-complementar-2026",
+        "estado": "vazio_confirmado",
+        "verificado_em": "2026-08-17"
+      },
+      "financiamento": {
+        "fonte": "tse-consulta-cand-complementar-2026",
+        "estado": "nao_aplicavel",
+        "verificado_em": "2026-08-17"
+      },
+      "posicoes-quiz": {
+        "fonte": "reconciliacao-artefatos; entregas/NACIONAL/deepresearch/normalizado-nordeste.json",
+        "estado": "vazio_confirmado",
+        "motivo": "7 temas pesquisados, nenhum com evidencia admissivel; registrar omissao provada",
+        "verificado_em": "2026-08-17"
+      },
+      "redes-sociais": {
+        "fonte": "busca-redes-manual",
+        "estado": "encontrado",
+        "verificado_em": "2026-08-05"
+      },
+      "bens-ano-a-ano": {
+        "fonte": "tse-consulta-cand-complementar-2026",
+        "estado": "vazio_confirmado",
+        "verificado_em": "2026-08-17"
+      },
+      "dados-pessoais": {
+        "fonte": "tse-consulta-cand-complementar-2026",
+        "estado": "encontrado",
+        "verificado_em": "2026-08-17"
+      },
+      "cargos-ocupados": {
+        "fonte": "tse-historico",
+        "estado": "encontrado",
+        "verificado_em": "2026-08-05"
+      },
+      "social_networks": {
+        "fonte": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/rede_social_candidato_2026.zip",
+        "estado": "publicado",
+        "verificado_em": "2026-08-15"
+      },
+      "cota-parlamentar": {
+        "fonte": "jarbas",
+        "estado": "nao_aplicavel",
+        "verificado_em": "2026-08-05"
+      },
+      "candidate_complement": {
+        "fonte": "TSE Dados Abertos 2026 snapshot 27/08/2026",
+        "estado": "publicado",
+        "verificado_em": "2026-08-28"
+      },
+      "evolucao-patrimonial": {
+        "fonte": "tse-consulta-cand-complementar-2026",
+        "estado": "vazio_confirmado",
+        "verificado_em": "2026-08-17"
+      },
+      "historico-partidario": {
+        "fonte": "tse-historico",
+        "estado": "encontrado",
+        "verificado_em": "2026-08-05"
+      },
+      "candidate_registration": {
+        "fonte": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+        "estado": "publicado",
+        "verificado_em": "2026-08-15"
+      }
+    }
+  }
+]

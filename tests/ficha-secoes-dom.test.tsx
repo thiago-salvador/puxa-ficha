@@ -187,7 +187,7 @@ describe("ficha: situação e cargo (Visão Geral)", () => {
 
   test("vazio honesto: dizem Não informado em vez de sumir ou inventar", () => {
     const html = renderAba(fichaCom({ situacao_candidatura: null, cargo_disputado: null } as unknown as Partial<FichaCandidato>), "geral")
-    assert.equal(campoGeral(html, "situacao-candidatura"), "Situação da candidatura Não informado")
+    assert.equal(campoGeral(html, "situacao-candidatura"), "Julgamento do registro Desconhecido")
     assert.equal(campoGeral(html, "cargo-disputado"), "Cargo disputado Não informado")
   })
 })
