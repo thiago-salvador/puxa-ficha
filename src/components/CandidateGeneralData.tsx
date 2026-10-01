@@ -200,7 +200,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
                             {rotuloJulgamentoCandidatura(source.valor)[0]?.toLocaleUpperCase("pt-BR")}{rotuloJulgamentoCandidatura(source.valor).slice(1)} ({candidaturaSourceName(source.fonte_url)})
                           </span>
                           {" · Verificado em "}{source.verificado_em}{" · "}
-                          <a className="underline underline-offset-2" href={safeHref(source.fonte_url)} target="_blank" rel="noreferrer">
+                          <a className="underline underline-offset-2" href={safeHref(source.fonte_url) ?? undefined} target="_blank" rel="noreferrer">
                             Fonte
                           </a>
                         </li>
@@ -228,7 +228,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
                 <p>{publicText(observation.descricao)}</p>
                 <p className="mt-0.5 text-[length:var(--text-eyebrow)] text-muted-foreground">
                   Verificado em {observation.verificado_em}. Fonte: {" "}
-                  <a className="underline underline-offset-2" href={safeHref(observation.fonte_url)} target="_blank" rel="noreferrer">
+                  <a className="underline underline-offset-2" href={safeHref(observation.fonte_url) ?? undefined} target="_blank" rel="noreferrer">
                     {candidaturaSourceName(observation.fonte_url)}
                   </a>
                 </p>
