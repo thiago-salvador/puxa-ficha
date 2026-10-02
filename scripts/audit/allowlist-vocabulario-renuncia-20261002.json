@@ -1,0 +1,37 @@
+{
+  "motivo": "Issue #646: ampliação da lista da RPC para renuncia, mantendo o corpo e ACL instalados. Migration apenas define função e CHECK; as escritas anotadas são executadas somente por chamada autorizada da RPC. Referências fechadas às mesmas colunas do histórico, sem escrita em fichas.",
+  "coorte": [],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "verified_candidate_observations",
+      "ref": "verified-history-rpc",
+      "campos": [
+        "candidate_id",
+        "field",
+        "year",
+        "source_identity",
+        "value",
+        "source_url",
+        "observed_at"
+      ]
+    },
+    {
+      "tabela": "verified_candidate_updates",
+      "ref": "verified-history-rpc",
+      "campos": [
+        "candidate_id",
+        "field",
+        "year",
+        "source_identity",
+        "before_source_url",
+        "before_value",
+        "after_value",
+        "source_url"
+      ]
+    }
+  ]
+}

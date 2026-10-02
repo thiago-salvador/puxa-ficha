@@ -18,11 +18,14 @@ test("workflow de julgamento só despacha em main com SHA esperado ainda no topo
   assert.doesNotMatch(workflow, /pull_request:|workflow_call:/)
 })
 
-test("workflow limita o ensaio a uma ficha MA e não tem caminho de escrita", () => {
-  assert.match(workflow, /PF_INGEST_SLUGS: tse-2026-100002553336/)
+test("workflow oferece coortes fechadas em modo somente leitura", () => {
+  assert.match(workflow, /export PF_INGEST_SLUGS=tse-2026-100002553336/)
+  assert.match(workflow, /cinco-issue646/)
+  assert.match(workflow, /publicadas/)
+  assert.doesNotMatch(workflow, /schedule:/)
   assert.match(workflow, /scripts\/ingest-tse-julgamento\.ts \\\n\s+--dry-run/)
   assert.match(workflow, /report\.persisted !== 0/)
-  assert.match(workflow, /summary\.bloqueados !== 0/)
+  assert.match(workflow, /summary\.bloqueados > 0/)
   assert.doesNotMatch(workflow, /--apply|mode:\s*apply|supabase (?:db push|migration)|\.\/scripts\/audit\/apply-/i)
 })
 
@@ -48,10 +51,11 @@ type SummaryFixture = {
   persisted?: number
   outputSha?: string
   reportSha?: string
+  expectedCount?: string
   envelopeSha?: string
 }
 
-function runSummaryFixture({ outputCounts = [1, 0, 1, 0], reportCounts = outputCounts, persisted = 0, outputSha = "a".repeat(64), reportSha = outputSha, envelopeSha = reportSha }: SummaryFixture = {}) {
+function runSummaryFixture({ expectedCount = "1", outputCounts = [1, 0, 1, 0], reportCounts = outputCounts, persisted = 0, outputSha = "a".repeat(64), reportSha = outputSha, envelopeSha = reportSha }: SummaryFixture = {}) {
   const dir = mkdtempSync(join(tmpdir(), "pf-julgamento-workflow-test-"))
   try {
     const snapshotDir = join(dir, "private")
@@ -70,7 +74,7 @@ function runSummaryFixture({ outputCounts = [1, 0, 1, 0], reportCounts = outputC
     writeFileSync(scriptPath, script)
 
     const result = spawnSync(process.execPath, [scriptPath, outputPath, snapshotDir], {
-      env: { ...process.env, GITHUB_STEP_SUMMARY: summaryPath },
+      env: { ...process.env, GITHUB_STEP_SUMMARY: summaryPath, PF_EXPECTED_COHORT_COUNT: expectedCount },
       encoding: "utf8",
     })
     return { status: result.status, stdout: result.stdout, stderr: result.stderr, stepSummary: readFileSync(summaryPath, "utf8") }
@@ -95,7 +99,7 @@ test("validador aceita resultado conferido ou proposto e publica somente o resum
 test("validador falha fechado em persistência, bloqueio, escopo, contagens e hashes divergentes", () => {
   const failures = [
     { persisted: 1 },
-    { outputCounts: [1, 0, 0, 1] },
+
     { outputCounts: [2, 0, 2, 0] },
     { outputCounts: [1, 0, 1.5, 0] },
     { outputCounts: [1, -1, 2, 0] },
@@ -108,4 +112,12 @@ test("validador falha fechado em persistência, bloqueio, escopo, contagens e ha
     assert.equal(result.stdout, "")
     assert.equal(result.stepSummary, "")
   }
+})
+
+test("coortes de cinco e completa conservam contagens e bloqueios deixam resumo revisável", () => {
+  assert.equal(runSummaryFixture({ expectedCount: "5", outputCounts: [5, 0, 5, 0] }).status, 0)
+  assert.equal(runSummaryFixture({ expectedCount: "all", outputCounts: [200, 198, 1, 1] }).status, 2)
+  const blocked = runSummaryFixture({ outputCounts: [1, 0, 0, 1] })
+  assert.equal(blocked.status, 2)
+  assert.equal(JSON.parse(blocked.stdout).bloqueados, 1)
 })

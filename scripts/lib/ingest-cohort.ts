@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path"
 import { getExplicitCohort, withExplicitCohort } from "./cohort-context"
 import type { CoorteAtualizacao } from "./coorte-atualizacao"
 import { planejarEscrita } from "./dry-run"
+import { mapearJulgamento } from "./tse-situacao-julgamento"
 import type { CandidatoConfig, IngestResult } from "./types"
 import type { SenadoRosterManifest, SenadoRosterPerson, TSEComplementRow, TSESnapshotRow } from "./tse-roster"
 import type { IngestTask } from "../ingest-all"
@@ -432,16 +433,13 @@ export interface SenadoProfilePatch {
   missing: string[]
 }
 
-const JUDGMENT_TO_STATUS: Readonly<Record<string, string>> = Object.freeze({
-  "2": "deferido",
-  "4": "indeferido com recurso",
-  "8": "aguardando julgamento",
-  "14": "indeferido",
-  "16": "deferido com recurso",
-})
 const JUDGMENT_DESCRIPTION_TO_STATUS: Readonly<Record<string, string>> = Object.freeze({
+  "RENÚNCIA": "renuncia",
+  "RENUNCIA": "renuncia",
+  "PENDENTE DE JULGAMENTO": "pendente de julgamento",
   "DEFERIDO": "deferido",
   "DEFERIDO COM RECURSO": "deferido com recurso",
+  "DEFERIDO EM PRAZO RECURSAL OU COM RECURSO": "deferido com recurso",
   "AGUARDANDO JULGAMENTO": "aguardando julgamento",
   "INDEFERIDO": "indeferido",
   "INDEFERIDO EM PRAZO RECURSAL OU COM RECURSO": "indeferido com recurso",
@@ -557,8 +555,9 @@ export function buildSenadoProfilePatch(
   const missing = Object.entries(required).filter(([, value]) => !value).map(([key]) => key)
   const judgmentCode = profileValue(complement.CD_SITUACAO_JULGAMENTO)
   const judgmentDescription = profileValue(complement.DS_SITUACAO_JULGAMENTO)
-  const status = JUDGMENT_TO_STATUS[judgmentCode]
-  if (!status || !judgmentDescription) throw new Error(`perfil Senado: julgamento ausente ou desconhecido para SQ ${roster.sq_candidato}`)
+  const mapping = mapearJulgamento({ sq: roster.sq_candidato, codigo: judgmentCode, descricao: judgmentDescription })
+  if (!mapping.ok || !judgmentDescription) throw new Error(`perfil Senado: julgamento ausente ou desconhecido para SQ ${roster.sq_candidato}${mapping.ok ? "" : `: ${mapping.bloqueio}`}`)
+  const status = mapping.valor
   if (normalizedProfileText(judgmentDescription) !== normalizedProfileText(roster.situacao_julgamento)) {
     throw new Error(`perfil Senado: julgamento não confere com manifesto para SQ ${roster.sq_candidato}`)
   }

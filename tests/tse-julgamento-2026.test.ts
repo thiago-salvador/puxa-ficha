@@ -87,11 +87,11 @@ test("sem linha em qualquer fonte não inventa julgamento nem rebaixa deferido",
   }
 })
 
-test("cinco códigos traduzem; RENUNCIA/CANCELADO ficam explícitos e bloqueados", () => {
-  for (const codigo of ["2", "4", "8", "14", "16", "9", "10"]) {
+test("códigos medidos traduzem; código/descrição contraditórios e desconhecidos bloqueiam", () => {
+  for (const codigo of ["2", "4", "6", "8", "14", "16", "17", "9", "10"]) {
     const s = snapshot()
     s.complementar.linhas[0].CD_SITUACAO_JULGAMENTO = codigo
-    s.complementar.linhas[0].DS_SITUACAO_JULGAMENTO = codigo === "9" ? "RENUNCIA" : "CANCELADO"
+    s.complementar.linhas[0].DS_SITUACAO_JULGAMENTO = ({ "2": "DEFERIDO", "4": "INDEFERIDO EM PRAZO RECURSAL OU COM RECURSO", "6": "RENÚNCIA", "8": "AGUARDANDO JULGAMENTO", "14": "INDEFERIDO", "16": "DEFERIDO EM PRAZO RECURSAL OU COM RECURSO", "17": "PENDENTE DE JULGAMENTO" } as Record<string, string>)[codigo] ?? "CANCELADO"
     const [e] = planejarJulgamento(s)
     assert.equal(e.estado === "bloqueado", ["9", "10"].includes(codigo))
     if (["9", "10"].includes(codigo)) assert.ok(e.motivos[0].includes(e.fonte!.descricao))

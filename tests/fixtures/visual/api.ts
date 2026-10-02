@@ -78,7 +78,7 @@ export async function getCandidatoNavResource(cargo?: string, estado?: string) {
 export async function getCandidatoSlugStaticParams() {
   return [...(await select()).map(({ slug }) => ({ slug })),
     { slug: "fixture-boxes" }, { slug: "fixture-boxes-single" },
-    ...situacaoFixtureCases.map(row => ({ slug: `fixture-646-${row.sq}` })),
+    ...situacaoFixtureCases.flatMap(row => [{ slug: `fixture-646-${row.sq}` }, { slug: `fixture-646-current-${row.sq}` }]),
   ]
 }
 export async function getGlobalSearchIndexResource() {

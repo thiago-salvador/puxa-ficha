@@ -37,6 +37,7 @@ const SELO_ESPERADO_POR_SITUACAO: Record<
   "aguardando julgamento": "registro_tse_pendente",
   "candidatura declarada": "declaracao_editorial",
   incerto: "declaracao_editorial",
+  renuncia: "registro_tse_renuncia",
   deferido: "registro_tse",
   "deferido com recurso": "registro_tse",
   indeferido: "registro_tse_indeferido",
@@ -136,10 +137,10 @@ describe("dominio de situacao_candidatura", () => {
 
   it("os valores aposentados nao voltam pelo CHECK", () => {
     // 'pre-candidato' e valor de `status`, nao deste campo. 'APTO [2022]' e
-    // residuo de pleito antigo. 'renuncia', 'cassado' e 'falecido' sao estados
+    // residuo de pleito antigo. 'cassado' e 'falecido' sao estados
     // que o TSE ainda nao emitiu para esta coorte: entram numa PR deliberada,
     // com a mesma friccao que os quatro de julgamento tiveram, nao de carona.
-    for (const morto of ["pre-candidato", "desistente", "renuncia", "cassado", "falecido", "apto"]) {
+    for (const morto of ["pre-candidato", "desistente", "cassado", "falecido", "apto"]) {
       assert.equal(
         SITUACAO_CANDIDATURA_DOMINIO.includes(morto as never),
         false,
@@ -173,7 +174,7 @@ describe("dominio de situacao_candidatura", () => {
   it("o CHECK comparado e o da migration mais recente, nao o do par de 100100", () => {
     // Guarda do proprio guard: se `arquivoDoCheckMaisRecente` voltar a apontar
     // para o par original, esta comparacao morre em silencio de novo.
-    assert.equal(CHECK, "20260916130000_vocabulario_situacao_pendente_julgamento.sql")
+    assert.equal(CHECK, "20261002180000_vocabulario_situacao_renuncia.sql")
   })
 
   it("nenhum valor do dominio dispara a regra de situacao stale", () => {

@@ -23,7 +23,7 @@ import { normalizeTseSiteUrl, type LinhaSiteCandidatoTse } from "../candidate-si
 import { mapearJulgamento, type JulgamentoTse } from "../tse-situacao-julgamento"
 
 export type FichaCargo = "PRESIDENTE" | "GOVERNADOR" | "SENADOR"
-export type CheckCore = "ok" | "divergente" | "ausente"
+export type CheckCore = "ok" | "divergente" | "ausente" | "nao_suportado"
 export type CheckSites = CheckCore | "nao_verificado"
 export type CheckChapaVice = CheckCore | "nao_aplicavel"
 
@@ -292,8 +292,8 @@ export function compareFichasTse(input: CompareFichasTseInput): FichaTseComparis
         // candidaturas antes do complementar, que o TSE regenera com atraso. Sem
         // julgamento, a situação fica ausente e o recibo sai indeterminado, nunca
         // encontrado; a rodada seguinte ao complementar novo fecha a célula.
-        situacao = "ausente"
-        notes.push(`situação oficial sem valor no domínio (${mapeado.bloqueio})`)
+        situacao = mapeado.bloqueio === "julgamento-ausente" ? "ausente" : "nao_suportado"
+        notes.push(`situação oficial bloqueada (${mapeado.bloqueio})`)
       } else if (!ficha.situacao_candidatura) {
         situacao = "ausente"
       } else {

@@ -29,6 +29,7 @@ export type CargoDisputadoProveniencia =
   | "registro_tse_situacao_nao_informada"
   | "registro_tse"
   | "registro_tse_indeferido"
+  | "registro_tse_renuncia"
 
 /**
  * Tokens de `status`/`situacao_candidatura` que significam candidatura ja
@@ -88,6 +89,8 @@ export function resolveCargoDisputadoProveniencia(
 
   const status = normalizeToken(input.status)
   const situacao = normalizeToken(input.situacao_candidatura)
+  // Renúncia vigente prevalece sobre snapshot de chapa anteriormente deferido.
+  if (situacao === "renuncia") return "registro_tse_renuncia"
 
   // Julgamento publicado vence snapshot de chapa, e por isso e conferido ANTES
   // do ramo de `chapa_2026`. O motivo e de ordem de precisao, nao de gosto: o
@@ -144,6 +147,7 @@ export function resolveCargoDisputadoProveniencia(
   // ruth-reis diz "Aguardando julgamento" e a ficha exibia "Candidatura
   // registrada no TSE", como se o julgamento tivesse terminado.
   if (input.chapa_2026) {
+    if (codigoChapa === "renuncia") return "registro_tse_renuncia"
     if (TOKENS_JULGAMENTO.has(codigoChapa)) {
       return TOKENS_JULGAMENTO_INDEFERIDO.has(codigoChapa) ? "registro_tse_indeferido" : "registro_tse"
     }
@@ -182,6 +186,7 @@ const CARGO_DISPUTADO_PROVENIENCIA_LABEL: Record<CargoDisputadoProveniencia, str
   registro_tse_situacao_nao_informada: "Pedido de registro no TSE",
   registro_tse: "Candidatura registrada no TSE",
   registro_tse_indeferido: "Registro indeferido pelo TSE",
+  registro_tse_renuncia: "Renúncia informada pelo TSE",
 }
 
 /** Frase completa, para tooltip, aria-label e payload da API. */
@@ -193,6 +198,7 @@ const CARGO_DISPUTADO_PROVENIENCIA_NOTA: Record<CargoDisputadoProveniencia, stri
   registro_tse_situacao_nao_informada:
     "O pedido de registro consta no snapshot do TSE, mas a situação ainda não foi informada. Isso não equivale a candidatura deferida nem a julgamento pendente.",
   registro_tse: "Candidatura registrada no TSE.",
+  registro_tse_renuncia: "O TSE informa Renúncia nesta candidatura. Concorrência, aptidão e recurso são apresentados conforme suas próprias fontes.",
   registro_tse_indeferido:
     "O pedido de registro consta no TSE e foi indeferido. Indeferimento do registro não determina, por si só, exclusão da disputa.",
 }

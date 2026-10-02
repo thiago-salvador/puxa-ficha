@@ -795,6 +795,13 @@
       "ate": "20261001100000",
       "allowlist": "scripts/audit/allowlist-cpf-removido-motivo-trajetoria-20261001.json",
       "divida": null
+    },
+    {
+      "nome": "vocabulario-renuncia-20261002",
+      "desde": "20261002180000",
+      "ate": "20261002180000",
+      "allowlist": "scripts/audit/allowlist-vocabulario-renuncia-20261002.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
