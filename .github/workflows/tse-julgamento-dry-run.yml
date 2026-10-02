@@ -8,6 +8,16 @@ on:
         required: true
         type: string
 
+      cohort:
+        description: "Coorte para ensaio somente leitura; nenhuma aplicação automática"
+        required: true
+        default: ficha-ma
+        type: choice
+        options:
+          - ficha-ma
+          - cinco-issue646
+          - publicadas
+
 permissions:
   contents: read
 
@@ -17,7 +27,7 @@ concurrency:
 
 jobs:
   dry-run:
-    name: Dry-run de uma ficha de situação
+    name: Dry-run da coorte de situação 2026
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -54,13 +64,19 @@ jobs:
           remote_sha="$(git ls-remote origin refs/heads/main | awk 'NR == 1 { print $1 }')"
           test "$remote_sha" = "$PF_EXPECTED_SHA"
 
-      - name: Executar dry-run da ficha MA
+      - name: Executar dry-run revisável da coorte
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          PF_INGEST_SLUGS: tse-2026-100002553336
+          PF_JULGAMENTO_COHORT: ${{ github.event.inputs.cohort }}
         run: |
           set -euo pipefail
+          case "$PF_JULGAMENTO_COHORT" in
+            ficha-ma) export PF_INGEST_SLUGS=tse-2026-100002553336; export PF_EXPECTED_COHORT_COUNT=1 ;;
+            cinco-issue646) export PF_INGEST_SLUGS=pedro-coutinho,emanuel-cacho,tse-2026-70002553751,izadora-dias,tse-2026-250002552955; export PF_EXPECTED_COHORT_COUNT=5 ;;
+            publicadas) unset PF_INGEST_SLUGS; export PF_EXPECTED_COHORT_COUNT=all ;;
+            *) exit 2 ;;
+          esac
           umask 077
           private_dir="$(mktemp -d "${RUNNER_TEMP}/pf-julgamento.XXXXXX")"
           chmod 700 "$private_dir"
@@ -93,9 +109,10 @@ jobs:
           }
           if (!outputCounts.every(Number.isSafeInteger) || !reportCounts.every(Number.isSafeInteger) ||
               outputCounts.some((count) => count < 0) || reportCounts.some((count) => count < 0) ||
-              summary.coorte !== 1 || summary.bloqueados !== 0 ||
+              summary.coorte < 1 ||
+              (process.env.PF_EXPECTED_COHORT_COUNT !== "all" && summary.coorte !== Number(process.env.PF_EXPECTED_COHORT_COUNT)) ||
               outputCounts.some((count, index) => count !== reportCounts[index])) {
-            throw new Error("O ensaio precisa cobrir exatamente uma ficha sem bloqueios")
+            throw new Error("O ensaio precisa cobrir a coorte escolhida com contagens coerentes")
           }
           if (summary.coorte !== summary.conferem + summary.propostos + summary.bloqueados) {
             throw new Error("Conservação da coorte falhou")
@@ -113,4 +130,5 @@ jobs:
           const line = `${JSON.stringify(safeSummary)}\n`
           process.stdout.write(line)
           writeFileSync(process.env.GITHUB_STEP_SUMMARY, line)
+          if (summary.bloqueados > 0) process.exitCode = 2
           NODE

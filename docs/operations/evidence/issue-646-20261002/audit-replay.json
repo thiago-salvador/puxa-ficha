@@ -1,0 +1,114 @@
+{
+  "mode": "local_replay",
+  "production_changed": false,
+  "baseline": [
+    {
+      "slug": "emanuel-cacho",
+      "identity_match": true,
+      "situacao": "divergente",
+      "notes": [
+        "situação diverge do detalhe atual do DivulgaCand"
+      ]
+    },
+    {
+      "slug": "izadora-dias",
+      "identity_match": true,
+      "situacao": "divergente",
+      "notes": [
+        "situação diverge do detalhe atual do DivulgaCand"
+      ]
+    },
+    {
+      "slug": "pedro-coutinho",
+      "identity_match": true,
+      "situacao": "divergente",
+      "notes": [
+        "situação diverge do detalhe atual do DivulgaCand"
+      ]
+    },
+    {
+      "slug": "ricardo-marques",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "tse-2026-180002544457",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "tse-2026-180002544459",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "tse-2026-250002552955",
+      "identity_match": true,
+      "situacao": "divergente",
+      "notes": [
+        "situação publicada \"indeferido com recurso\" x oficial \"indeferido\""
+      ]
+    },
+    {
+      "slug": "tse-2026-70002553751",
+      "identity_match": true,
+      "situacao": "divergente",
+      "notes": [
+        "situação publicada \"deferido\" x oficial \"renuncia\""
+      ]
+    }
+  ],
+  "after": [
+    {
+      "slug": "emanuel-cacho",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "izadora-dias",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "pedro-coutinho",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "ricardo-marques",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "tse-2026-180002544457",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "tse-2026-180002544459",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "tse-2026-250002552955",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    },
+    {
+      "slug": "tse-2026-70002553751",
+      "identity_match": true,
+      "situacao": "ok",
+      "notes": []
+    }
+  ]
+}

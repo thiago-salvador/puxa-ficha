@@ -440,7 +440,7 @@ export async function CandidatoFichaView({
                 data-pf-candidacy-situation={situacaoCandidaturaLabel}
                 className="mt-1.5 inline-flex w-fit items-center rounded-full border border-border bg-background px-2.5 py-1 text-[length:var(--text-eyebrow)] font-semibold text-foreground"
               >
-                Julgamento do registro: {situacaoCandidaturaLabel}
+                {situacaoCandidaturaLabel === "Renúncia" ? "Situação do registro" : "Julgamento do registro"}: {situacaoCandidaturaLabel}
               </span>
             )}
             <FaseEleitoralSelo candidato={ficha} className="mt-1.5" />

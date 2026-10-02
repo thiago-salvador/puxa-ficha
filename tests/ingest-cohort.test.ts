@@ -178,6 +178,17 @@ test("builder de perfil cruza SQ, preserva recibos e deixa foto bloqueante", () 
   assert.equal((verification.candidate_registration.fontes_consultadas as unknown[]).length, 2)
 })
 
+test("builder preserva guard de admissão terminal e recusa código/descrição incompatíveis", () => {
+  const row = perfil
+  const source = profileSources(row.sq_candidato)
+  const evidence = { registration: receipt(row.sq_candidato), complement: receipt(row.sq_candidato) }
+  const complement = { ...source.complement, CD_SITUACAO_JULGAMENTO: "6", DS_SITUACAO_JULGAMENTO: "RENÚNCIA" }
+  assert.throws(() => buildSenadoProfilePatch({ ...row, situacao_julgamento: "RENÚNCIA" }, source.base, complement, evidence), /roster não publicável/)
+  assert.throws(() => buildSenadoProfilePatch(row, source.base, complement, evidence), /julgamento não confere com manifesto/)
+  assert.throws(() => buildSenadoProfilePatch(row, source.base, { ...complement, CD_SITUACAO_JULGAMENTO: "2" }, evidence), /codigo-descricao-inconsistente/)
+  assert.throws(() => buildSenadoProfilePatch(row, source.base, { ...complement, CD_SITUACAO_JULGAMENTO: "99" }, evidence), /fora-do-vocabulario/)
+})
+
 test("builder recusa fontes sem prova, SQ divergente e julgamento desconhecido", () => {
   const row = perfil
   const source = profileSources(row.sq_candidato)

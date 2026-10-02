@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-10-02T17:55:32.480667Z",
+  "consulta_sha256": "fe575d782b37ac594bf7d52b1fbd5885bec2e69635bce7e4306a451be73934a8",
+  "complementar_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+  "identities": [
+    {
+      "SQ_CANDIDATO": "150002551911",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_UF": "PB",
+      "NM_URNA_CANDIDATO": "PEDRO COUTINHO"
+    },
+    {
+      "SQ_CANDIDATO": "180002544457",
+      "DS_CARGO": "SENADOR",
+      "SG_UF": "PI",
+      "NM_URNA_CANDIDATO": "MAJOR PAULO ROBERTO"
+    },
+    {
+      "SQ_CANDIDATO": "180002544459",
+      "DS_CARGO": "SENADOR",
+      "SG_UF": "PI",
+      "NM_URNA_CANDIDATO": "TOINHO DUFRANGO"
+    },
+    {
+      "SQ_CANDIDATO": "250002552955",
+      "DS_CARGO": "SENADOR",
+      "SG_UF": "SP",
+      "NM_URNA_CANDIDATO": "EDNELSON CESARETTI"
+    },
+    {
+      "SQ_CANDIDATO": "250002553062",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_UF": "SP",
+      "NM_URNA_CANDIDATO": "IZADORA DIAS"
+    },
+    {
+      "SQ_CANDIDATO": "260002549466",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_UF": "SE",
+      "NM_URNA_CANDIDATO": "RICARDO MARQUES"
+    },
+    {
+      "SQ_CANDIDATO": "260002551712",
+      "DS_CARGO": "GOVERNADOR",
+      "SG_UF": "SE",
+      "NM_URNA_CANDIDATO": "EMANUEL CACHO"
+    },
+    {
+      "SQ_CANDIDATO": "70002553751",
+      "DS_CARGO": "SENADOR",
+      "SG_UF": "DF",
+      "NM_URNA_CANDIDATO": "RONALDO FONSECA"
+    }
+  ]
+}

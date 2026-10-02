@@ -73,7 +73,7 @@ const REMOCOES: readonly RegExp[] = [
  * situação que o cabeçalho desmente.
  */
 const RESIDUO_SITUACAO =
-  /aguard\w*\s+julgamento|pendente de julgamento|registro pendente|\b(?:in)?deferid[oa]s?\b|prazo recursal|dependente de conven/i
+  /aguard\w*\s+julgamento|pendente de julgamento|registro pendente|\bren[úu]ncia\b|\b(?:in)?deferid[oa]s?\b|prazo recursal|dependente de conven/i
 
 function removerFrasesComResiduo(texto: string): string {
   return texto
@@ -122,6 +122,6 @@ export function observacaoComSituacaoVigente(
 ): string | null {
   if (!ehSituacaoRegistroTse(situacaoCandidatura)) return observacoes ?? null
   const base = removerSituacaoCongeladaDaObservacao(observacoes)
-  const vigente = `${PREFIXO_SITUACAO_VIGENTE} ${situacaoCandidatura.trim()}.`
+  const vigente = `${PREFIXO_SITUACAO_VIGENTE} ${situacaoCandidatura.trim() === "renuncia" ? "Renúncia" : situacaoCandidatura.trim()}.`
   return base ? `${base} ${vigente}` : vigente
 }

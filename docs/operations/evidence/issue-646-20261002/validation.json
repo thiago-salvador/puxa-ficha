@@ -1,0 +1,20 @@
+{
+  "base_sha": "8aa5d9257aaaa2fe590cd73143c23bd503635ab8",
+  "production_changed": false,
+  "full_suite": { "tests": 8199, "suites": 895, "pass": 8181, "fail": 0, "skip": 18 },
+  "directed": { "pass": 87, "fail": 0 },
+  "final_review_regression": { "pass": 90, "fail": 0 },
+  "visual": { "pass": 22, "fail": 0, "surfaces": ["desktop", "mobile"] },
+  "pg17": { "cas": "pass", "data_rollback": "pass", "concurrent_drift_atomic_rollback": "pass", "rpc_domain_acl_readback": "pass", "rpc_rollback_history_preserved": "pass", "schema_hash": "68f3d5c31bdedbd774a65853504b318db4323e355c10819be3fc905a975c0009" },
+  "branch_scope_gate": {
+    "command": "npm run audit:data-freshness:scope",
+    "baseline_exit": 0,
+    "patch_exit": 1,
+    "error": "arquivos fora do escopo",
+    "classification": "patch_exceeds_historical_branch_scope",
+    "ci_policy_reference": ".github/workflows/ci.yml:195",
+    "allowlist_or_coverage_weakened": false
+  },
+  "automation_2026": { "manual_dry_run_cohorts": ["ficha-ma", "cinco-issue646", "publicadas"], "schedule_activated": false, "automatic_data_apply_activated": false, "remaining": ["approved_runner_and_cadence", "source_sufficiency_policy", "audited_transactional_evidence_executor", "readback_and_failure_suspension_policy"] },
+  "sensitive_preimages_uploaded": false
+}
