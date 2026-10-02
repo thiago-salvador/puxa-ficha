@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-02T13:24:29.506Z",
+  "updated_at": "2026-10-02T14:25:31.380Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -133,6 +133,32 @@
         "identity_excerpt": "O candidato ao governo da Paraíba pelo MDB, Cícero Lucena, cumpriu agenda de campanha nesta quarta-feira (23), em João Pessoa.",
         "date_excerpt": "O candidato ao governo da Paraíba pelo MDB, Cícero Lucena, cumpriu agenda de campanha nesta quarta-feira (23), em João Pessoa.",
         "fetched_url": "https://g1.globo.com/pb/paraiba/eleicoes/2026/noticia/2026/09/23/cicero-lucena-defende-ampliacao-de-servicos-de-saude-e-seguranca-para-mulheres-na-paraiba.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "069a3206892ca5c37fc683c0761691a678370eb811dac7331e40c858a72d3fcf",
+      "candidate_id": "d5ece407-2e2a-4e76-91a9-c2b7db826430",
+      "candidate_slug": "ronaldo-mansur",
+      "candidate_name": "Ronaldo Mansur",
+      "office": "Governador",
+      "uf": "BA",
+      "quote_text": "Recursos têm, basta ter prioridade",
+      "context": "Ao falar sobre a proposta de tarifa zero no transporte público, Mansur afirmou que existem recursos públicos destinados atualmente ao setor e que o governo estadual poderia rever prioridades para financiar a gratuidade. “Recursos têm, basta ter prioridade”, afirmou.",
+      "event_context": "Sabatina da Salvador FM com candidato ao governo da Bahia. As declarações foram dadas durante sabatina da Salvador FM, nesta quarta-feira (23).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-23",
+      "publisher": "Portal Salvador FM",
+      "article_url": "https://www.portalsalvadorfm.com.br/politica/ronaldo-mansur-explica-apoio-a-lula-e-critica-bolsonarismo-na-bahia/",
+      "article_title": "Ronaldo Mansur explica apoio a Lula e critica bolsonarismo na Bahia",
+      "article_published_at": "2026-09-23T12:20:00+00:00",
+      "observed_at": "2026-10-02T14:11:56.295Z",
+      "source_sha256": "db342f4e42763610d641b50df56febd8bb1ad042ac6ce3fb8f3b254a7db3699c",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo da Bahia pelo PSOL, Ronaldo Mansur, defendeu a adoção da tarifa zero no transporte público, mais investimentos na agricultura familiar e o apoio à reeleição do presidente Luiz Inácio Lula da Silva (PT). As declarações foram dadas durante sabatina da Salvador FM, nesta quarta-feira (23).",
+        "date_excerpt": "As declarações foram dadas durante sabatina da Salvador FM, nesta quarta-feira (23).",
+        "fetched_url": "https://www.portalsalvadorfm.com.br/politica/ronaldo-mansur-explica-apoio-a-lula-e-critica-bolsonarismo-na-bahia/",
         "method": "codex_source_review"
       }
     },
@@ -758,6 +784,32 @@
         "identity_excerpt": "A candidata ao governo da Bahia Maria Bona (PCO) foi entrevistada na tarde deste sábado (19), no telejornal Bahia Meio Dia.",
         "date_excerpt": "A candidata ao governo da Bahia Maria Bona (PCO) foi entrevistada na tarde deste sábado (19)",
         "fetched_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/19/entrevista-com-maria-bona-pco.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "154432132549e341cef830aa7e3cecb9610d444711caf4789a4a345bcc2bcbc9",
+      "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+      "candidate_slug": "omar-aziz",
+      "candidate_name": "Omar Aziz",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Nessas estradas vicinais, tem que ser concreto, não dá mais.",
+      "context": "“Nessas estradas vicinais, tem que ser concreto, não dá mais. O asfalto não tem, porque cada localidade tem um tipo de solo. E esse tipo de solo, muitas vezes, o asfalto não se adapta e se perde com rapidez”, afirmou.",
+      "event_context": "Debate em emissora de TV sobre desenvolvimento do interior e estradas vicinais.. debate nesta terça-feira (22)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-22",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/22/eleicoes-2026-omar-aziz-promete-ampliar-regularizacao-fundiaria-e-usar-concreto-em-estradas-vicinais-do-amazonas.ghtml",
+      "article_title": "Omar Aziz Eleições 2026: Propostas para estradas e terras no AM | G1",
+      "article_published_at": "2026-09-22T19:50:48.837-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "90d5bc0c483cc8fc63542f655046d4178d0e9245e5344609660fc7fdbc19f323",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Eleições 2026: Omar Aziz promete ampliar regularização fundiária e usar concreto em estradas vicinais do Amazonas",
+        "date_excerpt": "debate nesta terça-feira (22)",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/22/eleicoes-2026-omar-aziz-promete-ampliar-regularizacao-fundiaria-e-usar-concreto-em-estradas-vicinais-do-amazonas.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -1584,6 +1636,32 @@
       }
     },
     {
+      "id": "2ab47bd6115776c4e5f4b94ee4c0a415ed178f26ab11fa7eeef8af1234c26af0",
+      "candidate_id": "81e00cd6-ea5b-4c19-8bff-a116fb73e5a7",
+      "candidate_slug": "renan-filho",
+      "candidate_name": "Renan Filho",
+      "office": "Governador",
+      "uf": "AL",
+      "quote_text": "Eu construí oito grandes hospitais, 13 unidades de Pronto Atendimento espalhadas pelo estado.",
+      "context": "\"Eu construí oito grandes hospitais, 13 unidades de Pronto Atendimento espalhadas pelo estado. Agora vou fazer novos investimentos para ampliar o atendimento das pessoas em saúde pública. Vamos construir o Hospital do Câncer, primeiro hospital público para o câncer em Alagoas, o Hospital de Traumas, para tirar todas as cirurgias ortopédicas e de traumas em maneira geral do HGE, fazer a unidade funcionar melhor e ter um hospital especializado em traumas. E vamos construir na capital 80 clínicas da família para ampliar a atenção básica em saúde\".",
+      "event_context": "Entrevista à TV Pajuçara/RECORD após alteração do formato por ausência do outro candidato convidado.. neste sábado (19)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-19",
+      "publisher": "TNH1",
+      "article_url": "https://www.tnh1.com.br/noticia/nid/assista-na-integra-a-entrevista-com-o-candidato-ao-governo-de-alagoas-renan-filho/",
+      "article_title": "Assista na íntegra à entrevista com o candidato ao Governo de Alagoas Renan Filho",
+      "article_published_at": "2026-09-19T14:28:00-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "ca2c01095599bd188ff74abc5c1544b10e89f098f0ef8ea729767ead4e748cb1",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A TV Pajuçara/RECORD realizou um debate crucial para as eleições de 2026 em Alagoas, mas o candidato JHC (PSDB) não compareceu, resultando em uma entrevista exclusiva com Renan Filho (MDB). Essa mudança permitiu que Filho apresentasse suas propostas e respondesse a perguntas sobre temas relevantes para os eleitores.",
+        "date_excerpt": "neste sábado (19)",
+        "fetched_url": "https://www.tnh1.com.br/noticia/nid/assista-na-integra-a-entrevista-com-o-candidato-ao-governo-de-alagoas-renan-filho/",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "2b07da5c328e5f8ef32b9c24dda7cdeddea8d0e01d1816a7f2f5eb521ffaa2dd",
       "candidate_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
       "candidate_slug": "clecio-luis",
@@ -2031,6 +2109,32 @@
       }
     },
     {
+      "id": "39dc8c204c827f0b062241b047129e5ddff702a42a6aa3dfcad0126e6f89c907",
+      "candidate_id": "53af44cf-7f66-44d3-b733-1114c5143e6a",
+      "candidate_slug": "luciano-zucco",
+      "candidate_name": "Luciano Zucco",
+      "office": "Governador",
+      "uf": "RS",
+      "quote_text": "É essa experiência acumulada em Brasília, aliada a uma visão de gestão e a um propósito claro, que me credencia a disputar o governo estadual.",
+      "context": "Agora, embora o presidente Bolsonaro desejasse minha candidatura ao Senado e houvesse a possibilidade de reeleição na Câmara, entendi que posso contribuir mais para o Rio Grande do Sul. O Estado que tanto amo não é uma \"terra arrasada\" — reconheço as oportunidades da gestão atual —, mas convive com o menor crescimento econômico do país há mais de 20 anos. É essa experiência acumulada em Brasília, aliada a uma visão de gestão e a um propósito claro, que me credencia a disputar o governo estadual.",
+      "event_context": "Terceiro entrevistado da série de sabatinas da Rádio Gaúcha com os principais candidatos ao Palácio Piratini, Luciano Zucco participou da conversa com os comunicadores do Grupo RBS dentro programa Gaúcha Atualidade nesta quarta-feira (30).. Luciano Zucco participou da conversa com os comunicadores do Grupo RBS dentro programa Gaúcha Atualidade nesta quarta-feira (30).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-30",
+      "publisher": "GZH / Zero Hora (Grupo RBS)",
+      "article_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/sabatina-da-gaucha-luciano-zucco-rejeita-aumento-de-impostos-promete-acabar-com-a-egr-e-aposta-em-prevencao-para-combater-o-feminicidio-cmuo49eil00zy013bs23r3mr6.html",
+      "article_title": "Sabatina da Gaúcha: Luciano Zucco rejeita aumento de impostos, promete acabar com a EGR e aposta em prevenção para combater o feminicídio | GZH",
+      "article_published_at": "2026-09-30T13:10:05+00:00",
+      "observed_at": "2026-10-02T13:58:21.946Z",
+      "source_sha256": "3c12fcf516b31baa1207c8cebe3d0617d0fd143a686d5619858af8413a33ff87",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Luciano Zucco participou da conversa com os comunicadores do Grupo RBS dentro programa Gaúcha Atualidade nesta quarta-feira (30).",
+        "date_excerpt": "Luciano Zucco participou da conversa com os comunicadores do Grupo RBS dentro programa Gaúcha Atualidade nesta quarta-feira (30).",
+        "fetched_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/sabatina-da-gaucha-luciano-zucco-rejeita-aumento-de-impostos-promete-acabar-com-a-egr-e-aposta-em-prevencao-para-combater-o-feminicidio-cmuo49eil00zy013bs23r3mr6.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "3b0febc548ba04209a8c53fd384d00313c1b9c9487a79568b479a1b1b864f633",
       "candidate_id": "dd57b875-65c4-44bb-954b-bfac352d7ead",
       "candidate_slug": "ricardo-cappelli",
@@ -2332,6 +2436,32 @@
       }
     },
     {
+      "id": "4a9cff3d3fd200b56cd7424731b7c71b675af32e8dc949b315ce693537d9d193",
+      "candidate_id": "ff7f433f-70b4-420c-885d-c0401a901790",
+      "candidate_slug": "cleitinho",
+      "candidate_name": "Cleitinho",
+      "office": "Governador",
+      "uf": "MG",
+      "quote_text": "Eu sou de direita, mas meu coração é pra todos",
+      "context": "Durante o debate, ele manteve o discurso conciliador adotado em confrontos prévios. \"Eu sou de direita, mas meu coração é pra todos\", disse, afirmando que pretende governar para acabar com a polarização e que irá dialogar com qualquer presidente a ser eleito, \"seja Flávio, seja Lula, seja Renan [Santos] (Missão)\". Ele reforçou, contudo, o posicionamento de oposição ao PT.",
+      "event_context": "Debate da Globo entre candidatos ao governo de Minas Gerais.. na noite desta terça-feira (29)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "Folha de S.Paulo",
+      "article_url": "https://www1.folha.uol.com.br/poder/2026/09/cleitinho-e-patrus-viram-alvo-no-debate-em-minas-gerais.shtml",
+      "article_title": "Eleições: Cleitinho e Patrus viram alvo no debate em MG - 30/09/2026 - Política - Folha",
+      "article_published_at": "2026-09-30 02:20:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "f2304805331f959835c0c53a4e9df6967e42591f3c9435ebf8a4f5542bdab0de",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Os líderes em intenção de voto ao Governo de Minas Gerais Cleitinho Azevedo (Republicanos) e Patrus Ananias (PT) foram os principais alvos no debate realizado pela Globo na noite desta terça-feira (29).",
+        "date_excerpt": "na noite desta terça-feira (29)",
+        "fetched_url": "https://www1.folha.uol.com.br/poder/2026/09/cleitinho-e-patrus-viram-alvo-no-debate-em-minas-gerais.shtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "4c163859eee5e523c7e939c0738b099efd457cb28ca306e20b365559ded974ee",
       "candidate_id": "9f2c557f-7c5a-459b-b0f5-faa6d561a4ce",
       "candidate_slug": "dr-furlan",
@@ -2582,6 +2712,33 @@
         "date_excerpt": "desta segunda-feira, 31",
         "fetched_url": "https://fanf1.com.br/2026/08/31/cacho-diz-que-igua-e-uma-empresa-feia-e-defende-mudanca-na-concessao/",
         "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "5486299e5c7a3e1807b2a858b748ea4b31b53fad4e19949ee6b65183f4db3c67",
+      "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
+      "candidate_slug": "tarcisio-gov-sp",
+      "candidate_name": "Tarcísio de Freitas",
+      "office": "Governador",
+      "uf": "SP",
+      "quote_text": "Os debates também precisam de uma revisão em termos de modelo. Os debates viraram muito mais do mesmo",
+      "context": "“Os debates também precisam de uma revisão em termos de modelo. Os debates viraram muito mais do mesmo”, disse.",
+      "event_context": "Declaração em campanha, em resposta a perguntas sobre ausências e formato dos encontros eleitorais durante reunião de apresentação de propostas em21Sep. nesta segunda-feira (21)",
+      "event_type": "declaracao",
+      "occurred_on": "2026-09-21",
+      "publisher": "CNN Brasil",
+      "article_url": "https://www.cnnbrasil.com.br/eleicoes/tarcisio-diz-que-debates-viraram-mais-do-mesmo-ao-justificar-ausencias/",
+      "article_title": "Tarcísio diz que debates viraram \"mais do mesmo\" ao justificar ausências | CNN Brasil",
+      "article_published_at": "2026-09-21T12:51:47-03:00",
+      "observed_at": "2026-10-02T13:44:32.291Z",
+      "source_sha256": "1be437b509a7ed05944bc48272d17a010cf52db257b3dfa66316ba53f39ea66e",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Tarcísio de Freitas",
+        "date_excerpt": "nesta segunda-feira (21)",
+        "fetched_url": "https://www.cnnbrasil.com.br/eleicoes/tarcisio-diz-que-debates-viraram-mais-do-mesmo-ao-justificar-ausencias/",
+        "method": "codex_source_review",
+        "declaration_context_excerpt": "O governador de São Paulo e candidato à reeleição, Tarcísio de Freitas (Republicanos), afirmou nesta segunda-feira (21) que os debates eleitorais viraram “muito mais do mesmo” e defendeu uma revisão do formato dos encontros ao justificar sua ausência em confrontos com os adversários durante a campanha."
       }
     },
     {
@@ -3059,6 +3216,32 @@
       }
     },
     {
+      "id": "646c52bb554da8e44e7d7b95e546082be8f58ac09f9abdb3ce9a0c138d66779f",
+      "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+      "candidate_slug": "mailza-assis",
+      "candidate_name": "Mailza Assis",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "A população tem uma compreensão da responsabilidade de cada gestor, cada pessoa responde pelos seus atos",
+      "context": "\"A população tem uma compreensão da responsabilidade de cada gestor, cada pessoa responde pelos seus atos\", disse.",
+      "event_context": "Entrevista à Rádio CBN Amazônia Rio Branco.. entrevistada na Rádio CBN Amazônia Rio Branco nesta sexta-feira (25)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-25",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/25/cada-pessoa-responde-por-seu-ato-diz-mailza-assis-sobre-condenacao-de-ex-governador-do-acre.ghtml",
+      "article_title": "Mailza Assis é entrevistada na Rádio CBN Amazônia Rio Branco | G1",
+      "article_published_at": "2026-09-25T16:14:11.220-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "03680a22f39b8ff7015639ce2e51ab6ee2b061182997465e3ac3eeac22787478",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Candidata do Progressistas ao governo do Acre, Mailza Assis prometeu reconstruir a Ponte Frei Paolino Baldassari, que desabou em Sena Madureira, interior do Acre, em junho, defendeu chapa montada com Jéssica Sales para governar o estado e falou sobre a condenação do ex-governador Gladson Camelí.",
+        "date_excerpt": "entrevistada na Rádio CBN Amazônia Rio Branco nesta sexta-feira (25)",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/25/cada-pessoa-responde-por-seu-ato-diz-mailza-assis-sobre-condenacao-de-ex-governador-do-acre.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "64b7e2e9db636c293d7e54c011644820beff47708558df7760b786f711f216fb",
       "candidate_id": "b423fdbb-b7b8-48c8-9236-efac480e7017",
       "candidate_slug": "indira-xavier",
@@ -3387,6 +3570,32 @@
       }
     },
     {
+      "id": "6a8211ef028e7d419f492dbbaf9bf9535ee65f928bfbec17e7dc3a52f64229ff",
+      "candidate_id": "f758690b-3960-485d-83c0-5119ca839612",
+      "candidate_slug": "ralf-zimmer",
+      "candidate_name": "Ralf Zimmer",
+      "office": "Governador",
+      "uf": "SC",
+      "quote_text": "Não se chuta nem jogador argentino no chão",
+      "context": "Ao argumentar que houve erro na atuação dos policiais, Zimmer afirmou: “Não se chuta nem jogador argentino no chão”. A frase foi usada pelo candidato para sustentar sua crítica à abordagem policial.",
+      "event_context": "O candidato ao Governo de Santa Catarina Ralf Zimmer (PRD) abordou diferentes temas durante o debate promovido pelo SCC SBT nesta segunda-feira (21).. O candidato ao Governo de Santa Catarina Ralf Zimmer (PRD) abordou diferentes temas durante o debate promovido pelo SCC SBT nesta segunda-feira (21).",
+      "event_type": "debate",
+      "occurred_on": "2026-09-21",
+      "publisher": "SCC10",
+      "article_url": "https://scc10.com.br/diretoaovoto/veja-tudo-que-zimmer-falou-no-debate-do-scc-sbt/",
+      "article_title": "Veja tudo que Zimmer falou no debate do SCC SBT - SCC10",
+      "article_published_at": "2026-09-21T17:55:44+00:00",
+      "observed_at": "2026-10-02T13:58:21.946Z",
+      "source_sha256": "47647edea66c4715c839c1e70785c6d950b491281e8b657d744734f3c0115bdb",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao Governo de Santa Catarina Ralf Zimmer (PRD)",
+        "date_excerpt": "O candidato ao Governo de Santa Catarina Ralf Zimmer (PRD) abordou diferentes temas durante o debate promovido pelo SCC SBT nesta segunda-feira (21).",
+        "fetched_url": "https://scc10.com.br/diretoaovoto/veja-tudo-que-zimmer-falou-no-debate-do-scc-sbt/",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "6a91e40a1c179d7b02ce5532594b5773010e3e619a302a158e292e7cdc3461a6",
       "candidate_id": "8e51c741-2a90-4e7e-9945-08045bdc8a59",
       "candidate_slug": "ariel-capistrano",
@@ -3524,6 +3733,58 @@
         "fetched_url": "https://ac24horas.com/2026/09/11/thor-dantas-defende-verdadeira-mudanca-para-o-acre/",
         "method": "codex_source_review",
         "quote_location": "article_paragraph"
+      }
+    },
+    {
+      "id": "6d6e30cf7770fe7cde8a9c3915e67f02abe87ffd209216dff215eb40e44e0e68",
+      "candidate_id": "ba62f5d0-3e39-40a7-a0af-ee1d86e97e75",
+      "candidate_slug": "jhc",
+      "candidate_name": "JHC",
+      "office": "Governador",
+      "uf": "AL",
+      "quote_text": "Lamento muito e peço desculpas pelo destempero do candidato",
+      "context": "“Primeiro, eu gostaria de agradecer imensamente a todos vocês que nos acompanharam até agora. Lamento muito e peço desculpas pelo destempero do candidato, que não conseguiu trazer as propostas e teve que, inclusive, elevar o tom de voz.",
+      "event_context": "Debate entre JHC e Renan Filho, transmitido pela TV Asa Branca.. nesta terça-feira (29)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/29/debate-entre-jhc-e-renan-filho-tem-confronto-sobre-hospitais-creches-e-infraestrutura.ghtml",
+      "article_title": "Debate JHC e Renan Filho: Candidatos trocam críticas sobre Alagoas | G1",
+      "article_published_at": "2026-09-29T23:22:01.200-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "1ccbb07c7b697f29ff6f80072ba993b3ad469bf491bd703307689b92003cb414",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Debate entre JHC e Renan Filho tem acusações sobre corrupção, saúde e obras",
+        "date_excerpt": "nesta terça-feira (29)",
+        "fetched_url": "https://g1.globo.com/al/alagoas/eleicoes/2026/noticia/2026/09/29/debate-entre-jhc-e-renan-filho-tem-confronto-sobre-hospitais-creches-e-infraestrutura.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "6dc7f0b4cd2f358c0525b6e9f400c2721ee566c50f33a44389d1d912c0f9983c",
+      "candidate_id": "7a6a6475-0691-4823-9104-5055ca589405",
+      "candidate_slug": "juliana-brizola",
+      "candidate_name": "Juliana Brizola",
+      "office": "Governador",
+      "uf": "RS",
+      "quote_text": "O PDT é o partido que historicamente mais fez pela educação no Brasil",
+      "context": "O PDT é o partido que historicamente mais fez pela educação no Brasil, a começar pelo meu avô Leonel Brizola aqui no Rio Grande do Sul e no Rio de Janeiro. Contudo, o grande desafio é transformar a educação em uma política de Estado, e não de governo. Quando meu avô construiu mais de 600 CIEPs — os chamados \"brizolões\" — de tempo integral no Rio de Janeiro, administrações seguintes não deram continuidade ao projeto por pura vaidade política. A comunidade escolar, assim como o setor produtivo, precisa de segurança e de continuidade. No meu governo, as políticas públicas estruturantes que dão certo serão mantidas, superando a lógica de descontinuar projetos apenas por divergências partidárias.",
+      "event_context": "Primeira sabatinada da série de entrevistas da Rádio Gaúcha com os candidatos ao Palácio Piratini, a pedetista Juliana Brizola abriu a rodada de conversas nesta segunda-feira (28), respondendo aos questionamentos de comunicadores do Grupo RBS no programa Gaúcha Atualidade .. a pedetista Juliana Brizola abriu a rodada de conversas nesta segunda-feira (28)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-28",
+      "publisher": "GZH / Zero Hora (Grupo RBS)",
+      "article_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/sabatina-da-gaucha-juliana-brizola-descarta-aumento-de-impostos-e-promete-zerar-fila-da-saude-no-rs-em-quatro-anos-cmul9b4az0020013bk70z3y4u.html",
+      "article_title": "Sabatina da Gaúcha: Juliana Brizola descarta aumento de impostos e promete zerar fila da saúde no RS em quatro anos | GZH",
+      "article_published_at": "2026-09-28T13:10:36+00:00",
+      "observed_at": "2026-10-02T13:58:21.946Z",
+      "source_sha256": "4258258d1785b33d26fb4ae82385329811afc9cb9a3807bb3315606767d9d565",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "a pedetista Juliana Brizola abriu a rodada de conversas nesta segunda-feira (28)",
+        "date_excerpt": "a pedetista Juliana Brizola abriu a rodada de conversas nesta segunda-feira (28)",
+        "fetched_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/sabatina-da-gaucha-juliana-brizola-descarta-aumento-de-impostos-e-promete-zerar-fila-da-saude-no-rs-em-quatro-anos-cmul9b4az0020013bk70z3y4u.html",
+        "method": "codex_source_review"
       }
     },
     {
@@ -4130,6 +4391,32 @@
       }
     },
     {
+      "id": "79e1505b65f6713592ac156ddb74afc7be0a9174827c13db16dd09fdd1d732ef",
+      "candidate_id": "b01d3b26-32d0-48c3-9242-6c6b324b249d",
+      "candidate_slug": "gabriel-souza",
+      "candidate_name": "Gabriel Souza",
+      "office": "Governador",
+      "uf": "RS",
+      "quote_text": "Nos meus primeiros 100 dias de governo, vou abrir editais para credenciar até 9 mil novos estabelecimentos de saúde.",
+      "context": "Nos meus primeiros 100 dias de governo, vou abrir editais para credenciar até 9 mil novos estabelecimentos de saúde. Temos dois problemas centrais: para zerar a fila em um ano, precisamos ampliar a capacidade instalada e o atendimento às pessoas. Como vamos utilizar toda a rede hospitalar existente, precisamos expandir essa capacidade de forma extraordinária.",
+      "event_context": "Sabatina da Rádio Gaúcha no programa Gaúcha Atualidade com o candidato ao governo do Rio Grande do Sul em 1º de outubro. A série de entrevistas com os postulantes ao Palácio Piratini chega ao fim nesta quinta-feira (1º).",
+      "event_type": "sabatina",
+      "occurred_on": "2026-10-01",
+      "publisher": "GZH / Zero Hora (Grupo RBS)",
+      "article_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/sabatina-da-gaucha-gabriel-souza-promete-zerar-a-fila-do-sus-em-um-ano-e-descarta-aumento-de-impostos-cmupforn501fn013b2uvth4co.html",
+      "article_title": "Sabatina da Gaúcha: Gabriel Souza promete zerar a fila do SUS em um ano e descarta aumento de impostos | GZH",
+      "article_published_at": "2026-10-01T13:06:42+00:00",
+      "observed_at": "2026-10-02T13:58:21.946Z",
+      "source_sha256": "161ae2eca9903320bb8ffa1afd6dabf5a9bdf7c27b37ef27f6d6bc24e3e4d20a",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato do MDB ao governo do Rio Grande do Sul, Gabriel Souza",
+        "date_excerpt": "A série de entrevistas com os postulantes ao Palácio Piratini chega ao fim nesta quinta-feira (1º).",
+        "fetched_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/sabatina-da-gaucha-gabriel-souza-promete-zerar-a-fila-do-sus-em-um-ano-e-descarta-aumento-de-impostos-cmupforn501fn013b2uvth4co.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "7aea09b1ff18cd2cfee4a469c6011532c1438009d9b8c0d5816b1cbac5ac45a8",
       "candidate_id": "d1486424-4a7f-4ff1-af06-1665ebe99a31",
       "candidate_slug": "clariana-barao",
@@ -4158,6 +4445,33 @@
         "fetched_url": "https://www.correiobraziliense.com.br/politica/2026/08/7487088-clariana-barao-promete-politicas-para-idosos-e-defende-combate-a-corrupcao.html",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "7b749faf68fbd8b931137da840e78b9448ab88ccd6657522ecf8ac41a7e64fe0",
+      "candidate_id": "9ea4f811-3d51-48b2-a297-e4fccb0ddc14",
+      "candidate_slug": "maria-do-carmo",
+      "candidate_name": "Maria do Carmo",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Aumentar o número de delegacias especializadas em crime contra a mulher para dar atendimento para essas mulheres, para cada zona da cidade de Manaus.",
+      "context": "\"Aumentar o número de delegacias especializadas em crime contra a mulher para dar atendimento para essas mulheres, para cada zona da cidade de Manaus. A gente precisa também levar para o interior esse serviço e eu pretendo levar para as cidades polo. São seis cidades que a gente vai ter e levar essas delegacias para o interior, onde também há muitos casos de violência contra a mulher\", afirmou.",
+      "event_context": "Declaração durante agenda política e encontro com representantes do comércio em Manaus.. Candidata do PL ao governo do Amazonas participou de encontro com empresários da FeComércio, em Manaus, nesta quarta-feira (30), e apresentou propostas para o combate à violência contra a mulher.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-09-30",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/30/eleicoes-2026-maria-do-carmo-promete-ampliar-delegacias-especializadas-no-combate-a-violencia-contra-a-mulher.ghtml",
+      "article_title": "Maria do Carmo Eleições 2026: Ampliação de delegacias da mulher | G1",
+      "article_published_at": "2026-09-30T19:09:41.065-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "6e184c63f1fac05fef6de24866ddff5c5785275a8153613259f9f129891513ed",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "A campanha eleitoral começou no dia 16 de agosto em todo o país. Os candidatos já podem fazer propaganda nas ruas e na internet. Na TV e no rádio, a propaganda começou no dia 28 de agosto. O primeiro turno das eleições será no dia 4 de outubro.",
+        "identity_excerpt": "Maria do Carmo",
+        "date_excerpt": "Candidata do PL ao governo do Amazonas participou de encontro com empresários da FeComércio, em Manaus, nesta quarta-feira (30), e apresentou propostas para o combate à violência contra a mulher.",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/30/eleicoes-2026-maria-do-carmo-promete-ampliar-delegacias-especializadas-no-combate-a-violencia-contra-a-mulher.ghtml",
+        "method": "codex_source_review"
       }
     },
     {
@@ -4270,6 +4584,32 @@
       }
     },
     {
+      "id": "7f963ff0ce3baa98c942b1fe7d4c6b39dc8e9aaad7eb00accefaf5ceb22778b8",
+      "candidate_id": "128ab70f-daf2-472b-926f-ec65b7287dd1",
+      "candidate_slug": "thor-dantas",
+      "candidate_name": "Thor Dantas",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Quero dizer que a gente precisa acreditar e sonhar em dias melhores para o nosso estado, para a nossa família e para a nossa sociedade.",
+      "context": "\"Bom, eu queria primeiro agradecer a esse debate, agradecer à emissora, agradecer a você que está em casa nos assistindo, buscando a sua opção de voto consciente, de voto digno, ético e competente nessas eleições. Eu entendo que a gente tem três candidaturas muito parecidas, candidaturas se acusando uns aos outros mutuamente, que estão juntos há oito anos, e são juntos, responsáveis pela incapacidade, pela incompetência, pelo desgoverno que se caracterizou hábito nesses últimos 2 mandatos. E a população votando desmotivada, a população está votando num candidato para não votar no outro, escolhendo o Alan por causa dos defeitos da Mailza, escolhendo a Mailza pelos defeitos do Alan, escolhendo o Bocalom pelo defeito dos outros dois. Encontrei muita gente que estava votando nulo para governador, e não foram poucos andando por esse lado. Quero dizer que a gente precisa acreditar e sonhar em dias melhores para o nosso estado, para a nossa família e para a nossa sociedade. Se a gente perder a capacidade de se indignar e de sonhar em dias melhores, a gente perde o essencial da nossa vida. Eu estou aqui representando a mudança, a verdadeira mudança, a mudança que os acreanos estão buscando nessas eleições, de renovação da política, de ética, de capacidade de planejamento, de concretização de plano em resultado. Faço parte de uma geração que aprendeu a fazer. Tenho na minha medicina o meu melhor exemplo. Aprendi a fazer e resolver problemas difíceis e complexos. Quem me conhece da docência como professor e dos hospitais como médico, sabe do meu compromisso para o trabalho. Sabe o quanto acredito no trabalho, na capacidade de vencer todos os obstáculos. Estamos lutando contra grandes estruturas. A política se transformou numa grande indústria, que oprime as pessoas, com dinheiro, com montanhas de dinheiro, achando que podem comprar o voto de todo mundo, levando milhares de pessoas para as ruas para tentar convencer todo mundo que a eleição está ganha. Essa eleição vai ser ganha pela nossa consciência. Dê o seu voto consciente nesse momento em que você não vai se arrepender. No segundo turno, a gente se encontra para decidir os rumos do nosso Acre. Muito obrigado\".",
+      "event_context": "Debate da Rede Amazônica Acre; considerações finais dos candidatos.. noite desta terça-feira (29)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/30/resumo-debate-governo-acre.ghtml",
+      "article_title": "Veja como foi o debate entre os candidatos ao Governo do Acre | G1",
+      "article_published_at": "2026-09-30T00:20:18.825-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "b41b0f18e20527255c463a28e2f89fbd314373eb6699ac6936e9788b3ebb1e99",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Alan Rick (Republicanos), Mailza Assis (PP), Thor Dantas (PSB) e Tião Bocalom (PSDB) participaram do confronto direto na noite desta terça-feira (29) na Rede Amazônica.",
+        "date_excerpt": "noite desta terça-feira (29)",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/30/resumo-debate-governo-acre.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "818ba8cd8513c9e0b1772141e80d19128ff1d0e3075e19d316c756a753027df3",
       "candidate_id": "1eec3569-c202-4f16-a60a-d67125c51f95",
       "candidate_slug": "rui-costa-pimenta",
@@ -4292,6 +4632,32 @@
         "identity_excerpt": "Candidato à Presidência da República Rui Costa Pimenta, do Partido da Causa Operária",
         "date_excerpt": "A declaração foi dada em entrevista ao Metrópoles na terça-feira (1º/9)",
         "fetched_url": "https://www.metropoles.com/colunas/grande-angular/comunista-candidato-a-presidencia-diz-nao-confiar-nas-urnas-inauditavel",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "8234e4db197055e8f57a2e1fbb8f1d6e54bdc7cbe7c604f0704f30dd86f9e306",
+      "candidate_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+      "candidate_slug": "alan-rick",
+      "candidate_name": "Alan Rick",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Quero dizer que nós temos um plano de governo, nós temos um sonho para o nosso país, de melhorar a vida do nosso povo de verdade.",
+      "context": "\"Eu agradeço a Rede Amazônica, aos candidatos pela oportunidade de batermos nos temas que fazem realmente parte do cotidiano dos nossos acreanos. Quero cumprimentar você de casa, você meu amigo, a senhora minha amiga, os jovens acreanos que sonham com o futuro melhor. Quero dizer que nós temos um plano de governo, nós temos um sonho para o nosso país, de melhorar a vida do nosso povo de verdade. Como você viu aqui nesse debate, nós temos um projeto para a nossa agricultura e pecuária, nós temos um projeto organizado para o saneamento, nós temos medidas para os municípios isolados terem o verdadeiro apoio do governo, nós temos ações para a nossa educação moderna, temos ações muito importantes para a nossa saúde, para torná-la mais acessível ao nosso povo, resguardando a saúde daqueles que hoje são abandonados para morrer nos corredores do nosso pronto-socorro. Pessoas que esperam anos por uma cirurgia eletiva, mas isso vai mudar. No nosso governo, o Acre terá uma gestão profissional, uma gestão técnica, uma gestão qualificada, mas acima de tudo de pessoas que têm a motivação correta, pessoas que querem fazer o bem para o Acre, pessoas que conhecem a nossa realidade, que querem mudar este panorama atual que nos maltrata tanto. Eu estou dando a minha vida, estou colocando tudo que eu tenho para que o Acre possa ter um governo justo, um governo que trabalha. Nunca seremos perfeitos, mas podem ter certeza, faremos o possível para que tudo o que acontece hoje de descaso, de negligência, a gente reverta em qualidade de atendimento e melhorias para os nossos servidores, para nossa população. Eu quero me dirigir a vocês servidores públicos, sei que você tem sido ameaçado, oprimido para votar nos candidatos do governo, acredite, nós vamos valorizar você. Você que é provisório, você terá a chance de fazer um concurso se tornar efetivo, você terceirizado, nós precisamos de você. Você é meu amigo do comércio, você professor, funcionário da saúde, saiba, o Acre vai mudar e vai mudar para melhor. É Alan Rick 10 e o presidente Flávio 22. Obrigado\".",
+      "event_context": "Debate da Rede Amazônica Acre; considerações finais dos candidatos.. noite desta terça-feira (29)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/30/resumo-debate-governo-acre.ghtml",
+      "article_title": "Veja como foi o debate entre os candidatos ao Governo do Acre | G1",
+      "article_published_at": "2026-09-30T00:20:18.825-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "b41b0f18e20527255c463a28e2f89fbd314373eb6699ac6936e9788b3ebb1e99",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Alan Rick (Republicanos), Mailza Assis (PP), Thor Dantas (PSB) e Tião Bocalom (PSDB) participaram do confronto direto na noite desta terça-feira (29) na Rede Amazônica.",
+        "date_excerpt": "noite desta terça-feira (29)",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/30/resumo-debate-governo-acre.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -4353,6 +4719,32 @@
       }
     },
     {
+      "id": "850779be03fa397669d57a44aca48fed95dc8761a531a961d9550b3da0a721dc",
+      "candidate_id": "bf6deed4-4d99-4e45-8e2a-fca877960e35",
+      "candidate_slug": "aroldo-felix",
+      "candidate_name": "Aroldo Félix",
+      "office": "Governador",
+      "uf": "BA",
+      "quote_text": "Não adianta combater só o pequeno distribuidor. Nós precisamos combater quem financia, quem fornece",
+      "context": "“Não adianta combater só o pequeno distribuidor. Nós precisamos combater quem financia, quem fornece”, afirmou.",
+      "event_context": "Sabatina da Salvador FM com candidato ao governo da Bahia. apresentou nesta terça-feira (22)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-22",
+      "publisher": "Portal Salvador FM",
+      "article_url": "https://www.portalsalvadorfm.com.br/politica/aroldo-apresenta-propostas-e-defende-consulta-popular-na-bahia/",
+      "article_title": "Aroldo Félix apresenta propostas e defende consulta popular na Bahia",
+      "article_published_at": "2026-09-22T12:40:00+00:00",
+      "observed_at": "2026-10-02T14:11:56.295Z",
+      "source_sha256": "9eeb3f147f5d888106fcf7b85feb4dea4e2edba35715655ef9cef8df676a5405",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Aroldo Félix (UP), candidato ao governo da Bahia, apresentou nesta terça-feira (22) propostas para áreas como segurança pública, geração de empregos, educação, saúde e redução do preço dos alimentos durante sabatina promovida pela Salvador FM.",
+        "date_excerpt": "apresentou nesta terça-feira (22)",
+        "fetched_url": "https://www.portalsalvadorfm.com.br/politica/aroldo-apresenta-propostas-e-defende-consulta-popular-na-bahia/",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "8564276367a6e1d7d8d67fd8ee588b89697654725af65adde6347e6bb75a0cfe",
       "candidate_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
       "candidate_slug": "celina-leao",
@@ -4401,6 +4793,32 @@
         "identity_excerpt": "O candidato do PSTU ao governo do Rio, Cyro Garcia, participou da sabatina",
         "date_excerpt": "Durante o encontro, nesta quinta-feira (10)",
         "fetched_url": "https://odia.ig.com.br/rio-de-janeiro/2026/09/7300687-cyro-garcia-defende-fim-das-oss-na-saude-e-estatizacao-de-hospitais-privados.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "8595e6af6fd2cf8afce201a6e31285a465c79dcd3243af0eba99b7d5d0fb4609",
+      "candidate_id": "89dc7944-ed0a-4a1f-8ad5-fdd3edd9347a",
+      "candidate_slug": "tiao-bocalom",
+      "candidate_name": "Tiao Bocalom",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "E outra coisa, quero dizer a vocês, a nossa campanha mais uma vez é campanha muito humilde, muito simples, sem dinheiro.",
+      "context": "\"Bom, primeiro de tudo agradecer ao nosso santo Deus por essa oportunidade mais uma vez, a quarta vez que eu sou candidato ao governo. Quem não lembra de 2010? Mas o tempo é dele. Eu tenho certeza que o tempo chegou e será agora, porque ele não desampara quem é filho dele. Quero agradecer à imprensa de todos os lugares desse Acre, onde andei, por recebido, a imprensa sempre ligada como tratou o governo, nos municípios e aqui na nossa Rede Amazônica. Obrigado a todos vocês que fazem as informações chegar à nossa população. Quero agradecer a você e a tua família, aos teus amigos que você conquistou, pra ajudar o Bocalom nesse projeto. Não é fácil, todo mundo sabe que eu sempre passei muito apertado, sempre fui muito oprimido nas minhas eleições, mas não tem problema, a gente vai continuar nessa luta. Então preciso muito de você e a família que nos ajude. E outra coisa, quero dizer a vocês, a nossa campanha mais uma vez é campanha muito humilde, muito simples, sem dinheiro. Deixa eu dizer uma coisa aqui. É uma campanha humilde mesmo. Só para vocês terem uma noção, o governo federal botou o dinheiro para financiar as campanhas agora. Você sabia disso? Não é dinheiro de empresas. Agora o fundo eleitoral banca a candidatura do Alan, a de seus deputados e senadora, com aproximadamente mais de R$ 15 milhões. Mandou para a candidata Mailza juntado com os deputados e os seus senadores, mais de R$ 60 milhões. Infelizmente o PSDB conseguiu mandar para o Bocalom um pouco mais de R$ 2 milhões. Está vendo a diferença do dinheiro? É muito grande, mas não tem problema, eu tenho você que me ajuda, sempre ajudou. É porque o Bocalom tem projeto, tem as mãos limpas, porque o Bocalom criou o produzir para empregar, se não roubar, o dinheiro dá, mas eu quero aproveitar esse momento aqui para agradecer e pedir, continue lutando, continue me ajudando, porque o meu nome você sabe, é 45, o nosso candidato à presidente da República é e será um Bolsonaro, é o Flávio Bolsonaro que é 22. O nosso candidato ao Senado é o nosso querido Eduardo Veloso, 777, e eu volto a insistir, Bocalom agora é 45, e Bocalom tem as mãos limpas, tem o orgulho disso e quero ajudar o povo acreano\".",
+      "event_context": "Debate da Rede Amazônica Acre; considerações finais dos candidatos.. noite desta terça-feira (29)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/30/resumo-debate-governo-acre.ghtml",
+      "article_title": "Veja como foi o debate entre os candidatos ao Governo do Acre | G1",
+      "article_published_at": "2026-09-30T00:20:18.825-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "b41b0f18e20527255c463a28e2f89fbd314373eb6699ac6936e9788b3ebb1e99",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Tião Bocalom (PSDB)",
+        "date_excerpt": "noite desta terça-feira (29)",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/09/30/resumo-debate-governo-acre.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -4689,6 +5107,32 @@
         "identity_excerpt": "O candidato ao Governo do Distrito Federal, Expedito Mendonça (PCO)",
         "date_excerpt": "sabatina promovida pela Rádio Metrópoles nesta terça-feira (1º/9)",
         "fetched_url": "https://www.metropoles.com/distrito-federal/expedito-mendonca-propoe-seguranca-local-a-exemplo-de-xerifes-dos-eua",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "8e838678f0e985f83b44a7dfd457b9f98317bbaea0072631952805492c66008d",
+      "candidate_id": "d4aa4311-0b4a-4adc-a338-b01e8118d6a9",
+      "candidate_slug": "pedro-abib",
+      "candidate_name": "Pedro Abib",
+      "office": "Governador",
+      "uf": "RO",
+      "quote_text": "Eu estou saindo daqui muito feliz.",
+      "context": "\"Eu estou saindo daqui muito feliz. A gente chegou nos 52 municípios, na zona urbana, na zona rural, nas comunidades, nas comunidades rurais ribeirinhas, enfim, em todos os lugares, levando a nossa mensagem, levando a nossa proposta, a nossa perspectiva de estado e, sobretudo, o nosso propósito por Rondônia\", afirmou o candidato.",
+      "event_context": "Entrevista à reportagem do Portal SGC, após debate da RedeTV em Porto Velho realizado em 1º de outubro. O último debate com os candidatos ao Governo de Rondônia ocorreu nesta quinta-feira (1) na sede da RedeTV! em Porto Velho, promovido pelo Sistema Gurgacz de Comunicação (SGC).",
+      "event_type": "entrevista",
+      "occurred_on": "2026-10-01",
+      "publisher": "Portal SGC",
+      "article_url": "https://sgc.com.br/noticia/20/451160",
+      "article_title": "Vídeo: ''Discuti com seriedade e respeito com você, eleitor'', diz Pedro Abib após debate - Portal SGC",
+      "article_published_at": "2026-10-01T22:00:00+00:00",
+      "observed_at": "2026-10-02T13:58:21.946Z",
+      "source_sha256": "39698359590a7c75fc30f5b7b1f176344c4fb967d663cada53452188f5f38523",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Pedro Abib (MDB) conversou com a reportagem do SGC",
+        "date_excerpt": "O último debate com os candidatos ao Governo de Rondônia ocorreu nesta quinta-feira (1) na sede da RedeTV! em Porto Velho, promovido pelo Sistema Gurgacz de Comunicação (SGC).",
+        "fetched_url": "https://sgc.com.br/noticia/20/451160",
         "method": "codex_source_review"
       }
     },
@@ -5515,6 +5959,32 @@
       }
     },
     {
+      "id": "a84aa0a2041e0c2c008246f2513520abde0a5ae2fbbedaf0137e97f429decc2f",
+      "candidate_id": "fa96e1ad-f460-411b-b30b-3aecb135e8d7",
+      "candidate_slug": "roberto-cidade",
+      "candidate_name": "Roberto Cidade",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Sou candidato a governo do Estado do Amazonas porque sempre trabalhei muito",
+      "context": "\"Primeiramente agradecer aqui à Rede Amazônica, TV Globo e a todos vocês que estamos assistindo. Também quero agradecer a Deus pela oportunidade de estar aqui nesse debate de mais um dia de luta e dedicação ao povo do Estado do Amazonas. Sou candidato a governo do Estado do Amazonas porque sempre trabalhei muito, sempre me dediquei e faço uma campanha do bem, uma campanha com propostas, ideias e soluções e avanços para o nosso Estado. Desde quando assumi o governo do Estado já mostrei a minha marca de trabalhar, de cuidar, de enfrentar os desafios que sempre vão acontecer para qualquer governante e de resolver os problemas. Foi assim na saúde quando pagamos mais de 400 milhões de reais de médicos, entregamos obras estruturantes e vamos avançar cada vez mais. Na segurança pública colocamos o Estado do Amazonas no quinto lugar. No Brasil, no social, vamos avançar e cuidar da nossa gente. Também vamos tornar o Estado estado da inclusão, o Estado do Amazonas. E eu quero pedir de vocês, dê a oportunidade para esse caboclo amazonense aqui, trabalhar de noite para que a gente avance cada vez mais e coloque o nosso Estado no tamanho que ele merece, o maior Estado da Federação. Vou governar esse Estado para os amazonenses. Sou um amazonense raiz. E vocês sabem que a minha dedicação, o meu empenho, ele é gigante e nós vamos fazer isso. Por isso, o Amazonas é a minha bandeira. E eu peço de vocês, no dia 4 de outubro, não se esqueça, vote 44\"",
+      "event_context": "Debate da Rede Amazônica com candidatos ao governo do Amazonas.. na noite desta terça-feira (29)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/30/debate-da-rede-amazonica-com-candidatos-ao-governo-do-am-e-marcado-por-acusacoes-e-propostas-sobre-exploracao-de-terras-raras.ghtml",
+      "article_title": "Debate da Rede Amazônica com candidatos ao Governo do AM é marcado por acusações e propostas sobre exploração de terras raras | G1",
+      "article_published_at": "2026-09-30T00:27:08.156-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "861193c198f337dce3fa32ec035035ac2ff7ba19f95c73a7ad6e9f887be42eb6",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A Rede Amazônica realizou, nesta terça-feira (29), debate em Manaus com candidatos ao Senado. Participaram Omar Aziz, Professora Maria do Carmo, Roberto Cidade, David Almeida e Isael Munduruku.",
+        "date_excerpt": "na noite desta terça-feira (29)",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/09/30/debate-da-rede-amazonica-com-candidatos-ao-governo-do-am-e-marcado-por-acusacoes-e-propostas-sobre-exploracao-de-terras-raras.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "a89d8216668c53122ea21fa04131036f7cf3502d62bbd0a5b998eb5afe18a4df",
       "candidate_id": "c7e3a004-99ba-426b-af65-206e3066c496",
       "candidate_slug": "alan-rick",
@@ -6003,6 +6473,32 @@
         "identity_excerpt": "O Agenda da Semana recebeu o ex-prefeito de Boa Vista e candidato ao Governo de Roraima, Arthur Henrique (PL)",
         "date_excerpt": "na manhã desse domingo (6), na rádio FolhaFM",
         "fetched_url": "https://www.folhabv.com.br/politica/arthur-agenda/",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "b62e89319b66dde5e0d4168fd3f69140ab0b773e7b496906095cdb1c9ed93671",
+      "candidate_id": "e4a0bfc6-586c-491f-8580-e43c6d30f7a1",
+      "candidate_slug": "laurez-moreira",
+      "candidate_name": "Laurez Moreira",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "O estado do Tocantins não pode ser para experimento. Nós temos que exigir experiência e não fazer experiência administrativa.",
+      "context": "Na réplica, Laurez concentrou a crítica na experiência administrativa do adversário. “Você nunca administrou uma empresa, nunca administrou uma cidade, nunca administrou nada que venha me convencer que possa fazer um bom governo no estado do Tocantins”, disse. “O estado do Tocantins não pode ser para experimento. Nós temos que exigir experiência e não fazer experiência administrativa.”",
+      "event_context": "Debate entre candidatos ao governo do Tocantins, realizado pela TV Anhanguera na noite de 29/09.. terça-feira, 29",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "Jornal Opção Tocantins",
+      "article_url": "https://tocantins.jornalopcao.com.br/politica/voce-nunca-administrou-uma-cidade-nunca-administrou-nada-diz-laurez-a-vicentinho-em-debate-600861/",
+      "article_title": "“Você nunca administrou uma cidade, nunca administrou nada”, diz Laurez a Vicentinho em debate - Jornal Opção | Tocantins",
+      "article_published_at": "2026-09-30T02:52:24+00:00",
+      "observed_at": "2026-10-02T13:44:32.291Z",
+      "source_sha256": "30cfc6413c6c43e8e9acb726b99f5f7844ab689891f1a63de62a4fb86e03b34f",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Laurez Moreira",
+        "date_excerpt": "terça-feira, 29",
+        "fetched_url": "https://tocantins.jornalopcao.com.br/politica/voce-nunca-administrou-uma-cidade-nunca-administrou-nada-diz-laurez-a-vicentinho-em-debate-600861/",
         "method": "codex_source_review"
       }
     },
@@ -6537,6 +7033,32 @@
         "fetched_url": "https://www.poder360.com.br/poder-eleicoes-2026/em-sc-lula-reforca-que-vai-acabar-com-as-bets/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "ca55cba8dd4d87f94133651a0ee69e9f29978d1e9e748cecd544bd0441a24bd2",
+      "candidate_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+      "candidate_slug": "vicentinho-junior",
+      "candidate_name": "Vicentinho Junior",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Eu tenho medo de que experiência é essa que vocês querem a todo tempo apresentar ao povo do estado",
+      "context": "Vicentinho contestou a afirmação. Citou seus mandatos de deputado federal, obras para as quais afirma ter destinado recursos e disse que, antes de chegar à Câmara, foi proprietário da Estradeiro Engenharia. Na sequência, devolveu a cobrança a Laurez: “Eu tenho medo de que experiência é essa que vocês querem a todo tempo apresentar ao povo do estado”.",
+      "event_context": "Debate entre candidatos ao governo do Tocantins, realizado pela TV Anhanguera na noite de 29/09.. terça-feira, 29",
+      "event_type": "debate",
+      "occurred_on": "2026-09-29",
+      "publisher": "Jornal Opção Tocantins",
+      "article_url": "https://tocantins.jornalopcao.com.br/politica/voce-nunca-administrou-uma-cidade-nunca-administrou-nada-diz-laurez-a-vicentinho-em-debate-600861/",
+      "article_title": "“Você nunca administrou uma cidade, nunca administrou nada”, diz Laurez a Vicentinho em debate - Jornal Opção | Tocantins",
+      "article_published_at": "2026-09-30T02:52:24+00:00",
+      "observed_at": "2026-10-02T13:44:32.291Z",
+      "source_sha256": "30cfc6413c6c43e8e9acb726b99f5f7844ab689891f1a63de62a4fb86e03b34f",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Vicentinho Júnior",
+        "date_excerpt": "terça-feira, 29",
+        "fetched_url": "https://tocantins.jornalopcao.com.br/politica/voce-nunca-administrou-uma-cidade-nunca-administrou-nada-diz-laurez-a-vicentinho-em-debate-600861/",
+        "method": "codex_source_review"
       }
     },
     {
@@ -7255,6 +7777,32 @@
       }
     },
     {
+      "id": "dd0658bf1916584743687debedeb38fb383fdf4b307cfe777c5f5352439ab0ae",
+      "candidate_id": "20e8b8cd-54a6-4e85-89c2-386ef12d2cc8",
+      "candidate_slug": "izadora-dias",
+      "candidate_name": "Izadora Dias",
+      "office": "Governador",
+      "uf": "SP",
+      "quote_text": "Os presídios precisam ser definidos pelo sexo.",
+      "context": "A fala aconteceu na quarta-feira (30) durante um debate organizado pela APSP (Associação Paulista de Saúde Pública) e pela FSP (Faculdade de Saúde Pública) da USP. \"Os presídios precisam ser definidos pelo sexo. Há muita denúncia de mulheres que estão sendo ameaçadas, que estão sofrendo com a presença de mulheres trans\", afirmou Dias.",
+      "event_context": "Debate sobre prisões e políticas para mulheres trans, organizado pela APSP e pela Faculdade de Saúde Pública da USP.. quarta-feira (30)",
+      "event_type": "debate",
+      "occurred_on": "2026-09-30",
+      "publisher": "Folha de S.Paulo",
+      "article_url": "https://www1.folha.uol.com.br/poder/2026/10/candidata-do-pco-causa-tumulto-em-debate-apos-defender-mulheres-trans-em-prisoes-masculinas.shtml",
+      "article_title": "Estudantes interrompem debate após candidata do PCO defender mulheres trans em prisões masculinas",
+      "article_published_at": "2026-10-01 21:44:00",
+      "observed_at": "2026-10-02T13:44:32.291Z",
+      "source_sha256": "cbc33a12ba709e08ffb4b10a74b6efefaa0dcc45607a06d263aede8dfa315e8b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Izadora Dias",
+        "date_excerpt": "quarta-feira (30)",
+        "fetched_url": "https://www1.folha.uol.com.br/poder/2026/10/candidata-do-pco-causa-tumulto-em-debate-apos-defender-mulheres-trans-em-prisoes-masculinas.shtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "de6613ed8268ab18449a05da82c42e071722b14eb14972006cd868f3adc48a56",
       "candidate_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
       "candidate_slug": "lenilda-luna",
@@ -7422,6 +7970,32 @@
         "identity_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
         "date_excerpt": "Celina Leão (PP), candidata ao governo do Distrito Federal, passou por sabatina no DF1, na manhã desta terça-feira (15).",
         "fetched_url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/09/15/veja-como-foi-sabatina-da-globo-com-celina-leao-candidata-ao-governo-do-df.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "e6494544886b420685015e52a9c719ae19bd5f93f694c7e61d0fdd7c6d5259a4",
+      "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
+      "candidate_slug": "acm-neto",
+      "candidate_name": "ACM Neto",
+      "office": "Governador",
+      "uf": "BA",
+      "quote_text": "Quem tem mais chance de resolver os problemas da Bahia?",
+      "context": "\"Quero, nesse momento, me dirigir a vocês que acompanharam essa entrevista, fazendo uma pergunta: 'Quem tem mais chance de resolver os problemas da Bahia? Um governador que prometeu, há quatro anos atrás, zerar a fila da regulação, enfrentar o crime, melhorar a qualidade da educação e fazer a Bahia crescer, e nada disso aconteceu, ou eu, que fui [por] oito anos considerado o melhor prefeito das capitais brasileiras, que saí com mais de 80% de aprovação, que rodei todo esse estado, que tenho um amor enorme pela Bahia?'. Eu quero fazer história, eu quero permitir que a Bahia tenha o melhor governo de todo o Brasil. Eu garanto: 'Vocês não vão se decepcionar comigo'. Jerônimo já teve a chance dele. Eu, agora, peço a sua chance. Então, dia 4 de outubro, por favor, confia na gente, votem 44 e vamos mudar a Bahia\", disse.",
+      "event_context": "Entrevista ao vivo da TV Bahia após os demais candidatos não comparecerem ao debate previsto.. entrevistado pela TV Bahia, nesta terça-feira (29)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-09-29",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/29/entrevista-acm-neto-na-tv-bahia.ghtml",
+      "article_title": "ACM Neto cobra Jerônimo Rodrigues e promete transformar educação da BA | G1",
+      "article_published_at": "2026-09-29T22:45:50.919-03:00",
+      "observed_at": "2026-10-02T14:02:28.301Z",
+      "source_sha256": "2b8e9014ca8dd9d62295de759e96e7b484873c5ac75aef3c326df5e71b4dc9d1",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "ACM Neto cobra Jerônimo Rodrigues por ausência em debate e promete transformação na qualidade de ensino da Bahia",
+        "date_excerpt": "entrevistado pela TV Bahia, nesta terça-feira (29)",
+        "fetched_url": "https://g1.globo.com/ba/bahia/eleicoes/2026/noticia/2026/09/29/entrevista-acm-neto-na-tv-bahia.ghtml",
         "method": "codex_source_review"
       }
     },
@@ -7991,6 +8565,32 @@
         "fetched_url": "https://fanf1.com.br/2026/09/02/nao-nos-intimidamos-porque-temos-deus-e-o-povo-de-sergipe-afirma-valmir-de-francisquinho-ao-retornar-a-aracaju/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "f9ee24e9fbd6e08c5c60802726e357e228cd5537005561d94ca5be742a2f0546",
+      "candidate_id": "3b825b8d-32fd-42d2-af6e-6caf1135a3e3",
+      "candidate_slug": "soldado-sampaio",
+      "candidate_name": "Soldado Sampaio",
+      "office": "Governador",
+      "uf": "RR",
+      "quote_text": "Nós precisamos de uma vez por romper essa economia do contra-cheque que já está superada.",
+      "context": "“Nós precisamos de uma vez por romper essa economia do contra-cheque que já está superada. […] Chegou porque o agronegócio está aqui presente, tem que ser reconhecido. Tem que ser prestigiado, com toda a infraestrutura necessária”, declarou.",
+      "event_context": "Sabatina do Agenda da Semana; a página situa a participação no domingo (20).. nesse domingo (20)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-20",
+      "publisher": "Folha BV",
+      "article_url": "https://www.folhabv.com.br/politica/soldado-sampaio-defende-ampliacao-da-saude-incentivo-ao-agronegocio-e-combate-ao-crime/",
+      "article_title": "Soldado Sampaio defende ampliação da saúde, incentivo ao agronegócio e combate ao crime",
+      "article_published_at": "2026-09-21T10:00:00+00:00",
+      "observed_at": "2026-10-02T13:44:32.291Z",
+      "source_sha256": "ae09d61f023112d5cf346f9077404009fb836364eb0df39649ebdad16815407f",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Soldado Sampaio",
+        "date_excerpt": "nesse domingo (20)",
+        "fetched_url": "https://www.folhabv.com.br/politica/soldado-sampaio-defende-ampliacao-da-saude-incentivo-ao-agronegocio-e-combate-ao-crime/",
+        "method": "codex_source_review"
       }
     },
     {
