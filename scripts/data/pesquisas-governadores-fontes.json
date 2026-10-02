@@ -10882,6 +10882,164 @@
         }
       },
       "consulted_at": "2026-10-01T13:39:01Z"
+    },
+    {
+      "id": "atlasintel-mg-04294-2026-revisao-20261002",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "O Estado de São Paulo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "moneytimes.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-22",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-29",
+        "sample_size": 1838,
+        "method": "Recrutamento digital aleatório (Atlas RDR)",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Minas Gerais",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MG-04294/2026",
+        "result_url": "https://www.moneytimes.com.br/cleitinho-tem-418-e-patrus-ananias-336-em-disputa-polarizada-em-minas-gerais-aponta-atlasintel/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MG-04294/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-02T13:36:55Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "2123ca9756de218c4859217939398d75465b059f5513376bfae061bb7615c7c8",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.moneytimes.com.br/cleitinho-tem-418-e-patrus-ananias-336-em-disputa-polarizada-em-minas-gerais-aponta-atlasintel/",
+            "https://atlasintel.org/polls/exclusive-polls",
+            "https://cdn1.atlasintel.org/_pesquisa_atlas_estadao__eleicoes_minas_gerais_2026__260928_1fff53789a9ac62f.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.moneytimes.com.br/cleitinho-tem-418-e-patrus-ananias-336-em-disputa-polarizada-em-minas-gerais-aponta-atlasintel/",
+            "https://atlasintel.org/polls/exclusive-polls",
+            "https://cdn1.atlasintel.org/_pesquisa_atlas_estadao__eleicoes_minas_gerais_2026__260928_1fff53789a9ac62f.pdf"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.moneytimes.com.br/cleitinho-tem-418-e-patrus-ananias-336-em-disputa-polarizada-em-minas-gerais-aponta-atlasintel/",
+            "https://atlasintel.org/polls/exclusive-polls",
+            "https://cdn1.atlasintel.org/_pesquisa_atlas_estadao__eleicoes_minas_gerais_2026__260928_1fff53789a9ac62f.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.moneytimes.com.br/cleitinho-tem-418-e-patrus-ananias-336-em-disputa-polarizada-em-minas-gerais-aponta-atlasintel/",
+            "https://atlasintel.org/polls/exclusive-polls",
+            "https://cdn1.atlasintel.org/_pesquisa_atlas_estadao__eleicoes_minas_gerais_2026__260928_1fff53789a9ac62f.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-02T13:36:55Z"
+    },
+    {
+      "id": "parana-pesquisas-ap-03035-2026-revisao-20261002",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-27"
+        },
+        "published_at": "2026-09-28",
+        "sample_size": 1000,
+        "method": "Entrevistas pessoais, domiciliares e presenciais; amostragem probabilística das localidades com PPT",
+        "margin_of_error_pp": 3.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amapá",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AP-03035/2026",
+        "result_url": "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-amapa-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ap-03035-2026-setembro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AP-03035/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-02T13:36:55Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "771a82d39c279fbe55419d8a2b470857d43bf22625661b3afc3b35539be0cfa6",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-amapa-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ap-03035-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/AP_Set26.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-amapa-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ap-03035-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/AP_Set26.pdf"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-amapa-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ap-03035-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/AP_Set26.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-amapa-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ap-03035-2026-setembro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/09/AP_Set26.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-02T13:36:55Z"
     }
   ]
 }

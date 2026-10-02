@@ -414,7 +414,7 @@ describe("matriz de cobertura das fichas", () => {
 
   it("não chama projeto publicado só com contagem declarada e array no DTO", () => {
     const result = adaptLatestReceipts([
-      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: new Date().toISOString(), resultado: "encontrado", volume: 1 },
     ], [profile()])
     const matrix = buildCoverageMatrix([profile({ projetos_lei: [{ id: 1 }] })], [], result.joins)
     assert.equal(matrix.cells.find((item) => item.familia === "projetos_lei")?.estado, "indeterminado")
@@ -423,8 +423,8 @@ describe("matriz de cobertura das fichas", () => {
   it("Câmara vazia e Senado com dados não provam contradição sem partição por órgão", () => {
     const candidate = profile({ ids: { camara: 12345, senado: 67890 }, projetos_lei: [{ id: 1 }] })
     const result = adaptLatestReceipts([
-      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "vazio_confirmado", volume: 0 },
-      { fonte: "senado-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: "2026-09-23T10:00:00Z", resultado: "encontrado", volume: 1 },
+      { fonte: "camara-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: new Date().toISOString(), resultado: "vazio_confirmado", volume: 0 },
+      { fonte: "senado-proposicoes", escopo: "candidato", alvo: "ana-exemplo", candidato_id: "candidate-1", executado_em: new Date().toISOString(), resultado: "encontrado", volume: 1 },
     ], [candidate])
     const matrix = buildCoverageMatrix([candidate], [], result.joins)
     assert.equal(matrix.cells.find((item) => item.familia === "projetos_lei")?.estado, "indeterminado")

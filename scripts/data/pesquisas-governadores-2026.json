@@ -2026,7 +2026,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AP|1|estimulada|lista-real-time-big-data-2026-09-08-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-9b7903e103941288",
+      "exact_aliases_version": "monitor-2026-f02f8faaff82d023",
       "exact_aliases": [
         {
           "raw_label": "Carlos Cley",
@@ -2182,6 +2182,78 @@
           "geography": "Amapá",
           "turn": 1,
           "scenario_id": "quaest-ap-02117-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Dr. Furlan",
+          "candidate_slug": "dr-furlan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t"
+        },
+        {
+          "raw_label": "Clécio",
+          "candidate_slug": "clecio-luis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t"
+        },
+        {
+          "raw_label": "Delegado Marcos",
+          "candidate_slug": "marcos-reategui",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t"
+        },
+        {
+          "raw_label": "Carlos Cley",
+          "candidate_slug": "carlos-cley",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t"
+        },
+        {
+          "raw_label": "Jairo Palheta",
+          "candidate_slug": "jairo-palheta",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t"
+        },
+        {
+          "raw_label": "Dr. Furlan",
+          "candidate_slug": "dr-furlan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Clécio",
+          "candidate_slug": "clecio-luis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Carlos Cley",
+          "candidate_slug": "carlos-cley",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amapá",
+          "turn": 1,
+          "scenario_id": "parana-pesquisas-ap-03035-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -2681,6 +2753,207 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 18,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parana-pesquisas-ap-03035-2026",
+          "source_id": "parana-pesquisas-ap-03035-2026-revisao-20261002",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Paraná Pesquisas",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-25",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-27",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-28",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1000,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Estado do Amapá",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3.2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas pessoais, domiciliares e presenciais; amostragem probabilística das localidades com PPT",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "AP-03035/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Amapá",
+            "code": "AP"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-amapa-para-os-cargos-de-governador-e-senador-registro-tse-n-o-ap-03035-2026-setembro-2026/",
+            "supporting_urls": [
+              "https://paranapesquisas.com.br/wp-content/uploads/2026/09/AP_Set26.pdf"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-02T13:36:55Z",
+            "capture": {
+              "format": "text",
+              "sha256": "771a82d39c279fbe55419d8a2b470857d43bf22625661b3afc3b35539be0cfa6",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "parana-pesquisas-ap-03035-2026-1t",
+              "turn": 1,
+              "geography": "Amapá",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AP|1|estimulada|97648fd02cacdee1f325a159e28ebf2e5f467109ca168512e8e9548e54f8b7b8|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Não sabe/ Não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nenhum/ Branco/ Nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dr. Furlan",
+                  "candidate_slug": "dr-furlan",
+                  "match_status": "exact_alias",
+                  "value_percent": 55.7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Clécio",
+                  "candidate_slug": "clecio-luis",
+                  "match_status": "exact_alias",
+                  "value_percent": 37.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Delegado Marcos",
+                  "candidate_slug": "marcos-reategui",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Carlos Cley",
+                  "candidate_slug": "carlos-cley",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Jairo Palheta",
+                  "candidate_slug": "jairo-palheta",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "parana-pesquisas-ap-03035-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Amapá",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AP|1|espontanea|37bc998f6394678bd08641fa53046e5e45a7e11d6472cec34c74f009a2329c29|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Não sabe/ não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 23.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ninguém/ Branco/ Nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Dr. Furlan",
+                  "candidate_slug": "dr-furlan",
+                  "match_status": "exact_alias",
+                  "value_percent": 43,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Clécio",
+                  "candidate_slug": "clecio-luis",
+                  "match_status": "exact_alias",
+                  "value_percent": 29,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Carlos Cley",
+                  "candidate_slug": "carlos-cley",
+                  "match_status": "exact_alias",
+                  "value_percent": 0.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros nomes citados",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 0.2,
                   "status": "publicado"
                 }
               ]
@@ -8511,7 +8784,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|DF|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-b77c81b45baea741",
+      "exact_aliases_version": "monitor-2026-3cd0cf6452e81c9c",
       "exact_aliases": [
         {
           "raw_label": "Cappelli",
@@ -9284,6 +9557,51 @@
           "geography": "Distrito Federal",
           "turn": 1,
           "scenario_id": "quaest-df-02515-2026-1t"
+        },
+        {
+          "raw_label": "Celina Leão",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-00905-2026-1t"
+        },
+        {
+          "raw_label": "Leandro Grass",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-00905-2026-1t"
+        },
+        {
+          "raw_label": "Paula Belmonte (PSDB)",
+          "candidate_slug": "paula-belmonte",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-00905-2026-1t"
+        },
+        {
+          "raw_label": "Celina Leão",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-00905-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Leandro Grass",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 1,
+          "scenario_id": "datafolha-df-00905-2026-1t-espontaneo"
         }
       ],
       "pesquisas": [
@@ -11393,6 +11711,149 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 11,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "datafolha-df-00905-2026",
+          "source_id": "datafolha-folha-globo-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Datafolha",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Globo e Folha de S.Paulo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-28",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-01",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-01",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 910,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de todas as regiões do Distrito Federal",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "DF-00905/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Distrito Federal",
+            "code": "DF"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-lidera-no-df-com-53-dos-votos-validos-ante-26-de-grass.shtml",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-02T13:36:55Z",
+            "capture": {
+              "format": "text",
+              "sha256": "6bae080ef2e03e509f3a4f70a93af346c3b40fb5bf79762da6084d78820c76ac",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datafolha-df-00905-2026-1t",
+              "turn": 1,
+              "geography": "Distrito Federal",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|1|estimulada|ac49938e619fcb7d7d2a767d7be11ca4bd8ccc299ce826278fe2aac3c6a90a69|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 46,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 22,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Paula Belmonte (PSDB)",
+                  "candidate_slug": "paula-belmonte",
+                  "match_status": "exact_alias",
+                  "value_percent": 9,
+                  "status": "publicado"
+                }
+              ]
+            },
+            {
+              "id": "datafolha-df-00905-2026-1t-espontaneo",
+              "turn": 1,
+              "geography": "Distrito Federal",
+              "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|1|espontanea|2ba233a041744a27fd1e249d2721bffaf6219a7bcc66a173470b330775406c99|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 16,
                   "status": "publicado"
                 }
               ]
@@ -19437,7 +19898,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|MG|1|estimulada|lista-quaest-2026-09-08-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-8bdbce45e5aa48f2",
+      "exact_aliases_version": "monitor-2026-4f730b0e089a9be4",
       "exact_aliases": [
         {
           "raw_label": "Alexandre Kalil",
@@ -19981,6 +20442,69 @@
           "geography": "Minas Gerais",
           "turn": 1,
           "scenario_id": "quaest-mg-02019-2026-1t"
+        },
+        {
+          "raw_label": "Cleitinho Azevedo (Republicanos)",
+          "candidate_slug": "cleitinho",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-04294-2026-1t"
+        },
+        {
+          "raw_label": "Patrus Ananias (PT)",
+          "candidate_slug": "patrus-ananias",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-04294-2026-1t"
+        },
+        {
+          "raw_label": "Mateus Simões (PSD)",
+          "candidate_slug": "mateus-simoes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-04294-2026-1t"
+        },
+        {
+          "raw_label": "Alexandre Kalil (PDT)",
+          "candidate_slug": "alexandre-kalil",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-04294-2026-1t"
+        },
+        {
+          "raw_label": "Flávio Roscoe (PL)",
+          "candidate_slug": "flavio-roscoe",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-04294-2026-1t"
+        },
+        {
+          "raw_label": "Gabriel (MDB)",
+          "candidate_slug": "gabriel-azevedo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-04294-2026-1t"
+        },
+        {
+          "raw_label": "Ben Mendes (Missão)",
+          "candidate_slug": "ben-mendes",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Minas Gerais",
+          "turn": 1,
+          "scenario_id": "atlasintel-mg-04294-2026-1t"
         }
       ],
       "pesquisas": [
@@ -21686,6 +22210,174 @@
               ]
             }
           ]
+        },
+        {
+          "id": "atlasintel-mg-04294-2026",
+          "source_id": "atlasintel-mg-04294-2026-revisao-20261002",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "AtlasIntel",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "O Estado de São Paulo",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-22",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-27",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-29",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1838,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores de Minas Gerais",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Recrutamento digital aleatório (Atlas RDR)",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "MG-04294/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Minas Gerais",
+            "code": "MG"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.moneytimes.com.br/cleitinho-tem-418-e-patrus-ananias-336-em-disputa-polarizada-em-minas-gerais-aponta-atlasintel/",
+            "supporting_urls": [
+              "https://atlasintel.org/polls/exclusive-polls",
+              "https://cdn1.atlasintel.org/_pesquisa_atlas_estadao__eleicoes_minas_gerais_2026__260928_1fff53789a9ac62f.pdf"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-02T13:36:55Z",
+            "capture": {
+              "format": "text",
+              "sha256": "2123ca9756de218c4859217939398d75465b059f5513376bfae061bb7615c7c8",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "atlasintel-mg-04294-2026-1t",
+              "turn": 1,
+              "geography": "Minas Gerais",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": "Em quem você votará nas próximas eleições para Governador de Minas Gerais?",
+                "status": "publicado"
+              },
+              "comparability_key": "2026|Governador|MG|1|estimulada|7a695bab2166e71ff1136c057910265a59a7c4506b4d9f5688a861ba3bfa5ba7|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Cleitinho Azevedo (Republicanos)",
+                  "candidate_slug": "cleitinho",
+                  "match_status": "exact_alias",
+                  "value_percent": 41.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Patrus Ananias (PT)",
+                  "candidate_slug": "patrus-ananias",
+                  "match_status": "exact_alias",
+                  "value_percent": 33.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Mateus Simões (PSD)",
+                  "candidate_slug": "mateus-simoes",
+                  "match_status": "exact_alias",
+                  "value_percent": 6.2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Alexandre Kalil (PDT)",
+                  "candidate_slug": "alexandre-kalil",
+                  "match_status": "exact_alias",
+                  "value_percent": 5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Flávio Roscoe (PL)",
+                  "candidate_slug": "flavio-roscoe",
+                  "match_status": "exact_alias",
+                  "value_percent": 4.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Gabriel (MDB)",
+                  "candidate_slug": "gabriel-azevedo",
+                  "match_status": "exact_alias",
+                  "value_percent": 2.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ben Mendes (Missão)",
+                  "candidate_slug": "ben-mendes",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Outros",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 0.9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Voto branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sei",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1.8,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -21708,7 +22400,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|PA|1|estimulada|lista-real-time-big-data-2026-09-08-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-30c4de0e3a9a4c82",
+      "exact_aliases_version": "monitor-2026-13066524f2264697",
       "exact_aliases": [
         {
           "raw_label": "Araceli",
@@ -21862,6 +22554,33 @@
           "geography": "Pará",
           "turn": 1,
           "scenario_id": "quaest-pa-07042-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Hana Ghassan (MDB)",
+          "candidate_slug": "hana-ghassan",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pará",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pa-09993-2026-1t"
+        },
+        {
+          "raw_label": "Daniel Santos (Podemos)",
+          "candidate_slug": "dr-daniel",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pará",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pa-09993-2026-1t"
+        },
+        {
+          "raw_label": "Araceli (PSol)",
+          "candidate_slug": "araceli-lemos",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Pará",
+          "turn": 1,
+          "scenario_id": "real-time-big-data-pa-09993-2026-1t"
         }
       ],
       "pesquisas": [
@@ -22735,6 +23454,143 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 2,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-pa-09993-2026",
+          "source_id": "real-time-big-data-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-09-23",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-09-26",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-09-28",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores no Pará",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "PA-09993/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Pará",
+            "code": "PA"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://amp.dol.com.br/noticias/politica/eleicoes-2026/963973/real-time-hana-atinge-52-dos-votos-validos-e-pode-ser-eleita-no-1-turno?_=amp",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-02T13:36:55Z",
+            "capture": {
+              "format": "text",
+              "sha256": "76e75ac741327a0c015afccac7c56f0b4083de0c0160937e50b930e903b16128",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-pa-09993-2026-1t",
+              "turn": 1,
+              "geography": "Pará",
+              "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|PA|1|estimulada|933a03921c5cdbadaf427d57e92ea7dd123d0dc21504334a7edb58323b5c045c|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Hana Ghassan (MDB)",
+                  "candidate_slug": "hana-ghassan",
+                  "match_status": "exact_alias",
+                  "value_percent": 44,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Daniel Santos (Podemos)",
+                  "candidate_slug": "dr-daniel",
+                  "match_status": "exact_alias",
+                  "value_percent": 37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Araceli (PSol)",
+                  "candidate_slug": "araceli-lemos",
+                  "match_status": "exact_alias",
+                  "value_percent": 2,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "os demais candidatos - Ruth Reis, Well Macedo e Gal Leite - aparecem juntos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Voto nulo ou branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 7,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não souberam ou não responderam",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9,
                   "status": "publicado"
                 }
               ]

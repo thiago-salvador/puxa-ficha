@@ -35,7 +35,7 @@
     "comparability_key": "2026|Presidente|BR|1|estimulado|lista-oficial-sem-marcal"
   },
   "consulted_at": "2026-09-10T12:02:09Z",
-  "exact_aliases_version": "monitor-2026-e8ba1caf15d55950",
+  "exact_aliases_version": "monitor-2026-4d0a41fc48af115a",
   "exact_aliases": [
     {
       "raw_label": "Lula",
@@ -2565,6 +2565,285 @@
       "geography": "Brasil",
       "turn": 1,
       "scenario_id": "atlasintel-bloomberg-br-04391-2026-1t"
+    },
+    {
+      "raw_label": "Lula (PT)",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro (PL)",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Escritor Augusto Cury (Avante)",
+      "candidate_slug": "augusto-cury",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Ronaldo Caiado (PSD)",
+      "candidate_slug": "ronaldo-caiado",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Renan Santos (Missão)",
+      "candidate_slug": "renan-santos",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Zema (Novo)",
+      "candidate_slug": "romeu-zema",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Samara (UP)",
+      "candidate_slug": "samara-martins",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Veterinário Wilson Grassi (Democrata)",
+      "candidate_slug": "wilson-grassi-junior",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Leonardo Avalanche (PRTB)",
+      "candidate_slug": "leonardo-avalanche",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Clariana Barão (DC)",
+      "candidate_slug": "clariana-barao",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Edmilson Costa (PCB)",
+      "candidate_slug": "edmilson-costa",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Hertz Dias (PSTU)",
+      "candidate_slug": "hertz-dias",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Rui Costa Pimenta (PCO)",
+      "candidate_slug": "rui-costa-pimenta",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t"
+    },
+    {
+      "raw_label": "Lula (PT)",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t-espontaneo"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro (PL)",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t-espontaneo"
+    },
+    {
+      "raw_label": "Escritor Augusto Cury (Avante)",
+      "candidate_slug": "augusto-cury",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t-espontaneo"
+    },
+    {
+      "raw_label": "Ronaldo Caiado (PSD)",
+      "candidate_slug": "ronaldo-caiado",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t-espontaneo"
+    },
+    {
+      "raw_label": "Renan Santos (Missão)",
+      "candidate_slug": "renan-santos",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "datafolha-br-08039-2026-1t-espontaneo"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro (PL)",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "vox-brasil-br-00148-2026-1t"
+    },
+    {
+      "raw_label": "Luiz Inácio Lula da Silva (PT)",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "vox-brasil-br-00148-2026-1t"
+    },
+    {
+      "raw_label": "Ronaldo Caiado (PSD)",
+      "candidate_slug": "ronaldo-caiado",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "vox-brasil-br-00148-2026-1t"
+    },
+    {
+      "raw_label": "Renan Santos",
+      "candidate_slug": "renan-santos",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "vox-brasil-br-00148-2026-1t"
+    },
+    {
+      "raw_label": "Romeu Zema (Novo)",
+      "candidate_slug": "romeu-zema",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "vox-brasil-br-00148-2026-1t"
+    },
+    {
+      "raw_label": "Augusto Cury",
+      "candidate_slug": "augusto-cury",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "vox-brasil-br-00148-2026-1t"
+    },
+    {
+      "raw_label": "Edmilson Costa",
+      "candidate_slug": "edmilson-costa",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "vox-brasil-br-00148-2026-1t"
+    },
+    {
+      "raw_label": "Luiz Inácio Lula da Silva (PT)",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "real-time-big-data-br-09503-2026-1t"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro (PL)",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "real-time-big-data-br-09503-2026-1t"
+    },
+    {
+      "raw_label": "Renan Santos (Missão)",
+      "candidate_slug": "renan-santos",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "real-time-big-data-br-09503-2026-1t"
+    },
+    {
+      "raw_label": "Augusto Cury (Avante)",
+      "candidate_slug": "augusto-cury",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "real-time-big-data-br-09503-2026-1t"
+    },
+    {
+      "raw_label": "Ronaldo Caiado (PSD)",
+      "candidate_slug": "ronaldo-caiado",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "real-time-big-data-br-09503-2026-1t"
+    },
+    {
+      "raw_label": "Romeu Zema (Novo)",
+      "candidate_slug": "romeu-zema",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 1,
+      "scenario_id": "real-time-big-data-br-09503-2026-1t"
     }
   ],
   "alias_scope": {
@@ -9552,6 +9831,591 @@
               "candidate_slug": "romeu-zema",
               "match_status": "exact_alias",
               "value_percent": 0.9,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "datafolha-br-08039-2026",
+      "source_id": "datafolha-br-08039-2026-revisao-20261002",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Datafolha",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": "Folha de S.Paulo e Grupo Globo de Comunicação",
+        "status": "publicado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-09-28",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-10-01",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-01",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2506,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores no país",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": null,
+        "status": "indeterminado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-08039/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://wwws.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/",
+        "supporting_urls": [],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-02T13:36:55Z",
+        "capture": {
+          "format": "text",
+          "sha256": "78f80ca3be1015c6a08b0946ad1bb4b1678d96c61c8087cada6e18e864a2ae5b",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "datafolha-br-08039-2026-1t",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "comparability_key": "2026|Presidente|BR|1|estimulada|976f5bec32fafd46482e25a7eb07a8643435db51e4f1ea79377407d0b15bdaad|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Lula (PT)",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 42,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Flávio Bolsonaro (PL)",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 38,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Escritor Augusto Cury (Avante)",
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "value_percent": 4,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ronaldo Caiado (PSD)",
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "value_percent": 3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Renan Santos (Missão)",
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "value_percent": 3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Zema (Novo)",
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "value_percent": 1,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Samara (UP)",
+              "candidate_slug": "samara-martins",
+              "match_status": "exact_alias",
+              "value_percent": 1,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Veterinário Wilson Grassi (Democrata)",
+              "candidate_slug": "wilson-grassi-junior",
+              "match_status": "exact_alias",
+              "value_percent": 1,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Leonardo Avalanche (PRTB)",
+              "candidate_slug": "leonardo-avalanche",
+              "match_status": "exact_alias",
+              "value_percent": 0,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Clariana Barão (DC)",
+              "candidate_slug": "clariana-barao",
+              "match_status": "exact_alias",
+              "value_percent": 0,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Edmilson Costa (PCB)",
+              "candidate_slug": "edmilson-costa",
+              "match_status": "exact_alias",
+              "value_percent": 0,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Hertz Dias (PSTU)",
+              "candidate_slug": "hertz-dias",
+              "match_status": "exact_alias",
+              "value_percent": 0,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Rui Costa Pimenta (PCO)",
+              "candidate_slug": "rui-costa-pimenta",
+              "match_status": "exact_alias",
+              "value_percent": 0,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Indecisos",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Em branco/nulo/nenhum",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 5,
+              "status": "publicado"
+            }
+          ]
+        },
+        {
+          "id": "datafolha-br-08039-2026-1t-espontaneo",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto espontânea no 1º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "comparability_key": "2026|Presidente|BR|1|espontanea|66078fb906c03682d59f002b9a08aaaf7dd810b6fcbb56c07a1b08f8e1e41ea3|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Lula (PT)",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 39,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Flávio Bolsonaro (PL)",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 31,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Escritor Augusto Cury (Avante)",
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "value_percent": 2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ronaldo Caiado (PSD)",
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "value_percent": 2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Renan Santos (Missão)",
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "value_percent": 2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Outros",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Branco/Nulo/Nenhum",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 5,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Indecisos",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 13,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vox-brasil-br-00148-2026",
+      "source_id": "vox-brasil-br-00148-2026-revisao-20261002",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Vox Brasil",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": "Instituto Vox Brasil Opinião e Pesquisas",
+        "status": "publicado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-09-29",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-10-01",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-02",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2100,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2.15,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "Abordagem presencial domiciliar",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-00148/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://exame.com/brasil/vox-brasil-flavio-bolsonaro-ultrapassa-lula-e-marca-412-contra-404-no-1o-turno/",
+        "supporting_urls": [],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-02T13:36:55Z",
+        "capture": {
+          "format": "text",
+          "sha256": "fcba435bfa9b7ee792b2bea8ecce7a23d51752dc87f75f40593090eee8041cf0",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "vox-brasil-br-00148-2026-1t",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "comparability_key": "2026|Presidente|BR|1|estimulada|330e378faa421901024cd8869a5f983d210b82cc71ced4c66ca41c0edb957a18|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro (PL)",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 41.2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Luiz Inácio Lula da Silva (PT)",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 40.4,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ronaldo Caiado (PSD)",
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "value_percent": 3.3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Renan Santos",
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "value_percent": 2.2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Romeu Zema (Novo)",
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "value_percent": 1.3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Augusto Cury",
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "value_percent": 1.2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Edmilson Costa",
+              "candidate_slug": "edmilson-costa",
+              "match_status": "exact_alias",
+              "value_percent": 0.2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Brancos e nulos",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 3.2,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Indecisos",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 7,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "real-time-big-data-br-09503-2026",
+      "source_id": "real-time-big-data-br-09503-2026-revisao-20261002",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Real Time Big Data",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": "Recursos do próprio instituto",
+        "status": "publicado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-09-26",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-09-30",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-01",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2000,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "Entrevistas por telefone",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-09503/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-43-no-1o-turno-flavio-39/",
+        "supporting_urls": [],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-02T13:36:55Z",
+        "capture": {
+          "format": "text",
+          "sha256": "df4ed879f05a82dafae12b1f79fad41f2e81e08fc4a14dd80a84f5a2e4513b6f",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "real-time-big-data-br-09503-2026-1t",
+          "turn": 1,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 1º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "comparability_key": "2026|Presidente|BR|1|estimulada|aee84e22a8d271dabd2b9a43c91f2d95325331c50606e47af1a2cd3d548e3c1a|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Luiz Inácio Lula da Silva (PT)",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 43,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Flávio Bolsonaro (PL)",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 39,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Renan Santos (Missão)",
+              "candidate_slug": "renan-santos",
+              "match_status": "exact_alias",
+              "value_percent": 4,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Augusto Cury (Avante)",
+              "candidate_slug": "augusto-cury",
+              "match_status": "exact_alias",
+              "value_percent": 3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ronaldo Caiado (PSD)",
+              "candidate_slug": "ronaldo-caiado",
+              "match_status": "exact_alias",
+              "value_percent": 3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Romeu Zema (Novo)",
+              "candidate_slug": "romeu-zema",
+              "match_status": "exact_alias",
+              "value_percent": 1,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "bloco de outros candidatos — Clariana Barão (DC), Rui Costa Pimenta (PCO), Samara (UP), Edmilson Costa (PCB), Hertz Dias (PSTU), Wilson Grassi (Democrata) e Leonardo Avalanche (PRTB)",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 1,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Brancos e nulos",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Indecisos",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 3,
               "status": "publicado"
             }
           ]
