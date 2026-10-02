@@ -90,14 +90,14 @@ test("limite total conta textos retidos, não evidências binárias descartadas"
   try {
     const manifest = runtimeManifest(root)
     const binary = Buffer.alloc(8 * 1024 * 1024)
-    for (let i = 0; i < 17; i++) writeFileSync(join(root, `evidence-${i}.bin`), binary)
+    for (let i = 0; i < 21; i++) writeFileSync(join(root, `evidence-${i}.bin`), binary)
     git(root, ["add", "."])
     const args = ["--verify-removals", "--baseline", baseline, "--runtime-references", manifest]
     const accepted = runAudit(root, args)
     assert.equal(accepted.status, 0, accepted.stderr)
 
     const text = Buffer.alloc(8 * 1024 * 1024, "x")
-    for (let i = 0; i < 17; i++) writeFileSync(join(root, `evidence-${i}.bin`), text)
+    for (let i = 0; i < 21; i++) writeFileSync(join(root, `evidence-${i}.bin`), text)
     git(root, ["add", "."])
     const rejected = runAudit(root, args)
     assert.notEqual(rejected.status, 0)
