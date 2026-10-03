@@ -11,7 +11,9 @@
     },
     {
       "id": "radio-avivar",
-      "approvedArticleUrls": ["https://www.youtube.com/watch?v=5qKR3B6rQnI"],
+      "approvedArticleUrls": [
+        "https://www.youtube.com/watch?v=5qKR3B6rQnI"
+      ],
       "publisher": "Rádio Avivar Evangélica",
       "origin": "https://www.youtube.com",
       "listing": "/channel/UC7tAzgqhKfATez70VwbAboQ",
@@ -798,6 +800,58 @@
       "origin": "https://www.youtube.com",
       "listing": "/channel/UC2FHzKYg93IRVFAqF7pO3Xg",
       "articlePath": "/watch"
+    },
+    {
+      "id": "agemt-rodada-20261002",
+      "publisher": "Agemt | Jornalismo PUC-SP",
+      "origin": "https://agemt.pucsp.br",
+      "listing": "/",
+      "articlePath": "/noticias/haddad-critica-ausencia-de-tarcisio-em-debate-da-record",
+      "approvedArticleUrls": [
+        "https://agemt.pucsp.br/noticias/haddad-critica-ausencia-de-tarcisio-em-debate-da-record"
+      ]
+    },
+    {
+      "id": "gzh-rodada-20261002",
+      "publisher": "GZH / Zero Hora (Grupo RBS)",
+      "origin": "https://gauchazh.clicrbs.com.br",
+      "listing": "/",
+      "articlePath": "/politica/eleicoes/noticia/2026/",
+      "approvedArticleUrls": [
+        "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/sabatina-da-gaucha-luciano-zucco-rejeita-aumento-de-impostos-promete-acabar-com-a-egr-e-aposta-em-prevencao-para-combater-o-feminicidio-cmuo49eil00zy013bs23r3mr6.html",
+        "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/09/sabatina-da-gaucha-juliana-brizola-descarta-aumento-de-impostos-e-promete-zerar-fila-da-saude-no-rs-em-quatro-anos-cmul9b4az0020013bk70z3y4u.html",
+        "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/sabatina-da-gaucha-gabriel-souza-promete-zerar-a-fila-do-sus-em-um-ano-e-descarta-aumento-de-impostos-cmupforn501fn013b2uvth4co.html"
+      ]
+    },
+    {
+      "id": "scc10-rodada-20261002",
+      "publisher": "SCC10",
+      "origin": "https://scc10.com.br",
+      "listing": "/",
+      "articlePath": "/diretoaovoto/veja-tudo-que-zimmer-falou-no-debate-do-scc-sbt/",
+      "approvedArticleUrls": [
+        "https://scc10.com.br/diretoaovoto/veja-tudo-que-zimmer-falou-no-debate-do-scc-sbt/"
+      ]
+    },
+    {
+      "id": "sgc-rodada-20261002",
+      "publisher": "Portal SGC",
+      "origin": "https://sgc.com.br",
+      "listing": "/",
+      "articlePath": "/noticia/20/",
+      "approvedArticleUrls": [
+        "https://sgc.com.br/noticia/20/451160"
+      ]
+    },
+    {
+      "id": "tnh1",
+      "publisher": "TNH1",
+      "origin": "https://www.tnh1.com.br",
+      "listing": "/",
+      "articlePath": "/noticia/",
+      "approvedArticleUrls": [
+        "https://www.tnh1.com.br/noticia/nid/assista-na-integra-a-entrevista-com-o-candidato-ao-governo-de-alagoas-renan-filho/"
+      ]
     }
   ]
 }
