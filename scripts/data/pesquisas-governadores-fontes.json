@@ -11040,6 +11040,233 @@
         }
       },
       "consulted_at": "2026-10-02T13:36:55Z"
+    },
+    {
+      "id": "parana-pesquisas-to-02116-2026-revisao-20261003",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "Federação das Indústrias do Estado do Tocantins",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-29",
+          "end": "2026-10-01"
+        },
+        "published_at": "2026-10-02",
+        "sample_size": 1504,
+        "method": "Entrevistas pessoais, domiciliares e presenciais; amostra em três etapas, municípios e localidades selecionados por PPT e entrevistados selecionados por quotas de gênero, faixa etária, escolaridade e renda.",
+        "margin_of_error_pp": 2.6,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          1
+        ],
+        "registration_id": "TO-02116/2026",
+        "result_url": "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-02116-2026-outubro-2026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-02116/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-03T12:16:22Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "245651d9313b6b9ae460aeeff14cb4711dfaaf86a8b2b5d3d4d237eab996836f",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-02116-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26.pdf",
+            "https://afnoticias.com.br/eleicoes/ultima-pesquisa-parana-fieto-aponta-2o-turno-dorinha-tem-46-4-dos-votos-validos-vicentinho-39-4"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-02116-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26.pdf",
+            "https://afnoticias.com.br/eleicoes/ultima-pesquisa-parana-fieto-aponta-2o-turno-dorinha-tem-46-4-dos-votos-validos-vicentinho-39-4"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-02116-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26.pdf",
+            "https://afnoticias.com.br/eleicoes/ultima-pesquisa-parana-fieto-aponta-2o-turno-dorinha-tem-46-4-dos-votos-validos-vicentinho-39-4"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-os-cargos-de-governador-e-senador-registro-tse-n-o-to-02116-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26.pdf",
+            "https://afnoticias.com.br/eleicoes/ultima-pesquisa-parana-fieto-aponta-2o-turno-dorinha-tem-46-4-dos-votos-validos-vicentinho-39-4"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-03T12:16:22Z"
+    },
+    {
+      "id": "eficaz-pesquisas-tecnologia-rr-04901-2026-revisao-20261003",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Eficaz Pesquisas & Tecnologia",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "eficazpesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-27",
+          "end": "2026-10-01"
+        },
+        "published_at": "2026-10-02",
+        "sample_size": 1304,
+        "method": "Amostragem distribuída proporcionalmente entre os municípios e ponderações por sexo, idade, escolaridade e nível econômico.",
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Roraima",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RR-04901/2026",
+        "result_url": "https://eficazpesquisas.com.br/pesquisa-eficaz-roraima-governo-senado/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RR-04901/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-03T12:41:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "82c2627c67588c1418c31511373315b1411c7844f4886645615297c926eb639c",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://eficazpesquisas.com.br/pesquisa-eficaz-roraima-governo-senado/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://eficazpesquisas.com.br/pesquisa-eficaz-roraima-governo-senado/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://eficazpesquisas.com.br/pesquisa-eficaz-roraima-governo-senado/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://eficazpesquisas.com.br/pesquisa-eficaz-roraima-governo-senado/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-03T12:41:00Z"
+    },
+    {
+      "id": "doxa-pa-08418-2026-revisao-20261003",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Doxa",
+        "commissioner": "Doxa (recursos próprios)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-24",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-10-02",
+        "sample_size": 2000,
+        "method": null,
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PA-08418/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/doxa-hana-ghassan-lidera-disputa-ao-governo-do-para-em-1o-e-2o-turnos/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PA-08418/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-03T12:41:00Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "b750ca4dd6b414fee12169e428ea3e4393190b1ac2b80d756418d0bc2fa3da6e",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/doxa-hana-ghassan-lidera-disputa-ao-governo-do-para-em-1o-e-2o-turnos/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/doxa-hana-ghassan-lidera-disputa-ao-governo-do-para-em-1o-e-2o-turnos/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/doxa-hana-ghassan-lidera-disputa-ao-governo-do-para-em-1o-e-2o-turnos/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/doxa-hana-ghassan-lidera-disputa-ao-governo-do-para-em-1o-e-2o-turnos/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-03T12:41:00Z"
     }
   ]
 }

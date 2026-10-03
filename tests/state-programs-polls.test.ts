@@ -36,12 +36,13 @@ test("all 27 UF charts default to an available stimulated scenario and SP preser
 
       const weekOfSep28 = groups[0].weeks.find(week => week.date === "2026-09-28")
       assert.ok(weekOfSep28)
-      assert.equal(weekOfSep28.polls.length, 2)
+      assert.equal(weekOfSep28.polls.length, 3)
       assert.deepEqual(
         weekOfSep28.polls
           .map(({ id, instituto }) => [id, instituto.value] as const)
           .sort(([a], [b]) => String(a).localeCompare(String(b))),
         [
+          ["datafolha-sp-01367-2026", "Datafolha"],
           ["quaest-sp-01590-2026", "Quaest"],
           ["vox-brasil-sp-01943-2026", "Vox Brasil"],
         ],
@@ -52,12 +53,12 @@ test("all 27 UF charts default to an available stimulated scenario and SP preser
           .map(({ result, value }) => [result.candidateSlug, value] as const)
           .sort(([a], [b]) => String(a).localeCompare(String(b))),
         [
-          ["carlos-machado", 0.85],
-          ["haddad-gov-sp", 30.1],
-          ["izadora-dias", 0.6],
-          ["tarcisio-gov-sp", 51.25],
-          ["vera-lucia", 0.75],
-          ["vivian-mendes", 0.6],
+          ["carlos-machado", 1.2333333333333334],
+          ["haddad-gov-sp", 31.066666666666666],
+          ["izadora-dias", 0.7333333333333334],
+          ["tarcisio-gov-sp", 50.833333333333336],
+          ["vera-lucia", 1.1666666666666667],
+          ["vivian-mendes", 1.0666666666666667],
         ],
       )
     }

@@ -188,7 +188,21 @@ describe("seleção estadual por UF", () => {
     assertAtlasCE("ze-batista", 0.1)
     assertAtlasCE("ieri-braga", 0)
 
-    assert.equal(listarPesquisasGovernadorPorSlug("henrique-areas", "MG")[0]?.resultado.valuePercent, 0)
+    const henriqueMg = listarPesquisasGovernadorPorSlug("henrique-areas", "MG")
+    assert.equal(henriqueMg[0]?.id, "datafolha-mg-09729-2026")
+    assert.equal(henriqueMg[0]?.electionYear, 2026)
+    assert.equal(henriqueMg[0]?.office, "Governador")
+    assert.equal(henriqueMg[0]?.geography.code, "MG")
+    assert.equal(henriqueMg[0]?.cenario.turn, 1)
+    assert.equal(henriqueMg[0]?.resultado.candidateSlug, "henrique-areas")
+    assert.equal(henriqueMg[0]?.resultado.valuePercent, 1)
+    const quaestMg = carregarPesquisasGovernadores().get("MG")?.pesquisas.find(
+      (poll) => poll.id === "quaest-mg-02019-2026",
+    )
+    assert.ok(quaestMg)
+    assert.equal(quaestMg.instituto.value, "Quaest")
+    assert.equal(quaestMg.geography.code, "MG")
+    assert.equal(quaestMg.cenarios[0]?.resultados.find((result) => result.candidateSlug === "henrique-areas")?.valuePercent, 0)
     assert.deepEqual(listarPesquisasGovernadorPorSlug("governador-inexistente", "SP"), [])
   })
 

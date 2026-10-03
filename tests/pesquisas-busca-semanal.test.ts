@@ -180,7 +180,14 @@ test("buscas alternativas recuperam os valores individuais sem transferir result
   assert.ok(expedito.length >= 0)
   rodadaPreservada("expedito-mendonca", "DF", "igape-df-df-07879-2026-fechamento", 0.8)
   const ruth = listarPesquisasGovernadorPorSlug("ruth-reis", "PA")
-  assert.equal(ruth.length, 2)
-  assert.ok(ruth.every((p) => p.id === "quaest-pa-07042-2026" && p.resultado.candidateSlug === "ruth-reis" && p.resultado.valuePercent === 0))
+  assert.equal(ruth.length, 3)
+  assert.deepEqual(
+    ruth.map(({ id, instituto, resultado }) => [id, instituto.value, resultado.candidateSlug, resultado.valuePercent]),
+    [
+      ["doxa-pa-08418-2026", "Doxa", "ruth-reis", 0.4],
+      ["quaest-pa-07042-2026", "Quaest", "ruth-reis", 0],
+      ["quaest-pa-07042-2026", "Quaest", "ruth-reis", 0],
+    ],
+  )
   assert.equal(listarPesquisasGovernadorPorSlug("ruth-reis", "RN").length, 0)
 })
