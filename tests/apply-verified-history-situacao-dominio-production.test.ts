@@ -32,7 +32,12 @@ function rpcDefinition(sql: string): string {
 
 /** Lista de situações aceitas pela RPC, na ordem escrita. */
 function rpcSituacoes(sql: string): string[] {
-  const definition = rpcDefinition(sql)
+  // CREATE OR REPLACE preserva ACL; uma definição nova pode não repetir GRANT.
+  const start = sql.search(/CREATE (?:OR REPLACE )?FUNCTION public\.observe_verified_candidate_change\(/)
+  assert.notEqual(start, -1, "definição da RPC não encontrada")
+  const end = sql.indexOf("$$;", start)
+  assert.ok(end > start, "fim da RPC não encontrado")
+  const definition = sql.slice(start, end)
   const branch = definition.indexOf("ELSIF p_field = 'situacao' THEN")
   assert.notEqual(branch, -1, "ramo da situação não encontrado")
   const open = definition.indexOf("NOT IN (", branch)
@@ -58,8 +63,8 @@ test("a lista original da RPC não tinha 'pendente de julgamento' (a falha da co
   assert.notDeepEqual(original, [...SITUACAO_CANDIDATURA_DOMINIO])
 })
 
-test("a RPC vigente aceita exatamente o domínio de situacao_candidatura, na mesma ordem", () => {
-  assert.deepEqual(rpcSituacoes(readFileSync(migrationPath, "utf8")), [...SITUACAO_CANDIDATURA_DOMINIO])
+test("a RPC histórica preserva seu domínio e a vigente aceita o domínio atual inteiro", () => {
+  assert.deepEqual(rpcSituacoes(readFileSync(migrationPath, "utf8")), SITUACAO_CANDIDATURA_DOMINIO.filter(value => value !== "renuncia"))
   // Guarda para frente: quem trocar a RPC de novo carrega o domínio inteiro.
   assert.deepEqual(rpcSituacoes(readFileSync(currentRpcMigration(), "utf8")), [...SITUACAO_CANDIDATURA_DOMINIO])
 })
@@ -89,7 +94,8 @@ test("o rollback restaura a lista original byte a byte e remove só a linha do l
 test("o readback confere o domínio vivo, aceita 'pendente de julgamento' e rejeita valor fora dele", () => {
   const readback = readFileSync(readbackPath, "utf8")
   const esperado = readback.slice(readback.indexOf("esperado constant text[] := ARRAY["), readback.indexOf("];"))
-  assert.deepEqual([...esperado.matchAll(/'([^']*)'/g)].map((m) => m[1]), [...SITUACAO_CANDIDATURA_DOMINIO])
+  // Este readback é da aplicação histórica de setembro, cuja RPC rejeita renúncia.
+  assert.deepEqual([...esperado.matchAll(/'([^']*)'/g)].map((m) => m[1]), rpcSituacoes(readFileSync(migrationPath, "utf8")))
   assert.match(readback, /candidatos_situacao_candidatura_dominio/)
   assert.match(readback, /'Pendente de Julgamento'/)
   assert.match(readback, /WHEN foreign_key_violation OR read_only_sql_transaction THEN NULL;/)

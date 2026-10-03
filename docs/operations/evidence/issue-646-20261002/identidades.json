@@ -1,0 +1,82 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-646000000001",
+    "slug": "emanuel-cacho",
+    "sq_candidato_2026": "260002551712",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "situacao_candidatura": "deferido",
+    "status": "candidato",
+    "publicavel": true
+  },
+  {
+    "id": "00000000-0000-4000-8000-646000000002",
+    "slug": "izadora-dias",
+    "sq_candidato_2026": "250002553062",
+    "cargo_disputado": "Governador",
+    "estado": "SP",
+    "situacao_candidatura": "indeferido com recurso",
+    "status": "candidato",
+    "publicavel": true
+  },
+  {
+    "id": "00000000-0000-4000-8000-646000000003",
+    "slug": "pedro-coutinho",
+    "sq_candidato_2026": "150002551911",
+    "cargo_disputado": "Governador",
+    "estado": "PB",
+    "situacao_candidatura": "deferido",
+    "status": "candidato",
+    "publicavel": true
+  },
+  {
+    "id": "00000000-0000-4000-8000-646000000004",
+    "slug": "ricardo-marques",
+    "sq_candidato_2026": "260002549466",
+    "cargo_disputado": "Governador",
+    "estado": "SE",
+    "situacao_candidatura": "indeferido",
+    "status": "candidato",
+    "publicavel": true
+  },
+  {
+    "id": "00000000-0000-4000-8000-646000000005",
+    "slug": "tse-2026-180002544457",
+    "sq_candidato_2026": "180002544457",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "situacao_candidatura": "indeferido",
+    "status": "candidato",
+    "publicavel": true
+  },
+  {
+    "id": "00000000-0000-4000-8000-646000000006",
+    "slug": "tse-2026-180002544459",
+    "sq_candidato_2026": "180002544459",
+    "cargo_disputado": "Senador",
+    "estado": "PI",
+    "situacao_candidatura": "indeferido",
+    "status": "candidato",
+    "publicavel": true
+  },
+  {
+    "id": "00000000-0000-4000-8000-646000000007",
+    "slug": "tse-2026-250002552955",
+    "sq_candidato_2026": "250002552955",
+    "cargo_disputado": "Senador",
+    "estado": "SP",
+    "situacao_candidatura": "indeferido com recurso",
+    "status": "candidato",
+    "publicavel": true
+  },
+  {
+    "id": "00000000-0000-4000-8000-646000000008",
+    "slug": "tse-2026-70002553751",
+    "sq_candidato_2026": "70002553751",
+    "cargo_disputado": "Senador",
+    "estado": "DF",
+    "situacao_candidatura": "deferido",
+    "status": "candidato",
+    "publicavel": true
+  }
+]

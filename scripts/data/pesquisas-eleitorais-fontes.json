@@ -2209,6 +2209,225 @@
         }
       },
       "consulted_at": "2026-09-30T02:13:54Z"
+    },
+    {
+      "id": "datafolha-br-08039-2026-revisao-20261002",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Datafolha",
+        "commissioner": "Folha de S.Paulo e Grupo Globo de Comunicação",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "wwws.gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-28",
+          "end": "2026-10-01"
+        },
+        "published_at": "2026-10-01",
+        "sample_size": 2506,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-08039/2026",
+        "result_url": "https://wwws.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-08039/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-02T13:36:55Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "78f80ca3be1015c6a08b0946ad1bb4b1678d96c61c8087cada6e18e864a2ae5b",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [
+            "https://wwws.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://wwws.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://wwws.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://wwws.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/datafolha-presidente-outubro-2026-2/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-02T13:36:55Z"
+    },
+    {
+      "id": "vox-brasil-br-00148-2026-revisao-20261002",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Vox Brasil",
+        "commissioner": "Instituto Vox Brasil Opinião e Pesquisas",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "exame.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-29",
+          "end": "2026-10-01"
+        },
+        "published_at": "2026-10-02",
+        "sample_size": 2100,
+        "method": "Abordagem presencial domiciliar",
+        "margin_of_error_pp": 2.15,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-00148/2026",
+        "result_url": "https://exame.com/brasil/vox-brasil-flavio-bolsonaro-ultrapassa-lula-e-marca-412-contra-404-no-1o-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-00148/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-02T13:36:55Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "fcba435bfa9b7ee792b2bea8ecce7a23d51752dc87f75f40593090eee8041cf0",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/vox-brasil-flavio-bolsonaro-ultrapassa-lula-e-marca-412-contra-404-no-1o-turno/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/vox-brasil-flavio-bolsonaro-ultrapassa-lula-e-marca-412-contra-404-no-1o-turno/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/vox-brasil-flavio-bolsonaro-ultrapassa-lula-e-marca-412-contra-404-no-1o-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/vox-brasil-flavio-bolsonaro-ultrapassa-lula-e-marca-412-contra-404-no-1o-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-02T13:36:55Z"
+    },
+    {
+      "id": "real-time-big-data-br-09503-2026-revisao-20261002",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": "Recursos do próprio instituto",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-26",
+          "end": "2026-09-30"
+        },
+        "published_at": "2026-10-01",
+        "sample_size": 2000,
+        "method": "Entrevistas por telefone",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-09503/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-43-no-1o-turno-flavio-39/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-09503/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-02T13:36:55Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "df4ed879f05a82dafae12b1f79fad41f2e81e08fc4a14dd80a84f5a2e4513b6f",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-43-no-1o-turno-flavio-39/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-43-no-1o-turno-flavio-39/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-43-no-1o-turno-flavio-39/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-lula-tem-43-no-1o-turno-flavio-39/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-02T13:36:55Z"
     }
   ],
   "media_fallback_policy": {

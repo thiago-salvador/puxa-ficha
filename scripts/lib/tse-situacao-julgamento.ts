@@ -18,6 +18,7 @@
  */
 
 import { SITUACAO_CANDIDATURA_DOMINIO } from "@/lib/situacao-candidatura"
+import { stripAccents } from "../../src/lib/strip-accents"
 
 /** Uma linha de julgamento, ja reduzida ao que interessa. */
 export interface JulgamentoTse {
@@ -37,6 +38,7 @@ export interface JulgamentoTse {
 export const JULGAMENTO_POR_CODIGO: ReadonlyMap<string, string> = new Map([
   ["2", "deferido"],
   ["4", "indeferido com recurso"],
+  ["6", "renuncia"],
   ["8", "aguardando julgamento"],
   ["14", "indeferido"],
   ["16", "deferido com recurso"],
@@ -66,6 +68,12 @@ export function mapearJulgamento(j: JulgamentoTse | null | undefined): Resultado
   if (!valor) {
     const descricao = j.descricao.trim()
     return { ok: false, bloqueio: `julgamento-fora-do-vocabulario:${codigo}${descricao ? ` (${descricao})` : ""}` }
+  }
+  // Código e descrição pertencem ao mesmo catálogo complementar: divergência bloqueia.
+  const descricao = stripAccents(j.descricao).trim().toLowerCase().replace(/\s+/g, " ")
+  const esperado = valor.replace("com recurso", "em prazo recursal ou com recurso")
+  if (descricao && descricao !== esperado && descricao !== valor) {
+    return { ok: false, bloqueio: `julgamento-codigo-descricao-inconsistente:${codigo} (${j.descricao.trim()})` }
   }
   // Guarda de coerencia com o outro lado do dominio. Se alguem acrescentar uma
   // linha aqui e esquecer de `situacao-candidatura.ts`, o CHECK do banco

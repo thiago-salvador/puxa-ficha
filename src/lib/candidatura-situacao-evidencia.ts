@@ -1,5 +1,5 @@
 import { stripAccents } from "@/lib/strip-accents"
-import { SITUACAO_JULGAMENTO_PUBLICADO } from "@/lib/situacao-candidatura"
+import { SITUACAO_REGISTRO_OFICIAL } from "@/lib/situacao-candidatura"
 import { validarDataDeVerificacao } from "@/lib/verificacao-campos"
 
 export interface CandidaturaSituacaoFonte {
@@ -57,7 +57,7 @@ export interface SituacaoCandidaturaPublica {
 }
 
 const DESCONHECIDO = "Desconhecido"
-const DOMINIO_JULGAMENTO = new Set<string>(SITUACAO_JULGAMENTO_PUBLICADO)
+const DOMINIO_JULGAMENTO = new Set<string>(SITUACAO_REGISTRO_OFICIAL)
 const SHA256 = /^[a-f0-9]{64}$/i
 const INSTANTE_COM_FUSO = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/i
 
@@ -264,5 +264,6 @@ export function resolverSituacaoCandidaturaPublica(
 
 /** O rótulo recursal preserva a ambiguidade da categoria oficial. */
 export function rotuloJulgamentoCandidatura(value: string): string {
+  if (normalize(value) === "renuncia") return "Renúncia"
   return value.replace(/\bcom recurso\b/gi, "em prazo recursal ou com recurso")
 }

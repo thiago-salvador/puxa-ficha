@@ -1,0 +1,210 @@
+[
+  {
+    "sq": "260002551712",
+    "cargo": "Governador",
+    "uf": "SE",
+    "julgamento": {
+      "codigo": "6",
+      "descricao": "RENÚNCIA",
+      "valor": "renuncia",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  },
+  {
+    "sq": "260002551712",
+    "cargo": "Governador",
+    "uf": "SE",
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002551712",
+      "fonte_sha256": "62cb450bf8c440f6f559aa821dc4d1881f7eda8ae88d3f0d698521e5b6dda3a8",
+      "verificado_em": "2026-10-02T16:49:55.154Z",
+      "codigo": null,
+      "descricao": "Renúncia",
+      "valor": "renuncia"
+    },
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002551712",
+      "fonte_sha256": "62cb450bf8c440f6f559aa821dc4d1881f7eda8ae88d3f0d698521e5b6dda3a8",
+      "verificado_em": "2026-10-02T16:49:55.154Z",
+      "descricao": "Concorrendo",
+      "apto": null,
+      "inapto": false
+    },
+    "recurso": null
+  },
+  {
+    "sq": "250002553062",
+    "cargo": "Governador",
+    "uf": "SP",
+    "julgamento": {
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  },
+  {
+    "sq": "250002553062",
+    "cargo": "Governador",
+    "uf": "SP",
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002553062",
+      "fonte_sha256": "c58b451b8ccadb04c34701f19decba70e3ab622542f570c762d6ebffc9404398",
+      "verificado_em": "2026-10-02T16:49:54.649Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    },
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SP/20322002026/candidato/250002553062",
+      "fonte_sha256": "c58b451b8ccadb04c34701f19decba70e3ab622542f570c762d6ebffc9404398",
+      "verificado_em": "2026-10-02T16:49:54.649Z",
+      "descricao": "Concorrendo",
+      "apto": null,
+      "inapto": false
+    },
+    "recurso": null
+  },
+  {
+    "sq": "150002551911",
+    "cargo": "Governador",
+    "uf": "PB",
+    "julgamento": {
+      "codigo": "6",
+      "descricao": "RENÚNCIA",
+      "valor": "renuncia",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  },
+  {
+    "sq": "150002551911",
+    "cargo": "Governador",
+    "uf": "PB",
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PB/20322002026/candidato/150002551911",
+      "fonte_sha256": "713ae5ddfd00b997f545e756c2e280e74b5d8fc5288cea59da81567419eeea1c",
+      "verificado_em": "2026-10-02T16:49:47.760Z",
+      "codigo": null,
+      "descricao": "Renúncia",
+      "valor": "renuncia"
+    },
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/PB/20322002026/candidato/150002551911",
+      "fonte_sha256": "713ae5ddfd00b997f545e756c2e280e74b5d8fc5288cea59da81567419eeea1c",
+      "verificado_em": "2026-10-02T16:49:47.760Z",
+      "descricao": "Concorrendo",
+      "apto": null,
+      "inapto": false
+    },
+    "recurso": null
+  },
+  {
+    "sq": "260002549466",
+    "cargo": "Governador",
+    "uf": "SE",
+    "julgamento": {
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  },
+  {
+    "sq": "260002549466",
+    "cargo": "Governador",
+    "uf": "SE",
+    "julgamento": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "fbffb2597bf199b3ef5f178b3be67b614d3de12de0fb2903160425160ce402b5",
+      "verificado_em": "2026-10-02T16:49:55.632Z",
+      "codigo": null,
+      "descricao": "Indeferido",
+      "valor": "indeferido"
+    },
+    "concorrencia": {
+      "fonte_url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/SE/20322002026/candidato/260002549466",
+      "fonte_sha256": "fbffb2597bf199b3ef5f178b3be67b614d3de12de0fb2903160425160ce402b5",
+      "verificado_em": "2026-10-02T16:49:55.632Z",
+      "descricao": "Concorrendo",
+      "apto": null,
+      "inapto": false
+    },
+    "recurso": null
+  },
+  {
+    "sq": "180002544457",
+    "cargo": "Senador",
+    "uf": "PI",
+    "julgamento": {
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  },
+  {
+    "sq": "180002544459",
+    "cargo": "Senador",
+    "uf": "PI",
+    "julgamento": {
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  },
+  {
+    "sq": "250002552955",
+    "cargo": "Senador",
+    "uf": "SP",
+    "julgamento": {
+      "codigo": "14",
+      "descricao": "INDEFERIDO",
+      "valor": "indeferido",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  },
+  {
+    "sq": "70002553751",
+    "cargo": "Senador",
+    "uf": "DF",
+    "julgamento": {
+      "codigo": "6",
+      "descricao": "RENÚNCIA",
+      "valor": "renuncia",
+      "fonte_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
+      "fonte_sha256": "d35f514257e8db7337ed926011a1a707d76b00f3fc4437192dcf890648628b2b",
+      "verificado_em": "2026-10-02T17:55:32.480667Z"
+    },
+    "concorrencia": null,
+    "recurso": null
+  }
+]

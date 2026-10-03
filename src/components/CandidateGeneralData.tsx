@@ -118,7 +118,7 @@ export function CandidateGeneralData({ ficha }: { ficha: CandidateGeneralDataFie
     },
     {
       key: "situacao-candidatura",
-      label: "Julgamento do registro",
+      label: status.julgamento === "Renúncia" ? "Situação do registro" : "Julgamento do registro",
       value: status.julgamento,
       fonte: status.julgamentoFonte,
       verificadoEm: status.julgamentoVerificadoEm,

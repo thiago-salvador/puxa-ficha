@@ -26,7 +26,7 @@
  * nenhum e agrupado com outro, porque "deferido" e "deferido com recurso" sao
  * fatos jurídicos distintos.
  *
- * Continuam de fora, e cada ausência segue sendo decisão: `cassado`, `renuncia`,
+ * Continuam de fora, e cada ausência segue sendo decisão: `cassado`,
  * `falecido` e afins entram quando o TSE emitir o código para esta coorte, com a
  * mesma fricção de PR deliberada.
  *
@@ -70,6 +70,8 @@ export const SITUACAO_CANDIDATURA_DOMINIO = [
    * inventada que este dominio existe para evitar.
    */
   "pendente de julgamento",
+  /** Situação oficial RENÚNCIA, código 6 no pacote de 02/10/2026 (#646). */
+  "renuncia",
 ] as const
 
 /**
@@ -86,3 +88,6 @@ export const SITUACAO_JULGAMENTO_PUBLICADO = [
 
 /** Os dois estados de julgamento em que o registro foi negado. */
 export const SITUACAO_JULGAMENTO_INDEFERIDO = ["indeferido", "indeferido com recurso"] as const
+
+/** Situações oficiais conclusivas legíveis no recibo; renúncia não é indeferimento. */
+export const SITUACAO_REGISTRO_OFICIAL = [...SITUACAO_JULGAMENTO_PUBLICADO, "renuncia"] as const
