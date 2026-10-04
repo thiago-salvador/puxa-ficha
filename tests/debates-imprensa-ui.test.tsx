@@ -38,11 +38,11 @@ describe("box Debates no bento da ficha", () => {
     assert.match(html, /Crédito da matéria: Com informações de Assessoria Hildon Chaves/)
     assert.match(html, /newsrondonia\.com\.br/)
   })
-  it("exibe o dia quando os dois limites comprovados coincidem", () => {
+  it("exibe a declaração mais recente com dia comprovado", () => {
     const html = renderToStaticMarkup(<CandidateDebatesBentoCard candidateSlug="ravenna-castro" candidateId="ae28abd5-e231-405a-938e-85e8c6d64d75" />)
-    assert.match(html, /GP1 · 09\/09\/2026/)
+    assert.match(html, /GP1 · 03\/10\/2026/)
     assert.doesNotMatch(html, /dia exato não informado/)
-    assert.match(html, /Nós vamos recorrer até o final/)
+    assert.match(html, /Se a nossa participação tiver servido para dar visibilidade aos invisíveis, nós já somos vencedores/)
   })
   it("identifica quando a aspa literal vem do título jornalístico", () => {
     const html = renderToStaticMarkup(<CandidateDebatesBentoCard candidateSlug="camilo-duarte" candidateId="4bbfe1e0-c79b-45b6-bf3f-96be1bc6432f" />)
