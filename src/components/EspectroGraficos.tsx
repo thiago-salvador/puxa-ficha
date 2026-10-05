@@ -139,6 +139,8 @@ interface GovernadorUf {
   uf: string
   classe: ClasseGrafico
   descricao: string
+  /** Pendente com candidatura marcada para o 2º turno. */
+  segundoTurno: boolean
 }
 
 function governadoresPorUf(data: Resultados1Turno): GovernadorUf[] {
@@ -150,13 +152,14 @@ function governadoresPorUf(data: Resultados1Turno): GovernadorUf[] {
       const nome = getEstadoNome(d.uf) ?? d.uf
       if (!eleito) {
         const segundoTurno = !d.fase_calculada && d.candidatos.some((c) => c.fase === "segundo_turno")
-        return { uf: d.uf, classe: "pendente" as const, descricao: `${nome}: ${segundoTurno ? "2º turno em 25/10" : "sem eleito definido"}` }
+        return { uf: d.uf, classe: "pendente" as const, descricao: `${nome}: ${segundoTurno ? "2º turno em 25/10" : "sem eleito definido"}`, segundoTurno }
       }
       const classe = classificarEspectro(eleito.partido)
       return {
         uf: d.uf,
         classe,
         descricao: `${nome}: ${eleito.nome_urna} (${eleito.partido}), ${rotuloClasseEspectro(classe).toLowerCase()}`,
+        segundoTurno: false,
       }
     })
   return lista.sort((a, b) => ORDEM.indexOf(a.classe) - ORDEM.indexOf(b.classe) || a.uf.localeCompare(b.uf, "pt-BR"))
@@ -165,10 +168,13 @@ function governadoresPorUf(data: Resultados1Turno): GovernadorUf[] {
 /** Governadores: um quadrado por UF, na ordem esquerda, centro, direita; 2º turno tracejado. */
 export function QuadradosGovernadores({ linha, data }: { linha: LinhaEspectro; data: Resultados1Turno }) {
   const ufs = governadoresPorUf(data)
+  // "(2º turno)" só quando todas as UFs pendentes têm candidatura marcada para o 2º turno.
+  const pendentes = ufs.filter((u) => u.classe === "pendente")
+  const todasNo2Turno = pendentes.length > 0 && pendentes.every((u) => u.segundoTurno)
   const itens = ORDEM.map((classe) => ({
     classe,
     n: ufs.filter((u) => u.classe === classe).length,
-    extra: classe === "pendente" ? "(2º turno)" : undefined,
+    extra: classe === "pendente" && todasNo2Turno ? "(2º turno)" : undefined,
   })).filter((i) => i.n > 0)
   return (
     <figure className="min-w-0 space-y-3" data-pf-espectro-governadores aria-labelledby="espectro-gov-legenda">

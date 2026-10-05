@@ -228,3 +228,17 @@ test("a página do Brasil traz a seção depois de Por estado", () => {
   assert.ok(html.indexOf('id="espectro"') > html.indexOf('id="estados"'))
   assert.match(html, /href="#espectro"/)
 })
+
+test("legenda dos governadores só diz 2º turno quando a pendência tem candidatura nessa fase", () => {
+  const segundo = renderToStaticMarkup(
+    <EspectroEleitos1Turno
+      data={dados({ disputas: [disputa("Governador", "RJ", 1, [cand("g1", "PL", "segundo_turno"), cand("g2", "PSD", "segundo_turno")])], bancadas: [] })}
+    />,
+  )
+  assert.match(segundo, /\(2º turno\)/)
+  const semEleito = renderToStaticMarkup(
+    <EspectroEleitos1Turno data={dados({ disputas: [disputa("Governador", "RJ", 1, [cand("g1", "PL", "nao_eleito")])], bancadas: [] })} />,
+  )
+  assert.doesNotMatch(semEleito, /\(2º turno\)/)
+  assert.match(semEleito, /Rio de Janeiro: sem eleito definido/)
+})
