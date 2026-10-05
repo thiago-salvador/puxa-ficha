@@ -192,8 +192,8 @@ describe("resultados 1º turno: bancadas proporcionais", () => {
   it("conta só quem o TSE marcou como eleito e guarda o fechamento oficial", () => {
     const alvo = alvosDasBancadas(ELEICOES).find((a) => a.cargo === "Deputado Federal" && a.uf === "SP")!
     const corpo = JSON.stringify({ cdabr: "sp", f: "o", tf: "n", dg: "05/10/2026", hg: "01:00:00", carg: [{ cd: "6", nv: "3", agr: [{ par: [
-      { sg: "PT", cand: [{ sqcand: "1", nmu: "A", e: "s", st: "Eleito por QP" }, { sqcand: "2", nmu: "B", e: "n", st: "Suplente" }] },
-      { sg: "PL", cand: [{ sqcand: "3", nmu: "C", e: "s", st: "Eleito por média" }] },
+      { sg: "PT", cand: [{ sqcand: "250000000001", nmu: "A", e: "s", st: "Eleito por QP" }, { sqcand: "250000000002", nmu: "B", e: "n", st: "Suplente" }] },
+      { sg: "PL", cand: [{ sqcand: "250000000003", nmu: "C", e: "s", st: "Eleito por média" }] },
     ] }] }] })
     const b = lerBancada(alvo, corpo)
     assert.notEqual(typeof b, "string")
@@ -204,8 +204,22 @@ describe("resultados 1º turno: bancadas proporcionais", () => {
   it("recusa mais eleitos que vagas", () => {
     const alvo = alvosDasBancadas(ELEICOES)[0]
     const corpo = JSON.stringify({ cdabr: "ac", f: "o", tf: "s", carg: [{ cd: "6", nv: "1", agr: [{ par: [{ sg: "PT", cand: [
-      { sqcand: "1", nmu: "A", e: "s", st: "Eleito" }, { sqcand: "2", nmu: "B", e: "s", st: "Eleito" },
+      { sqcand: "250000000001", nmu: "A", e: "s", st: "Eleito" }, { sqcand: "250000000002", nmu: "B", e: "s", st: "Eleito" },
     ] }] }] }] })
     assert.match(String(lerBancada(alvo, corpo)), /2 eleitos para 1 vagas/)
+  })
+
+  it("recusa eleito sem SQ numérico ou com SQ repetido", () => {
+    const alvo = alvosDasBancadas(ELEICOES)[0]
+    const bancada = (cand: unknown[]) =>
+      JSON.stringify({ cdabr: "ac", f: "o", tf: "s", carg: [{ cd: "6", nv: "8", agr: [{ par: [{ sg: "PT", cand }] }] }] })
+    assert.equal(lerBancada(alvo, bancada([{ nmu: "A", e: "s", st: "Eleito" }])), "eleito sem sqcand numérico")
+    assert.match(
+      String(lerBancada(alvo, bancada([
+        { sqcand: "250000000001", nmu: "A", e: "s", st: "Eleito" },
+        { sqcand: "250000000001", nmu: "A", e: "s", st: "Eleito" },
+      ]))),
+      /sqcand duplicado 250000000001/,
+    )
   })
 })

@@ -190,7 +190,7 @@ export function Resultado1TurnoEstados({
         <section aria-labelledby="estados-2turno">
           <SubTitulo id="estados-2turno">2º turno para governador</SubTitulo>
           <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-            {segundoTurno.length} estados voltam às urnas em 25 de outubro.
+            {segundoTurno.length} {segundoTurno.length === 1 ? "estado volta" : "estados voltam"} às urnas em 25 de outubro.
           </p>
           <ul className="mt-4 border-b border-border">
             {segundoTurno.map((e) => (

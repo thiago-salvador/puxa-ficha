@@ -213,18 +213,32 @@ async function comandoSnapshot(args: string[]): Promise<number> {
   const coorte = coorteArquivo ? JSON.parse(readFileSync(resolve(coorteArquivo), "utf8")) as CandidaturaCoorte[] : await lerCoorteDoBanco()
   // O site aceita disputa com 100% das seções totalizadas sem esperar o tf do TSE (decisão de 05/10/2026).
   const leituras = await lerArquivos(arquivosDoTurno(eleicoes, alvosDoSnapshot()), turno, opcao(args, "arquivos"), { previa, aceitarTotalizado: true })
+  // Bancadas são opcionais no contrato: uma recusada fica no relatório e não derruba as disputas.
+  const dirLocal = opcao(args, "arquivos")
   const bancadas: BancadaResultado1Turno[] = []
+  const bancadasRecusadas: Array<{ chave: string; motivo: string }> = []
   for (const alvo of alvosDasBancadas(eleicoes)) {
-    const r = await baixar(alvo.url)
-    const lida = r.status === 200 ? lerBancada(alvo, r.corpo) : `HTTP ${r.status}`
-    if (typeof lida === "string") throw new Error(`bancada ${alvo.cargo}:${alvo.uf} recusada: ${lida}`)
-    bancadas.push(lida)
+    let lida: BancadaResultado1Turno | string
+    try {
+      if (dirLocal) {
+        const caminho = join(dirLocal, basename(new URL(alvo.url).pathname))
+        lida = existsSync(caminho) ? lerBancada(alvo, readFileSync(caminho, "utf8")) : "arquivo local ausente"
+      } else {
+        const r = await baixar(alvo.url)
+        lida = r.status === 200 ? lerBancada(alvo, r.corpo) : `HTTP ${r.status}`
+      }
+    } catch (error) {
+      lida = error instanceof Error ? error.message : String(error)
+    }
+    if (typeof lida === "string") bancadasRecusadas.push({ chave: `${alvo.cargo}:${alvo.uf}`, motivo: lida })
+    else bancadas.push(lida)
   }
   const { snapshot, relatorio } = montarSnapshot({ eleicoes, leituras, coorte, agora: new Date(), previa, bancadas })
-  console.log(JSON.stringify({ ...relatorio, sem_ficha: relatorio.sem_ficha.length, fichas_fora_do_tse: relatorio.fichas_fora_do_tse.length, recusados: relatorio.recusados.length, bancadas_incompletas: relatorio.bancadas_incompletas.length }))
+  console.log(JSON.stringify({ ...relatorio, sem_ficha: relatorio.sem_ficha.length, fichas_fora_do_tse: relatorio.fichas_fora_do_tse.length, recusados: relatorio.recusados.length, bancadas_incompletas: relatorio.bancadas_incompletas.length, bancadas_recusadas: bancadasRecusadas.length }))
+  for (const b of bancadasRecusadas) console.log(`::warning::bancada ${b.chave} recusada: ${b.motivo}`)
   const relDir = resolve("reports/resultados-tse")
   mkdirSync(relDir, { recursive: true })
-  writeFileSync(join(relDir, `snapshot-relatorio-turno-1${previa ? "-previa" : ""}.json`), `${JSON.stringify(relatorio, null, 2)}\n`)
+  writeFileSync(join(relDir, `snapshot-relatorio-turno-1${previa ? "-previa" : ""}.json`), `${JSON.stringify({ ...relatorio, bancadas_recusadas: bancadasRecusadas }, null, 2)}\n`)
   if (!snapshot) {
     console.log(`::warning::snapshot não gravado: ${relatorio.recusados.length} arquivo(s) recusado(s) ou totalização não final`)
     for (const r of relatorio.recusados.slice(0, 20)) console.log(`- ${r.chave}: ${r.motivo}`)

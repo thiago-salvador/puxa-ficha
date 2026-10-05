@@ -145,9 +145,13 @@ function governadoresPorUf(data: Resultados1Turno): GovernadorUf[] {
   const lista = data.disputas
     .filter((d) => d.cargo === "Governador")
     .map((d) => {
-      const eleito = d.candidatos.find((c) => c.fase === "eleito")
+      // Mesma régua da contagem: fase calculada não é eleito marcado pelo TSE.
+      const eleito = d.fase_calculada ? undefined : d.candidatos.find((c) => c.fase === "eleito")
       const nome = getEstadoNome(d.uf) ?? d.uf
-      if (!eleito) return { uf: d.uf, classe: "pendente" as const, descricao: `${nome}: 2º turno em 25/10` }
+      if (!eleito) {
+        const segundoTurno = !d.fase_calculada && d.candidatos.some((c) => c.fase === "segundo_turno")
+        return { uf: d.uf, classe: "pendente" as const, descricao: `${nome}: ${segundoTurno ? "2º turno em 25/10" : "sem eleito definido"}` }
+      }
       const classe = classificarEspectro(eleito.partido)
       return {
         uf: d.uf,

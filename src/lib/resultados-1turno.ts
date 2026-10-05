@@ -142,7 +142,10 @@ export function getDisputa1Turno(cargo: CargoResultado1Turno, uf: string, data: 
 }
 
 export function getResultadoDoCandidato1Turno(slug: string, data: Resultados1Turno = dados): ResultadoDoCandidato1Turno | null {
-  for (const disputa of data.disputas) {
+  // Slug em mais de uma disputa é erro de cadastro: sem como saber a UF certa, nada é afirmado.
+  const disputas = data.disputas.filter((d) => d.candidatos.some((c) => c.slug === slug))
+  if (disputas.length > 1) return null
+  for (const disputa of disputas) {
     const candidato = disputa.candidatos.find((c) => c.slug === slug)
     if (!candidato) continue
     // Vizinhos e total só entre votos válidos: voto anulado não disputa posição.

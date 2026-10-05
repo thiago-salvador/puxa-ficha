@@ -89,12 +89,18 @@ export function lerBancada(alvo: AlvoBancada, corpo: string): BancadaResultado1T
   const vagas = Number(cargo.nv)
   if (!Number.isInteger(vagas) || vagas <= 0) return "vagas (nv) inválidas"
   const eleitos: BancadaResultado1Turno["eleitos"] = []
+  const vistos = new Set<string>()
   for (const agr of (cargo.agr as Array<Record<string, unknown>>) ?? []) {
     for (const par of (agr?.par as Array<Record<string, unknown>>) ?? []) {
       for (const c of (par?.cand as Array<Record<string, unknown>>) ?? []) {
         const st = stripAccents(String(c?.st ?? "")).trim().toLowerCase()
         if (c?.e === "s" && st.startsWith("eleito")) {
-          eleitos.push({ sq: String(c.sqcand), nome_urna: String(c.nmu || c.nm || ""), partido: String(par.sg ?? "") })
+          // Mesma regra de lerArquivoResultado: SQ inválido ou repetido recusa a bancada.
+          const sq = String(c.sqcand ?? "").trim()
+          if (!/^\d{6,}$/.test(sq)) return "eleito sem sqcand numérico"
+          if (vistos.has(sq)) return `sqcand duplicado ${sq}`
+          vistos.add(sq)
+          eleitos.push({ sq, nome_urna: String(c.nmu || c.nm || ""), partido: String(par.sg ?? "") })
         }
       }
     }

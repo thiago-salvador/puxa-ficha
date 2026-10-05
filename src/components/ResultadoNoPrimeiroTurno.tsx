@@ -76,7 +76,9 @@ export function ResultadoNoPrimeiroTurno({
   if (!cargo || !CARGOS_COM_RESULTADO.has(cargo)) return null
   if (!hasResultados1Turno(data)) return null
 
-  const resultado = getResultadoDoCandidato1Turno(slug, data)
+  // A ficha só mostra a disputa do próprio cargo, nunca a de outro cargo com o mesmo slug.
+  const achado = getResultadoDoCandidato1Turno(slug, data)
+  const resultado = achado && achado.disputa.cargo === cargo ? achado : null
   const registroFora = resultado ? null : rotuloRegistroForaDoResultado(situacaoCandidatura)
   // Sem linha no TSE e registro deferido (ou sem registro): não há o que afirmar com segurança.
   if (!resultado && !registroFora) return null

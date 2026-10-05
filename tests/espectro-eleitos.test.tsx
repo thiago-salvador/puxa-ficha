@@ -153,8 +153,10 @@ test("conta só eleitos, exclui Presidente e fecha o Total com a soma das linhas
 test("lista as UFs sem todos os eleitos", () => {
   const e = contarEspectroEleitos(dados())
   assert.deepEqual(e.pendencias, [
-    { cargo: "Governador", ufs: ["RJ"] },
-    { cargo: "Deputado Estadual e Distrital", ufs: ["DF"] },
+    { cargo: "Governador", motivo: "segundo_turno", ufs: ["RJ"] },
+    { cargo: "Governador", motivo: "sem_fechamento", ufs: ["RJ"] },
+    { cargo: "Deputado Estadual e Distrital", motivo: "sem_eleitos", ufs: ["DF"] },
+    { cargo: "Deputado Estadual e Distrital", motivo: "sem_fechamento", ufs: ["DF"] },
   ])
 
   const completo = contarEspectroEleitos(
@@ -167,7 +169,7 @@ test("lista as UFs sem todos os eleitos", () => {
 
   // Menos eleitos que vagas sinaliza pendência mesmo com fechamento oficial.
   const faltando = contarEspectroEleitos(dados({ disputas: [], bancadas: [bancada("Deputado Federal", "AC", 8, ["PL"], true)] }))
-  assert.deepEqual(faltando.pendencias, [{ cargo: "Deputado Federal", ufs: ["AC"] }])
+  assert.deepEqual(faltando.pendencias, [{ cargo: "Deputado Federal", motivo: "sem_eleitos", ufs: ["AC"] }])
 })
 
 test("metodologia conta partidos com os dois eixos documentados e com curadoria, a partir do mapa", () => {
@@ -190,7 +192,8 @@ test("componente mostra a linha Total em negrito, a nota de pendência e o link 
   assert.match(html, /<th scope="row" class="px-3 py-3 font-bold">Total<\/th>/)
   assert.match(html, /9 de 11 vagas/)
   assert.match(html, /Sem classificação/)
-  assert.match(html, /Governador decidido no 2º turno, em 25\/10: RJ\./)
+  assert.match(html, /Decidido no 2º turno, em 25\/10: Governador \(RJ\)\./)
+  assert.match(html, /Sem fechamento oficial do TSE: Governador \(RJ\); Deputado Estadual e Distrital \(DF\)\./)
   assert.match(html, /Ainda sem todos os eleitos no TSE: Deputado Estadual e Distrital \(DF\)\./)
   assert.match(html, /href="\/quiz\/metodologia"/)
   assert.match(html, /Como classificamos os partidos/)

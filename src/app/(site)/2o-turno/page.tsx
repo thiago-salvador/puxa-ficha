@@ -112,8 +112,8 @@ export default async function SegundoTurnoPage() {
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Puxa Ficha",
-      url: "https://puxaficha.com.br",
+      name: titulo2Turno,
+      url: "https://puxaficha.com.br/2o-turno",
       description:
         "Consulta pública sobre candidatos mapeados para 2026, com ficha pública, comparador e contexto editorial baseado em fontes disponíveis.",
     },

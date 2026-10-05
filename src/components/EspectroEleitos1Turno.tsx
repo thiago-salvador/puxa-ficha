@@ -143,9 +143,11 @@ export function EspectroEleitos1Turno({ data = getResultados1Turno() }: { data?:
   const camara = linhaDe(espectro, "Deputado Federal")
   const governador = linhaDe(espectro, "Governador")
   const assembleias = linhaDe(espectro, "Deputado Estadual e Distrital")
-  // Governador sem eleito é estado com 2º turno (25/10), não apuração pendente; deputado sem todos os eleitos é bancada sem fechamento.
-  const segundoTurno = espectro.pendencias.find((p) => p.cargo === "Governador")
-  const bancadas = espectro.pendencias.filter((p) => p.cargo !== "Governador")
+  // Cada aviso sai do motivo registrado na contagem, nunca de suposição pelo cargo.
+  const segundoTurno = espectro.pendencias.filter((p) => p.motivo === "segundo_turno")
+  const semEleitos = espectro.pendencias.filter((p) => p.motivo === "sem_eleitos")
+  const semFechamento = espectro.pendencias.filter((p) => p.motivo === "sem_fechamento")
+  const listar = (lista: typeof segundoTurno) => lista.map((p) => `${p.cargo} (${p.ufs.join(", ")})`).join("; ")
 
   return (
     <section id="espectro" className="scroll-mt-24" aria-labelledby="espectro-titulo" data-pf-espectro-eleitos>
@@ -154,18 +156,15 @@ export function EspectroEleitos1Turno({ data = getResultados1Turno() }: { data?:
       </TituloSecao>
       <SlashDivider className="mb-8 mt-6" />
       <div className="space-y-10">
-        {(segundoTurno || bancadas.length > 0) && (
+        {espectro.pendencias.length > 0 && (
           <div
             role="status"
             data-pf-espectro-pendencia
             className="space-y-1 rounded-[12px] bg-secondary px-4 py-3 text-[length:var(--text-body-sm)] font-semibold text-foreground"
           >
-            {segundoTurno && <p>Governador decidido no 2º turno, em 25/10: {segundoTurno.ufs.join(", ")}.</p>}
-            {bancadas.length > 0 && (
-              <p>
-                Ainda sem todos os eleitos no TSE: {bancadas.map((p) => `${p.cargo} (${p.ufs.join(", ")})`).join("; ")}.
-              </p>
-            )}
+            {segundoTurno.length > 0 && <p>Decidido no 2º turno, em 25/10: {listar(segundoTurno)}.</p>}
+            {semEleitos.length > 0 && <p>Ainda sem todos os eleitos no TSE: {listar(semEleitos)}.</p>}
+            {semFechamento.length > 0 && <p>Sem fechamento oficial do TSE: {listar(semFechamento)}.</p>}
           </div>
         )}
 

@@ -39,8 +39,17 @@ export interface LinhaEspectro {
   partidos: PartidoEspectro[]
 }
 
+/**
+ * Motivo da pendência, registrado separado para cada aviso dizer só o que o dado confirma:
+ * - `segundo_turno`: vaga sem eleito e com candidatura marcada para o 2º turno;
+ * - `sem_eleitos`: vaga sem eleito, sem indicação de 2º turno;
+ * - `sem_fechamento`: o TSE ainda não fechou a totalização ou não marcou a situação (fase só calculada).
+ */
+export type MotivoPendenciaEspectro = "segundo_turno" | "sem_eleitos" | "sem_fechamento"
+
 export interface PendenciaEspectro {
   cargo: CargoEspectro
+  motivo: MotivoPendenciaEspectro
   ufs: string[]
 }
 
@@ -116,24 +125,41 @@ function fecharLinha(linha: LinhaEspectro, porPartido: Map<string, number>[]): L
 }
 
 export function contarEspectroEleitos(data: Resultados1Turno): EspectroEleitos {
-  const porCargo = new Map<CargoEspectro, { vagas: number; partidos: Map<string, number>; ufsPendentes: Set<string> }>()
-  for (const cargo of CARGOS_ESPECTRO) porCargo.set(cargo, { vagas: 0, partidos: new Map(), ufsPendentes: new Set() })
+  const porCargo = new Map<CargoEspectro, { vagas: number; partidos: Map<string, number>; pendentes: Map<MotivoPendenciaEspectro, Set<string>> }>()
+  for (const cargo of CARGOS_ESPECTRO) porCargo.set(cargo, { vagas: 0, partidos: new Map(), pendentes: new Map() })
 
-  const registrarDisputa = (cargo: CargoEspectro, uf: string, vagas: number, eleitos: string[], oficial: boolean) => {
+  const registrarDisputa = (
+    cargo: CargoEspectro,
+    uf: string,
+    vagas: number,
+    eleitos: string[],
+    situacao: { oficial: boolean; segundoTurno: boolean },
+  ) => {
     const alvo = porCargo.get(cargo)!
     alvo.vagas += vagas
     for (const partido of eleitos) {
       const k = chavePartido(partido)
       alvo.partidos.set(k, (alvo.partidos.get(k) ?? 0) + 1)
     }
-    if (!oficial || eleitos.length < vagas) alvo.ufsPendentes.add(uf.toUpperCase())
+    const marcar = (motivo: MotivoPendenciaEspectro) => {
+      const ufs = alvo.pendentes.get(motivo) ?? new Set<string>()
+      ufs.add(uf.toUpperCase())
+      alvo.pendentes.set(motivo, ufs)
+    }
+    if (!situacao.oficial) marcar("sem_fechamento")
+    if (eleitos.length < vagas) marcar(situacao.segundoTurno ? "segundo_turno" : "sem_eleitos")
   }
 
   // Presidente fica de fora: a disputa vai ao 2º turno.
   for (const d of data.disputas) {
     if (d.cargo !== "Governador" && d.cargo !== "Senador") continue
-    const eleitos = d.candidatos.filter((c) => c.fase === "eleito").map((c) => c.partido)
-    registrarDisputa(d.cargo, d.uf, d.vagas, eleitos, d.fechamento_oficial)
+    // Fase calculada não é marcação do TSE: a disputa não entra na contagem confirmada.
+    const calculada = d.fase_calculada === true
+    const eleitos = calculada ? [] : d.candidatos.filter((c) => c.fase === "eleito").map((c) => c.partido)
+    registrarDisputa(d.cargo, d.uf, d.vagas, eleitos, {
+      oficial: d.fechamento_oficial && !calculada,
+      segundoTurno: !calculada && d.candidatos.some((c) => c.fase === "segundo_turno"),
+    })
   }
 
   for (const b of data.bancadas ?? []) {
@@ -145,7 +171,7 @@ export function contarEspectroEleitos(data: Resultados1Turno): EspectroEleitos {
       vistos.add(e.sq)
       partidos.push(e.partido)
     }
-    registrarDisputa(cargo, b.uf, b.vagas, partidos, b.fechamento_oficial)
+    registrarDisputa(cargo, b.uf, b.vagas, partidos, { oficial: b.fechamento_oficial, segundoTurno: false })
   }
 
   const linhas = CARGOS_ESPECTRO.map((cargo) => {
@@ -162,10 +188,13 @@ export function contarEspectroEleitos(data: Resultados1Turno): EspectroEleitos {
     linhas.map((l) => new Map(l.partidos.map((p) => [p.sigla, p.eleitos] as const))),
   )
 
-  const pendencias: PendenciaEspectro[] = CARGOS_ESPECTRO.flatMap((cargo) => {
-    const ufs = [...porCargo.get(cargo)!.ufsPendentes].sort((a, b) => a.localeCompare(b, "pt-BR"))
-    return ufs.length > 0 ? [{ cargo, ufs }] : []
-  })
+  const MOTIVOS: MotivoPendenciaEspectro[] = ["segundo_turno", "sem_eleitos", "sem_fechamento"]
+  const pendencias: PendenciaEspectro[] = CARGOS_ESPECTRO.flatMap((cargo) =>
+    MOTIVOS.flatMap((motivo) => {
+      const ufs = [...(porCargo.get(cargo)!.pendentes.get(motivo) ?? [])].sort((a, b) => a.localeCompare(b, "pt-BR"))
+      return ufs.length > 0 ? [{ cargo, motivo, ufs }] : []
+    }),
+  )
 
   let fonteNosDoisEixos = 0
   let comCuradoria = 0
