@@ -169,6 +169,8 @@ ${turno === 1 ? `  IF EXISTS (SELECT 1 FROM public.candidaturas_fase_2026 f JOIN
          CASE WHEN p.encerra THEN encerrada END,
          p.situacao_tse, p.fonte_url, p.fonte_sha256, '${version}', now()
   FROM ${tabela} p
+  -- Predicado sempre verdadeiro: põe o ref do lote no statement, como o gate de escrita auditada exige.
+  WHERE '${ref}' IS NOT NULL
 ${turno === 1 ? "  ON CONFLICT (candidato_id) DO NOTHING;" : `  ON CONFLICT (candidato_id) DO UPDATE
     SET fase_eleitoral = EXCLUDED.fase_eleitoral,
         fase_turno = EXCLUDED.fase_turno,

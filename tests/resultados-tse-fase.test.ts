@@ -278,6 +278,8 @@ describe("resultados TSE: plano", () => {
     assert.equal(plano.pendentes.some((p) => p.cargo === "Senador"), false)
     const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } })
     assert.match(generated.migration, /escrita esperada=7/)
+    // O gate de escrita auditada só aceita a anotação se o statement citar o ref como literal.
+    assert.match(generated.migration, /INSERT INTO public\.candidaturas_fase_2026[\s\S]*?WHERE 'fase-turno-1-20261005120000' IS NOT NULL/)
   })
 
   it("senador sem SQ deixa a coorte como fora da disputa sem claim individual", () => {

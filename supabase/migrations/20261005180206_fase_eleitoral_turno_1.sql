@@ -684,6 +684,8 @@ BEGIN
          CASE WHEN p.encerra THEN encerrada END,
          p.situacao_tse, p.fonte_url, p.fonte_sha256, '20261005180206', now()
   FROM pf_fase_plano_20261005180206 p
+  -- Predicado sempre verdadeiro: põe o ref do lote no statement, como o gate de escrita auditada exige.
+  WHERE 'fase-turno-1-20261005180206' IS NOT NULL
   ON CONFLICT (candidato_id) DO NOTHING;
   GET DIAGNOSTICS quantidade = ROW_COUNT;
   IF quantidade <> 512 THEN
