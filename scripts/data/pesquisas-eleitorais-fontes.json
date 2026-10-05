@@ -2428,6 +2428,379 @@
         }
       },
       "consulted_at": "2026-10-02T13:36:55Z"
+    },
+    {
+      "id": "datafolha-br-01708-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Datafolha",
+        "commissioner": "Folha de S.Paulo e TV Globo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "media.folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 4006,
+        "method": "Abordagem pessoal em pontos de fluxo populacional",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-01708/2026",
+        "result_url": "https://media.folha.uol.com.br/datafolha/2026/10/04/clhx3ko6h42kpfw2vumafq.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-01708/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "804c110b2f2bbd6cbcfe93123f239398b42cf1989b95d08fdc3109160c8874f0",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://media.folha.uol.com.br/datafolha/2026/10/04/clhx3ko6h42kpfw2vumafq.pdf",
+            "https://datafolha.folha.uol.com.br/eleicoes/2026/10/na-vespera-da-eleicao-lula-tem-45-dos-validos-no-1o-turno-empatado-com-flavio-bolsonaro-42.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://media.folha.uol.com.br/datafolha/2026/10/04/clhx3ko6h42kpfw2vumafq.pdf",
+            "https://datafolha.folha.uol.com.br/eleicoes/2026/10/na-vespera-da-eleicao-lula-tem-45-dos-validos-no-1o-turno-empatado-com-flavio-bolsonaro-42.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://media.folha.uol.com.br/datafolha/2026/10/04/clhx3ko6h42kpfw2vumafq.pdf",
+            "https://datafolha.folha.uol.com.br/eleicoes/2026/10/na-vespera-da-eleicao-lula-tem-45-dos-validos-no-1o-turno-empatado-com-flavio-bolsonaro-42.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://media.folha.uol.com.br/datafolha/2026/10/04/clhx3ko6h42kpfw2vumafq.pdf",
+            "https://datafolha.folha.uol.com.br/eleicoes/2026/10/na-vespera-da-eleicao-lula-tem-45-dos-validos-no-1o-turno-empatado-com-flavio-bolsonaro-42.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-br-02197-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Globo e jornal O Globo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "g1.globo.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-03",
+        "sample_size": 3702,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-02197/2026",
+        "result_url": "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/10/03/quaest-presidente-3-outubro.ghtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-02197/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "dee81d754444c2c7b9154b98f7fcc0570f21965707567531ce11f12219dc8abb",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/10/03/quaest-presidente-3-outubro.ghtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/10/03/quaest-presidente-3-outubro.ghtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/10/03/quaest-presidente-3-outubro.ghtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://g1.globo.com/politica/eleicoes/2026/pesquisa-eleitoral/noticia/2026/10/03/quaest-presidente-3-outubro.ghtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "poderdata-br-03519-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "PoderData",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "sbtnews.sbt.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-30",
+          "end": "2026-10-02"
+        },
+        "published_at": "2026-10-03",
+        "sample_size": 4000,
+        "method": null,
+        "margin_of_error_pp": 1.5,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-03519/2026",
+        "result_url": "https://sbtnews.sbt.com.br/noticia/eleicoes/poder-data-aya-lula-tem-42-e-flavio-41-no-1-turno",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-03519/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d7132574cf1f7c81737c850a03784e7dff477e5db057a51fe6539df8ee85c1d4",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/poder-data-aya-lula-tem-42-e-flavio-41-no-1-turno"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/poder-data-aya-lula-tem-42-e-flavio-41-no-1-turno"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/poder-data-aya-lula-tem-42-e-flavio-41-no-1-turno"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/poder-data-aya-lula-tem-42-e-flavio-41-no-1-turno"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "gerp-br-00509-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Gerp",
+        "commissioner": "Gerp",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "exame.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-30",
+          "end": "2026-10-02"
+        },
+        "published_at": "2026-10-03",
+        "sample_size": 2400,
+        "method": "Entrevistas telefônicas (GerpCati)",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95.55,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-00509/2026",
+        "result_url": "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-46-e-lula-44-dos-votos-validos-no-1o-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-00509/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d5c2d19cf6035e4ba9593a190374441a689dc4a153d9d00b101944a9a1a99a9d",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-46-e-lula-44-dos-votos-validos-no-1o-turno/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-46-e-lula-44-dos-votos-validos-no-1o-turno/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-46-e-lula-44-dos-votos-validos-no-1o-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-gerp-flavio-bolsonaro-tem-46-e-lula-44-dos-votos-validos-no-1o-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "meio-ideia-br-08706-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Meio/Ideia",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "canalmeio.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-09-25",
+          "end": "2026-09-28"
+        },
+        "published_at": "2026-09-30",
+        "sample_size": 2000,
+        "method": "Pesquisa quantitativa com aplicação de questionário estruturado, através de pesquisa telefônica",
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BR-08706/2026",
+        "result_url": "https://www.canalmeio.com.br/2026/09/30/meio-ideia-o-primeiro-turno-mais-dificil-da-historia/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-08706/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "19d28b33f5ed62615715a30a07c9fc8efe8cd715b400ce118a46e637c34eee35",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.canalmeio.com.br/2026/09/30/meio-ideia-o-primeiro-turno-mais-dificil-da-historia/",
+            "https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro2.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.canalmeio.com.br/2026/09/30/meio-ideia-o-primeiro-turno-mais-dificil-da-historia/",
+            "https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro2.pdf"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.canalmeio.com.br/2026/09/30/meio-ideia-o-primeiro-turno-mais-dificil-da-historia/",
+            "https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro2.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.canalmeio.com.br/2026/09/30/meio-ideia-o-primeiro-turno-mais-dificil-da-historia/",
+            "https://www.canalmeio.com.br/wp-content/uploads/2026/09/Pesquisa-Meio_Ideia-Setembro2.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
     }
   ],
   "media_fallback_policy": {

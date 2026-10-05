@@ -213,7 +213,8 @@ describe("matriz de cobertura das fichas", () => {
     assert.match(cell?.motivo ?? "", /sem recibo/)
   })
 
-  it("aceita vazio confirmado somente quando o recibo fecha a busca", () => {
+  it("aceita vazio confirmado somente quando o recibo fecha a busca", (t) => {
+    t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-09-23T11:00:00Z") })
     const matrix = buildCoverageMatrix([profile()], [], { "ana-exemplo": { processos: {
         resultado: "vazio_confirmado",
         executado_em: "2026-09-20T10:00:00.000Z",
