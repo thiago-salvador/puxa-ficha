@@ -10,8 +10,10 @@ import {
   descobrirEleicoes,
   lerArquivoResultado,
   montarPlano,
+  situacaoPorCalculo,
   urlResultado,
   type ArquivoAlvo,
+  type CandidatoResultado,
   type CandidaturaCoorte,
   type EleicoesDoTurno,
 } from "../scripts/lib/resultados-tse"
@@ -39,15 +41,31 @@ function alvo(cargo: "Presidente" | "Governador" | "Senador", abrangencia: strin
   return { chave: `${cargo}:${abrangencia}`, cargo, abrangencia, eleicao, url: urlResultado("ele2026", eleicao, abrangencia, cargo) }
 }
 
-type Cand = { sqcand: string; e: string; st: string; dvt?: string }
+type Cand = { sqcand: string; e: string; st: string; dvt?: string; vap?: string; pvapn?: string }
+/** Arquivo no formato de 2026 (dados/<uf>/...-u.json). `extra` mexe na raiz, exceto st/carper/nv. */
 function arquivo(a: ArquivoAlvo, cands: Cand[], extra: Record<string, string> = {}): string {
   const codigo = { Presidente: "1", Governador: "3", Senador: "5" }[a.cargo]
+  const { st, carper, nv, ...raiz } = extra
   return JSON.stringify({
-    ele: a.eleicao, carper: codigo, cdabr: a.abrangencia === "BR" ? "br" : a.abrangencia, t: "1", f: "o", tf: "s",
-    s: "1000", st: "1000", dg: "05/10/2026", hg: "01:02:03",
-    cand: cands.map((c, i) => ({ seq: String(i + 1), sqcand: c.sqcand, n: String(10 + i), nm: `NOME ${i}`, e: c.e, st: c.st, dvt: c.dvt ?? "Válido", vap: "1" })),
-    ...extra,
+    ele: a.eleicao, cdabr: a.abrangencia === "BR" ? "br" : a.abrangencia.toLowerCase(), t: "1", f: "o", tf: "s",
+    dg: "05/10/2026", hg: "01:02:03",
+    s: { ts: "1000", st: st ?? "1000", pst: "100,00", pstn: "100" },
+    e: { te: "2000", c: "1600", pc: "80,00", pcn: "80", a: "400", pa: "20,00", pan: "20" },
+    v: { vv: "1500", vb: "40", pvb: "2,50", pvbn: "2.5", tvn: "60", ptvn: "3,75", ptvnn: "3.75" },
+    carg: [{
+      cd: carper ?? codigo, nv: nv ?? (a.cargo === "Senador" ? "2" : "1"),
+      agr: [{ n: "1", par: [{ sg: "PX", cand: cands.map((c, i) => ({
+        seq: String(i + 1), sqcand: c.sqcand, n: String(10 + i), nm: `NOME ${i}`, nmu: `URNA ${i}`, e: c.e, st: c.st,
+        dvt: c.dvt ?? "Válido", vap: c.vap ?? String(100 - i), pvapn: c.pvapn ?? "10,5",
+        vs: [{ tp: a.cargo === "Senador" ? "s1" : "v", sqcand: "1", nm: `COMPANHEIRO ${i}`, nmu: `COMP ${i}`, sgp: "PY" }],
+      })) }] }],
+    }],
+    ...raiz,
   })
+}
+
+function cr(parcial: Partial<CandidatoResultado> & Pick<CandidatoResultado, "situacao" | "eleito">): CandidatoResultado {
+  return { sq: "1", numero: "", nome: "", nomeUrna: "", partido: "", destinacao: "Válido", votos: 1, percentualValidos: 1, posicao: 1, companheiros: [], ...parcial }
 }
 
 const senadoSP = alvo("Senador", "SP")
@@ -96,11 +114,16 @@ describe("resultados TSE: descoberta e URL", () => {
     assert.throws(() => descobrirEleicoes(config("ele2024"), { ciclo: "ele2026", turno: 1, dataIso: "2026-10-04" }), /ciclo publicado é ele2024/)
   })
 
-  it("monta a URL no formato de 2022", () => {
-    assert.equal(urlResultado("ele2022", "546", "SP", "Senador"),
-      "https://resultados.tse.jus.br/oficial/ele2022/546/dados-simplificados/sp/sp-c0005-e000546-r.json")
-    assert.equal(urlResultado("ele2022", "544", "BR", "Presidente"),
-      "https://resultados.tse.jus.br/oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json")
+  it("aceita o ele-c.json de 2026, que não publica o ciclo na raiz", () => {
+    const semCiclo = { pl: config().pl }
+    assert.equal(descobrirEleicoes(semCiclo, { ciclo: "ele2026", turno: 1, dataIso: "2026-10-04" }).federal, "700")
+  })
+
+  it("monta a URL no formato de 2026 (dados/<uf>/...-u.json)", () => {
+    assert.equal(urlResultado("ele2026", "6259", "SP", "Senador"),
+      "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/sp/sp-c0005-e006259-u.json")
+    assert.equal(urlResultado("ele2026", "6257", "BR", "Presidente"),
+      "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json")
   })
 
   it("no 2º turno não pede arquivo de Senado", () => {
@@ -169,12 +192,61 @@ describe("resultados TSE: leitura fail-closed", () => {
 
   it("sanidade: governador com três no 2º turno é recusado", () => {
     const fases = [{ e: "s", st: "2º turno" }, { e: "s", st: "2º turno" }, { e: "s", st: "2º turno" }]
-    assert.match(checarSanidade("Governador", 1, fases.map((f, i) => ({ sq: String(i), numero: "", nome: "", eleito: true, situacao: f.st, destinacao: "Válido" }))) ?? "", /3 no 2º turno/)
+    assert.match(checarSanidade("Governador", 1, fases.map((f, i) => cr({ sq: String(i), eleito: true, situacao: f.st }))) ?? "", /3 no 2º turno/)
+  })
+
+  it("Senado usa as vagas do arquivo (nv) e recusa número diferente de 2", () => {
+    const l = lerArquivoResultado(senadoSP, 1, arquivo(senadoSP, [
+      { sqcand: "250000000001", e: "s", st: "Eleito" },
+      { sqcand: "250000000008", e: "s", st: "Eleito" },
+    ], { nv: "3" }))
+    assert.equal(l.ok, false)
+    assert.match(l.ok ? "" : l.motivo, /3 vagas/)
+  })
+
+  it("recusa candidato sem votos apurados", () => {
+    const l = lerArquivoResultado(governoSP, 1, arquivo(governoSP, [
+      { sqcand: "250000000003", e: "s", st: "Eleito", vap: "" },
+      { sqcand: "250000000004", e: "n", st: "Não eleito" },
+    ]))
+    assert.equal(l.ok, false)
+    assert.match(l.ok ? "" : l.motivo, /vap/)
   })
 
   it("classifica anulado como fora da disputa e não chuta situação desconhecida", () => {
-    assert.equal(classificarCandidato({ sq: "1", numero: "", nome: "", eleito: false, situacao: "Não eleito", destinacao: "Anulado sub judice" }, 1), "fora_da_disputa")
-    assert.equal(classificarCandidato({ sq: "1", numero: "", nome: "", eleito: false, situacao: "#", destinacao: "Válido" }, 1), null)
+    assert.equal(classificarCandidato(cr({ eleito: false, situacao: "Não eleito", destinacao: "Anulado sub judice" }), 1), "fora_da_disputa")
+    assert.equal(classificarCandidato(cr({ eleito: false, situacao: "#" }), 1), null)
+  })
+})
+
+describe("resultados TSE: votos e totais (formato 2026)", () => {
+  it("lê votos, % dos válidos, partido, nome de urna, vice/suplente e totais; ordena por votos", () => {
+    const l = lerArquivoResultado(governoSP, 1, arquivo(governoSP, [
+      { sqcand: "250000000005", e: "n", st: "Não eleito", vap: "120", pvapn: "8,000000000" },
+      { sqcand: "250000000003", e: "s", st: "Eleito", vap: "900", pvapn: "60,123456789" },
+      { sqcand: "250000000004", e: "n", st: "Não eleito", vap: "480", pvapn: "31,876543211" },
+    ]))
+    assert.equal(l.ok, true)
+    if (!l.ok) return
+    assert.deepEqual(l.candidatos.map((c) => [c.sq, c.votos, c.percentualValidos]), [
+      ["250000000003", 900, 60.123456789], ["250000000004", 480, 31.876543211], ["250000000005", 120, 8],
+    ])
+    assert.deepEqual([l.candidatos[0].partido, l.candidatos[0].nomeUrna, l.candidatos[0].companheiros], ["PX", "URNA 1", [{ tipo: "v", nome: "COMP 1", partido: "PY" }]])
+    assert.equal(l.vagas, 1)
+    assert.equal(l.final, true)
+    assert.deepEqual(l.totais, {
+      secoes: 1000, secoesTotalizadas: 1000, percentualSecoesTotalizadas: 100, eleitorado: 2000, comparecimento: 1600,
+      percentualComparecimento: 80, abstencao: 400, percentualAbstencao: 20, votosValidos: 1500, brancos: 40,
+      percentualBrancos: 2.5, nulos: 60, percentualNulos: 3.75,
+    })
+  })
+
+  it("prévia aceita apuração em andamento e situação vazia, sem virar leitura final", () => {
+    const corpo = arquivo(governoSP, [{ sqcand: "250000000003", e: "n", st: "" }], { tf: "n", st: "500" })
+    assert.equal(lerArquivoResultado(governoSP, 1, corpo).ok, false)
+    const previa = lerArquivoResultado(governoSP, 1, corpo, { previa: true })
+    assert.equal(previa.ok, true)
+    assert.equal(previa.ok && previa.final, false)
   })
 })
 
@@ -256,6 +328,42 @@ describe("resultados TSE: plano", () => {
     assert.equal(plano.mudancas.some((m) => m.slug === "gov-2t-b"), true)
     assert.throws(() => gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } }), /plano incompleto/)
   })
+
+  it("renúncia ou indeferimento no cadastro e SQ ausente do arquivo oficial saem como fora da disputa", () => {
+    const c = coorte()
+    c.push(
+      { ...c[4], id: "00000000-0000-4000-8000-000000000009", slug: "gov-renunciou", sq_candidato_2026: "250000000009", situacao_candidatura: "renuncia" },
+      { ...c[6], id: "00000000-0000-4000-8000-000000000010", slug: "pres-indeferido", sq_candidato_2026: "280000000010", situacao_candidatura: "Indeferido" },
+    )
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
+    assert.equal(plano.status, "completo")
+    assert.deepEqual(plano.pendentes, [])
+    const por = Object.fromEntries(plano.mudancas.filter((m) => m.slug === "gov-renunciou" || m.slug === "pres-indeferido")
+      .map((m) => [m.slug, [m.fase_depois, m.encerra_atualizacao, m.fonte, m.situacao_tse]]))
+    assert.deepEqual(por, {
+      "gov-renunciou": ["fora_da_disputa", true, governoSP.url, "ausente do resultado oficial (cadastro: renuncia)"],
+      "pres-indeferido": ["fora_da_disputa", true, presidente.url, "ausente do resultado oficial (cadastro: indeferido)"],
+    })
+    assert.doesNotThrow(() => gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } }))
+  })
+
+  it("SQ ausente sem situação de saída no cadastro continua pendente", () => {
+    const c = coorte()
+    c[2] = { ...c[2], sq_candidato_2026: "999999999999", situacao_candidatura: "deferido" }
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
+    assert.equal(plano.status, "parcial")
+    assert.deepEqual(plano.pendentes.map((p) => p.slug), ["gov-2t-a"])
+  })
+
+  it("arquivo recusado mantém pendente mesmo com renúncia no cadastro", () => {
+    const c = coorte()
+    c[4] = { ...c[4], situacao_candidatura: "renuncia" }
+    const leituras = leiturasOk()
+    leituras[1] = { ok: false, alvo: governoSP, motivo: "HTTP 403" }
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras, agora: new Date() })
+    assert.equal(plano.status, "parcial")
+    assert.equal(plano.mudancas.some((m) => m.slug === "gov-fora"), false)
+  })
 })
 
 describe("migration de resultado gerada", () => {
@@ -290,5 +398,59 @@ describe("migration de resultado gerada", () => {
     assert.deepEqual((a.allowlist.referencias as Array<{ ref: string }>).map((r) => r.ref), ["fase-turno-1-20261005120000", "migration:20261005120000"])
     assert.deepEqual(a.recorte, { nome: "fase-eleitoral-turno-1-20261005", desde: "20261005120000", ate: "20261005120000",
       allowlist: "scripts/audit/allowlist-fase-eleitoral-turno-1-20261005.json", divida: null })
+  })
+})
+
+describe("resultados TSE: 100% das seções sem fechamento oficial (decisão de 05/10/2026)", () => {
+  const semSituacao = (cands: Array<{ sqcand: string; vap: string; dvt?: string }>) =>
+    cands.map((c) => ({ sqcand: c.sqcand, e: "n", st: "", vap: c.vap, dvt: c.dvt }))
+
+  it("sem a opção, tf = n continua recusado mesmo a 100%", () => {
+    const corpo = arquivo(presidente, semSituacao([{ sqcand: "280000000006", vap: "470" }, { sqcand: "280000000007", vap: "450" }, { sqcand: "280000000009", vap: "80" }]), { tf: "n" })
+    assert.equal(lerArquivoResultado(presidente, 1, corpo).ok, false)
+  })
+
+  it("com a opção, calcula 2º turno entre os dois mais votados e marca faseCalculada", () => {
+    const corpo = arquivo(presidente, semSituacao([{ sqcand: "280000000006", vap: "470" }, { sqcand: "280000000007", vap: "450" }, { sqcand: "280000000009", vap: "80" }]), { tf: "n" })
+    const l = lerArquivoResultado(presidente, 1, corpo, { aceitarTotalizado: true })
+    assert.equal(l.ok, true)
+    if (!l.ok) return
+    assert.deepEqual([l.final, l.faseCalculada], [false, true])
+    assert.deepEqual(l.candidatos.map((c) => [c.sq, classificarCandidato(c, 1)]), [
+      ["280000000006", "segundo_turno"], ["280000000007", "segundo_turno"], ["280000000009", "nao_eleito"],
+    ])
+  })
+
+  it("com a opção, mas seções faltando, recusa", () => {
+    const corpo = arquivo(presidente, semSituacao([{ sqcand: "280000000006", vap: "470" }, { sqcand: "280000000007", vap: "450" }]), { tf: "n", st: "999" })
+    assert.equal(lerArquivoResultado(presidente, 1, corpo, { aceitarTotalizado: true }).ok, false)
+  })
+
+  it("maioria absoluta dos válidos elege no 1º turno", () => {
+    const r = situacaoPorCalculo("Governador", [cr({ sq: "1", eleito: false, situacao: "", votos: 510 }), cr({ sq: "2", eleito: false, situacao: "", votos: 490 })], 1)
+    assert.deepEqual(r?.map((c) => [c.sq, c.situacao, c.eleito]), [["1", "Eleito", true], ["2", "Não eleito", false]])
+  })
+
+  it("Senado elege os dois mais votados; voto anulado fica fora", () => {
+    const r = situacaoPorCalculo("Senador", [
+      cr({ sq: "1", eleito: false, situacao: "", votos: 300 }), cr({ sq: "2", eleito: false, situacao: "", votos: 200 }),
+      cr({ sq: "3", eleito: false, situacao: "", votos: 100 }), cr({ sq: "4", eleito: false, situacao: "", votos: 50, destinacao: "Anulado sub judice" }),
+    ], 2)
+    assert.deepEqual(r?.map((c) => c.situacao), ["Eleito", "Eleito", "Não eleito", "Não eleito"])
+  })
+
+  it("recusa quando voto sub judice, se voltar a valer, muda o desfecho", () => {
+    const r = situacaoPorCalculo("Senador", [
+      cr({ sq: "1", eleito: false, situacao: "", votos: 300 }), cr({ sq: "2", eleito: false, situacao: "", votos: 200 }),
+      cr({ sq: "4", eleito: false, situacao: "", votos: 250, destinacao: "Anulado sub judice" }),
+    ], 2)
+    assert.equal(r, null)
+  })
+
+  it("recusa empate na disputa pelo 2º lugar", () => {
+    const r = situacaoPorCalculo("Presidente", [
+      cr({ sq: "1", eleito: false, situacao: "", votos: 400 }), cr({ sq: "2", eleito: false, situacao: "", votos: 300 }), cr({ sq: "3", eleito: false, situacao: "", votos: 300 }),
+    ], 1)
+    assert.equal(r, null)
   })
 })

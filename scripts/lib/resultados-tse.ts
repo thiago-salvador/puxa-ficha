@@ -3,18 +3,24 @@
  * fase eleitoral por candidatura.
  *
  * Fonte: arquivos JSON públicos de resultados.tse.jus.br, o mesmo que alimenta
- * o app Resultados. Formato conferido nos arquivos de 2022, que continuam no ar:
+ * o app Resultados. Formato de 2026, conferido nos arquivos reais de 04/10/2026
+ * (os de `dados-simplificados` de 2022 não existem mais neste ciclo):
  *
  *   config    https://resultados.tse.jus.br/oficial/comum/config/ele-c.json
  *             pleitos ("pl") com data ("dt"), eleições ("e") com código ("cd"),
  *             turno ("t"), código do 2º turno ("cdt2") e cargos por abrangência.
- *   resultado https://resultados.tse.jus.br/oficial/<ciclo>/<eleicao>/dados-simplificados/<uf>/<uf>-c<cargo:4>-e<eleicao:6>-r.json
- *             ex.: /oficial/ele2022/544/dados-simplificados/br/br-c0001-e000544-r.json
- *                  /oficial/ele2022/546/dados-simplificados/sp/sp-c0005-e000546-r.json
- *             campos usados: ele, carper, cdabr, t, f ("o" = oficial),
- *             tf ("s" = totalização final), s/st (seções e seções
- *             totalizadas), cand[] com sqcand, n, nm, e ("s" eleito),
- *             st ("Eleito", "2º turno", "Não eleito"...) e dvt ("Válido"...).
+ *             Em 2026 a raiz não traz mais o ciclo ("c").
+ *   resultado https://resultados.tse.jus.br/oficial/<ciclo>/<eleicao>/dados/<uf>/<uf>-c<cargo:4>-e<eleicao:6>-u.json
+ *             ex.: /oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json
+ *                  /oficial/ele2026/6259/dados/sp/sp-c0005-e006259-u.json
+ *             raiz: ele, cdabr, t, f ("o" = oficial), tf ("s" = totalização
+ *             final), dg/hg; s (ts seções, st totalizadas, pst %), e (te
+ *             eleitorado, c/pc comparecimento, a/pa abstenção), v (vv válidos,
+ *             vb/pvb brancos, tvn/ptvn nulos); carg[] com cd (cargo), nv
+ *             (vagas) e agr[].par[].cand[] com sqcand, n, nm, nmu, seq, e
+ *             ("s" eleito), st ("Eleito", "2º turno", "Não eleito"...), dvt
+ *             ("Válido"...), vap/pvapn (votos e % dos válidos) e vs (vice ou
+ *             suplentes: tp "v", "s1", "s2").
  *
  * Regra que não cede: leitura parcial não marca candidatura executiva afetada. Arquivo que não
  * veio (403, timeout, JSON inválido), que não é oficial, que não fechou a
@@ -89,8 +95,9 @@ function dataBrParaIso(dataBr: string): string | null {
 export function descobrirEleicoes(config: unknown, esperado: { ciclo: string; turno: TurnoEleitoral; dataIso: string }): EleicoesDoTurno {
   const raiz = asObj(config)
   if (!raiz) throw new Error("ele-c.json: raiz não é objeto")
-  if (str(raiz.c) !== esperado.ciclo) {
-    throw new Error(`ele-c.json: ciclo publicado é ${str(raiz.c) || "(vazio)"}, esperado ${esperado.ciclo}`)
+  // 2022 publicava o ciclo na raiz; 2026 não publica. Se vier, tem de bater.
+  if (str(raiz.c) && str(raiz.c) !== esperado.ciclo) {
+    throw new Error(`ele-c.json: ciclo publicado é ${str(raiz.c)}, esperado ${esperado.ciclo}`)
   }
   const federal: string[] = []
   const estadual: string[] = []
@@ -138,7 +145,7 @@ export function urlResultado(ciclo: string, eleicao: string, abrangencia: string
   const abr = abrangencia.toLowerCase()
   const c = CODIGO_CARGO_TSE[cargo].padStart(4, "0")
   const e = eleicao.padStart(6, "0")
-  return `${TSE_RESULTADOS_BASE}/${ciclo}/${eleicao}/dados-simplificados/${abr}/${abr}-c${c}-e${e}-r.json`
+  return `${TSE_RESULTADOS_BASE}/${ciclo}/${eleicao}/dados/${abr}/${abr}-c${c}-e${e}-u.json`
 }
 
 export function chaveArquivo(cargo: CargoResultado, abrangencia: string): string {
@@ -161,13 +168,46 @@ export function arquivosDoTurno(eleicoes: EleicoesDoTurno, alvos: Array<{ cargo:
   return [...mapa.values()].sort((a, b) => a.chave.localeCompare(b.chave))
 }
 
+export interface CompanheiroChapa {
+  /** "v" vice, "s1"/"s2" suplentes do Senado. */
+  tipo: string
+  nome: string
+  partido: string
+}
+
 export interface CandidatoResultado {
   sq: string
   numero: string
   nome: string
+  nomeUrna: string
+  partido: string
   eleito: boolean
   situacao: string
   destinacao: string
+  /** Votos nominais apurados; null quando o arquivo não traz número válido. */
+  votos: number | null
+  /** % dos votos válidos, como o TSE publica (pvapn). */
+  percentualValidos: number | null
+  /** Posição publicada pelo TSE (seq). */
+  posicao: number | null
+  companheiros: CompanheiroChapa[]
+}
+
+/** Totais da disputa como o TSE publica; null quando o campo não veio. */
+export interface TotaisResultado {
+  secoes: number | null
+  secoesTotalizadas: number | null
+  percentualSecoesTotalizadas: number | null
+  eleitorado: number | null
+  comparecimento: number | null
+  percentualComparecimento: number | null
+  abstencao: number | null
+  percentualAbstencao: number | null
+  votosValidos: number | null
+  brancos: number | null
+  percentualBrancos: number | null
+  nulos: number | null
+  percentualNulos: number | null
 }
 
 export interface ArquivoLido {
@@ -175,6 +215,12 @@ export interface ArquivoLido {
   alvo: ArquivoAlvo
   sha256: string
   geradoEm: string
+  /** tf = "s". Leitura estrita só devolve final; a prévia local pode não ser. */
+  final: boolean
+  /** Situação calculada a 100% das seções porque o TSE ainda não a marcou (ver `situacaoPorCalculo`). */
+  faseCalculada: boolean
+  vagas: number
+  totais: TotaisResultado
   candidatos: CandidatoResultado[]
 }
 
@@ -191,12 +237,96 @@ export function sha256(texto: string): string {
   return createHash("sha256").update(texto, "utf8").digest("hex")
 }
 
+/** Inteiro publicado como texto ("37566895"); null se não for inteiro. */
+function inteiro(value: unknown): number | null {
+  const t = str(value)
+  return /^\d+$/.test(t) ? Number(t) : null
+}
+
+/** Decimal publicado com vírgula ("49,584865010"); null se não for número. */
+function decimal(value: unknown): number | null {
+  const t = str(value).replace(",", ".")
+  return /^\d+(\.\d+)?$/.test(t) ? Number(t) : null
+}
+
+function totaisDe(r: Json): TotaisResultado {
+  const s = asObj(r.s) ?? {}
+  const e = asObj(r.e) ?? {}
+  const v = asObj(r.v) ?? {}
+  return {
+    secoes: inteiro(s.ts),
+    secoesTotalizadas: inteiro(s.st),
+    percentualSecoesTotalizadas: decimal(s.pstn ?? s.pst),
+    eleitorado: inteiro(e.te),
+    comparecimento: inteiro(e.c),
+    percentualComparecimento: decimal(e.pcn ?? e.pc),
+    abstencao: inteiro(e.a),
+    percentualAbstencao: decimal(e.pan ?? e.pa),
+    votosValidos: inteiro(v.vv),
+    brancos: inteiro(v.vb),
+    percentualBrancos: decimal(v.pvbn ?? v.pvb),
+    nulos: inteiro(v.tvn),
+    percentualNulos: decimal(v.ptvnn ?? v.ptvn),
+  }
+}
+
 /**
  * Valida um arquivo de resultado contra o alvo e o turno. Devolve recusa com
  * motivo em vez de lançar: um arquivo ruim não derruba a leitura dos outros,
  * mas também não marca ninguém.
+ *
+ * `previa: true` aceita totalização em andamento e pula a sanidade de fase.
+ * Serve só para conferir layout localmente; nunca alimenta plano nem snapshot
+ * publicado.
  */
-export function lerArquivoResultado(alvo: ArquivoAlvo, turno: TurnoEleitoral, corpo: string): LeituraArquivo {
+/**
+ * Situação de cada candidato pela conta, só com 100% das seções totalizadas:
+ * Presidente/Governador com maioria absoluta dos válidos = eleito, senão os
+ * dois mais votados vão ao 2º turno; Senado = os `vagas` mais votados. Voto
+ * não válido ("Anulado sub judice") fica "Não eleito" e não disputa posição.
+ *
+ * Trava: refaz a conta como se todo voto não válido voltasse a valer. Se o
+ * desfecho mudar (quem é eleito ou quem vai ao 2º turno), devolve null e a
+ * disputa é recusada: o resultado ainda depende da Justiça Eleitoral.
+ */
+export function situacaoPorCalculo(cargo: CargoResultado, candidatos: CandidatoResultado[], vagas: number): CandidatoResultado[] | null {
+  const valido = (c: CandidatoResultado) => normalizar(c.destinacao).startsWith("valido")
+  const desfecho = (lista: CandidatoResultado[]): Map<string, "Eleito" | "2º turno"> => {
+    const ordem = [...lista].sort((a, b) => (b.votos ?? 0) - (a.votos ?? 0))
+    const total = ordem.reduce((n, c) => n + (c.votos ?? 0), 0)
+    const r = new Map<string, "Eleito" | "2º turno">()
+    if (ordem.length === 0 || total === 0) return r
+    if (cargo === "Senador") {
+      // Empate na última vaga não é decidido por conta: recusa (o critério legal é a idade).
+      if (ordem.length > vagas && (ordem[vagas - 1].votos ?? 0) === (ordem[vagas].votos ?? 0)) return new Map([["empate", "Eleito"]])
+      for (const c of ordem.slice(0, vagas)) r.set(c.sq, "Eleito")
+      return r
+    }
+    if ((ordem[0].votos ?? 0) * 2 > total) {
+      r.set(ordem[0].sq, "Eleito")
+      return r
+    }
+    if (ordem.length > 2 && (ordem[1].votos ?? 0) === (ordem[2].votos ?? 0)) return new Map([["empate", "2º turno"]])
+    for (const c of ordem.slice(0, 2)) r.set(c.sq, "2º turno")
+    return r
+  }
+  const agora = desfecho(candidatos.filter(valido))
+  const seVoltassemAValer = desfecho(candidatos)
+  if (agora.has("empate") || seVoltassemAValer.has("empate")) return null
+  const chave = (m: Map<string, string>) => [...m.entries()].map(([k, v]) => `${k}:${v}`).sort().join("|")
+  if (chave(agora) !== chave(seVoltassemAValer)) return null
+  return candidatos.map((c) => {
+    const st = agora.get(c.sq)
+    return { ...c, situacao: st ?? "Não eleito", eleito: st === "Eleito" }
+  })
+}
+
+export function lerArquivoResultado(
+  alvo: ArquivoAlvo,
+  turno: TurnoEleitoral,
+  corpo: string,
+  opcoes: { previa?: boolean; aceitarTotalizado?: boolean } = {},
+): LeituraArquivo {
   const hash = sha256(corpo)
   let json: unknown
   try {
@@ -208,34 +338,72 @@ export function lerArquivoResultado(alvo: ArquivoAlvo, turno: TurnoEleitoral, co
   if (!r) return { ok: false, alvo, motivo: "raiz não é objeto", sha256: hash }
   const recusa = (motivo: string): ArquivoRecusado => ({ ok: false, alvo, motivo, sha256: hash })
   if (str(r.ele) !== alvo.eleicao) return recusa(`eleição ${str(r.ele)} != ${alvo.eleicao}`)
-  if (str(r.carper) !== CODIGO_CARGO_TSE[alvo.cargo]) return recusa(`cargo ${str(r.carper)} != ${CODIGO_CARGO_TSE[alvo.cargo]}`)
   if (str(r.cdabr).toUpperCase() !== alvo.abrangencia) return recusa(`abrangência ${str(r.cdabr)} != ${alvo.abrangencia}`)
   if (str(r.t) !== String(turno)) return recusa(`turno ${str(r.t)} != ${turno}`)
   if (str(r.f) !== "o") return recusa(`arquivo não oficial (f=${str(r.f) || "vazio"})`)
-  if (str(r.tf) !== "s") return recusa("totalização não finalizada (tf != s)")
-  const secoes = str(r.s)
-  if (!/^\d+$/.test(secoes) || secoes === "0" || str(r.st) !== secoes) return recusa(`seções totalizadas ${str(r.st)} de ${secoes}`)
+  const cargos = asArr(r.carg).map(asObj).filter((c): c is Json => c !== null)
+  const cargo = cargos.find((c) => str(c.cd) === CODIGO_CARGO_TSE[alvo.cargo])
+  if (!cargo) return recusa(`cargo ${CODIGO_CARGO_TSE[alvo.cargo]} ausente em carg`)
+  const final = str(r.tf) === "s"
+  const totais = totaisDe(r)
+  const todasSecoes = Boolean(totais.secoes) && totais.secoesTotalizadas === totais.secoes
+  if (!opcoes.previa) {
+    // `aceitarTotalizado` (só o snapshot do site): 100% das seções basta, sem esperar o tf.
+    if (!final && !(opcoes.aceitarTotalizado && todasSecoes)) return recusa("totalização não finalizada (tf != s)")
+    if (!todasSecoes) {
+      return recusa(`seções totalizadas ${totais.secoesTotalizadas ?? "?"} de ${totais.secoes ?? "?"}`)
+    }
+  }
+  const vagas = inteiro(cargo.nv) ?? 1
   const candidatos: CandidatoResultado[] = []
   const vistos = new Set<string>()
-  for (const item of asArr(r.cand)) {
-    const c = asObj(item)
-    const sq = str(c?.sqcand)
-    if (!c || !/^\d{6,}$/.test(sq)) return recusa("candidato sem sqcand numérico")
-    if (vistos.has(sq)) return recusa(`sqcand duplicado ${sq}`)
-    vistos.add(sq)
-    candidatos.push({
-      sq,
-      numero: str(c.n),
-      nome: str(c.nm),
-      eleito: str(c.e) === "s",
-      situacao: str(c.st),
-      destinacao: str(c.dvt),
-    })
+  for (const agr of asArr(cargo.agr)) {
+    for (const par of asArr(asObj(agr)?.par)) {
+      const partido = str(asObj(par)?.sg)
+      for (const item of asArr(asObj(par)?.cand)) {
+        const c = asObj(item)
+        const sq = str(c?.sqcand)
+        if (!c || !/^\d{6,}$/.test(sq)) return recusa("candidato sem sqcand numérico")
+        if (vistos.has(sq)) return recusa(`sqcand duplicado ${sq}`)
+        vistos.add(sq)
+        candidatos.push({
+          sq,
+          numero: str(c.n),
+          nome: str(c.nm),
+          nomeUrna: str(c.nmu) || str(c.nm),
+          partido,
+          eleito: str(c.e) === "s",
+          situacao: str(c.st),
+          destinacao: str(c.dvt),
+          votos: inteiro(c.vap),
+          percentualValidos: decimal(c.pvapn ?? c.pvap),
+          posicao: inteiro(c.seq),
+          companheiros: asArr(c.vs).map(asObj).filter((x): x is Json => x !== null).map((x) => ({
+            tipo: str(x.tp),
+            nome: str(x.nmu) || str(x.nm),
+            partido: str(x.sgp),
+          })),
+        })
+      }
+    }
   }
   if (candidatos.length === 0) return recusa("lista de candidatos vazia")
-  const sanidade = checarSanidade(alvo.cargo, turno, candidatos)
-  if (sanidade) return recusa(sanidade)
-  return { ok: true, alvo, sha256: hash, geradoEm: `${str(r.dg)} ${str(r.hg)}`.trim(), candidatos }
+  let faseCalculada = false
+  let lista = candidatos
+  if (!opcoes.previa) {
+    if (candidatos.some((c) => c.votos === null)) return recusa("candidato sem votos apurados (vap)")
+    // TSE ainda sem situação marcada em ninguém: só com 100% das seções e no 1º turno, calcula.
+    if (opcoes.aceitarTotalizado && todasSecoes && turno === 1 && candidatos.every((c) => !c.situacao)) {
+      const calculada = situacaoPorCalculo(alvo.cargo, candidatos, vagas)
+      if (!calculada) return recusa("resultado a 100% depende de voto sub judice ou empate; esperar o TSE")
+      lista = calculada
+      faseCalculada = true
+    }
+    const sanidade = checarSanidade(alvo.cargo, turno, lista, vagas)
+    if (sanidade) return recusa(sanidade)
+  }
+  lista.sort((a, b) => (b.votos ?? -1) - (a.votos ?? -1) || a.sq.localeCompare(b.sq))
+  return { ok: true, alvo, sha256: hash, geradoEm: `${str(r.dg)} ${str(r.hg)}`.trim(), final, faseCalculada, vagas, totais, candidatos: lista }
 }
 
 function normalizar(texto: string): string {
@@ -261,14 +429,15 @@ export function classificarCandidato(c: CandidatoResultado, turno: TurnoEleitora
 }
 
 /** Checagem de consistência do arquivo inteiro; texto = motivo da recusa. */
-export function checarSanidade(cargo: CargoResultado, turno: TurnoEleitoral, candidatos: CandidatoResultado[]): string | null {
+export function checarSanidade(cargo: CargoResultado, turno: TurnoEleitoral, candidatos: CandidatoResultado[], vagas = cargo === "Senador" ? VAGAS_SENADO_2026 : 1): string | null {
   const fases = candidatos.map((c) => classificarCandidato(c, turno))
   const eleitos = fases.filter((f) => f === "eleito").length
   const segundo = fases.filter((f) => f === "segundo_turno").length
   if (fases.some((f) => f === null)) return "situação não reconhecida em algum candidato (resultado ainda não fechado?)"
   if (cargo === "Senador") {
     if (turno !== 1) return "Senado não tem segundo turno"
-    if (eleitos !== VAGAS_SENADO_2026) return `Senado com ${eleitos} eleitos; esperado ${VAGAS_SENADO_2026}`
+    if (vagas !== VAGAS_SENADO_2026) return `Senado com ${vagas} vagas no arquivo; esperado ${VAGAS_SENADO_2026}`
+    if (eleitos !== vagas) return `Senado com ${eleitos} eleitos; esperado ${vagas}`
     if (segundo !== 0) return "Senado com candidato em 2º turno"
     return null
   }
@@ -290,6 +459,21 @@ export interface CandidaturaCoorte {
   sq_candidato_2026: string | null
   fase_eleitoral: string
   atualizacao_encerrada_em: string | null
+  /** Situação da candidatura no cadastro (renuncia, indeferido...). */
+  situacao_candidatura?: string | null
+}
+
+/**
+ * Situações do cadastro que tiram a candidatura da urna. Só valem junto com a
+ * ausência do SQ num arquivo oficial lido por inteiro: a ausência é a prova, a
+ * situação confirma o motivo. Indeferido sub judice que foi à urna aparece no
+ * arquivo (votos anulados) e segue a classificação normal.
+ */
+const SITUACOES_FORA_DA_URNA = new Set(["renuncia", "indeferido", "cancelado", "falecido", "cassado"])
+
+function saiuAntesDaUrna(c: CandidaturaCoorte): string | null {
+  const situacao = normalizar(String(c.situacao_candidatura ?? "")).replace(/\s+/g, " ").trim()
+  return SITUACOES_FORA_DA_URNA.has(situacao) ? situacao : null
 }
 
 /** Lista apenas eleições com candidaturas elegíveis na fase já aplicada. */
@@ -407,6 +591,24 @@ export function montarPlano(input: {
     }
     const linha = leitura.candidatos.find((x) => x.sq === sq)
     if (!linha) {
+      const saida = input.turno === 1 ? saiuAntesDaUrna(c) : null
+      if (saida) {
+        mudancas.push({
+          id: c.id,
+          slug: c.slug,
+          sq,
+          sq_antes: c.sq_candidato_2026,
+          cargo,
+          abrangencia,
+          fase_antes: c.fase_eleitoral,
+          fase_depois: "fora_da_disputa",
+          turno: 1,
+          encerra_atualizacao: true,
+          fonte: leitura.alvo.url,
+          situacao_tse: `ausente do resultado oficial (cadastro: ${saida})`,
+        })
+        continue
+      }
       if (input.turno === 1 && cargo === "Senador") semResultadoSenador(c, abrangencia, "SQ ausente do resultado oficial")
       else pendente("SQ ausente do resultado oficial")
       continue

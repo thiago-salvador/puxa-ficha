@@ -1,0 +1,12 @@
+{
+  "conjunto": "turno-1",
+  "base_version": "20261002180000",
+  "base_name": "vocabulario_situacao_renuncia",
+  "migrations": [
+    {
+      "version": "20261005180206",
+      "name": "fase_eleitoral_turno_1"
+    }
+  ],
+  "plano_sha256": "110db31e0496bd35110299a2b73dbdf380beff78df1541a5ddcb699c761b6fdf"
+}
