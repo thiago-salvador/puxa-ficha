@@ -80,7 +80,7 @@ async function openPublicPolls(page: Page, path: string) {
   await expect(section.locator("[data-pf-poll-trend]")).toBeVisible()
   await expect(section.locator('[data-pf-poll-trend] button[aria-label*="semana"]')).not.toHaveCount(0)
   await expect(section.locator("[data-pf-week-source] > p > strong")).toHaveText(
-    /^(1 pesquisa na semana|Média de [2-9]\d* pesquisas)$/,
+    /^(1 pesquisa na semana|Média de (?:[2-9]|[1-9]\d+) pesquisas)$/,
   )
   await expect(section.locator("[data-pf-week-source] a")).not.toHaveCount(0)
   const filters = section.getByRole("button", { name: "Filtros de pesquisa", exact: true })
