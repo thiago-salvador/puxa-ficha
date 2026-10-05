@@ -302,7 +302,10 @@
     "whatsapp",
     "Wikidata",
     "wikipedia",
-    "youtube"
+    "youtube",
+    "Preposicao",
+    "ROTULOS",
+    "rotulos"
   ],
   "ignoreRegExpList": [
     "/\\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\\b/gi",

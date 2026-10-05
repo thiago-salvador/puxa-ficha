@@ -145,7 +145,7 @@ function SenadoEstado({ estado, fotos }: { estado: EstadoResumo; fotos?: FotosCa
         <ul className="grid min-w-0 grid-cols-2 gap-3" aria-label={`Eleitos ao Senado em ${estado.nome}`}>
           {eleitos.map((c) => (
             <li key={c.sq} className="flex min-w-0 items-center gap-2">
-              <FotoCandidato candidato={c} fotos={fotos} tamanho={32} className="size-8" initialsClassName="text-[10px]" />
+              <FotoCandidato candidato={c} fotos={fotos} tamanho={32} className="size-8" initialsClassName="text-[length:var(--text-eyebrow)]" />
               <div className="min-w-0">
                 <p className="break-words text-[length:var(--text-caption)] leading-tight">
                   <NomeDoCandidato candidato={c} cargo={disputa.cargo} />

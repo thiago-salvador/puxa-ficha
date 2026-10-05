@@ -173,7 +173,7 @@ export function QuadradosGovernadores({ linha, data }: { linha: LinhaEspectro; d
         {ufs.map((u) => (
           <li key={u.uf} className="flex w-8 flex-col items-center gap-1" title={u.descricao}>
             <span aria-hidden="true" className="block size-8 rounded-[4px]" style={CSS_ESTILO[u.classe]} />
-            <span aria-hidden="true" className="text-[10px] font-bold leading-none text-muted-foreground">
+            <span aria-hidden="true" className="text-[length:var(--text-eyebrow)] font-bold leading-none text-muted-foreground">
               {u.uf}
             </span>
             <span className="sr-only">{u.descricao}</span>
