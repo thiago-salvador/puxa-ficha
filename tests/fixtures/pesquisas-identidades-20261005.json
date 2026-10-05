@@ -1,0 +1,23 @@
+{
+  "source": {
+    "table": "public.candidatos",
+    "consulted_at": "2026-10-05",
+    "query": "SELECT slug,nome_completo,nome_urna,cargo_disputado,estado FROM candidatos WHERE cargo_disputado IN ('Governador','Presidente') ORDER BY estado NULLS FIRST,slug"
+  },
+  "profiles": [
+    {
+      "slug": "jose-moita",
+      "nome_completo": "José Lucivaldo Moita",
+      "nome_urna": "José Moita",
+      "cargo_disputado": "Governador",
+      "estado": "PA"
+    },
+    {
+      "slug": "subtenente-luiz-carlos",
+      "nome_completo": "LUIZ CARLOS FERREIRA DA SILVA",
+      "nome_urna": "SUBTENENTE LUIZ CARLOS",
+      "cargo_disputado": "Governador",
+      "estado": "TO"
+    }
+  ]
+}

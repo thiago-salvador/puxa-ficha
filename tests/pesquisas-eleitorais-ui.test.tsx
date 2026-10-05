@@ -156,12 +156,12 @@ describe("experiência v2 de pesquisas presidenciais", () => {
     const hero = renderToStaticMarkup(<PesquisasPresidenciaisHero pesquisas={pesquisas} />)
 
     assert.match(hero, /Datafolha/)
-    assert.match(hero, /28\/09\/2026 a 30\/09\/2026/)
-    assert.match(hero, />50%<\/p>/)
-    assert.equal(pesquisas[0]?.id, "datafolha-sp-01367-2026")
+    assert.match(hero, /02\/10\/2026 a 03\/10\/2026/)
+    assert.match(hero, />55%<\/p>/)
+    assert.equal(pesquisas[0]?.id, "datafolha-sp-09337-2026")
     assert.equal(pesquisas[0]?.resultado.candidateSlug, "tarcisio-gov-sp")
-    assert.equal(pesquisas[0]?.resultado.valuePercent, 50)
-    assert.equal(pesquisas[0]?.registration.code.value, "SP-01367/2026")
+    assert.equal(pesquisas[0]?.resultado.valuePercent, 55)
+    assert.equal(pesquisas[0]?.registration.code.value, "SP-09337/2026")
   })
 })
 
