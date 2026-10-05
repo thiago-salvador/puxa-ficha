@@ -46,6 +46,13 @@ export function baseCenarioSenado(scenario: RodadaColetada["scenarios"][number])
   return scenario.base ?? "total_amostra"
 }
 
+export type TurnoPesquisa = 1 | 2
+const TURNOS: TurnoPesquisa[] = [1, 2]
+
+export function turnoCenario(scenario: RodadaColetada["scenarios"][number]): TurnoPesquisa {
+  return scenario.turn ?? 1
+}
+
 export interface RodadaColetada {
   /** Omitted means Presidente for "BR" and Governador for a UF, as before Senate support. */
   cargo?: CargoPesquisa
@@ -67,6 +74,11 @@ export interface RodadaColetada {
   capture_file: string
   scenarios: {
     kind: "estimulado" | "espontaneo"
+    /**
+     * Election round the scenario measures; omitted means 1. Turn 2 is Presidente or Governador
+     * only, stimulated only, and lists exactly the two finalists plus null-alias lines.
+     */
+    turn?: TurnoPesquisa
     /** Required for Senador stimulated scenarios. */
     measure?: MedidaSenado
     /** Senador only, required with measure "agregado": base stated in the captured text. */
@@ -165,10 +177,16 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
   } else if (stimulated.some((scenario) => scenario.base != null || scenario.measure != null)) {
     problems.push(`${where}: medida e base são exclusivas do Senado`)
   }
+  for (const scenario of rodada.scenarios ?? []) {
+    if (scenario.turn !== undefined && !TURNOS.includes(scenario.turn)) problems.push(`${where}: turno inválido (${String(scenario.turn)})`)
+    if (turnoCenario(scenario) !== 2) continue
+    if (cargo === "Senador") problems.push(`${where}: Senado não tem 2º turno`)
+    if (scenario.kind !== "estimulado") problems.push(`${where}: cenário de 2º turno precisa ser estimulado`)
+  }
   // Distinct notes are required among stimulated scenarios that measure the same thing.
   const byMeasure = new Map<string, string[]>()
   for (const scenario of stimulated) {
-    const key = cargo === "Senador" ? scenario.measure ?? "" : ""
+    const key = cargo === "Senador" ? scenario.measure ?? "" : String(turnoCenario(scenario))
     byMeasure.set(key, [...(byMeasure.get(key) ?? []), scenario.note?.trim() ?? ""])
   }
   for (const notes of byMeasure.values()) {
@@ -188,6 +206,14 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
       if (labels.has(result.raw_label)) problems.push(`${where}: rótulo duplicado ${result.raw_label}`)
       labels.add(result.raw_label)
       if (!(result.raw_label in decisions)) problems.push(`${where}: sem decisão de alias para "${result.raw_label}" (escopo ${escopoAlias(rodada)})`)
+    }
+    // A runoff measures one pair: blank, null and undecided lines are the only other answers.
+    if (turnoCenario(scenario) === 2) {
+      const finalistas = new Set(scenario.results.map((result) => decisions[result.raw_label]).filter((slug): slug is string => typeof slug === "string"))
+      const linhas = scenario.results.filter((result) => typeof decisions[result.raw_label] === "string").length
+      if (finalistas.size !== 2 || linhas !== 2) {
+        problems.push(`${where}: cenário de 2º turno ${scenario.note ?? ""} precisa ter exatamente dois finalistas distintos (encontrado(s) ${linhas})`)
+      }
     }
     // Consistency with the declared base: two mentions per respondent add up to well over 100%;
     // mentions rescaled to 100% or a single vote cannot pass it.
@@ -274,7 +300,7 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
       confidence_level_pct: rodada.confidence_percent,
       office,
       geography,
-      rounds: [1],
+      rounds: [...new Set(cenariosImportaveis(rodada).map(turnoCenario))].sort((a, b) => a - b),
       registration_id: rodada.registration,
       result_url: rodada.result_url,
       registry_url: PESQELE,
@@ -298,16 +324,18 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
   }
   const decisions = aliases[escopoAlias(rodada)]
   const newAliases: Json[] = []
-  let estimulados = 0
+  const estimuladosPorTurno = new Map<TurnoPesquisa, number>()
   const senado = office === "Senador"
   const porMedida = new Map<string, number>()
   const cenarios = cenariosImportaveis(rodada).map((scenario) => {
-    const index = scenario.kind === "estimulado" ? ++estimulados : 0
+    const turn = turnoCenario(scenario)
+    const index = scenario.kind === "estimulado" ? (estimuladosPorTurno.get(turn) ?? 0) + 1 : 0
+    if (scenario.kind === "estimulado") estimuladosPorTurno.set(turn, index)
     const indexMedida = senado ? (porMedida.get(scenario.measure!) ?? 0) + 1 : 0
     if (senado) porMedida.set(scenario.measure!, indexMedida)
     const scenarioId = senado
       ? `${id}-${scenario.measure}${indexMedida > 1 ? `-cenario-${indexMedida}` : ""}`
-      : `${id}-1t${scenario.kind === "espontaneo" ? "-espontaneo" : estimulados > 1 ? `-cenario-${index}` : ""}`
+      : `${id}-${turn}t${scenario.kind === "espontaneo" ? "-espontaneo" : index > 1 ? `-cenario-${index}` : ""}`
     const list = createHash("sha256").update(stable(scenario.results.map((result) => decisions[result.raw_label]).filter(Boolean).sort())).digest("hex")
     const mode = senado ? scenario.measure! : scenario.kind === "estimulado" ? "estimulada" : "espontanea"
     const note = scenario.note ? `, ${scenario.note.trim()}` : ""
@@ -317,18 +345,18 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
       : `Intenção de voto estimulada para o Senado, ${ROTULO_MEDIDA[scenario.measure!]}${note}; percentuais do total de entrevistados${scenario.measure === "agregado" ? " (a soma dos dois votos passa de 100%)" : ""}`
     return {
       id: scenarioId,
-      turn: 1,
+      turn,
       geography,
       label_raw: senado
         ? senadoLabel
-        : `Intenção de voto ${scenario.kind === "estimulado" ? "estimulada" : "espontânea"} no 1º turno${note}; percentuais do total de entrevistados`,
+        : `Intenção de voto ${scenario.kind === "estimulado" ? "estimulada" : "espontânea"} no ${turn}º turno${note}; percentuais do total de entrevistados`,
       question: vs(scenario.question),
-      comparability_key: `2026|${office}|${rodada.uf}|1|${mode}|${list}|${base}`,
+      comparability_key: `2026|${office}|${rodada.uf}|${turn}|${mode}|${list}|${base}`,
       resultados: scenario.results.map((result) => {
         const slug = decisions[result.raw_label]
         if (slug) {
           // Scoped to the scenario so a reviewed spelling never becomes a UF-wide alias for the monitor.
-          newAliases.push({ raw_label: result.raw_label, candidate_slug: slug, year: 2026, office, geography, turn: 1, scenario_id: scenarioId })
+          newAliases.push({ raw_label: result.raw_label, candidate_slug: slug, year: 2026, office, geography, turn, scenario_id: scenarioId })
         }
         return {
           raw_label: result.raw_label,
