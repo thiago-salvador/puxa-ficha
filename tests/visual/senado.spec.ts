@@ -2,7 +2,7 @@ import { expect, test } from "playwright/test"
 import AxeBuilder from "@axe-core/playwright"
 
 test.describe("superfície local do Senado", () => {
-  test("oferece as 27 UFs e chega à consulta estadual pela home via Parlamentares", async ({ page }) => {
+  test("oferece as 27 UFs e chega à consulta estadual por /parlamentares, fora da navegação da home", async ({ page }) => {
     // O diretório /senado continua publicado, mas fora do menu principal.
     await page.goto("/senado", { waitUntil: "domcontentloaded" })
     await expect(page.getByRole("heading", { name: "Por estado" })).toBeVisible()
@@ -10,12 +10,15 @@ test.describe("superfície local do Senado", () => {
     await expect(page.locator('a[href^="/uf/"][href$="/senado"]')).toHaveCount(27)
     await expect(page.locator('a[href="/senado"]')).toHaveCount(0)
 
-    // Navegação aprovada: home → Parlamentares → mapa de senadores → UF.
-    await page.goto("/", { waitUntil: "domcontentloaded" })
-    const categorias = page.getByRole("navigation", { name: "Categorias de candidatos" })
-    await expect(categorias.getByRole("link")).toHaveText(["Presidenciáveis", "Governadores", "Parlamentares"])
-    await expect(page.locator('a[href="/senado"]')).toHaveCount(0)
-    await categorias.getByRole("link", { name: "Parlamentares", exact: true }).click()
+    // A home não leva mais a Parlamentares; a URL segue publicada: /parlamentares → mapa de senadores → UF.
+    for (const rota of ["/", "/2o-turno"]) {
+      await page.goto(rota, { waitUntil: "domcontentloaded" })
+      const turnos = page.getByRole("navigation", { name: "Turnos da eleição" })
+      await expect(turnos.getByRole("link")).toHaveCount(1)
+      await expect(page.locator('a[href="/senado"]')).toHaveCount(0)
+      await expect(page.locator('a[href="/parlamentares"]')).toHaveCount(0)
+    }
+    await page.goto("/parlamentares", { waitUntil: "domcontentloaded" })
     await expect(page).toHaveURL(/\/parlamentares$/)
 
     const parlamentares = page.getByRole("navigation", { name: "Categorias parlamentares" })
@@ -95,11 +98,11 @@ test.describe("superfície local do Senado", () => {
     expect(onSearch.data.some((item: { href: string }) => item.href.endsWith("fixture-senado-alfa"))).toBe(true)
     expect(offSearch.data.some((item: { href: string }) => item.href.endsWith("fixture-senado-alfa"))).toBe(false)
 
-    // A entrada do Senado é /parlamentares; nenhuma home linka /senado direto.
+    // A entrada do Senado segue sendo /parlamentares, só que fora da navegação; nenhuma home linka /senado direto.
     const onHome = await (await request.get("http://127.0.0.1:3112/")).text()
     const offHome = await (await request.get("http://127.0.0.1:3113/")).text()
-    expect(onHome).toContain('href="/parlamentares"')
-    expect(offHome).toContain('href="/parlamentares"')
+    expect(onHome).not.toContain('href="/parlamentares"')
+    expect(offHome).not.toContain('href="/parlamentares"')
     expect(onHome).not.toContain('href="/senado"')
     expect(offHome).not.toContain('href="/senado"')
 

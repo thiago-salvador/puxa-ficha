@@ -217,13 +217,14 @@ describe("flag do Senado nas superfícies públicas restantes", () => {
   })
 
   describe("busca rápida", () => {
-    it("atalho de Parlamentares reflete a flag", () => {
-      const off = buildShortcutItems(false).find((item) => item.href === "/parlamentares")
-      assert.equal(off?.subtitle, "Fichas de deputados e senadores ainda não estão prontas")
-      const on = buildShortcutItems(true).find((item) => item.href === "/parlamentares")
-      assert.equal(on?.subtitle, "Fichas de deputados ainda não estão prontas")
-      assert.match(on?.searchText ?? "", /deputados/)
-      assert.doesNotMatch(on?.subtitle ?? "", /senadores/)
+    it("Parlamentares saiu dos atalhos e a flag do Senado não os altera", () => {
+      for (const flag of [false, true]) {
+        const items = buildShortcutItems(flag)
+        assert.equal(items.find((item) => item.href === "/parlamentares"), undefined)
+        assert.equal(items.find((item) => item.href === "/")?.title, "1º Turno")
+        assert.equal(items.find((item) => item.href === "/2o-turno")?.title, "2º Turno")
+      }
+      assert.deepEqual(buildShortcutItems(false), buildShortcutItems(true))
     })
   })
 

@@ -75,8 +75,10 @@ test.describe("Navbar mobile menu", () => {
     await expect(menuBtn).toHaveAttribute("aria-expanded", "true")
 
     // Confirm links are present
-    await expect(dialog.getByText("Presidência")).toBeVisible()
+    await expect(dialog.getByText("2º Turno")).toBeVisible()
     await expect(dialog.getByText("Governadores")).toBeVisible()
+    await expect(dialog.getByText("1º Turno")).toBeVisible()
+    await expect(dialog.getByText("Parlamentares")).toHaveCount(0)
     await expect(dialog.getByText("Comparar")).toBeVisible()
     await expect(dialog.getByText("Sobre")).toBeVisible()
 
@@ -135,7 +137,8 @@ test.describe("Busca rápida palette", () => {
   })
 
   test("view toggle switches between grid and list", async ({ page }) => {
-    await page.goto("/")
+    // A grade de presidenciáveis mora no 2º turno desde que a home virou o 1º turno.
+    await page.goto("/2o-turno")
     await page.waitForLoadState("networkidle")
 
     // Abaixo de `sm` (640px), a alternância grade/lista fica dentro do painel de filtros.
@@ -173,7 +176,7 @@ test.describe("Busca rápida palette", () => {
     // reaplica o layout responsivo sem recarregar; 320px vem antes porque a
     // ordenação escolhida em 390px continua ativa na mesma página.
     await page.setViewportSize({ width: 320, height: 844 })
-    await page.goto("/")
+    await page.goto("/2o-turno")
     await page.waitForLoadState("networkidle")
 
     for (const width of [320, 390]) {
@@ -433,7 +436,7 @@ test.describe("BrazilMap", () => {
 // ---------------------------------------------------------------------------
 
 test.describe("No horizontal overflow", () => {
-  const pages = ["/", "/comparar", "/governadores", "/sobre", "/candidato/fixture-alfa", "/quiz"]
+  const pages = ["/", "/2o-turno", "/comparar", "/governadores", "/sobre", "/candidato/fixture-alfa", "/quiz"]
 
   for (const path of pages) {
     test(`${path} — no overflow at 375px`, async ({ browser }) => {
@@ -466,6 +469,7 @@ test.describe("No horizontal overflow", () => {
 test.describe("Absolutos contidos nas regiões com rolagem horizontal", () => {
   const pages = [
     "/",
+    "/2o-turno",
     "/comparar?c1=fixture-alfa&c2=fixture-beta",
     "/candidato/fixture-alfa",
     "/candidato/fixture-alfa?tab=dinheiro",

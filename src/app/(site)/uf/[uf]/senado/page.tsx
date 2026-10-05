@@ -14,6 +14,7 @@ import { JsonLd } from "@/components/JsonLd"
 import { SlashDivider } from "@/components/SlashDivider"
 import { StatePolls } from "@/components/StatePolls"
 import { SenadoRunningMates } from "@/components/SenadoRunningMates"
+import { comFaseEfetiva } from "@/lib/finalistas-1turno"
 import {
   getCandidatosComResumoResource,
   getFasesEleitorais2026,
@@ -66,10 +67,8 @@ export default async function SenadoUfPage({ params }: { params: Promise<{ uf: s
     getFasesEleitorais2026(),
   ])
   const fasePorSlug = new Map(fasesEleitorais.map((fase) => [fase.slug, fase]))
-  const candidatos = resumosResource.data.map((r) => {
-    const fase = fasePorSlug.get(r.candidato.slug)
-    return fase ? { ...r.candidato, fase_eleitoral_2026: fase } : r.candidato
-  })
+  // Mesma regra das outras páginas: banco vence fora de em_disputa; senão, snapshot do TSE.
+  const candidatos = resumosResource.data.map((r) => comFaseEfetiva(r.candidato, fasePorSlug))
   const comparaveis = comparaveisResource.data
   const { processos, processosContagem, patrimonios, processSortCounts, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumosResource.data)

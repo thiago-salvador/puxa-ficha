@@ -2,20 +2,23 @@
 
 interface UfResultadoSelectorProps {
   options: Array<{ uf: string; label: string }>
+  /** Prefixo da rota de destino. Padrão: páginas de UF (`/uf`). */
+  basePath?: string
 }
 
 export function handleUfResultadoChange(
   value: string,
   options: UfResultadoSelectorProps["options"],
   navigate: (path: string) => void,
+  basePath = "/uf",
 ) {
   const option = options.find(({ uf }) => uf === value)
   if (!option) return
 
-  navigate(`/uf/${encodeURIComponent(option.uf.toLowerCase())}`)
+  navigate(`${basePath}/${encodeURIComponent(option.uf.toLowerCase())}`)
 }
 
-export function UfResultadoSelector({ options }: UfResultadoSelectorProps) {
+export function UfResultadoSelector({ options, basePath = "/uf" }: UfResultadoSelectorProps) {
   if (options.length === 0) return null
   return (
     <label className="flex min-w-0 flex-col gap-1 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
@@ -24,7 +27,7 @@ export function UfResultadoSelector({ options }: UfResultadoSelectorProps) {
         className="min-h-11 rounded-full border border-foreground bg-background px-4 text-sm font-semibold normal-case tracking-normal text-foreground"
         defaultValue=""
         onChange={(event) => {
-          handleUfResultadoChange(event.target.value, options, (path) => window.location.assign(path))
+          handleUfResultadoChange(event.target.value, options, (path) => window.location.assign(path), basePath)
         }}
       >
         <option value="" disabled>

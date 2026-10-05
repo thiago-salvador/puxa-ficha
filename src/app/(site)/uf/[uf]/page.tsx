@@ -42,7 +42,10 @@ import { loadProgramRunningMates } from "@/lib/program-running-mates"
 import { loadStatePolls } from "@/lib/state-polls"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildGuideColinhaHref } from "@/lib/guia-votacao"
-import { SegundoTurnoSection } from "@/components/SegundoTurnoSection"
+import { VerListaCompleta1Turno } from "@/components/VerListaCompleta1Turno"
+import { comFaseEfetiva, recortarFinalistas } from "@/lib/finalistas-1turno"
+import { linkCompararFinalistas } from "@/lib/fase-eleitoral-publica"
+import { href1Turno } from "@/lib/resultados-1turno"
 
 export async function generateStaticParams() {
   return getEstadoUFs().map((uf) => ({ uf }))
@@ -122,10 +125,10 @@ export default async function UfHubPage({
   // central (src/lib/api.ts via sanitizePublicPartyFields); o mapping pontual
   // que existia aqui ate o Bloco 1 foi removido.
   const fasePorSlug = new Map(fasesEleitorais.map((fase) => [fase.slug, fase]))
-  const candidatos = resumos.map((r) => {
-    const fase = fasePorSlug.get(r.candidato.slug)
-    return fase ? { ...r.candidato, fase_eleitoral_2026: fase } : r.candidato
-  })
+  const candidatos = resumos.map((r) => comFaseEfetiva(r.candidato, fasePorSlug))
+  // Com resultado do 1º turno publicado, a lista mostra só finalistas ou o vencedor;
+  // os demais ficam na página do 1º turno do estado. Sem resultado, mostra todos.
+  const { candidatos: candidatosGrade, filtrado: gradeFiltrada } = recortarFinalistas(candidatos)
   const [programsResource, pollsResource, runningMates] = await Promise.all([
     loadStatePrograms(candidatos.map(({ slug, nome_urna, partido_sigla }) => ({ slug, nome_urna, partido_sigla, uf: uf.toUpperCase() })), uf)
       .then(data => ({ data, unavailable: false }))
@@ -257,7 +260,6 @@ export default async function UfHubPage({
 
       {candidatos.length > 0 ? (
         <>
-          <SegundoTurnoSection candidatos={candidatos} />
           <section id="candidatos" className="mx-auto max-w-7xl scroll-mt-24 px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
             <div className="section-reveal">
               <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
@@ -273,8 +275,16 @@ export default async function UfHubPage({
             <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
           </section>
           <section className="mx-auto max-w-7xl px-5 pb-8 md:px-12 lg:pb-10">
+            {gradeFiltrada && (
+              <VerListaCompleta1Turno
+                href={href1Turno(uf)}
+                label={`Ver lista completa do 1º turno em ${nome}`}
+                compararHref={linkCompararFinalistas(candidatosGrade)}
+                className="mb-4"
+              />
+            )}
             <CandidatoGrid
-              candidatos={candidatos}
+              candidatos={candidatosGrade}
               processos={processos}
               processosContagem={processosContagem}
               processSortCounts={processSortCounts}

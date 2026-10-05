@@ -15,9 +15,11 @@ describe("PT-BR navigation copy", () => {
     const navbar = read("src/components/Navbar.tsx")
     const footer = read("src/components/Footer.tsx")
 
-    assert.match(navbar, /href: \"\/\", label: \"Presidência\"/)
+    assert.match(navbar, /href: \"\/\", label: \"1º Turno\"/)
+    assert.match(navbar, /href: \"\/2o-turno\", label: \"2º Turno\"/)
     assert.match(footer, /Páginas/)
-    assert.match(footer, /href: \"\/\", label: \"Presidência\"/)
+    assert.match(footer, /href: \"\/\", label: \"1º Turno\"/)
+    assert.match(footer, /href: \"\/2o-turno\", label: \"2º Turno\"/)
     assert.doesNotMatch(`${navbar}\n${footer}`, /Presidencia|Paginas/)
   })
 })

@@ -13,9 +13,9 @@ type FooterLink = {
 }
 
 const PAGE_LINKS: FooterLink[] = [
-  { href: "/", label: "Presidência" },
+  { href: "/", label: "1º Turno" },
+  { href: "/2o-turno", label: "2º Turno" },
   { href: "/governadores", label: "Governadores" },
-  { href: "/parlamentares", label: "Parlamentares" },
   { href: "/comparar", label: "Comparador" },
   { href: "/rankings", label: "Listas" },
   { href: "/doadores", label: "Doadores" },

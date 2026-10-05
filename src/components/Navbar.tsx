@@ -8,9 +8,9 @@ import { Search } from "lucide-react"
 import { useGlobalSearch, useModKShortcutLabel } from "@/components/GlobalSearchProvider"
 
 const NAV_ITEMS = [
-  { href: "/", label: "Presidência" },
+  { href: "/", label: "1º Turno" },
+  { href: "/2o-turno", label: "2º Turno" },
   { href: "/governadores", label: "Governadores" },
-  { href: "/parlamentares", label: "Parlamentares" },
   { href: "/comparar", label: "Comparar" },
   { href: "/rankings", label: "Listas" },
   { href: "/doadores", label: "Doadores" },

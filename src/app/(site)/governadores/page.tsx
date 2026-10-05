@@ -11,10 +11,13 @@ import { buildTwitterMetadata } from "@/lib/metadata"
 import {
   getCandidatoCountByEstadoResource,
   getCandidatosComResumoResource,
+  getEstadoUFs,
   getFasesEleitorais2026,
   getIndicadoresAllEstadosResource,
 } from "@/lib/api"
 import { buildIndicadoresPorEstadoForMap } from "@/lib/brazil-map-preview"
+import { comFaseEfetiva, statusUf1Turno } from "@/lib/finalistas-1turno"
+import { getDisputa1Turno, hasResultados1Turno } from "@/lib/resultados-1turno"
 
 const title = "Eleições 2026: governadores por estado | Puxa Ficha"
 const description =
@@ -62,11 +65,24 @@ export default async function GovernadoresPage() {
   for (const resumo of governadoresRes.data) {
     const candidato = resumo.candidato
     if (candidato.cargo_disputado !== "Governador" || !candidato.estado) continue
-    const fase = fasePorSlug.get(candidato.slug) ?? candidato.fase_eleitoral_2026
+    const fase = comFaseEfetiva(candidato, fasePorSlug).fase_eleitoral_2026
     if (!fase || fase.fase_eleitoral === "em_disputa") continue
     const grupo = fasesPorUf.get(candidato.estado) ?? []
     grupo.push({ ...candidato, fase_eleitoral_2026: fase })
     fasesPorUf.set(candidato.estado, grupo)
+  }
+
+  // Selo por UF só com resultado publicado: fase do snapshot do TSE e das fichas.
+  const statusPorEstado: Record<string, string> = {}
+  if (hasResultados1Turno()) {
+    for (const uf of getEstadoUFs()) {
+      const fases = [
+        ...(getDisputa1Turno("Governador", uf)?.candidatos.map((candidato) => candidato.fase) ?? []),
+        ...(fasesPorUf.get(uf.toUpperCase())?.map((candidato) => candidato.fase_eleitoral_2026?.fase_eleitoral) ?? []),
+      ]
+      const status = statusUf1Turno(fases)
+      if (status) statusPorEstado[uf.toUpperCase()] = status
+    }
   }
 
   const schema = {
@@ -147,6 +163,7 @@ export default async function GovernadoresPage() {
         <BrazilMap
           indicadoresPorEstado={indicadoresPorEstado}
           candidatosPorEstado={candidatosPorEstado}
+          statusPorEstado={statusPorEstado}
         />
         {fasesPorUf.size > 0 && (
           <section className="mt-10" aria-labelledby="resultado-governadores-titulo" data-pf-governadores-resultado="">

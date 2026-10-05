@@ -2,7 +2,7 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
-const homeSource = readFileSync("src/app/(site)/page.tsx", "utf8")
+const homeSource = readFileSync("src/app/(site)/2o-turno/page.tsx", "utf8")
 const heroMetricsSource = readFileSync("src/lib/home-hero-metrics.ts", "utf8")
 
 describe("home global indicators contract", () => {
@@ -31,7 +31,10 @@ describe("home global indicators contract", () => {
       homeSource,
       /getCandidatosComparaveisResource\("Presidente"\)/
     )
-    assert.match(homeSource, /itemListElement: candidatos\.slice\(0, 12\)/)
-    assert.match(homeSource, /<DeferredCandidatoGrid\s+candidatos=\{candidatos\}/)
+    // Grade e JSON-LD usam o recorte da coorte presidencial (finalistas ou vencedor
+    // com resultado publicado; todos sem resultado).
+    assert.match(homeSource, /recortarFinalistas\(candidatos\)/)
+    assert.match(homeSource, /itemListElement: candidatosGrade\.slice\(0, 12\)/)
+    assert.match(homeSource, /<DeferredCandidatoGrid\s+candidatos=\{candidatosGrade\}/)
   })
 })

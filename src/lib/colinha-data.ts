@@ -1,4 +1,5 @@
 import "server-only"
+import { mesclarFaseComSnapshot } from "@/lib/resultados-1turno"
 
 import { createServerSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -108,17 +109,19 @@ async function enrichChunk(rows: RosterRow[], phases: FaseEleitoralPublica[]): P
   return rows.map((row) => {
     const slug = slugBySq.get(row.sq_candidato)
     if (!slug || !photoBySlug.has(slug)) return row
-    const phase = slug && candidateIdBySlug.get(slug) === phaseBySlug.get(slug)?.candidato_id ? phaseBySlug.get(slug) : undefined
+    const phaseDb = slug && candidateIdBySlug.get(slug) === phaseBySlug.get(slug)?.candidato_id ? phaseBySlug.get(slug) : undefined
+    // Banco vence fora de em_disputa; senão, snapshot do TSE (cobre o intervalo até o apply da migration de fase).
+    const phase = mesclarFaseComSnapshot(slug, row.cargo, phaseDb ? {
+      fase_eleitoral: phaseDb.fase_eleitoral,
+      fase_turno: phaseDb.fase_turno,
+      atualizacao_encerrada_em: phaseDb.atualizacao_encerrada_em,
+    } : null)
     return {
       ...row,
       slug,
       foto_path: row.foto_path || photoBySlug.get(slug) || null,
       resumo: summaryById.get(idBySlug.get(slug) ?? "") ?? null,
-      ...(phase ? { fase_eleitoral_2026: {
-        fase_eleitoral: phase.fase_eleitoral,
-        fase_turno: phase.fase_turno,
-        atualizacao_encerrada_em: phase.atualizacao_encerrada_em,
-      } } : {}),
+      ...(phase ? { fase_eleitoral_2026: phase } : {}),
     }
   })
 }

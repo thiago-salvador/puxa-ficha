@@ -141,6 +141,7 @@ test("selos de fonte e curadoria expõem atributos verificáveis no HTML", () =>
 test("imagens JSX declaram alternativa textual ou ficam decorativas", () => {
   const paths = [
     "src/app/(site)/page.tsx",
+    "src/app/(site)/2o-turno/page.tsx",
     "src/app/(site)/sobre/page.tsx",
     "src/components/CandidatoCard.tsx",
     "src/components/CandidatePhoto.tsx",

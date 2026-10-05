@@ -62,36 +62,40 @@ describe("página /parlamentares", () => {
     assert.doesNotMatch(deputados, /getCandidatosResource|from "@\/lib\/api"/)
   })
 
-  test("Navbar e Footer expõem /parlamentares depois de Governadores", () => {
+  test("Navbar e Footer abrem com 1º Turno e 2º Turno, seguidos de Governadores, sem Parlamentares", () => {
     const navbar = read("src/components/Navbar.tsx")
     const footer = read("src/components/Footer.tsx")
 
-    assert.match(
-      navbar,
-      /href: "\/governadores", label: "Governadores" \},\s*\{ href: "\/parlamentares", label: "Parlamentares"/,
-    )
-    assert.match(
-      footer,
-      /href: "\/governadores", label: "Governadores" \},\s*\{ href: "\/parlamentares", label: "Parlamentares"/,
-    )
+    for (const source of [navbar, footer]) {
+      assert.match(source, /href: "\/", label: "1º Turno" \},\s*\{ href: "\/2o-turno", label: "2º Turno" \},\s*\{ href: "\/governadores", label: "Governadores" \}/)
+      assert.doesNotMatch(source, /\/parlamentares/)
+    }
   })
 
-  test("sitemap, cache público e busca rápida incluem a rota", () => {
+  test("sitemap e cache público mantêm a rota; a busca rápida não a oferece mais", () => {
     const sitemap = read("src/app/sitemap.ts")
     const cache = read("scripts/aquecer-cache-publico.ts")
     const search = read("src/components/GlobalSearchProvider.tsx")
 
     assert.match(sitemap, /\$\{SITE_ORIGIN\}\/parlamentares/)
     assert.match(cache, /"\/parlamentares"/)
-    assert.match(search, /href: "\/parlamentares"/)
+    // /2o-turno entra; /1o-turno só redireciona para a home e sai; as UFs ficam.
+    assert.match(sitemap, /\$\{SITE_ORIGIN\}\/2o-turno/)
+    assert.doesNotMatch(sitemap, /\$\{SITE_ORIGIN\}\/1o-turno`/)
+    assert.match(sitemap, /\$\{SITE_ORIGIN\}\/1o-turno\/\$\{uf\}/)
+    assert.match(cache, /"\/2o-turno"/)
+    assert.doesNotMatch(cache, /"\/1o-turno"/)
+    assert.doesNotMatch(search, /href: "\/parlamentares"/)
+    assert.match(search, /href: "\/",\s*title: "1º Turno"/)
+    assert.match(search, /href: "\/2o-turno",\s*title: "2º Turno"/)
   })
 
-  test("busca rápida oferece /parlamentares com texto que segue a flag do Senado", () => {
-    const off = buildShortcutItems(false).find((item) => item.href === "/parlamentares")
-    const on = buildShortcutItems(true).find((item) => item.href === "/parlamentares")
-
-    assert.equal(off?.title, "Parlamentares")
-    assert.equal(off?.subtitle, "Fichas de deputados e senadores ainda não estão prontas")
-    assert.equal(on?.subtitle, "Fichas de deputados ainda não estão prontas")
+  test("busca rápida oferece 1º Turno (/) e 2º Turno no lugar de /parlamentares, com ou sem a flag do Senado", () => {
+    for (const flag of [false, true]) {
+      const items = buildShortcutItems(flag)
+      assert.equal(items.find((item) => item.href === "/parlamentares"), undefined)
+      assert.equal(items.find((item) => item.href === "/")?.title, "1º Turno")
+      assert.equal(items.find((item) => item.href === "/2o-turno")?.title, "2º Turno")
+    }
   })
 })

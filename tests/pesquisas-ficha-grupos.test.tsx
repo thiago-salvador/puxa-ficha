@@ -372,4 +372,15 @@ describe("integração na ficha", () => {
     const semFase = candidatoComFase("governador-sem-fase", "Sem fase", null)
     assert.equal(renderToStaticMarkup(<SegundoTurnoSection candidatos={[semFase]} />), "")
   })
+
+  it("na home, mostrarPresidencia={false} tira a Presidência e mantém os governadores", () => {
+    const presidente = { ...candidatoComFase("presidente-final", "Finalista Pres", { fase_eleitoral: "segundo_turno", fase_turno: 1, atualizacao_encerrada_em: null }), cargo_disputado: "Presidente" as const, estado: null }
+    const governador = candidatoComFase("governador-final", "Finalista Gov", { fase_eleitoral: "segundo_turno", fase_turno: 1, atualizacao_encerrada_em: null })
+    const comPresidencia = renderToStaticMarkup(<SegundoTurnoSection candidatos={[presidente, governador]} />)
+    assert.match(comPresidencia, /Finalista Pres/)
+    const semPresidencia = renderToStaticMarkup(<SegundoTurnoSection candidatos={[presidente, governador]} mostrarPresidencia={false} />)
+    assert.doesNotMatch(semPresidencia, /Finalista Pres/)
+    assert.match(semPresidencia, /Finalista Gov/)
+    assert.equal(renderToStaticMarkup(<SegundoTurnoSection candidatos={[presidente]} mostrarPresidencia={false} />), "")
+  })
 })

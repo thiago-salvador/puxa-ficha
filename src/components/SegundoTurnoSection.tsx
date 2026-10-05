@@ -10,6 +10,8 @@ interface SegundoTurnoSectionProps {
   candidatos: Candidato[]
   /** Home mostra o índice por UF; páginas estaduais mostram o resultado local. */
   mostrarGovernadores?: boolean
+  /** A home já lista os finalistas da Presidência na grade de candidatos; evita mostrá-los duas vezes. */
+  mostrarPresidencia?: boolean
   className?: string
 }
 
@@ -52,14 +54,14 @@ function grupoPorUf(candidatos: Candidato[]) {
     .sort(([a], [b]) => a.localeCompare(b, "pt-BR"))
 }
 
-export function SegundoTurnoSection({ candidatos, mostrarGovernadores = true, className = "" }: SegundoTurnoSectionProps) {
+export function SegundoTurnoSection({ candidatos, mostrarGovernadores = true, mostrarPresidencia = true, className = "" }: SegundoTurnoSectionProps) {
   const fasesAtivas = candidatos.some((candidato) => {
     const fase = candidato.fase_eleitoral_2026?.fase_eleitoral
     return Boolean(fase && fase !== "em_disputa")
   })
   if (!fasesAtivas) return null
 
-  const presidentes = candidatos.filter((candidato) => candidato.cargo_disputado === "Presidente")
+  const presidentes = mostrarPresidencia ? candidatos.filter((candidato) => candidato.cargo_disputado === "Presidente") : []
   const presidenteEleito = presidentes.find((candidato) => candidato.fase_eleitoral_2026?.fase_eleitoral === "eleito")
   const presidentesFinalistas = presidentes.filter((candidato) => candidato.fase_eleitoral_2026?.fase_eleitoral === "segundo_turno")
   const presidenteDestaque = presidenteEleito ? [presidenteEleito] : presidentesFinalistas

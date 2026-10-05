@@ -206,7 +206,7 @@ describe("ComparadorPanel: a mesma régua do overview vale na comparação, a li
     assert.match(fonte, /const processosNow = useMemo\(\(\) => new Date\(referenceNow\), \[referenceNow\]\)/)
     assert.doesNotMatch(fonte, /new Date\(\)/)
     for (const path of [
-      "src/app/(site)/page.tsx",
+      "src/app/(site)/2o-turno/page.tsx",
       "src/app/(site)/comparar/page.tsx",
       "src/app/(site)/uf/[uf]/page.tsx",
       "src/app/(site)/uf/[uf]/senado/page.tsx",

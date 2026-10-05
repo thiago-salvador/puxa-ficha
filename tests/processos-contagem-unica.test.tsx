@@ -191,11 +191,11 @@ describe("hero: agregado com a mesma definição da ficha", () => {
   })
 
   it("a home e a /uf mostram a parte disciplinar e o aviso; as listas repassam as partes à grade", () => {
-    const home = readFileSync("src/app/(site)/page.tsx", "utf8")
+    const home = readFileSync("src/app/(site)/2o-turno/page.tsx", "utf8")
     assert.match(home, /totalProcessosDisciplinares/)
     assert.match(home, /PROCESSO_DISCIPLINAR_AVISO/)
     assert.match(readFileSync("src/app/(site)/uf/[uf]/page.tsx", "utf8"), /PROCESSO_DISCIPLINAR_AVISO/)
-    for (const path of ["src/app/(site)/page.tsx", "src/app/(site)/uf/[uf]/page.tsx", "src/app/(site)/uf/[uf]/senado/page.tsx"]) {
+    for (const path of ["src/app/(site)/2o-turno/page.tsx", "src/app/(site)/uf/[uf]/page.tsx", "src/app/(site)/uf/[uf]/senado/page.tsx"]) {
       assert.match(readFileSync(path, "utf8"), /processosContagem=\{processosContagem\}/, path)
     }
   })

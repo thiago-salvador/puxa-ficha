@@ -105,7 +105,7 @@ describe("grade: patrimonio_atipico do DTO chega ao card e à ordenação", () =
   })
 
   for (const page of [
-    "src/app/(site)/page.tsx",
+    "src/app/(site)/2o-turno/page.tsx",
     "src/app/(site)/uf/[uf]/page.tsx",
     "src/app/(site)/uf/[uf]/senado/page.tsx",
   ]) {

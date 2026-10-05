@@ -57,6 +57,7 @@ import { loadSenadoRunningMates } from "@/lib/senado-running-mates"
 import { listarPesquisasSenadoPorSlug } from "@/lib/senado-polls"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { FaseEleitoralSelo } from "@/components/FaseEleitoralSelo"
+import { ResultadoNoPrimeiroTurno } from "@/components/ResultadoNoPrimeiroTurno"
 
 const getFicha = (slug: string) => getCandidatoBySlugResource(slug)
 
@@ -547,6 +548,8 @@ export async function CandidatoFichaView({
       <div className="mx-auto max-w-7xl px-5 pb-2 md:px-12">
         <DataSourceNotice status={sourceStatus} message={sourceMessage} />
       </div>
+
+      <ResultadoNoPrimeiroTurno slug={slug} cargo={ficha.cargo_disputado} situacaoCandidatura={ficha.situacao_candidatura} />
 
       <DeferredCandidatoProfile
         ficha={ficha}

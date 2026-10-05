@@ -83,6 +83,7 @@ import {
 import { processosForaPorPapelDeAutoridadeDaFicha } from "@/lib/djen-consulta-url"
 import type { ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 import { normalizeFotoCredito } from "@/lib/foto-credito"
+import { mesclarFaseComSnapshot } from "@/lib/resultados-1turno"
 import { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
 export { mergeSourceMessages, mergeSourceStatuses } from "@/lib/data-resource"
 export { parseFederalAcervoReceiptDetail, projectFederalAcervoReceipts } from "@/lib/federal-acervo-receipts"
@@ -982,11 +983,15 @@ async function fetchChapa2026(
  */
 async function fetchFaseEleitoral2026(
   candidatoId: string,
+  slug: string,
+  cargo: string | null,
   cacheMode: "no-store" | undefined,
 ): Promise<FaseEleitoral2026 | null> {
   const fases = await getFasesEleitorais2026(cacheMode)
-  const row = fases.find(f => f.candidato_id === candidatoId)
-  return row ? { fase_eleitoral: row.fase_eleitoral, fase_turno: row.fase_turno, atualizacao_encerrada_em: row.atualizacao_encerrada_em } : null
+  const row = fases.find(f => f.candidato_id === candidatoId && f.slug === slug && f.cargo_disputado === cargo)
+  const doBanco: FaseEleitoral2026 | null = row ? { fase_eleitoral: row.fase_eleitoral, fase_turno: row.fase_turno, atualizacao_encerrada_em: row.atualizacao_encerrada_em } : null
+  // Snapshot do TSE cobre o intervalo entre o deploy e o apply da migration de fase.
+  return mesclarFaseComSnapshot(slug, cargo, doBanco)
 }
 
 /** Leitura única e completa; falha, truncamento ou shape inválido deixam todos sem fase. */
@@ -1011,13 +1016,15 @@ export const getFasesEleitorais2026 = cache(async (
 
 async function anexarFasesEleitorais<T extends { id: string; slug: string; cargo_disputado: string | null }>(candidatos: T[]): Promise<T[]> {
   const fases = await getFasesEleitorais2026()
-  if (fases.length === 0) return candidatos
   const byId = new Map(fases.map(f => [f.candidato_id, f]))
   return candidatos.map(c => {
     const f = byId.get(c.id)
-    return f && f.cargo_disputado === c.cargo_disputado && f.slug === c.slug
-      ? { ...c, fase_eleitoral_2026: { fase_eleitoral: f.fase_eleitoral, fase_turno: f.fase_turno, atualizacao_encerrada_em: f.atualizacao_encerrada_em } }
-      : c
+    const doBanco: FaseEleitoral2026 | null = f && f.cargo_disputado === c.cargo_disputado && f.slug === c.slug
+      ? { fase_eleitoral: f.fase_eleitoral, fase_turno: f.fase_turno, atualizacao_encerrada_em: f.atualizacao_encerrada_em }
+      : null
+    // Snapshot do TSE cobre o intervalo entre o deploy e o apply da migration de fase.
+    const fase = mesclarFaseComSnapshot(c.slug, c.cargo_disputado, doBanco)
+    return fase ? { ...c, fase_eleitoral_2026: fase } : c
   })
 }
 
@@ -1916,7 +1923,7 @@ async function getCandidatoBySlugFromRelationResource(
   ).sort((a, b) => rankMudancaPartido(b) - rankMudancaPartido(a))
   const [chapa2026, faseEleitoral2026] = await Promise.all([
     fetchChapa2026(id, cacheMode),
-    fetchFaseEleitoral2026(id, cacheMode),
+    fetchFaseEleitoral2026(id, candidato.slug, candidato.cargo_disputado, cacheMode),
   ])
 
   const pontosPublicos = shouldUseServiceRole

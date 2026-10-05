@@ -79,11 +79,14 @@ function regionPaint(sigla: string): { top: string; side: string; hover: string 
 export function BrazilMap({
   indicadoresPorEstado,
   candidatosPorEstado,
+  statusPorEstado,
   stateRouteSuffix = "",
   candidateOfficeLabel = "governador",
 }: {
   indicadoresPorEstado?: Record<string, BrazilMapIndicadoresPreview>
   candidatosPorEstado?: Record<string, number>
+  /** Selo curto por UF no índice (ex.: "2º turno"). Sem entrada, sem selo. */
+  statusPorEstado?: Record<string, string>
   stateRouteSuffix?: string
   candidateOfficeLabel?: string
 } = {}) {
@@ -427,6 +430,11 @@ export function BrazilMap({
                         >
                           <span className="w-7 shrink-0 whitespace-nowrap font-bold">{uf}</span>
                           <span className="font-medium">{STATE_NAMES[uf]}</span>
+                          {statusPorEstado?.[uf] && (
+                            <span className="ml-auto shrink-0 rounded-full border border-foreground/30 px-2 py-0.5 text-[length:var(--text-eyebrow)] font-bold leading-none text-foreground" data-pf-uf-status="">
+                              {statusPorEstado[uf]}
+                            </span>
+                          )}
                         </Link>
                       </li>
                     )
