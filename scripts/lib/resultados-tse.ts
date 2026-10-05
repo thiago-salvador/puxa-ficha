@@ -30,6 +30,7 @@
  */
 import { createHash } from "node:crypto"
 import { stripAccents } from "../../src/lib/strip-accents"
+import { SITUACAO_JULGAMENTO_INDEFERIDO } from "../../src/lib/situacao-candidatura"
 
 import {
   encerraAtualizacao,
@@ -469,7 +470,7 @@ export interface CandidaturaCoorte {
  * situação confirma o motivo. Indeferido sub judice que foi à urna aparece no
  * arquivo (votos anulados) e segue a classificação normal.
  */
-const SITUACOES_FORA_DA_URNA = new Set(["renuncia", "indeferido", "cancelado", "falecido", "cassado"])
+const SITUACOES_FORA_DA_URNA = new Set<string>(["renuncia", ...SITUACAO_JULGAMENTO_INDEFERIDO, "cancelado", "falecido", "cassado"])
 
 function saiuAntesDaUrna(c: CandidaturaCoorte): string | null {
   const situacao = normalizar(String(c.situacao_candidatura ?? "")).replace(/\s+/g, " ").trim()

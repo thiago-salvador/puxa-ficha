@@ -47,7 +47,7 @@ BEGIN
   INSERT INTO public.coleta_log (fonte, escopo, alvo, resultado, volume, detalhe, url, execucao, natureza)
   SELECT 'tse-resultados-2026', 'global', 'candidaturas_fase_2026', 'encontrado', 512,
          jsonb_build_object('resumo', 'Rollback da migration 20261005180206: fase eleitoral de 512 candidatura(s) volta ao estado anterior.',
-                            'plano_sha256', '110db31e0496bd35110299a2b73dbdf380beff78df1541a5ddcb699c761b6fdf')::text,
+                            'plano_sha256', 'bb608d12cc5122ebc3957f184bb81d3a5468c8f5dc448b171c70c71c03717b0b')::text,
          l.url, 'rollback:20261005180206', 'escrita'
   FROM public.coleta_log l WHERE l.execucao = 'migration:20261005180206';
 

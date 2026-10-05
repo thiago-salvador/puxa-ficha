@@ -1,7 +1,7 @@
 -- Resultado oficial do TSE, 1º turno de 2026: fase eleitoral de 512 candidatura(s).
 --
 -- Gerada por `scripts/resultados-tse-fase.ts gerar` a partir do plano
--- sha256 110db31e0496bd35110299a2b73dbdf380beff78df1541a5ddcb699c761b6fdf (2026-10-05T18:01:51.880Z). Contagem: mudancas=512, pendentes=0, encerram=496, nao_eleito=368, fora_da_disputa=54, segundo_turno=16, eleito=74.
+-- sha256 bb608d12cc5122ebc3957f184bb81d3a5468c8f5dc448b171c70c71c03717b0b (2026-10-05T18:58:58.146Z). Contagem: mudancas=512, pendentes=0, encerram=496, nao_eleito=368, fora_da_disputa=54, segundo_turno=16, eleito=74.
 -- Fontes (divulgação oficial, totalização final, todas as seções):
 --   https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ac/ac-c0003-e006259-u.json
 --     sha256 8cb75ce631656d84f93fafcf518c35951afcf20b2fc9959b1c4b39921383d741 (gerado pelo TSE em 04/10/2026 21:08:18)
@@ -380,7 +380,7 @@ BEGIN
     ('7e63ade8-03f6-42bc-99fa-e191cd37031d'::uuid, 'tse-2026-110002553701', '110002553701', '110002553701', 'Senador', 'em_disputa', 'nao_eleito', 1, true, 'Não eleito (Válido)', 'https://resultados.tse.jus.br/oficial/ele2026/6259/dados/mt/mt-c0005-e006259-u.json', 'baab57c5c9aa9ee1d19982fa2f24741c372f0bfe4268d22ede7584417475009a'),
     ('cc3c7fe1-93b7-410a-a505-2dbd0ffe280c'::uuid, 'tse-2026-110002553706', '110002553706', '110002553706', 'Senador', 'em_disputa', 'nao_eleito', 1, true, 'Não eleito (Válido)', 'https://resultados.tse.jus.br/oficial/ele2026/6259/dados/mt/mt-c0005-e006259-u.json', 'baab57c5c9aa9ee1d19982fa2f24741c372f0bfe4268d22ede7584417475009a'),
     ('cc835bc0-bf53-45de-87ef-08ec0b54221a'::uuid, 'tse-2026-120002532721', '120002532721', '120002532721', 'Senador', 'em_disputa', 'nao_eleito', 1, true, 'Não eleito (Válido)', 'https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ms/ms-c0005-e006259-u.json', '0b8875ec33e18d3c339db7c408d9c56022dfbccbb628379aa2869c04a815d33e'),
-    ('52f0612c-8e47-4c8c-bd0a-a137e8c2f156'::uuid, 'tse-2026-120002534952', '120002534952', '120002534952', 'Senador', 'em_disputa', 'fora_da_disputa', 1, true, NULL, NULL, NULL),
+    ('52f0612c-8e47-4c8c-bd0a-a137e8c2f156'::uuid, 'tse-2026-120002534952', '120002534952', '120002534952', 'Senador', 'em_disputa', 'fora_da_disputa', 1, true, 'ausente do resultado oficial (cadastro: indeferido com recurso)', 'https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ms/ms-c0005-e006259-u.json', '0b8875ec33e18d3c339db7c408d9c56022dfbccbb628379aa2869c04a815d33e'),
     ('14da87c7-3889-4daf-8d6a-65d57c016b35'::uuid, 'tse-2026-120002535764', '120002535764', '120002535764', 'Senador', 'em_disputa', 'eleito', 1, true, 'Eleito (Válido)', 'https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ms/ms-c0005-e006259-u.json', '0b8875ec33e18d3c339db7c408d9c56022dfbccbb628379aa2869c04a815d33e'),
     ('8fd41f5e-204d-47ef-8165-fa0a944ad223'::uuid, 'tse-2026-120002535769', '120002535769', '120002535769', 'Senador', 'em_disputa', 'eleito', 1, true, 'Eleito (Válido)', 'https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ms/ms-c0005-e006259-u.json', '0b8875ec33e18d3c339db7c408d9c56022dfbccbb628379aa2869c04a815d33e'),
     ('5ca3ab90-3e9a-4356-8b54-9cda5ad7c0fc'::uuid, 'tse-2026-120002547434', '120002547434', '120002547434', 'Senador', 'em_disputa', 'nao_eleito', 1, true, 'Não eleito (Válido)', 'https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ms/ms-c0005-e006259-u.json', '0b8875ec33e18d3c339db7c408d9c56022dfbccbb628379aa2869c04a815d33e'),
@@ -697,7 +697,7 @@ BEGIN
   SELECT 'tse-resultados-2026', 'global', 'candidaturas_fase_2026', 'encontrado', 512,
          jsonb_build_object(
            'resumo', 'Resultado oficial do 1º turno de 2026 gravado para 512 candidatura(s): mudancas=512, pendentes=0, encerram=496, nao_eleito=368, fora_da_disputa=54, segundo_turno=16, eleito=74.',
-           'plano_sha256', '110db31e0496bd35110299a2b73dbdf380beff78df1541a5ddcb699c761b6fdf',
+           'plano_sha256', 'bb608d12cc5122ebc3957f184bb81d3a5468c8f5dc448b171c70c71c03717b0b',
            'turno', 1,
            'linhas', jsonb_agg(jsonb_build_object(
              'slug', p.slug,

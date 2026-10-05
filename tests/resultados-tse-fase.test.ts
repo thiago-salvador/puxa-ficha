@@ -336,15 +336,17 @@ describe("resultados TSE: plano", () => {
     c.push(
       { ...c[4], id: "00000000-0000-4000-8000-000000000009", slug: "gov-renunciou", sq_candidato_2026: "250000000009", situacao_candidatura: "renuncia" },
       { ...c[6], id: "00000000-0000-4000-8000-000000000010", slug: "pres-indeferido", sq_candidato_2026: "280000000010", situacao_candidatura: "Indeferido" },
+      { ...c[4], id: "00000000-0000-4000-8000-000000000011", slug: "gov-indeferido-recurso", sq_candidato_2026: "250000000011", situacao_candidatura: "indeferido com recurso" },
     )
     const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
     assert.equal(plano.status, "completo")
     assert.deepEqual(plano.pendentes, [])
-    const por = Object.fromEntries(plano.mudancas.filter((m) => m.slug === "gov-renunciou" || m.slug === "pres-indeferido")
+    const por = Object.fromEntries(plano.mudancas.filter((m) => ["gov-renunciou", "pres-indeferido", "gov-indeferido-recurso"].includes(m.slug))
       .map((m) => [m.slug, [m.fase_depois, m.encerra_atualizacao, m.fonte, m.situacao_tse]]))
     assert.deepEqual(por, {
       "gov-renunciou": ["fora_da_disputa", true, governoSP.url, "ausente do resultado oficial (cadastro: renuncia)"],
       "pres-indeferido": ["fora_da_disputa", true, presidente.url, "ausente do resultado oficial (cadastro: indeferido)"],
+      "gov-indeferido-recurso": ["fora_da_disputa", true, governoSP.url, "ausente do resultado oficial (cadastro: indeferido com recurso)"],
     })
     assert.doesNotThrow(() => gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } }))
   })

@@ -9,7 +9,7 @@ BEGIN
     RAISE EXCEPTION 'fase-turno-1-20261005180206 readback: recibo ausente ou inválido';
   END IF;
   SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20261005180206';
-  IF jsonb_array_length(r->'linhas') <> 512 OR r->>'plano_sha256' IS DISTINCT FROM '110db31e0496bd35110299a2b73dbdf380beff78df1541a5ddcb699c761b6fdf' THEN
+  IF jsonb_array_length(r->'linhas') <> 512 OR r->>'plano_sha256' IS DISTINCT FROM 'bb608d12cc5122ebc3957f184bb81d3a5468c8f5dc448b171c70c71c03717b0b' THEN
     RAISE EXCEPTION 'fase-turno-1-20261005180206 readback: recibo não corresponde ao plano';
   END IF;
   -- Linha regravada por uma migration de resultado POSTERIOR (2º turno) é
