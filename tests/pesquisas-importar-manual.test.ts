@@ -241,6 +241,21 @@ describe("importação manual auditada de pesquisas", () => {
     assert.ok(senado.problems.some((problem) => problem.includes("Senado não tem 2º turno")))
   })
 
+  it("2º turno não reaproveita fonte que só declara o 1º turno", () => {
+    const datafolha = rodada({ uf: "PI", instituto: "Datafolha", registration: "PI-99986/2026", scenarios: [{ kind: "estimulado", turn: 2, question: null, results: [
+      { raw_label: "Rafael Fonteles", value_percent: 55 }, { raw_label: "Joel", value_percent: 35 }, { raw_label: "Brancos e nulos", value_percent: 10 },
+    ] }] })
+    const decisoes = { PI: { "Rafael Fonteles": "rafael-fonteles", "Joel": "joel-exemplo", "Brancos e nulos": null } }
+    const { problems, catalogos } = importarRodadas([datafolha], decisoes, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(problems, [])
+    const dataset = (catalogos.gov.datasets as { publication_scope: { geography_code: string }; pesquisas: { id: string; source_id: string }[] }[])
+      .find((entry) => entry.publication_scope.geography_code === "PI")!
+    const poll = dataset.pesquisas.find((entry) => entry.id === "datafolha-pi-99986-2026")!
+    assert.notEqual(poll.source_id, "datafolha-folha-globo-estaduais-2026", "a fonte compartilhada declara só rounds [1]")
+    const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(dataset), JSON.stringify(catalogos.govFontes))
+    assert.equal(catalogo.pesquisas.find((entry) => entry.id === poll.id)?.cenarios[0].turn, 2)
+  })
+
   it("2º turno com finalista fora da coorte é bloqueado", () => {
     const segundo = rodada({ registration: "BR-99987/2026", scenarios: [{ kind: "estimulado", turn: 2, question: null, results: rodada().scenarios[0].results }] })
     const result = importarRodadas([segundo], aliases, "2026-10-06T12:00:00Z", carregarCatalogos(), coorteAtualizacaoDe([{

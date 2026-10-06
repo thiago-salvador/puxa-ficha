@@ -254,13 +254,16 @@ function fontesDe(catalogos: Catalogos, cargo: CargoPesquisa): Json {
   return catalogos.govFontes
 }
 
-function reusableSource(fontes: Json, instituto: string, office: string, geography: string) {
+function reusableSource(fontes: Json, instituto: string, office: string, geography: string, turnos: TurnoPesquisa[]) {
   return (fontes.sources as Json[]).find((source) => {
     const roles = source.roles as Json | undefined
     const poll = source.representative_poll as Json | undefined
+    // The site parser rejects a scenario whose turn the source does not declare.
+    const rounds = poll?.rounds as number[] | null | undefined
     return source.status === "aprovado" && source.reviewed_registration_ids === undefined &&
       typeof roles?.institute === "string" && norm(roles.institute) === norm(instituto) &&
-      (poll?.office === office) && (poll?.geography === null || poll?.geography === geography)
+      (poll?.office === office) && (poll?.geography === null || poll?.geography === geography) &&
+      (rounds == null || turnos.every((turno) => rounds.includes(turno)))
   })
 }
 
@@ -276,7 +279,8 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
   const roundKey = parts ? `${parts.uf.toLowerCase()}-${parts.number}-${parts.year}` : `${rodada.uf.toLowerCase()}-${rodada.fieldwork_end}`
   // One registration usually covers governor and Senate; the office suffix keeps both ids distinct.
   const id = `${instituteSlug}-${roundKey}${office === "Senador" ? "-senado" : ""}`
-  const existing = reusableSource(fontes, rodada.instituto, office, geography)
+  const turnos = [...new Set(cenariosImportaveis(rodada).map(turnoCenario))].sort((a, b) => a - b)
+  const existing = reusableSource(fontes, rodada.instituto, office, geography, turnos)
   const preferred = (fontes.preferred_source_ids as string[]) ?? []
   const sourceId = existing ? String(existing.id) : `${instituteSlug}-${roundKey}-revisao-${reviewedAt.slice(0, 10).replace(/-/g, "")}`
   const evidence = [rodada.result_url, ...(rodada.supporting_urls ?? [])]
@@ -300,7 +304,7 @@ export function montarRodada(rodada: RodadaColetada, aliases: DecisoesAlias, cat
       confidence_level_pct: rodada.confidence_percent,
       office,
       geography,
-      rounds: [...new Set(cenariosImportaveis(rodada).map(turnoCenario))].sort((a, b) => a - b),
+      rounds: turnos,
       registration_id: rodada.registration,
       result_url: rodada.result_url,
       registry_url: PESQELE,
