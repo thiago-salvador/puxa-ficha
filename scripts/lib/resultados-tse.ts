@@ -246,6 +246,8 @@ function inteiro(value: unknown): number | null {
 
 /** Decimal publicado com vírgula ("49,584865010"); null se não for número. */
 function decimal(value: unknown): number | null {
+  // Número JSON vai direto: String(1e-7) vira "1e-7" e a regex recusaria.
+  if (typeof value === "number") return Number.isFinite(value) && value >= 0 ? value : null
   const t = str(value).replace(",", ".")
   return /^\d+(\.\d+)?$/.test(t) ? Number(t) : null
 }

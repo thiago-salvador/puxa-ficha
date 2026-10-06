@@ -3,27 +3,15 @@
 import { useSyncExternalStore } from "react"
 import Link from "next/link"
 import { BRAZIL_STATES } from "@/data/brazil-states"
-
-const STORAGE_KEY = "pf-governadores-uf"
-const CHANGE_EVENT = "pf-governadores-uf-change"
+import { MEU_ESTADO_EVENTO as CHANGE_EVENT, armazenamentoLocal, lerUfSalva, salvarUf } from "@/lib/meu-estado"
 
 export function readSavedState(): string | null {
-  try {
-    const uf = window.localStorage.getItem(STORAGE_KEY)
-    return BRAZIL_STATES.some((state) => state.sigla === uf) ? uf : null
-  } catch {
-    return null
-  }
+  return lerUfSalva(armazenamentoLocal())
 }
 
 export function rememberState(uf: string): void {
-  if (!BRAZIL_STATES.some((state) => state.sigla === uf)) return
-  try {
-    window.localStorage.setItem(STORAGE_KEY, uf)
-    window.dispatchEvent(new Event(CHANGE_EVENT))
-  } catch {
-    // Navegação continua disponível quando o navegador bloqueia armazenamento.
-  }
+  // Navegação continua disponível quando o navegador bloqueia armazenamento.
+  if (salvarUf(armazenamentoLocal(), uf)) window.dispatchEvent(new Event(CHANGE_EVENT))
 }
 
 function subscribe(callback: () => void) {

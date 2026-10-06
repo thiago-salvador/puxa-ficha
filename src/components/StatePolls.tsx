@@ -3,25 +3,31 @@
 import { useId, useMemo, useState } from "react"
 import { Info, SlidersHorizontal, TrendingUp } from "lucide-react"
 import type { StatePollScenario } from "@/lib/state-polls"
-import { publicPollMetadata, type PollCandidate } from "@/lib/poll-series"
+import { fieldworkDate, publicPollMetadata, type PollCandidate } from "@/lib/poll-series"
+import { DATAS_TURNOS_2026 } from "@/lib/coorte-atualizacao"
 import { groupWeeklyPollSeries } from "@/lib/poll-weeks"
 import { PollTrendChart } from "./PollTrendChart"
+import { AbasFiltro } from "./AbasFiltro"
 import styles from "./StatePolls.module.css"
 
-export function StatePolls({ polls, unavailable = false, candidates = [], office = "Governador", resultadoEleitoralPublicado = false }: {
+export function StatePolls({ polls, unavailable = false, candidates = [], office = "Governador", resultadoEleitoralPublicado = false, turnos = "seletor" }: {
+  /** "seletor": select de turno (padrão); "abas": abas 1º/2º turno (estado com 2º turno); "so1": só 1º turno (decidido no 1º). */
+  turnos?: "seletor" | "abas" | "so1"
   polls: StatePollScenario[]; unavailable?: boolean; candidates?: PollCandidate[]
   office?: "Governador" | "Senador"
   resultadoEleitoralPublicado?: boolean
 }) {
   const id = useId()
-  const [turn, setTurn] = useState<1 | 2>(1)
   const isSenado = office === "Senador"
-  const activeTurn = isSenado ? 1 : turn
+  // Abre no 2º turno só com pesquisa colhida depois do 1º turno; cenário hipotético de antes fica na aba, sem destaque.
+  const [turn, setTurn] = useState<1 | 2>(() => turnos === "abas" && polls.some(poll => poll.sourceStatus === "aprovado" && poll.state === "publicado" && poll.scenario.turn === 2 && (fieldworkDate(poll) ?? "") > DATAS_TURNOS_2026[1]) ? 2 : 1)
+  const activeTurn = isSenado || turnos === "so1" ? 1 : turn
   const [institute, setInstitute] = useState("")
   const [seriesId, setSeriesId] = useState("")
   const [period, setPeriod] = useState("all")
   const [filtersExpanded, setFiltersExpanded] = useState(false)
-  const eligiblePolls = useMemo(() => polls.filter(poll => poll.sourceStatus === "aprovado" && poll.state === "publicado").map(publicPollMetadata), [polls])
+  // Com abas de turno, a de 2º turno só mostra pesquisa colhida depois do 1º (o confronto real).
+  const eligiblePolls = useMemo(() => polls.filter(poll => poll.sourceStatus === "aprovado" && poll.state === "publicado").map(publicPollMetadata).filter(poll => !(turnos === "abas" && poll.scenario.turn === 2 && (fieldworkDate(poll) ?? "") <= DATAS_TURNOS_2026[1])), [polls, turnos])
   const institutes = [...new Set(eligiblePolls.filter(poll => poll.scenario.turn === activeTurn).map(poll => poll.instituto.value ?? "Instituto não informado"))].sort()
   const activeInstitute = institutes.includes(institute) ? institute : "all"
   const choices = useMemo(() => groupWeeklyPollSeries(eligiblePolls.filter(poll => poll.scenario.turn === activeTurn && (activeInstitute === "all" || (poll.instituto.value ?? "Instituto não informado") === activeInstitute))), [eligiblePolls, activeTurn, activeInstitute])
@@ -35,17 +41,25 @@ export function StatePolls({ polls, unavailable = false, candidates = [], office
 
   return <section id="pesquisas" className={styles.section} aria-labelledby={`${id}-title`} data-pf-polls="">
     <header className={styles.heading}><p>Eleições · {isSenado ? "Senado · Pesquisas" : "Pesquisas"}</p><h2 id={`${id}-title`}>{isSenado ? "A disputa pelas duas vagas" : "A evolução da disputa"}</h2><div>{isSenado ? "Dois votos por eleitor. Sem segundo turno." : "Uma linha por candidato. Um ponto por semana."}</div>{resultadoEleitoralPublicado && activeTurn === 1 && <p data-pf-pesquisa-resultado-turno="">pesquisa do 1º turno</p>}<p>Cobertura parcial: esta seção não reúne todas as pesquisas divulgadas.</p></header>
+    {!isSenado && turnos === "abas" && <AbasFiltro
+      rotulo="Turno das pesquisas"
+      abas={[{ id: "1", label: "1º turno" }, { id: "2", label: "2º turno" }]}
+      ativa={String(turn) as "1" | "2"}
+      onChange={(id) => { setTurn(Number(id) as 1 | 2); setInstitute(""); reset() }}
+      painelId={`${id}-painel`}
+      className="mb-4"
+    />}
     <div className={styles.toolbar}>
       <div className={styles.viewLabel}><TrendingUp size={20} aria-hidden="true" />Evolução</div>
       <button className={styles.filterToggle} type="button" aria-label="Filtros de pesquisa" aria-expanded={filtersExpanded} aria-controls={`${id}-filters`} onClick={() => setFiltersExpanded(value => !value)}><SlidersHorizontal size={18} aria-hidden="true" /></button>
       <div id={`${id}-filters`} className={styles.filters} data-expanded={filtersExpanded}>
-        {!isSenado && <label>Turno<select value={turn} onChange={event => { setTurn(Number(event.target.value) as 1 | 2); setInstitute(""); reset() }}><option value={1}>1º turno</option><option value={2}>2º turno</option></select></label>}
+        {!isSenado && turnos === "seletor" && <label>Turno<select value={turn} onChange={event => { setTurn(Number(event.target.value) as 1 | 2); setInstitute(""); reset() }}><option value={1}>1º turno</option><option value={2}>2º turno</option></select></label>}
         {series && <><label>Instituto<select value={activeInstitute} onChange={event => { setInstitute(event.target.value); reset() }}><option value="all">Todos os institutos</option>{institutes.map(name => <option key={name}>{name}</option>)}</select></label>
           <label className={styles.scenarioFilter}>Cenário<select title={series.label} value={series.id} onChange={event => { setSeriesId(event.target.value); setPeriod("all") }}>{choices.map(choice => <option key={choice.id} value={choice.id}>{choice.label}</option>)}</select></label>
           <label>Período<select value={activePeriod} onChange={event => setPeriod(event.target.value)}><option value="all">Todo o período</option>{months.map(month => <option key={month} value={month}>{monthLabel(month)}</option>)}</select></label></>}
       </div>
     </div>
-    <div className={styles.panel}>
+    <div id={`${id}-painel`} className={styles.panel} {...(turnos === "abas" && !isSenado ? { role: "tabpanel" } : {})}>
       {!current ? <p className={styles.notice}>{unavailable ? "Não foi possível carregar as pesquisas agora." : isSenado ? "Sem pesquisa qualificada disponível para o Senado na cobertura atual." : "Sem pesquisa qualificada disponível para este turno na cobertura atual."} <a href="https://pesqele-divulgacao.tse.jus.br/" target="_blank" rel="noopener noreferrer">Consultar registros no TSE</a></p> : <>
         <div className={styles.chartHeader}><h3>{visibleWeeks.length === 1 ? "Intenção de voto na semana" : "Intenção de voto semana a semana"}</h3><p>{series.label}</p></div>
         <details className={styles.comparisonHelp}><summary>Como calculamos a média <Info size={16} aria-hidden="true" /></summary><p>{isSenado ? "Semanas de segunda a domingo, definidas pelo fim da coleta. Cada pesquisa tem o mesmo peso na média simples de cada candidato. Preservamos separadamente a pergunta, a metodologia, o denominador e os votos publicados para cada vaga; não combinamos perguntas ou métodos incompatíveis e não criamos segundo turno. Resultados ausentes não viram zero; informamos quantas pesquisas têm resultado para cada candidato. Semanas sem dados interrompem a linha. O filtro de período considera o início da semana, mantendo a média da semana inteira. Esta é uma agregação descritiva, sem correção por instituto ou margem de erro calculada para a média; não é uma previsão." : "Semanas de segunda a domingo, definidas pelo fim da coleta. Cada pesquisa tem o mesmo peso na média simples de cada candidato. Combinamos institutos e métodos de entrevista diferentes quando a pergunta é do mesmo tipo (estimulada ou espontânea), no mesmo turno e sobre a mesma base (total de entrevistados ou votos válidos), mesmo que a lista de candidatos varie; cada candidato entra na média só das pesquisas que o apresentaram. Quando uma pesquisa publica mais de um cenário, usamos o mais recentemente publicado; em caso de empate, o de lista mais completa. Resultados ausentes não viram zero; informamos quantas pesquisas têm resultado para cada candidato. Semanas sem dados interrompem a linha. O filtro de período considera o início da semana, mantendo a média da semana inteira. Esta é uma agregação descritiva, sem correção por instituto ou margem de erro calculada para a média; não é uma previsão."}</p></details>

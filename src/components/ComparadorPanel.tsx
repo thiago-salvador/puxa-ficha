@@ -51,6 +51,7 @@ import { readProofIdFromUrl, trackLaunchEvent } from "@/lib/analytics-client"
 import { observeAnalyticsResult } from "@/lib/analytics-visibility"
 import { buildComparatorBoxCard } from "@/lib/box-card-model"
 import { BoxShareButton } from "@/components/BoxShareButton"
+import { FOTO_PB_DICA } from "@/lib/arquivo-1turno"
 
 const VALID_UF_SIGLA = new Set<string>(BRAZIL_STATES.map((s) => s.sigla))
 
@@ -62,6 +63,8 @@ interface Props {
   initialSelectedSlugs?: string[]
   /** Valor inicial de `?eixo=` vindo do servidor. */
   initialEixo?: string | null
+  /** Arquivo do 1º turno: slugs com foto em preto e branco (quem não segue na disputa). */
+  slugsFotoPB?: readonly string[]
 }
 
 function buildCompararQueryString(
@@ -90,7 +93,8 @@ function resolveInitialSelectedIds(
   return next
 }
 
-export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, initialSelectedSlugs, initialEixo }: Props) {
+export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, initialSelectedSlugs, initialEixo, slugsFotoPB }: Props) {
+  const fotoPB = useMemo(() => new Set(slugsFotoPB ?? []), [slugsFotoPB])
   const candidatos = useMemo(() => ordenarPorFaseEleitoral(candidatosInput), [candidatosInput])
   const router = useRouter()
   const pathname = usePathname()
@@ -319,7 +323,7 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
                     width={40}
                     height={40}
                     sizes="40px"
-                    className="size-10 shrink-0 rounded-full object-cover object-top"
+                    className={`size-10 shrink-0 rounded-full object-cover object-top${fotoPB.has(candidato.slug) ? " grayscale" : ""}`}
                     fallbackClassName="size-10 shrink-0 rounded-full"
                     initialsClassName="text-xs"
                   />
@@ -449,7 +453,7 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
                               width={40}
                               height={40}
                               sizes="40px"
-                              className="size-10 shrink-0 rounded-full object-cover object-top"
+                              className={`size-10 shrink-0 rounded-full object-cover object-top${fotoPB.has(candidato.slug) ? " grayscale" : ""}`}
                               fallbackClassName="size-10 shrink-0 rounded-full"
                               initialsClassName="text-xs"
                             />
@@ -620,13 +624,14 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
                               width={80}
                               height={80}
                               sizes="(max-width: 640px) 64px, 80px"
-                              className="mx-auto mb-2 size-16 rounded-full object-cover object-top transition-transform group-hover:scale-105 sm:size-20"
+                              className={`mx-auto mb-2 size-16 rounded-full object-cover object-top transition-transform group-hover:scale-105 sm:size-20${fotoPB.has(candidato.slug) ? " grayscale" : ""}`}
                               fallbackClassName="mx-auto mb-2 size-16 rounded-full sm:size-20"
                               initialsClassName="text-lg"
                             />
                           )}
                           <span className="block font-heading text-[length:var(--text-body-lg)] uppercase text-foreground group-hover:underline">
                             {candidato.nome_urna}
+                            {fotoPB.has(candidato.slug) && <span className="sr-only">, {FOTO_PB_DICA}</span>}
                           </span>
                           <span className="block text-[length:var(--text-eyebrow)] font-bold text-muted-foreground">
                             {formatPartyPublicLabel(candidato.partido_sigla)}

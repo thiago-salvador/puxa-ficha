@@ -1,3 +1,4 @@
+// cspell:ignore aliancas legivel profissoes
 import {
   getCandidatosComResumoResource,
   getCandidatosComparaveisResource,
@@ -8,32 +9,77 @@ import {
 import type { Metadata } from "next"
 import Link from "next/link"
 import { getImageProps } from "next/image"
-import { Suspense, lazy } from "react"
+import { Suspense } from "react"
 import { preload } from "react-dom"
+import { ArrowRight } from "lucide-react"
 import { HomeQuizIntro } from "@/components/HomeQuizIntro"
 import { HomeRecentUpdates } from "@/components/HomeRecentUpdates"
 import { HomeRecentUpdatesData } from "@/components/HomeRecentUpdatesData"
 import { PresidentialElectionSections } from "@/components/PresidentialElectionSections"
-import { DeferredCandidatoGrid } from "@/components/DeferredCandidatoGrid"
-
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-}
-
-const ComparadorPanel = lazy(() =>
-  import("@/components/ComparadorPanel").then((m) => ({ default: m.ComparadorPanel })),
-)
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { JsonLd } from "@/components/JsonLd"
+import { RevelarBarras } from "@/components/RevelarBarras"
+import { HomeHero2026 } from "@/components/HomeHero2026"
+import { ResultadoPreviaBanner, TituloSecao } from "@/components/Resultado1TurnoPartes"
+import { Resultado1TurnoEstados } from "@/components/Resultado1TurnoEstados"
+import { EspectroEleitos1Turno } from "@/components/EspectroEleitos1Turno"
+import { UfResultadoSelector } from "@/components/UfResultadoSelector"
+import { LadoALado2Turno, Pesquisas2Turno } from "@/components/SegundoTurnoPresidente"
+import { Governadores2Turno } from "@/components/SegundoTurnoGovernadores"
+import { MapaPresidente1Turno } from "@/components/MapaPresidente1Turno"
+import { FaixaFixa2Turno } from "@/components/FaixaFixa2Turno"
+import { Aliancas2TurnoSecao } from "@/components/Aliancas2Turno"
+import { getAliancas2Turno } from "@/lib/aliancas-2turno"
 import { getHomeHeroMetrics } from "@/lib/home-hero-metrics"
+import { numerosHero1Turno } from "@/lib/home-eleicao-2026"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildCandidatoGridMaps } from "@/lib/candidato-grid-maps"
-import { formatCompact } from "@/lib/utils"
-import { PROCESSO_DISCIPLINAR_AVISO } from "@/lib/processos-justica-total"
-import { SegundoTurnoSection } from "@/components/SegundoTurnoSection"
+import { comFaseEfetiva, recortarFinalistas } from "@/lib/finalistas-1turno"
+import { linkCompararFinalistas } from "@/lib/fase-eleitoral-publica"
+import { formatarPercentual, getDisputa1Turno, getResultados1Turno, hasResultados1Turno } from "@/lib/resultados-1turno"
+import { getReferencia2022 } from "@/lib/referencia-2022"
+import { IMAGEM_DUELO_PATH, nomeLegivel } from "@/lib/compartilhar-duelo"
+import { carregarFotos1Turno } from "@/lib/fotos-1turno"
+import { loadPresidentialPolls } from "@/lib/presidential-election-sections"
+import { finalistasDaDisputa, selecionarPesquisasDoConfronto, slugsDoSegundoTurno } from "@/lib/segundo-turno-2026"
+import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
+import { buildAbsoluteUrl, buildTwitterMetadata } from "@/lib/metadata"
+import type { StatePollScenario } from "@/lib/state-polls"
+
+// Página única da eleição desde 05/10/2026: o hero preto volta ao topo com o 2º turno. /1o-turno é o arquivo
+// (o site como estava até a votação) e cada estado tem o resultado em /1o-turno/{uf}.
+const title = "Puxa Ficha | 2º turno das eleições 2026"
+const description =
+  "Presidente e governadores no 2º turno de 25 de outubro: resultado do 1º turno, pesquisas, comparação lado a lado e a ficha pública de cada finalista, com fontes oficiais."
+
+// Card do duelo gerado do snapshot do TSE (src/app/(site)/og/segundo-turno); sem finalistas, a rota cai no card editorial.
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title,
+    description,
+    url: "https://puxaficha.com.br",
+    images: [{ url: IMAGEM_DUELO_PATH, width: 1200, height: 630, alt: "Os dois finalistas à Presidência no 2º turno, com o resultado do 1º turno" }],
+  },
+  twitter: buildTwitterMetadata({ title, description, image: IMAGEM_DUELO_PATH }),
+}
+
+const LINK_SETA =
+  "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold underline underline-offset-4 hover:text-[var(--gray-600)]"
+
+function pesquisasPresidenciais(): StatePollScenario[] {
+  // O catálogo falha fechado com JSON inválido; aqui isso só esconde as pesquisas do 2º turno.
+  try {
+    return loadPresidentialPolls()
+  } catch {
+    return []
+  }
+}
 
 export default async function Home() {
   const { props: heroImage } = getImageProps({
@@ -49,26 +95,22 @@ export default async function Home() {
   // O hero é o elemento LCP da home. Sem preload, o navegador só descobria a
   // imagem depois de ler o HTML e competir com os scripts (Lighthouse
   // mobile: 283 ms de atraso de descoberta, LCP 4,8 s). Uma dica por faixa,
-  // espelhando o <picture> abaixo, para o preload não baixar a versão errada.
+  // espelhando o <picture> do hero, para o preload não baixar a versão errada.
   preload("/images/hero-dossie-mobile.webp", { as: "image", fetchPriority: "high", media: "(max-width: 640px)" })
   preload(heroImage.src, {
     as: "image", fetchPriority: "high", media: "(min-width: 641px)",
     imageSrcSet: heroImage.srcSet, imageSizes: heroImage.sizes,
   })
 
-  const [todosResumosResource, comparaveisResource, fasesEleitorais] = await Promise.all([
+  const [todosResumosResource, comparaveisResource, fasesEleitorais, fotos] = await Promise.all([
     getCandidatosComResumoResource(),
     getCandidatosComparaveisResource("Presidente"),
     getFasesEleitorais2026(),
+    carregarFotos1Turno(["Presidente", "Governador", "Senador"]),
   ])
   const todosResumos = todosResumosResource.data
   const fasePorSlug = new Map(fasesEleitorais.map((fase) => [fase.slug, fase]))
-  const todosCandidatos = todosResumos.map((resumo) => {
-    const fase = fasePorSlug.get(resumo.candidato.slug)
-    return fase
-      ? { ...resumo.candidato, fase_eleitoral_2026: fase }
-      : resumo.candidato
-  })
+  const todosCandidatos = todosResumos.map((resumo) => comFaseEfetiva(resumo.candidato, fasePorSlug))
   const resumosPresidencia = todosResumos.filter(
     (resumo) => resumo.candidato.cargo_disputado === "Presidente"
   )
@@ -87,16 +129,48 @@ export default async function Home() {
   )
 
   const candidatos = resumosPresidencia.map((r) => todosCandidatos.find((candidato) => candidato.id === r.candidato.id) ?? r.candidato)
-  const { processos, processosContagem, patrimonios, processSortCounts, patrimoniosAtipicos } =
+  // Com resultado do 1º turno publicado, o recorte fica só com os finalistas (JSON-LD,
+  // lado a lado e link do comparador). Sem resultado, mostra todos.
+  const { candidatos: candidatosGrade } = recortarFinalistas(candidatos)
+  const { processos, processosContagem, patrimonios, patrimoniosAtipicos } =
     buildCandidatoGridMaps(resumosPresidencia)
+  // Contagem de pontos de atenção só com a lista ao vivo: no fallback ela vem zerada e viraria "nenhum".
+  const pontosAtencao =
+    todosResumosResource.sourceStatus === "live"
+      ? Object.fromEntries(resumosPresidencia.map((r) => [r.candidato.slug, r.pontos_atencao]))
+      : null
+
+  const resultados = getResultados1Turno()
+  const temResultado = hasResultados1Turno(resultados)
+  const presidente = temResultado ? getDisputa1Turno("Presidente", "BR", resultados) : null
+  const finalistasPresidente = finalistasDaDisputa(presidente)
+  // Arquivo de alianças validado contra o snapshot; inválido, a seção e as linhas de apoio somem.
+  const aliancas = temResultado ? getAliancas2Turno(resultados) : null
+  const compararPresidente = linkCompararFinalistas(candidatosGrade)
+  const slugsFinalistas = finalistasPresidente?.[0].slug && finalistasPresidente[1].slug
+    ? ([finalistasPresidente[0].slug, finalistasPresidente[1].slug] as [string, string])
+    : null
+  // Limite alto: a tendência usa todas as pesquisas do confronto; a lista mostra só as seis mais recentes.
+  const pesquisas2Turno = slugsFinalistas ? selecionarPesquisasDoConfronto(pesquisasPresidenciais(), slugsFinalistas, 60) : []
+  // Programas só dos dois finalistas à Presidência; sem o par publicado, todos os candidatos.
+  const candidatosProgramas = slugsFinalistas
+    ? candidatos.filter((candidato) => slugsFinalistas.includes(candidato.slug))
+    : candidatos
+  // Atualizações recentes só de quem segue na disputa (Presidente e governadores), lido do snapshot.
+  const slugsSegundoTurno = temResultado ? slugsDoSegundoTurno(resultados) : []
+  const profissoesFinalistas = Object.fromEntries(
+    candidatosProgramas.map((candidato) => [candidato.slug, candidato.profissao_declarada ?? null]),
+  )
+  const ufs = getEstadoUFs()
+  const opcoesUf = ufs.map((uf) => ({ uf: uf.toUpperCase(), label: getEstadoNome(uf) ?? uf.toUpperCase() }))
+  const referenceNow = new Date().toISOString()
 
   // Mesma flag que coloca os senadores em totalCandidatos (home-hero-metrics).
   const senadoEnabled = isSenadoEnabled()
-  const { totalCandidatos, totalPatrimonio, totalProcessos, totalProcessosDisciplinares } =
-    getHomeHeroMetrics(
-      todosResumos,
-      todosResumosResource.sourceStatus
-    )
+  const heroMetricas = getHomeHeroMetrics(
+    todosResumos,
+    todosResumosResource.sourceStatus
+  )
   const schema = [
     {
       "@context": "https://schema.org",
@@ -110,7 +184,7 @@ export default async function Home() {
       "@context": "https://schema.org",
       "@type": "ItemList",
       name: "Candidatos à Presidência 2026",
-      itemListElement: candidatos.slice(0, 12).map((candidato, index) => ({
+      itemListElement: candidatosGrade.slice(0, 12).map((candidato, index) => ({
         "@type": "ListItem",
         position: index + 1,
         url: `https://puxaficha.com.br/candidato/${candidato.slug}`,
@@ -147,87 +221,112 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-background">
       <JsonLd data={schema} />
-      <SegundoTurnoSection candidatos={todosCandidatos} className="pt-24" />
-      {/* Hero — dossiê image background */}
-      <section className="relative overflow-hidden bg-black">
-        {/* Background image */}
-        <div className="absolute inset-0 opacity-40" aria-hidden="true">
-          <picture>
-            <source media="(max-width: 640px)" srcSet="/images/hero-dossie-mobile.webp" />
-            <img {...heroImage} alt={heroImage.alt} />
-          </picture>
-        </div>
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
+      {/* Filho direto de "main > div": o Navbar reconhece a faixa preta e fica transparente sobre ela. */}
+      <HomeHero2026
+        imagem={heroImage}
+        temResultado={temResultado}
+        presidente={presidente}
+        fotos={fotos}
+        pesquisa={pesquisas2Turno[0] ?? null}
+        numeros={numerosHero1Turno(resultados, getReferencia2022())}
+        metricas={heroMetricas}
+        ufs={opcoesUf}
+        referenceNow={referenceNow}
+        compararHref={presidente && finalistasPresidente ? "#lado-a-lado" : null}
+        compartilhar={finalistasPresidente ? { url: buildAbsoluteUrl("/") } : null}
+        fonte2022={{ pagina: getReferencia2022().fonte.pagina }}
+      />
+      {finalistasPresidente && (
+        <FaixaFixa2Turno
+          finalistas={[
+            { nome: nomeLegivel(finalistasPresidente[0].nome_urna), percentual: formatarPercentual(finalistasPresidente[0].percentual_validos) },
+            { nome: nomeLegivel(finalistasPresidente[1].nome_urna), percentual: formatarPercentual(finalistasPresidente[1].percentual_validos) },
+          ]}
+          referenceNow={referenceNow}
+          href="#lado-a-lado"
+        />
+      )}
 
-        <div className="relative mx-auto max-w-7xl px-5 pb-8 pt-20 sm:pb-20 sm:pt-32 md:px-12 lg:pb-24 lg:pt-40">
-          {/* Massive title */}
-          <h1
-            className="hero-fade font-heading text-[clamp(60px,17vw,100px)] uppercase leading-[0.85] tracking-[-0.02em] text-white sm:text-[clamp(100px,31vw,200px)]"
-            style={{ animationDelay: "0.1s" }}
-          >
-            Puxa Ficha
-          </h1>
+      {sourceStatus !== "live" && (
+        <section className="mx-auto max-w-7xl px-5 pt-6 md:px-12">
+          <DataSourceNotice status={sourceStatus} message={sourceMessage} />
+        </section>
+      )}
 
-          {/* Slash divider */}
-          <SlashDivider className="hero-fade my-3 sm:my-6 lg:my-8" color="text-white" />
+      {temResultado && (
+        <div id="candidatos" className="mx-auto max-w-7xl scroll-mt-20 space-y-16 px-5 py-12 sm:space-y-20 sm:py-16 md:px-12">
+          <ResultadoPreviaBanner data={resultados} />
 
-          {/* Label */}
-          <p className="hero-fade text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.15em] text-white" style={{ animationDelay: "0.3s" }}>
-            Eleições 2026
-          </p>
-
-          {/* Data bar */}
-          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 pb-2 sm:mt-6 sm:gap-12 sm:pb-4 lg:gap-20">
-            {totalCandidatos !== null && (
-              <div className="hero-fade" style={{ animationDelay: "0.4s" }}>
-                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  {totalCandidatos}
-                </p>
-                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                  candidatos mapeados
-                </p>
-              </div>
-            )}
-            {totalPatrimonio !== null && totalPatrimonio > 0 && (
-              <div className="hero-fade" style={{ animationDelay: "0.5s" }}>
-                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  {formatCompact(totalPatrimonio)}
-                </p>
-                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                  patrimônio declarado
-                </p>
-              </div>
-            )}
-            {totalProcessos !== null && totalProcessos > 0 && (
-              <div className="hero-fade" style={{ animationDelay: "0.6s" }}>
-                <p className="font-heading text-[length:var(--text-heading-sm)] leading-none tracking-tight text-white sm:text-[length:var(--text-heading-lg)] lg:text-[48px]">
-                  <span data-pf-hero-processos={totalProcessos}>{totalProcessos}</span>
-                </p>
-                <p className="mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.12em] text-white">
-                  processos
-                </p>
-                {totalProcessosDisciplinares !== null && totalProcessosDisciplinares > 0 && (
-                  <p data-pf-hero-processos-disciplinares={totalProcessosDisciplinares} className="mt-1 text-[length:var(--text-eyebrow)] font-medium leading-tight text-white/80">
-                    inclui {totalProcessosDisciplinares} disciplinares
-                  </p>
-                )}
-              </div>
-            )}
-          </div>
-          {totalProcessos !== null && totalProcessosDisciplinares !== null && totalProcessosDisciplinares > 0 && (
-            <p className="hero-fade max-w-prose text-[length:var(--text-eyebrow)] font-medium leading-snug text-white/80" style={{ animationDelay: "0.7s" }}>
-              Processos somam judiciais e disciplinares dos Conselhos de Ética da Câmara e do Senado. {PROCESSO_DISCIPLINAR_AVISO}
-            </p>
+          {presidente && (
+            <LadoALado2Turno
+              disputa={presidente}
+              fotos={fotos}
+              processos={processos}
+              processosContagem={processosContagem}
+              patrimonios={patrimonios}
+              patrimoniosAtipicos={patrimoniosAtipicos}
+              pontosAtencao={pontosAtencao}
+              compararHref={compararPresidente}
+              comparaveis={comparaveis}
+              profissoes={profissoesFinalistas}
+            />
           )}
+          {presidente && aliancas && <Aliancas2TurnoSecao aliancas={aliancas} disputa={presidente} data={resultados} />}
+          <div>
+            {finalistasPresidente && (
+              <Pesquisas2Turno
+                linhas={pesquisas2Turno}
+                nomes={[finalistasPresidente[0].nome_urna, finalistasPresidente[1].nome_urna]}
+                partidos={[finalistasPresidente[0].partido, finalistasPresidente[1].partido]}
+              />
+            )}
+            {(resultados.presidente_por_uf?.length ?? 0) > 0 && (
+              <div className="mt-16 sm:mt-20">
+                <MapaPresidente1Turno data={resultados} />
+              </div>
+            )}
+            <p className="mt-2">
+              <Link href="/1o-turno" className={LINK_SETA}>
+                Arquivo do 1º turno <ArrowRight className="size-3.5" aria-hidden="true" />
+              </Link>
+            </p>
+          </div>
+
+          <div className="space-y-12">
+            <Governadores2Turno candidatos={todosCandidatos} fotos={fotos} data={resultados} aliancas={aliancas} />
+            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["eleitos", "sem-dado"]} />
+          </div>
+
+          <section id="senado-1turno" className="scroll-mt-24" aria-labelledby="senado-1turno-titulo">
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <TituloSecao titulo="Senado" id="senado-1turno-titulo">
+                As duas vagas de cada estado foram decididas no 1º turno.
+              </TituloSecao>
+              <div className="w-full max-w-sm">
+                <UfResultadoSelector options={opcoesUf} basePath="/1o-turno" />
+              </div>
+            </div>
+            <SlashDivider className="mb-8 mt-6" />
+            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["senado"]} />
+          </section>
+
+          <EspectroEleitos1Turno data={resultados} />
         </div>
-      </section>
+      )}
+      <RevelarBarras />
 
-      <section className="mx-auto max-w-7xl px-5 pt-3 sm:pt-6 md:px-12">
-        <DataSourceNotice status={sourceStatus} message={sourceMessage} />
-      </section>
+      <Suspense fallback={<p role="status" className="mx-auto max-w-7xl px-5 py-12 text-sm text-muted-foreground md:px-12">Carregando programas...</p>}>
+        {/* Sem "A evolução da disputa": a home do 2º turno já tem as pesquisas do confronto. */}
+        <PresidentialElectionSections candidates={candidatosProgramas.map(({ slug, nome_urna, foto_url, partido_sigla }) => ({ slug, nome_urna, foto_url, partido_sigla }))} unavailable={todosResumosResource.sourceStatus !== "live"} resultadoEleitoralPublicado={todosCandidatos.some((candidato) => Boolean(candidato.fase_eleitoral_2026))} mostrarPesquisas={false} />
+      </Suspense>
 
-      <section className="mx-auto max-w-7xl px-5 pt-4 sm:pt-8 md:px-12 lg:pt-10">
+      {/* No 2º turno a seção só aparece com mudança verificada: sem fallback, para não piscar o estado vazio. */}
+      <Suspense fallback={slugsSegundoTurno.length > 0 ? null : <HomeRecentUpdates escopo="todos" />}>
+        <HomeRecentUpdatesData slugs={slugsSegundoTurno.length > 0 ? slugsSegundoTurno : undefined} />
+      </Suspense>
+      <HomeQuizIntro />
+
+      <section className="mx-auto max-w-7xl px-5 pt-8 sm:pt-10 md:px-12">
         <p className="max-w-prose text-[15px] font-medium leading-relaxed text-foreground sm:hidden">
           Consulte candidatos e compare suas fichas públicas. Veja{" "}
           <Link href="/metodologia" className="font-semibold underline underline-offset-4">
@@ -237,83 +336,6 @@ export default async function Home() {
         </p>
         <div className="hidden sm:block">{fullIntro}</div>
       </section>
-
-      {/* Section header */}
-      <section id="candidatos" className="scroll-mt-20 mx-auto max-w-7xl px-5 pt-7 sm:pt-16 md:px-12 lg:pt-20">
-        <nav aria-label="Categorias de candidatos">
-          <div className="section-reveal flex min-w-0 items-end gap-3 overflow-x-auto pb-px sm:flex-wrap sm:justify-between sm:gap-x-4 sm:gap-y-1 sm:overflow-visible">
-            <h2 className="shrink-0 font-heading uppercase leading-[0.95] text-foreground sm:text-[clamp(22px,5vw,48px)]">
-              <Link
-                href="#candidatos"
-                aria-current="page"
-                className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-foreground px-1 text-center text-[clamp(16px,4.8vw,20px)] sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
-              >
-                Presidenciáveis
-              </Link>
-            </h2>
-            <Link
-              href="/governadores"
-              className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-transparent px-1 text-center font-heading text-[clamp(16px,4.8vw,20px)] uppercase leading-[0.95] text-muted-foreground transition-colors hover:text-foreground sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
-            >
-              Governadores
-            </Link>
-            <Link
-              href="/parlamentares"
-              className="flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap border-b-2 border-transparent px-1 text-center font-heading text-[clamp(16px,4.8vw,20px)] uppercase leading-[0.95] text-muted-foreground transition-colors hover:text-foreground sm:min-h-0 sm:justify-start sm:border-b-0 sm:px-0 sm:text-left sm:text-[clamp(22px,5vw,48px)]"
-            >
-              Parlamentares
-            </Link>
-          </div>
-        </nav>
-        <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
-      </section>
-
-      {/* Candidate grid */}
-      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-12 lg:pb-20">
-        <DeferredCandidatoGrid
-          candidatos={candidatos}
-          processos={processos}
-          processosContagem={processosContagem}
-          patrimonios={patrimonios}
-          processSortCounts={processSortCounts}
-          patrimoniosAtipicos={patrimoniosAtipicos}
-        />
-      </section>
-
-      <Suspense fallback={<p role="status" className="mx-auto max-w-7xl px-5 py-12 text-sm text-muted-foreground md:px-12">Carregando programas e pesquisas...</p>}>
-        <PresidentialElectionSections candidates={candidatos.map(({ slug, nome_urna, foto_url, partido_sigla }) => ({ slug, nome_urna, foto_url, partido_sigla }))} unavailable={todosResumosResource.sourceStatus !== "live"} resultadoEleitoralPublicado={todosCandidatos.some((candidato) => Boolean(candidato.fase_eleitoral_2026))} />
-      </Suspense>
-
-      <Suspense fallback={<HomeRecentUpdates />}>
-        <HomeRecentUpdatesData />
-      </Suspense>
-      <HomeQuizIntro />
-
-      {/* Comparador */}
-      {comparaveis.length >= 2 && (
-        <>
-          <div className="mx-auto max-w-7xl px-5 md:px-12">
-            <SlashDivider />
-          </div>
-          <section className="mx-auto max-w-7xl px-5 pt-12 sm:pt-16 md:px-12 lg:pt-20">
-            <div className="section-reveal">
-              <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-foreground">
-                03 Comparador
-              </p>
-              <h2
-                className="mt-1 font-heading uppercase leading-[0.95] text-foreground"
-                style={{ fontSize: "clamp(28px, 5vw, 48px)" }}
-              >
-                Lado a lado
-              </h2>
-            </div>
-            <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
-          </section>
-          <Suspense fallback={<div className="mx-auto max-w-7xl px-5 md:px-12"><div className="h-96 animate-pulse rounded-xl bg-muted" /></div>}>
-            <ComparadorPanel candidatos={comparaveis} referenceNow={new Date().toISOString()} />
-          </Suspense>
-        </>
-      )}
 
       <section className="mx-auto max-w-7xl px-5 py-10 md:px-12 lg:py-14">
         <PublicDataSourcesNote variant="presidencia" />

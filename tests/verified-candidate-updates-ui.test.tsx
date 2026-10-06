@@ -3,7 +3,8 @@ import { test } from "node:test"
 import { createElement } from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 import { HomeRecentUpdates } from "../src/components/HomeRecentUpdates"
-import { isVerifiedCandidateUpdate, type VerifiedCandidateUpdate } from "../src/lib/verified-candidate-updates"
+import { filtrarAtualizacoesPorSlugs, isVerifiedCandidateUpdate, type VerifiedCandidateUpdate } from "../src/lib/verified-candidate-updates"
+import { readFileSync } from "node:fs"
 
 const update: VerifiedCandidateUpdate = {
   id: "event-test", candidate_slug: "teste", candidate_name: "Pessoa de teste",
@@ -46,4 +47,40 @@ test("empty history is distinguished from unavailable source and never claims gl
   const failed = renderToStaticMarkup(createElement(HomeRecentUpdates, { resource: { status: "unavailable", updates: [] } }))
   assert.match(failed, /histórico de mudanças verificadas ainda não está disponível/)
   assert.doesNotMatch(failed, /Ainda não há mudanças verificadas neste histórico/)
+})
+
+test("2nd-round scope: filter by slug, scoped copy and truthful empty state", () => {
+  const outro = { ...update, id: "event-outro", candidate_slug: "outro", candidate_name: "Outra pessoa" }
+  assert.deepEqual(filtrarAtualizacoesPorSlugs([update, outro], ["teste"]).map((u) => u.id), ["event-test"])
+  assert.deepEqual(filtrarAtualizacoesPorSlugs([update, outro], []), [])
+  assert.equal(filtrarAtualizacoesPorSlugs([update, outro]).length, 2)
+
+  const html = renderToStaticMarkup(createElement(HomeRecentUpdates, { resource: { status: "available", updates: [update] }, escopo: "segundo-turno" }))
+  assert.match(html, /candidatos do 2º turno/)
+  assert.match(html, /Só candidatos que disputam o 2º turno\./)
+  assert.match(html, />Ficha completa<span class="sr-only"> de Pessoa de teste<\/span>/)
+
+  const vazio = renderToStaticMarkup(createElement(HomeRecentUpdates, { resource: { status: "available", updates: [] }, escopo: "segundo-turno" }))
+  assert.match(vazio, /Ainda não há mudanças verificadas para os candidatos do 2º turno\./)
+  assert.match(vazio, /Isso não significa que nenhuma mudança ocorreu/)
+  assert.doesNotMatch(vazio, /Ainda não há mudanças verificadas neste histórico/)
+
+  // Padrão inalterado fora da home do 2º turno.
+  const padrao = renderToStaticMarkup(createElement(HomeRecentUpdates, { resource: { status: "available", updates: [update] } }))
+  assert.match(padrao, />Ver ficha</)
+  assert.doesNotMatch(padrao, /2º turno/)
+
+  // O recorte vai na consulta, antes do limite de seis, e lista vazia nem consulta.
+  const data = readFileSync("src/lib/verified-candidate-updates-data.ts", "utf8")
+  assert.match(data, /if \(slugs && slugs\.length === 0\) return \{ status: "available", updates: \[\] \}/)
+  assert.match(data, /if \(slugs\) query = query\.in\("candidate_slug", \[\.\.\.slugs\]\)[\s\S]*?\.limit\(6\)/)
+})
+
+test("no recorte do 2º turno a seção some enquanto não houver mudança verificada", async () => {
+  const { deveMostrarAtualizacoes } = await import("../src/lib/verified-candidate-updates")
+  assert.equal(deveMostrarAtualizacoes({ status: "available", updates: [] }, "segundo-turno"), false)
+  assert.equal(deveMostrarAtualizacoes({ status: "unavailable", updates: [] }, "segundo-turno"), false)
+  assert.equal(deveMostrarAtualizacoes({ status: "available", updates: [{} as never] }, "segundo-turno"), true)
+  // Fora do recorte o comportamento antigo continua: o estado vazio explica a ausência.
+  assert.equal(deveMostrarAtualizacoes({ status: "available", updates: [] }, "todos"), true)
 })

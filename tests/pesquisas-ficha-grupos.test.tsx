@@ -5,7 +5,6 @@ import { createRequire } from "node:module"
 import { describe, it } from "node:test"
 import React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
-import type { Candidato } from "../src/lib/types"
 
 // cspell:ignore cenario espontanea
 
@@ -24,37 +23,8 @@ const { ordenarPesquisasDoCard, rotulosDosCenariosDoCard } = require("../src/lib
 const { PollIntentionCard } = require(
   "../src/components/PollIntentionCard",
 ) as typeof import("@/components/PollIntentionCard")
-const { SegundoTurnoSection } = require(
-  "../src/components/SegundoTurnoSection",
-) as typeof import("@/components/SegundoTurnoSection")
 
 type Catalogo = ReturnType<typeof parsePesquisasEleitoraisJson>
-
-function candidatoComFase(slug: string, nome: string, fase: Candidato["fase_eleitoral_2026"]): Candidato {
-  return {
-    id: slug,
-    nome_completo: nome,
-    nome_urna: nome,
-    slug,
-    data_nascimento: null,
-    idade: null,
-    naturalidade: null,
-    formacao: null,
-    profissao_declarada: null,
-    partido_atual: "Partido",
-    partido_sigla: "P",
-    cargo_atual: null,
-    cargo_disputado: "Governador",
-    estado: "SP",
-    status: "candidato",
-    foto_url: null,
-    site_campanha: null,
-    redes_sociais: {},
-    fonte_dados: [],
-    ultima_atualizacao: "2026-01-01",
-    fase_eleitoral_2026: fase,
-  }
-}
 
 function catalogoPresidencial(): Catalogo {
   const catalogo = parsePesquisasEleitoraisJson(
@@ -355,21 +325,5 @@ describe("integração na ficha", () => {
     // Presidente, Governador e Senado continuam usando o mesmo card; a
     // prop editorial é condicional e não cria markup extra no caso nulo.
     assert.match(profileSource, /pollCard=\{pesquisas\.length > 0[\s\S]*?<PollIntentionCard pesquisas=\{pesquisas\} resultadoEleitoralPublicado \/>[\s\S]*?<PollIntentionCard pesquisas=\{pesquisas\} \/>[\s\S]*?: undefined\}/)
-  })
-
-  it("mantém o duelo do governador na página da UF e ocupa a largura quando há um eleito", () => {
-    const finalistaA = candidatoComFase("governador-a", "Alfa", { fase_eleitoral: "segundo_turno", fase_turno: 1, atualizacao_encerrada_em: null })
-    const finalistaB = candidatoComFase("governador-b", "Beta", { fase_eleitoral: "segundo_turno", fase_turno: 1, atualizacao_encerrada_em: null })
-    const duelo = renderToStaticMarkup(<SegundoTurnoSection candidatos={[finalistaA, finalistaB]} />)
-    assert.match(duelo, /Comparar os dois finalistas/)
-    assert.match(duelo, /grid-cols-2/)
-
-    const eleito = candidatoComFase("governador-eleito", "Épsilon", { fase_eleitoral: "eleito", fase_turno: 1, atualizacao_encerrada_em: "2026-10-05" })
-    const destaque = renderToStaticMarkup(<SegundoTurnoSection candidatos={[eleito]} />)
-    assert.match(destaque, /Épsilon/)
-    assert.match(destaque, /grid-cols-1/)
-
-    const semFase = candidatoComFase("governador-sem-fase", "Sem fase", null)
-    assert.equal(renderToStaticMarkup(<SegundoTurnoSection candidatos={[semFase]} />), "")
   })
 })

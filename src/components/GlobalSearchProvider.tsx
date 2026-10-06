@@ -83,12 +83,25 @@ export function useGlobalSearch(): GlobalSearchContextValue {
   return ctx
 }
 
-/** Atalhos fixos da busca. O texto de Parlamentares depende da flag do Senado,
- * que chega do layout (server) porque o bundle do cliente não lê SENADO_ENABLED. */
-export function buildShortcutItems(senadoEnabled = false): GlobalSearchIndexItem[] {
+/** Atalhos fixos da busca. O parâmetro da flag do Senado segue na assinatura
+ * porque o layout (server) ainda o repassa; nenhum atalho depende dele hoje. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function buildShortcutItems(_senadoEnabled = false): GlobalSearchIndexItem[] {
   const raw: Array<
     Pick<GlobalSearchIndexItem, "href" | "title" | "subtitle" | "badge">
   > = [
+    {
+      href: "/",
+      title: "2º Turno",
+      subtitle: "2º turno em 25 de outubro: presidente, governadores e pesquisas",
+      badge: "Atalho",
+    },
+    {
+      href: "/1o-turno",
+      title: "1º Turno",
+      subtitle: "O site como estava até a votação e o resultado de cada estado",
+      badge: "Atalho",
+    },
     {
       href: "/comparar",
       title: "Abrir comparador",
@@ -99,14 +112,6 @@ export function buildShortcutItems(senadoEnabled = false): GlobalSearchIndexItem
       href: "/governadores",
       title: "Ver governadores",
       subtitle: "Abrir o mapa de estados",
-      badge: "Atalho",
-    },
-    {
-      href: "/parlamentares",
-      title: "Parlamentares",
-      subtitle: senadoEnabled
-        ? "Fichas de deputados ainda não estão prontas"
-        : "Fichas de deputados e senadores ainda não estão prontas",
       badge: "Atalho",
     },
     {

@@ -1,4 +1,5 @@
 import "server-only"
+import { mesclarFaseComSnapshot } from "@/lib/resultados-1turno"
 
 import { createServerSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -108,17 +109,19 @@ async function enrichChunk(rows: RosterRow[], phases: FaseEleitoralPublica[]): P
   return rows.map((row) => {
     const slug = slugBySq.get(row.sq_candidato)
     if (!slug || !photoBySlug.has(slug)) return row
-    const phase = slug && candidateIdBySlug.get(slug) === phaseBySlug.get(slug)?.candidato_id ? phaseBySlug.get(slug) : undefined
+    const phaseDb = slug && candidateIdBySlug.get(slug) === phaseBySlug.get(slug)?.candidato_id ? phaseBySlug.get(slug) : undefined
+    // Banco vence fora de em_disputa; senão, snapshot do TSE (cobre o intervalo até o apply da migration de fase).
+    const phase = mesclarFaseComSnapshot(slug, row.cargo, phaseDb ? {
+      fase_eleitoral: phaseDb.fase_eleitoral,
+      fase_turno: phaseDb.fase_turno,
+      atualizacao_encerrada_em: phaseDb.atualizacao_encerrada_em,
+    } : null)
     return {
       ...row,
       slug,
       foto_path: row.foto_path || photoBySlug.get(slug) || null,
       resumo: summaryById.get(idBySlug.get(slug) ?? "") ?? null,
-      ...(phase ? { fase_eleitoral_2026: {
-        fase_eleitoral: phase.fase_eleitoral,
-        fase_turno: phase.fase_turno,
-        atualizacao_encerrada_em: phase.atualizacao_encerrada_em,
-      } } : {}),
+      ...(phase ? { fase_eleitoral_2026: phase } : {}),
     }
   })
 }
@@ -132,7 +135,13 @@ function result(rows: RosterRow[], candidates: ColinhaCandidate[]): ColinhaCandi
 type PhaseIdentity = Pick<ColinhaCandidate, "sq_candidato" | "slug" | "uf" | "cargo" | "nome_urna"> & { candidato_id?: string }
 
 async function loadOfficialRound(uf: string): Promise<{ round: ColinhaRoundInfo; phases: FaseEleitoralPublica[] }> {
-  const phases = await getFasesEleitorais2026("no-store")
+  // Mesma regra das fichas: banco vence fora de em_disputa; linha ainda em_disputa recebe a fase do snapshot do TSE.
+  const phases = (await getFasesEleitorais2026("no-store")).map((phase) => {
+    const efetiva = mesclarFaseComSnapshot(phase.slug, phase.cargo_disputado, phase)
+    return efetiva && efetiva !== phase
+      ? { ...phase, fase_eleitoral: efetiva.fase_eleitoral, fase_turno: efetiva.fase_turno, atualizacao_encerrada_em: efetiva.atualizacao_encerrada_em }
+      : phase
+  })
   if (phases.length === 0) return { round: deriveColinhaRoundInfo([], [], uf), phases }
   const slugs = [...new Set(phases.filter((phase) => phase.cargo_disputado === "Presidente" || phase.cargo_disputado === "Governador").map((phase) => phase.slug))]
   if (slugs.length === 0) return { round: deriveColinhaRoundInfo(phases, [], uf), phases }

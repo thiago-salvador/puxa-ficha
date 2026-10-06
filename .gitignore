@@ -113,3 +113,5 @@ artifacts/NAO-USAR-ESPELHOS-fotos-2026.md
 scripts/data/candidate-photo-tse-mirror.json
 scripts/data/candidate-photo-tse-secondary-mirror.json
 /reports/promessa-evidencia/
+# Saídas locais dos scripts de coleta (brutos do TSE, relatórios de regeneração)
+reports/

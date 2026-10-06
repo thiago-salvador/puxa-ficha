@@ -133,6 +133,18 @@
   --gray-900: #171717;
   --gray-950: #0a0a0a;
 
+  /* Espectro político dos eleitos (1º turno). Convenção do jornalismo político:
+     esquerda vermelho, centro mostarda, direita azul. Tons que passam de 3:1
+     contra o branco (objeto gráfico, WCAG 1.4.11): #b91c1c 6,5:1, #a16207
+     4,9:1, #1d4ed8 6,7:1. Cada marca leva borda preta fina para separar cadeira
+     de cadeira e segmento de segmento (pedido de 05/10). Cor nunca sozinha:
+     legenda escrita e números. */
+  --espectro-esquerda: #b91c1c;
+  --espectro-centro: #a16207;
+  --espectro-direita: #1d4ed8;
+  --espectro-esquerda-contorno: var(--gray-950);
+  --espectro-centro-contorno: var(--gray-950);
+  --espectro-direita-contorno: var(--gray-950);
   /* Brazil map by macro-region (editorial, muted; BrazilMap.tsx) */
   --map-region-norte: #5c7568;
   --map-region-norte-side: #415548;
@@ -450,5 +462,35 @@
   }
   .pill-hover:hover {
     transform: none;
+  }
+}
+
+/* Barras do resultado do 1º turno: crescem da esquerda. O estado inicial é a
+   largura final; só blocos armados pelo RevelarBarras (fora da tela) começam em 0. */
+.pf-barra {
+  transform-origin: left center;
+}
+[data-pf-revelar="aguardando"] .pf-barra {
+  transform: scaleX(0);
+}
+.pf-barra-entrada,
+[data-pf-revelar="visivel"] .pf-barra {
+  animation: pf-barra-cresce 560ms var(--ease-out-expo) both;
+  animation-delay: calc(var(--pf-i, 0) * 45ms);
+}
+@keyframes pf-barra-cresce {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pf-barra,
+  .pf-barra-entrada,
+  [data-pf-revelar] .pf-barra {
+    animation: none !important;
+    transform: none !important;
   }
 }

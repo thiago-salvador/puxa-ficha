@@ -9,6 +9,7 @@ import {
   useRef,
   useState,
   useEffect,
+  type ReactNode,
 } from "react"
 import Link from "next/link"
 import { useVirtualizer } from "@tanstack/react-virtual"
@@ -46,7 +47,8 @@ import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import { normalizeForSearch } from "@/lib/search-normalize"
 import { legendaProcessosJustica, type ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 import type { Candidato } from "@/lib/types"
-import { rotuloFaseEleitoral, ordenarPorFaseEleitoral } from "@/lib/fase-eleitoral-publica"
+import { rotuloFaseEleitoral, ordenarPorFaseEleitoral, separarSecoesPorFase } from "@/lib/fase-eleitoral-publica"
+import { FOTO_PB_DICA } from "@/lib/arquivo-1turno"
 import { readPartyFilterFromSearchParams, replacePartyFilterInBrowserUrl, subscribeToPartyFilterUrlChanges } from "@/lib/party-filter-url"
 
 interface CandidatoGridProps {
@@ -63,6 +65,10 @@ interface CandidatoGridProps {
    * ordenação por patrimônio.
    */
   patrimoniosAtipicos?: Record<string, boolean>
+  /** Arquivo do 1º turno: slugs com foto em preto e branco (quem não segue na disputa). */
+  slugsFotoPB?: readonly string[]
+  /** Com resultado publicado: eleito ou finalistas numa seção, os demais (em P&B) noutra abaixo. */
+  secoesPorFase?: boolean
 }
 
 /** Busca da grade, insensível a caixa e acento ("aecio" encontra "AÉCIO"). */
@@ -131,6 +137,7 @@ interface ListItemProps {
   processos: number
   processosContagem?: ProcessosJusticaContagem
   index: number
+  fotoPB?: boolean
 }
 
 function CandidatoListItem({
@@ -140,6 +147,7 @@ function CandidatoListItem({
   processos,
   processosContagem,
   index,
+  fotoPB = false,
 }: ListItemProps) {
   const processosLegenda = processosContagem ? legendaProcessosJustica(processosContagem) : undefined
   const row = (
@@ -158,7 +166,7 @@ function CandidatoListItem({
           width={56}
           height={56}
           sizes="56px"
-          className="size-12 shrink-0 rounded-full object-cover object-top sm:size-14"
+          className={`size-12 shrink-0 rounded-full object-cover object-top sm:size-14${fotoPB ? " grayscale" : ""}`}
           fallbackClassName="size-12 shrink-0 rounded-full sm:size-14"
           initialsClassName="text-sm"
         />
@@ -171,6 +179,7 @@ function CandidatoListItem({
         </div>
         <p className="truncate font-heading text-[18px] uppercase leading-tight text-foreground sm:text-[20px]">
           {candidato.nome_urna}
+          {fotoPB && <span className="sr-only">, {FOTO_PB_DICA}</span>}
         </p>
         <p className="mt-0.5 truncate text-[length:var(--text-caption)] font-medium text-foreground">
           {candidato.cargo_atual
@@ -225,6 +234,19 @@ function CandidatoListItem({
   )
 }
 
+function SecaoFase({ titulo, total, nota, className = "", children }: { titulo: string; total: number; nota?: string; className?: string; children: ReactNode }) {
+  return (
+    <section className={className} aria-label={titulo} data-pf-secao-fase="">
+      <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-border pb-2">
+        <h3 className="font-heading text-[length:var(--text-heading-sm)] uppercase leading-none text-foreground">{titulo}</h3>
+        <span className="text-[length:var(--text-caption)] font-semibold text-muted-foreground">{total} {total === 1 ? "candidatura" : "candidaturas"}</span>
+        {nota && <p className="w-full text-[length:var(--text-caption)] text-muted-foreground">{nota}</p>}
+      </div>
+      {children}
+    </section>
+  )
+}
+
 export function CandidatoGrid({
   candidatos,
   processos,
@@ -232,7 +254,10 @@ export function CandidatoGrid({
   patrimonios,
   processSortCounts,
   patrimoniosAtipicos,
+  slugsFotoPB,
+  secoesPorFase = false,
 }: CandidatoGridProps) {
+  const fotoPB = useMemo(() => new Set(slugsFotoPB ?? []), [slugsFotoPB])
   const [query, setQuery] = useState("")
   const [view, setView] = useState<ViewMode>("grid")
   const [sort, setSort] = useState<SortKey>("nome")
@@ -281,6 +306,41 @@ export function CandidatoGrid({
 
   const shouldVirtualizeList =
     view === "list" && filtered.length >= VIRTUALIZATION_THRESHOLD
+  const secoes = secoesPorFase && !shouldVirtualizeList ? separarSecoesPorFase(filtered) : null
+  const renderGrade = (lista: typeof filtered, offset: number) => (
+    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
+      {lista.map((candidato, index) => (
+        <CandidatoCard
+          key={candidato.id}
+          candidato={candidato}
+          processos={processos[candidato.slug] ?? 0}
+          processosContagem={processosContagem?.[candidato.slug]}
+          patrimonio={patrimonios[candidato.slug]}
+          patrimonioAtipico={patrimoniosAtipicos?.[candidato.slug] === true}
+          index={offset + index}
+          onClick={() => trackCandidateClick("candidate_grid")}
+          deferPhotoUntilVisible
+          fotoPB={fotoPB.has(candidato.slug)}
+        />
+      ))}
+    </div>
+  )
+  const renderLista = (lista: typeof filtered, offset: number) => (
+    <div className="space-y-2">
+      {lista.map((candidato, index) => (
+        <CandidatoListItem
+          key={candidato.id}
+          candidato={candidato}
+          patrimonio={patrimonios[candidato.slug]}
+          patrimonioAtipico={patrimoniosAtipicos?.[candidato.slug] === true}
+          processos={processos[candidato.slug] ?? 0}
+          processosContagem={processosContagem?.[candidato.slug]}
+          index={offset + index}
+          fotoPB={fotoPB.has(candidato.slug)}
+        />
+      ))}
+    </div>
+  )
 
   const temPatrimonioAtipico = Object.values(patrimoniosAtipicos ?? {}).some(Boolean)
   const activeFilterCount = (partidoFilter ? 1 : 0) + (sort !== "nome" ? 1 : 0)
@@ -485,21 +545,12 @@ export function CandidatoGrid({
           Nenhum candidato encontrado para &ldquo;{query}&rdquo;
         </p>
       ) : view === "grid" ? (
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
-          {filtered.map((candidato, index) => (
-            <CandidatoCard
-              key={candidato.id}
-              candidato={candidato}
-              processos={processos[candidato.slug] ?? 0}
-              processosContagem={processosContagem?.[candidato.slug]}
-              patrimonio={patrimonios[candidato.slug]}
-              patrimonioAtipico={patrimoniosAtipicos?.[candidato.slug] === true}
-              index={index}
-              onClick={() => trackCandidateClick("candidate_grid")}
-              deferPhotoUntilVisible
-            />
-          ))}
-        </div>
+        secoes ? (
+          <>
+            <SecaoFase titulo={secoes.tituloDestaque} total={secoes.destaque.length}>{renderGrade(secoes.destaque, 0)}</SecaoFase>
+            <SecaoFase titulo="Não avançaram" total={secoes.demais.length} nota="Foto em preto e branco. A ficha completa continua disponível." className="mt-10">{renderGrade(secoes.demais, secoes.destaque.length)}</SecaoFase>
+          </>
+        ) : renderGrade(filtered, 0)
       ) : shouldVirtualizeList ? (
         <div
           ref={listParentRef}
@@ -524,26 +575,20 @@ export function CandidatoGrid({
                     processos={processos[candidato.slug] ?? 0}
                     processosContagem={processosContagem?.[candidato.slug]}
                     index={virtualRow.index}
+                    fotoPB={fotoPB.has(candidato.slug)}
                   />
                 </div>
               )
             })}
           </div>
         </div>
+      ) : secoes ? (
+        <>
+          <SecaoFase titulo={secoes.tituloDestaque} total={secoes.destaque.length}>{renderLista(secoes.destaque, 0)}</SecaoFase>
+          <SecaoFase titulo="Não avançaram" total={secoes.demais.length} nota="Foto em preto e branco. A ficha completa continua disponível." className="mt-10">{renderLista(secoes.demais, secoes.destaque.length)}</SecaoFase>
+        </>
       ) : (
-        <div className="space-y-2">
-          {filtered.map((candidato, index) => (
-            <CandidatoListItem
-              key={candidato.id}
-              candidato={candidato}
-              patrimonio={patrimonios[candidato.slug]}
-              patrimonioAtipico={patrimoniosAtipicos?.[candidato.slug] === true}
-              processos={processos[candidato.slug] ?? 0}
-              processosContagem={processosContagem?.[candidato.slug]}
-              index={index}
-            />
-          ))}
-        </div>
+        renderLista(filtered, 0)
       )}
     </>
   )

@@ -135,7 +135,8 @@ test.beforeEach(async ({ context, baseURL }) => {
 test.describe("smoke somente leitura de pesquisas em produção", () => {
   test("catálogo presidencial publica a semana e mantém a prova de produção", async ({ page }, testInfo) => {
     const guard = await installReadOnlyBrowserGuard(page)
-    const section = await openPublicPolls(page, "/")
+    // As pesquisas presidenciais do 1º turno saíram da home (página do 2º turno) e ficam em /1o-turno.
+    const section = await openPublicPolls(page, "/1o-turno")
     await expect(section.getByRole("combobox", { name: "Turno", exact: true })).toHaveValue("1")
     await expect(section.getByRole("combobox", { name: "Instituto", exact: true })).toBeVisible()
     await expect(section.getByRole("link", { name: /Fonte da pesquisa|Fonte:/ }).first()).toHaveAttribute(

@@ -9,6 +9,7 @@ type RouteA11y = {
 
 const ROUTES: RouteA11y[] = [
   { name: "home", path: "/" },
+  { name: "first-round", path: "/1o-turno" },
   { name: "candidate", path: "/candidato/lula" },
   { name: "compare", path: "/comparar" },
   { name: "donors", path: "/doadores?q=silva" },

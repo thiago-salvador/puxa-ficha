@@ -205,8 +205,9 @@ describe("ComparadorPanel: a mesma régua do overview vale na comparação, a li
   it("recebe um relógio serializado do servidor em todas as rotas e não lê o relógio no render", () => {
     assert.match(fonte, /const processosNow = useMemo\(\(\) => new Date\(referenceNow\), \[referenceNow\]\)/)
     assert.doesNotMatch(fonte, /new Date\(\)/)
+    // Desde 05/10 a home do 2º turno não tem mais o Comparador no fim; o lado a lado ocupa o lugar.
+    assert.doesNotMatch(readFileSync("src/app/(site)/page.tsx", "utf8"), /ComparadorPanel/)
     for (const path of [
-      "src/app/(site)/page.tsx",
       "src/app/(site)/comparar/page.tsx",
       "src/app/(site)/uf/[uf]/page.tsx",
       "src/app/(site)/uf/[uf]/senado/page.tsx",

@@ -57,6 +57,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
     priority: 0.5,
   }))
+  const primeiroTurnoUrls = [
+    {
+      // A home (/) é a página única da eleição; /1o-turno é o arquivo do 1º turno e /2o-turno só redireciona.
+      url: `${SITE_ORIGIN}/1o-turno`,
+      changeFrequency: "daily" as const,
+      priority: 0.9,
+    },
+    ...ufs.map((uf) => ({
+      url: `${SITE_ORIGIN}/1o-turno/${uf}`,
+      changeFrequency: "daily" as const,
+      priority: 0.7,
+    })),
+  ]
   const imprensaUfUrls = IMPRENSA_UFS.map((uf) => ({
     url: `${SITE_ORIGIN}/imprensa/uf/${uf.toLowerCase()}`,
     changeFrequency: "weekly" as const,
@@ -114,6 +127,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.3,
     },
     ...imprensaUfUrls,
+    ...primeiroTurnoUrls,
     {
       url: SITE_ORIGIN,
       changeFrequency: "daily",

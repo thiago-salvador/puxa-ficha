@@ -12,6 +12,8 @@ import {
 } from "@/data/brazil-states"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import type { BrazilMapIndicadoresPreview } from "@/lib/brazil-map-preview"
+import type { PinturaEstado } from "@/lib/mapa-governadores-espectro"
+import type { ReactNode } from "react"
 import { rememberState, StatePreference } from "@/components/StatePreference"
 
 /**
@@ -79,11 +81,20 @@ function regionPaint(sigla: string): { top: string; side: string; hover: string 
 export function BrazilMap({
   indicadoresPorEstado,
   candidatosPorEstado,
+  statusPorEstado,
+  pinturaPorEstado,
+  legenda,
   stateRouteSuffix = "",
   candidateOfficeLabel = "governador",
 }: {
   indicadoresPorEstado?: Record<string, BrazilMapIndicadoresPreview>
   candidatosPorEstado?: Record<string, number>
+  /** Selo curto por UF no índice (ex.: "2º turno"). Sem entrada, sem selo. */
+  statusPorEstado?: Record<string, string>
+  /** Cor por UF que substitui a cor da região (ex.: espectro do governador). Sem entrada, cor da região. */
+  pinturaPorEstado?: Record<string, PinturaEstado>
+  /** Legenda das cores, abaixo do mapa, quando `pinturaPorEstado` muda o significado da cor. */
+  legenda?: ReactNode
   stateRouteSuffix?: string
   candidateOfficeLabel?: string
 } = {}) {
@@ -167,7 +178,8 @@ export function BrazilMap({
               const ex = isHovered ? HOVER_EXTRUDE_X : EXTRUDE_X
               const ey = isHovered ? HOVER_EXTRUDE_Y : EXTRUDE_Y
               const liftY = isHovered ? -HOVER_LIFT : 0
-              const paint = regionPaint(state.sigla)
+              const pintura = pinturaPorEstado?.[state.sigla]
+              const paint = pintura ?? regionPaint(state.sigla)
               const topFill = isHovered ? paint.hover : paint.top
               const isDf = state.sigla === "DF"
               const strokeW = isDf ? STROKE_WIDTH_DF : STROKE_WIDTH
@@ -265,7 +277,7 @@ export function BrazilMap({
                             fontFamily: "Inter, system-ui, sans-serif",
                             fontWeight: 700,
                             letterSpacing: "0.05em",
-                            fill: "rgba(255, 255, 255, 0.96)",
+                            fill: pintura?.siglaEscura ? "rgba(10, 10, 10, 0.92)" : "rgba(255, 255, 255, 0.96)",
                             transition: prefersReducedMotion ? "none" : "fill 0.3s ease",
                           }}
                         >
@@ -278,6 +290,8 @@ export function BrazilMap({
             })}
           </g>
         </svg>
+
+        {legenda}
 
         {touchState && (
           <p className="mt-3" aria-live="polite">
@@ -398,13 +412,15 @@ export function BrazilMap({
                     tamanho e o peso do texto vêm das classes, então a troca de
                     tag não muda nada visualmente. */}
                 <h2 className="flex items-center gap-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.1em] text-muted-foreground">
-                  <span
-                    className="size-2.5 shrink-0 rounded-sm border border-border/50"
-                    style={{
-                      backgroundColor: `var(--map-region-${slug})`,
-                    }}
-                    aria-hidden
-                  />
+                  {!pinturaPorEstado && (
+                    <span
+                      className="size-2.5 shrink-0 rounded-sm border border-border/50"
+                      style={{
+                        backgroundColor: `var(--map-region-${slug})`,
+                      }}
+                      aria-hidden
+                    />
+                  )}
                   {region}
                 </h2>
                 <ul className="mt-1.5 space-y-0.5">
@@ -426,7 +442,15 @@ export function BrazilMap({
                           onClick={() => rememberState(uf)}
                         >
                           <span className="w-7 shrink-0 whitespace-nowrap font-bold">{uf}</span>
-                          <span className="font-medium">{STATE_NAMES[uf]}</span>
+                          {/* O selo fica embaixo do nome: na mesma linha ele espremia a coluna e o nome quebrava letra a letra. */}
+                          <span className="flex min-w-0 flex-col items-start gap-0.5 py-1">
+                            <span className="font-medium leading-tight">{STATE_NAMES[uf]}</span>
+                            {statusPorEstado?.[uf] && (
+                              <span className="w-fit whitespace-nowrap rounded-full border border-foreground/30 px-2 py-0.5 text-[length:var(--text-eyebrow)] font-bold leading-none text-foreground" data-pf-uf-status="">
+                                {statusPorEstado[uf]}
+                              </span>
+                            )}
+                          </span>
                         </Link>
                       </li>
                     )

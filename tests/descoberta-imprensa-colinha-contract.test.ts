@@ -14,9 +14,10 @@ function read(relativePath: string): string {
 // compartilhamento (WhatsApp, imagem, impressão), sinal de que é feita para
 // ser descoberta; só o índice de busca que ela dispensa.
 describe("descoberta de /colinha e /deputados/[uf]", () => {
-  test("Navbar oferece Colinha e não expõe a Mesa de apuração", () => {
+  // Desde 06/10/2026 a Colinha saiu do menu (2º turno); a descoberta segue pelo rodapé.
+  test("Navbar não oferece Colinha nem expõe a Mesa de apuração", () => {
     const navbar = read("src/components/Navbar.tsx")
-    assert.match(navbar, /\{ href: "\/colinha", label: "Colinha" \}/)
+    assert.doesNotMatch(navbar, /href: "\/colinha"/)
     assert.doesNotMatch(navbar, /href: "\/imprensa"/)
   })
 

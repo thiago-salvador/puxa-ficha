@@ -3,6 +3,12 @@
  *
  *   plano   Lê o resultado oficial (resultados.tse.jus.br), cruza com as fichas
  *           no ar e escreve o plano. Só leitura: nunca grava no banco.
+ *   snapshot Grava src/data/resultados-1turno-2026.json (votos, % e situação de
+ *           Presidente, Governador e Senador) a partir dos 55 arquivos do TSE,
+ *           mais os 27 arquivos de Presidente por UF (mapa da home, opcional).
+ *           Recusa gravar se algum arquivo faltar ou não estiver totalizado.
+ *           `--previa` aceita apuração em andamento e grava status "previa",
+ *           só para conferir layout localmente (o teste de contrato barra o commit).
  *   gerar   Transforma um plano completo na migration de resultado auditada
  *           (migration, readback, rollback, readback do rollback, allowlist,
  *           recorte e manifesto do apply-fase-eleitoral-production).
@@ -11,6 +17,8 @@
  *   npm run resultados:tse -- plano --turno=1 --out=reports/resultados-tse
  *        [--ciclo=ele2026] [--eleicao-federal=N --eleicao-estadual=N]
  *        [--config=ele-c.json] [--arquivos=DIR] [--coorte=coorte.json] [--exigir-completo]
+ *   npm run resultados:tse -- snapshot --turno=1 [--previa] [--coorte=coorte.json]
+ *        [--arquivos=DIR] [--out=src/data/resultados-1turno-2026.json]
  *   npm run resultados:tse -- gerar --plano=reports/resultados-tse/plano-turno-1.json
  *        --versao=AAAAMMDDHHMMSS
  *
@@ -24,9 +32,12 @@ import { fileURLToPath, pathToFileURL } from "node:url"
 import { DATAS_TURNOS_2026, type TurnoEleitoral } from "../src/lib/coorte-atualizacao"
 import { TABELA_FASE_ELEITORAL, isTabelaFaseAusente } from "./lib/coorte-atualizacao"
 import { gerarArquivosFase } from "./lib/fase-eleitoral-migration"
+import { alvosDasBancadas, alvosDoSnapshot, alvosPresidentePorUf, finalistasDoBrasil, lerBancada, lerPresidenteUf, montarSnapshot } from "./lib/resultados-snapshot"
+import type { BancadaResultado1Turno, PresidenteUf1Turno } from "../src/lib/resultados-1turno"
 import {
   CICLO_2026,
   TSE_CONFIG_ELEICOES_URL,
+  arquivosDoTurno,
   arquivosNecessariosDoTurno,
   descobrirEleicoes,
   lerArquivoResultado,
@@ -90,7 +101,12 @@ async function eleicoesDoTurno(args: string[], turno: TurnoEleitoral): Promise<E
   return descobrirEleicoes(await lerConfig(args), { ciclo, turno, dataIso: DATAS_TURNOS_2026[turno] })
 }
 
-async function lerArquivos(alvos: ArquivoAlvo[], turno: TurnoEleitoral, dirLocal: string | null): Promise<LeituraArquivo[]> {
+async function lerArquivos(
+  alvos: ArquivoAlvo[],
+  turno: TurnoEleitoral,
+  dirLocal: string | null,
+  opcoesLeitura: { previa?: boolean; aceitarTotalizado?: boolean } = {},
+): Promise<LeituraArquivo[]> {
   const leituras: LeituraArquivo[] = []
   const fila = [...alvos]
   const trabalhador = async () => {
@@ -99,12 +115,12 @@ async function lerArquivos(alvos: ArquivoAlvo[], turno: TurnoEleitoral, dirLocal
         if (dirLocal) {
           const caminho = join(dirLocal, basename(new URL(alvo.url).pathname))
           if (!existsSync(caminho)) { leituras.push({ ok: false, alvo, motivo: "arquivo local ausente" }); continue }
-          leituras.push(lerArquivoResultado(alvo, turno, readFileSync(caminho, "utf8")))
+          leituras.push(lerArquivoResultado(alvo, turno, readFileSync(caminho, "utf8"), opcoesLeitura))
           continue
         }
         const r = await baixar(alvo.url)
         if (r.status !== 200) { leituras.push({ ok: false, alvo, motivo: `HTTP ${r.status}` }); continue }
-        leituras.push(lerArquivoResultado(alvo, turno, r.corpo))
+        leituras.push(lerArquivoResultado(alvo, turno, r.corpo, opcoesLeitura))
       } catch (error) {
         leituras.push({ ok: false, alvo, motivo: error instanceof Error ? error.message : String(error) })
       }
@@ -188,6 +204,75 @@ async function comandoPlano(args: string[]): Promise<number> {
   return 0
 }
 
+async function comandoSnapshot(args: string[]): Promise<number> {
+  const turno = turnoDe(args)
+  if (turno !== 1) throw new Error("snapshot só existe para o 1º turno")
+  const previa = args.includes("--previa")
+  const out = resolve(opcao(args, "out") ?? join(ROOT, "src/data/resultados-1turno-2026.json"))
+  const eleicoes = await eleicoesDoTurno(args, turno)
+  const coorteArquivo = opcao(args, "coorte")
+  const coorte = coorteArquivo ? JSON.parse(readFileSync(resolve(coorteArquivo), "utf8")) as CandidaturaCoorte[] : await lerCoorteDoBanco()
+  // O site aceita disputa com 100% das seções totalizadas sem esperar o tf do TSE (decisão de 05/10/2026).
+  const leituras = await lerArquivos(arquivosDoTurno(eleicoes, alvosDoSnapshot()), turno, opcao(args, "arquivos"), { previa, aceitarTotalizado: true })
+  // Bancadas são opcionais no contrato: uma recusada fica no relatório e não derruba as disputas.
+  const dirLocal = opcao(args, "arquivos")
+  const bancadas: BancadaResultado1Turno[] = []
+  const bancadasRecusadas: Array<{ chave: string; motivo: string }> = []
+  for (const alvo of alvosDasBancadas(eleicoes)) {
+    let lida: BancadaResultado1Turno | string
+    try {
+      if (dirLocal) {
+        const caminho = join(dirLocal, basename(new URL(alvo.url).pathname))
+        lida = existsSync(caminho) ? lerBancada(alvo, readFileSync(caminho, "utf8")) : "arquivo local ausente"
+      } else {
+        const r = await baixar(alvo.url)
+        lida = r.status === 200 ? lerBancada(alvo, r.corpo) : `HTTP ${r.status}`
+      }
+    } catch (error) {
+      lida = error instanceof Error ? error.message : String(error)
+    }
+    if (typeof lida === "string") bancadasRecusadas.push({ chave: `${alvo.cargo}:${alvo.uf}`, motivo: lida })
+    else bancadas.push(lida)
+  }
+  const { snapshot, relatorio } = montarSnapshot({ eleicoes, leituras, coorte, agora: new Date(), previa, bancadas })
+  console.log(JSON.stringify({ ...relatorio, sem_ficha: relatorio.sem_ficha.length, fichas_fora_do_tse: relatorio.fichas_fora_do_tse.length, recusados: relatorio.recusados.length, bancadas_incompletas: relatorio.bancadas_incompletas.length, bancadas_recusadas: bancadasRecusadas.length }))
+  for (const b of bancadasRecusadas) console.log(`::warning::bancada ${b.chave} recusada: ${b.motivo}`)
+  const relDir = resolve("reports/resultados-tse")
+  mkdirSync(relDir, { recursive: true })
+  writeFileSync(join(relDir, `snapshot-relatorio-turno-1${previa ? "-previa" : ""}.json`), `${JSON.stringify({ ...relatorio, bancadas_recusadas: bancadasRecusadas }, null, 2)}\n`)
+  // Presidente por UF (mapa da home): opcional como as bancadas; UF recusada fica de fora e vira "sem dado".
+  const finalistas = snapshot ? finalistasDoBrasil(snapshot) : null
+  if (snapshot && finalistas) {
+    const porUf: PresidenteUf1Turno[] = []
+    for (const alvo of alvosPresidentePorUf(eleicoes)) {
+      let lida: PresidenteUf1Turno | string
+      try {
+        if (dirLocal) {
+          const caminho = join(dirLocal, basename(new URL(alvo.url).pathname))
+          lida = existsSync(caminho) ? lerPresidenteUf(alvo, readFileSync(caminho, "utf8"), finalistas) : "arquivo local ausente"
+        } else {
+          const r = await baixar(alvo.url)
+          lida = r.status === 200 ? lerPresidenteUf(alvo, r.corpo, finalistas) : `HTTP ${r.status}`
+        }
+      } catch (error) {
+        lida = error instanceof Error ? error.message : String(error)
+      }
+      if (typeof lida === "string") console.log(`::warning::Presidente ${alvo.abrangencia} recusado: ${lida}`)
+      else porUf.push(lida)
+    }
+    snapshot.presidente_por_uf = porUf.sort((a, b) => a.uf.localeCompare(b.uf))
+    console.log(`presidente por UF: ${porUf.length} de ${alvosPresidentePorUf(eleicoes).length}`)
+  }
+  if (!snapshot) {
+    console.log(`::warning::snapshot não gravado: ${relatorio.recusados.length} arquivo(s) recusado(s) ou totalização não final`)
+    for (const r of relatorio.recusados.slice(0, 20)) console.log(`- ${r.chave}: ${r.motivo}`)
+    return 3
+  }
+  writeFileSync(out, `${JSON.stringify(snapshot, null, 2)}\n`)
+  console.log(`escrito ${out} (status ${snapshot.status})`)
+  return 0
+}
+
 function topoDaArvore(): { version: string; name: string } {
   const nomes = readdirSync(join(ROOT, "supabase/migrations")).filter((f) => /^\d{14}_.+\.sql$/.test(f)).sort()
   const ultimo = nomes[nomes.length - 1]
@@ -230,7 +315,8 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   const [comando, ...args] = argv
   if (comando === "plano") return comandoPlano(args)
   if (comando === "gerar") return comandoGerar(args)
-  console.error("uso: resultados-tse-fase.ts plano|gerar ... (ver cabeçalho)")
+  if (comando === "snapshot") return comandoSnapshot(args)
+  console.error("uso: resultados-tse-fase.ts plano|snapshot|gerar ... (ver cabeçalho)")
   return 2
 }
 
