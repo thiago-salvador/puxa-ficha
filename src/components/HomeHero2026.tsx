@@ -27,6 +27,8 @@ const LINK_ESCURO =
  * Passa pelo otimizador do Next (/_next/image), que valida o host do Wikimedia no servidor. O
  * carregador explícito evita a checagem de host no render, que falha fora do app (testes).
  */
+const MASCARA_BASE = "linear-gradient(to bottom, #000 0%, #000 55%, rgba(0,0,0,0.6) 78%, rgba(0,0,0,0.2) 92%, transparent 100%)"
+
 function carregadorOtimizado({ src, width, quality }: { src: string; width: number; quality?: number }): string {
   return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality ?? 75}`
 }
@@ -60,7 +62,13 @@ function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | nul
     <div
       aria-hidden="true"
       className={`pointer-events-none absolute inset-y-0 hidden w-1/2 overflow-hidden [container-type:size] lg:block ${esquerda ? "left-0" : "right-0"}`}
-      style={{ maskImage: mascaraMetade, WebkitMaskImage: mascaraMetade }}
+      style={{
+        // Lateral (some até o centro) somada à vertical (some até a barra dos votos): sem corte reto embaixo.
+        maskImage: `${mascaraMetade}, ${MASCARA_BASE}`,
+        WebkitMaskImage: `${mascaraMetade}, ${MASCARA_BASE}`,
+        maskComposite: "intersect",
+        WebkitMaskComposite: "source-in",
+      }}
       data-pf-hero-retrato={lado}
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- atributos do getImageProps (otimizador do Next), montados no servidor */}
