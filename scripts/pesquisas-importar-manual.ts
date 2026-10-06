@@ -209,10 +209,17 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
     }
     // A runoff measures one pair: blank, null and undecided lines are the only other answers.
     if (turnoCenario(scenario) === 2) {
-      const finalistas = new Set(scenario.results.map((result) => decisions[result.raw_label]).filter((slug): slug is string => typeof slug === "string"))
-      const linhas = scenario.results.filter((result) => typeof decisions[result.raw_label] === "string").length
+      const ehSlug = (slug: unknown): slug is string => typeof slug === "string" && slug.trim() !== ""
+      const finalistas = new Set(scenario.results.map((result) => decisions[result.raw_label]).filter(ehSlug))
+      const linhas = scenario.results.filter((result) => ehSlug(decisions[result.raw_label])).length
       if (finalistas.size !== 2 || linhas !== 2) {
         problems.push(`${where}: cenário de 2º turno ${scenario.note ?? ""} precisa ter exatamente dois finalistas distintos (encontrado(s) ${linhas})`)
+      }
+      // Any other line must be a non-candidate answer; a third name mapped to null is refused.
+      for (const result of scenario.results) {
+        if (!ehSlug(decisions[result.raw_label]) && !RESPOSTA_NAO_CANDIDATO.test(semAcento(result.raw_label))) {
+          problems.push(`${where}: cenário de 2º turno com linha "${result.raw_label}" que não é finalista nem branco, nulo ou indeciso`)
+        }
       }
     }
     // Consistency with the declared base: two mentions per respondent add up to well over 100%;
@@ -224,6 +231,13 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
     }
   }
   return problems
+}
+
+/** Respostas que não são candidatos num 2º turno (vocabulário fechado: nome fora daqui é recusado). */
+const RESPOSTA_NAO_CANDIDATO = /^(?:(?:brancos?|nulos?|nenhum(?: deles| dos dois)?|indecisos?|ns|nr|nao sab(?:e|em)|nao respond(?:eu|eram)|nao sabe(?:m)? ou nao respond(?:eu|eram))(?:\s*(?:\/|,|e|ou)\s*)?)+$/i
+
+function semAcento(texto: string): string {
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase()
 }
 
 export interface Catalogos { pres: Json; presFontes: Json; gov: Json; govFontes: Json; sen: Json }

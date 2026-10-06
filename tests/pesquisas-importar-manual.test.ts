@@ -1,9 +1,8 @@
 import assert from "node:assert/strict"
-import { mkdtempSync, writeFileSync } from "node:fs"
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
 import { createRequire } from "node:module"
-import { tmpdir } from "node:os"
 import { join } from "node:path"
-import { describe, it } from "node:test"
+import { after, describe, it } from "node:test"
 import { baseCenarioSenado, carregarCatalogos, importarRodadas, registrarAusenciasSenado, type RodadaColetada } from "../scripts/pesquisas-importar-manual"
 import { coorteAtualizacaoDe } from "../scripts/lib/coorte-atualizacao"
 
@@ -13,7 +12,9 @@ require.cache[serverOnlyPath] = { id: serverOnlyPath, filename: serverOnlyPath, 
 const { listarPesquisasDoCandidato, parsePesquisasEleitoraisJson } = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
 const { parseSenadoPesquisasJson, selecionarSenadoPolls } = require("../src/lib/senado-polls") as typeof import("@/lib/senado-polls")
 
-const dir = mkdtempSync(join(tmpdir(), "pesquisas-importar-"))
+// Captura dentro da raiz do repositório (o teste não depende de caminho externo); removida no fim.
+const dir = mkdtempSync(join(process.cwd(), ".tmp-pesquisas-importar-"))
+after(() => rmSync(dir, { recursive: true, force: true }))
 const capture = join(dir, "captura.txt")
 writeFileSync(capture, "https://example.org/pesquisa\nLula 40%, Flávio Bolsonaro 35%, brancos e nulos 10%, não sabem 15%.\n")
 
@@ -226,6 +227,14 @@ describe("importação manual auditada de pesquisas", () => {
     const tres = importarRodadas([comTurno([...linhas.slice(0, 2), { raw_label: "Ciro", value_percent: 5 }, linhas[2]])],
       { BR: { ...aliases.BR, "Ciro": "ciro-gomes" } }, "2026-10-06T12:00:00Z", carregarCatalogos())
     assert.ok(tres.problems.some((problem) => problem.includes("exatamente dois finalistas")))
+    // Terceiro nome com alias null não passa como "não candidato".
+    const ciroNulo = importarRodadas([comTurno([...linhas.slice(0, 2), { raw_label: "Ciro", value_percent: 5 }, linhas[2]])],
+      { BR: { ...aliases.BR, "Ciro": null } }, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(ciroNulo.problems.some((problem) => problem.includes('linha "Ciro" que não é finalista')))
+    // Alias vazio não conta como finalista.
+    const vazio = importarRodadas([comTurno([linhas[0], { raw_label: "Flávio", value_percent: 35 }, linhas[2]])],
+      { BR: { ...aliases.BR, "Flávio": "" } }, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(vazio.problems.some((problem) => problem.includes("encontrado(s) 1")))
     const um = importarRodadas([comTurno([linhas[0], linhas[2], linhas[3]])], aliases, "2026-10-06T12:00:00Z", carregarCatalogos())
     assert.ok(um.problems.some((problem) => problem.includes("encontrado(s) 1")))
     const repetido = importarRodadas([comTurno([linhas[0], { raw_label: "Lula (PT)", value_percent: 1 }, linhas[2]])],
