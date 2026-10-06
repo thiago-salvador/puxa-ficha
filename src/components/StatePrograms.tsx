@@ -71,7 +71,7 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
   const [aba, setAba] = useState<"finalistas" | "todos">("finalistas")
   const programs = comAbas && aba === "finalistas" ? finalistas : programsTodos
   const [view, setView] = useState<"summary" | "themes">("summary")
-  const [theme, setTheme] = useState("seguranca")
+  const [themeEscolhido, setTheme] = useState("seguranca")
   const [candidate, setCandidate] = useState("all")
   const [order, setOrder] = useState("asc")
   const themes = [...new Map(programs.flatMap(p => p.manifesto?.estado === "aprovado" ? p.manifesto.resumo?.temas ?? [] : []).map(t => {
@@ -79,6 +79,8 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
     return [group.id, group.title] as const
   })).entries()].sort((a, b) => a[1].localeCompare(b[1], "pt-BR"))
   const otherThemes = themes.filter(([id]) => !STATE_PROGRAM_CORE_THEMES.some(([core]) => core === id))
+  // Tema que só existe em programa fora do recorte atual (ex.: trocou de aba) volta ao padrão.
+  const theme = STATE_PROGRAM_CORE_THEMES.some(([id]) => id === themeEscolhido) || themes.some(([id]) => id === themeEscolhido) ? themeEscolhido : "seguranca"
   const alphabetical = [...programs].sort((a, b) => a.nome_urna.localeCompare(b.nome_urna, "pt-BR"))
   const filtered = alphabetical.filter(p => candidate === "all" || p.slug === candidate)
   const visible = order === "desc" ? filtered.toReversed() : filtered
