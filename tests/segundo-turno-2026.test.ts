@@ -47,12 +47,21 @@ function poll(id: string, data: string, resultados: Array<[string, string | null
   return {
     id,
     instituto: { value: "Instituto X", status: "publicado" },
+    sourceStatus: "aprovado",
+    state: "publicado",
     publicationDate: { value: data, status: "publicado" },
+    fieldwork: { start: { value: data, status: "publicado" }, end: { value: data, status: "publicado" } },
     marginErrorPp: { value: 1.8, status: "publicado" },
+    contratante: { value: null, status: "publicado" },
+    sample: { size: { value: 2000, status: "publicado" }, population: { value: "eleitores", status: "publicado" } },
+    confidencePercent: { value: 95, status: "publicado" },
+    method: { value: "presencial", status: "publicado" },
+    registration: { code: { value: "BR-00000/2026", status: "publicado" }, url: { value: null, status: "publicado" } },
     provenance: { resultUrl: `https://exemplo.org/${id}` },
     scenario: {
       id: `${id}-c`,
       turn,
+      question: { value: null, status: "publicado" },
       resultados: resultados.map(([rawLabel, candidateSlug, valuePercent]) => ({
         rawLabel,
         candidateSlug,
@@ -258,12 +267,12 @@ describe("pesquisas do confronto", () => {
 
   it("só cenários de 2º turno com exatamente os dois finalistas, mais recente primeiro, no máximo o limite", () => {
     const polls = [
-      poll("p1", "2026-09-03", [["Flávio", "flavio", 45], ["Lula", "lula", 44], ["Branco", null, 8]]),
-      poll("p2", "2026-09-17", [["Lula", "lula", 44], ["Flávio", "flavio", 46]]),
-      poll("p3", "2026-09-20", [["Cury", "cury", 45], ["Lula", "lula", 42]]),
-      poll("p4", "2026-09-21", [["Flávio", "flavio", 30], ["Lula", "lula", 29], ["Cury", "cury", 20]], 1),
-      poll("p5", "2026-09-10", [["Flávio", "flavio", null], ["Lula", "lula", 45]]),
-      poll("p6", "2026-08-27", [["Flávio", "flavio", 44], ["Lula", "lula", 45]]),
+      poll("p1", "2026-10-07", [["Flávio", "flavio", 45], ["Lula", "lula", 44], ["Branco", null, 8]]),
+      poll("p2", "2026-10-12", [["Lula", "lula", 44], ["Flávio", "flavio", 46]]),
+      poll("p3", "2026-10-13", [["Cury", "cury", 45], ["Lula", "lula", 42]]),
+      poll("p4", "2026-10-14", [["Flávio", "flavio", 30], ["Lula", "lula", 29], ["Cury", "cury", 20]], 1),
+      poll("p5", "2026-10-09", [["Flávio", "flavio", null], ["Lula", "lula", 45]]),
+      poll("p6", "2026-10-05", [["Flávio", "flavio", 44], ["Lula", "lula", 45]]),
     ]
     const linhas = selecionarPesquisasDoConfronto(polls, slugs, 2)
     assert.deepEqual(linhas.map((l) => l.id), ["p2", "p1"])
@@ -274,13 +283,24 @@ describe("pesquisas do confronto", () => {
   })
 
   it("descarta fonte sem https e repete o cenário só uma vez por pesquisa", () => {
-    const http = poll("h", "2026-09-30", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
+    const http = poll("h", "2026-10-16", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
     ;(http.provenance as { resultUrl: string }).resultUrl = "http://inseguro.org"
-    const dup = poll("d", "2026-09-29", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
+    const dup = poll("d", "2026-10-15", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
     assert.deepEqual(selecionarPesquisasDoConfronto([http, dup, dup], slugs).map((l) => l.id), ["d"])
   })
 
-  it("data curta em pt-BR e sem dado quando a fonte não publicou", () => {
+    it("recusa cenário colhido até o 1º turno e pesquisa ou valor não publicados", () => {
+    const antes = poll("antes", "2026-09-16", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
+    const noDia = poll("dia", "2026-10-04", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
+    const rascunho = poll("rasc", "2026-10-10", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
+    ;(rascunho as { state: string }).state = "em_revisao"
+    const valorPendente = poll("pend", "2026-10-11", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
+    ;(valorPendente.scenario.resultados[0] as { status: string }).status = "em_revisao"
+    const ok = poll("ok", "2026-10-08", [["Flávio", "flavio", 45], ["Lula", "lula", 44]])
+    assert.deepEqual(selecionarPesquisasDoConfronto([antes, noDia, rascunho, valorPendente, ok], slugs).map((l) => l.id), ["ok"])
+  })
+
+it("data curta em pt-BR e sem dado quando a fonte não publicou", () => {
     assert.match(formatarDataPesquisa("2026-09-17"), /^17 de set\.?$/)
     assert.equal(formatarDataPesquisa(null), SEM_DADO)
   })

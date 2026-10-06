@@ -11,6 +11,8 @@ import { exibicaoProcessosJustica, type ProcessosJusticaContagem } from "@/lib/p
 import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import { formatBRL } from "@/lib/utils"
 import type { StatePollScenario } from "@/lib/state-polls"
+import { fieldworkDate, publicPollMetadata, publishedValue } from "@/lib/poll-series"
+import { DATAS_TURNOS_2026 } from "@/lib/coorte-atualizacao"
 import type { CandidatoComparavel } from "@/lib/types"
 import { COMPARADOR_NAO_SE_APLICA, deveMostrarBlocoCongresso } from "@/lib/comparador-display"
 import { formatEvolucaoPatrimonialPct } from "@/lib/evolucao-patrimonial"
@@ -302,16 +304,22 @@ export interface Pesquisa2TurnoLinha {
 /**
  * Cenários de 2º turno em que os dois candidatos com vínculo exato são
  * exatamente os finalistas. Uma linha por pesquisa, da mais recente para a mais
- * antiga, no máximo `limite`.
+ * antiga, no máximo `limite`. Só pesquisa aprovada e publicada, com valores e
+ * metadados publicados, e coleta encerrada depois do 1º turno: cenário
+ * hipotético colhido antes da votação não mede o confronto real.
  */
 export function selecionarPesquisasDoConfronto(
   polls: readonly StatePollScenario[],
   slugs: [string, string],
   limite = 6,
+  coletaApos: string = DATAS_TURNOS_2026[1],
 ): Pesquisa2TurnoLinha[] {
   const vistas = new Set<string>()
   const linhas: Pesquisa2TurnoLinha[] = []
-  const ordenadas = [...polls].sort(
+  const publicas = polls
+    .filter((poll) => poll.sourceStatus === "aprovado" && poll.state === "publicado" && (fieldworkDate(poll) ?? "") > coletaApos)
+    .map(publicPollMetadata)
+  const ordenadas = [...publicas].sort(
     (a, b) => (b.publicationDate.value ?? "").localeCompare(a.publicationDate.value ?? "") || a.id.localeCompare(b.id),
   )
   for (const poll of ordenadas) {
@@ -321,7 +329,9 @@ export function selecionarPesquisasDoConfronto(
     if (exatos.length !== 2) continue
     const a = exatos.find((r) => r.candidateSlug === slugs[0])
     const b = exatos.find((r) => r.candidateSlug === slugs[1])
-    if (!a || !b || a.valuePercent === null || b.valuePercent === null) continue
+    const va = a ? publishedValue(poll, a) : null
+    const vb = b ? publishedValue(poll, b) : null
+    if (va === null || vb === null) continue
     const url = poll.provenance.resultUrl
     if (!/^https:\/\//.test(url)) continue
     vistas.add(poll.id)
@@ -329,7 +339,7 @@ export function selecionarPesquisasDoConfronto(
       id: poll.id,
       instituto: poll.instituto.value ?? "Instituto sem nome publicado",
       data: poll.publicationDate.value,
-      percentuais: [a.valuePercent, b.valuePercent],
+      percentuais: [va, vb],
       margem: poll.marginErrorPp.value,
       url,
     })
