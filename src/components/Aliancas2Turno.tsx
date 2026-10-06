@@ -194,10 +194,12 @@ export function Aliancas2TurnoSecao({
             {partidosDeclarados.map((p) => {
               const fonte = primeiraFonte(p)
               return (
-                <p key={p.partido}>
-                  <span className="font-bold text-foreground">{p.partido}</span>: {rotuloPosicao(p)}
-                  {fonte && <> <FonteDeclaracao fonte={fonte} data={formatarDiaDeclaracao(p.data_declaracao)} /></>}
-                </p>
+                <div key={p.partido} className="flex flex-wrap items-center gap-x-2">
+                  <span>
+                    <span className="font-bold text-foreground">{p.partido}</span>: {rotuloPosicao(p)}
+                  </span>
+                  {fonte && <FonteDeclaracao fonte={fonte} data={formatarDiaDeclaracao(p.data_declaracao)} />}
+                </div>
               )
             })}
             {partidosSem.length > 0 && (
