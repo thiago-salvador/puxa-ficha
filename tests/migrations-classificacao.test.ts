@@ -518,7 +518,7 @@ describe("classificador puro (#136)", () => {
     // Despesas de campanha (20260929100000), DDL da tabela financiamento_despesas: 432 + 105 = 537.
     // G5 (20260929110000), 1 processo em 2 fichas, DML com guarda pf.replay: 433 + 105 = 538.
     // CPF removido do motivo da #378 (20261001100000), DML com guarda pf.replay: 434 + 105 = 539.
-    assert.equal(manifesto.aplicadas_esperadas, 435)
+    assert.equal(manifesto.aplicadas_esperadas, 436)
     assert.ok(manifesto.falhas.length >= 86, "manifesto de falhas reais esvaziou sem re-medição")
 
     // Invariante de conservação, a mesma que o harness passou a conferir em
