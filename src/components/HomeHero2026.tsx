@@ -350,12 +350,13 @@ function NumerosHero({ numeros, fonte2022 }: { numeros: NumeroHero1Turno[]; font
   if (numeros.length === 0) return null
   const temComparacao = Boolean(fonte2022) && numeros.some((n) => n.comparacao)
   return (
-    <div className="min-w-0">
+    <div className="min-w-0 text-center">
       <p className={`max-sm:hidden ${ROTULO_ESCURO}`}>1º turno em números</p>
-      <dl className="grid grid-cols-2 gap-x-4 gap-y-4 sm:mt-3 sm:grid-cols-4" data-pf-hero-numeros>
+      {/* Mesmo eixo do duelo: quatro colunas centradas, separadas por um traço fino. */}
+      <dl className="mx-auto grid max-w-5xl grid-cols-2 gap-y-6 sm:mt-5 sm:grid-cols-4 sm:divide-x sm:divide-white/20" data-pf-hero-numeros>
         {numeros.map((n) => (
           // dt antes do dd no DOM (ordem válida de <dl>); `order` põe o número em cima, o rótulo e a comparação embaixo.
-          <div key={n.id} className="flex min-w-0 flex-col" data-pf-hero-numero={n.id}>
+          <div key={n.id} className="flex min-w-0 flex-col items-center px-3" data-pf-hero-numero={n.id}>
             <dt className="order-2 mt-1 text-[length:var(--text-eyebrow)] font-semibold uppercase tracking-[0.06em] text-white">{n.rotulo}</dt>
             <dd className="order-1 font-heading text-[length:var(--text-heading)] leading-none tabular-nums text-white xl:text-[length:var(--text-heading-lg)]">
               {n.valor}
@@ -370,7 +371,7 @@ function NumerosHero({ numeros, fonte2022 }: { numeros: NumeroHero1Turno[]; font
         ))}
       </dl>
       {temComparacao && fonte2022 && (
-        <p className={`mt-3 ${TEXTO_APOIO}`} data-pf-hero-fonte-2022>
+        <p className={`mx-auto mt-5 max-w-prose ${TEXTO_APOIO}`} data-pf-hero-fonte-2022>
           Comparação com o 1º turno de 2022 para Presidente, em pontos percentuais.{" "}
           <a href={fonte2022.pagina} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white">
             Fonte: TSE, dados abertos<span className="sr-only"> (abre em nova aba)</span>
@@ -472,7 +473,7 @@ export function HomeHero2026({ imagem, temResultado, presidente, fotos, pesquisa
         )}
       </div>
       {ufs.length > 0 && (
-        <div className="mt-6">
+        <div className="mt-8 flex justify-center">
           <UfResultadoSelector options={ufs} basePath="/1o-turno" rotulo="Seu estado tem 2º turno?" variante="escuro" compacto />
         </div>
       )}
