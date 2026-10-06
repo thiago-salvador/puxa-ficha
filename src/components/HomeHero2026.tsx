@@ -1,6 +1,6 @@
 // cspell:ignore recolhivel acessivel
 import type { ComponentProps } from "react"
-import Image from "next/image"
+import Image, { getImageProps } from "next/image"
 import Link from "next/link"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { formatarPercentual, formatarVotos, type CandidatoResultado1Turno, type DisputaResultado1Turno } from "@/lib/resultados-1turno"
@@ -22,6 +22,14 @@ const ROTULO_ESCURO = "text-[length:var(--text-eyebrow)] font-semibold uppercase
 const TEXTO_APOIO = "text-[length:var(--text-caption)] font-medium tabular-nums text-white/80"
 const LINK_ESCURO =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80"
+
+/**
+ * Passa pelo otimizador do Next (/_next/image), que valida o host do Wikimedia no servidor. O
+ * carregador explícito evita a checagem de host no render, que falha fora do app (testes).
+ */
+function carregadorOtimizado({ src, width, quality }: { src: string; width: number; quality?: number }): string {
+  return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality ?? 75}`
+}
 
 /**
  * Retrato do finalista (do lg em diante), cobrindo metade da parte de cima. A foto tem a altura da
@@ -55,13 +63,19 @@ function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | nul
       style={{ maskImage: mascaraMetade, WebkitMaskImage: mascaraMetade }}
       data-pf-hero-retrato={lado}
     >
-      <Image
-        src={src}
+      {/* eslint-disable-next-line @next/next/no-img-element -- atributos do getImageProps (otimizador do Next), montados no servidor */}
+      <img
+        {...getImageProps({
+          src,
+          alt: "",
+          width: retrato?.largura ?? 960,
+          height: retrato?.altura ?? 1280,
+          priority: true,
+          loader: carregadorOtimizado,
+          // Foto horizontal aparece quase na largura da tela; retrato vertical, em pouco mais da metade.
+          sizes: proporcao > 1.2 ? "(min-width: 1024px) 100vw, 1px" : "(min-width: 1024px) 60vw, 1px",
+        }).props}
         alt=""
-        width={retrato?.largura ?? 960}
-        height={retrato?.altura ?? 1280}
-        priority
-        sizes="(min-width: 1024px) 60vw, 1px"
         className="absolute top-0 max-w-none"
         style={{
           ["--pf-altura" as string]: altura,

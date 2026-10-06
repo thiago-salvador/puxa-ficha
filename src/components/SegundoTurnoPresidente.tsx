@@ -83,7 +83,7 @@ export function LinkFichaCompleta({ slug, nome, compacto = false }: { slug: stri
 function LinhaComparacao({ id, rotulo, celulas, atributo }: { id: string; rotulo: string; celulas: [CelulaLadoALado, CelulaLadoALado]; atributo: "linha" | "extra" }) {
   const dados = atributo === "linha" ? { "data-pf-lado-a-lado-linha": id } : { "data-pf-lado-a-lado-extra": id }
   return (
-    <div role="row" {...dados} className={`${GRADE_LINHA} border-t border-border px-4 py-3 sm:items-center sm:px-6 sm:py-4`}>
+    <div role="row" {...dados} className={`${GRADE_LINHA} border-t border-border px-4 py-3 sm:items-center sm:px-6`}>
       <span role="rowheader" className={`${ROTULO} col-span-2 text-center text-muted-foreground sm:col-span-1 sm:col-start-2 sm:row-start-1`}>
         {rotulo}
       </span>
@@ -91,7 +91,7 @@ function LinhaComparacao({ id, rotulo, celulas, atributo }: { id: string; rotulo
         <span
           key={i}
           role="cell"
-          className={`min-w-0 [overflow-wrap:anywhere] ${i === 0 ? "text-left sm:col-start-1 sm:row-start-1 sm:text-right" : "text-right sm:col-start-3 sm:row-start-1 sm:text-left"}`}
+          className={`min-w-0 text-center [overflow-wrap:anywhere] ${i === 0 ? "sm:col-start-1 sm:row-start-1" : "sm:col-start-3 sm:row-start-1"}`}
         >
           <span
             className={`block tabular-nums ${celula.semDado ? "text-[length:var(--text-body-sm)] font-medium text-muted-foreground" : "text-[length:var(--text-body)] font-bold text-foreground sm:text-[length:var(--text-body-lg)]"}`}
@@ -105,19 +105,22 @@ function LinhaComparacao({ id, rotulo, celulas, atributo }: { id: string; rotulo
   )
 }
 
-function CabecalhoFinalista({ candidato, fotos, lado }: { candidato: CandidatoResultado1Turno; fotos?: FotosCandidatos; lado: "esquerda" | "direita" }) {
-  const direita = lado === "direita"
+function CabecalhoFinalista({ candidato, fotos, lado, cor }: { candidato: CandidatoResultado1Turno; fotos?: FotosCandidatos; lado: "esquerda" | "direita"; cor: string | null }) {
   return (
-    <div
-      role="columnheader"
-      className={`flex min-w-0 flex-col gap-2 ${direita ? "items-end text-right sm:col-start-3 sm:items-start sm:text-left" : "items-start sm:items-end sm:text-right"}`}
-    >
-      <FotoCandidato candidato={candidato} fotos={fotos} tamanho={56} className="size-12 sm:size-14" initialsClassName="text-sm" />
-      <span className="min-w-0">
-        <span className="block font-heading text-lg uppercase leading-tight text-foreground [text-wrap:balance] sm:text-2xl">{candidato.nome_urna}</span>
-        <span className="block text-[length:var(--text-caption)] font-medium text-muted-foreground">{candidato.partido}</span>
+    <div role="columnheader" className={`flex min-w-0 flex-col items-center gap-1.5 text-center ${lado === "direita" ? "sm:col-start-3" : ""}`}>
+      <FotoCandidato
+        candidato={candidato}
+        fotos={fotos}
+        tamanho={64}
+        className="size-14 ring-2 ring-[var(--gray-200)] sm:size-16"
+        initialsClassName="text-sm"
+      />
+      {/* Bolinha e nome na cor do lado do partido (mesma régua do hero); sem cor, preto. */}
+      <span className="mt-1 inline-flex min-w-0 items-center gap-2 font-heading text-lg uppercase leading-tight [text-wrap:balance] sm:text-2xl" style={cor ? { color: cor } : undefined}>
+        <span aria-hidden="true" className="size-3 shrink-0 rounded-full" style={{ background: cor ?? "var(--gray-950)" }} />
+        {candidato.nome_urna}
       </span>
-      {candidato.slug && <LinkFichaCompleta slug={candidato.slug} nome={candidato.nome_urna} />}
+      {candidato.slug && <LinkFichaCompleta slug={candidato.slug} nome={candidato.nome_urna} compacto />}
     </div>
   )
 }
@@ -174,20 +177,21 @@ export function LadoALado2Turno({
   const linhasExtra = montarLadoALadoExtra([extra(finalistas[0]), extra(finalistas[1])])
   const temCeap = linhasExtra.some((linha) => linha.id === "ceap")
   const temDisciplinar = finalistas.some((c) => c.slug && (processosContagem[c.slug]?.disciplinares ?? 0) > 0)
+  const espectro = coresDosFinalistas(finalistas[0].partido, finalistas[1].partido)
   return (
     <section id="lado-a-lado" className="scroll-mt-24" aria-labelledby="lado-a-lado-titulo">
       <TituloSecao titulo="Lado a lado" id="lado-a-lado-titulo">
         O que as fichas públicas mostram dos dois finalistas à Presidência.
       </TituloSecao>
       <SlashDivider className="mb-6 mt-6" />
-      <div className="overflow-hidden rounded-[12px] border border-border">
+      <div className="overflow-hidden rounded-[6px] border border-border">
       <div role="table" aria-label="Presidente: os dois finalistas lado a lado" data-pf-lado-a-lado>
-        <div role="row" className={`${GRADE_LINHA} bg-[var(--gray-50)] px-4 py-4 sm:px-6`}>
+        <div role="row" className={`${GRADE_LINHA} items-end bg-background px-4 pb-3 pt-5 sm:px-6`}>
           <span role="columnheader" className="sr-only">
             Item
           </span>
-          <CabecalhoFinalista candidato={finalistas[0]} fotos={fotos} lado="esquerda" />
-          <CabecalhoFinalista candidato={finalistas[1]} fotos={fotos} lado="direita" />
+          <CabecalhoFinalista candidato={finalistas[0]} fotos={fotos} lado="esquerda" cor={espectro?.a.cor ?? null} />
+          <CabecalhoFinalista candidato={finalistas[1]} fotos={fotos} lado="direita" cor={espectro?.b.cor ?? null} />
         </div>
         {linhas.map((linha) => (
           <LinhaComparacao key={linha.id} id={linha.id} rotulo={linha.rotulo} celulas={linha.celulas} atributo="linha" />
@@ -218,14 +222,14 @@ export function LadoALado2Turno({
         </p>
       </details>
       </div>
-      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+      <div className="mt-5 flex flex-col items-center gap-4 text-center">
         <p className="max-w-prose text-[length:var(--text-caption)] font-medium leading-relaxed text-muted-foreground">
           Patrimônio, processos e pontos de atenção vêm das fichas; partido, vice e votos, do resultado oficial do TSE.
           {temDisciplinar && <> Processos somam judiciais e disciplinares. {PROCESSO_DISCIPLINAR_AVISO}</>}
         </p>
         {compararHref && (
-          <Link href={compararHref} className={`${LINK_SETA} shrink-0`}>
-            Abrir no comparador completo <ArrowRight className="size-3.5" aria-hidden="true" />
+          <Link href={compararHref} className={`${BOTAO_PILULA} px-8`}>
+            Comparador completo <ArrowUpRight className="size-4" aria-hidden="true" />
           </Link>
         )}
       </div>

@@ -120,7 +120,8 @@ function celulaResultado(c: CandidatoResultado1Turno): CelulaLadoALado {
 
 function celulaPartido(c: CandidatoResultado1Turno): CelulaLadoALado {
   if (!c.partido) return vazio()
-  return { valor: c.partido, detalhe: c.numero ? `nº ${c.numero}` : undefined, semDado: false }
+  // Partido e número na mesma linha ("PL · nº 22"), como no estudo de layout de 06/10.
+  return { valor: c.numero ? `${c.partido} · nº ${c.numero}` : c.partido, semDado: false }
 }
 
 function celulaVice(c: CandidatoResultado1Turno): CelulaLadoALado {
