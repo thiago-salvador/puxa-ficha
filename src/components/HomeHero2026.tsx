@@ -22,30 +22,28 @@ const TEXTO_APOIO = "text-[length:var(--text-caption)] font-medium tabular-nums 
 const LINK_ESCURO =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80"
 
-/** Retrato do finalista na borda do hero, sumindo no preto do centro e de baixo. */
+/**
+ * Retrato do finalista na borda do hero (do lg em diante): ocupa a parte de cima inteira, nítido no
+ * lado de fora e escurecendo aos poucos até perto do centro. O rosto fica fora da coluna do texto.
+ */
 function RetratoFundo({ src, lado }: { src: string | null; lado: "esquerda" | "direita" }) {
   if (!src) return null
   const direcao = lado === "esquerda" ? "to right" : "to left"
-  // Duas máscaras somadas: some devagar para o centro (lateral) e, da metade da altura para baixo,
-  // vai sumindo até o fim do hero, sem corte seco onde acaba o corpo dos candidatos.
-  const lateral = `linear-gradient(${direcao}, #000 0%, #000 55%, transparent 100%)`
-  const vertical = "linear-gradient(to bottom, #000 0%, #000 42%, rgba(0,0,0,0.55) 68%, transparent 100%)"
-  // Só do lg em diante: as fotos ocupam as bordas e o duelo fica no miolo, sem texto sobre o rosto.
+  const mascara = `linear-gradient(${direcao}, #000 0%, #000 46%, rgba(0,0,0,0.6) 72%, rgba(0,0,0,0.25) 88%, transparent 100%)`
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-y-0 hidden w-[26%] lg:block xl:w-[30%] ${lado === "esquerda" ? "left-0" : "right-0"}`}
-      style={{
-        maskImage: `${lateral}, ${vertical}`,
-        WebkitMaskImage: `${lateral}, ${vertical}`,
-        maskComposite: "intersect",
-        WebkitMaskComposite: "source-in",
-      }}
+      className={`pointer-events-none absolute inset-y-0 hidden w-[42%] lg:block ${lado === "esquerda" ? "left-0" : "right-0"}`}
+      style={{ maskImage: mascara, WebkitMaskImage: mascara }}
       data-pf-hero-retrato={lado}
     >
-      <Image src={src} alt="" fill priority sizes="30vw" className="object-cover object-[center_8%]" />
+      <Image src={src} alt="" fill priority sizes="42vw" className="object-cover object-top" />
     </div>
   )
+}
+
+function nomeCurto(nome: string): boolean {
+  return !/\s/.test(nome.trim()) && nome.trim().length <= 6
 }
 
 // As seis linhas de cada finalista entram na grade do duelo (subgrid): rótulo, %, votos e link
@@ -63,30 +61,35 @@ function FinalistaHero({ candidato, cor, coluna, foto }: { candidato: CandidatoR
         <span aria-hidden="true" className="block h-1.5 w-full rounded-[1px] sm:h-2" style={{ background: cor }} />
       </div>
       <div className="mt-3 sm:mt-[clamp(12px,2vh,20px)]">
-        <p className="font-heading uppercase leading-[0.9] text-white [overflow-wrap:normal] [word-break:normal] [text-wrap:balance] text-[clamp(1.75rem,min(3.7vw,6vh),3.625rem)]">
+        {/* Nome curto de uma palavra ocupa a coluna em corpo maior, como no estudo de layout. */}
+        <p
+          className={`font-heading uppercase leading-[0.9] text-white [overflow-wrap:normal] [word-break:normal] [text-wrap:balance] ${
+            nomeCurto(candidato.nome_urna) ? "text-[clamp(2.5rem,min(6.4vw,10vh),6.5rem)]" : "text-[clamp(1.75rem,min(3.7vw,6vh),3.625rem)]"
+          }`}
+        >
           {candidato.nome_urna}
         </p>
-        <p className="mt-1 text-[length:var(--text-body)] font-medium text-white/90 sm:text-[length:var(--text-body-lg)]">
+        <p className="mt-1 text-[clamp(0.875rem,1.35vw,1.375rem)] text-white/90">
           {candidato.partido} · nº {candidato.numero}
         </p>
       </div>
-      <p className={`mt-3 sm:mt-[clamp(12px,2.2vh,24px)] ${ROTULO_ESCURO}`}>
+      <p className="mt-3 text-[clamp(0.75rem,1.1vw,1.1rem)] font-bold uppercase tracking-[0.06em] text-white sm:mt-[clamp(12px,2.2vh,24px)]">
         <span className="sm:hidden">1º turno</span>
         <span className="max-sm:hidden">Resultado do 1º turno</span>
       </p>
-      <p className="mt-1 font-heading leading-none tabular-nums text-white text-[clamp(2.25rem,min(4vw,7vh),4rem)]">
+      <p className="mt-1 font-heading leading-none tabular-nums text-white text-[clamp(2.25rem,min(4.2vw,7vh),4.25rem)]">
         {formatarPercentual(candidato.percentual_validos)}
       </p>
-      <p className="mt-1 text-[length:var(--text-body-sm)] font-medium tabular-nums text-white/90 sm:text-[length:var(--text-body)]">
+      <p className="mt-1 text-[clamp(0.8125rem,1.2vw,1.25rem)] tabular-nums text-white/90">
         {formatarVotos(candidato.votos)} votos
       </p>
       {candidato.slug ? (
         <Link
           href={`/candidato/${candidato.slug}`}
           aria-label={`Ficha completa de ${candidato.nome_urna}`}
-          className="mt-1 inline-flex justify-self-start min-h-11 items-center gap-1.5 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80 sm:text-[length:var(--text-body)]"
+          className="mt-2 inline-flex justify-self-start min-h-11 items-center gap-2 whitespace-nowrap text-[clamp(0.875rem,1.35vw,1.375rem)] font-semibold text-white underline decoration-1 underline-offset-[6px] hover:text-white/80"
         >
-          Ficha completa <ArrowUpRight className="size-4" aria-hidden="true" />
+          Ficha completa <ArrowUpRight className="size-[1.1em]" aria-hidden="true" />
         </Link>
       ) : (
         <span />
@@ -102,7 +105,7 @@ function SeparadorDuelo() {
       <svg className="absolute inset-0 h-full w-full" viewBox="0 0 40 100" preserveAspectRatio="none">
         <line x1="34" y1="0" x2="6" y2="100" stroke="white" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
       </svg>
-      <span className="relative bg-black px-1 font-heading text-[clamp(2.25rem,min(4vw,7vh),4rem)] uppercase leading-none text-white/90">x</span>
+      <span className="relative px-1 font-heading text-[clamp(2.5rem,min(5.6vw,9vh),5.5rem)] uppercase leading-none text-white">x</span>
     </div>
   )
 }
@@ -121,12 +124,12 @@ function BarraVotosHero({ presidente, cores }: { presidente: DisputaResultado1Tu
         <span className="truncate">{c.nome_urna}</span>
         {direita && <span aria-hidden="true" className="size-3 shrink-0 rounded-[2px]" style={{ background: cor }} />}
       </p>
-      <p className="text-[length:var(--text-body)] tabular-nums text-white">{formatarPercentual(c.percentual_validos)}</p>
+      <p className="text-[clamp(0.875rem,1.15vw,1.15rem)] tabular-nums text-white">{formatarPercentual(c.percentual_validos)}</p>
       <p className="tabular-nums text-white/80">{formatarVotos(c.votos)} votos</p>
     </div>
   )
   return (
-    <figure className="text-[length:var(--text-caption)] font-medium sm:text-[length:var(--text-body-sm)]" data-pf-divisao-votos="escuro">
+    <figure className="text-[clamp(0.8125rem,1vw,1rem)]" data-pf-divisao-votos="escuro">
       <div role="img" aria-label={resumo} className="pf-barra pf-barra-entrada flex h-4 w-full overflow-hidden rounded-full bg-white/15 sm:h-5">
         <span className="block h-full" style={{ width: `${larguraBarra(a.percentual_validos)}%`, background: cores[0] }} />
         <span className="block h-full flex-1" style={{ backgroundImage: "repeating-linear-gradient(120deg, rgba(255,255,255,0.6) 0 1px, transparent 1px 6px)" }} />
@@ -164,20 +167,20 @@ function DueloHero({
   const cores: [string, string] = espectro ? [espectro.a.cor, espectro.b.cor] : ["#ffffff", "var(--gray-400)"]
   return (
     <div className="relative" data-pf-hero-duelo="Presidente">
-      <RetratoFundo src={fotoDe(fotos, a.slug)} lado="esquerda" />
-      <RetratoFundo src={fotoDe(fotos, b.slug)} lado="direita" />
       <div className="relative">
-        <div className="relative mx-auto max-w-7xl px-5 pb-5 pt-[clamp(76px,9vh,96px)] text-center md:px-12">
+        <RetratoFundo src={fotoDe(fotos, a.slug)} lado="esquerda" />
+        <RetratoFundo src={fotoDe(fotos, b.slug)} lado="direita" />
+        <div className="relative mx-auto max-w-7xl px-5 pb-6 pt-[clamp(76px,9vh,96px)] text-center md:px-12 lg:pb-[clamp(24px,4.5vh,48px)]">
           <h1
             className="hero-fade font-heading text-[clamp(3.5rem,min(10vw,12vh),8rem)] uppercase leading-[0.85] tracking-[-0.01em] text-white"
             style={{ animationDelay: "0.1s" }}
           >
             Puxa Ficha
           </h1>
-          <h2 className="hero-fade mt-3 text-[length:var(--text-body)] font-medium uppercase tracking-[0.32em] text-white/90 sm:text-[length:var(--text-body-lg)]" style={{ animationDelay: "0.2s" }}>
+          <h2 className="hero-fade mt-3 text-[clamp(0.875rem,1.3vw,1.3rem)] font-medium uppercase tracking-[0.35em] text-white/90" style={{ animationDelay: "0.2s" }}>
             Presidência / 2º turno
           </h2>
-          <p className="hero-fade mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[length:var(--text-body-sm)] font-bold uppercase tracking-[0.06em] text-white sm:text-[length:var(--text-body-lg)]" style={{ animationDelay: "0.25s" }}>
+          <p className="hero-fade mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[clamp(0.8125rem,1.15vw,1.15rem)] font-bold uppercase tracking-[0.06em] text-white" style={{ animationDelay: "0.25s" }}>
             <span>2º turno em 25 de outubro</span>
             <ContagemSegundoTurno referenceNow={referenceNow} variante="escuro" />
           </p>
@@ -205,7 +208,7 @@ function DueloHero({
             {compararHref && (
               <a
                 href={compararHref}
-                className="group inline-flex min-h-12 items-center justify-center gap-3 whitespace-nowrap rounded-full bg-white px-6 font-heading text-[length:var(--text-heading-sm)] uppercase sm:min-h-14 sm:px-9 sm:text-[length:var(--text-heading)] leading-none tracking-[0.02em] text-black transition-colors duration-200 hover:bg-[var(--gray-200)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 whitespace-nowrap rounded-full bg-white px-6 font-heading text-[length:var(--text-heading-sm)] uppercase sm:min-h-[60px] sm:px-12 sm:text-[clamp(1.5rem,2vw,2rem)] leading-none tracking-[0.02em] text-black transition-colors duration-200 hover:bg-[var(--gray-200)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Comparar lado a lado
                 <ArrowRight className="size-6 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
