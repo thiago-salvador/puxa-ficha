@@ -1,19 +1,20 @@
 import assert from "node:assert/strict"
-import { mkdtempSync, writeFileSync } from "node:fs"
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
 import { createRequire } from "node:module"
-import { tmpdir } from "node:os"
 import { join } from "node:path"
-import { describe, it } from "node:test"
+import { after, describe, it } from "node:test"
 import { baseCenarioSenado, carregarCatalogos, importarRodadas, registrarAusenciasSenado, type RodadaColetada } from "../scripts/pesquisas-importar-manual"
 import { coorteAtualizacaoDe } from "../scripts/lib/coorte-atualizacao"
 
 const require = createRequire(import.meta.url)
 const serverOnlyPath = require.resolve("server-only")
 require.cache[serverOnlyPath] = { id: serverOnlyPath, filename: serverOnlyPath, loaded: true, exports: {} } as never
-const { parsePesquisasEleitoraisJson } = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
+const { listarPesquisasDoCandidato, parsePesquisasEleitoraisJson } = require("../src/lib/pesquisas-eleitorais") as typeof import("@/lib/pesquisas-eleitorais")
 const { parseSenadoPesquisasJson, selecionarSenadoPolls } = require("../src/lib/senado-polls") as typeof import("@/lib/senado-polls")
 
-const dir = mkdtempSync(join(tmpdir(), "pesquisas-importar-"))
+// Captura dentro da raiz do repositório (o teste não depende de caminho externo); removida no fim.
+const dir = mkdtempSync(join(process.cwd(), ".tmp-pesquisas-importar-"))
+after(() => rmSync(dir, { recursive: true, force: true }))
 const capture = join(dir, "captura.txt")
 writeFileSync(capture, "https://example.org/pesquisa\nLula 40%, Flávio Bolsonaro 35%, brancos e nulos 10%, não sabem 15%.\n")
 
@@ -174,6 +175,103 @@ describe("importação manual auditada de pesquisas", () => {
     assert.equal(entry.checked_at, "2026-09-25")
     assert.match(entry.reason, /^Checagem de 25\/09\/2026/)
     assert.ok(registrarAusenciasSenado([{ uf: "AC", cargo: "Senador", checked_at: "25/09" }], catalogos).problems.length === 1)
+  })
+
+  it("importa 2º turno com id, rótulo, chave e alias próprios, agrupado como segundo turno", () => {
+    const segundo = rodada({ registration: "BR-99990/2026", scenarios: [{ kind: "estimulado", turn: 2, question: null, results: [
+      { raw_label: "Lula", value_percent: 47 }, { raw_label: "Flávio Bolsonaro", value_percent: 44 },
+      { raw_label: "Brancos e nulos", value_percent: 6 }, { raw_label: "Não sabem", value_percent: 3 },
+    ] }] })
+    const { problems, catalogos } = importarRodadas([segundo], aliases, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(problems, [])
+    const bruto = (catalogos.pres.pesquisas as { id: string; source_id: string; cenarios: { id: string; turn: number; comparability_key: string }[] }[])
+      .find((poll) => poll.id === "instituto-exemplo-br-99990-2026")!
+    assert.equal(bruto.cenarios[0].id, "instituto-exemplo-br-99990-2026-2t")
+    assert.equal(bruto.cenarios[0].turn, 2)
+    assert.match(bruto.cenarios[0].comparability_key, /^2026\|Presidente\|BR\|2\|estimulada\|[0-9a-f]{64}\|total_amostra$/)
+    const fonte = (catalogos.presFontes.sources as { id: string; representative_poll: { rounds: number[] } }[]).find((source) => source.id === bruto.source_id)!
+    assert.deepEqual(fonte.representative_poll.rounds, [2])
+    const novosAliases = (catalogos.pres.exact_aliases as { scenario_id?: string; turn: number }[]).filter((alias) => alias.scenario_id === bruto.cenarios[0].id)
+    assert.equal(novosAliases.length, 2)
+    assert.ok(novosAliases.every((alias) => alias.turn === 2))
+    const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(catalogos.pres), JSON.stringify(catalogos.presFontes))
+    const cenario = catalogo.pesquisas.find((entry) => entry.id === bruto.id)!.cenarios[0]
+    assert.equal(cenario.labelRaw, "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados")
+    const doLula = listarPesquisasDoCandidato(catalogo, "lula").filter((entry) => entry.id === bruto.id)
+    assert.deepEqual(doLula.map((entry) => entry.grupo), ["segundo_turno"])
+  })
+
+  it("separa 1º e 2º turno da mesma rodada sem exigir nota entre turnos", () => {
+    const primeiro = rodada().scenarios[0]
+    const governador = rodada({ uf: "PI", registration: "PI-99990/2026", scenarios: [
+      { kind: "estimulado", question: null, results: [{ raw_label: "Rafael Fonteles", value_percent: 50 }, { raw_label: "Joel", value_percent: 30 }, { raw_label: "Brancos e nulos", value_percent: 8 }] },
+      { kind: "estimulado", turn: 2, question: null, results: [{ raw_label: "Rafael Fonteles", value_percent: 55 }, { raw_label: "Joel", value_percent: 35 }, { raw_label: "Brancos e nulos", value_percent: 10 }] },
+    ] })
+    const decisoes = { PI: { "Rafael Fonteles": "rafael-fonteles", "Joel": "joel-exemplo", "Brancos e nulos": null } }
+    const { problems, catalogos } = importarRodadas([governador], decisoes, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(problems, [])
+    const dataset = (catalogos.gov.datasets as { publication_scope: { geography_code: string }; pesquisas: { id: string; cenarios: { id: string; turn: number; label_raw: string }[] }[] }[])
+      .find((entry) => entry.publication_scope.geography_code === "PI")!
+    const poll = dataset.pesquisas.find((entry) => entry.id === "instituto-exemplo-pi-99990-2026")!
+    assert.deepEqual(poll.cenarios.map((cenario) => [cenario.id.replace(poll.id, ""), cenario.turn]), [["-1t", 1], ["-2t", 2]])
+    assert.match(poll.cenarios[1].label_raw, /no 2º turno;/)
+    // Two runoff scenarios in the same round still need distinct notes.
+    const dois = importarRodadas([rodada({ registration: "BR-99989/2026", scenarios: [{ ...primeiro, turn: 2, results: primeiro.results }, { ...primeiro, turn: 2 }] })], aliases, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(dois.problems.some((problem) => problem.includes("nota distinta")))
+  })
+
+  it("2º turno exige exatamente dois finalistas distintos, estimulado e fora do Senado", () => {
+    const linhas = rodada().scenarios[0].results
+    const comTurno = (results: typeof linhas, extra: Partial<RodadaColetada["scenarios"][number]> = {}) =>
+      rodada({ registration: "BR-99988/2026", scenarios: [{ kind: "estimulado", turn: 2, question: null, results, ...extra }] })
+    const tres = importarRodadas([comTurno([...linhas.slice(0, 2), { raw_label: "Ciro", value_percent: 5 }, linhas[2]])],
+      { BR: { ...aliases.BR, "Ciro": "ciro-gomes" } }, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(tres.problems.some((problem) => problem.includes("exatamente dois finalistas")))
+    // Terceiro nome com alias null não passa como "não candidato".
+    const ciroNulo = importarRodadas([comTurno([...linhas.slice(0, 2), { raw_label: "Ciro", value_percent: 5 }, linhas[2]])],
+      { BR: { ...aliases.BR, "Ciro": null } }, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(ciroNulo.problems.some((problem) => problem.includes('linha "Ciro" que não é finalista')))
+    // Alias vazio não conta como finalista.
+    const vazio = importarRodadas([comTurno([linhas[0], { raw_label: "Flávio", value_percent: 35 }, linhas[2]])],
+      { BR: { ...aliases.BR, "Flávio": "" } }, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(vazio.problems.some((problem) => problem.includes("encontrado(s) 1")))
+    const um = importarRodadas([comTurno([linhas[0], linhas[2], linhas[3]])], aliases, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(um.problems.some((problem) => problem.includes("encontrado(s) 1")))
+    const repetido = importarRodadas([comTurno([linhas[0], { raw_label: "Lula (PT)", value_percent: 1 }, linhas[2]])],
+      { BR: { ...aliases.BR, "Lula (PT)": "lula" } }, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(repetido.problems.some((problem) => problem.includes("dois finalistas distintos")), "duas grafias do mesmo candidato não contam como par")
+    const espontaneo = importarRodadas([comTurno(linhas.slice(0, 2), { kind: "espontaneo" })], aliases, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(espontaneo.problems.some((problem) => problem.includes("precisa ser estimulado")))
+    const turnoTres = importarRodadas([comTurno(linhas, { turn: 3 as never })], aliases, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(turnoTres.problems.some((problem) => problem.includes("turno inválido (3)")))
+    const senado = importarRodadas([rodada({ cargo: "Senador", uf: "SP", registration: "SP-99988/2026", scenarios: [
+      { kind: "estimulado", turn: 2, measure: "primeiro-voto", question: null, results: [{ raw_label: "Simone Tebet", value_percent: 30 }] },
+    ] })], { "SEN-SP": { "Simone Tebet": "tse-2026-250002551502" } }, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.ok(senado.problems.some((problem) => problem.includes("Senado não tem 2º turno")))
+  })
+
+  it("2º turno não reaproveita fonte que só declara o 1º turno", () => {
+    const datafolha = rodada({ uf: "PI", instituto: "Datafolha", registration: "PI-99986/2026", scenarios: [{ kind: "estimulado", turn: 2, question: null, results: [
+      { raw_label: "Rafael Fonteles", value_percent: 55 }, { raw_label: "Joel", value_percent: 35 }, { raw_label: "Brancos e nulos", value_percent: 10 },
+    ] }] })
+    const decisoes = { PI: { "Rafael Fonteles": "rafael-fonteles", "Joel": "joel-exemplo", "Brancos e nulos": null } }
+    const { problems, catalogos } = importarRodadas([datafolha], decisoes, "2026-10-06T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(problems, [])
+    const dataset = (catalogos.gov.datasets as { publication_scope: { geography_code: string }; pesquisas: { id: string; source_id: string }[] }[])
+      .find((entry) => entry.publication_scope.geography_code === "PI")!
+    const poll = dataset.pesquisas.find((entry) => entry.id === "datafolha-pi-99986-2026")!
+    assert.notEqual(poll.source_id, "datafolha-folha-globo-estaduais-2026", "a fonte compartilhada declara só rounds [1]")
+    const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(dataset), JSON.stringify(catalogos.govFontes))
+    assert.equal(catalogo.pesquisas.find((entry) => entry.id === poll.id)?.cenarios[0].turn, 2)
+  })
+
+  it("2º turno com finalista fora da coorte é bloqueado", () => {
+    const segundo = rodada({ registration: "BR-99987/2026", scenarios: [{ kind: "estimulado", turn: 2, question: null, results: rodada().scenarios[0].results }] })
+    const result = importarRodadas([segundo], aliases, "2026-10-06T12:00:00Z", carregarCatalogos(), coorteAtualizacaoDe([{
+      candidato_id: "candidato-flavio", slug: "flavio-bolsonaro", fase_eleitoral: "nao_eleito", fase_turno: 1, atualizacao_encerrada_em: "2026-10-04",
+    }]))
+    assert.equal(result.planned.length, 0)
+    assert.ok(result.problems.some((problem) => problem.includes("fora da coorte: flavio-bolsonaro")))
   })
 
   it("não duplica rodada já catalogada pelo mesmo registro", () => {
