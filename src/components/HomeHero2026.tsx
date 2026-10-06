@@ -26,16 +26,24 @@ const LINK_ESCURO =
 function RetratoFundo({ src, lado }: { src: string | null; lado: "esquerda" | "direita" }) {
   if (!src) return null
   const direcao = lado === "esquerda" ? "to right" : "to left"
-  const mascara = `linear-gradient(${direcao}, #000 0%, #000 72%, transparent 100%)`
+  // Duas máscaras somadas: some devagar para o centro (lateral) e, da metade da altura para baixo,
+  // vai sumindo até o fim do hero, sem corte seco onde acaba o corpo dos candidatos.
+  const lateral = `linear-gradient(${direcao}, #000 0%, #000 55%, transparent 100%)`
+  const vertical = "linear-gradient(to bottom, #000 0%, #000 42%, rgba(0,0,0,0.55) 68%, transparent 100%)"
   // Só do lg em diante: as fotos ocupam as bordas e o duelo fica no miolo, sem texto sobre o rosto.
   return (
     <div
       aria-hidden="true"
       className={`pointer-events-none absolute inset-y-0 hidden w-[26%] lg:block xl:w-[30%] ${lado === "esquerda" ? "left-0" : "right-0"}`}
-      style={{ maskImage: mascara, WebkitMaskImage: mascara }}
+      style={{
+        maskImage: `${lateral}, ${vertical}`,
+        WebkitMaskImage: `${lateral}, ${vertical}`,
+        maskComposite: "intersect",
+        WebkitMaskComposite: "source-in",
+      }}
       data-pf-hero-retrato={lado}
     >
-      <Image src={src} alt="" fill priority sizes="30vw" className="object-cover object-[center_15%]" />
+      <Image src={src} alt="" fill priority sizes="30vw" className="object-cover object-[center_8%]" />
     </div>
   )
 }
@@ -155,12 +163,10 @@ function DueloHero({
   const espectro = coresDosFinalistas(a.partido, b.partido)
   const cores: [string, string] = espectro ? [espectro.a.cor, espectro.b.cor] : ["#ffffff", "var(--gray-400)"]
   return (
-    <div data-pf-hero-duelo="Presidente">
+    <div className="relative" data-pf-hero-duelo="Presidente">
+      <RetratoFundo src={fotoDe(fotos, a.slug)} lado="esquerda" />
+      <RetratoFundo src={fotoDe(fotos, b.slug)} lado="direita" />
       <div className="relative">
-        <RetratoFundo src={fotoDe(fotos, a.slug)} lado="esquerda" />
-        <RetratoFundo src={fotoDe(fotos, b.slug)} lado="direita" />
-        {/* Escurece a base dos retratos: o duelo e a barra ficam sobre preto. */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black to-transparent" />
         <div className="relative mx-auto max-w-7xl px-5 pb-5 pt-[clamp(76px,9vh,96px)] text-center md:px-12">
           <h1
             className="hero-fade font-heading text-[clamp(3.5rem,min(10vw,12vh),8rem)] uppercase leading-[0.85] tracking-[-0.01em] text-white"
