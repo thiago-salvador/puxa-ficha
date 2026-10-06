@@ -25,6 +25,7 @@ import { RevelarBarras } from "@/components/RevelarBarras"
 import { HomeHero2026 } from "@/components/HomeHero2026"
 import { ResultadoPreviaBanner, TituloSecao } from "@/components/Resultado1TurnoPartes"
 import { Resultado1TurnoEstados } from "@/components/Resultado1TurnoEstados"
+import { GovernadoresEleitos1Turno } from "@/components/GovernadoresEleitos1Turno"
 import { EspectroEleitos1Turno } from "@/components/EspectroEleitos1Turno"
 import { UfResultadoSelector } from "@/components/UfResultadoSelector"
 import { LadoALado2Turno, Pesquisas2Turno } from "@/components/SegundoTurnoPresidente"
@@ -294,7 +295,8 @@ export default async function Home() {
 
           <div className="space-y-12">
             <Governadores2Turno candidatos={todosCandidatos} fotos={fotos} data={resultados} aliancas={aliancas} />
-            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["eleitos", "sem-dado"]} />
+            <GovernadoresEleitos1Turno ufs={ufs} data={resultados} fotos={fotos} resumos={todosResumos} />
+            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["sem-dado"]} />
           </div>
 
           <section id="senado-1turno" className="scroll-mt-24" aria-labelledby="senado-1turno-titulo">
