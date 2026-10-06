@@ -37,7 +37,8 @@ export function MeuEstadoDuelos({
   const [salvou, setSalvou] = useState(true)
   const uf = escolhaLocal !== undefined ? escolhaLocal : salva
   const escolher = (valor: string) => {
-    const nova = valor || null
+    // Só aceita uma das 27 UFs conhecidas; o valor do select não vira link nem storage sem passar por aqui.
+    const nova = estados.find((e) => e.uf === valor)?.uf ?? null
     setEscolhaLocal(nova)
     const ok = salvarUf(armazenamentoLocal(), nova)
     setSalvou(ok)
@@ -45,7 +46,8 @@ export function MeuEstadoDuelos({
   }
   const ordenados = ordenarComMeuEstado(duelos, uf)
   const temDuelo = uf ? duelos.some((d) => d.uf === uf) : false
-  const nomeEscolhido = estados.find((e) => e.uf === uf)?.nome
+  const estadoEscolhido = estados.find((e) => e.uf === uf)
+  const nomeEscolhido = estadoEscolhido?.nome
   return (
     <>
       <div className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-2" data-pf-meu-estado={uf ?? ""}>
@@ -65,10 +67,10 @@ export function MeuEstadoDuelos({
           </select>
         </label>
         <p role="status" aria-live="polite" className="text-[length:var(--text-caption)] font-medium text-muted-foreground empty:hidden">
-          {uf && !temDuelo && nomeEscolhido ? (
+          {estadoEscolhido && !temDuelo ? (
             <>
               {nomeEscolhido} não tem 2º turno para governador.{" "}
-              <Link href={`/1o-turno/${uf.toLowerCase()}`} className="inline-flex min-h-11 items-center gap-1 font-bold text-foreground underline underline-offset-4">
+              <Link href={`/1o-turno/${estadoEscolhido.uf.toLowerCase()}`} className="inline-flex min-h-11 items-center gap-1 font-bold text-foreground underline underline-offset-4">
                 Ver o resultado <ArrowRight className="size-3" aria-hidden="true" />
               </Link>
             </>
