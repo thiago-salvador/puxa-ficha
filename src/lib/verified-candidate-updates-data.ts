@@ -1,5 +1,6 @@
 import "server-only"
 import { createServerSupabaseClient } from "@/lib/supabase"
+import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 import { filtrarAtualizacoesPorSlugs, isVerifiedCandidateUpdate, type VerifiedUpdatesResource } from "@/lib/verified-candidate-updates"
 
 /**
@@ -13,12 +14,12 @@ export async function getVerifiedCandidateUpdates({ slugs }: { slugs?: readonly 
     let query = createServerSupabaseClient({ revalidate: 300 })
       .from("verified_candidate_updates_public")
       .select("id,candidate_slug,candidate_name,field,year,before_value,after_value,source_url,detected_at")
+      .abortSignal(supabaseQueryTimeoutSignal())
     if (slugs) query = query.in("candidate_slug", [...slugs])
     const { data, error } = await query
       .order("detected_at", { ascending: false })
       .order("id", { ascending: false })
       .limit(6)
-      .abortSignal(AbortSignal.timeout(5000))
     if (error || !data || !data.every(isVerifiedCandidateUpdate)) {
       return { status: "unavailable", updates: [] }
     }

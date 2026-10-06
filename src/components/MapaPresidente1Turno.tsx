@@ -97,7 +97,7 @@ export function MapaPresidente1Turno({ data }: { data: Pick<Resultados1Turno, "p
               <ChevronDown className="size-4 group-open:hidden" aria-hidden="true" />
               <ChevronUp className="hidden size-4 group-open:block" aria-hidden="true" />
             </summary>
-            <div className="max-h-[28rem] overflow-auto pb-3">
+            <div className="relative max-h-[28rem] overflow-auto pb-3">
               <table className="w-full text-left text-[length:var(--text-caption)] tabular-nums">
                 <caption className="sr-only">Presidente, 1º turno: mais votado, percentuais dos válidos dos dois finalistas e margem em cada estado</caption>
                 <thead className="sticky top-0 bg-background">
