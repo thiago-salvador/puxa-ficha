@@ -12,11 +12,12 @@ const ufs = getEstadoUFs()
 const eleitos = (data.disputas ?? []).filter((d) => d.cargo === "Governador" && d.candidatos.some((c) => c.fase === "eleito"))
 
 describe("governadores eleitos no 1º turno", () => {
-  it("agrupa os eleitos por região e abre no maior eleitorado, sem números de ficha quando não há resumo", () => {
+  it("lista os eleitos em ordem alfabética e abre no maior eleitorado, sem números de ficha quando não há resumo", () => {
     const html = renderToStaticMarkup(<GovernadoresEleitos1Turno ufs={ufs} data={data} resumos={null} />)
     assert.equal((html.match(/data-pf-eleito-uf=/g) ?? []).length, eleitos.length)
-    const regioes = [...html.matchAll(/data-pf-eleitos-regiao="([^"]+)"/g)].map((m) => m[1])
-    assert.deepEqual(regioes, ["Norte", "Nordeste", "Centro-Oeste", "Sudeste", "Sul"].filter((r) => regioes.includes(r)))
+    const ordem = [...html.matchAll(/data-pf-eleito-uf="([a-z]{2})"/g)].map((m) => m[1])
+    assert.equal(ordem[0], "al", "ordem alfabética pelo nome do estado")
+    assert.match(html, />JHC<\/span>/, "sigla sem vogal fica em maiúsculas")
     const maior = [...eleitos].sort((a, b) => (b.totais.eleitorado ?? 0) - (a.totais.eleitorado ?? 0))[0].uf.toLowerCase()
     assert.match(html, new RegExp(`data-pf-eleito-card="${maior}"`))
     assert.match(html, /data-pf-eleito-segundo/)

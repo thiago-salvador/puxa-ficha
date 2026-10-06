@@ -1,77 +1,66 @@
 "use client"
 
-// cspell:ignore regiao regioes
-
-import { Fragment, useState, type ReactNode } from "react"
+import { Fragment, useState, type CSSProperties, type ReactNode } from "react"
 import { ChevronRight } from "lucide-react"
 
-export interface RegiaoEleitos {
-  nome: string
-  /** "Amapá, Pará, Rondônia e Roraima". */
-  estados: string
-  ufs: string[]
+export interface LinhaEleito {
+  uf: string
+  rotulo: string
+  conteudo: ReactNode
 }
 
 /**
  * Seleção de "Governadores eleitos no 1º turno": linhas e cards chegam prontos
- * do servidor; o cliente só guarda a UF aberta. No desktop o card fica fixo à
- * direita; no celular abre logo abaixo da linha escolhida.
+ * do servidor; o cliente só guarda a UF aberta. No desktop, duas colunas em
+ * ordem alfabética com o card ao lado, tudo na altura de uma tela; no celular,
+ * o card abre logo abaixo da linha escolhida.
  */
 export function GovernadoresEleitosInterativo({
-  regioes,
   linhas,
   cards,
   inicial,
 }: {
-  regioes: RegiaoEleitos[]
-  linhas: Record<string, { rotulo: string; conteudo: ReactNode }>
+  linhas: LinhaEleito[]
   cards: Record<string, ReactNode>
   inicial: string
 }) {
   const [aberta, setAberta] = useState(inicial)
+  const metade = Math.ceil(linhas.length / 2)
+  const colunas = [linhas.slice(0, metade), linhas.slice(metade)]
   return (
-    <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] xl:grid-cols-[minmax(0,1fr)_minmax(0,24rem)]">
-      <div className="min-w-0 border-b border-border">
-        {regioes.map((r) => (
-          <div key={r.nome} className="grid gap-x-8 gap-y-3 border-t border-border py-6 md:grid-cols-[10rem_minmax(0,1fr)]" data-pf-eleitos-regiao={r.nome}>
-            <div>
-              <h3 className="font-heading text-[length:var(--text-heading)] uppercase leading-none text-foreground">{r.nome}</h3>
-              <p className="mt-2 text-[length:var(--text-caption)] font-medium leading-snug text-muted-foreground">{r.estados}</p>
-              <p className="mt-2 text-[length:var(--text-caption)] font-bold text-foreground">
-                {r.ufs.length} {r.ufs.length === 1 ? "estado" : "estados"}
-              </p>
-            </div>
-            <ul className="grid gap-x-6 sm:grid-cols-2">
-              {r.ufs.map((uf) => {
-                const ativa = uf === aberta
-                return (
-                  <Fragment key={uf}>
-                    <li data-pf-eleito-uf={uf.toLowerCase()}>
-                      <button
-                        type="button"
-                        aria-pressed={ativa}
-                        aria-label={`${linhas[uf].rotulo}. Ver detalhes`}
-                        onClick={() => setAberta(uf)}
-                        className={`flex w-full min-w-0 items-center gap-3 rounded-[6px] px-2 py-2.5 text-left transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground ${ativa ? "bg-[var(--gray-100)]" : "hover:bg-[var(--gray-50)]"}`}
-                      >
-                        {linhas[uf].conteudo}
-                        <ChevronRight className={`size-4 shrink-0 ${ativa ? "text-foreground" : "text-muted-foreground"}`} aria-hidden="true" />
-                      </button>
+    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,19rem)] lg:gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(0,21rem)] xl:gap-8">
+      <div className="grid min-w-0 lg:grid-cols-2 lg:gap-x-6 xl:gap-x-8" style={{ "--pf-linhas": metade } as CSSProperties}>
+        {colunas.map((coluna, i) => (
+          <ul key={i} className={`min-w-0 ${i === 1 ? "lg:border-l lg:border-border lg:pl-6 xl:pl-8" : ""}`.trim()}>
+            {coluna.map((l) => {
+              const ativa = l.uf === aberta
+              return (
+                <Fragment key={l.uf}>
+                  <li className="border-b border-border" data-pf-eleito-uf={l.uf.toLowerCase()}>
+                    <button
+                      type="button"
+                      aria-pressed={ativa}
+                      aria-label={`${l.rotulo}. Ver detalhes`}
+                      onClick={() => setAberta(l.uf)}
+                      className={`my-0.5 flex w-full min-w-0 items-center gap-2.5 rounded-[6px] px-1.5 py-1.5 lg:py-0.5 text-left transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground lg:h-[clamp(2.5rem,calc((100svh-19.5rem)/var(--pf-linhas)-0.3rem),4.5rem)] ${ativa ? "bg-[var(--gray-100)]" : "hover:bg-[var(--gray-50)]"}`}
+                    >
+                      {l.conteudo}
+                      <ChevronRight className={`size-4 shrink-0 ${ativa ? "text-foreground" : "text-muted-foreground"}`} aria-hidden="true" />
+                    </button>
+                  </li>
+                  {ativa && (
+                    <li className="py-3 lg:hidden" data-pf-eleito-card-celular={l.uf.toLowerCase()}>
+                      {cards[l.uf]}
                     </li>
-                    {ativa && (
-                      <li className="pb-3 pt-1 sm:col-span-2 lg:hidden" data-pf-eleito-card-celular={uf.toLowerCase()}>
-                        {cards[uf]}
-                      </li>
-                    )}
-                  </Fragment>
-                )
-              })}
-            </ul>
-          </div>
+                  )}
+                </Fragment>
+              )
+            })}
+          </ul>
         ))}
       </div>
       <aside className="hidden min-w-0 lg:block" aria-live="polite" aria-label="Detalhe do estado escolhido">
-        <div className="sticky top-28">{cards[aberta]}</div>
+        {cards[aberta]}
       </aside>
     </div>
   )
