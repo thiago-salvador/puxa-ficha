@@ -229,7 +229,7 @@ describe("ressalva de votos anulados sub judice", () => {
 
 describe("renderização", () => {
   it("seção agrupa os eliminados pela posição, com o % de cada grupo e o aviso de que apoio não transfere votos", () => {
-    const html = renderToStaticMarkup(<Aliancas2TurnoSecao aliancas={getAliancas2Turno(data)!} disputa={presidente} data={data} />)
+    const html = renderToStaticMarkup(<Aliancas2TurnoSecao aliancas={getAliancas2Turno(data)!} disputa={presidente} />)
     assert.match(html, /Quem apoia quem/)
     assert.match(html, /Apoio declarado não transfere votos\./)
     assert.match(html, /Sem declaração encontrada não significa neutralidade\./)
@@ -240,7 +240,7 @@ describe("renderização", () => {
     const somaGrupos = pcts.reduce((n, p) => n + Number(p.replace("%", "").replace(",", ".")), 0)
     assert.ok(Math.abs(somaGrupos - 7.81) < 0.03, `soma dos grupos ${somaGrupos}`)
     assert.match(html, /Consulta em 05\/10, 21h50/)
-    assert.match(html, /data-pf-meu-candidato-saiu/)
+    assert.doesNotMatch(html, /data-pf-meu-candidato-saiu/)
     assert.doesNotMatch(html, /vão para|migram|transferem para/i)
   })
 

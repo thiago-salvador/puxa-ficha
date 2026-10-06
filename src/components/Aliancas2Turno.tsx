@@ -6,7 +6,6 @@ import {
   formatarColeta,
   formatarDiaDeclaracao,
   itemDoEliminado,
-  montarMeuCandidatoSaiu,
   rotuloPosicao,
   type Aliancas2Turno,
   type ChaveSegmento,
@@ -15,12 +14,11 @@ import {
 import { nomeLegivel } from "@/lib/compartilhar-duelo"
 import { corDoPartido, coresDosFinalistas } from "@/lib/cores-finalistas"
 import { safeHref } from "@/lib/utils"
-import { formatarPercentual, type DisputaResultado1Turno, type Resultados1Turno } from "@/lib/resultados-1turno"
+import { formatarPercentual, type DisputaResultado1Turno } from "@/lib/resultados-1turno"
 import { TituloSecao } from "@/components/Resultado1TurnoPartes"
 import { HACHURA } from "@/components/SegundoTurnoPresidente"
 import { SlashDivider } from "@/components/SlashDivider"
 import { FonteDeclaracao } from "@/components/FonteDeclaracao"
-import { MeuCandidatoSaiu } from "@/components/MeuCandidatoSaiu"
 
 const AVISO_NEUTRALIDADE = "Sem declaração encontrada não significa neutralidade."
 const REGISTROS_URL = "https://github.com/thiago-salvador/puxa-ficha/blob/main/src/data/aliancas-2turno-2026.json"
@@ -82,11 +80,9 @@ function EntradaDeclarada({ item, nome, partido, mostrarPosicao, chave }: { item
 export function Aliancas2TurnoSecao({
   aliancas,
   disputa,
-  data,
 }: {
   aliancas: Aliancas2Turno
   disputa: DisputaResultado1Turno
-  data: Resultados1Turno
 }) {
   const barra = barraEliminados(aliancas, disputa)
   if (!barra) return null
@@ -108,7 +104,6 @@ export function Aliancas2TurnoSecao({
   const partidos = aliancas.itens.filter((i) => i.tipo === "partido" && i.disputa === "Presidente")
   const partidosDeclarados = partidos.filter((i) => i.posicao !== "sem_declaracao")
   const partidosSem = partidos.filter((i) => i.posicao === "sem_declaracao")
-  const meuCandidato = montarMeuCandidatoSaiu(aliancas, data)
 
   const listaDeclarados = (k: "a" | "b" | "neutro", vazio: string) =>
     grupos[k].length === 0 ? (
@@ -189,12 +184,6 @@ export function Aliancas2TurnoSecao({
           </div>
         </div>
       </div>
-
-      {meuCandidato && (
-        <div className="mt-8 max-w-2xl">
-          <MeuCandidatoSaiu dados={meuCandidato} />
-        </div>
-      )}
 
       <details className="group mt-6 text-[length:var(--text-caption)] font-medium leading-relaxed text-muted-foreground" data-pf-aliancas-nota>
         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center font-bold text-foreground underline decoration-dotted underline-offset-4 [&::-webkit-details-marker]:hidden">

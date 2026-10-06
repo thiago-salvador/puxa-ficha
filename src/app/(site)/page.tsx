@@ -271,7 +271,7 @@ export default async function Home() {
               profissoes={profissoesFinalistas}
             />
           )}
-          {presidente && aliancas && <Aliancas2TurnoSecao aliancas={aliancas} disputa={presidente} data={resultados} />}
+          {presidente && aliancas && <Aliancas2TurnoSecao aliancas={aliancas} disputa={presidente} />}
           <div>
             {finalistasPresidente && (
               <Pesquisas2Turno
