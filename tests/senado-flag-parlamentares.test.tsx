@@ -221,8 +221,9 @@ describe("flag do Senado nas superfícies públicas restantes", () => {
       for (const flag of [false, true]) {
         const items = buildShortcutItems(flag)
         assert.equal(items.find((item) => item.href === "/parlamentares"), undefined)
-        assert.equal(items.find((item) => item.href === "/")?.title, "1º Turno")
-        assert.equal(items.find((item) => item.href === "/2o-turno")?.title, "2º Turno")
+        assert.equal(items.find((item) => item.href === "/")?.title, "2º Turno")
+        assert.equal(items.find((item) => item.href === "/1o-turno")?.title, "1º Turno")
+        assert.equal(items.find((item) => item.href === "/2o-turno"), undefined)
       }
       assert.deepEqual(buildShortcutItems(false), buildShortcutItems(true))
     })

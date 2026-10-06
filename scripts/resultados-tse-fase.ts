@@ -4,7 +4,8 @@
  *   plano   Lê o resultado oficial (resultados.tse.jus.br), cruza com as fichas
  *           no ar e escreve o plano. Só leitura: nunca grava no banco.
  *   snapshot Grava src/data/resultados-1turno-2026.json (votos, % e situação de
- *           Presidente, Governador e Senador) a partir dos 55 arquivos do TSE.
+ *           Presidente, Governador e Senador) a partir dos 55 arquivos do TSE,
+ *           mais os 27 arquivos de Presidente por UF (mapa da home, opcional).
  *           Recusa gravar se algum arquivo faltar ou não estiver totalizado.
  *           `--previa` aceita apuração em andamento e grava status "previa",
  *           só para conferir layout localmente (o teste de contrato barra o commit).
@@ -31,8 +32,8 @@ import { fileURLToPath, pathToFileURL } from "node:url"
 import { DATAS_TURNOS_2026, type TurnoEleitoral } from "../src/lib/coorte-atualizacao"
 import { TABELA_FASE_ELEITORAL, isTabelaFaseAusente } from "./lib/coorte-atualizacao"
 import { gerarArquivosFase } from "./lib/fase-eleitoral-migration"
-import { alvosDasBancadas, alvosDoSnapshot, lerBancada, montarSnapshot } from "./lib/resultados-snapshot"
-import type { BancadaResultado1Turno } from "../src/lib/resultados-1turno"
+import { alvosDasBancadas, alvosDoSnapshot, alvosPresidentePorUf, finalistasDoBrasil, lerBancada, lerPresidenteUf, montarSnapshot } from "./lib/resultados-snapshot"
+import type { BancadaResultado1Turno, PresidenteUf1Turno } from "../src/lib/resultados-1turno"
 import {
   CICLO_2026,
   TSE_CONFIG_ELEICOES_URL,
@@ -239,6 +240,29 @@ async function comandoSnapshot(args: string[]): Promise<number> {
   const relDir = resolve("reports/resultados-tse")
   mkdirSync(relDir, { recursive: true })
   writeFileSync(join(relDir, `snapshot-relatorio-turno-1${previa ? "-previa" : ""}.json`), `${JSON.stringify({ ...relatorio, bancadas_recusadas: bancadasRecusadas }, null, 2)}\n`)
+  // Presidente por UF (mapa da home): opcional como as bancadas; UF recusada fica de fora e vira "sem dado".
+  const finalistas = snapshot ? finalistasDoBrasil(snapshot) : null
+  if (snapshot && finalistas) {
+    const porUf: PresidenteUf1Turno[] = []
+    for (const alvo of alvosPresidentePorUf(eleicoes)) {
+      let lida: PresidenteUf1Turno | string
+      try {
+        if (dirLocal) {
+          const caminho = join(dirLocal, basename(new URL(alvo.url).pathname))
+          lida = existsSync(caminho) ? lerPresidenteUf(alvo, readFileSync(caminho, "utf8"), finalistas) : "arquivo local ausente"
+        } else {
+          const r = await baixar(alvo.url)
+          lida = r.status === 200 ? lerPresidenteUf(alvo, r.corpo, finalistas) : `HTTP ${r.status}`
+        }
+      } catch (error) {
+        lida = error instanceof Error ? error.message : String(error)
+      }
+      if (typeof lida === "string") console.log(`::warning::Presidente ${alvo.abrangencia} recusado: ${lida}`)
+      else porUf.push(lida)
+    }
+    snapshot.presidente_por_uf = porUf.sort((a, b) => a.uf.localeCompare(b.uf))
+    console.log(`presidente por UF: ${porUf.length} de ${alvosPresidentePorUf(eleicoes).length}`)
+  }
   if (!snapshot) {
     console.log(`::warning::snapshot não gravado: ${relatorio.recusados.length} arquivo(s) recusado(s) ou totalização não final`)
     for (const r of relatorio.recusados.slice(0, 20)) console.log(`- ${r.chave}: ${r.motivo}`)

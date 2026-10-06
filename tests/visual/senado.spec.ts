@@ -11,12 +11,13 @@ test.describe("superfície local do Senado", () => {
     await expect(page.locator('a[href="/senado"]')).toHaveCount(0)
 
     // A home não leva mais a Parlamentares; a URL segue publicada: /parlamentares → mapa de senadores → UF.
-    for (const rota of ["/", "/2o-turno"]) {
+    for (const rota of ["/", "/1o-turno"]) {
       await page.goto(rota, { waitUntil: "domcontentloaded" })
-      const turnos = page.getByRole("navigation", { name: "Turnos da eleição" })
-      await expect(turnos.getByRole("link")).toHaveCount(1)
+      // A faixa "1º Turno | 2º Turno" saiu em 05/10: a home é a página única da eleição.
+      await expect(page.getByRole("navigation", { name: "Turnos da eleição" })).toHaveCount(0)
       await expect(page.locator('a[href="/senado"]')).toHaveCount(0)
-      await expect(page.locator('a[href="/parlamentares"]')).toHaveCount(0)
+      // /1o-turno é o arquivo: a home antiga mantém a aba Parlamentares; a home do 2º turno não leva lá.
+      await expect(page.locator('a[href="/parlamentares"]')).toHaveCount(rota === "/1o-turno" ? 1 : 0)
     }
     await page.goto("/parlamentares", { waitUntil: "domcontentloaded" })
     await expect(page).toHaveURL(/\/parlamentares$/)

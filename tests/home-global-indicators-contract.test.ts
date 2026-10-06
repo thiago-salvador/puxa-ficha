@@ -2,7 +2,7 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
-const homeSource = readFileSync("src/app/(site)/2o-turno/page.tsx", "utf8")
+const homeSource = readFileSync("src/app/(site)/page.tsx", "utf8")
 const heroMetricsSource = readFileSync("src/lib/home-hero-metrics.ts", "utf8")
 
 describe("home global indicators contract", () => {
@@ -22,7 +22,7 @@ describe("home global indicators contract", () => {
     assert.match(heroMetricsSource, /shouldExposeCargo\(cargo, env\)/)
   })
 
-  it("keeps grid, comparator, and JSON-LD on the presidential cohort", () => {
+  it("keeps the finalists comparison, comparator, and JSON-LD on the presidential cohort", () => {
     assert.match(
       homeSource,
       /resumo\.candidato\.cargo_disputado === "Presidente"/
@@ -31,10 +31,13 @@ describe("home global indicators contract", () => {
       homeSource,
       /getCandidatosComparaveisResource\("Presidente"\)/
     )
-    // Grade e JSON-LD usam o recorte da coorte presidencial (finalistas ou vencedor
-    // com resultado publicado; todos sem resultado).
+    // JSON-LD e o link do comparador usam o recorte da coorte presidencial (finalistas
+    // com resultado publicado; todos sem resultado). Desde 05/10 a grade genérica deu
+    // lugar ao duelo e ao lado a lado dos finalistas, montados com os mesmos mapas.
     assert.match(homeSource, /recortarFinalistas\(candidatos\)/)
     assert.match(homeSource, /itemListElement: candidatosGrade\.slice\(0, 12\)/)
-    assert.match(homeSource, /<DeferredCandidatoGrid\s+candidatos=\{candidatosGrade\}/)
+    assert.match(homeSource, /linkCompararFinalistas\(candidatosGrade\)/)
+    assert.match(homeSource, /buildCandidatoGridMaps\(resumosPresidencia\)/)
+    assert.match(homeSource, /<LadoALado2Turno[\s\S]*?processos=\{processos\}[\s\S]*?\/>/)
   })
 })

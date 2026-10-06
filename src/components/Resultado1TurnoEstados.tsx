@@ -142,7 +142,8 @@ function SenadoEstado({ estado, fotos }: { estado: EstadoResumo; fotos?: FotosCa
       {eleitos.length === 0 || !disputa ? (
         <p className="text-[length:var(--text-caption)] text-muted-foreground">Nenhum eleito no resultado do TSE.</p>
       ) : (
-        <ul className="grid min-w-0 grid-cols-2 gap-3" aria-label={`Eleitos ao Senado em ${estado.nome}`}>
+        // Uma coluna quando a célula do estado é estreita (celular e md): partido e % não quebram no meio da palavra.
+        <ul className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2" aria-label={`Eleitos ao Senado em ${estado.nome}`}>
           {eleitos.map((c) => (
             <li key={c.sq} className="flex min-w-0 items-center gap-2">
               <FotoCandidato candidato={c} fotos={fotos} tamanho={32} className="size-8" initialsClassName="text-[length:var(--text-eyebrow)]" />
@@ -162,15 +163,25 @@ function SenadoEstado({ estado, fotos }: { estado: EstadoResumo; fotos?: FotosCa
   )
 }
 
-/** Governador e Senado por estado: 2º turno, eleitos no 1º turno e senadores eleitos. */
+export type BlocoEstados1Turno = "segundo-turno" | "eleitos" | "sem-dado" | "senado"
+
+const TODOS_OS_BLOCOS: readonly BlocoEstados1Turno[] = ["segundo-turno", "eleitos", "sem-dado", "senado"]
+
+/**
+ * Governador e Senado por estado: 2º turno, eleitos no 1º turno e senadores
+ * eleitos. `blocos` escolhe o que entra; a home já mostra os duelos estaduais em
+ * outro componente e divide Governador e Senado em seções próprias.
+ */
 export function Resultado1TurnoEstados({
   ufs,
   data,
   fotos,
+  blocos = TODOS_OS_BLOCOS,
 }: {
   ufs: string[]
   data: Resultados1Turno
   fotos?: FotosCandidatos
+  blocos?: readonly BlocoEstados1Turno[]
 }) {
   const estados: EstadoResumo[] = ufs
     .map((uf) => ({
@@ -186,7 +197,7 @@ export function Resultado1TurnoEstados({
 
   return (
     <div className="space-y-12">
-      {segundoTurno.length > 0 && (
+      {blocos.includes("segundo-turno") && segundoTurno.length > 0 && (
         <section aria-labelledby="estados-2turno">
           <SubTitulo id="estados-2turno">2º turno para governador</SubTitulo>
           <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
@@ -200,7 +211,7 @@ export function Resultado1TurnoEstados({
         </section>
       )}
 
-      {eleitos.length > 0 && (
+      {blocos.includes("eleitos") && eleitos.length > 0 && (
         <section aria-labelledby="estados-eleitos">
           <SubTitulo id="estados-eleitos">Governador eleito no 1º turno</SubTitulo>
           <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
@@ -214,7 +225,7 @@ export function Resultado1TurnoEstados({
         </section>
       )}
 
-      {semDado.length > 0 && (
+      {blocos.includes("sem-dado") && semDado.length > 0 && (
         <section aria-labelledby="estados-sem-dado">
           <SubTitulo id="estados-sem-dado">Sem definição no arquivo do TSE</SubTitulo>
           <ul className="mt-4 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -225,17 +236,19 @@ export function Resultado1TurnoEstados({
         </section>
       )}
 
-      <section aria-labelledby="estados-senado">
-        <SubTitulo id="estados-senado">Senado: eleitos por estado</SubTitulo>
-        <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-          Duas vagas por estado, decididas no 1º turno.
-        </p>
-        <ul className="mt-4 grid gap-x-8 border-b border-border md:grid-cols-2 xl:grid-cols-3">
-          {estados.map((e) => (
-            <SenadoEstado key={e.uf} estado={e} fotos={fotos} />
-          ))}
-        </ul>
-      </section>
+      {blocos.includes("senado") && (
+        <section aria-labelledby="estados-senado">
+          <SubTitulo id="estados-senado">Senado: eleitos por estado</SubTitulo>
+          <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
+            Duas vagas por estado, decididas no 1º turno.
+          </p>
+          <ul className="mt-4 grid gap-x-8 border-b border-border md:grid-cols-2 xl:grid-cols-3">
+            {estados.map((e) => (
+              <SenadoEstado key={e.uf} estado={e} fotos={fotos} />
+            ))}
+          </ul>
+        </section>
+      )}
     </div>
   )
 }

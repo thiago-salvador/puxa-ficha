@@ -100,6 +100,14 @@ export const puxaFichaNextConfig: NextConfig = {
         permanent: true,
       },
       {
+        // O 2º turno virou a home única em 05/10/2026. A página /2o-turno é estática e o
+        // permanentRedirect dela só vira meta refresh com status 200; aqui sai um 308 de verdade.
+        source: "/2o-turno",
+        destination: "/",
+        // Temporário: /2o-turno pode voltar como página própria depois de 25/10, e 308 fica preso no cache.
+        permanent: false,
+      },
+      {
         // Endereço curto e estável do media kit; o arquivo pode ser trocado sem mudar o link.
         source: "/media-kit",
         destination: "/imprensa/media-kit.pdf",

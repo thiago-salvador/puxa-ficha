@@ -12,6 +12,7 @@ import {
 import type { FotosCandidatos } from "@/lib/resultados-1turno-vista"
 import { SlashDivider } from "@/components/SlashDivider"
 import { RevelarBarras } from "@/components/RevelarBarras"
+import { RessalvaSubJudice } from "@/components/RessalvaSubJudice"
 import { DueloSegundoTurno, SenadoresEleitos, VencedorDestaque } from "@/components/Resultado1TurnoDestaques"
 import {
   ResultadoFonte,
@@ -76,7 +77,7 @@ export function Resultado1TurnoUf({
             className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground transition-colors hover:text-foreground"
           >
             <ArrowLeft className="size-3" aria-hidden="true" />
-            Resultado do 1º turno no Brasil
+            Arquivo do 1º turno
           </Link>
           <h1
             className="mt-4 font-heading uppercase leading-none text-foreground [text-wrap:balance]"
@@ -90,6 +91,7 @@ export function Resultado1TurnoUf({
                 Governador
               </p>
               <DueloSegundoTurno disputa={governador} fotos={fotos} tamanho="medio" />
+              <RessalvaSubJudice disputa={governador} className="mt-4 max-w-prose" />
               <VencedorDestaque disputa={governador} fotos={fotos} />
             </div>
           )}
@@ -146,7 +148,7 @@ export function Resultado1TurnoUf({
                 className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body-sm)] font-bold underline underline-offset-4"
               >
                 <ArrowLeft className="size-4" aria-hidden="true" />
-                Voltar ao resultado do Brasil
+                Voltar ao arquivo do 1º turno
               </Link>
             </p>
           </>

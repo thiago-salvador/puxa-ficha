@@ -59,8 +59,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
   const primeiroTurnoUrls = [
     {
-      // A home (/) já é o resultado do 1º turno; /1o-turno só redireciona.
-      url: `${SITE_ORIGIN}/2o-turno`,
+      // A home (/) é a página única da eleição; /1o-turno é o arquivo do 1º turno e /2o-turno só redireciona.
+      url: `${SITE_ORIGIN}/1o-turno`,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },

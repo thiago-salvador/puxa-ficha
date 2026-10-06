@@ -26,7 +26,7 @@ const serverSnapshot = () => false
 function PollAvatar({ result, candidates }: { result: PollResult; candidates: PollCandidate[] }) {
   const candidate = result.matchStatus === "exact_alias" ? candidates.find(item => item.slug === result.candidateSlug) : undefined
   return <span className={styles.avatar} aria-hidden="true">
-    {candidate?.foto_url ? <CandidatePhoto key={candidate.foto_url} src={candidate.foto_url} name={candidate.nome_urna} alt="" width={36} height={36} sizes="36px" className={styles.avatarPhoto} initialsClassName="text-xs" /> : <UserRound size={20} />}
+    {candidate?.foto_url ? <CandidatePhoto key={candidate.foto_url} src={candidate.foto_url} name={candidate.nome_urna} alt="" width={36} height={36} sizes="36px" className={candidate.foto_pb ? `${styles.avatarPhoto} grayscale` : styles.avatarPhoto} initialsClassName="text-xs" /> : <UserRound size={20} />}
   </span>
 }
 

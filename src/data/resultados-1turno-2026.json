@@ -2,7 +2,7 @@
   "versao": 1,
   "turno": 1,
   "status": "final",
-  "gerado_em": "2026-10-05T11:29:41.682Z",
+  "gerado_em": "2026-10-06T01:12:44.245Z",
   "ciclo": "ele2026",
   "eleicoes": {
     "federal": "6257",
@@ -13,12 +13,12 @@
       "cargo": "Presidente",
       "uf": "BR",
       "vagas": 1,
-      "fechamento_oficial": false,
-      "fase_calculada": true,
+      "fechamento_oficial": true,
+      "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/br/br-c0001-e006257-u.json",
-        "sha256": "07c3cc03e99e317ea0b551e3fe548b9b9cbd38210fb44630dc1c84cdbc68ebde",
-        "gerado_tse": "05/10/2026 02:59:31"
+        "sha256": "2866703eb4fc0ad6f17f0e081a00ab1175490b0786325e700cff1d8b40d25bca",
+        "gerado_tse": "05/10/2026 12:51:47"
       },
       "totais": {
         "secoes": 499248,
@@ -1815,8 +1815,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ba/ba-c0003-e006259-u.json",
-        "sha256": "c2589b9b89873051971c54b782ffc2b70936061dce512515e3ff03d0e92a0671",
-        "gerado_tse": "05/10/2026 00:51:54"
+        "sha256": "b2620f5ff5f67b38796a31e3929df4b78eef9115445176072dbcf4a4faa4ec9e",
+        "gerado_tse": "05/10/2026 11:41:49"
       },
       "totais": {
         "secoes": 35476,
@@ -1969,8 +1969,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ba/ba-c0005-e006259-u.json",
-        "sha256": "c913d9124780c835a1c921c15402a761a25c9fddd6e0581b260ca95a99e66f9a",
-        "gerado_tse": "05/10/2026 00:51:54"
+        "sha256": "83bcfbed2eaea2e49afbe161ae162ef1a1c9359cb7e309ff89d605e34cfc638b",
+        "gerado_tse": "05/10/2026 11:41:50"
       },
       "totais": {
         "secoes": 35476,
@@ -4666,8 +4666,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/mg/mg-c0003-e006259-u.json",
-        "sha256": "dd892b7bab0125d6142d0628a3b3c3d8d610cc18fb2aa3fbb13cddc42af01d1c",
-        "gerado_tse": "05/10/2026 00:51:57"
+        "sha256": "4a610ce364c51eb467b5a0689acb2b3b39eaeb62e1cf3aaae18040fc8dd0a546",
+        "gerado_tse": "05/10/2026 11:45:42"
       },
       "totais": {
         "secoes": 52062,
@@ -4925,8 +4925,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/mg/mg-c0005-e006259-u.json",
-        "sha256": "5239b0872679cf14c7657ab62e80dfd739b9dbafc1607094e9113664886be9ac",
-        "gerado_tse": "05/10/2026 00:51:58"
+        "sha256": "3c141db59cfd2ca69aa6afb9a96a63399a3f6f4e9ad3e7a92523571a562070d2",
+        "gerado_tse": "05/10/2026 11:45:45"
       },
       "totais": {
         "secoes": 52062,
@@ -6269,8 +6269,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pa/pa-c0003-e006259-u.json",
-        "sha256": "7917ab9d27658b56fc7be873853492370c4c950a23a11ed73a3caa61fbd747fd",
-        "gerado_tse": "04/10/2026 23:56:32"
+        "sha256": "71ebf989c74459ef6cf7d68a00067aa72465c3106820b51895ed80e76ddce1c9",
+        "gerado_tse": "05/10/2026 11:42:28"
       },
       "totais": {
         "secoes": 20827,
@@ -6423,8 +6423,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pa/pa-c0005-e006259-u.json",
-        "sha256": "28d22a3d6d47203fddb6b51beb261296478533fb630a3ab46c9f2bbb2c3b5440",
-        "gerado_tse": "04/10/2026 23:56:32"
+        "sha256": "292e4f0804aac92e6c909290e6a4270e9032a108b60ee616b38d499c5a720c01",
+        "gerado_tse": "05/10/2026 11:42:29"
       },
       "totais": {
         "secoes": 20827,
@@ -8381,8 +8381,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pr/pr-c0003-e006259-u.json",
-        "sha256": "ae23fec6d44594411ee5ecc5f098e19d6f27c3c55419f2bfd72d053207214ee2",
-        "gerado_tse": "04/10/2026 22:44:22"
+        "sha256": "9300e2f16270e51d0669cdba3e4a36de5462f9574269ced991cfa0bb382ed81e",
+        "gerado_tse": "05/10/2026 11:46:40"
       },
       "totais": {
         "secoes": 27142,
@@ -8577,8 +8577,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pr/pr-c0005-e006259-u.json",
-        "sha256": "360057504b254af7d185d4ec0e335f4e00e3775c9855ec5bb5e1f2927be5c227",
-        "gerado_tse": "04/10/2026 22:44:22"
+        "sha256": "70f9b06532672acbaf24f156c809c65655a5934c2bf90931875512dd2ccfe9c2",
+        "gerado_tse": "05/10/2026 11:46:40"
       },
       "totais": {
         "secoes": 27142,
@@ -12480,8 +12480,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/sp/sp-c0003-e006259-u.json",
-        "sha256": "b7a4d3ae58ac425f7ce1018a1f6daf352a6f000175545de3de3342a8085c6f92",
-        "gerado_tse": "04/10/2026 22:59:12"
+        "sha256": "699c0f735f3b706a304c3dc6725ff9df2cc5511ece29ff7dd46edf3d730437df",
+        "gerado_tse": "05/10/2026 11:44:29"
       },
       "totais": {
         "secoes": 103656,
@@ -12613,8 +12613,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/sp/sp-c0005-e006259-u.json",
-        "sha256": "9321cf4c12932412d1678d87280895e3a54d43247b0053840949d514d9bb14e8",
-        "gerado_tse": "04/10/2026 22:59:13"
+        "sha256": "55ae5a371b797c0817494e37b38987af4408af5a3ae45ae2a72f6739f1019a86",
+        "gerado_tse": "05/10/2026 11:44:31"
       },
       "totais": {
         "secoes": 103656,
@@ -14264,8 +14264,8 @@
       "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ba/ba-c0006-e006259-u.json",
-        "sha256": "5129a06f19f072b321a3e59fb1c451ce73bbabf96555c13c33aed43e78acda5d",
-        "gerado_tse": "05/10/2026 00:52:46"
+        "sha256": "b7cc68f6dc8759cecaf7691b9692e459482ed5dd197b2a1d45437c94ade16ec7",
+        "gerado_tse": "05/10/2026 11:42:25"
       },
       "eleitos": [
         {
@@ -14469,13 +14469,329 @@
       "cargo": "Deputado Estadual",
       "uf": "BA",
       "vagas": 63,
-      "fechamento_oficial": false,
+      "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/ba/ba-c0007-e006259-u.json",
-        "sha256": "a5b6512051e1db5396056dd8beacf39e0ac67fdae7072665c894dbbb3da6a491",
-        "gerado_tse": "05/10/2026 00:51:56"
+        "sha256": "614c0ed5c9c4235c45884a1c9a3f3e30733c87789383ce9e1f2f7a3fea9da179",
+        "gerado_tse": "05/10/2026 11:42:33"
       },
-      "eleitos": []
+      "eleitos": [
+        {
+          "sq": "50002535570",
+          "nome_urna": "JOÃO DE FURÃO",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "50002535556",
+          "nome_urna": "LÉO DE NECO",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "50002535558",
+          "nome_urna": "SILVA NETO",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "50002535537",
+          "nome_urna": "TANCREDO ISIDÓRIO",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "50002535584",
+          "nome_urna": "VITOR AZEVEDO",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "50002538724",
+          "nome_urna": "CARLINHOS SOBRAL",
+          "partido": "MDB"
+        },
+        {
+          "sq": "50002538714",
+          "nome_urna": "ROGÉRIO ANDRADE",
+          "partido": "MDB"
+        },
+        {
+          "sq": "50002537844",
+          "nome_urna": "BOBÔ",
+          "partido": "PCDOB"
+        },
+        {
+          "sq": "50002537854",
+          "nome_urna": "FABRÍCIO",
+          "partido": "PCDOB"
+        },
+        {
+          "sq": "50002537848",
+          "nome_urna": "ZÓ DO SERTÃO",
+          "partido": "PCDOB"
+        },
+        {
+          "sq": "50002531381",
+          "nome_urna": "CACAU DA MATA",
+          "partido": "PDT"
+        },
+        {
+          "sq": "50002531394",
+          "nome_urna": "JOSAFÁ MARINHO",
+          "partido": "PDT"
+        },
+        {
+          "sq": "50002531378",
+          "nome_urna": "LUCIANO PINHEIRO",
+          "partido": "PDT"
+        },
+        {
+          "sq": "50002531363",
+          "nome_urna": "MARCINHO OLIVEIRA",
+          "partido": "PDT"
+        },
+        {
+          "sq": "50002531393",
+          "nome_urna": "NETO COELHO",
+          "partido": "PDT"
+        },
+        {
+          "sq": "50002535081",
+          "nome_urna": "CINTHYA MARABÁ",
+          "partido": "PL"
+        },
+        {
+          "sq": "50002535102",
+          "nome_urna": "DIEGO CASTRO",
+          "partido": "PL"
+        },
+        {
+          "sq": "50002535104",
+          "nome_urna": "IGOR",
+          "partido": "PL"
+        },
+        {
+          "sq": "50002535120",
+          "nome_urna": "JÂNIO NATAL JÚNIOR",
+          "partido": "PL"
+        },
+        {
+          "sq": "50002535103",
+          "nome_urna": "PAULO CÂMARA",
+          "partido": "PL"
+        },
+        {
+          "sq": "50002535119",
+          "nome_urna": "SAMUEL JÚNIOR",
+          "partido": "PL"
+        },
+        {
+          "sq": "50002535085",
+          "nome_urna": "SOLDADO PRISCO",
+          "partido": "PL"
+        },
+        {
+          "sq": "50002535030",
+          "nome_urna": "DR. PITÁGORAS",
+          "partido": "PP"
+        },
+        {
+          "sq": "50002535049",
+          "nome_urna": "HASSAN DE ZÉ COCÁ",
+          "partido": "PP"
+        },
+        {
+          "sq": "50002535032",
+          "nome_urna": "PENALVA",
+          "partido": "PP"
+        },
+        {
+          "sq": "50002532691",
+          "nome_urna": "ALEX DA PIATÃ",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532683",
+          "nome_urna": "ANDREA CASTRO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532684",
+          "nome_urna": "CLÁUDIA OLIVEIRA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532693",
+          "nome_urna": "DENISE MENEZES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532688",
+          "nome_urna": "EDUARDO ALENCAR",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532697",
+          "nome_urna": "IVANA BASTOS",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532689",
+          "nome_urna": "LUDMILLA FISCINA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532698",
+          "nome_urna": "NILTINHO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002532694",
+          "nome_urna": "RICARDO RODRIGUES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "50002533156",
+          "nome_urna": "JORDAVIO RAMOS",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "50002533133",
+          "nome_urna": "TIAGO CORREIA",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "50002535899",
+          "nome_urna": "KLEBER  ROSA",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "50002537857",
+          "nome_urna": "ANGELO ALMEIDA",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537865",
+          "nome_urna": "EUCLIDES FERNANDES",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537872",
+          "nome_urna": "FÁTIMA NUNES",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537861",
+          "nome_urna": "JÚLIO PINHEIRO",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537867",
+          "nome_urna": "JUNIOR MUNIZ",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537853",
+          "nome_urna": "JUVENILSON PASSOS",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537862",
+          "nome_urna": "NEUSA CADORE",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537846",
+          "nome_urna": "OSNI",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537869",
+          "nome_urna": "ROBINSON",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537866",
+          "nome_urna": "ROSEMBERG",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537849",
+          "nome_urna": "ROWENNA",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002537856",
+          "nome_urna": "TAGNER",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002538687",
+          "nome_urna": "VILMA REIS",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002538674",
+          "nome_urna": "ZÉ RAIMUNDO",
+          "partido": "PT"
+        },
+        {
+          "sq": "50002538682",
+          "nome_urna": "EDUARDO SALLES",
+          "partido": "PV"
+        },
+        {
+          "sq": "50002538677",
+          "nome_urna": "MARQUINHO VIANA",
+          "partido": "PV"
+        },
+        {
+          "sq": "50002537847",
+          "nome_urna": "ROBERTO CARLOS",
+          "partido": "PV"
+        },
+        {
+          "sq": "50002532530",
+          "nome_urna": "ANGELO CORONEL FILHO",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "50002532561",
+          "nome_urna": "DR. THIAGO GILLENO",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "50002532550",
+          "nome_urna": "JOSÉ DE ARIMATEIA",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "50002532564",
+          "nome_urna": "JURAILTON SANTOS",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "50002535050",
+          "nome_urna": "ELINALDO",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "50002535029",
+          "nome_urna": "JUNIOR NASCIMENTO",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "50002535065",
+          "nome_urna": "LUCIANO SIMÕES FILHO",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "50002535068",
+          "nome_urna": "PEDRO TAVARES",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "50002535060",
+          "nome_urna": "SANDRO REGIS",
+          "partido": "UNIÃO"
+        }
+      ]
     },
     {
       "cargo": "Deputado Federal",
@@ -16273,25 +16589,677 @@
       "cargo": "Deputado Federal",
       "uf": "MG",
       "vagas": 53,
-      "fechamento_oficial": false,
+      "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/mg/mg-c0006-e006259-u.json",
-        "sha256": "ef75ce7d3f8a1d50c6d8ebac87c3d5d0a20824fb1af00e29c3eee800cdbe0255",
-        "gerado_tse": "05/10/2026 00:53:12"
+        "sha256": "b8210456b97621fc07a53b5df07025819b3f08c1ca0b8eb2d623bcf18a2d98d6",
+        "gerado_tse": "05/10/2026 11:48:31"
       },
-      "eleitos": []
+      "eleitos": [
+        {
+          "sq": "130002543112",
+          "nome_urna": "LUIS TIBÉ",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "130002547896",
+          "nome_urna": "NEWTON CARDOSO JR",
+          "partido": "MDB"
+        },
+        {
+          "sq": "130002542043",
+          "nome_urna": "CAPOREZZO",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542004",
+          "nome_urna": "DELEGADA IONE",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542036",
+          "nome_urna": "DR. FREDERICO",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542044",
+          "nome_urna": "DR. MARCOS VINICIUS",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542017",
+          "nome_urna": "EMIDINHO MADEIRA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542007",
+          "nome_urna": "EROS BIONDINI",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542011",
+          "nome_urna": "FABINHO RAMALHO",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542019",
+          "nome_urna": "GREYCE ELIAS",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542000",
+          "nome_urna": "IGOR SANTOS",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542008",
+          "nome_urna": "JUNIO AMARAL",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542003",
+          "nome_urna": "LAFAYETTE ANDRADA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542015",
+          "nome_urna": "LINCOLN PORTELA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542016",
+          "nome_urna": "MARCELO ÁLVARO ANTÔNIO",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542026",
+          "nome_urna": "NIKOLAS FERREIRA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542039",
+          "nome_urna": "RODRIGO TAVARES",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542027",
+          "nome_urna": "ROSANGELA REIS",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002541998",
+          "nome_urna": "SARGENTO MELLO-CASAL",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542022",
+          "nome_urna": "SUBTENETE GONZAGA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542034",
+          "nome_urna": "THIAGO GANEM",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542021",
+          "nome_urna": "VINICIUS DINIZ",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542031",
+          "nome_urna": "ZÉ VITOR",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002548795",
+          "nome_urna": "NELY AQUINO",
+          "partido": "PODE"
+        },
+        {
+          "sq": "130002542743",
+          "nome_urna": "DIMAS FABIANO",
+          "partido": "PP"
+        },
+        {
+          "sq": "130002542701",
+          "nome_urna": "PINHEIRINHO",
+          "partido": "PP"
+        },
+        {
+          "sq": "130002533240",
+          "nome_urna": "FRED COSTA",
+          "partido": "PRD"
+        },
+        {
+          "sq": "130002543714",
+          "nome_urna": "DUARTE JÚNIOR",
+          "partido": "PSB"
+        },
+        {
+          "sq": "130002545559",
+          "nome_urna": "DIEGO ANDRADE",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002545577",
+          "nome_urna": "WELITON PRADO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002539842",
+          "nome_urna": "PAULO ABI-ACKEL",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "130002539728",
+          "nome_urna": "DUDA SALABERT",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "130002535301",
+          "nome_urna": "ANA ELISA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535276",
+          "nome_urna": "ANA PIMENTEL",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535315",
+          "nome_urna": "BELLA GONÇALVES",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535300",
+          "nome_urna": "DANDARA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535282",
+          "nome_urna": "GLEIDE ANDRADE",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535313",
+          "nome_urna": "LEONARDO MONTEIRO",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535286",
+          "nome_urna": "MIGUEL ÂNGELO",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535303",
+          "nome_urna": "PADRE JOÃO",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535293",
+          "nome_urna": "PAULO GUEDES",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535285",
+          "nome_urna": "PEDRO ROUSSEFF",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535317",
+          "nome_urna": "REGINALDO LOPES",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535279",
+          "nome_urna": "ROGÉRIO CORREIA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535319",
+          "nome_urna": "LOHANNA",
+          "partido": "PV"
+        },
+        {
+          "sq": "130002539715",
+          "nome_urna": "ANDRÉ JANONES",
+          "partido": "REDE"
+        },
+        {
+          "sq": "130002537202",
+          "nome_urna": "BRUNO FARIAS",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "130002537223",
+          "nome_urna": "GILBERTO ABRAMO",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "130002537199",
+          "nome_urna": "GLEIDSON AZEVEDO",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "130002542730",
+          "nome_urna": "DELEGADO MARCELO FREITAS",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "130002542738",
+          "nome_urna": "RAFAEL SIMÕES",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "130002542715",
+          "nome_urna": "RODRIGO DE CASTRO",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "130002542695",
+          "nome_urna": "SAMUEL VIANA",
+          "partido": "UNIÃO"
+        }
+      ]
     },
     {
       "cargo": "Deputado Estadual",
       "uf": "MG",
       "vagas": 77,
-      "fechamento_oficial": false,
+      "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/mg/mg-c0007-e006259-u.json",
-        "sha256": "cc02eeac3029064d6a07fdf14199005a921c72b067845711ccc2ed3172b3c2f9",
-        "gerado_tse": "05/10/2026 00:53:34"
+        "sha256": "56ddeb4fcf47b17c4fcaac503368120837926b1c82e0798ca563365727463b74",
+        "gerado_tse": "05/10/2026 11:48:52"
       },
-      "eleitos": []
+      "eleitos": [
+        {
+          "sq": "130002544127",
+          "nome_urna": "CAROL CARAM",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "130002544403",
+          "nome_urna": "JOÃO DO SOCIAL",
+          "partido": "AVANTE"
+        },
+        {
+          "sq": "130002533517",
+          "nome_urna": "CABO GREGORIO SILVA",
+          "partido": "DEMOCRATA"
+        },
+        {
+          "sq": "130002534569",
+          "nome_urna": "DR. MAURÍCIO",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "130002534510",
+          "nome_urna": "ZÉ LAVIOLA",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "130002540054",
+          "nome_urna": "DRA LAÍS SANTIAGO",
+          "partido": "PDT"
+        },
+        {
+          "sq": "130002542081",
+          "nome_urna": "ALÊ PORTELA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542080",
+          "nome_urna": "AMANDA TEIXEIRA DIAS",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542079",
+          "nome_urna": "ANDERSON LIMA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542060",
+          "nome_urna": "ANTONIO CARLOS ARANTES",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542113",
+          "nome_urna": "BRUNO ENGLER",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542071",
+          "nome_urna": "CHIARA BIONDINI",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542072",
+          "nome_urna": "CORONEL HENRIQUE",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542110",
+          "nome_urna": "DELEGADA SHEILA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542068",
+          "nome_urna": "DENERVAL GERMANO",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542082",
+          "nome_urna": "EDUARDO AZEVEDO",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542047",
+          "nome_urna": "GUSTAVO SANTANA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542066",
+          "nome_urna": "MARCELO HEITOR",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542054",
+          "nome_urna": "MARILIA AMARAL",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542062",
+          "nome_urna": "MARLI RIBEIRO",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542107",
+          "nome_urna": "PABLO ALMEIDA",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542093",
+          "nome_urna": "PEDRO LUIZ",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542096",
+          "nome_urna": "ROBERTA LOPES",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542048",
+          "nome_urna": "SAMUEL CAIRES",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542109",
+          "nome_urna": "SARGENTO RODRIGUES",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542094",
+          "nome_urna": "UGLENO ALVES",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002542058",
+          "nome_urna": "VITTORIO MEDIOLI",
+          "partido": "PL"
+        },
+        {
+          "sq": "130002548716",
+          "nome_urna": "FLÁVIA BORJA",
+          "partido": "PODE"
+        },
+        {
+          "sq": "130002548769",
+          "nome_urna": "RODRIGO CADEIRANTE",
+          "partido": "PODE"
+        },
+        {
+          "sq": "130002542812",
+          "nome_urna": "ADRIANO ALVARENGA",
+          "partido": "PP"
+        },
+        {
+          "sq": "130002542748",
+          "nome_urna": "DOORGAL ANDRADA",
+          "partido": "PP"
+        },
+        {
+          "sq": "130002542782",
+          "nome_urna": "NAYARA ROCHA",
+          "partido": "PP"
+        },
+        {
+          "sq": "130002542764",
+          "nome_urna": "VITÓRIO",
+          "partido": "PP"
+        },
+        {
+          "sq": "130002542753",
+          "nome_urna": "ZÉ GUILHERME",
+          "partido": "PP"
+        },
+        {
+          "sq": "130002532941",
+          "nome_urna": "FERNANDO BRENO",
+          "partido": "PRD"
+        },
+        {
+          "sq": "130002533229",
+          "nome_urna": "JUCA BAHIA",
+          "partido": "PRD"
+        },
+        {
+          "sq": "130002532951",
+          "nome_urna": "ROBERTO ANDRADE",
+          "partido": "PRD"
+        },
+        {
+          "sq": "130002543650",
+          "nome_urna": "LUIZ PAULO",
+          "partido": "PSB"
+        },
+        {
+          "sq": "130002543664",
+          "nome_urna": "NORALDINO JUNIOR",
+          "partido": "PSB"
+        },
+        {
+          "sq": "130002549948",
+          "nome_urna": "DELEGADO CHRISTIANO XAVIER",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549949",
+          "nome_urna": "DUARTE",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549952",
+          "nome_urna": "ELISMAR PRADO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549954",
+          "nome_urna": "ENES CANDIDO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549960",
+          "nome_urna": "GIL PEREIRA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549940",
+          "nome_urna": "GUSTAVO VALADARES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549959",
+          "nome_urna": "JOÃO MAGALHÃES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549938",
+          "nome_urna": "RAUL BELEM",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002549957",
+          "nome_urna": "TITO TORRES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "130002540609",
+          "nome_urna": "HELENO DO HOSPITAL",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "130002539931",
+          "nome_urna": "MARIA CLARA",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "130002539932",
+          "nome_urna": "TONY CARLOS",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "130002539490",
+          "nome_urna": "IZA LOURENÇA",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "130002535320",
+          "nome_urna": "ADRIANA SOUZA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535321",
+          "nome_urna": "ANA PAULA SIQUEIRA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535371",
+          "nome_urna": "ANDRÉIA DE JESUS",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535347",
+          "nome_urna": "BEATRIZ CERQUEIRA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535327",
+          "nome_urna": "BETÃO",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535330",
+          "nome_urna": "CRISTIANO SILVEIRA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535346",
+          "nome_urna": "DANIEL SUCUPIRA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535374",
+          "nome_urna": "DR. JEAN FREIRE",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535334",
+          "nome_urna": "LELECO PIMENTEL",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535363",
+          "nome_urna": "LENINHA",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535362",
+          "nome_urna": "LUIZINHO",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535329",
+          "nome_urna": "MACAÉ EVARISTO",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535325",
+          "nome_urna": "MARQUINHO LEMOS",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535376",
+          "nome_urna": "RICARDO CAMPOS",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535348",
+          "nome_urna": "ULYSSES GOMES",
+          "partido": "PT"
+        },
+        {
+          "sq": "130002535388",
+          "nome_urna": "FABÃO",
+          "partido": "PV"
+        },
+        {
+          "sq": "130002535378",
+          "nome_urna": "MÁRIO HENRIQUE CAIXA",
+          "partido": "PV"
+        },
+        {
+          "sq": "130002539522",
+          "nome_urna": "LUCAS LASMAR",
+          "partido": "REDE"
+        },
+        {
+          "sq": "130002539905",
+          "nome_urna": "CARLOS HENRIQUE",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "130002539910",
+          "nome_urna": "LUD FALCÃO",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "130002539884",
+          "nome_urna": "MAURO TRAMONTE",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "130002539885",
+          "nome_urna": "NEILANDO PIMENTA",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "130002542754",
+          "nome_urna": "BETINHO PINTO COELHO",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "130002542804",
+          "nome_urna": "GREGO DA FUNDAÇÃO",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "130002542747",
+          "nome_urna": "RODRIGO LOPES",
+          "partido": "UNIÃO"
+        }
+      ]
     },
     {
       "cargo": "Deputado Federal",
@@ -16300,8 +17268,8 @@
       "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pa/pa-c0006-e006259-u.json",
-        "sha256": "1c9676fee91d40016f34d3539835745bd5639e0fd393fc1f4cafb3fcacd8dd96",
-        "gerado_tse": "04/10/2026 23:56:34"
+        "sha256": "07d387c90aff42f4cd8140f07038baee597ee887378ce7135c32ff4c26e4d0fe",
+        "gerado_tse": "05/10/2026 11:42:32"
       },
       "eleitos": [
         {
@@ -16398,8 +17366,8 @@
       "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pa/pa-c0007-e006259-u.json",
-        "sha256": "798f25dc94a41b508a0637d492d6d4368c71817a20ea14eec9a7bbac40cb3ca7",
-        "gerado_tse": "04/10/2026 23:56:36"
+        "sha256": "27fff7ef07b3a22ce23dea025bf9e55756d8b57157bd65e5e8e00cbfd99f51ed",
+        "gerado_tse": "05/10/2026 11:42:33"
       },
       "eleitos": [
         {
@@ -16882,8 +17850,8 @@
       "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pr/pr-c0006-e006259-u.json",
-        "sha256": "ba368435c75b6309e3e5dcad339c0507a80a91cf47448ec16ad931ee19356ed0",
-        "gerado_tse": "04/10/2026 22:44:48"
+        "sha256": "d1d772c03d433e2f6034bb89f91efdc7f20065aece4bb91c1bfa278a1e9b0ebf",
+        "gerado_tse": "05/10/2026 11:47:02"
       },
       "eleitos": [
         {
@@ -17042,13 +18010,284 @@
       "cargo": "Deputado Estadual",
       "uf": "PR",
       "vagas": 54,
-      "fechamento_oficial": false,
+      "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/pr/pr-c0007-e006259-u.json",
-        "sha256": "5fb79a73cef89a5e6234af2fa10110c2374f312cd4a33d3479d3336bea656ec9",
-        "gerado_tse": "04/10/2026 22:44:15"
+        "sha256": "87da6386165b75ac26e0b696070f36a75991779d9d48d38b81a6f5442acab046",
+        "gerado_tse": "05/10/2026 11:47:12"
       },
-      "eleitos": []
+      "eleitos": [
+        {
+          "sq": "160002547690",
+          "nome_urna": "ANIBELLI NETO",
+          "partido": "MDB"
+        },
+        {
+          "sq": "160002547679",
+          "nome_urna": "GERSON COLODEL",
+          "partido": "MDB"
+        },
+        {
+          "sq": "160002542382",
+          "nome_urna": "BRUNO SECCO",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "160002542377",
+          "nome_urna": "DEIVID WISLEY",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "160002542371",
+          "nome_urna": "LUIZ FERNANDO GUERRA",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "160002546872",
+          "nome_urna": "GOURA",
+          "partido": "PDT"
+        },
+        {
+          "sq": "160002547648",
+          "nome_urna": "DELEGADA TATHIANA GUZELLA",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547624",
+          "nome_urna": "DELEGADO JACOVÓS",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547646",
+          "nome_urna": "DENIAN COUTO",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547636",
+          "nome_urna": "EMERSON BACIL",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547608",
+          "nome_urna": "FÃO DO BOLSONARO",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547597",
+          "nome_urna": "FLÁVIA FRANCISCHINI",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547650",
+          "nome_urna": "GILBERTO RIBEIRO",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547611",
+          "nome_urna": "ITAMAR PAIM",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547605",
+          "nome_urna": "JESSICÃO",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547616",
+          "nome_urna": "MATHEUS VERMELHO",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547640",
+          "nome_urna": "MAURO MORAES",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547629",
+          "nome_urna": "PAULO GOMES DA TV",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547632",
+          "nome_urna": "PAULO MELO",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547614",
+          "nome_urna": "RICARDO ZAMPIERI",
+          "partido": "PL"
+        },
+        {
+          "sq": "160002547500",
+          "nome_urna": "DO CARMO",
+          "partido": "PODE"
+        },
+        {
+          "sq": "160002547537",
+          "nome_urna": "FABIANA PARRO",
+          "partido": "PODE"
+        },
+        {
+          "sq": "160002547530",
+          "nome_urna": "LU BONATTO",
+          "partido": "PODE"
+        },
+        {
+          "sq": "160002533479",
+          "nome_urna": "ALISSON WANDSCHEER",
+          "partido": "PP"
+        },
+        {
+          "sq": "160002533442",
+          "nome_urna": "CESAR SILVESTRI",
+          "partido": "PP"
+        },
+        {
+          "sq": "160002533447",
+          "nome_urna": "FELIPE MACHADO DA SAÚDE",
+          "partido": "PP"
+        },
+        {
+          "sq": "160002533460",
+          "nome_urna": "MABEL CANTO",
+          "partido": "PP"
+        },
+        {
+          "sq": "160002533451",
+          "nome_urna": "MARIA VICTORIA",
+          "partido": "PP"
+        },
+        {
+          "sq": "160002533488",
+          "nome_urna": "PAULO MAC DONALD",
+          "partido": "PP"
+        },
+        {
+          "sq": "160002546842",
+          "nome_urna": "ADÃO LITRO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546819",
+          "nome_urna": "ARTAGÃO JÚNIOR",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546804",
+          "nome_urna": "BATATINHA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546829",
+          "nome_urna": "BAZANA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546827",
+          "nome_urna": "COBRA REPORTER",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546833",
+          "nome_urna": "GUGU BUENO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546846",
+          "nome_urna": "HUSSEIN BAKRI",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546832",
+          "nome_urna": "MARCIO NUNES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546834",
+          "nome_urna": "MOACYR FADEL",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546808",
+          "nome_urna": "ROMANELLI",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546822",
+          "nome_urna": "SOLDADO ADRIANO JOSÉ",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546843",
+          "nome_urna": "THIAGO BUHRER",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546805",
+          "nome_urna": "TRAIANO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002546813",
+          "nome_urna": "ULISSES MAIA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "160002542231",
+          "nome_urna": "ANGELO VANHONI",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002542235",
+          "nome_urna": "BETO VIZZOTTO",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002542256",
+          "nome_urna": "DR. ANTENOR",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002542248",
+          "nome_urna": "MARIO VERRI",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002542233",
+          "nome_urna": "MISS PRETA",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002542281",
+          "nome_urna": "PROF. LEMOS",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002542277",
+          "nome_urna": "THIAGO FOLTRAN",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002542263",
+          "nome_urna": "YASMIN HACHEM",
+          "partido": "PT"
+        },
+        {
+          "sq": "160002547562",
+          "nome_urna": "ALEXANDRE AMARO",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "160002547550",
+          "nome_urna": "JASSON GOULART",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "160002547552",
+          "nome_urna": "NEY LEPREVOST",
+          "partido": "REPUBLICANOS"
+        }
+      ]
     },
     {
       "cargo": "Deputado Federal",
@@ -19602,25 +20841,847 @@
       "cargo": "Deputado Federal",
       "uf": "SP",
       "vagas": 70,
-      "fechamento_oficial": false,
+      "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/sp/sp-c0006-e006259-u.json",
-        "sha256": "6cfbded367ab3db554c321cfe2b0e3e2d3deedec3b618c856c997d72a3c49ec4",
-        "gerado_tse": "04/10/2026 23:00:41"
+        "sha256": "7781286c5fe2cdc6c2c14ada2bceb79e393cd2c543c165c159e8f6341b735af8",
+        "gerado_tse": "05/10/2026 11:47:48"
       },
-      "eleitos": []
+      "eleitos": [
+        {
+          "sq": "250002533647",
+          "nome_urna": "BALEIA ROSSI",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002533666",
+          "nome_urna": "ENRICO MISASI",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002533624",
+          "nome_urna": "JOÃO CURY",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002533664",
+          "nome_urna": "SIDNEY CRUZ",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002546642",
+          "nome_urna": "KIM KATAGUIRI",
+          "partido": "MISSÃO"
+        },
+        {
+          "sq": "250002530167",
+          "nome_urna": "ADRIANA VENTURA",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "250002530115",
+          "nome_urna": "MARINA HELENA",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "250002535954",
+          "nome_urna": "CAPITÃO AUGUSTO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535991",
+          "nome_urna": "DELEGADO PAULO BILYNSKYJ",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535965",
+          "nome_urna": "DRA. SANDRA TADEU",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535975",
+          "nome_urna": "EDUARDO CURY",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535936",
+          "nome_urna": "GIL DINIZ",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535955",
+          "nome_urna": "JEFFERSON CAMPOS",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535995",
+          "nome_urna": "LUCAS PAVANATO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535940",
+          "nome_urna": "LUIZ FERNANDO MACHADO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535958",
+          "nome_urna": "LUIZ PHILIPPE DE O E BRAGANÇA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535980",
+          "nome_urna": "MARCIO ALVINO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535959",
+          "nome_urna": "MARIO FRIAS",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535948",
+          "nome_urna": "MIGUEL LOMBARDI",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535968",
+          "nome_urna": "MOTTA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535951",
+          "nome_urna": "PASTOR MARCO FELICIANO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535982",
+          "nome_urna": "PAULO FREIRE",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535947",
+          "nome_urna": "RENATO BOLSONARO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535972",
+          "nome_urna": "ROSANA VALLE",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535986",
+          "nome_urna": "THIAGO SURFISTA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002535994",
+          "nome_urna": "WESLEY CEZAR LELINHO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002544330",
+          "nome_urna": "ANA CAROLINA OLIVEIRA",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002544341",
+          "nome_urna": "DELEGADO BRUNO LIMA",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002544357",
+          "nome_urna": "DELEGADO PALUMBO",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002544326",
+          "nome_urna": "FELIPE BECARI",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002544340",
+          "nome_urna": "RENATA ABREU",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002544355",
+          "nome_urna": "RODRIGO GAMBALE",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002532353",
+          "nome_urna": "CORONEL TELHADA",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002532379",
+          "nome_urna": "MAURICIO NEVES",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002532342",
+          "nome_urna": "SARGENTO NANTES",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002534930",
+          "nome_urna": "EDINHO ARAUJO",
+          "partido": "PRD"
+        },
+        {
+          "sq": "250002539399",
+          "nome_urna": "JONAS DONIZETTE",
+          "partido": "PSB"
+        },
+        {
+          "sq": "250002539435",
+          "nome_urna": "TABATA AMARAL",
+          "partido": "PSB"
+        },
+        {
+          "sq": "250002541112",
+          "nome_urna": "CARLOS BEZERRA JR.",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002541114",
+          "nome_urna": "CARLOS SAMPAIO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002539713",
+          "nome_urna": "IGOR SOARES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002541102",
+          "nome_urna": "MARCOS NEVES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002541120",
+          "nome_urna": "PAULO ALEXANDRE BARBOSA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002541149",
+          "nome_urna": "SAULO PEDROSO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002550394",
+          "nome_urna": "PAULO SERRA",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "250002539612",
+          "nome_urna": "ERIKA HILTON",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539620",
+          "nome_urna": "GUILHERME CORTEZ",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539624",
+          "nome_urna": "NATÁLIA BOULOS",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539622",
+          "nome_urna": "PROFESSORA LUCIENE CAVALCANTE",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539604",
+          "nome_urna": "SÂMIA BOMFIM",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539593",
+          "nome_urna": "SÔNIA GUAJAJARA",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002536736",
+          "nome_urna": "ALENCAR SANTANA",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536719",
+          "nome_urna": "ARLINDO CHINAGLIA",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536737",
+          "nome_urna": "CARLOS ZARATTINI",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536743",
+          "nome_urna": "EDINHO SILVA",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536757",
+          "nome_urna": "JILMAR TATTO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536733",
+          "nome_urna": "JOAO PAULO CUNHA",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536734",
+          "nome_urna": "JULIANA CARDOSO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536722",
+          "nome_urna": "KIKO CELEGUIM",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536727",
+          "nome_urna": "LUNA ZARATTINI",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536764",
+          "nome_urna": "NILTO TATTO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536752",
+          "nome_urna": "THIAGO DOS REIS",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002537973",
+          "nome_urna": "ALTAIR MORAES",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002537969",
+          "nome_urna": "CELSO RUSSOMANNO",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002537979",
+          "nome_urna": "GUILHERME PIAI",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002537942",
+          "nome_urna": "MARCOS PEREIRA",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002537943",
+          "nome_urna": "MARIA ROSAS",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002537953",
+          "nome_urna": "NEY SANTOS",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002532378",
+          "nome_urna": "MILTON LEITE FILHO",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "250002532355",
+          "nome_urna": "SIRLANGE MANGA",
+          "partido": "UNIÃO"
+        }
+      ]
     },
     {
       "cargo": "Deputado Estadual",
       "uf": "SP",
       "vagas": 94,
-      "fechamento_oficial": false,
+      "fechamento_oficial": true,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/sp/sp-c0007-e006259-u.json",
-        "sha256": "068527b0b006d27e9ad1d3bcf7af63a7bd5921b4eb6f5326c6d899e66ba32f63",
-        "gerado_tse": "04/10/2026 23:01:33"
+        "sha256": "5e2933235126b5a60598dfc5ba1f5e17833deeec9cd220d4b1c2c2a488bbcbd3",
+        "gerado_tse": "05/10/2026 11:48:53"
       },
-      "eleitos": []
+      "eleitos": [
+        {
+          "sq": "250002534242",
+          "nome_urna": "CARUSO",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002534232",
+          "nome_urna": "ITAMAR BORGES",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002534220",
+          "nome_urna": "LÉO OLIVEIRA",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002534251",
+          "nome_urna": "REGINA NUNES",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002534269",
+          "nome_urna": "REINALDO ALGUZ",
+          "partido": "MDB"
+        },
+        {
+          "sq": "250002545037",
+          "nome_urna": "RAFA MINATO",
+          "partido": "MISSÃO"
+        },
+        {
+          "sq": "250002530239",
+          "nome_urna": "HENRIQUE KRIGNER",
+          "partido": "NOVO"
+        },
+        {
+          "sq": "250002536367",
+          "nome_urna": "ALEX MADUREIRA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536419",
+          "nome_urna": "BRUNO ZAMBELLI",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536344",
+          "nome_urna": "CAPITÃO MOSART",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536407",
+          "nome_urna": "CONTE LOPES",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536415",
+          "nome_urna": "CORONEL PAGANOTTO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536358",
+          "nome_urna": "DANI ALONSO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536429",
+          "nome_urna": "DANILO BALAS",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536366",
+          "nome_urna": "DELEGADA GRACIELA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536384",
+          "nome_urna": "EDUARDA CAMPOPIANO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536380",
+          "nome_urna": "FABIANA BOLSONARO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536413",
+          "nome_urna": "FELIPE SERTANEJO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536377",
+          "nome_urna": "FRANCO SARDELLI",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536388",
+          "nome_urna": "GIOVANNI SANCHES",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536375",
+          "nome_urna": "ISAAC ANTUNES",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536356",
+          "nome_urna": "JOÃO PAULO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536404",
+          "nome_urna": "LETICIA AGUIAR",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536387",
+          "nome_urna": "LISBOA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536410",
+          "nome_urna": "LUCAS BOVE",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536406",
+          "nome_urna": "MARCOS DAMASIO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536393",
+          "nome_urna": "PAULO MANSUR",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536389",
+          "nome_urna": "RICARDO MADALENA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536361",
+          "nome_urna": "RODRIGO ASHIUCHI",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536352",
+          "nome_urna": "RODRIGO MORAES",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536405",
+          "nome_urna": "ROGÉRIO FRANCO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536395",
+          "nome_urna": "TENENTE COIMBRA",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536423",
+          "nome_urna": "THIAGO AURICCHIO",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002536353",
+          "nome_urna": "THOMAZ HENRIQUE",
+          "partido": "PL"
+        },
+        {
+          "sq": "250002545145",
+          "nome_urna": "DR. EDSON DA PAIOL",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002545207",
+          "nome_urna": "FABIO FARIA DE SÁ",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002545172",
+          "nome_urna": "KAKA DO AUTISMO",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002545147",
+          "nome_urna": "LEANDRO BASSON",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002545142",
+          "nome_urna": "RICARDO FRANÇA",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002545156",
+          "nome_urna": "ROGERIO LINS",
+          "partido": "PODE"
+        },
+        {
+          "sq": "250002533740",
+          "nome_urna": "DANILO JOAN",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002533768",
+          "nome_urna": "DELEGADO MESQUITA",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002533776",
+          "nome_urna": "DELEGADO OLIM",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002533778",
+          "nome_urna": "SARGENTO CASTRO",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002533757",
+          "nome_urna": "TELHADINHA - CAPITÃO TELHADA",
+          "partido": "PP"
+        },
+        {
+          "sq": "250002534178",
+          "nome_urna": "ATILA JACOMUSSI",
+          "partido": "PRD"
+        },
+        {
+          "sq": "250002539294",
+          "nome_urna": "CAIO FRANÇA",
+          "partido": "PSB"
+        },
+        {
+          "sq": "250002539299",
+          "nome_urna": "MARINA BRAGANTE",
+          "partido": "PSB"
+        },
+        {
+          "sq": "250002539298",
+          "nome_urna": "VALDOMIRO LOPES",
+          "partido": "PSB"
+        },
+        {
+          "sq": "250002540584",
+          "nome_urna": "ANALICE FERNANDES",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540580",
+          "nome_urna": "BARROS MUNHOZ",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540562",
+          "nome_urna": "CARLA MORANDO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540878",
+          "nome_urna": "MARTA COSTA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540875",
+          "nome_urna": "MAURO BRAGATO",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540890",
+          "nome_urna": "PARDINI",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540897",
+          "nome_urna": "RAFAEL SILVA JR",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540880",
+          "nome_urna": "ROGERIO NOGUEIRA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002540911",
+          "nome_urna": "THAMMY MIRANDA",
+          "partido": "PSD"
+        },
+        {
+          "sq": "250002548910",
+          "nome_urna": "ANA CAROLINA SERRA",
+          "partido": "PSDB"
+        },
+        {
+          "sq": "250002539947",
+          "nome_urna": "CARLOS GIANNAZI",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539937",
+          "nome_urna": "DÉBORA CAMILO",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002538904",
+          "nome_urna": "EDIANE MARIA",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002538908",
+          "nome_urna": "KEIT LIMA",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539934",
+          "nome_urna": "LUIZA ERUNDINA",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002538929",
+          "nome_urna": "MARIANA CONTI",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002538918",
+          "nome_urna": "MONICA DAS PRETAS",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002539952",
+          "nome_urna": "PAULA DA BANCADA FEMINISTA",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002538926",
+          "nome_urna": "SOFIA FAVERO",
+          "partido": "PSOL"
+        },
+        {
+          "sq": "250002536245",
+          "nome_urna": "ANA PERUGINI",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536240",
+          "nome_urna": "BARBA",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536846",
+          "nome_urna": "DONATO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536833",
+          "nome_urna": "DUDA HIDALGO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536851",
+          "nome_urna": "EDUARDO SUPLICY",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536831",
+          "nome_urna": "EMÍDIO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536268",
+          "nome_urna": "ENIO TATTO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536840",
+          "nome_urna": "JOÃO PAULO RILLO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536841",
+          "nome_urna": "LEONARDO GRANDINI",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536270",
+          "nome_urna": "LUIZ FERNANDO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536263",
+          "nome_urna": "MARCOLINO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536273",
+          "nome_urna": "PAULO FIORILO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536260",
+          "nome_urna": "PROFESSORA BEBEL",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536845",
+          "nome_urna": "RODRIGO MAR",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536836",
+          "nome_urna": "RÔMULO",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002536814",
+          "nome_urna": "THAINARA FARIA",
+          "partido": "PT"
+        },
+        {
+          "sq": "250002541870",
+          "nome_urna": "BRUNA FURLAN",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002541861",
+          "nome_urna": "DANILO CAMPETTI",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002541857",
+          "nome_urna": "ELY SANTOS",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002541902",
+          "nome_urna": "GILMACI SANTOS",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002541864",
+          "nome_urna": "RENATA SENE",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002541873",
+          "nome_urna": "SEBASTIÃO SANTOS",
+          "partido": "REPUBLICANOS"
+        },
+        {
+          "sq": "250002533748",
+          "nome_urna": "CAMILA GODOI",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "250002533809",
+          "nome_urna": "DOUGLAS GARCIA",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "250002533758",
+          "nome_urna": "RAFAEL SARAIVA",
+          "partido": "UNIÃO"
+        },
+        {
+          "sq": "250002533798",
+          "nome_urna": "SOLANGE FREITAS",
+          "partido": "UNIÃO"
+        }
+      ]
     },
     {
       "cargo": "Deputado Federal",
@@ -19993,6 +22054,953 @@
           "partido": "UNIÃO"
         }
       ]
+    }
+  ],
+  "presidente_por_uf": [
+    {
+      "uf": "AC",
+      "fechamento_oficial": true,
+      "secoes": 2270,
+      "secoes_totalizadas": 2270,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/ac/ac-c0001-e006257-u.json",
+        "sha256": "c67559bc6e31b503162fcdd74604f00ce877efc4b90d7fdea8b48a0e634b4b0e",
+        "gerado_tse": "05/10/2026 12:51:40"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 302807,
+          "percentual_validos": 64.555307782
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 134770,
+          "percentual_validos": 28.731564428
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 302807,
+        "percentual_validos": 64.555307782
+      },
+      "margem_pp": 35.823743
+    },
+    {
+      "uf": "AL",
+      "fechamento_oficial": true,
+      "secoes": 7101,
+      "secoes_totalizadas": 7101,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/al/al-c0001-e006257-u.json",
+        "sha256": "96e234bc2a91d872d54a9951fbd60dce9b54ad0dc1fe347e322d89d25be187d4",
+        "gerado_tse": "05/10/2026 12:51:41"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 735718,
+          "percentual_validos": 40.449491329
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 995459,
+          "percentual_validos": 54.729951134
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 995459,
+        "percentual_validos": 54.729951134
+      },
+      "margem_pp": 14.28046
+    },
+    {
+      "uf": "AM",
+      "fechamento_oficial": true,
+      "secoes": 8157,
+      "secoes_totalizadas": 8157,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/am/am-c0001-e006257-u.json",
+        "sha256": "8cbbec68324aec9f02df666154d47b2ee00f8c6380a099c7442721adf45214e7",
+        "gerado_tse": "05/10/2026 12:51:41"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 976764,
+          "percentual_validos": 44.996344603
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 1046996,
+          "percentual_validos": 48.231704705
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 1046996,
+        "percentual_validos": 48.231704705
+      },
+      "margem_pp": 3.23536
+    },
+    {
+      "uf": "AP",
+      "fechamento_oficial": true,
+      "secoes": 1914,
+      "secoes_totalizadas": 1914,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/ap/ap-c0001-e006257-u.json",
+        "sha256": "42c0d70f1abefdc5e5c5f75f4d341a66c373b34863685f22bc31aa742ec6a062",
+        "gerado_tse": "05/10/2026 12:51:40"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 212278,
+          "percentual_validos": 45.665127845
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 212503,
+          "percentual_validos": 45.713529723
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 212503,
+        "percentual_validos": 45.713529723
+      },
+      "margem_pp": 0.048402
+    },
+    {
+      "uf": "BA",
+      "fechamento_oficial": true,
+      "secoes": 35476,
+      "secoes_totalizadas": 35476,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/ba/ba-c0001-e006257-u.json",
+        "sha256": "b50778a7cb0f9763994873ea045e95da1ee962577675dfcb99786f2853208415",
+        "gerado_tse": "05/10/2026 12:51:55"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 2442585,
+          "percentual_validos": 28.533901476
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 5664771,
+          "percentual_validos": 66.174981668
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 5664771,
+        "percentual_validos": 66.174981668
+      },
+      "margem_pp": 37.64108
+    },
+    {
+      "uf": "CE",
+      "fechamento_oficial": true,
+      "secoes": 23765,
+      "secoes_totalizadas": 23765,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/ce/ce-c0001-e006257-u.json",
+        "sha256": "ff65f98d1f1462c8230a2856f6c0e46ee7fb2a8f8ac7f1bf60979c6b1eea5f07",
+        "gerado_tse": "05/10/2026 12:51:44"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 1756850,
+          "percentual_validos": 31.27284029
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 3555263,
+          "percentual_validos": 63.285523515
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 3555263,
+        "percentual_validos": 63.285523515
+      },
+      "margem_pp": 32.012683
+    },
+    {
+      "uf": "DF",
+      "fechamento_oficial": true,
+      "secoes": 6969,
+      "secoes_totalizadas": 6969,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/df/df-c0001-e006257-u.json",
+        "sha256": "6fa13cd7f0b3024777891dbe94723e7e39ecbba76bdc702e9f81428826a7283a",
+        "gerado_tse": "05/10/2026 12:51:40"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 909616,
+          "percentual_validos": 51.309335247
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 675627,
+          "percentual_validos": 38.110556812
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 909616,
+        "percentual_validos": 51.309335247
+      },
+      "margem_pp": 13.198778
+    },
+    {
+      "uf": "ES",
+      "fechamento_oficial": true,
+      "secoes": 9844,
+      "secoes_totalizadas": 9844,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/es/es-c0001-e006257-u.json",
+        "sha256": "9e8036ad95dfc1fa119b26164bba9201fa6562c007418c773f13e7f5b6fe319d",
+        "gerado_tse": "05/10/2026 12:51:41"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 1233194,
+          "percentual_validos": 54.782375377
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 850028,
+          "percentual_validos": 37.760930541
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 1233194,
+        "percentual_validos": 54.782375377
+      },
+      "margem_pp": 17.021445
+    },
+    {
+      "uf": "GO",
+      "fechamento_oficial": true,
+      "secoes": 15686,
+      "secoes_totalizadas": 15686,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/go/go-c0001-e006257-u.json",
+        "sha256": "0bca25dc783c2b3c711f0cfe7432fe9e10d78d5ef8449c6d1368740bbe2dc1d6",
+        "gerado_tse": "05/10/2026 12:51:44"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 2051888,
+          "percentual_validos": 53.604568445
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 1188880,
+          "percentual_validos": 31.058907374
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 2051888,
+        "percentual_validos": 53.604568445
+      },
+      "margem_pp": 22.545661
+    },
+    {
+      "uf": "MA",
+      "fechamento_oficial": true,
+      "secoes": 18093,
+      "secoes_totalizadas": 18093,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/ma/ma-c0001-e006257-u.json",
+        "sha256": "22daf14542c35a384967da16c71ca02b5292b5703d4ef09357dc1a1a65b9a41d",
+        "gerado_tse": "05/10/2026 12:51:45"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 1239040,
+          "percentual_validos": 30.895370806
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 2566301,
+          "percentual_validos": 63.990525725
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 2566301,
+        "percentual_validos": 63.990525725
+      },
+      "margem_pp": 33.095155
+    },
+    {
+      "uf": "MG",
+      "fechamento_oficial": true,
+      "secoes": 52062,
+      "secoes_totalizadas": 52062,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/mg/mg-c0001-e006257-u.json",
+        "sha256": "d01c373751e029fdba347cce9f367679707bfb897f3942b3e233a273b87db199",
+        "gerado_tse": "05/10/2026 12:52:05"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 5777548,
+          "percentual_validos": 48.241772143
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 5188936,
+          "percentual_validos": 43.326938725
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 5777548,
+        "percentual_validos": 48.241772143
+      },
+      "margem_pp": 4.914833
+    },
+    {
+      "uf": "MS",
+      "fechamento_oficial": true,
+      "secoes": 7106,
+      "secoes_totalizadas": 7106,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/ms/ms-c0001-e006257-u.json",
+        "sha256": "35a5e50df19afeea34928eb3810f53cbcd122730c27d4d2fb2a52cdbd3ae6b19",
+        "gerado_tse": "05/10/2026 12:51:41"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 873351,
+          "percentual_validos": 58.603227049
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 516855,
+          "percentual_validos": 34.681784204
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 873351,
+        "percentual_validos": 58.603227049
+      },
+      "margem_pp": 23.921443
+    },
+    {
+      "uf": "MT",
+      "fechamento_oficial": true,
+      "secoes": 8287,
+      "secoes_totalizadas": 8287,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/mt/mt-c0001-e006257-u.json",
+        "sha256": "0e7250b701d2889ba864082682e5ff5e14593bbac0a978c7d1ee88e6b42e285e",
+        "gerado_tse": "05/10/2026 12:51:42"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 1298581,
+          "percentual_validos": 65.147685633
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 581681,
+          "percentual_validos": 29.181984741
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 1298581,
+        "percentual_validos": 65.147685633
+      },
+      "margem_pp": 35.965701
+    },
+    {
+      "uf": "PA",
+      "fechamento_oficial": true,
+      "secoes": 20827,
+      "secoes_totalizadas": 20827,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/pa/pa-c0001-e006257-u.json",
+        "sha256": "669dbc9548fb9a1f8ebb47a656234364c4aa18eb69c15f7b80634d16e23c2989",
+        "gerado_tse": "05/10/2026 12:51:45"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 2163957,
+          "percentual_validos": 44.496822239
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 2427237,
+          "percentual_validos": 49.91057277
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 2427237,
+        "percentual_validos": 49.91057277
+      },
+      "margem_pp": 5.413751
+    },
+    {
+      "uf": "PB",
+      "fechamento_oficial": true,
+      "secoes": 10712,
+      "secoes_totalizadas": 10712,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/pb/pb-c0001-e006257-u.json",
+        "sha256": "7da03ae14bac3cf830d723ef04a02d5f830dc696ca9480647e76f1e146648e00",
+        "gerado_tse": "05/10/2026 12:51:44"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 831377,
+          "percentual_validos": 33.073216994
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 1541127,
+          "percentual_validos": 61.307959791
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 1541127,
+        "percentual_validos": 61.307959791
+      },
+      "margem_pp": 28.234743
+    },
+    {
+      "uf": "PE",
+      "fechamento_oficial": true,
+      "secoes": 21418,
+      "secoes_totalizadas": 21418,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/pe/pe-c0001-e006257-u.json",
+        "sha256": "a18f9e0ec8f7073b3a9ff932321ae8592d3a906b875a33e080c2abb2444510bf",
+        "gerado_tse": "05/10/2026 12:51:44"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 1738043,
+          "percentual_validos": 31.030846719
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 3553971,
+          "percentual_validos": 63.452244476
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 3553971,
+        "percentual_validos": 63.452244476
+      },
+      "margem_pp": 32.421398
+    },
+    {
+      "uf": "PI",
+      "fechamento_oficial": true,
+      "secoes": 10225,
+      "secoes_totalizadas": 10225,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/pi/pi-c0001-e006257-u.json",
+        "sha256": "d6dac2da5cbff871ab4c323beae7df6902ccb6e9c7a6b38e17518b2eac8842a2",
+        "gerado_tse": "05/10/2026 12:51:46"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 517028,
+          "percentual_validos": 24.088214932
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 1523710,
+          "percentual_validos": 70.989296467
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 1523710,
+        "percentual_validos": 70.989296467
+      },
+      "margem_pp": 46.901082
+    },
+    {
+      "uf": "PR",
+      "fechamento_oficial": true,
+      "secoes": 27142,
+      "secoes_totalizadas": 27142,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/pr/pr-c0001-e006257-u.json",
+        "sha256": "d54aff50901472503eece5aabdce59518e67fd57cb7e7337b81132f995d72d02",
+        "gerado_tse": "05/10/2026 12:51:50"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 3945345,
+          "percentual_validos": 59.911912134
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 2054597,
+          "percentual_validos": 31.20001798
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 3945345,
+        "percentual_validos": 59.911912134
+      },
+      "margem_pp": 28.711894
+    },
+    {
+      "uf": "RJ",
+      "fechamento_oficial": true,
+      "secoes": 37675,
+      "secoes_totalizadas": 37675,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/rj/rj-c0001-e006257-u.json",
+        "sha256": "8a67b766e614b72140c0f6e026a097e4b20098f0c66cd528bb6a7aed194fda6a",
+        "gerado_tse": "05/10/2026 12:51:43"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 4966844,
+          "percentual_validos": 53.009637448
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 3693021,
+          "percentual_validos": 39.414506334
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 4966844,
+        "percentual_validos": 53.009637448
+      },
+      "margem_pp": 13.595131
+    },
+    {
+      "uf": "RN",
+      "fechamento_oficial": true,
+      "secoes": 8115,
+      "secoes_totalizadas": 8115,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/rn/rn-c0001-e006257-u.json",
+        "sha256": "87e559952a7a66a7592b8a9617e53af7e5748ee73d7802807e8e5a05e33df7f4",
+        "gerado_tse": "05/10/2026 12:51:43"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 720493,
+          "percentual_validos": 34.774540059
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 1237963,
+          "percentual_validos": 59.750190405
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 1237963,
+        "percentual_validos": 59.750190405
+      },
+      "margem_pp": 24.97565
+    },
+    {
+      "uf": "RO",
+      "fechamento_oficial": true,
+      "secoes": 4698,
+      "secoes_totalizadas": 4698,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/ro/ro-c0001-e006257-u.json",
+        "sha256": "c696369d5397d28e78c8313e5dd767728e995825bb053f1035b83f2688e68c31",
+        "gerado_tse": "05/10/2026 12:51:40"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 652988,
+          "percentual_validos": 67.453326708
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 250667,
+          "percentual_validos": 25.893773004
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 652988,
+        "percentual_validos": 67.453326708
+      },
+      "margem_pp": 41.559554
+    },
+    {
+      "uf": "RR",
+      "fechamento_oficial": true,
+      "secoes": 1519,
+      "secoes_totalizadas": 1519,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/rr/rr-c0001-e006257-u.json",
+        "sha256": "9bf774caceab5460c906ca3120dfbe72039b92bd852d21fc77e6a728253e0218",
+        "gerado_tse": "05/10/2026 12:51:40"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 231322,
+          "percentual_validos": 71.05684314
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 74420,
+          "percentual_validos": 22.860126864
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 231322,
+        "percentual_validos": 71.05684314
+      },
+      "margem_pp": 48.196716
+    },
+    {
+      "uf": "RS",
+      "fechamento_oficial": true,
+      "secoes": 27547,
+      "secoes_totalizadas": 27547,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/rs/rs-c0001-e006257-u.json",
+        "sha256": "7a56c5d75aa8a0aa75127e72814a7cbbbf9876b96f1d77a0c3154b95fd43371c",
+        "gerado_tse": "05/10/2026 12:51:50"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 3573783,
+          "percentual_validos": 55.640003201
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 2294759,
+          "percentual_validos": 35.726958829
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 3573783,
+        "percentual_validos": 55.640003201
+      },
+      "margem_pp": 19.913044
+    },
+    {
+      "uf": "SC",
+      "fechamento_oficial": true,
+      "secoes": 17326,
+      "secoes_totalizadas": 17326,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/sc/sc-c0001-e006257-u.json",
+        "sha256": "b51645c4cf68c1fe4761acdafd1214325c259661eb6522b286b97ab1b1d13381",
+        "gerado_tse": "05/10/2026 12:51:45"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 3000020,
+          "percentual_validos": 66.653824782
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 1127168,
+          "percentual_validos": 25.043185836
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 3000020,
+        "percentual_validos": 66.653824782
+      },
+      "margem_pp": 41.610639
+    },
+    {
+      "uf": "SE",
+      "fechamento_oficial": true,
+      "secoes": 5923,
+      "secoes_totalizadas": 5923,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/se/se-c0001-e006257-u.json",
+        "sha256": "c163da0f27c4b0bbdcc34359c87b88607d5823573c813d5835afff339340be77",
+        "gerado_tse": "05/10/2026 12:51:41"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 417839,
+          "percentual_validos": 30.628956543
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 856019,
+          "percentual_validos": 62.748974488
+        }
+      ],
+      "vencedor": {
+        "sq": "280002542548",
+        "nome_urna": "LULA",
+        "partido": "PT",
+        "votos": 856019,
+        "percentual_validos": 62.748974488
+      },
+      "margem_pp": 32.120018
+    },
+    {
+      "uf": "SP",
+      "fechamento_oficial": true,
+      "secoes": 103656,
+      "secoes_totalizadas": 103656,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/sp/sp-c0001-e006257-u.json",
+        "sha256": "6e417d16de88b97e27abffc58f404e753ee73a34142da0bb266821d903e67c68",
+        "gerado_tse": "05/10/2026 12:51:59"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 12922023,
+          "percentual_validos": 51.931238212
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 9505413,
+          "percentual_validos": 38.200509843
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 12922023,
+        "percentual_validos": 51.931238212
+      },
+      "margem_pp": 13.730728
+    },
+    {
+      "uf": "TO",
+      "fechamento_oficial": true,
+      "secoes": 4384,
+      "secoes_totalizadas": 4384,
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6257/dados/to/to-c0001-e006257-u.json",
+        "sha256": "76150bdef9fdbf557decc1d7e073b1fa361849316bb6cce5b8f6208ac48cdbd5",
+        "gerado_tse": "05/10/2026 12:51:42"
+      },
+      "finalistas": [
+        {
+          "sq": "280002551544",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 469321,
+          "percentual_validos": 50.440379731
+        },
+        {
+          "sq": "280002542548",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 404009,
+          "percentual_validos": 43.420957884
+        }
+      ],
+      "vencedor": {
+        "sq": "280002551544",
+        "nome_urna": "FLAVIO BOLSONARO",
+        "partido": "PL",
+        "votos": 469321,
+        "percentual_validos": 50.440379731
+      },
+      "margem_pp": 7.019422
     }
   ]
 }

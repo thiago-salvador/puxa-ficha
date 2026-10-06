@@ -1,0 +1,29 @@
+{
+  "versao": 1,
+  "ano": 2022,
+  "cargo": "Presidente",
+  "turno": 1,
+  "abrangencia": "BR",
+  "gerado_em": "2026-10-06T00:36:08.210Z",
+  "fonte": {
+    "pagina": "https://dadosabertos.tse.jus.br/dataset/resultados-2022",
+    "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/Historico_Totalizacao_Presidente_BR_1T_2022.zip",
+    "sha256": "55961aa1ecc87d0fd9c02730864f1b69a9f2eb3456327542dfc507217cd74a05",
+    "arquivo": "Historico_Totalizacao_Presidente_BR_1T_2022.csv",
+    "sha256_arquivo": "b7a1b42c582969afb3fb5491c05d4c7011bab862a4540344c3c69567a18afb2b",
+    "totalizacao_tse": "04/10/2022 10:27:34"
+  },
+  "totais": {
+    "secoes": 472075,
+    "secoes_totalizadas": 472075,
+    "eleitorado": 156454011,
+    "comparecimento": 123682372,
+    "percentual_comparecimento": 79.053500265,
+    "abstencao": 32771639,
+    "percentual_abstencao": 20.946499735,
+    "brancos": 1964779,
+    "percentual_brancos": 1.588568337,
+    "nulos": 3487874,
+    "percentual_nulos": 2.820025153
+  }
+}

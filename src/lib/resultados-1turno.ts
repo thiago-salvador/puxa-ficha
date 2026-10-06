@@ -113,6 +113,37 @@ export interface Resultados1Turno {
    * eleitos que vagas; a área de espectro mostra isso.
    */
   bancadas?: BancadaResultado1Turno[]
+  /**
+   * Votação para Presidente em cada UF (arquivo da eleição federal com a UF
+   * como abrangência). Opcional: só existe quando os dois finalistas do Brasil
+   * estão definidos. UF com arquivo recusado fica de fora e o mapa mostra "sem dado".
+   */
+  presidente_por_uf?: PresidenteUf1Turno[]
+}
+
+/** Votos de um candidato a Presidente numa UF. */
+export interface VotosPresidenteUf {
+  sq: string
+  nome_urna: string
+  partido: string
+  votos: number
+  percentual_validos: number | null
+}
+
+/** Presidente numa UF: os dois finalistas do Brasil, o mais votado na UF e a margem. */
+export interface PresidenteUf1Turno {
+  uf: string
+  /** tf = "s" no arquivo do TSE. */
+  fechamento_oficial: boolean
+  secoes: number | null
+  secoes_totalizadas: number | null
+  fonte: { url: string; sha256: string; gerado_tse: string }
+  /** Os dois finalistas do Brasil, na ordem da disputa nacional. */
+  finalistas: [VotosPresidenteUf, VotosPresidenteUf]
+  /** Mais votado entre os votos válidos da UF (pode não ser finalista). */
+  vencedor: VotosPresidenteUf
+  /** Diferença em pontos percentuais dos válidos entre o mais votado e o segundo na UF. */
+  margem_pp: number
 }
 
 export interface ResultadoDoCandidato1Turno {
@@ -238,6 +269,6 @@ export function formatarPercentual(valor: number | null): string {
 
 /** Href da página do 1º turno, com a UF já escolhida quando houver. */
 export function href1Turno(uf?: string | null): string {
-  // O Brasil é a home desde 05/10/2026; cada estado segue em /1o-turno/{uf}.
-  return uf && uf.toUpperCase() !== "BR" ? `/1o-turno/${uf.toLowerCase()}` : "/"
+  // /1o-turno é o arquivo do 1º turno (a home antiga); cada estado tem o resultado em /1o-turno/{uf}.
+  return uf && uf.toUpperCase() !== "BR" ? `/1o-turno/${uf.toLowerCase()}` : "/1o-turno"
 }

@@ -44,9 +44,25 @@ export function isVerifiedCandidateUpdate(value: unknown): value is VerifiedCand
   }
 }
 
+/** Mantém só as mudanças dos slugs pedidos; sem `slugs`, devolve tudo. */
+export function filtrarAtualizacoesPorSlugs<T extends Pick<VerifiedCandidateUpdate, "candidate_slug">>(
+  updates: readonly T[],
+  slugs?: readonly string[],
+): T[] {
+  if (!slugs) return [...updates]
+  const permitidos = new Set(slugs)
+  return updates.filter((update) => permitidos.has(update.candidate_slug))
+}
+
 export function formatUpdateValue(update: VerifiedCandidateUpdate, value: string): string {
   if (update.field === "patrimonio") {
     return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(Number(value))
   }
   return value
+}
+
+/** No recorte do 2º turno a seção só aparece com alguma mudança verificada; vazia, ela sai da home. */
+export function deveMostrarAtualizacoes(resource: VerifiedUpdatesResource, escopo: "segundo-turno" | "todos"): boolean {
+  if (escopo === "todos") return true
+  return resource.status === "available" && resource.updates.length > 0
 }

@@ -43,8 +43,8 @@ import { loadStatePolls } from "@/lib/state-polls"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { buildGuideColinhaHref } from "@/lib/guia-votacao"
 import { VerListaCompleta1Turno } from "@/components/VerListaCompleta1Turno"
-import { comFaseEfetiva, recortarFinalistas } from "@/lib/finalistas-1turno"
-import { linkCompararFinalistas } from "@/lib/fase-eleitoral-publica"
+import { comFaseEfetiva, slugsComFotoPretoEBranco } from "@/lib/finalistas-1turno"
+import { linkCompararFinalistas, rotuloAbaFinalistas, separarSecoesPorFase } from "@/lib/fase-eleitoral-publica"
 import { href1Turno } from "@/lib/resultados-1turno"
 
 export async function generateStaticParams() {
@@ -126,9 +126,14 @@ export default async function UfHubPage({
   // que existia aqui ate o Bloco 1 foi removido.
   const fasePorSlug = new Map(fasesEleitorais.map((fase) => [fase.slug, fase]))
   const candidatos = resumos.map((r) => comFaseEfetiva(r.candidato, fasePorSlug))
-  // Com resultado do 1º turno publicado, a lista mostra só finalistas ou o vencedor;
-  // os demais ficam na página do 1º turno do estado. Sem resultado, mostra todos.
-  const { candidatos: candidatosGrade, filtrado: gradeFiltrada } = recortarFinalistas(candidatos)
+  // Com resultado do 1º turno publicado: eleito ou finalistas numa seção, os demais embaixo em P&B.
+  // Programas ganham a aba de quem segue; pesquisas, abas de turno onde há 2º turno.
+  const secoesFase = separarSecoesPorFase(candidatos)
+  const slugsFotoPB = slugsComFotoPretoEBranco(resumos.map((r) => r.candidato), fasePorSlug)
+  const abaFinalistas = secoesFase ? { rotulo: rotuloAbaFinalistas(secoesFase), slugs: secoesFase.destaque.map((c) => c.slug) } : undefined
+  const temSegundoTurno = candidatos.some((c) => c.fase_eleitoral_2026?.fase_eleitoral === "segundo_turno")
+  const decididoNo1Turno = candidatos.some((c) => c.fase_eleitoral_2026?.fase_eleitoral === "eleito")
+  const turnosPesquisa = temSegundoTurno ? "abas" : decididoNo1Turno ? "so1" : "seletor"
   const [programsResource, pollsResource, runningMates] = await Promise.all([
     loadStatePrograms(candidatos.map(({ slug, nome_urna, partido_sigla }) => ({ slug, nome_urna, partido_sigla, uf: uf.toUpperCase() })), uf)
       .then(data => ({ data, unavailable: false }))
@@ -275,16 +280,19 @@ export default async function UfHubPage({
             <SlashDivider className="mt-6 mb-8 sm:mt-8 sm:mb-10" />
           </section>
           <section className="mx-auto max-w-7xl px-5 pb-8 md:px-12 lg:pb-10">
-            {gradeFiltrada && (
+            {secoesFase && (
               <VerListaCompleta1Turno
                 href={href1Turno(uf)}
-                label={`Ver lista completa do 1º turno em ${nome}`}
-                compararHref={linkCompararFinalistas(candidatosGrade)}
+                label={`Ver os votos do 1º turno em ${nome}`}
+                nota={null}
+                compararHref={linkCompararFinalistas(candidatos)}
                 className="mb-4"
               />
             )}
             <CandidatoGrid
-              candidatos={candidatosGrade}
+              candidatos={candidatos}
+              secoesPorFase
+              slugsFotoPB={slugsFotoPB}
               processos={processos}
               processosContagem={processosContagem}
               processSortCounts={processSortCounts}
@@ -313,9 +321,9 @@ export default async function UfHubPage({
 
       <div className="mx-auto max-w-7xl space-y-12 px-5 py-12 md:px-12">
         <SlashDivider />
-        <StatePrograms scopeTitle={`Governo ${presentation.ofState}`} programs={programsResource.data} runningMates={runningMates} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
+        <StatePrograms scopeTitle={`Governo ${presentation.ofState}`} programs={programsResource.data} runningMates={runningMates} abaFinalistas={abaFinalistas} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
         <SlashDivider />
-        <StatePolls polls={pollsResource.data} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} unavailable={pollsResource.unavailable} resultadoEleitoralPublicado={candidatos.some((candidato) => Boolean(candidato.fase_eleitoral_2026))} />
+        <StatePolls polls={pollsResource.data} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} unavailable={pollsResource.unavailable} resultadoEleitoralPublicado={candidatos.some((candidato) => Boolean(candidato.fase_eleitoral_2026))} turnos={turnosPesquisa} />
         <SlashDivider />
         <section id="indicadores" className="scroll-mt-24 space-y-6">
           <div>

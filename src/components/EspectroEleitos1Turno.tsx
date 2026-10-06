@@ -29,10 +29,11 @@ function LinhaTabela({ linha, comSem, total }: { linha: LinhaEspectro; comSem: b
 }
 
 function TabelaResumo({ espectro, comSem }: { espectro: EspectroEleitos; comSem: boolean }) {
-  const cabecalho = "px-3 py-2.5 text-right"
+  const cabecalho = "whitespace-nowrap px-3 py-2.5 text-right"
   return (
     <div className="relative overflow-x-auto rounded-[12px] border border-border" tabIndex={0} role="region" aria-label="Eleitos por cargo e espectro">
-      <table className="w-full border-collapse text-left text-[length:var(--text-caption)] sm:text-[length:var(--text-body-sm)]">
+      {/* Largura mínima: no celular a tabela rola de lado em vez de quebrar "Esquerda" letra a letra. */}
+      <table className="w-full min-w-[32rem] border-collapse text-left text-[length:var(--text-caption)] sm:text-[length:var(--text-body-sm)]">
         <caption className="sr-only">Eleitos no 1º turno por cargo, divididos em esquerda, centro e direita pelo partido</caption>
         <thead className="bg-secondary text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-secondary-foreground">
           <tr>

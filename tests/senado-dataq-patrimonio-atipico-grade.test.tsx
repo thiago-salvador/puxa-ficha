@@ -105,14 +105,15 @@ describe("grade: patrimonio_atipico do DTO chega ao card e à ordenação", () =
   })
 
   for (const page of [
-    "src/app/(site)/2o-turno/page.tsx",
+    "src/app/(site)/page.tsx",
     "src/app/(site)/uf/[uf]/page.tsx",
     "src/app/(site)/uf/[uf]/senado/page.tsx",
   ]) {
     it(`${page} repassa patrimoniosAtipicos à grade`, () => {
       const source = readFileSync(page, "utf8")
       assert.match(source, /buildCandidatoGridMaps\(/)
-      assert.match(source, /<(Deferred)?CandidatoGrid[\s\S]*?patrimoniosAtipicos=\{patrimoniosAtipicos\}[\s\S]*?\/>/)
+      // Na home o aviso chega ao lado a lado dos finalistas, que substituiu a grade.
+      assert.match(source, /<(CandidatoGrid|LadoALado2Turno)[\s\S]*?patrimoniosAtipicos=\{patrimoniosAtipicos\}[\s\S]*?\/>/)
     })
   }
 })

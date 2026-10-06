@@ -91,6 +91,18 @@ export function buildShortcutItems(_senadoEnabled = false): GlobalSearchIndexIte
     Pick<GlobalSearchIndexItem, "href" | "title" | "subtitle" | "badge">
   > = [
     {
+      href: "/",
+      title: "2º Turno",
+      subtitle: "2º turno em 25 de outubro: presidente, governadores e pesquisas",
+      badge: "Atalho",
+    },
+    {
+      href: "/1o-turno",
+      title: "1º Turno",
+      subtitle: "O site como estava até a votação e o resultado de cada estado",
+      badge: "Atalho",
+    },
+    {
       href: "/comparar",
       title: "Abrir comparador",
       subtitle: "Ir para a comparação lado a lado",
@@ -100,18 +112,6 @@ export function buildShortcutItems(_senadoEnabled = false): GlobalSearchIndexIte
       href: "/governadores",
       title: "Ver governadores",
       subtitle: "Abrir o mapa de estados",
-      badge: "Atalho",
-    },
-    {
-      href: "/",
-      title: "1º Turno",
-      subtitle: "Resultado oficial de presidente, governador e senador",
-      badge: "Atalho",
-    },
-    {
-      href: "/2o-turno",
-      title: "2º Turno",
-      subtitle: "Finalistas de presidente e governador em 25 de outubro",
       badge: "Atalho",
     },
     {

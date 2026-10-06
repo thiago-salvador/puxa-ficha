@@ -1,7 +1,8 @@
 import type { StatePollScenario } from "@/lib/state-polls"
 
 export type PollResult = StatePollScenario["scenario"]["resultados"][number]
-export type PollCandidate = { slug: string; nome_urna: string; foto_url?: string | null }
+/** `foto_pb`: arquivo do 1º turno, avatar em preto e branco de quem não segue na disputa. */
+export type PollCandidate = { slug: string; nome_urna: string; foto_url?: string | null; foto_pb?: boolean }
 export type PollSeries = { id: string; institute: string; label: string; polls: StatePollScenario[] }
 
 function normalizeSenadoSemantic(value: string | null): string | null {

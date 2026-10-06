@@ -13,8 +13,8 @@ type FooterLink = {
 }
 
 const PAGE_LINKS: FooterLink[] = [
-  { href: "/", label: "1º Turno" },
-  { href: "/2o-turno", label: "2º Turno" },
+  { href: "/", label: "2º Turno" },
+  { href: "/1o-turno", label: "1º Turno" },
   { href: "/governadores", label: "Governadores" },
   { href: "/comparar", label: "Comparador" },
   { href: "/rankings", label: "Listas" },

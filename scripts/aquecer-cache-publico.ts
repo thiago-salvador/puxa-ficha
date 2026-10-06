@@ -50,7 +50,7 @@ const ROTAS_FIXAS = [
   "/sobre",
   "/governadores",
   "/parlamentares",
-  "/2o-turno",
+  "/1o-turno",
   "/doadores",
 ]
 

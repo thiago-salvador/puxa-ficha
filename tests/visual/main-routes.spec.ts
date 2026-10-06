@@ -45,7 +45,7 @@ const DATA_DEPENDENT_ROUTES = new Set(["/candidato/lula", "/candidato/lula/timel
 test.describe("Main routes visual verification", () => {
   const mainRoutes = [
     "/",
-    "/2o-turno",
+    "/1o-turno",
     "/candidato/lula",
     "/candidato/lula/timeline",
     "/doadores",

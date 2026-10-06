@@ -14,14 +14,20 @@ import type {
   CandidatoResultado1Turno,
   DisputaResultado1Turno,
   FaseResultado1Turno,
+  PresidenteUf1Turno,
   Resultados1Turno,
+  VotosPresidenteUf,
 } from "../../src/lib/resultados-1turno"
 import {
   TSE_RESULTADOS_BASE,
   UFS_RESULTADO,
   classificarCandidato,
+  lerArquivoResultado,
   sha256,
+  urlResultado,
+  type ArquivoAlvo,
   type ArquivoLido,
+  type CandidatoResultado,
   type CandidaturaCoorte,
   type CargoResultado,
   type EleicoesDoTurno,
@@ -115,6 +121,67 @@ export function lerBancada(alvo: AlvoBancada, corpo: string): BancadaResultado1T
     fonte: { url: alvo.url, sha256: sha256(corpo), gerado_tse: `${String(r.dg ?? "")} ${String(r.hg ?? "")}`.trim() },
     eleitos,
   }
+}
+
+/** Os 27 arquivos de Presidente por UF: eleição federal, abrangência = UF (sem o exterior, ZZ). */
+export function alvosPresidentePorUf(eleicoes: EleicoesDoTurno): ArquivoAlvo[] {
+  return UFS_RESULTADO.map((uf) => ({
+    chave: `Presidente:${uf}`,
+    cargo: "Presidente" as const,
+    abrangencia: uf,
+    eleicao: eleicoes.federal,
+    url: urlResultado(eleicoes.ciclo, eleicoes.federal, uf, "Presidente"),
+  }))
+}
+
+/**
+ * Presidente numa UF a partir do arquivo oficial. Usa o mesmo leitor dos
+ * outros arquivos (eleição, abrangência, turno, arquivo oficial, SQ único) e
+ * exige 100% das seções totalizadas. Guarda só votos: a situação do arquivo
+ * por UF repete a nacional e não é relida aqui. Recusa se os dois finalistas
+ * do Brasil não estiverem no arquivo.
+ */
+export function lerPresidenteUf(alvo: ArquivoAlvo, corpo: string, finalistasSq: readonly [string, string]): PresidenteUf1Turno | string {
+  const lido = lerArquivoResultado(alvo, 1, corpo, { previa: true })
+  if (!lido.ok) return lido.motivo
+  const { totais } = lido
+  if (!totais.secoes || totais.secoesTotalizadas !== totais.secoes) {
+    return `seções totalizadas ${totais.secoesTotalizadas ?? "?"} de ${totais.secoes ?? "?"}`
+  }
+  if (lido.candidatos.some((c) => c.votos === null)) return "candidato sem votos apurados (vap)"
+  const votos = (c: CandidatoResultado): VotosPresidenteUf => ({
+    sq: c.sq,
+    nome_urna: c.nomeUrna,
+    partido: c.partido,
+    votos: c.votos ?? 0,
+    percentual_validos: votoValido(c.destinacao) ? c.percentualValidos : null,
+  })
+  const finalistas = finalistasSq.map((sq) => lido.candidatos.find((c) => c.sq === sq))
+  if (!finalistas[0] || !finalistas[1]) return "finalista do Brasil ausente no arquivo da UF"
+  const validos = lido.candidatos
+    .filter((c) => votoValido(c.destinacao) && c.percentualValidos !== null)
+    .sort((a, b) => (b.votos ?? 0) - (a.votos ?? 0) || a.sq.localeCompare(b.sq))
+  if (validos.length < 2) return "menos de dois candidatos com voto válido"
+  // Empate no topo não tem vencedor: a UF fica sem cor, nunca com palpite.
+  if (validos[0].votos === validos[1].votos) return "empate no mais votado"
+  const margem = (validos[0].percentualValidos ?? 0) - (validos[1].percentualValidos ?? 0)
+  return {
+    uf: alvo.abrangencia,
+    fechamento_oficial: lido.final,
+    secoes: totais.secoes,
+    secoes_totalizadas: totais.secoesTotalizadas,
+    fonte: { url: alvo.url, sha256: lido.sha256, gerado_tse: lido.geradoEm },
+    finalistas: [votos(finalistas[0]), votos(finalistas[1])],
+    vencedor: votos(validos[0]),
+    margem_pp: Math.round(margem * 1e6) / 1e6,
+  }
+}
+
+/** SQ dos dois finalistas do Brasil no snapshot; null sem exatamente dois. */
+export function finalistasDoBrasil(snapshot: Pick<Resultados1Turno, "disputas">): [string, string] | null {
+  const br = snapshot.disputas.find((d) => d.cargo === "Presidente" && d.uf === "BR")
+  const f = br?.candidatos.filter((c) => c.fase === "segundo_turno") ?? []
+  return f.length === 2 ? [f[0].sq, f[1].sq] : null
 }
 
 export interface RelatorioSnapshot {

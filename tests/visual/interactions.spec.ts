@@ -75,11 +75,16 @@ test.describe("Navbar mobile menu", () => {
     await expect(menuBtn).toHaveAttribute("aria-expanded", "true")
 
     // Confirm links are present
-    await expect(dialog.getByText("2º Turno")).toBeVisible()
-    await expect(dialog.getByText("Governadores")).toBeVisible()
+    await expect(dialog.getByRole("link", { name: "2º Turno", exact: true })).toHaveAttribute("href", "/")
     await expect(dialog.getByText("1º Turno")).toBeVisible()
+    await expect(dialog.getByRole("link", { name: "1º Turno", exact: true })).toHaveAttribute("href", "/1o-turno")
+    await expect(dialog.getByText("Doadores")).toBeVisible()
+    // Navbar enxuto: Governadores, Comparar, Listas e Colinha saíram do menu (as páginas continuam no ar).
+    await expect(dialog.getByRole("link", { name: "Colinha", exact: true })).toHaveCount(0)
+    await expect(dialog.getByRole("link", { name: "Governadores", exact: true })).toHaveCount(0)
+    await expect(dialog.getByRole("link", { name: "Comparar", exact: true })).toHaveCount(0)
+    await expect(dialog.getByRole("link", { name: "Listas", exact: true })).toHaveCount(0)
     await expect(dialog.getByText("Parlamentares")).toHaveCount(0)
-    await expect(dialog.getByText("Comparar")).toBeVisible()
     await expect(dialog.getByText("Sobre")).toBeVisible()
 
     // Close with Escape
@@ -137,8 +142,8 @@ test.describe("Busca rápida palette", () => {
   })
 
   test("view toggle switches between grid and list", async ({ page }) => {
-    // A grade de presidenciáveis mora no 2º turno desde que a home virou o 1º turno.
-    await page.goto("/2o-turno")
+    // Desde 05/10 o 2º turno mostra o duelo dos finalistas; a grade com filtros segue na página da UF.
+    await page.goto("/uf/sp")
     await page.waitForLoadState("networkidle")
 
     // Abaixo de `sm` (640px), a alternância grade/lista fica dentro do painel de filtros.
@@ -176,7 +181,7 @@ test.describe("Busca rápida palette", () => {
     // reaplica o layout responsivo sem recarregar; 320px vem antes porque a
     // ordenação escolhida em 390px continua ativa na mesma página.
     await page.setViewportSize({ width: 320, height: 844 })
-    await page.goto("/2o-turno")
+    await page.goto("/uf/sp")
     await page.waitForLoadState("networkidle")
 
     for (const width of [320, 390]) {
@@ -436,7 +441,7 @@ test.describe("BrazilMap", () => {
 // ---------------------------------------------------------------------------
 
 test.describe("No horizontal overflow", () => {
-  const pages = ["/", "/2o-turno", "/comparar", "/governadores", "/sobre", "/candidato/fixture-alfa", "/quiz"]
+  const pages = ["/", "/1o-turno", "/1o-turno/rj", "/comparar", "/governadores", "/sobre", "/candidato/fixture-alfa", "/quiz"]
 
   for (const path of pages) {
     test(`${path} — no overflow at 375px`, async ({ browser }) => {
@@ -469,7 +474,7 @@ test.describe("No horizontal overflow", () => {
 test.describe("Absolutos contidos nas regiões com rolagem horizontal", () => {
   const pages = [
     "/",
-    "/2o-turno",
+    "/1o-turno",
     "/comparar?c1=fixture-alfa&c2=fixture-beta",
     "/candidato/fixture-alfa",
     "/candidato/fixture-alfa?tab=dinheiro",

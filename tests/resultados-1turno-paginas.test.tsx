@@ -161,7 +161,7 @@ test("sem totalização, Brasil e UF mostram só o estado vazio, sem número de 
     renderToStaticMarkup(<Resultado1TurnoUf uf="sp" data={vazio} />),
   ]) {
     assert.match(html, /O TSE ainda não concluiu a totalização\. O resultado oficial aparece aqui assim que a apuração terminar\./)
-    // "1º", "2º" (faixa de turnos) e o ano do ciclo são rótulos fixos, não número de resultado.
+    // "1º", "2º" (título da página) e o ano do ciclo são rótulos fixos, não número de resultado.
     const visivel = texto(html).replace(/[12]º/g, "").replace(/Eleições 2026/g, "")
     assert.doesNotMatch(visivel, /\d/, "estado vazio não pode exibir dígitos de resultado")
     assert.doesNotMatch(html, /Prévia local/)
@@ -170,7 +170,8 @@ test("sem totalização, Brasil e UF mostram só o estado vazio, sem número de 
 
 test("Brasil com snapshot final formata votos e percentual em pt-BR e linka as fichas", () => {
   const html = renderToStaticMarkup(<Resultado1TurnoBrasil data={final} />)
-  assert.match(html, /<h1[^>]*><span class="sr-only">Resultado do <\/span>1º Turno<\/h1>/)
+  assert.match(html, /<h1[^>]*>Resultado do 1º turno<\/h1>/)
+  assert.doesNotMatch(html, /data-pf-nav-turnos|href="\/2o-turno"/)
   assert.match(html, /Fonte: TSE, resultado oficial/)
   assert.match(html, /href="https:\/\/resultados\.tse\.jus\.br\/fixture\/dados\.json"/)
   assert.match(html, /04\/10\/2026 23:59:59/)
@@ -223,7 +224,8 @@ test("senador só ganha link para a ficha com o Senado ligado (nunca link para 4
 test("página da UF mostra Governador, Senado com suplentes e os links de volta", () => {
   const html = comSenado(true, () => renderToStaticMarkup(<Resultado1TurnoUf uf="sp" data={final} />))
   assert.match(html, /<h1[^>]*>1º turno em São Paulo<\/h1>/)
-  assert.match(html, /href="\/"/)
+  assert.match(html, /href="\/1o-turno"[^>]*>[\s\S]*?Arquivo do 1º turno/)
+  assert.match(html, /Voltar ao arquivo do 1º turno/)
   assert.match(html, /href="\/uf\/sp"[^>]*>Finalistas e fichas de SP</)
   assert.match(html, /2 vagas/)
   assert.match(html, /1º suplente:<\/span> SUPLENTE UM/)
@@ -255,7 +257,8 @@ test("ficha: bloco mostra posição, diferenças, vice e link para o resultado c
   assert.match(html, /faltaram\s+234\.567 votos e 5,25 pontos percentuais/)
   // 1.000.000 - 500.000 votos e 40,25 - 14,25 pontos.
   assert.match(html, /por\s+500\.000 votos e 26,00 pontos percentuais/)
-  assert.match(html, /href="\/"[^>]*>Ver resultado completo</)
+  // /1o-turno virou o arquivo do 1º turno (a home antiga): o link diz isso, não "resultado completo".
+  assert.match(html, /href="\/1o-turno"[^>]*>Arquivo do 1º turno</)
   assert.match(html, /Fonte: TSE, resultado oficial/)
 })
 

@@ -1,5 +1,4 @@
 import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
-import { NavTurnos } from "@/components/NavTurnos"
 import {
   getDisputa1Turno,
   getResultados1Turno,
@@ -23,8 +22,9 @@ import {
 } from "@/components/Resultado1TurnoPartes"
 
 /**
- * Página do 1º turno no Brasil. `data` e `fotos` existem para teste; em produção
- * lê o snapshot do módulo e a página passa as fotos das fichas.
+ * Resultado completo do 1º turno no Brasil. Fora de rota desde 06/10/2026: /1o-turno virou o
+ * arquivo (a home como estava até a votação). `data` e `fotos` existem para teste; em uso,
+ * lê o snapshot do módulo e recebe as fotos das fichas.
  */
 export function Resultado1TurnoBrasil({
   data = getResultados1Turno(),
@@ -45,9 +45,12 @@ export function Resultado1TurnoBrasil({
           <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-muted-foreground">
             Eleições 2026
           </p>
-          <div className="mt-3">
-            <NavTurnos atual={1} />
-          </div>
+          <h1
+            className="mt-3 font-heading uppercase leading-none text-foreground [text-wrap:balance]"
+            style={{ fontSize: "clamp(36px, 7vw, 72px)" }}
+          >
+            Resultado do 1º turno
+          </h1>
           {presidente && (
             <div className="mt-8 sm:mt-12">
               <p className="mb-5 text-[length:var(--text-body-sm)] font-bold uppercase tracking-[0.08em] text-foreground sm:text-center">

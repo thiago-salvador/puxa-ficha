@@ -173,7 +173,8 @@ function structurePass(check: StructureCase["check"]): boolean {
     }
     case "polling-smoke-contract":
       return (
-        smokeSpecText.includes('openPublicPolls(page, "/")') &&
+        // Pesquisas presidenciais do 1º turno ficam em /1o-turno desde a home do 2º turno (05/10/2026).
+        smokeSpecText.includes('openPublicPolls(page, "/1o-turno")') &&
         smokeSpecText.includes('openPublicPolls(page, "/uf/am")') &&
         smokeSpecText.includes('data-pf-poll-trend') &&
         smokeSpecText.includes('data-pf-week-source') &&

@@ -24,6 +24,7 @@ import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import type { Candidato } from "@/lib/types"
 import { rotuloFaseEleitoral } from "@/lib/fase-eleitoral-publica"
+import { FOTO_PB_DICA } from "@/lib/arquivo-1turno"
 import { Scale, Landmark, ArrowRight, Briefcase, GraduationCap } from "lucide-react"
 
 interface CandidatoCardProps {
@@ -38,6 +39,8 @@ interface CandidatoCardProps {
   index: number
   onClick?: () => void
   deferPhotoUntilVisible?: boolean
+  /** Arquivo do 1º turno: só a foto fica em preto e branco (quem não segue na disputa); o link da ficha continua. */
+  fotoPB?: boolean
 }
 
 export const CandidatoCard = memo(function CandidatoCard({
@@ -49,6 +52,7 @@ export const CandidatoCard = memo(function CandidatoCard({
   index,
   onClick,
   deferPhotoUntilVisible = false,
+  fotoPB = false,
 }: CandidatoCardProps) {
   const gradient = FALLBACK_GRADIENT
   const partyLogo = getPartyLogoUrl(candidato.partido_sigla)
@@ -99,6 +103,7 @@ export const CandidatoCard = memo(function CandidatoCard({
           <div
             ref={photoFrameRef}
             className="relative w-full overflow-hidden"
+            data-pf-foto-pb={fotoPB ? "" : undefined}
             style={{
               aspectRatio: "3 / 4",
               ...(!candidato.foto_url || !photoAllowed ? { background: gradient } : {}),
@@ -112,7 +117,7 @@ export const CandidatoCard = memo(function CandidatoCard({
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             priority={!deferPhotoUntilVisible && index < 4}
-            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            className={`absolute inset-0 h-full w-full object-cover object-top ${fotoPB ? "grayscale " : ""}transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
             fallbackClassName="absolute inset-0 h-full w-full"
             initialsClassName="text-[72px] sm:text-[90px]"
           />
@@ -147,6 +152,7 @@ export const CandidatoCard = memo(function CandidatoCard({
               {/* Name — always visible */}
               <h3 className="mt-1 truncate font-heading text-[length:var(--text-body-lg)] leading-[1.05] tracking-[-0.01em] text-white sm:mt-1.5 sm:mb-2 sm:line-clamp-1 sm:text-[24px] lg:text-[length:var(--text-heading)]">
                 {candidato.nome_urna}
+                {fotoPB && <span className="sr-only">, {FOTO_PB_DICA}</span>}
               </h3>
 
               {/* Mobile: compact inline stats — always visible, fixed single line */}

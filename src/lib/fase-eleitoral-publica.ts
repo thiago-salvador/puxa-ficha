@@ -67,3 +67,34 @@ export function linkCompararFinalistas(candidatos: Candidato[]): string | null {
   if (cargo !== "Presidente" && cargo !== "Governador") return null
   return `/comparar?${mergeComparadorQueryString("", [a.slug, b.slug], COMPARADOR_EIXO_DEFAULT, { cargo, uf: cargo === "Presidente" ? "BR" : a.estado ?? "" })}`
 }
+
+export interface SecoesPorFase<T> {
+  destaque: T[]
+  demais: T[]
+  tituloDestaque: string
+}
+
+/**
+ * Separa quem venceu ou foi ao 2º turno de quem ficou pelo caminho, preservando a ordem.
+ * Sem os dois grupos não há seções (null): a lista segue inteira, como antes do resultado.
+ */
+export function separarSecoesPorFase<T extends CandidaturaPublica>(candidatos: T[]): SecoesPorFase<T> | null {
+  const avancou = (c: T) => {
+    const fase = c.fase_eleitoral_2026?.fase_eleitoral
+    return fase === "eleito" || fase === "segundo_turno"
+  }
+  const destaque = candidatos.filter(avancou)
+  const demais = candidatos.filter((c) => !avancou(c))
+  if (destaque.length === 0 || demais.length === 0) return null
+  const eleitos = destaque.filter((c) => c.fase_eleitoral_2026?.fase_eleitoral === "eleito").length
+  const tituloDestaque =
+    eleitos === destaque.length ? (eleitos > 1 ? "Eleitos no 1º turno" : "Eleito no 1º turno")
+    : eleitos === 0 ? "No 2º turno"
+    : "Eleitos e 2º turno"
+  return { destaque, demais, tituloDestaque }
+}
+
+/** Rótulo curto da aba de quem segue na disputa (programas, pesquisas). */
+export function rotuloAbaFinalistas(secoes: Pick<SecoesPorFase<unknown>, "tituloDestaque">): string {
+  return secoes.tituloDestaque.startsWith("Eleito") ? (secoes.tituloDestaque.startsWith("Eleitos e") ? "Eleitos e 2º turno" : "Eleito") : "2º turno"
+}

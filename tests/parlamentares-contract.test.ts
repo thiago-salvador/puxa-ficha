@@ -62,13 +62,17 @@ describe("página /parlamentares", () => {
     assert.doesNotMatch(deputados, /getCandidatosResource|from "@\/lib\/api"/)
   })
 
-  test("Navbar e Footer abrem com 1º Turno e 2º Turno, seguidos de Governadores, sem Parlamentares", () => {
+  test("Navbar abre com 2º Turno e 1º Turno, sem Governadores, Comparar e Listas; Footer mantém Governadores; nenhum tem /2o-turno nem Parlamentares", () => {
     const navbar = read("src/components/Navbar.tsx")
     const footer = read("src/components/Footer.tsx")
 
+    // Navbar enxuto (pedido de 05/10): 2º Turno, 1º Turno e direto Doadores; sem Governadores, Comparar e Listas.
+    assert.match(navbar, /href: "\/", label: "2º Turno" \},\s*\{ href: "\/1o-turno", label: "1º Turno" \},\s*\{ href: "\/doadores", label: "Doadores" \}/)
+    assert.doesNotMatch(navbar, /\/governadores|\/comparar"|\/rankings/)
+    assert.match(footer, /href: "\/", label: "2º Turno" \},\s*\{ href: "\/1o-turno", label: "1º Turno" \},\s*\{ href: "\/governadores", label: "Governadores" \}/)
     for (const source of [navbar, footer]) {
-      assert.match(source, /href: "\/", label: "1º Turno" \},\s*\{ href: "\/2o-turno", label: "2º Turno" \},\s*\{ href: "\/governadores", label: "Governadores" \}/)
       assert.doesNotMatch(source, /\/parlamentares/)
+      assert.doesNotMatch(source, /\/2o-turno/)
     }
   })
 
@@ -79,23 +83,24 @@ describe("página /parlamentares", () => {
 
     assert.match(sitemap, /\$\{SITE_ORIGIN\}\/parlamentares/)
     assert.match(cache, /"\/parlamentares"/)
-    // /2o-turno entra; /1o-turno só redireciona para a home e sai; as UFs ficam.
-    assert.match(sitemap, /\$\{SITE_ORIGIN\}\/2o-turno/)
-    assert.doesNotMatch(sitemap, /\$\{SITE_ORIGIN\}\/1o-turno`/)
+    // /1o-turno entra (arquivo do 1º turno); /2o-turno só redireciona para a home e sai; as UFs ficam.
+    assert.match(sitemap, /\$\{SITE_ORIGIN\}\/1o-turno`/)
+    assert.doesNotMatch(sitemap, /\$\{SITE_ORIGIN\}\/2o-turno/)
     assert.match(sitemap, /\$\{SITE_ORIGIN\}\/1o-turno\/\$\{uf\}/)
-    assert.match(cache, /"\/2o-turno"/)
-    assert.doesNotMatch(cache, /"\/1o-turno"/)
+    assert.match(cache, /"\/1o-turno"/)
+    assert.doesNotMatch(cache, /"\/2o-turno"/)
     assert.doesNotMatch(search, /href: "\/parlamentares"/)
-    assert.match(search, /href: "\/",\s*title: "1º Turno"/)
-    assert.match(search, /href: "\/2o-turno",\s*title: "2º Turno"/)
+    assert.match(search, /href: "\/",\s*title: "2º Turno"/)
+    assert.match(search, /href: "\/1o-turno",\s*title: "1º Turno"/)
+    assert.doesNotMatch(search, /\/2o-turno/)
   })
 
-  test("busca rápida oferece 1º Turno (/) e 2º Turno no lugar de /parlamentares, com ou sem a flag do Senado", () => {
+  test("busca rápida abre com Home (/) e 1º Turno no lugar de /parlamentares, com ou sem a flag do Senado", () => {
     for (const flag of [false, true]) {
       const items = buildShortcutItems(flag)
       assert.equal(items.find((item) => item.href === "/parlamentares"), undefined)
-      assert.equal(items.find((item) => item.href === "/")?.title, "1º Turno")
-      assert.equal(items.find((item) => item.href === "/2o-turno")?.title, "2º Turno")
+      assert.deepEqual(items.slice(0, 2).map((item) => [item.href, item.title]), [["/", "2º Turno"], ["/1o-turno", "1º Turno"]])
+      assert.equal(items.find((item) => item.href === "/2o-turno"), undefined)
     }
   })
 })

@@ -8,6 +8,7 @@ import type { ProgramRunningMate } from "@/lib/vice-official-status"
 import type { ProgramaGovernoManifestoPublico, ProgramaGovernoResumo } from "@/lib/programa-governo"
 import { STATE_PROGRAM_CORE_THEMES, stateProgramTheme } from "@/lib/state-program-themes"
 import { IndicadorFonteTag } from "./IndicadorFonteTag"
+import { AbasFiltro } from "./AbasFiltro"
 import { PartyLogoMark } from "./PartyLogoMark"
 import { getPartyLogoUrl, safeHref } from "@/lib/utils"
 import styles from "./StatePrograms.module.css"
@@ -50,14 +51,25 @@ function ProgramSummary({ manifesto, slug, name }: { manifesto: ProgramaGovernoM
   </>
 }
 
-export function StatePrograms({ programs, context = [], unavailable = false, showContext = true, scopeTitle = "Visão geral dos programas", runningMates = {} }: {
+/** Aba de quem segue na disputa (ou venceu) ao lado de "Todos os candidatos". */
+export type AbaFinalistasProgramas = { rotulo: string; slugs: readonly string[] }
+
+export function StatePrograms({ programs: programsTodos, context = [], unavailable = false, showContext = true, scopeTitle = "Visão geral dos programas", runningMates = {}, abaFinalistas }: {
   programs: StateProgram[]
+  abaFinalistas?: AbaFinalistasProgramas
   context?: StateProgramContext[]
   unavailable?: boolean
   showContext?: boolean
   scopeTitle?: string
   runningMates?: Record<string, ProgramRunningMate>
 }) {
+  const painelId = useId()
+  const slugsFinalistas = new Set(abaFinalistas?.slugs ?? [])
+  const finalistas = programsTodos.filter(p => slugsFinalistas.has(p.slug))
+  // Abas só quando o recorte muda algo: há finalista com programa e há outros além deles.
+  const comAbas = finalistas.length > 0 && finalistas.length < programsTodos.length
+  const [aba, setAba] = useState<"finalistas" | "todos">("finalistas")
+  const programs = comAbas && aba === "finalistas" ? finalistas : programsTodos
   const [view, setView] = useState<"summary" | "themes">("summary")
   const [theme, setTheme] = useState("seguranca")
   const [candidate, setCandidate] = useState("all")
@@ -78,6 +90,13 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
       <h2 id="state-programs-title">O que está nos programas</h2>
       <div>Uma visão geral de cada programa. Escolha um tema para aprofundar.</div>
     </header>
+    {comAbas && <AbasFiltro
+      rotulo="Quais programas mostrar"
+      abas={[{ id: "finalistas", label: abaFinalistas!.rotulo }, { id: "todos", label: "Todos os candidatos" }]}
+      ativa={aba}
+      onChange={(id) => { setAba(id); setCandidate("all") }}
+      painelId={painelId}
+    />}
     <div className={styles.toolbar}>
       <div className={styles.views} role="group" aria-label="Visualização dos programas">
         <button type="button" aria-pressed={view === "summary"} onClick={() => setView("summary")}><FileText size={20} aria-hidden="true" />Resumo do programa</button>
@@ -115,7 +134,7 @@ export function StatePrograms({ programs, context = [], unavailable = false, sho
     </div>
     {unavailable && <p role="status" className={styles.notice}>Não foi possível carregar os programas agora. Consulte as fichas das candidaturas.</p>}
     <p className="sr-only" role="status">{visible.length} {visible.length === 1 ? "candidatura exibida" : "candidaturas exibidas"}. {view === "summary" ? "Resumo do programa" : `Tema: ${[...STATE_PROGRAM_CORE_THEMES, ...otherThemes].find(([id]) => id === theme)?.[1] ?? theme}`}.</p>
-    <div className={styles.programs}>
+    <div id={painelId} className={styles.programs} {...(comAbas ? { role: "tabpanel" } : {})}>
       {visible.map(p => {
         const manifesto = p.manifesto?.estado === "aprovado" && p.manifesto.resumo ? p.manifesto : null
         const items = manifesto?.resumo?.temas.filter(t => stateProgramTheme(t).id === theme) ?? []

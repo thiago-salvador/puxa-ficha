@@ -184,7 +184,7 @@ export function ResultadoNoPrimeiroTurno({
                   href={href1Turno(resultado.disputa.cargo === "Presidente" ? null : resultado.disputa.uf)}
                   className="inline-flex min-h-11 shrink-0 items-center gap-1 text-[length:var(--text-body-sm)] font-bold underline underline-offset-4"
                 >
-                  Ver resultado completo<ArrowRight className="size-3.5" aria-hidden="true" />
+                  {resultado.disputa.cargo === "Presidente" ? "Arquivo do 1º turno" : "Ver resultado completo"}<ArrowRight className="size-3.5" aria-hidden="true" />
                 </Link>
                 <ResultadoFonte disputa={resultado.disputa} className="sm:text-right" />
               </div>

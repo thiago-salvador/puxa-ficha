@@ -1,5 +1,6 @@
 import type { FaseEleitoral2026 } from "@/lib/types"
-import { mesclarFaseComSnapshot } from "@/lib/resultados-1turno"
+import { mesclarFaseComSnapshot, rotuloRegistroForaDoResultado } from "@/lib/resultados-1turno"
+import { fotoEmPretoEBranco } from "@/lib/arquivo-1turno"
 
 type ComFase = { fase_eleitoral_2026?: FaseEleitoral2026 | null }
 
@@ -36,6 +37,28 @@ export function comFaseEfetiva<T extends { slug: string; cargo_disputado: string
 ): T {
   const fase = mesclarFaseComSnapshot(candidato.slug, candidato.cargo_disputado, fasePorSlug.get(candidato.slug))
   return fase ? { ...candidato, fase_eleitoral_2026: fase } : candidato
+}
+
+/**
+ * Slugs com foto em preto e branco no arquivo do 1º turno, pela fase efetiva
+ * (`comFaseEfetiva`). Lista serializável: atravessa a fronteira para os
+ * componentes de cliente da página.
+ */
+export function slugsComFotoPretoEBranco<T extends { slug: string; cargo_disputado: string | null; situacao_candidatura?: string | null } & ComFase>(
+  candidatos: readonly T[],
+  fasePorSlug: ReadonlyMap<string, FaseEleitoral2026>,
+): string[] {
+  return candidatos
+    .map((candidato) => comFaseEfetiva(candidato, fasePorSlug))
+    .filter((candidato) => {
+      if (fotoEmPretoEBranco(candidato)) return true
+      // Fora do resultado do TSE por renúncia, indeferimento ou cassação também não segue na
+      // disputa: mesma régua do bloco "Resultado no 1º turno" da ficha. Eleito e 2º turno nunca.
+      const fase = candidato.fase_eleitoral_2026?.fase_eleitoral
+      if (fase === "eleito" || fase === "segundo_turno") return false
+      return rotuloRegistroForaDoResultado(candidato.situacao_candidatura) !== null
+    })
+    .map((candidato) => candidato.slug)
 }
 
 export type StatusUf1Turno = "2º turno" | "Eleito no 1º turno"

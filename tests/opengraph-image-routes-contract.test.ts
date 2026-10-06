@@ -11,6 +11,7 @@ const PUBLIC_OG_ROUTE_FILES = [
   "comparar/opengraph-image/route.tsx",
   "governadores/opengraph-image/route.tsx",
   "quiz/resultado/og/route.tsx",
+  "og/segundo-turno/route.tsx",
   "candidato/[slug]/opengraph-image/route.tsx",
   "candidato/[slug]/timeline/opengraph-image/route.tsx",
   "rankings/[slug]/opengraph-image/route.tsx",

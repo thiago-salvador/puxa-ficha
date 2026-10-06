@@ -31,7 +31,14 @@ export function RevelarBarras() {
       el.dataset.pfRevelar = "aguardando"
       observador.observe(el)
     }
-    return () => observador.disconnect()
+    return () => {
+      observador.disconnect()
+      // Desmontar (ou a montagem dupla do StrictMode) não pode deixar barra presa em scaleX(0):
+      // o que não revelou volta a "auto" e a próxima montagem arma de novo.
+      for (const el of alvos) {
+        if (el.dataset.pfRevelar === "aguardando") el.dataset.pfRevelar = "auto"
+      }
+    }
   }, [])
   return null
 }

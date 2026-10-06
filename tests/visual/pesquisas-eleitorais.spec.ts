@@ -34,7 +34,8 @@ if (!latestPublishedPa) throw new Error("catálogo de governadores não contém 
 const latestPaFirstTurn = latestPublishedPa.cenarios?.find(scenario => scenario.turn === 1 && /^estimulad[ao]$/.test(scenario.comparability_key?.split("|")[4] ?? ""))
 if (!latestPaFirstTurn) throw new Error("pesquisa PA mais recente não contém cenário de primeiro turno")
 
-async function openPolls(page: Page, path = "/") {
+// As pesquisas presidenciais do 1º turno saíram da home (página do 2º turno) e ficam em /1o-turno.
+async function openPolls(page: Page, path = "/1o-turno") {
   await page.goto(`${path}#pesquisas`, { waitUntil: "domcontentloaded" })
   const section = page.locator("[data-pf-polls]")
   await expect(section).toBeVisible()
@@ -97,7 +98,8 @@ test("catálogo público publica a primeira pesquisa e expõe o contrato da méd
     const members = section.locator("[data-pf-week-member]")
     expect(await members.count()).toBeGreaterThanOrEqual(2)
     await expect(section.locator("[data-pf-week-source] a")).toHaveCount(await members.count())
-    await members.first().locator("summary").click()
+    // Só o summary do próprio item: os detalhes técnicos dentro dele têm outro summary.
+    await members.first().locator(":scope > summary").click()
     await expect(members.first().locator("[data-pf-poll-details]")).toBeVisible()
   } else {
     await expect(section.getByText("Como calculamos a média", { exact: true })).toBeVisible()

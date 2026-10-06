@@ -5,6 +5,8 @@ import { ChevronDown } from "lucide-react"
 import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { BrazilMap } from "@/components/BrazilMap"
+import { LegendaEspectroGovernadores } from "@/components/LegendaEspectroGovernadores"
+import { coresGovernadoresPorUf, pinturasPorUf } from "@/lib/mapa-governadores-espectro"
 import { JsonLd } from "@/components/JsonLd"
 import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { buildTwitterMetadata } from "@/lib/metadata"
@@ -17,7 +19,7 @@ import {
 } from "@/lib/api"
 import { buildIndicadoresPorEstadoForMap } from "@/lib/brazil-map-preview"
 import { comFaseEfetiva, statusUf1Turno } from "@/lib/finalistas-1turno"
-import { getDisputa1Turno, hasResultados1Turno } from "@/lib/resultados-1turno"
+import { getDisputa1Turno, getResultados1Turno, hasResultados1Turno } from "@/lib/resultados-1turno"
 
 const title = "Eleições 2026: governadores por estado | Puxa Ficha"
 const description =
@@ -71,6 +73,8 @@ export default async function GovernadoresPage() {
     grupo.push({ ...candidato, fase_eleitoral_2026: fase })
     fasesPorUf.set(candidato.estado, grupo)
   }
+
+  const coresGovernadores = coresGovernadoresPorUf(getResultados1Turno())
 
   // Selo por UF só com resultado publicado: fase do snapshot do TSE e das fichas.
   const statusPorEstado: Record<string, string> = {}
@@ -164,6 +168,8 @@ export default async function GovernadoresPage() {
           indicadoresPorEstado={indicadoresPorEstado}
           candidatosPorEstado={candidatosPorEstado}
           statusPorEstado={statusPorEstado}
+          pinturaPorEstado={coresGovernadores.length > 0 ? pinturasPorUf(coresGovernadores) : undefined}
+          legenda={<LegendaEspectroGovernadores cores={coresGovernadores} />}
         />
         {fasesPorUf.size > 0 && (
           <section className="mt-10" aria-labelledby="resultado-governadores-titulo" data-pf-governadores-resultado="">

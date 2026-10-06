@@ -117,10 +117,11 @@ describe("resultados 1º turno: leitura pelo site", () => {
     assert.equal(mesclarFaseComSnapshot("pres-a", "Presidente", null, { ...FINAL, status: "vazio", disputas: [] }), null)
   })
 
-  it("link do 1º turno leva a UF em minúscula e Brasil para a raiz", () => {
+  it("link do 1º turno leva a UF em minúscula e o Brasil para /1o-turno", () => {
     assert.equal(href1Turno("SP"), "/1o-turno/sp")
-    assert.equal(href1Turno("BR"), "/")
-    assert.equal(href1Turno(null), "/")
+    assert.equal(href1Turno("BR"), "/1o-turno")
+    assert.equal(href1Turno(null), "/1o-turno")
+    assert.equal(href1Turno(), "/1o-turno")
   })
 })
 

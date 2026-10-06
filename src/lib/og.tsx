@@ -555,3 +555,145 @@ export async function buildEditorialOg({
     }
   )
 }
+
+/** Card do duelo muda de texto uma vez por dia (contagem): CDN por uma hora, não por um dia. */
+const dailyOgImageCacheHeaders = {
+  "Cache-Control": "public, max-age=600, s-maxage=3600, stale-while-revalidate=600",
+  "X-Robots-Tag": "noindex",
+}
+
+export interface DueloOgFinalista {
+  nome: string
+  partido: string
+  percentual: string
+  /** data URI (PNG ou JPEG) ou null para as iniciais. */
+  foto: string | null
+  /** Cor do lado do partido, em hexadecimal; null cai no branco. */
+  cor: string | null
+  /** Largura do segmento na barra (0 a 100). */
+  largura: number
+}
+
+function iniciais(nome: string): string {
+  return nome.split(/\s+/).filter(Boolean).slice(0, 2).map((p) => p[0]).join("").toUpperCase()
+}
+
+/**
+ * Card do 2º turno para compartilhar e para o Open Graph da home: os dois
+ * finalistas com foto, nome, partido e % dos válidos no 1º turno, a barra nas
+ * cores do lado de cada partido e a contagem de dias. Tudo vem pronto de quem
+ * chama (snapshot do TSE); nada é escrito aqui.
+ */
+export async function buildDueloSegundoTurnoOg({
+  finalistas,
+  contagem,
+  headers = dailyOgImageCacheHeaders,
+}: {
+  finalistas: [DueloOgFinalista, DueloOgFinalista]
+  contagem: string | null
+  headers?: Record<string, string>
+}) {
+  const fonts = await getOgFonts()
+  const coluna = (f: DueloOgFinalista, lado: "esquerda" | "direita") => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: lado === "esquerda" ? "row" : "row-reverse",
+        alignItems: "center",
+        gap: "28px",
+        flex: 1,
+        minWidth: 0,
+      }}
+    >
+      {f.foto ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={f.foto} width={168} height={168} alt="" style={{ width: 168, height: 168, borderRadius: 999, objectFit: "cover", border: "4px solid rgba(255,255,255,0.35)" }} />
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            width: 168,
+            height: 168,
+            borderRadius: 999,
+            alignItems: "center",
+            justifyContent: "center",
+            background: "#262626",
+            border: "4px solid rgba(255,255,255,0.35)",
+            fontFamily: FONT_HEADING,
+            fontSize: 64,
+          }}
+        >
+          {iniciais(f.nome)}
+        </div>
+      )}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: lado === "esquerda" ? "flex-start" : "flex-end", minWidth: 0 }}>
+        <div style={{ display: "flex", fontFamily: FONT_HEADING, fontSize: 54, lineHeight: 1, textTransform: "uppercase", textAlign: lado === "esquerda" ? "left" : "right", maxWidth: 330 }}>
+          {f.nome}
+        </div>
+        <div style={{ display: "flex", marginTop: 10, fontSize: 22, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.75)" }}>
+          {f.partido}
+        </div>
+        <div style={{ display: "flex", marginTop: 14, fontFamily: FONT_HEADING, fontSize: 92, lineHeight: 1 }}>{f.percentual}</div>
+      </div>
+    </div>
+  )
+  const [a, b] = finalistas
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          padding: "44px 56px 40px",
+          background: "#0a0a0a",
+          color: "#ffffff",
+          fontFamily: FONT_SANS,
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div style={{ display: "flex", fontSize: 24, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+            2º turno · 25 de outubro
+          </div>
+          {contagem ? (
+            <div style={{ display: "flex", padding: "10px 20px", borderRadius: 999, background: "#ffffff", color: "#0a0a0a", fontSize: 22, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              {contagem}
+            </div>
+          ) : null}
+        </div>
+
+        <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+          {coluna(a, "esquerda")}
+          <div style={{ display: "flex", fontFamily: FONT_HEADING, fontSize: 56, color: "rgba(255,255,255,0.6)" }}>x</div>
+          {coluna(b, "direita")}
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+          <div style={{ display: "flex", width: "100%", height: 18, borderRadius: 999, overflow: "hidden", background: "rgba(255,255,255,0.15)" }}>
+            <div style={{ display: "flex", width: `${a.largura}%`, height: "100%", background: a.cor ?? "#ffffff" }} />
+            <div style={{ display: "flex", flex: 1, height: "100%" }} />
+            <div style={{ display: "flex", width: `${b.largura}%`, height: "100%", background: b.cor ?? "#a3a3a3" }} />
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+            <div style={{ display: "flex", fontFamily: FONT_HEADING, fontSize: 40, textTransform: "uppercase", letterSpacing: "0.01em" }}>Puxa Ficha</div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4 }}>
+              <div style={{ display: "flex", fontSize: 20, fontWeight: 700 }}>puxaficha.com.br</div>
+              <div style={{ display: "flex", fontSize: 18, color: "rgba(255,255,255,0.72)" }}>Votos válidos no 1º turno. Fonte: TSE.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    {
+      ...ogSize,
+      headers,
+      fonts: [
+        { name: FONT_SANS, data: fonts.sansRegular, weight: 400, style: "normal" },
+        { name: FONT_SANS, data: fonts.sansBold, weight: 700, style: "normal" },
+        { name: FONT_HEADING, data: fonts.heading, weight: 400, style: "normal" },
+      ],
+    }
+  )
+}
