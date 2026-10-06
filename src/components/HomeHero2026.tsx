@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { formatarPercentual, formatarVotos, type CandidatoResultado1Turno, type DisputaResultado1Turno } from "@/lib/resultados-1turno"
 import { dividirVotosValidos, fotoDe, larguraBarra, type FotosCandidatos } from "@/lib/resultados-1turno-vista"
 import { coresDosFinalistas } from "@/lib/cores-finalistas"
+import { retratoHero, type RetratoHero } from "@/lib/hero-retratos-2turno"
 import { finalistasDaDisputa, formatarDataPesquisa, type Pesquisa2TurnoLinha } from "@/lib/segundo-turno-2026"
 import type { NumeroHero1Turno } from "@/lib/home-eleicao-2026"
 import type { HomeHeroMetrics } from "@/lib/home-hero-metrics"
@@ -23,24 +24,57 @@ const LINK_ESCURO =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80"
 
 /**
- * Retrato do finalista (do lg em diante), na altura toda da parte de cima e na proporção da foto (3:4).
- * O centro da foto, onde fica o rosto, cai no meio do vão entre a borda da tela e o começo do duelo
- * (largura min(40rem, 48vw), centrada): o rosto nunca fica sob o texto; só o ombro, já escurecido,
- * avança para o centro.
+ * Retrato do finalista (do lg em diante), cobrindo metade da parte de cima. A foto tem a altura da
+ * área e a própria proporção; o centro do rosto cai no meio do vão entre a borda da tela e o começo
+ * do duelo (largura min(40rem, 48vw), centrada), então o rosto nunca fica sob o texto. O resto da
+ * imagem some aos poucos até o meio da tela.
  */
-function RetratoFundo({ src, lado }: { src: string | null; lado: "esquerda" | "direita" }) {
+function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | null; fotoFicha: string | null; lado: "esquerda" | "direita" }) {
+  const src = retrato?.url ?? fotoFicha
   if (!src) return null
-  const direcao = lado === "esquerda" ? "to right" : "to left"
-  const mascara = `linear-gradient(${direcao}, #000 0%, #000 52%, rgba(0,0,0,0.55) 74%, transparent 100%)`
-  const centroDoVao = "calc((100% - min(40rem, 48vw)) / 4)"
+  // Sem retrato largo, a foto da ficha (3:4) com o rosto no centro.
+  const proporcao = retrato ? retrato.largura / retrato.altura : 3 / 4
+  const rostoX = retrato ? retrato.rosto_x : 0.5
+  const escala = retrato ? retrato.escala : 1
+  const rostoLargura = retrato ? retrato.rosto_largura : 0.4
+  const esquerda = lado === "esquerda"
+  // Unidades do contêiner: 100cqw = metade da tela, 100cqh = altura da área.
+  const alvo = esquerda ? "(50cqw - min(40rem, 48vw) / 4)" : "(50cqw + min(40rem, 48vw) / 4)"
+  const mascaraMetade = `linear-gradient(${esquerda ? "to right" : "to left"}, #000 0%, #000 42%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.18) 88%, transparent 100%)`
+  // Distância do centro do rosto até o texto (metade do vão). A altura da foto é limitada para a
+  // metade do rosto caber nela com 24px de folga: em tela estreita a foto encolhe em vez de invadir.
+  const vao = "(50cqw - min(40rem, 48vw) / 4)"
+  const altura = `min(${escala * 100}cqh, calc((${vao} - 24px) / ${((rostoLargura / 2) * proporcao).toFixed(4)}))`
+  // A própria foto também some na borda que aponta para o centro e embaixo: nunca aparece um corte reto.
+  const lateralFoto = `linear-gradient(${esquerda ? "to right" : "to left"}, #000 0%, #000 62%, transparent 100%)`
+  const baseFoto = "linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%)"
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-y-0 hidden aspect-[3/4] lg:block ${lado === "esquerda" ? "-translate-x-1/2" : "translate-x-1/2"}`}
-      style={{ [lado === "esquerda" ? "left" : "right"]: centroDoVao, maskImage: mascara, WebkitMaskImage: mascara }}
+      className={`pointer-events-none absolute inset-y-0 hidden w-1/2 overflow-hidden [container-type:size] lg:block ${esquerda ? "left-0" : "right-0"}`}
+      style={{ maskImage: mascaraMetade, WebkitMaskImage: mascaraMetade }}
       data-pf-hero-retrato={lado}
     >
-      <Image src={src} alt="" fill priority sizes="42vw" className="object-cover object-top" />
+      <Image
+        src={src}
+        alt=""
+        width={retrato?.largura ?? 960}
+        height={retrato?.altura ?? 1280}
+        priority
+        sizes="(min-width: 1024px) 60vw, 1px"
+        className="absolute top-0 max-w-none"
+        style={{
+          ["--pf-altura" as string]: altura,
+          height: "var(--pf-altura)",
+          width: "auto",
+          left: `calc(${alvo} - ${(rostoX * proporcao).toFixed(4)} * var(--pf-altura))`,
+          maskImage: `${lateralFoto}, ${baseFoto}`,
+          WebkitMaskImage: `${lateralFoto}, ${baseFoto}`,
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
+        }}
+        data-pf-hero-retrato-img=""
+      />
     </div>
   )
 }
@@ -168,11 +202,13 @@ function DueloHero({
   // Cor do lado do partido (mesma régua do espectro); sem duas classes distintas, branco e cinza.
   const espectro = coresDosFinalistas(a.partido, b.partido)
   const cores: [string, string] = espectro ? [espectro.a.cor, espectro.b.cor] : ["#ffffff", "var(--gray-400)"]
+  // Crédito só dos retratos largos exibidos (do lg em diante); a foto da ficha já tem fonte na ficha.
+  const creditos = [retratoHero(a.slug), retratoHero(b.slug)].filter((r): r is RetratoHero => r !== null)
   return (
     <div className="relative" data-pf-hero-duelo="Presidente">
       <div className="relative">
-        <RetratoFundo src={fotoDe(fotos, a.slug)} lado="esquerda" />
-        <RetratoFundo src={fotoDe(fotos, b.slug)} lado="direita" />
+        <RetratoFundo retrato={retratoHero(a.slug)} fotoFicha={fotoDe(fotos, a.slug)} lado="esquerda" />
+        <RetratoFundo retrato={retratoHero(b.slug)} fotoFicha={fotoDe(fotos, b.slug)} lado="direita" />
         <div className="relative mx-auto max-w-7xl px-5 pb-6 pt-[clamp(76px,9vh,96px)] text-center md:px-12 lg:pb-[clamp(24px,4.5vh,48px)]">
           <h1
             className="hero-fade font-heading text-[clamp(3.5rem,min(10vw,12vh),8rem)] uppercase leading-[0.85] tracking-[-0.01em] text-white"
@@ -202,6 +238,20 @@ function DueloHero({
         <BarraVotosHero presidente={presidente} cores={cores} />
         <p className={`mx-auto mt-3 max-w-prose text-center sm:mt-[clamp(8px,1.6vh,16px)] ${TEXTO_APOIO}`}>
           Percentuais dos votos válidos no 1º turno. Fonte: TSE.
+          {creditos.length > 0 && (
+            <span className="max-lg:hidden" data-pf-hero-creditos>
+              {" "}Fotos:{" "}
+              {creditos.map((r, i) => (
+                <span key={r.pagina}>
+                  {i > 0 && ", "}
+                  <a href={r.pagina} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+                    {r.credito} ({r.licenca})<span className="sr-only"> (abre em nova aba)</span>
+                  </a>
+                </span>
+              ))}
+              .
+            </span>
+          )}
           {!presidente.fechamento_oficial && (
             <span data-pf-hero-fechamento-pendente> O TSE ainda não publicou o fechamento oficial desta disputa; a ida ao 2º turno foi calculada pelos votos.</span>
           )}
@@ -389,7 +439,7 @@ export function HomeHero2026({ imagem, temResultado, presidente, fotos, pesquisa
       {/* Faixa abaixo do duelo: pesquisa e números do 1º turno; depois o seletor de UF. */}
       <div
         data-pf-hero-faixa
-        className="mt-10 grid gap-4 border-t border-white/30 pt-5 sm:mt-14 sm:gap-8 sm:pt-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-12"
+        className={`mt-10 grid gap-4 border-t border-white/30 pt-5 sm:mt-14 sm:gap-8 sm:pt-6 lg:gap-x-12 ${finalistas && pesquisa ? "lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]" : ""}`}
       >
         {finalistas && pesquisa && <PesquisaHero pesquisa={pesquisa} nomes={[finalistas[0].nome_urna, finalistas[1].nome_urna]} />}
         {numeros.length > 0 && (
