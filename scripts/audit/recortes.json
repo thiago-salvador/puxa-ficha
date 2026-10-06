@@ -802,6 +802,13 @@
       "ate": "20261002180000",
       "allowlist": "scripts/audit/allowlist-vocabulario-renuncia-20261002.json",
       "divida": null
+    },
+    {
+      "nome": "fase-eleitoral-turno-1-20261005",
+      "desde": "20261005180206",
+      "ate": "20261005180206",
+      "allowlist": "scripts/audit/allowlist-fase-eleitoral-turno-1-20261005.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
