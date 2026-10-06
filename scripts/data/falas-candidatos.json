@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-02T14:25:31.380Z",
+  "updated_at": "2026-10-04T09:23:00.488Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -2960,6 +2960,32 @@
       }
     },
     {
+      "id": "5cd0ca7e0d0b530d08d71cde58312fe9941c461994ada0205277ebcaf4c8b22f",
+      "candidate_id": "edddfd43-0528-41eb-977a-feacdbbbe8fc",
+      "candidate_slug": "david-almeida",
+      "candidate_name": "David Almeida",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Eu pedi desculpas sim, porém aquilo foi uma fatalidade.",
+      "context": "Em outro momento do bloco, David Almeida e Maria do Carmo trocaram farpas após a candidata questionar se ele pediu desculpas para a família de Giovana Ribeiro da Silva, vítima de um acidente por conta de um buraco na avenida Djalma Batista. O ex- -prefeito afirmou que sua gestão foi a que mais asfaltou ruas na capital e disse que conhecia “a dor de perder um filho”. “Eu pedi desculpas sim, porém aquilo foi uma fatalidade. Muito diferente da senhora. Por exemplo: a sua filha furou fila para estudar na faculdade da Assembleia Legislativa. Hoje saiu uma reportagem que a senhora, que é uma mulher milionária, teve que usar de expediente da bolsa universidade com uma funcionária fantasma para poder formar sua própria filha”, criticou.",
+      "event_context": "Debate promovido pela TV A Crítica na noite de 28 de setembro de 2026; matéria publicada no dia seguinte.. na noite de ontem",
+      "event_type": "debate",
+      "occurred_on": "2026-09-28",
+      "publisher": "A Crítica",
+      "article_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+      "article_title": "Debate na TV A Crítica é marcado por ataques e acusações entre candidatos",
+      "article_published_at": "2026-09-29 8:25:13",
+      "observed_at": "2026-10-04T09:23:00.488Z",
+      "source_sha256": "3639a92d30b3ce462f2a116284ab1af0803a930b08654f25781b4afecc8dd279",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "David Almeida (Avante)",
+        "date_excerpt": "na noite de ontem",
+        "fetched_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "5d3d442874df0717ffb6e8583ca19945803ca4ca3cf6ff7d9c4567e59a729c89",
       "candidate_id": "022d27e8-2832-4156-9bc7-7eac817ac901",
       "candidate_slug": "raquel-lyra",
@@ -5850,6 +5876,32 @@
       }
     },
     {
+      "id": "a29fb5645dee21db0c29147e887de8cf745e79bc223a1667ca38dcf0d5215db5",
+      "candidate_id": "242f6bbf-cc71-4fe5-84d5-3142eb88448a",
+      "candidate_slug": "isael-munduruku",
+      "candidate_name": "Isael Munduruku",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Você é senador há 12 anos",
+      "context": "Aziz abriu uma ‘dobradinha’ com Munduruku para atacar Roberto Cidade e Wilson Lima na pauta da eduacação. O candidato do PSD lembrou que, quando governador, entregou notebooks a professores e alunos do terceiro ano do ensino médio. O nome da Rede denunciou “escolas sucateadas” no estado, mas aproveitou para alfinetar Aziz. “Você é senador há 12 anos, ou seja, teria condições de intervir”, e completou “não basta apenas vir aqui e dizer ‘olha o governo’, porque você está, na prática, há mais de uma década no Senado”.",
+      "event_context": "Debate promovido pela TV A Crítica na noite de 28 de setembro de 2026; matéria publicada no dia seguinte.. na noite de ontem",
+      "event_type": "debate",
+      "occurred_on": "2026-09-28",
+      "publisher": "A Crítica",
+      "article_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+      "article_title": "Debate na TV A Crítica é marcado por ataques e acusações entre candidatos",
+      "article_published_at": "2026-09-29 8:25:13",
+      "observed_at": "2026-10-04T09:23:00.488Z",
+      "source_sha256": "3639a92d30b3ce462f2a116284ab1af0803a930b08654f25781b4afecc8dd279",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Isael Munduruku",
+        "date_excerpt": "na noite de ontem",
+        "fetched_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "a48d797554c368b27c4ff15d0b3b4f086eb5a6450705bda4c79711eed90a9c2f",
       "candidate_id": "c7a28e0e-06d0-412b-98ee-b79a7a4354f9",
       "candidate_slug": "mauricio-coelho",
@@ -6127,6 +6179,32 @@
         "fetched_url": "https://primeirapagina.com.br/politica/pulpito-vazio-e-troca-de-propostas-candidatos-ao-governo-de-ms-avaliam-1o-debate-das-eleicoes-2026/",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "abd83d4e963e38db7e5d3b33ccf4ec874b753672273406055cce114e2212e102",
+      "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+      "candidate_slug": "omar-aziz",
+      "candidate_name": "Omar Aziz",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Ele se acha um semideus",
+      "context": "Roberto Cidade afirmou que era candidato de sua “própria história” e questionou Aziz sobre suas propostas para crianças no transtorno do espectro autista (TEA). O senador lembrou da Secretaria de Pessoas com Deficiência, que foi extinta no primeiro mandato de Wilson Lima, e posteriormente recriada no segundo mandato, e acusou o governo Cidade de instituir um fura-fila no Sisreg. “Ele se acha um semideus, ele está decidindo quem vive e quem não, estão furando a fila. Onde eu chego no estado do Amazonas, as pessoas pedem pelo amor de Deus para serem atendidas. Ele, por troca de votos, está furando a fila, ameaçando diretoras e diretores”, declarou. Cidade rebateu afirmando que Omar Aziz não possuía proposta para a causa TEA e ignorou a acusação, afirmando que responderia no momento oportuno.",
+      "event_context": "Debate promovido pela TV A Crítica na noite de 28 de setembro de 2026; matéria publicada no dia seguinte.. na noite de ontem",
+      "event_type": "debate",
+      "occurred_on": "2026-09-28",
+      "publisher": "A Crítica",
+      "article_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+      "article_title": "Debate na TV A Crítica é marcado por ataques e acusações entre candidatos",
+      "article_published_at": "2026-09-29 8:25:13",
+      "observed_at": "2026-10-04T09:23:00.488Z",
+      "source_sha256": "3639a92d30b3ce462f2a116284ab1af0803a930b08654f25781b4afecc8dd279",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Omar Aziz (PSD)",
+        "date_excerpt": "na noite de ontem",
+        "fetched_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+        "method": "codex_source_review"
       }
     },
     {
@@ -7423,6 +7501,33 @@
       }
     },
     {
+      "id": "d188648de114fee7bfabbfa88f34db1b9d2eef56bb69eaaaeb3cf114b85a37d6",
+      "candidate_id": "ae28abd5-e231-405a-938e-85e8c6d64d75",
+      "candidate_slug": "ravenna-castro",
+      "candidate_name": "Ravenna Castro",
+      "office": "Governador",
+      "uf": "PI",
+      "quote_text": "Se a nossa participação tiver servido para dar visibilidade aos invisíveis, nós já somos vencedores",
+      "context": "\"O sentimento é que fizemos o que pudemos dentro das condições que tivemos. De que cumpri minha missão com os quais escolhi defender e faria tudo novamente se precisasse. Se a nossa participação tiver servido para dar visibilidade aos invisíveis, nós já somos vencedores\", declarou.",
+      "event_context": "Declaração em campanha feita em 3 de outubro de 2026 ao comentar resultados da pesquisa do Instituto GP1.. A declaração foi feita neste sábado (03)",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-03",
+      "publisher": "GP1",
+      "article_url": "https://www.gp1.com.br/pi/piaui/noticia/2026/10/3/ravenna-castro-fala-em-missao-cumprida-apos-pesquisa-do-instituto-gp1-ja-somos-vencedores-633039.html",
+      "article_title": "Ravenna Castro fala em missão cumprida após pesquisa do Instituto GP1: “já somos vencedores”",
+      "article_published_at": "2026-10-03T10:20:00-03:00",
+      "observed_at": "2026-10-04T09:23:00.488Z",
+      "source_sha256": "e834f2bacefb98ae53edbad26f37999bbeada3549f966af2b02b0085747f41fe",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "Ao comentar o resultado e fazer um balanço da campanha, Ravenna afirmou que encerra sua participação na política eleitoral estadual com o sentimento de dever cumprido.",
+        "identity_excerpt": "A candidata ao Governo do Piauí pelo Democrata, a advogada Ravenna Castro",
+        "date_excerpt": "A declaração foi feita neste sábado (03)",
+        "fetched_url": "https://www.gp1.com.br/pi/piaui/noticia/2026/10/3/ravenna-castro-fala-em-missao-cumprida-apos-pesquisa-do-instituto-gp1-ja-somos-vencedores-633039.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "d34125417bed2732b36af1007b195f2d0b45c33f8c3a63c1b96e4281fcae1c9a",
       "candidate_id": "9cd65a2b-334c-421c-b527-55984a28857c",
       "candidate_slug": "vivian-mendes",
@@ -8594,6 +8699,32 @@
       }
     },
     {
+      "id": "fa05066227517cc37c6a86f74e2105af6deacf481cff5609571510d03f31049c",
+      "candidate_id": "fa96e1ad-f460-411b-b30b-3aecb135e8d7",
+      "candidate_slug": "roberto-cidade",
+      "candidate_name": "Roberto Cidade",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Eu respondo pelo meu CPF",
+      "context": "No terceiro bloco, David Almeida e Roberto Cidade trocaram acusações de corrupção. O ex- -prefeito afirmou que Cidade e o ex-governador Wilson Lima fizeram “o governo mais corrupto da história do Amazonas”, enquanto o governador se defendeu afirmando que não poderia ser responsabilizado por situações que não ocorreram no seu mandato após David lembrar da falta de obras no Hospital de Manacapuru. “Eu respondo pelo meu governo, pelo meu trabalho, pela minha dedicação e você está falando do Wilson Lima. Eu respondo pelo meu CPF, pela minha história de vida e eu tenho trabalhado muito”, disse.",
+      "event_context": "Debate promovido pela TV A Crítica na noite de 28 de setembro de 2026; matéria publicada no dia seguinte.. na noite de ontem",
+      "event_type": "debate",
+      "occurred_on": "2026-09-28",
+      "publisher": "A Crítica",
+      "article_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+      "article_title": "Debate na TV A Crítica é marcado por ataques e acusações entre candidatos",
+      "article_published_at": "2026-09-29 8:25:13",
+      "observed_at": "2026-10-04T09:23:00.488Z",
+      "source_sha256": "3639a92d30b3ce462f2a116284ab1af0803a930b08654f25781b4afecc8dd279",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Roberto Cidade (União Brasil)",
+        "date_excerpt": "na noite de ontem",
+        "fetched_url": "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291",
+        "method": "codex_source_review"
+      }
+    },
+    {
       "id": "faf78a0cb732ffbe041991a701a0968d4561894d7e1b466c11299c0364a8bde9",
       "candidate_id": "1919a599-1f61-41cc-ab6a-cd4baa77e639",
       "candidate_slug": "tarcisio-gov-sp",
@@ -8622,6 +8753,32 @@
         "fetched_url": "https://www.metropoles.com/sao-paulo/tarcisio-desvios-policia",
         "method": "codex_source_review",
         "source_format": "web_text"
+      }
+    },
+    {
+      "id": "fb9bc9d633c153b53dce18b8318954a697ba6a56be9234fa610a33b2bc9c8442",
+      "candidate_id": "d97908e9-5b30-4d0e-a01b-c0348682949d",
+      "candidate_slug": "clecio-luis",
+      "candidate_name": "Clecio Luis",
+      "office": "Governador",
+      "uf": "AP",
+      "quote_text": "Eu não prometo, eu resolvo. Eu faço, isso está provado.",
+      "context": "‎O governador e candidato à reeleição Clécio Luís (União Brasil) afirmou, nesta sexta-feira, 25, durante entrevista ao programa LuizMeloEntrevista, do Sistema Diário de Comunicação, que pretende dar continuidade às ações iniciadas no primeiro mandato. Ao falar sobre a campanha e os resultados da atual gestão, resumiu sua posição em uma das respostas rápidas da sabatina: “Eu não prometo, eu resolvo. Eu faço, isso está provado. Muita coisa do que eu fiz, eu não prometi. E quando eu prometi, eu fiz”.",
+      "event_context": "Sabatina do Sistema Diário nesta sexta-feira, 25 de setembro de 2026.. nesta sexta-feira, 25",
+      "event_type": "sabatina",
+      "occurred_on": "2026-09-25",
+      "publisher": "Diário do Amapá",
+      "article_url": "https://www.diariodoamapa.com.br/cadernos/politica/eu-nao-prometo-eu-resolvo-diz-clecio-luis-em-sabatina-do-sistema-diario/",
+      "article_title": "“Eu não prometo, eu resolvo”, diz Clécio Luís em sabatina do Sistema Diário",
+      "article_published_at": "2026-09-25T12:03:02-03:00",
+      "observed_at": "2026-10-04T09:23:00.488Z",
+      "source_sha256": "0bde0ef39e707f04e3dcb78854f9dc7b5d59565e8e366ffec77926315040fda9",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "governador e candidato à reeleição Clécio Luís (União Brasil)",
+        "date_excerpt": "nesta sexta-feira, 25",
+        "fetched_url": "https://www.diariodoamapa.com.br/cadernos/politica/eu-nao-prometo-eu-resolvo-diz-clecio-luis-em-sabatina-do-sistema-diario/",
+        "method": "codex_source_review"
       }
     },
     {
