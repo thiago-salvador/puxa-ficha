@@ -26,27 +26,36 @@ const LINK_ESCURO =
 function RetratoFundo({ src, lado }: { src: string | null; lado: "esquerda" | "direita" }) {
   if (!src) return null
   const direcao = lado === "esquerda" ? "to right" : "to left"
-  const mascara = `linear-gradient(${direcao}, #000 0%, #000 38%, transparent 96%)`
+  const mascara = `linear-gradient(${direcao}, #000 0%, #000 72%, transparent 100%)`
+  // Só do lg em diante: as fotos ocupam as bordas e o duelo fica no miolo, sem texto sobre o rosto.
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-y-0 w-1/2 opacity-45 sm:opacity-80 lg:w-[40%] lg:opacity-100 ${lado === "esquerda" ? "left-0" : "right-0"}`}
+      className={`pointer-events-none absolute inset-y-0 hidden w-[26%] lg:block xl:w-[30%] ${lado === "esquerda" ? "left-0" : "right-0"}`}
       style={{ maskImage: mascara, WebkitMaskImage: mascara }}
       data-pf-hero-retrato={lado}
     >
-      <Image src={src} alt="" fill priority sizes="(min-width: 1024px) 40vw, 50vw" className="object-cover object-[center_18%]" />
+      <Image src={src} alt="" fill priority sizes="30vw" className="object-cover object-[center_15%]" />
     </div>
   )
 }
 
 // As seis linhas de cada finalista entram na grade do duelo (subgrid): rótulo, %, votos e link
 // ficam na mesma altura dos dois lados, mesmo quando um nome quebra em duas linhas e o outro não.
-function FinalistaHero({ candidato, cor, coluna }: { candidato: CandidatoResultado1Turno; cor: string; coluna: "col-start-1" | "col-start-3" }) {
+function FinalistaHero({ candidato, cor, coluna, foto }: { candidato: CandidatoResultado1Turno; cor: string; coluna: "col-start-1" | "col-start-3"; foto: string | null }) {
   return (
     <div className={`${coluna} row-span-6 row-start-1 grid min-w-0 grid-rows-subgrid`} data-pf-finalista-1turno={candidato.sq}>
-      <span aria-hidden="true" className="block h-1.5 w-full rounded-[1px] sm:h-2" style={{ background: cor }} />
+      <div className="self-end">
+        {/* Abaixo do lg a foto vem acima do nome, nunca atrás do texto. */}
+        {foto && (
+          <div aria-hidden="true" className="relative mb-3 aspect-square w-full max-w-[180px] overflow-hidden lg:hidden" data-pf-hero-foto-celular>
+            <Image src={foto} alt="" fill priority sizes="(min-width: 640px) 180px, 45vw" className="object-cover object-[center_15%]" />
+          </div>
+        )}
+        <span aria-hidden="true" className="block h-1.5 w-full rounded-[1px] sm:h-2" style={{ background: cor }} />
+      </div>
       <div className="mt-3 sm:mt-[clamp(12px,2vh,20px)]">
-        <p className="font-heading uppercase leading-[0.9] text-white [overflow-wrap:normal] [word-break:normal] [text-wrap:balance] text-[clamp(1.75rem,min(4.3vw,6.6vh),4rem)]">
+        <p className="font-heading uppercase leading-[0.9] text-white [overflow-wrap:normal] [word-break:normal] [text-wrap:balance] text-[clamp(1.75rem,min(3.7vw,6vh),3.625rem)]">
           {candidato.nome_urna}
         </p>
         <p className="mt-1 text-[length:var(--text-body)] font-medium text-white/90 sm:text-[length:var(--text-body-lg)]">
@@ -57,7 +66,7 @@ function FinalistaHero({ candidato, cor, coluna }: { candidato: CandidatoResulta
         <span className="sm:hidden">1º turno</span>
         <span className="max-sm:hidden">Resultado do 1º turno</span>
       </p>
-      <p className="mt-1 font-heading leading-none tabular-nums text-white text-[clamp(2.25rem,min(4.6vw,7.4vh),4.5rem)]">
+      <p className="mt-1 font-heading leading-none tabular-nums text-white text-[clamp(2.25rem,min(4vw,7vh),4rem)]">
         {formatarPercentual(candidato.percentual_validos)}
       </p>
       <p className="mt-1 text-[length:var(--text-body-sm)] font-medium tabular-nums text-white/90 sm:text-[length:var(--text-body)]">
@@ -167,13 +176,13 @@ function DueloHero({
             <ContagemSegundoTurno referenceNow={referenceNow} variante="escuro" />
           </p>
           <div
-            className="hero-fade mx-auto mt-6 grid max-w-[50rem] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] grid-rows-[repeat(6,auto)] gap-x-3 text-left sm:mt-[clamp(16px,3.5vh,40px)] sm:gap-x-6"
+            className="hero-fade mx-auto mt-6 grid max-w-[40rem] lg:max-w-[min(40rem,48vw)] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] grid-rows-[repeat(6,auto)] gap-x-3 text-left sm:mt-[clamp(16px,3.5vh,40px)] sm:gap-x-6"
             style={{ animationDelay: "0.3s" }}
             data-pf-duelo-1turno="Presidente"
           >
-            <FinalistaHero candidato={a} cor={cores[0]} coluna="col-start-1" />
+            <FinalistaHero candidato={a} cor={cores[0]} coluna="col-start-1" foto={fotoDe(fotos, a.slug)} />
             <SeparadorDuelo />
-            <FinalistaHero candidato={b} cor={cores[1]} coluna="col-start-3" />
+            <FinalistaHero candidato={b} cor={cores[1]} coluna="col-start-3" foto={fotoDe(fotos, b.slug)} />
           </div>
         </div>
       </div>
