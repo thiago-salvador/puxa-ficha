@@ -219,8 +219,33 @@ async function withPage<T>(
   }
 }
 
+/** Vocabulário banido e avatar genérico, auditados no texto visível (não no payload RSC). */
+async function textoEAvataresProibidos(page: Page): Promise<string[]> {
+  const failures: string[] = []
+  const visibleText = (await page.locator("body").innerText()).toLocaleLowerCase("pt-BR")
+  if (visibleText.includes("pré-candidat")) failures.push('texto visível contém "pré-candidato"')
+  if (visibleText.includes("pre-candidat")) failures.push('texto visível contém "pre-candidato"')
+  const avatarImages = await page.locator('img[src*="ui-avatars" i]').count()
+  if (avatarImages !== 0) failures.push(`${avatarImages} imagens ui-avatars encontradas`)
+  return failures
+}
+
+// Desde 06/10/2026 a home (/) é a página do 2º turno: o hero traz o duelo com o link
+// "Ficha completa" de cada finalista. A grade presidencial completa mora no arquivo /1o-turno.
 async function checkHome(context: BrowserContext): Promise<string[]> {
   return withPage(context, "/", async (page) => {
+    const duelo = page.locator('[data-pf-hero-duelo="Presidente"]')
+    await duelo.waitFor({ state: "visible" })
+    const paths = await waitForCandidatePaths(duelo, 2)
+    const failures = await textoEAvataresProibidos(page)
+    if (paths.length !== 2) failures.push(`duelo do hero tem ${paths.length} fichas, esperado 2 finalistas`)
+    if (failures.length > 0) throw new PartialCheckFailure(failures.join("; "), paths)
+    return paths
+  })
+}
+
+async function checkArquivo1Turno(context: BrowserContext): Promise<string[]> {
+  return withPage(context, "/1o-turno", async (page) => {
     const heading = page.getByRole("heading", { name: "Presidenciáveis", exact: true })
     await heading.waitFor({ state: "visible" })
     const gridSection = heading.locator("xpath=ancestor::section[1]/following-sibling::section[1]")
@@ -233,12 +258,7 @@ async function checkHome(context: BrowserContext): Promise<string[]> {
     // RSC com o token de máquina `status:"pre-candidato"` (valor legado do
     // banco, mapeado por ui-labels) e URLs de matérias citadas; nenhum dos
     // dois é o site dizendo o termo. Auditar innerText, não page.content().
-    const visibleText = (await page.locator("body").innerText()).toLocaleLowerCase("pt-BR")
-    if (visibleText.includes("pré-candidat")) failures.push('texto visível contém "pré-candidato"')
-    if (visibleText.includes("pre-candidat")) failures.push('texto visível contém "pre-candidato"')
-
-    const avatarImages = await page.locator('img[src*="ui-avatars" i]').count()
-    if (avatarImages !== 0) failures.push(`${avatarImages} imagens ui-avatars encontradas`)
+    failures.push(...(await textoEAvataresProibidos(page)))
     if (failures.length > 0) throw new PartialCheckFailure(failures.join("; "), paths)
     return paths
   })
@@ -451,9 +471,14 @@ async function main(): Promise<number> {
   }
 
   try {
-    const presidentialPaths = await collect(
+    await collect(
       "home",
       () => checkHome(context),
+      (paths) => `finalistas=${paths.length} pre_candidato=0 ui_avatars=0`,
+    )
+    const presidentialPaths = await collect(
+      "arquivo-1turno",
+      () => checkArquivo1Turno(context),
       (paths) => `cards=${paths.length} pre_candidato=0 ui_avatars=0 pablo_marcal=0`,
     )
 
