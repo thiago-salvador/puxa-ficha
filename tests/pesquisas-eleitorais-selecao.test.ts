@@ -159,7 +159,8 @@ describe("seleção estadual por UF", () => {
   it("não cruza candidaturas ou resultados entre estados", () => {
     assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0]?.resultado.valuePercent, 32.6)
     assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AC").length, 0)
-    assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0]?.resultado.valuePercent, 28)
+    assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0]?.id, "quaest-ac-02370-2026")
+    assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0]?.resultado.valuePercent, 33)
     assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AM").length, 0)
     assert.ok(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "SP").length > 0)
     assert.equal(listarPesquisasGovernadorPorSlug("tarcisio-gov-sp", "RJ").length, 0)
@@ -206,7 +207,7 @@ describe("seleção estadual por UF", () => {
     assert.deepEqual(listarPesquisasGovernadorPorSlug("governador-inexistente", "SP"), [])
   })
 
-  it("vincula cada alias publicado ao roster oficial ou ao seed histórico da mesma UF", () => {
+  it("vincula cada alias publicado ao roster oficial, seed histórico ou cadastro confirmado da mesma UF", () => {
     const roster = JSON.parse(
       readFileSync("data/candidate-roster-active-20260905.json", "utf8"),
     ) as {
@@ -216,6 +217,19 @@ describe("seleção estadual por UF", () => {
     const legacyCandidates = Array.isArray(legacyPayload)
       ? legacyPayload
       : ((legacyPayload as { candidatos?: unknown[] }).candidatos ?? [])
+    const registry = JSON.parse(
+      readFileSync("tests/fixtures/pesquisas-identidades-20261005.json", "utf8"),
+    ) as {
+      source: { table: string; consulted_at: string; query: string }
+      profiles: Array<{ slug: string; cargo_disputado: string; estado: string }>
+    }
+    assert.equal(registry.source.table, "public.candidatos")
+    assert.equal(registry.source.consulted_at, "2026-10-05")
+    assert.match(registry.source.query, /^SELECT slug,nome_completo,nome_urna,cargo_disputado,estado FROM candidatos WHERE/)
+    assert.deepEqual(
+      registry.profiles.map(({ slug, cargo_disputado, estado }) => [slug, cargo_disputado, estado]),
+      [["jose-moita", "Governador", "PA"], ["subtenente-luiz-carlos", "Governador", "TO"]],
+    )
 
     for (const [uf, data] of carregarPesquisasGovernadores()) {
       for (const poll of data.pesquisas) {
@@ -234,13 +248,13 @@ describe("seleção estadual por UF", () => {
               continue
             }
 
-            const legacy = legacyCandidates.find(
+            const legacy = [...legacyCandidates, ...registry.profiles].find(
               (entry) =>
                 typeof entry === "object" &&
                 entry !== null &&
                 (entry as { slug?: string }).slug === result.candidateSlug,
             ) as { cargo_disputado?: string; estado?: string } | undefined
-            assert.ok(legacy, `${uf}: slug ausente do roster e do seed ${result.candidateSlug}`)
+            assert.ok(legacy, `${uf}: slug ausente do roster, seed e cadastro confirmado ${result.candidateSlug}`)
             assert.equal(legacy.cargo_disputado, "Governador")
             assert.equal(legacy.estado, uf)
           }

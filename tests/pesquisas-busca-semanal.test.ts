@@ -122,7 +122,8 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
   for (const list of [lula, pablo]) {
     assert.ok(list.every((p) => (p.publicationDate.value ?? "") <= (list[0].publicationDate.value ?? "")))
   }
-  assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 28)
+  assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].id, "quaest-ac-02370-2026")
+  assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 33)
   assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 32.6)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "RR").length, 0)
 })
@@ -180,12 +181,14 @@ test("buscas alternativas recuperam os valores individuais sem transferir result
   assert.ok(expedito.length >= 0)
   rodadaPreservada("expedito-mendonca", "DF", "igape-df-df-07879-2026-fechamento", 0.8)
   const ruth = listarPesquisasGovernadorPorSlug("ruth-reis", "PA")
-  assert.equal(ruth.length, 3)
+  assert.equal(ruth.length, 5)
   assert.deepEqual(
     ruth.map(({ id, instituto, resultado }) => [id, instituto.value, resultado.candidateSlug, resultado.valuePercent]),
     [
+      ["quaest-pa-04580-2026", "Quaest", "ruth-reis", 1],
       ["doxa-pa-08418-2026", "Doxa", "ruth-reis", 0.4],
       ["quaest-pa-07042-2026", "Quaest", "ruth-reis", 0],
+      ["quaest-pa-04580-2026", "Quaest", "ruth-reis", 0],
       ["quaest-pa-07042-2026", "Quaest", "ruth-reis", 0],
     ],
   )

@@ -11267,6 +11267,1295 @@
         }
       },
       "consulted_at": "2026-10-03T12:41:00Z"
+    },
+    {
+      "id": "quaest-to-01946-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Anhanguera",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": "Entrevistas pessoais domiciliares",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          1
+        ],
+        "registration_id": "TO-01946/2026",
+        "result_url": "https://especiaisg1.globo/to/tocantins/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-01946/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "37dca602dbb2663f9d254cde5344d8a8e552af93162e243826b4ff1472353f49",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/to/tocantins/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/to/tocantins/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/to/tocantins/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/to/tocantins/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-sc-07346-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "NSC",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Santa Catarina",
+        "rounds": [
+          1
+        ],
+        "registration_id": "SC-07346/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "SC-07346/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "14509a09b50d99f0651f0a7036b66e3ab56c5428736f7bf6d0160b5a9c985da9",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-rr-08283-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Amazônica",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": "Entrevistas pessoais domiciliares",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Roraima",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RR-08283/2026",
+        "result_url": "https://especiaisg1.globo/rr/roraima/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RR-08283/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "e102b712bd2b31a2907e8b41fa62f3343a9f91535102e94a0a5940f6820ec384",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/rr/roraima/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/rr/roraima/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/rr/roraima/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/rr/roraima/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-ro-09325-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Amazônica",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": "Entrevistas pessoais domiciliares",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rondônia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RO-09325/2026",
+        "result_url": "https://especiaisg1.globo/ro/rondonia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RO-09325/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "6a65cdb9bf07feb09c313dc772deba17ac9dc040a116ac329c911d7b037f5145",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ro/rondonia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ro/rondonia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ro/rondonia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ro/rondonia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-rn-09644-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Inter TV",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          1
+        ],
+        "registration_id": "RN-09644/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-09644/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "dfbb3d6ad7638677c527c35064a92d51f0fe04a8284d6ef2ef9651392e741f87",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-pr-05119-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "RPC",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 2004,
+        "method": "Entrevistas presenciais",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Paraná",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PR-05119/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PR-05119/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "0a56bbf74be9a089119145d133364c6e9ba68cc37ce617364d3acf573fe610b3",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-pb-05048-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TVs Cabo Branco e Paraíba",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": "Entrevistas presenciais",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Paraíba",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PB-05048/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PB-05048/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "c3e4ebf79478d32a52a555e8c47d21898e114fa16013ea9daa32afdd27767e97",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-mt-02649-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Matogrossense de Comunicação",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": "Entrevistas presenciais",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Mato Grosso",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MT-02649/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MT-02649/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "977be3aa3da56596ce1b680bce78993870123917502ed4c07b1036ddc3f4bcdd",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-ms-04157-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Morena",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": "Entrevistas presenciais",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Mato Grosso do Sul",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MS-04157/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MS-04157/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "2cf017b97c5c59c1b20529e915d4ddb7ce8bc6784298cde911e6a185ae7f0e58",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-ma-00831-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Mirante",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 2004,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Maranhão",
+        "rounds": [
+          1
+        ],
+        "registration_id": "MA-00831/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "MA-00831/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "f4bdcc48d65e14aba5c0d422766352234f4103e4ba7b6f235ba9ba4a2fe3298b",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-go-00674-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Anhanguera",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 2004,
+        "method": "Entrevistas presenciais",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Goiás",
+        "rounds": [
+          1
+        ],
+        "registration_id": "GO-00674/2026",
+        "result_url": "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "GO-00674/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "5ac262df7281d91e8cec5d1c7dcbb05f49f0afdb87f8edaa25b1e0668f7091a9",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://anapolisdiario.com.br/quaest-daniel-vilela-tem-57-dos-votos-validos-e-e-favorito-para-vencer-no-1o-turno/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://anapolisdiario.com.br/quaest-daniel-vilela-tem-57-dos-votos-validos-e-e-favorito-para-vencer-no-1o-turno/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://anapolisdiario.com.br/quaest-daniel-vilela-tem-57-dos-votos-validos-e-e-favorito-para-vencer-no-1o-turno/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://anapolisdiario.com.br/quaest-daniel-vilela-tem-57-dos-votos-validos-e-e-favorito-para-vencer-no-1o-turno/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESTIMULADA-GOV-001&instituto=Quaest",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/136/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-es-09011-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Gazeta",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": "Entrevistas presenciais",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Espírito Santo",
+        "rounds": [
+          1
+        ],
+        "registration_id": "ES-09011/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "ES-09011/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "f793c93a2ca3d477340b989491419a42ca4de3041776b97239c68587d33125c0",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-ba-02224-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Bahia",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 2004,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Bahia",
+        "rounds": [
+          1
+        ],
+        "registration_id": "BA-02224/2026",
+        "result_url": "https://especiaisg1.globo/ba/bahia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BA-02224/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "45e9bbbd43071233df91c332b709c5a40b3900c7fdb46f1003cfb4588bfbec76",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ba/bahia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ba/bahia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ba/bahia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ba/bahia/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-al-07379-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Elo Comunicação - Asa Branca Alagoas",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-04",
+        "sample_size": 1800,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Alagoas",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AL-07379/2026",
+        "result_url": "https://especiaisg1.globo/al/alagoas/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AL-07379/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "49eb7def868cd37406ef178deb3e72aec7c9cdd941905759941fbc83c6348f95",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/al/alagoas/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/al/alagoas/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/al/alagoas/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/al/alagoas/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www1.folha.uol.com.br/poder/2026/10/veja-as-pesquisas-para-as-disputas-aos-governos-estaduais.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-pa-04580-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Liberal",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-03",
+        "sample_size": 1800,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Pará",
+        "rounds": [
+          1
+        ],
+        "registration_id": "PA-04580/2026",
+        "result_url": "https://especiaisg1.globo/pa/para/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "PA-04580/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "cc7553b92c768f605d83512de07280d7affc23f0cf8bf00b33f9c911346c647b",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/pa/para/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-no-pa-dr-daniel-tem-57-dos-votos-validos-no-1o-turno-hana-40/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/141/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/pa/para/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-no-pa-dr-daniel-tem-57-dos-votos-validos-no-1o-turno-hana-40/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/141/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/pa/para/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-no-pa-dr-daniel-tem-57-dos-votos-validos-no-1o-turno-hana-40/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/141/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/pa/para/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.cnnbrasil.com.br/eleicoes/quaest-no-pa-dr-daniel-tem-57-dos-votos-validos-no-1o-turno-hana-40/",
+            "https://especiaisg1.globo/api/pesquisas-eleitorais/graficos/141/?tipo_pergunta=ESPONTANEA-GOV-001&instituto=Quaest"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-ap-08084-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Amazônica",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-03",
+        "sample_size": 1800,
+        "method": "Entrevistas pessoais domiciliares",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amapá",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AP-08084/2026",
+        "result_url": "https://especiaisg1.globo/ap/amapa/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AP-08084/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "b110e70629c7b5b9b9120f84c92c05bcb9abcc8d099420a5b52493aa206ee67a",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ap/amapa/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-amapa-outubro-2026/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ap/amapa/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-amapa-outubro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ap/amapa/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-amapa-outubro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ap/amapa/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-senador-amapa-outubro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "quaest-ac-02370-2026-revisao-20261005",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rede Amazônica",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "especiaisg1.globo",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-02",
+          "end": "2026-10-03"
+        },
+        "published_at": "2026-10-03",
+        "sample_size": 1800,
+        "method": "Entrevistas pessoais domiciliares",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Acre",
+        "rounds": [
+          1
+        ],
+        "registration_id": "AC-02370/2026",
+        "result_url": "https://especiaisg1.globo/ac/acre/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AC-02370/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-05T12:42:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "c72f8fe6f50e7a903d42c3a1712292f152736410d3efe323cd75c3de871639d0",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ac/acre/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.terra.com.br/noticias/brasil/politica/quaest-mailza-assis-tem-41-dos-votos-validos-no-acre-alan-rick-37%2Ce6f60991a22a20af3d3641cb601d8363fsi7893k.html"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ac/acre/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.terra.com.br/noticias/brasil/politica/quaest-mailza-assis-tem-41-dos-votos-validos-no-acre-alan-rick-37%2Ce6f60991a22a20af3d3641cb601d8363fsi7893k.html"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ac/acre/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.terra.com.br/noticias/brasil/politica/quaest-mailza-assis-tem-41-dos-votos-validos-no-acre-alan-rick-37%2Ce6f60991a22a20af3d3641cb601d8363fsi7893k.html"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://especiaisg1.globo/ac/acre/eleicoes/2026/pesquisas-eleitorais/governador/1-turno/Quaest/internal/",
+            "https://www.terra.com.br/noticias/brasil/politica/quaest-mailza-assis-tem-41-dos-votos-validos-no-acre-alan-rick-37%2Ce6f60991a22a20af3d3641cb601d8363fsi7893k.html"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-05T12:42:58Z"
     }
   ]
 }

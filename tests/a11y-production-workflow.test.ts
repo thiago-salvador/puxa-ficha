@@ -179,7 +179,7 @@ function structurePass(check: StructureCase["check"]): boolean {
         smokeSpecText.includes('data-pf-week-source') &&
         smokeSpecText.includes('data-pf-mobile-research') &&
         smokeSpecText.includes('1 pesquisa na semana') &&
-        smokeSpecText.includes('Média de [2-9]') &&
+        smokeSpecText.includes('Média de (?:[2-9]|[1-9]\\d+) pesquisas') &&
         smokeSpecText.includes('toContainText("Omar")') &&
         smokeSpecText.includes('not.toContainText("Lula")') &&
         smokeConfigText.includes('viewport: { width: 1440, height: 1000 }') &&
