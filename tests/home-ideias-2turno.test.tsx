@@ -288,13 +288,17 @@ describe("mapa do 1º turno por UF", () => {
     const html = renderToStaticMarkup(<MapaPresidente1Turno data={getResultados1Turno()} />)
     assert.equal((html.match(/data-pf-mapa-uf=/g) ?? []).length, 27)
     assert.equal((html.match(/<title>/g) ?? []).length, 27)
-    assert.match(html, /<details[^>]*data-pf-mapa-tabela/)
-    assert.doesNotMatch(html, /<details[^>]*open/)
+    assert.match(html, /data-pf-mapa-tabela/)
+    assert.match(html, /aria-expanded="false"[^>]*data-pf-mapa-ver-todas/)
     assert.equal((html.match(/data-pf-mapa-linha=/g) ?? []).length, 27)
+    assert.equal((html.match(/<tr class="(?!hidden)[^"]*"[^>]*data-pf-mapa-linha=/g) ?? []).length, 8, "lista curta: 8 maiores eleitorados")
+    assert.match(html, /data-pf-mapa-detalhe="SP"/)
+    assert.match(html, /data-pf-mapa-destaque="SP"/)
+    assert.match(html, /href="\/1o-turno\/sp"/)
     const porUf = getResultados1Turno().presidente_por_uf ?? []
     const venceu = (nome: string) => porUf.filter((u) => u.vencedor.nome_urna === nome).length
     for (const nome of new Set(porUf.map((u) => u.vencedor.nome_urna))) {
-      assert.match(html, new RegExp(`mais votado em ${venceu(nome)} estado`))
+      assert.match(html, new RegExp(`mais votado em ${venceu(nome)} UF`))
     }
   })
 
