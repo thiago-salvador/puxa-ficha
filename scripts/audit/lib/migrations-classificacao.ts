@@ -60,6 +60,8 @@ export const TABELAS_DE_CONTEUDO: readonly string[] = [
   "candidatos",
   "candidate_changes",
   "candidate_photo_updates",
+  // Fase eleitoral pelo resultado oficial: a ficha mostra eleito, 2º turno ou saída.
+  "candidaturas_fase_2026",
   "chapas_2026",
   // Vínculo promessa x evidência: publicar ou retirar muda a ficha (L8, 29/09/2026).
   "compromisso_evidencia",

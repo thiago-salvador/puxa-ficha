@@ -852,6 +852,16 @@
       "approvedArticleUrls": [
         "https://www.tnh1.com.br/noticia/nid/assista-na-integra-a-entrevista-com-o-candidato-ao-governo-de-alagoas-renan-filho/"
       ]
+    },
+    {
+      "id": "acritica-rodada20261004",
+      "approvedArticleUrls": [
+        "https://www.acritica.com/policia/debate-na-tv-a-critica-e-marcado-por-ataques-e-acusac-es-entre-candidatos-1.416291"
+      ],
+      "publisher": "A Crítica",
+      "origin": "https://www.acritica.com",
+      "listing": "/policia/",
+      "articlePath": "/policia/"
     }
   ]
 }

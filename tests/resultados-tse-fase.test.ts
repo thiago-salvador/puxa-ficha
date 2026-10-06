@@ -278,6 +278,8 @@ describe("resultados TSE: plano", () => {
     assert.equal(plano.pendentes.some((p) => p.cargo === "Senador"), false)
     const generated = gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } })
     assert.match(generated.migration, /escrita esperada=7/)
+    // O gate de escrita auditada só aceita a anotação se o statement citar o ref como literal.
+    assert.match(generated.migration, /INSERT INTO public\.candidaturas_fase_2026[\s\S]*?WHERE 'fase-turno-1-20261005120000' IS NOT NULL/)
   })
 
   it("senador sem SQ deixa a coorte como fora da disputa sem claim individual", () => {
@@ -327,6 +329,44 @@ describe("resultados TSE: plano", () => {
     assert.deepEqual(plano.pendentes, [{ slug: "gov-2t-a", cargo: "Governador", abrangencia: "SP", motivo: "SQ ausente do resultado oficial" }])
     assert.equal(plano.mudancas.some((m) => m.slug === "gov-2t-b"), true)
     assert.throws(() => gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } }), /plano incompleto/)
+  })
+
+  it("renúncia ou indeferimento no cadastro e SQ ausente do arquivo oficial saem como fora da disputa", () => {
+    const c = coorte()
+    c.push(
+      { ...c[4], id: "00000000-0000-4000-8000-000000000009", slug: "gov-renunciou", sq_candidato_2026: "250000000009", situacao_candidatura: "renuncia" },
+      { ...c[6], id: "00000000-0000-4000-8000-000000000010", slug: "pres-indeferido", sq_candidato_2026: "280000000010", situacao_candidatura: "Indeferido" },
+      { ...c[4], id: "00000000-0000-4000-8000-000000000011", slug: "gov-indeferido-recurso", sq_candidato_2026: "250000000011", situacao_candidatura: "indeferido com recurso" },
+    )
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
+    assert.equal(plano.status, "completo")
+    assert.deepEqual(plano.pendentes, [])
+    const por = Object.fromEntries(plano.mudancas.filter((m) => ["gov-renunciou", "pres-indeferido", "gov-indeferido-recurso"].includes(m.slug))
+      .map((m) => [m.slug, [m.fase_depois, m.encerra_atualizacao, m.fonte, m.situacao_tse]]))
+    assert.deepEqual(por, {
+      "gov-renunciou": ["fora_da_disputa", true, governoSP.url, "ausente do resultado oficial (cadastro: renuncia)"],
+      "pres-indeferido": ["fora_da_disputa", true, presidente.url, "ausente do resultado oficial (cadastro: indeferido)"],
+      "gov-indeferido-recurso": ["fora_da_disputa", true, governoSP.url, "ausente do resultado oficial (cadastro: indeferido com recurso)"],
+    })
+    assert.doesNotThrow(() => gerarArquivosFase({ plano, version: "20261005120000", predecessor: { version: "20260927050000", name: "candidaturas_fase_2026_schema" } }))
+  })
+
+  it("SQ ausente sem situação de saída no cadastro continua pendente", () => {
+    const c = coorte()
+    c[2] = { ...c[2], sq_candidato_2026: "999999999999", situacao_candidatura: "deferido" }
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras: leiturasOk(), agora: new Date() })
+    assert.equal(plano.status, "parcial")
+    assert.deepEqual(plano.pendentes.map((p) => p.slug), ["gov-2t-a"])
+  })
+
+  it("arquivo recusado mantém pendente mesmo com renúncia no cadastro", () => {
+    const c = coorte()
+    c[4] = { ...c[4], situacao_candidatura: "renuncia" }
+    const leituras = leiturasOk()
+    leituras[1] = { ok: false, alvo: governoSP, motivo: "HTTP 403" }
+    const plano = montarPlano({ turno: 1, eleicoes: ELEICOES, coorte: c, leituras, agora: new Date() })
+    assert.equal(plano.status, "parcial")
+    assert.equal(plano.mudancas.some((m) => m.slug === "gov-fora"), false)
   })
 })
 

@@ -30,6 +30,7 @@
  */
 import { createHash } from "node:crypto"
 import { stripAccents } from "../../src/lib/strip-accents"
+import { SITUACAO_JULGAMENTO_INDEFERIDO } from "../../src/lib/situacao-candidatura"
 
 import {
   encerraAtualizacao,
@@ -461,6 +462,21 @@ export interface CandidaturaCoorte {
   sq_candidato_2026: string | null
   fase_eleitoral: string
   atualizacao_encerrada_em: string | null
+  /** Situação da candidatura no cadastro (renuncia, indeferido...). */
+  situacao_candidatura?: string | null
+}
+
+/**
+ * Situações do cadastro que tiram a candidatura da urna. Só valem junto com a
+ * ausência do SQ num arquivo oficial lido por inteiro: a ausência é a prova, a
+ * situação confirma o motivo. Indeferido sub judice que foi à urna aparece no
+ * arquivo (votos anulados) e segue a classificação normal.
+ */
+const SITUACOES_FORA_DA_URNA = new Set<string>(["renuncia", ...SITUACAO_JULGAMENTO_INDEFERIDO, "cancelado", "falecido", "cassado"])
+
+function saiuAntesDaUrna(c: CandidaturaCoorte): string | null {
+  const situacao = normalizar(String(c.situacao_candidatura ?? "")).replace(/\s+/g, " ").trim()
+  return SITUACOES_FORA_DA_URNA.has(situacao) ? situacao : null
 }
 
 /** Lista apenas eleições com candidaturas elegíveis na fase já aplicada. */
@@ -578,6 +594,24 @@ export function montarPlano(input: {
     }
     const linha = leitura.candidatos.find((x) => x.sq === sq)
     if (!linha) {
+      const saida = input.turno === 1 ? saiuAntesDaUrna(c) : null
+      if (saida) {
+        mudancas.push({
+          id: c.id,
+          slug: c.slug,
+          sq,
+          sq_antes: c.sq_candidato_2026,
+          cargo,
+          abrangencia,
+          fase_antes: c.fase_eleitoral,
+          fase_depois: "fora_da_disputa",
+          turno: 1,
+          encerra_atualizacao: true,
+          fonte: leitura.alvo.url,
+          situacao_tse: `ausente do resultado oficial (cadastro: ${saida})`,
+        })
+        continue
+      }
       if (input.turno === 1 && cargo === "Senador") semResultadoSenador(c, abrangencia, "SQ ausente do resultado oficial")
       else pendente("SQ ausente do resultado oficial")
       continue

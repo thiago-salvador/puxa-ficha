@@ -136,7 +136,7 @@ async function lerCoorteDoBanco(): Promise<CandidaturaCoorte[]> {
   for (let from = 0; ; from += 1000) {
     // coorte-atualizacao: aplica (o plano parte das fichas no ar e da fase já gravada)
     const { data, error } = await supabase.from("candidatos")
-      .select("id, slug, cargo_disputado, estado, sq_candidato_2026")
+      .select("id, slug, cargo_disputado, estado, sq_candidato_2026, situacao_candidatura")
       .in("cargo_disputado", ["Presidente", "Governador", "Senador"])
       .eq("publicavel", true).neq("status", "removido")
       .order("id").range(from, from + 999)
