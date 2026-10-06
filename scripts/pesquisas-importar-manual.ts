@@ -217,7 +217,7 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
       }
       // Any other line must be a non-candidate answer; a third name mapped to null is refused.
       for (const result of scenario.results) {
-        if (!ehSlug(decisions[result.raw_label]) && !RESPOSTA_NAO_CANDIDATO.test(semAcento(result.raw_label))) {
+        if (!ehSlug(decisions[result.raw_label]) && !ehRespostaNaoCandidato(result.raw_label)) {
           problems.push(`${where}: cenário de 2º turno com linha "${result.raw_label}" que não é finalista nem branco, nulo ou indeciso`)
         }
       }
@@ -234,10 +234,16 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
 }
 
 /** Respostas que não são candidatos num 2º turno (vocabulário fechado: nome fora daqui é recusado). */
-const RESPOSTA_NAO_CANDIDATO = /^(?:(?:brancos?|nulos?|nenhum(?: deles| dos dois)?|indecisos?|ns|nr|nao sab(?:e|em)|nao respond(?:eu|eram)|nao sabe(?:m)? ou nao respond(?:eu|eram))(?:\s*(?:\/|,|e|ou)\s*)?)+$/i
+const TERMOS_NAO_CANDIDATO = new Set([
+  "branco", "brancos", "nulo", "nulos", "nenhum", "nenhum deles", "nenhum dos dois", "indeciso", "indecisos",
+  "ns", "nr", "nao sabe", "nao sabem", "nao respondeu", "nao responderam",
+])
 
-function semAcento(texto: string): string {
-  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase()
+/** "Brancos e nulos", "NS / NR", "Não sabe ou não respondeu": cada parte precisa ser um termo do vocabulário. */
+function ehRespostaNaoCandidato(rotulo: string): boolean {
+  const normalizado = rotulo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim()
+  const partes = normalizado.split(/\s*[/,]\s*|\s+(?:e|ou)\s+/).map((parte) => parte.trim())
+  return partes.length > 0 && partes.every((parte) => TERMOS_NAO_CANDIDATO.has(parte))
 }
 
 export interface Catalogos { pres: Json; presFontes: Json; gov: Json; govFontes: Json; sen: Json }
