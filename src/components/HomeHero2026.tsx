@@ -1,14 +1,16 @@
 // cspell:ignore recolhivel acessivel
 import type { ComponentProps } from "react"
-import { ArrowDown, ArrowUpRight } from "lucide-react"
-import type { DisputaResultado1Turno } from "@/lib/resultados-1turno"
-import type { FotosCandidatos } from "@/lib/resultados-1turno-vista"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { formatarPercentual, formatarVotos, type CandidatoResultado1Turno, type DisputaResultado1Turno } from "@/lib/resultados-1turno"
+import { dividirVotosValidos, fotoDe, larguraBarra, type FotosCandidatos } from "@/lib/resultados-1turno-vista"
+import { coresDosFinalistas } from "@/lib/cores-finalistas"
 import { finalistasDaDisputa, formatarDataPesquisa, type Pesquisa2TurnoLinha } from "@/lib/segundo-turno-2026"
 import type { NumeroHero1Turno } from "@/lib/home-eleicao-2026"
 import type { HomeHeroMetrics } from "@/lib/home-hero-metrics"
 import { PROCESSO_DISCIPLINAR_AVISO } from "@/lib/processos-justica-total"
 import { formatCompact, safeHref } from "@/lib/utils"
-import { DueloSegundoTurno } from "@/components/Resultado1TurnoDestaques"
 import { ContagemSegundoTurno } from "@/components/ContagemSegundoTurno"
 import { SlashDivider } from "@/components/SlashDivider"
 import { UfResultadoSelector } from "@/components/UfResultadoSelector"
@@ -20,59 +22,193 @@ const TEXTO_APOIO = "text-[length:var(--text-caption)] font-medium tabular-nums 
 const LINK_ESCURO =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80"
 
+/** Retrato do finalista na borda do hero, sumindo no preto do centro e de baixo. */
+function RetratoFundo({ src, lado }: { src: string | null; lado: "esquerda" | "direita" }) {
+  if (!src) return null
+  const direcao = lado === "esquerda" ? "to right" : "to left"
+  const mascara = `linear-gradient(${direcao}, #000 0%, #000 38%, transparent 96%)`
+  return (
+    <div
+      aria-hidden="true"
+      className={`pointer-events-none absolute inset-y-0 w-1/2 opacity-45 sm:opacity-80 lg:w-[40%] lg:opacity-100 ${lado === "esquerda" ? "left-0" : "right-0"}`}
+      style={{ maskImage: mascara, WebkitMaskImage: mascara }}
+      data-pf-hero-retrato={lado}
+    >
+      <Image src={src} alt="" fill priority sizes="(min-width: 1024px) 40vw, 50vw" className="object-cover object-[center_18%]" />
+    </div>
+  )
+}
+
+// As seis linhas de cada finalista entram na grade do duelo (subgrid): rótulo, %, votos e link
+// ficam na mesma altura dos dois lados, mesmo quando um nome quebra em duas linhas e o outro não.
+function FinalistaHero({ candidato, cor, coluna }: { candidato: CandidatoResultado1Turno; cor: string; coluna: "col-start-1" | "col-start-3" }) {
+  return (
+    <div className={`${coluna} row-span-6 row-start-1 grid min-w-0 grid-rows-subgrid`} data-pf-finalista-1turno={candidato.sq}>
+      <span aria-hidden="true" className="block h-1.5 w-full rounded-[1px] sm:h-2" style={{ background: cor }} />
+      <div className="mt-3 sm:mt-[clamp(12px,2vh,20px)]">
+        <p className="font-heading uppercase leading-[0.9] text-white [overflow-wrap:normal] [word-break:normal] [text-wrap:balance] text-[clamp(1.75rem,min(4.3vw,6.6vh),4rem)]">
+          {candidato.nome_urna}
+        </p>
+        <p className="mt-1 text-[length:var(--text-body)] font-medium text-white/90 sm:text-[length:var(--text-body-lg)]">
+          {candidato.partido} · nº {candidato.numero}
+        </p>
+      </div>
+      <p className={`mt-3 sm:mt-[clamp(12px,2.2vh,24px)] ${ROTULO_ESCURO}`}>
+        <span className="sm:hidden">1º turno</span>
+        <span className="max-sm:hidden">Resultado do 1º turno</span>
+      </p>
+      <p className="mt-1 font-heading leading-none tabular-nums text-white text-[clamp(2.25rem,min(4.6vw,7.4vh),4.5rem)]">
+        {formatarPercentual(candidato.percentual_validos)}
+      </p>
+      <p className="mt-1 text-[length:var(--text-body-sm)] font-medium tabular-nums text-white/90 sm:text-[length:var(--text-body)]">
+        {formatarVotos(candidato.votos)} votos
+      </p>
+      {candidato.slug ? (
+        <Link
+          href={`/candidato/${candidato.slug}`}
+          aria-label={`Ficha completa de ${candidato.nome_urna}`}
+          className="mt-1 inline-flex justify-self-start min-h-11 items-center gap-1.5 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80 sm:text-[length:var(--text-body)]"
+        >
+          Ficha completa <ArrowUpRight className="size-4" aria-hidden="true" />
+        </Link>
+      ) : (
+        <span />
+      )}
+    </div>
+  )
+}
+
+/** "X" entre os finalistas, cortado por uma linha diagonal desenhada (o texto fica reto). */
+function SeparadorDuelo() {
+  return (
+    <div aria-hidden="true" className="relative col-start-2 row-span-6 row-start-1 flex w-10 items-center justify-center sm:w-16">
+      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 40 100" preserveAspectRatio="none">
+        <line x1="34" y1="0" x2="6" y2="100" stroke="white" strokeWidth="1.5" vectorEffect="non-scaling-stroke" />
+      </svg>
+      <span className="relative bg-black px-1 font-heading text-[clamp(2.25rem,min(4vw,7vh),4rem)] uppercase leading-none text-white/90">x</span>
+    </div>
+  )
+}
+
+/** Barra dos votos válidos de ponta a ponta: finalista, demais candidatos (hachurado) e finalista. */
+function BarraVotosHero({ presidente, cores }: { presidente: DisputaResultado1Turno; cores: [string, string] }) {
+  const { finalistas, demais } = dividirVotosValidos(presidente)
+  const [a, b] = finalistas
+  if (!a || !b) return null
+  const resumo = `Votos válidos: ${a.nome_urna} ${formatarPercentual(a.percentual_validos)}, demais candidatos ${formatarPercentual(demais.percentual)}, ${b.nome_urna} ${formatarPercentual(b.percentual_validos)}.`
+  const demaisTexto = demais.candidatos === 1 ? "Demais: 1 candidato" : `Demais ${demais.candidatos} candidatos`
+  const lado = (c: CandidatoResultado1Turno, cor: string, direita: boolean) => (
+    <div className={`min-w-0 ${direita ? "text-right" : ""}`}>
+      <p className={`flex items-center gap-2 font-bold uppercase tracking-[0.04em] text-white ${direita ? "justify-end" : ""}`}>
+        {!direita && <span aria-hidden="true" className="size-3 shrink-0 rounded-[2px]" style={{ background: cor }} />}
+        <span className="truncate">{c.nome_urna}</span>
+        {direita && <span aria-hidden="true" className="size-3 shrink-0 rounded-[2px]" style={{ background: cor }} />}
+      </p>
+      <p className="text-[length:var(--text-body)] tabular-nums text-white">{formatarPercentual(c.percentual_validos)}</p>
+      <p className="tabular-nums text-white/80">{formatarVotos(c.votos)} votos</p>
+    </div>
+  )
+  return (
+    <figure className="text-[length:var(--text-caption)] font-medium sm:text-[length:var(--text-body-sm)]" data-pf-divisao-votos="escuro">
+      <div role="img" aria-label={resumo} className="pf-barra pf-barra-entrada flex h-4 w-full overflow-hidden rounded-full bg-white/15 sm:h-5">
+        <span className="block h-full" style={{ width: `${larguraBarra(a.percentual_validos)}%`, background: cores[0] }} />
+        <span className="block h-full flex-1" style={{ backgroundImage: "repeating-linear-gradient(120deg, rgba(255,255,255,0.6) 0 1px, transparent 1px 6px)" }} />
+        <span className="block h-full" style={{ width: `${larguraBarra(b.percentual_validos)}%`, background: cores[1] }} />
+      </div>
+      <figcaption className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
+        {lado(a, cores[0], false)}
+        <p className="order-last col-span-2 text-center text-white sm:order-none sm:col-span-1">
+          {demaisTexto}: {formatarPercentual(demais.percentual)}
+        </p>
+        {lado(b, cores[1], true)}
+      </figcaption>
+    </figure>
+  )
+}
+
 function DueloHero({
   presidente,
   fotos,
   compararHref,
   compartilhar,
+  referenceNow,
 }: {
   presidente: DisputaResultado1Turno
   fotos?: FotosCandidatos
   compararHref: string | null
   compartilhar: HomeHero2026Props["compartilhar"]
+  referenceNow: string
 }) {
-  // Mesmo duelo do topo da página do 1º turno (fotos, % e a barra dos votos válidos), em tom escuro.
   const par = finalistasDaDisputa(presidente)
+  if (!par) return null
+  const [a, b] = par
+  // Cor do lado do partido (mesma régua do espectro); sem duas classes distintas, branco e cinza.
+  const espectro = coresDosFinalistas(a.partido, b.partido)
+  const cores: [string, string] = espectro ? [espectro.a.cor, espectro.b.cor] : ["#ffffff", "var(--gray-400)"]
   return (
     <div data-pf-hero-duelo="Presidente">
-      <h2 className={`mb-3 sm:mb-[clamp(8px,1.5vh,20px)] sm:text-center ${ROTULO_ESCURO}`}>Presidente</h2>
-      <DueloSegundoTurno disputa={presidente} fotos={fotos} tom="escuro" selo={false} />
-      <p className={`mx-auto mt-2 max-w-prose text-center ${TEXTO_APOIO}`}>
-        Percentual dos votos válidos no 1º turno. Fonte: TSE. Cor e lado pelo partido, na{" "}
-        <a href="/quiz/metodologia" className="font-semibold text-white underline underline-offset-4 hover:text-white/80">
-          classificação do Puxa Ficha
-        </a>
-        .
-        {/* O aviso que estava na nota de fonte da seção removida: sem fechamento oficial, a situação é calculada. */}
-        {!presidente.fechamento_oficial && (
-          <span data-pf-hero-fechamento-pendente> O TSE ainda não publicou o fechamento oficial desta disputa; a ida ao 2º turno foi calculada pelos votos.</span>
-        )}
-      </p>
-      {(compararHref || (compartilhar && par)) && (
-        // No celular o botão principal fica em cima e o compartilhar embaixo; do sm em diante, lado a lado.
-        <div className="mt-4 flex flex-col items-center gap-3 sm:mt-[clamp(14px,2.5vh,32px)] sm:flex-row sm:justify-center sm:gap-6">
-          {compararHref && (
-            <p className="flex justify-center">
+      <div className="relative">
+        <RetratoFundo src={fotoDe(fotos, a.slug)} lado="esquerda" />
+        <RetratoFundo src={fotoDe(fotos, b.slug)} lado="direita" />
+        {/* Escurece a base dos retratos: o duelo e a barra ficam sobre preto. */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-5 pb-5 pt-[clamp(76px,9vh,96px)] text-center md:px-12">
+          <h1
+            className="hero-fade font-heading text-[clamp(3.5rem,min(10vw,12vh),8rem)] uppercase leading-[0.85] tracking-[-0.01em] text-white"
+            style={{ animationDelay: "0.1s" }}
+          >
+            Puxa Ficha
+          </h1>
+          <h2 className="hero-fade mt-3 text-[length:var(--text-body)] font-medium uppercase tracking-[0.32em] text-white/90 sm:text-[length:var(--text-body-lg)]" style={{ animationDelay: "0.2s" }}>
+            Presidência / 2º turno
+          </h2>
+          <p className="hero-fade mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[length:var(--text-body-sm)] font-bold uppercase tracking-[0.06em] text-white sm:text-[length:var(--text-body-lg)]" style={{ animationDelay: "0.25s" }}>
+            <span>2º turno em 25 de outubro</span>
+            <ContagemSegundoTurno referenceNow={referenceNow} variante="escuro" />
+          </p>
+          <div
+            className="hero-fade mx-auto mt-6 grid max-w-[50rem] grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] grid-rows-[repeat(6,auto)] gap-x-3 text-left sm:mt-[clamp(16px,3.5vh,40px)] sm:gap-x-6"
+            style={{ animationDelay: "0.3s" }}
+            data-pf-duelo-1turno="Presidente"
+          >
+            <FinalistaHero candidato={a} cor={cores[0]} coluna="col-start-1" />
+            <SeparadorDuelo />
+            <FinalistaHero candidato={b} cor={cores[1]} coluna="col-start-3" />
+          </div>
+        </div>
+      </div>
+      <div className="relative mx-auto max-w-7xl px-5 md:px-12">
+        <BarraVotosHero presidente={presidente} cores={cores} />
+        <p className={`mx-auto mt-3 max-w-prose text-center sm:mt-[clamp(8px,1.6vh,16px)] ${TEXTO_APOIO}`}>
+          Percentuais dos votos válidos no 1º turno. Fonte: TSE.
+          {!presidente.fechamento_oficial && (
+            <span data-pf-hero-fechamento-pendente> O TSE ainda não publicou o fechamento oficial desta disputa; a ida ao 2º turno foi calculada pelos votos.</span>
+          )}
+        </p>
+        {(compararHref || compartilhar) && (
+          <div className="mt-6 flex flex-col items-center gap-3 sm:mt-[clamp(14px,3vh,40px)] sm:flex-row sm:justify-center sm:gap-6">
+            {compararHref && (
               <a
                 href={compararHref}
-                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-white px-7 font-heading text-[length:var(--text-heading-sm)] uppercase leading-none tracking-[0.02em] text-black transition-colors duration-200 hover:bg-[var(--gray-200)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 whitespace-nowrap rounded-full bg-white px-6 font-heading text-[length:var(--text-heading-sm)] uppercase sm:min-h-14 sm:px-9 sm:text-[length:var(--text-heading)] leading-none tracking-[0.02em] text-black transition-colors duration-200 hover:bg-[var(--gray-200)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
                 Comparar lado a lado
-                <ArrowDown className="size-5 transition-transform duration-200 group-hover:translate-y-0.5 motion-reduce:transition-none" aria-hidden="true" />
+                <ArrowRight className="size-6 transition-transform duration-200 group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
               </a>
-            </p>
-          )}
-          {compartilhar && par && (
-            <CompartilharDuelo
-              finalistas={[
-                { nome_urna: par[0].nome_urna, percentual_validos: par[0].percentual_validos },
-                { nome_urna: par[1].nome_urna, percentual_validos: par[1].percentual_validos },
-              ]}
-              url={compartilhar.url}
-            />
-          )}
-        </div>
-      )}
+            )}
+            {compararHref && compartilhar && <span aria-hidden="true" className="hidden h-7 w-px bg-white/40 sm:block" />}
+            {compartilhar && (
+              <CompartilharDuelo
+                finalistas={[
+                  { nome_urna: a.nome_urna, percentual_validos: a.percentual_validos },
+                  { nome_urna: b.nome_urna, percentual_validos: b.percentual_validos },
+                ]}
+                url={compartilhar.url}
+              />
+            )}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
@@ -227,6 +363,39 @@ export interface HomeHero2026Props {
 export function HomeHero2026({ imagem, temResultado, presidente, fotos, pesquisa, numeros, metricas, ufs, referenceNow, compararHref, compartilhar = null, fonte2022 = null }: HomeHero2026Props) {
   const finalistas = temResultado ? finalistasDaDisputa(presidente) : null
   const temSegundoTurno = Boolean(finalistas) || numeros.some((n) => n.id === "governadores-2turno" && n.valor !== "0")
+  const faixa = temResultado && (
+    <>
+      {/* Faixa abaixo do duelo: pesquisa e números do 1º turno; depois o seletor de UF. */}
+      <div
+        data-pf-hero-faixa
+        className="mt-10 grid gap-4 border-t border-white/30 pt-5 sm:mt-14 sm:gap-8 sm:pt-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-12"
+      >
+        {finalistas && pesquisa && <PesquisaHero pesquisa={pesquisa} nomes={[finalistas[0].nome_urna, finalistas[1].nome_urna]} />}
+        {numeros.length > 0 && (
+          // No celular os números ficam atrás de um botão; do sm em diante, sempre abertos.
+          <RecolhivelNoCelular rotulo="Ver números do 1º turno">
+            <NumerosHero numeros={numeros} fonte2022={fonte2022} />
+          </RecolhivelNoCelular>
+        )}
+      </div>
+      {ufs.length > 0 && (
+        <div className="mt-6">
+          <UfResultadoSelector options={ufs} basePath="/1o-turno" rotulo="Seu estado tem 2º turno?" variante="escuro" compacto />
+        </div>
+      )}
+    </>
+  )
+
+  // Com o par do 2º turno: retratos nas bordas, título e duelo no centro, barra dos votos de ponta a ponta.
+  if (finalistas && presidente) {
+    return (
+      <section className="relative overflow-hidden bg-black pb-10 sm:pb-16" data-pf-home-hero="resultado">
+        <DueloHero presidente={presidente} fotos={fotos} compararHref={compararHref} compartilhar={compartilhar} referenceNow={referenceNow} />
+        <div className="relative mx-auto max-w-7xl px-5 md:px-12">{faixa}</div>
+      </section>
+    )
+  }
+
   return (
     <section className="relative overflow-hidden bg-black" data-pf-home-hero={temResultado ? "resultado" : "fichas"}>
       <div className="absolute inset-0 opacity-40" aria-hidden="true">
@@ -238,7 +407,6 @@ export function HomeHero2026({ imagem, temResultado, presidente, fotos, pesquisa
       {/* Escurece a imagem: o texto branco fica acima de 4,5:1 em qualquer ponto. */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50" />
 
-      {/* Espaços e tamanhos do topo escalam pela altura da tela (vh): do título ao "Comparar lado a lado" cabe numa tela só. */}
       <div className="relative mx-auto max-w-7xl px-5 pb-10 pt-[clamp(72px,11vh,80px)] sm:pb-16 sm:pt-[clamp(76px,11vh,128px)] md:px-12 lg:pb-20">
         <h1
           className="hero-fade font-heading text-[clamp(48px,min(17vw,9vh),100px)] uppercase leading-[0.85] tracking-[-0.02em] text-white sm:text-[clamp(64px,min(13vw,12vh),176px)]"
@@ -254,36 +422,12 @@ export function HomeHero2026({ imagem, temResultado, presidente, fotos, pesquisa
           <div className="hero-fade" style={{ animationDelay: "0.3s" }}>
             {temSegundoTurno && (
               <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[length:var(--text-body)] font-bold uppercase tracking-[0.06em] text-white sm:text-[length:var(--text-body-lg)]">
-                {/* No celular a data curta deixa a contagem na mesma linha; o leitor de tela ouve a data por extenso. */}
                 <span className="sm:hidden" aria-hidden="true">2º turno em 25/10</span>
                 <span className="max-sm:sr-only">2º turno em 25 de outubro</span>
                 <ContagemSegundoTurno referenceNow={referenceNow} variante="escuro" />
               </p>
             )}
-            {finalistas && presidente && (
-              <div className="mt-4 sm:mt-[clamp(14px,2.5vh,32px)]">
-                <DueloHero presidente={presidente} fotos={fotos} compararHref={compararHref} compartilhar={compartilhar} />
-              </div>
-            )}
-            {/* Faixa horizontal abaixo da linha dos votos: pesquisa, números do 1º turno e seletor de UF. */}
-            <div
-              data-pf-hero-faixa
-              className="mt-6 grid gap-4 border-t border-white/30 pt-5 sm:mt-10 sm:pt-6 sm:gap-8 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-12"
-            >
-              {finalistas && pesquisa && <PesquisaHero pesquisa={pesquisa} nomes={[finalistas[0].nome_urna, finalistas[1].nome_urna]} />}
-              {numeros.length > 0 && (
-                // No celular os números ficam atrás de um botão; do sm em diante, sempre abertos.
-                <RecolhivelNoCelular rotulo="Ver números do 1º turno">
-                  <NumerosHero numeros={numeros} fonte2022={fonte2022} />
-                </RecolhivelNoCelular>
-              )}
-            </div>
-            {/* O seletor de UF é um detalhe: uma linha compacta, com o rótulo ao lado. */}
-            {ufs.length > 0 && (
-              <div className="mt-6">
-                <UfResultadoSelector options={ufs} basePath="/1o-turno" rotulo="Seu estado tem 2º turno?" variante="escuro" compacto />
-              </div>
-            )}
+            {faixa}
           </div>
         )}
       </div>

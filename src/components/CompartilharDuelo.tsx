@@ -41,15 +41,16 @@ export function CompartilharDuelo({ finalistas, url }: { finalistas: [FinalistaT
       <button
         type="button"
         onClick={() => void compartilhar()}
-        className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/60 px-5 text-[length:var(--text-body-sm)] font-bold text-white transition-colors duration-200 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none"
+        className="inline-flex min-h-11 items-center gap-2 text-[length:var(--text-body-sm)] font-bold text-white transition-colors duration-200 hover:text-white/80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white motion-reduce:transition-none sm:text-[length:var(--text-body)]"
       >
         <Share2 className="size-4" aria-hidden="true" />
         Compartilhar
       </button>
+      <span aria-hidden="true" className="h-6 w-px bg-white/40" />
       <a
         href={IMAGEM_DUELO_PATH}
         download="puxa-ficha-2o-turno.png"
-        className="inline-flex min-h-11 items-center gap-1.5 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80"
+        className="inline-flex min-h-11 items-center gap-2 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white hover:text-white/80 sm:text-[length:var(--text-body)]"
       >
         <Download className="size-4" aria-hidden="true" />
         Baixar imagem
