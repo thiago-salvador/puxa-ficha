@@ -23,18 +23,21 @@ const LINK_ESCURO =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80"
 
 /**
- * Retrato do finalista na borda do hero (do lg em diante): ocupa a parte de cima inteira, nítido no
- * lado de fora e escurecendo aos poucos até perto do centro. O rosto fica fora da coluna do texto.
+ * Retrato do finalista (do lg em diante), na altura toda da parte de cima e na proporção da foto (3:4).
+ * O centro da foto, onde fica o rosto, cai no meio do vão entre a borda da tela e o começo do duelo
+ * (largura min(40rem, 48vw), centrada): o rosto nunca fica sob o texto; só o ombro, já escurecido,
+ * avança para o centro.
  */
 function RetratoFundo({ src, lado }: { src: string | null; lado: "esquerda" | "direita" }) {
   if (!src) return null
   const direcao = lado === "esquerda" ? "to right" : "to left"
-  const mascara = `linear-gradient(${direcao}, #000 0%, #000 46%, rgba(0,0,0,0.6) 72%, rgba(0,0,0,0.25) 88%, transparent 100%)`
+  const mascara = `linear-gradient(${direcao}, #000 0%, #000 52%, rgba(0,0,0,0.55) 74%, transparent 100%)`
+  const centroDoVao = "calc((100% - min(40rem, 48vw)) / 4)"
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-y-0 hidden w-[42%] lg:block ${lado === "esquerda" ? "left-0" : "right-0"}`}
-      style={{ maskImage: mascara, WebkitMaskImage: mascara }}
+      className={`pointer-events-none absolute inset-y-0 hidden aspect-[3/4] lg:block ${lado === "esquerda" ? "-translate-x-1/2" : "translate-x-1/2"}`}
+      style={{ [lado === "esquerda" ? "left" : "right"]: centroDoVao, maskImage: mascara, WebkitMaskImage: mascara }}
       data-pf-hero-retrato={lado}
     >
       <Image src={src} alt="" fill priority sizes="42vw" className="object-cover object-top" />
