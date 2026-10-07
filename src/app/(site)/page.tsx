@@ -273,24 +273,22 @@ export default async function Home() {
           )}
           {presidente && aliancas && <Aliancas2TurnoSecao aliancas={aliancas} disputa={presidente} />}
           <div>
-            {finalistasPresidente && (
-              <Pesquisas2Turno
-                linhas={pesquisas2Turno}
-                nomes={[finalistasPresidente[0].nome_urna, finalistasPresidente[1].nome_urna]}
-                partidos={[finalistasPresidente[0].partido, finalistasPresidente[1].partido]}
-              />
-            )}
-            {(resultados.presidente_por_uf?.length ?? 0) > 0 && (
-              <div className="mt-16 sm:mt-20">
-                <MapaPresidente1Turno data={resultados} />
-              </div>
-            )}
+            {(resultados.presidente_por_uf?.length ?? 0) > 0 && <MapaPresidente1Turno data={resultados} />}
             <p className="mt-2">
               <Link href="/1o-turno" className={LINK_SETA}>
                 Arquivo do 1º turno <ArrowRight className="size-3.5" aria-hidden="true" />
               </Link>
             </p>
           </div>
+
+          {finalistasPresidente && (
+            <Pesquisas2Turno
+              linhas={pesquisas2Turno}
+              nomes={[finalistasPresidente[0].nome_urna, finalistasPresidente[1].nome_urna]}
+              partidos={[finalistasPresidente[0].partido, finalistasPresidente[1].partido]}
+              mostrarVazio
+            />
+          )}
 
           <div className="space-y-12">
             <Governadores2Turno candidatos={todosCandidatos} fotos={fotos} data={resultados} aliancas={aliancas} />

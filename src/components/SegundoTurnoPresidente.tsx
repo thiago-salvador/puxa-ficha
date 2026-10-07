@@ -1,6 +1,7 @@
-// cspell:ignore botao celulas comparaveis comparavel profissao profissoes ceap
+// cspell:ignore botao celulas comparaveis comparavel profissao profissoes ceap legivel
 import type { CSSProperties } from "react"
 import Link from "next/link"
+import { nomeLegivel } from "@/lib/compartilhar-duelo"
 import { ArrowRight, ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react"
 import type { CandidatoResultado1Turno, DisputaResultado1Turno } from "@/lib/resultados-1turno"
 import { larguraBarra, type FotosCandidatos } from "@/lib/resultados-1turno-vista"
@@ -321,6 +322,7 @@ export function Pesquisas2Turno({
   nomes,
   partidos,
   limiteLista = 6,
+  mostrarVazio = false,
 }: {
   linhas: Pesquisa2TurnoLinha[]
   nomes: [string, string]
@@ -328,9 +330,37 @@ export function Pesquisas2Turno({
   partidos?: [string, string]
   /** A tendência usa todas as linhas; a lista mostra só as mais recentes. */
   limiteLista?: number
+  /** Sem pesquisa, mostra a seção com o aviso em vez de sumir (home do 2º turno). */
+  mostrarVazio?: boolean
 }) {
-  if (linhas.length === 0) return null
   const [nomeA, nomeB] = nomes
+  if (linhas.length === 0) {
+    if (!mostrarVazio) return null
+    return (
+      <section id="pesquisas-2turno" className="scroll-mt-24" aria-labelledby="pesquisas-2turno-titulo" data-pf-pesquisas-2turno-vazio>
+        <TituloSecao titulo="Pesquisas do 2º turno" id="pesquisas-2turno-titulo">
+          Intenção de voto no confronto {nomeLegivel(nomeA)} x {nomeLegivel(nomeB)}.
+        </TituloSecao>
+        <SlashDivider className="mb-6 mt-6" />
+        <div className="grid items-center gap-6 rounded-[6px] border border-dashed border-border px-5 py-8 sm:grid-cols-[minmax(0,1fr)_minmax(0,16rem)] sm:px-8">
+          <div className="max-w-prose">
+            <p className="font-heading text-[length:var(--text-heading-sm)] uppercase leading-tight text-foreground">
+              Nenhuma pesquisa do 2º turno publicada ainda
+            </p>
+            <p className="mt-3 text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground">
+              Só entram pesquisas com entrevistas feitas depois do 1º turno, em 4 de outubro. Simulação feita antes da votação não mede este confronto.
+              Cada pesquisa aparece aqui com instituto, data, margem de erro e link para a fonte assim que é publicada.
+            </p>
+          </div>
+          <div aria-hidden="true" className="flex h-24 items-end gap-2 opacity-60">
+            {[46, 52, 49, 55, 51, 48].map((h, i) => (
+              <span key={i} className="flex-1 rounded-t-[3px] border border-dashed border-[var(--gray-400)]" style={{ height: `${h}%` }} />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
   return (
     <section id="pesquisas-2turno" className="scroll-mt-24" aria-labelledby="pesquisas-2turno-titulo">
       <TituloSecao titulo="Pesquisas do 2º turno" id="pesquisas-2turno-titulo">

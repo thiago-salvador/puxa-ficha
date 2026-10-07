@@ -203,6 +203,15 @@ describe("tendência das pesquisas do 2º turno", () => {
     assert.doesNotMatch(html, /data-pf-tendencia-2turno/)
     assert.match(html, /data-pf-pesquisas-2turno/)
   })
+
+  it("sem pesquisa do 2º turno, some por padrão e mostra o aviso na home", () => {
+    assert.equal(renderToStaticMarkup(<Pesquisas2Turno linhas={[]} nomes={["FLAVIO BOLSONARO", "LULA"]} />), "")
+    const html = renderToStaticMarkup(<Pesquisas2Turno linhas={[]} nomes={["FLAVIO BOLSONARO", "LULA"]} mostrarVazio />)
+    assert.match(html, /data-pf-pesquisas-2turno-vazio/)
+    assert.match(html, /Nenhuma pesquisa do 2º turno publicada ainda/)
+    assert.match(html, /Flavio Bolsonaro x Lula/)
+    assert.doesNotMatch(html, /data-pf-pesquisas-2turno="true"/)
+  })
 })
 
 describe("duelos de governador: vantagem e meu estado", () => {
