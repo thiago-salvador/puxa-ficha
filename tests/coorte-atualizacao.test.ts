@@ -166,22 +166,31 @@ describe("auditoria: candidatura substituída numa vaga encerrada", () => {
   const linha = (sq_candidato: string, cargo = "PRESIDENTE", coligacao = "col-1") => ({ sq_candidato, uf: null, cargo, sq: coligacao })
   const recorte = lerCandidaturasEncerradas([{ candidato_id: "c1", slug: "vigente", atualizacao_encerrada_em: "2026-10-05T00:00:00Z", sq_candidatos: ["sq-vigente"] }])
 
+  const resolvidas = new Set(["sq-substituido"])
+
   it("sai a substituída sem ficha; fica a candidatura publicada ativa, mesmo na mesma vaga", () => {
     const oficial = [linha("sq-vigente"), linha("sq-substituido"), linha("sq-ativo-mesma-vaga"), linha("sq-outra-vaga", "PRESIDENTE", "col-2")]
     const publicados = new Set(["sq-vigente", "sq-ativo-mesma-vaga"])
-    const restantes = semOrfasDeVagaEncerrada(oficial, publicados, recorte, vaga).map((l) => l.sq_candidato)
+    const restantes = semOrfasDeVagaEncerrada(oficial, publicados, recorte, vaga, resolvidas).map((l) => l.sq_candidato)
     assert.deepEqual(restantes, ["sq-vigente", "sq-ativo-mesma-vaga", "sq-outra-vaga"])
     // O recorte por SQ continua tirando a vigente encerrada depois.
-    assert.deepEqual(semEncerradasPorSq(semOrfasDeVagaEncerrada(oficial, publicados, recorte, vaga), recorte).map((l) => l.sq_candidato), ["sq-ativo-mesma-vaga", "sq-outra-vaga"])
+    assert.deepEqual(semEncerradasPorSq(semOrfasDeVagaEncerrada(oficial, publicados, recorte, vaga, resolvidas), recorte).map((l) => l.sq_candidato), ["sq-ativo-mesma-vaga", "sq-outra-vaga"])
   })
 
-  it("vaga sem ficha publicada encerrada não fecha: candidatura nova sem ficha continua cobrada", () => {
-    const oficial = [linha("sq-vigente"), linha("sq-nova")]
-    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set<string>(), recorte, vaga).map((l) => l.sq_candidato), ["sq-vigente", "sq-nova"])
+  it("candidatura nova na vaga encerrada, sem evidência de substituição ou inaptidão, continua cobrada", () => {
+    const oficial = [linha("sq-vigente"), linha("sq-substituido"), linha("sq-nova")]
+    const restantes = semOrfasDeVagaEncerrada(oficial, new Set(["sq-vigente"]), recorte, vaga, resolvidas).map((l) => l.sq_candidato)
+    assert.deepEqual(restantes, ["sq-vigente", "sq-nova"])
   })
 
-  it("sem recorte, nada muda", () => {
-    const oficial = [linha("sq-a"), linha("sq-b")]
-    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set(["sq-a"]), lerCandidaturasEncerradas([]), vaga), oficial)
+  it("vaga sem ficha publicada encerrada não fecha, nem para quem tem evidência", () => {
+    const oficial = [linha("sq-vigente"), linha("sq-substituido")]
+    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set<string>(), recorte, vaga, resolvidas).map((l) => l.sq_candidato), ["sq-vigente", "sq-substituido"])
+  })
+
+  it("sem recorte ou sem evidência, nada muda", () => {
+    const oficial = [linha("sq-vigente"), linha("sq-substituido")]
+    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set(["sq-vigente"]), lerCandidaturasEncerradas([]), vaga, resolvidas), oficial)
+    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set(["sq-vigente"]), recorte, vaga, new Set<string>()), oficial)
   })
 })

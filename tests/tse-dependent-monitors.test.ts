@@ -1,5 +1,5 @@
 import assert from "node:assert/strict"
-import { mkdtempSync, readFileSync, readdirSync } from "node:fs"
+import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 import test from "node:test"
@@ -125,18 +125,23 @@ test("baseline anterior ao deferimento de 25/09 volta a alertar", async () => {
 })
 
 test("canônica de Laudicério voltando a Concorrendo depois do resultado alerta", async () => {
-  const report = await collectTseDependentMonitors(config, mkdtempSync(join(tmpdir(), "tse-laudicerio-totalizacao-")), {
-    attempts: 1,
-    fetchImpl: async (input) => {
-      const url = String(input)
-      const payload = okPayload(url)
-      if (url.includes("110002554073")) payload.descricaoTotalizacao = "Concorrendo"
-      return response(payload)
-    },
-  })
-  assert.equal(report.status, "review_required")
-  assert.deepEqual(report.alerts.map((alert) => alert.sq_candidato), ["110002554073"])
-  assert.equal(report.alerts[0]?.details.expected_descricao_totalizacao, "Não eleito")
+  const out = mkdtempSync(join(process.cwd(), ".tmp-tse-laudicerio-totalizacao-"))
+  try {
+    const report = await collectTseDependentMonitors(config, out, {
+      attempts: 1,
+      fetchImpl: async (input) => {
+        const url = String(input)
+        const payload = okPayload(url)
+        if (url.includes("110002554073")) payload.descricaoTotalizacao = "Concorrendo"
+        return response(payload)
+      },
+    })
+    assert.equal(report.status, "review_required")
+    assert.deepEqual(report.alerts.map((alert) => alert.sq_candidato), ["110002554073"])
+    assert.equal(report.alerts[0]?.details.expected_descricao_totalizacao, "Não eleito")
+  } finally {
+    rmSync(out, { recursive: true, force: true })
+  }
 })
 
 test("mudança no registro histórico de Laudicério também volta a alertar", async () => {

@@ -55,21 +55,30 @@ export function semEncerradasPorSlug<T extends { slug?: string | null }>(linhas:
 }
 
 /**
- * Candidatura oficial nunca publicada que divide a vaga (uf:cargo:coligação) com uma
- * candidatura publicada e encerrada: o titular substituído ou a vice inapta da chapa.
- * Antes do corte ela casava com a vigente publicada ("substituted" ou "inactive_vice");
- * com a vigente fora da comparação, sobraria sozinha e viraria "inclusion". Recebe o
- * oficial e o publicado ANTES do recorte por SQ, porque é a vigente encerrada que fecha a vaga.
+ * Titular substituído ou vice inapta, nunca publicados, numa vaga (uf:cargo:coligação)
+ * cuja candidatura publicada foi encerrada. Antes do corte eles casavam com a vigente
+ * ("substituted" ou "inactive_vice"); com a vigente fora da comparação, sobrariam
+ * sozinhos e virariam "inclusion".
+ *
+ * Só sai quem tem evidência própria: `resolvidasPelaVigente` são os SQs que a própria
+ * comparação, rodada sem o recorte, classificou como substituídos (lista revisada) ou
+ * vice inapta (detalhe atual do TSE). Candidatura nova na mesma vaga, sem essa
+ * classificação, continua na auditoria e vira "inclusion". Recebe o oficial e o
+ * publicado ANTES do recorte por SQ, porque é a vigente encerrada que fecha a vaga.
  */
 export function semOrfasDeVagaEncerrada<T extends { sq_candidato: string }>(
   oficial: readonly T[],
   sqsPublicados: ReadonlySet<string>,
   recorte: RecorteCoorte,
   vaga: (linha: T) => string,
+  resolvidasPelaVigente: ReadonlySet<string>,
 ): T[] {
-  if (recorte.sqs.size === 0) return [...oficial]
+  if (recorte.sqs.size === 0 || resolvidasPelaVigente.size === 0) return [...oficial]
   const fechadas = new Set(oficial
     .filter((linha) => recorte.sqs.has(linha.sq_candidato) && sqsPublicados.has(linha.sq_candidato))
     .map(vaga))
-  return oficial.filter((linha) => sqsPublicados.has(linha.sq_candidato) || !fechadas.has(vaga(linha)))
+  return oficial.filter((linha) =>
+    sqsPublicados.has(linha.sq_candidato)
+    || !fechadas.has(vaga(linha))
+    || !resolvidasPelaVigente.has(linha.sq_candidato))
 }

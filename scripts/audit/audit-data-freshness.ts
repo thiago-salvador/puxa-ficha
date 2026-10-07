@@ -504,8 +504,9 @@ async function main(): Promise<void> {
   // turno sai da comparação nos dois lados (publicado aqui, oficial antes de
   // compareCandidacies). A ficha continua no ar, congelada.
   const recorteCoorte = lerCandidaturasEncerradas(published.atualizacao_encerrada);
-  // SQs publicados antes do recorte: fecham a vaga das candidaturas substituídas (semOrfasDeVagaEncerrada).
-  const sqsPublicadosAntesDoRecorte = new Set(published.records.map((record) => record.sq_candidato).filter(Boolean));
+  // Publicado antes do recorte: fecha a vaga das candidaturas substituídas (semOrfasDeVagaEncerrada).
+  const publicadoAntesDoRecorte = [...published.records];
+  const sqsPublicadosAntesDoRecorte = new Set(publicadoAntesDoRecorte.map((record) => record.sq_candidato).filter(Boolean));
   published.records = semEncerradasPorSq(published.records, recorteCoorte);
   if (published.public_profiles) published.public_profiles = semEncerradasPorSlug(published.public_profiles, recorteCoorte);
   if (published.public_candidacies) published.public_candidacies = semEncerradasPorSlug(published.public_candidacies, recorteCoorte);
@@ -762,18 +763,28 @@ async function main(): Promise<void> {
     return;
   }
 
-  official = semEncerradasPorSq(semOrfasDeVagaEncerrada(official, sqsPublicadosAntesDoRecorte, recorteCoorte, candidacySlot), recorteCoorte);
+  const opcoesComparacao = {
+    substitutedViceSqs: readSubstitutedViceSqs(),
+    substitutedTitularSqs: readSubstitutedTitularSqs(),
+    currentStatusEvidence,
+  };
+  // Evidência própria das órfãs: a comparação sem o recorte, que ainda vê a vigente publicada.
+  const resolvidasPelaVigente = recorteCoorte.sqs.size === 0
+    ? new Set<string>()
+    : new Set(compareCandidacies(official, publicadoAntesDoRecorte, generatedAt, { ...opcoesComparacao, currentOfficial })
+      .changes
+      .filter((change) => (change.kind === "substituted" || change.kind === "inactive_vice") && change.official)
+      .map((change) => change.official!.sq_candidato));
+  official = semEncerradasPorSq(
+    semOrfasDeVagaEncerrada(official, sqsPublicadosAntesDoRecorte, recorteCoorte, candidacySlot, resolvidasPelaVigente),
+    recorteCoorte,
+  );
   currentOfficial = semEncerradasPorSq(currentOfficial, recorteCoorte);
   const comparison = compareCandidacies(
     official,
     published.records,
     generatedAt,
-    {
-      substitutedViceSqs: readSubstitutedViceSqs(),
-      substitutedTitularSqs: readSubstitutedTitularSqs(),
-      currentOfficial,
-      currentStatusEvidence,
-    },
+    { ...opcoesComparacao, currentOfficial },
   );
   const currentOfficialWithProfiles = attachPublishedProfiles(
     currentOfficial,
