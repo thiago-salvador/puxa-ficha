@@ -3,6 +3,8 @@
 import { useId, useState } from "react"
 import { ArrowUpRight, ChevronDown, FileText, Info, List } from "lucide-react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
 import type { StateProgram } from "@/lib/state-programs"
 import type { ProgramRunningMate } from "@/lib/vice-official-status"
 import type { ProgramaGovernoManifestoPublico, ProgramaGovernoResumo } from "@/lib/programa-governo"
@@ -12,6 +14,11 @@ import { AbasFiltro } from "./AbasFiltro"
 import { corDoPartido } from "@/lib/cores-finalistas"
 import { safeHref } from "@/lib/utils"
 import styles from "./StatePrograms.module.css"
+
+/** Os 27 estados em ordem alfabética do nome, para o seletor de governadores. */
+const ESTADOS = getEstadoUFs()
+  .map((uf) => ({ uf: uf.toUpperCase(), nome: getEstadoNome(uf) ?? uf.toUpperCase() }))
+  .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
 
 export type StateProgramContext = { themeId: string; label: string; value: string; year: string; source: string }
 
@@ -83,7 +90,7 @@ function ThemeSummary({ items, manifesto, slug, name }: {
 /** Aba de quem segue na disputa (ou venceu) ao lado de "Todos os candidatos". */
 export type AbaFinalistasProgramas = { rotulo: string; slugs: readonly string[] }
 
-export function StatePrograms({ programs: programsTodos, context = [], unavailable = false, showContext = true, scopeTitle = "Visão geral dos programas", runningMates = {}, abaFinalistas }: {
+export function StatePrograms({ programs: programsTodos, context = [], unavailable = false, showContext = true, scopeTitle = "Visão geral dos programas", runningMates = {}, abaFinalistas, ufAtual }: {
   programs: StateProgram[]
   abaFinalistas?: AbaFinalistasProgramas
   context?: StateProgramContext[]
@@ -91,7 +98,10 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
   showContext?: boolean
   scopeTitle?: string
   runningMates?: Record<string, ProgramRunningMate>
+  /** UF da página de estado; na home fica vazio e o seletor pede um estado. */
+  ufAtual?: string
 }) {
+  const router = useRouter()
   const painelId = useId()
   const slugsFinalistas = new Set(abaFinalistas?.slugs ?? [])
   const finalistas = programsTodos.filter(p => slugsFinalistas.has(p.slug))
@@ -170,11 +180,14 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
           <option value="all">Todas as candidaturas</option>
           {alphabetical.map(p => <option key={p.slug} value={p.slug}>{p.nome_urna}</option>)}
         </select></label>
-        <p className={styles.neutralNote}>Candidaturas em ordem alfabética, sem avaliação ou preferência.</p>
+        <label className={styles.governadores}>Governadores<select value={ufAtual ?? ""} onChange={e => { if (e.target.value) router.push(`/uf/${e.target.value.toLowerCase()}#programas`) }}>
+          {!ufAtual && <option value="">Escolha um estado</option>}
+          {ESTADOS.map(({ uf, nome }) => <option key={uf} value={uf}>{nome}</option>)}
+        </select></label>
       </div>
     </div>
     <div className={styles.listHeading}>
-      <h3>{scopeTitle}</h3>
+      <div><h3>{scopeTitle}</h3><p className={styles.neutralNote}>Candidaturas em ordem alfabética, sem avaliação ou preferência.</p></div>
       <details className={styles.help}>
         <summary>Como ler os resumos <Info size={16} aria-hidden="true" /></summary>
         <p>Os resumos são baseados nos documentos e revisados editorialmente. Abra o resumo completo para consultar os trechos e suas fontes. Na leitura por tema, a ausência no resumo não significa ausência no documento completo.</p>
@@ -188,12 +201,12 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
         <ul>
           {STATE_PROGRAM_CORE_THEMES.map(([id, title]) => <li key={id}><button type="button" aria-pressed={theme === id} onClick={() => setTheme(id)}>{title}</button></li>)}
         </ul>
-        {otherThemes.length > 0 && <>
-          <p className={styles.themeGroup}>Outros temas</p>
+        {otherThemes.length > 0 && <details className={styles.otherThemes} open={otherThemes.some(([id]) => id === theme) || undefined}>
+          <summary className={styles.themeGroup}>Outros temas ({otherThemes.length}) <ChevronDown size={14} aria-hidden="true" /></summary>
           <ul>
             {otherThemes.map(([id, title]) => <li key={id}><button type="button" aria-pressed={theme === id} onClick={() => setTheme(id)}>{title}</button></li>)}
           </ul>
-        </>}
+        </details>}
       </nav>
       <div className={styles.themeBody}>
         <h4 className={styles.themeTitle}>{themeTitle}</h4>
