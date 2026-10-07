@@ -16,18 +16,17 @@ import { HomeQuizIntro } from "@/components/HomeQuizIntro"
 import { HomeRecentUpdates } from "@/components/HomeRecentUpdates"
 import { HomeRecentUpdatesData } from "@/components/HomeRecentUpdatesData"
 import { PresidentialElectionSections } from "@/components/PresidentialElectionSections"
-import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { JsonLd } from "@/components/JsonLd"
 import { RevelarBarras } from "@/components/RevelarBarras"
 import { HomeHero2026 } from "@/components/HomeHero2026"
-import { ResultadoPreviaBanner, TituloSecao } from "@/components/Resultado1TurnoPartes"
+import { ResultadoPreviaBanner } from "@/components/Resultado1TurnoPartes"
 import { Resultado1TurnoEstados } from "@/components/Resultado1TurnoEstados"
 import { GovernadoresEleitos1Turno } from "@/components/GovernadoresEleitos1Turno"
+import { Senado1Turno } from "@/components/Senado1Turno"
 import { EspectroEleitos1Turno } from "@/components/EspectroEleitos1Turno"
-import { UfResultadoSelector } from "@/components/UfResultadoSelector"
 import { LadoALado2Turno, Pesquisas2Turno } from "@/components/SegundoTurnoPresidente"
 import { Governadores2Turno } from "@/components/SegundoTurnoGovernadores"
 import { MapaPresidente1Turno } from "@/components/MapaPresidente1Turno"
@@ -299,18 +298,7 @@ export default async function Home() {
             <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["sem-dado"]} />
           </div>
 
-          <section id="senado-1turno" className="scroll-mt-24" aria-labelledby="senado-1turno-titulo">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <TituloSecao titulo="Senado" id="senado-1turno-titulo">
-                As duas vagas de cada estado foram decididas no 1º turno.
-              </TituloSecao>
-              <div className="w-full max-w-sm">
-                <UfResultadoSelector options={opcoesUf} basePath="/1o-turno" />
-              </div>
-            </div>
-            <SlashDivider className="mb-8 mt-6" />
-            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["senado"]} />
-          </section>
+          <Senado1Turno ufs={ufs} data={resultados} fotos={fotos} />
 
           <EspectroEleitos1Turno data={resultados} />
         </div>

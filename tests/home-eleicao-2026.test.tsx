@@ -372,7 +372,7 @@ describe("rotas da eleição", () => {
     // Os duelos estaduais vêm de Governadores2Turno; o bloco do 1º turno entra sem os duelos para não repetir.
     assert.match(home, /<GovernadoresEleitos1Turno[^>]*resumos=\{todosResumos\}/)
     assert.match(home, /<Resultado1TurnoEstados[^>]*blocos=\{\["sem-dado"\]\}/)
-    assert.match(home, /<Resultado1TurnoEstados[^>]*blocos=\{\["senado"\]\}/)
+    assert.match(home, /<Senado1Turno[^>]*data=\{resultados\}/)
   })
 })
 
