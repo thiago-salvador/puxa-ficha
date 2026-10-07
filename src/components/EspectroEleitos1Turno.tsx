@@ -1,70 +1,23 @@
 import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
 import { contarEspectroEleitos, rotuloClasseEspectro, type EspectroEleitos, type LinhaEspectro } from "@/lib/espectro-eleitos"
 import { getResultados1Turno, hasResultados1Turno, type Resultados1Turno } from "@/lib/resultados-1turno"
 import { SlashDivider } from "@/components/SlashDivider"
 import { TituloSecao } from "@/components/Resultado1TurnoPartes"
-import { Amostra, BarraEspectro, Hemiciclo, QuadradosGovernadores } from "@/components/EspectroGraficos"
+import {
+  Amostra,
+  ArcoSenado,
+  BarraComNumeros,
+  contagens,
+  Hemiciclo,
+  LegendaEspectro,
+  rotuloGrafico,
+  TabelaGovernadores,
+  TituloBloco,
+  type ClasseGrafico,
+} from "@/components/EspectroGraficos"
 
 const NUMERO = new Intl.NumberFormat("pt-BR")
-
-function rotuloEleitos(l: LinhaEspectro): string {
-  return `${NUMERO.format(l.eleitos)} de ${NUMERO.format(l.vagas)} vagas`
-}
-
-function LinhaTabela({ linha, comSem, total }: { linha: LinhaEspectro; comSem: boolean; total?: boolean }) {
-  const forte = total ? "font-bold" : ""
-  const celula = `px-3 py-3 text-right tabular-nums ${forte}`.trim()
-  return (
-    <tr className={`border-t align-middle ${total ? "border-t-2 border-foreground bg-secondary" : "border-border"}`}>
-      <th scope="row" className={`px-3 py-3 ${forte || "font-semibold"}`}>
-        {linha.cargo}
-      </th>
-      <td className={`px-3 py-3 tabular-nums ${forte}`.trim()}>{rotuloEleitos(linha)}</td>
-      <td className={celula}>{linha.esquerda}</td>
-      <td className={celula}>{linha.centro}</td>
-      <td className={celula}>{linha.direita}</td>
-      {comSem && <td className={celula}>{linha.sem_classificacao}</td>}
-    </tr>
-  )
-}
-
-function TabelaResumo({ espectro, comSem }: { espectro: EspectroEleitos; comSem: boolean }) {
-  const cabecalho = "whitespace-nowrap px-3 py-2.5 text-right"
-  return (
-    <div className="relative overflow-x-auto rounded-[12px] border border-border" tabIndex={0} role="region" aria-label="Eleitos por cargo e espectro">
-      {/* Largura mínima: no celular a tabela rola de lado em vez de quebrar "Esquerda" letra a letra. */}
-      <table className="w-full min-w-[32rem] border-collapse text-left text-[length:var(--text-caption)] sm:text-[length:var(--text-body-sm)]">
-        <caption className="sr-only">Eleitos no 1º turno por cargo, divididos em esquerda, centro e direita pelo partido</caption>
-        <thead className="bg-secondary text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-secondary-foreground">
-          <tr>
-            <th scope="col" className="px-3 py-2.5">Cargo</th>
-            <th scope="col" className="px-3 py-2.5">Eleitos</th>
-            <th scope="col" className={cabecalho}>
-              <span className="inline-flex items-center gap-1.5"><Amostra classe="esquerda" />Esquerda</span>
-            </th>
-            <th scope="col" className={cabecalho}>
-              <span className="inline-flex items-center gap-1.5"><Amostra classe="centro" />Centro</span>
-            </th>
-            <th scope="col" className={cabecalho}>
-              <span className="inline-flex items-center gap-1.5"><Amostra classe="direita" />Direita</span>
-            </th>
-            {comSem && (
-              <th scope="col" className={cabecalho}>
-                <span className="inline-flex items-center gap-1.5"><Amostra classe="sem_classificacao" />Sem classificação</span>
-              </th>
-            )}
-          </tr>
-        </thead>
-        <tbody>
-          {espectro.linhas.map((l) => (
-            <LinhaTabela key={l.cargo} linha={l} comSem={comSem} />
-          ))}
-          <LinhaTabela linha={espectro.total} comSem={comSem} total />
-        </tbody>
-      </table>
-    </div>
-  )
-}
 
 function PorPartido({ espectro }: { espectro: EspectroEleitos }) {
   return (
@@ -105,29 +58,41 @@ function PorPartido({ espectro }: { espectro: EspectroEleitos }) {
 function Metodologia({ espectro }: { espectro: EspectroEleitos }) {
   const m = espectro.metodologia
   return (
-    <aside
-      aria-label="Como lemos o espectro"
-      data-pf-espectro-metodologia
-      className="space-y-2 rounded-[12px] bg-secondary px-4 py-4 text-[length:var(--text-body-sm)] leading-relaxed"
-    >
-      <p className="font-bold">Como classificamos</p>
-      <p>
-        A classificação é o mapa editorial do Puxa Ficha para cada partido, em dois eixos (econômico e social, de 1 a 10),
-        o mesmo usado no quiz. A média dos dois eixos abaixo de 4,5 é esquerda, de 4,5 a 5,5 é centro e acima de 5,5 é
-        direita.
-      </p>
-      <p>
-        É a posição do partido, não a da pessoa eleita. Parte dos eixos tem fonte no programa do próprio partido e parte é
-        curadoria editorial: dos {NUMERO.format(m.partidos)} partidos contados aqui, {NUMERO.format(m.fonte_nos_dois_eixos)}{" "}
-        têm os dois eixos com fonte documentada e {NUMERO.format(m.com_curadoria)} têm ao menos um eixo de curadoria.
-      </p>
-      <p>
-        Eleitos: TSE.{" "}
-        <Link href="/quiz/metodologia" className="font-bold underline underline-offset-4">
-          Como classificamos os partidos
-        </Link>
-      </p>
-    </aside>
+    <details className="group rounded-[12px] border border-border px-4 py-3" data-pf-espectro-metodologia>
+      <summary className="flex min-h-11 cursor-pointer items-center justify-between gap-3 text-[length:var(--text-body-sm)] font-bold">
+        Como classificamos
+        <span aria-hidden="true" className="text-muted-foreground transition-transform duration-300 [transition-timing-function:var(--ease-out-expo)] group-open:rotate-45">
+          +
+        </span>
+      </summary>
+      <div className="mt-2 space-y-2 text-[length:var(--text-body-sm)] leading-relaxed text-foreground">
+        <p>
+          A classificação é o mapa editorial do Puxa Ficha para cada partido, em dois eixos (econômico e social, de 1 a 10),
+          o mesmo usado no quiz. A média dos dois eixos abaixo de 4,5 é esquerda, de 4,5 a 5,5 é centro e acima de 5,5 é
+          direita.
+        </p>
+        <p>
+          É a posição do partido, não a da pessoa eleita. Parte dos eixos tem fonte no programa do próprio partido e parte é
+          curadoria editorial: dos {NUMERO.format(m.partidos)} partidos contados aqui, {NUMERO.format(m.fonte_nos_dois_eixos)}{" "}
+          têm os dois eixos com fonte documentada e {NUMERO.format(m.com_curadoria)} têm ao menos um eixo de curadoria. Eleitos: TSE.
+        </p>
+      </div>
+    </details>
+  )
+}
+
+/** Senado: lista de classes com o número de cadeiras, ao lado do arco. */
+function ListaSenado({ linha }: { linha: LinhaEspectro }) {
+  return (
+    <ul className="border-t border-border">
+      {contagens(linha).map(({ classe, n }) => (
+        <li key={classe} className="flex items-center gap-3 border-b border-border py-2.5">
+          <Amostra classe={classe} tamanho="size-3.5" />
+          <span className="flex-1 text-[length:var(--text-body-sm)] font-medium text-foreground">{rotuloGrafico(classe)}</span>
+          <span className="font-heading text-[length:var(--text-heading-sm)] leading-none tabular-nums text-foreground">{NUMERO.format(n)}</span>
+        </li>
+      ))}
+    </ul>
   )
 }
 
@@ -139,7 +104,6 @@ function linhaDe(espectro: EspectroEleitos, cargo: LinhaEspectro["cargo"]): Linh
 export function EspectroEleitos1Turno({ data = getResultados1Turno() }: { data?: Resultados1Turno }) {
   if (!hasResultados1Turno(data)) return null
   const espectro = contarEspectroEleitos(data)
-  const comSem = espectro.total.sem_classificacao > 0
   const senado = linhaDe(espectro, "Senador")
   const camara = linhaDe(espectro, "Deputado Federal")
   const governador = linhaDe(espectro, "Governador")
@@ -150,40 +114,75 @@ export function EspectroEleitos1Turno({ data = getResultados1Turno() }: { data?:
   const semFechamento = espectro.pendencias.filter((p) => p.motivo === "sem_fechamento")
   const listar = (lista: typeof segundoTurno) => lista.map((p) => `${p.cargo} (${p.ufs.join(", ")})`).join("; ")
 
+  const classesNoTopo = new Set<ClasseGrafico>(
+    [senado, camara, governador, assembleias].flatMap((l) => (l && l.vagas > 0 ? contagens(l).map((c) => c.classe) : [])),
+  )
+
   return (
     <section id="espectro" className="scroll-mt-24" aria-labelledby="espectro-titulo" data-pf-espectro-eleitos>
-      <TituloSecao titulo="Espectro político dos eleitos" id="espectro-titulo">
-        Conta só quem já está eleito. Presidente vai ao 2º turno e não entra. A classe é a do partido.
-      </TituloSecao>
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <TituloSecao titulo="Como ficou o poder" id="espectro-titulo">
+          Distribuição dos eleitos por campo político, pela classe do partido. Presidente vai ao 2º turno e não entra.
+        </TituloSecao>
+        <LegendaEspectro classes={[...classesNoTopo]} />
+      </div>
       <SlashDivider className="mb-8 mt-6" />
-      <div className="space-y-10">
-        {espectro.pendencias.length > 0 && (
-          <div
-            role="status"
-            data-pf-espectro-pendencia
-            className="space-y-1 rounded-[12px] bg-secondary px-4 py-3 text-[length:var(--text-body-sm)] font-semibold text-foreground"
-          >
-            {segundoTurno.length > 0 && <p>Decidido no 2º turno, em 25/10: {listar(segundoTurno)}.</p>}
-            {semEleitos.length > 0 && <p>Ainda sem todos os eleitos no TSE: {listar(semEleitos)}.</p>}
-            {semFechamento.length > 0 && <p>Sem fechamento oficial do TSE: {listar(semFechamento)}.</p>}
-          </div>
+
+      <div className="grid gap-y-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:divide-x lg:divide-border">
+        {camara && camara.vagas > 0 && (
+          <figure className="min-w-0 space-y-5 lg:pr-10" aria-label="Câmara dos Deputados">
+            <TituloBloco titulo="Câmara dos Deputados" linha={camara} />
+            <Hemiciclo titulo="Câmara dos Deputados" linha={camara} id="espectro-camara" />
+            <BarraComNumeros linha={camara} id="espectro-camara-barra" />
+          </figure>
         )}
+        {senado && senado.vagas > 0 && (
+          <figure className="min-w-0 space-y-5 lg:pl-10" aria-label="Senado">
+            <TituloBloco titulo="Senado" linha={senado} />
+            <ArcoSenado linha={senado} id="espectro-senado" />
+            <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
+              Senadores eleitos nesta eleição: {NUMERO.format(senado.vagas)} das 81 cadeiras.
+            </p>
+            <ListaSenado linha={senado} />
+          </figure>
+        )}
+      </div>
 
-        <div className="grid gap-x-12 gap-y-10 lg:grid-cols-2">
-          {senado && senado.vagas > 0 && <Hemiciclo titulo="Senado" linha={senado} id="espectro-senado" />}
-          {camara && camara.vagas > 0 && <Hemiciclo titulo="Câmara dos Deputados" linha={camara} id="espectro-camara" />}
-          {governador && governador.vagas > 0 && <QuadradosGovernadores linha={governador} data={data} />}
-          {assembleias && assembleias.vagas > 0 && (
-            <BarraEspectro titulo="Assembleias e Câmara Legislativa" linha={assembleias} id="espectro-assembleias" />
-          )}
+      {((governador && governador.vagas > 0) || (assembleias && assembleias.vagas > 0)) && (
+        <div className="mt-12 border-t border-border pt-8">
+          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <h3 className="font-heading text-[length:var(--text-heading)] uppercase leading-none text-foreground">Nos estados</h3>
+            <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">Governos e assembleias estaduais eleitos nesta eleição.</p>
+          </div>
+          <div className="mt-6 grid gap-y-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:divide-x lg:divide-border">
+            {governador && governador.vagas > 0 && (
+              <div className="min-w-0 lg:pr-10">
+                <TabelaGovernadores linha={governador} data={data} />
+              </div>
+            )}
+            {assembleias && assembleias.vagas > 0 && (
+              <figure className="min-w-0 space-y-5 lg:pl-10" aria-label="Assembleias e Câmara Legislativa">
+                <TituloBloco titulo="Assembleias e Câmara Legislativa" linha={assembleias} tamanho="sm" />
+                <BarraComNumeros linha={assembleias} id="espectro-assembleias" />
+              </figure>
+            )}
+          </div>
         </div>
+      )}
 
-        <div className="space-y-3">
-          <h3 className="font-heading text-xl uppercase leading-tight text-foreground">Resumo por cargo</h3>
-          <TabelaResumo espectro={espectro} comSem={comSem} />
+      {espectro.pendencias.length > 0 && (
+        <div role="status" data-pf-espectro-pendencia className="mt-8 space-y-1 text-[length:var(--text-caption)] font-medium text-muted-foreground">
+          {segundoTurno.length > 0 && <p>Decidido no 2º turno, em 25/10: {listar(segundoTurno)}.</p>}
+          {semEleitos.length > 0 && <p>Ainda sem todos os eleitos no TSE: {listar(semEleitos)}.</p>}
+          {semFechamento.length > 0 && <p>Sem fechamento oficial do TSE: {listar(semFechamento)}.</p>}
         </div>
+      )}
 
-        <div className="grid items-start gap-6 lg:grid-cols-2">
+      <div className="mt-8 border-t border-border pt-6">
+        <Link href="/quiz/metodologia" className="inline-flex min-h-11 items-center gap-1 text-[length:var(--text-body-sm)] font-bold text-foreground underline underline-offset-4 hover:text-[var(--gray-600)]">
+          Como classificamos os partidos <ArrowUpRight className="size-3.5" aria-hidden="true" />
+        </Link>
+        <div className="mt-4 grid items-start gap-4 lg:grid-cols-2">
           <PorPartido espectro={espectro} />
           <Metodologia espectro={espectro} />
         </div>

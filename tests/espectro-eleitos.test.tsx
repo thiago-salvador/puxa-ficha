@@ -185,12 +185,10 @@ test("metodologia conta partidos com os dois eixos documentados e com curadoria,
   assert.equal(m.fonte_nos_dois_eixos, documentados.length)
 })
 
-test("componente mostra a linha Total em negrito, a nota de pendência e o link da metodologia", () => {
+test("componente mostra os blocos por órgão, a nota de pendência e o link da metodologia", () => {
   const html = renderToStaticMarkup(<EspectroEleitos1Turno data={dados()} />)
   assert.match(html, /id="espectro"/)
-  assert.match(html, /Espectro político dos eleitos/)
-  assert.match(html, /<th scope="row" class="px-3 py-3 font-bold">Total<\/th>/)
-  assert.match(html, /9 de 11 vagas/)
+  assert.match(html, /Como ficou o poder/)
   assert.match(html, /Sem classificação/)
   assert.match(html, /Decidido no 2º turno, em 25\/10: Governador \(RJ\)\./)
   assert.match(html, /Sem fechamento oficial do TSE: Governador \(RJ\); Deputado Estadual e Distrital \(DF\)\./)
@@ -198,7 +196,7 @@ test("componente mostra a linha Total em negrito, a nota de pendência e o link 
   assert.match(html, /href="\/quiz\/metodologia"/)
   assert.match(html, /Como classificamos os partidos/)
   assert.match(html, /Por partido/)
-  // Visual antes da tabela: hemiciclo do Senado e da Câmara, quadrados dos governadores e barra das assembleias.
+  // Câmara em pontos, Senado em arco, governadores por campo e barra das assembleias.
   assert.match(html, /data-pf-espectro-hemiciclo="espectro-senado"/)
   assert.match(html, /data-pf-espectro-hemiciclo="espectro-camara"/)
   assert.match(html, /data-pf-espectro-governadores/)
