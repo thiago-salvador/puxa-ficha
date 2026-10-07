@@ -340,7 +340,9 @@ test.describe("ProfileTabs", () => {
       for (let i = 0; i < choiceCount; i++) {
         await choices.nth(i).click()
         await expect(page).toHaveURL(/\?tab=/)
-        await expect(page.getByRole("tabpanel")).toBeVisible()
+        // A seção pode conter suas próprias abas (Legislação, por exemplo).
+        const activeSection = new URL(page.url()).searchParams.get("tab")
+        await expect(page.locator(`#profile-panel-${activeSection}[role="tabpanel"]`)).toBeVisible()
         await more.click()
         await expect(choices.nth(i)).toHaveAttribute("aria-checked", "true")
       }
