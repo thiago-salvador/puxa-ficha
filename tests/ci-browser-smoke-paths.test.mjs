@@ -81,6 +81,19 @@ describe("recorte do job Rotas e acessibilidade", () => {
     }
   })
 
+  it("arquivo importado e apagado no diff continua acionando o job", () => {
+    const raiz = mkdtempSync(join(process.cwd(), ".tmp-smoke-import-apagado-"))
+    try {
+      mkdirSync(join(raiz, "tests", "visual"), { recursive: true })
+      // O spec ainda importa um helper de scripts/ que o diff apagou.
+      writeFileSync(join(raiz, "tests", "visual", "a11y.spec.ts"), 'import { bypass } from "../../scripts/vercel-automation-bypass"\n')
+      const conjunto = arquivosAlcancadosPeloApp(raiz)
+      assert.equal(caminhoAcionaSmoke("scripts/vercel-automation-bypass.ts", conjunto), true)
+    } finally {
+      rmSync(raiz, { recursive: true, force: true })
+    }
+  })
+
   it("caminho desconhecido roda o job (falha fechada)", () => {
     assert.equal(caminhoAcionaSmoke("pasta-nova/arquivo.ts", alcancados), true)
     assert.equal(caminhoAcionaSmoke("tailwind.config.ts", alcancados), true)

@@ -84,16 +84,19 @@ function listar(dir) {
   return saida
 }
 
+/**
+ * Arquivo do repositório que o import aponta. Sem arquivo no disco (apagado ou
+ * renomeado no diff), devolve os candidatos: o import continua apontando para
+ * lá, e o caminho tem de seguir no conjunto para o diff que o apaga rodar o job.
+ */
 function resolverImport(raiz, deArquivo, especificador) {
   let base
   if (especificador.startsWith("@/")) base = join(raiz, "src", especificador.slice(2))
   else if (especificador.startsWith(".")) base = resolve(dirname(deArquivo), especificador)
-  else return null
-  for (const ext of EXTENSOES) {
-    const candidato = base + ext
-    if (existsSync(candidato) && statSync(candidato).isFile()) return candidato
-  }
-  return null
+  else return { arquivo: null, candidatos: [] }
+  const candidatos = EXTENSOES.map((ext) => base + ext)
+  const arquivo = candidatos.find((candidato) => existsSync(candidato) && statSync(candidato).isFile()) ?? null
+  return { arquivo, candidatos: arquivo ? [] : candidatos }
 }
 
 /** Arquivos do repositório que o app alcança pelos imports, a partir de src/ e das entradas de raiz. */
@@ -116,8 +119,10 @@ export function arquivosAlcancadosPeloApp(raiz = RAIZ_PADRAO) {
     if (arquivo.endsWith(".json")) continue
     const fonte = readFileSync(arquivo, "utf8")
     for (const casamento of fonte.matchAll(ESPECIFICADOR)) {
-      const alvo = resolverImport(raiz, arquivo, casamento[1])
+      const { arquivo: alvo, candidatos } = resolverImport(raiz, arquivo, casamento[1])
       if (alvo && !alvo.includes("/node_modules/") && !vistos.has(alvo)) fila.push(alvo)
+      // Import sem arquivo: os caminhos possíveis entram sem ser lidos.
+      for (const candidato of candidatos) if (candidato.startsWith(raiz)) vistos.add(candidato)
     }
     for (const casamento of fonte.matchAll(CAMINHO_LITERAL)) {
       const alvo = join(raiz, casamento[1])
