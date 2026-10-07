@@ -1,6 +1,7 @@
 // cspell:ignore botao celulas comparaveis comparavel profissao profissoes ceap legivel
 import type { CSSProperties } from "react"
 import Link from "next/link"
+import { PartyLogoMark } from "@/components/PartyLogoMark"
 import { nomeLegivel } from "@/lib/compartilhar-duelo"
 import { ArrowRight, ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react"
 import type { CandidatoResultado1Turno, DisputaResultado1Turno } from "@/lib/resultados-1turno"
@@ -95,8 +96,9 @@ function LinhaComparacao({ id, rotulo, celulas, atributo }: { id: string; rotulo
           className={`min-w-0 text-center [overflow-wrap:anywhere] ${i === 0 ? "sm:col-start-1 sm:row-start-1" : "sm:col-start-3 sm:row-start-1"}`}
         >
           <span
-            className={`block tabular-nums ${celula.semDado ? "text-[length:var(--text-body-sm)] font-medium text-muted-foreground" : "text-[length:var(--text-body)] font-bold text-foreground sm:text-[length:var(--text-body-lg)]"}`}
+            className={`tabular-nums ${celula.partido ? "inline-flex items-center justify-center gap-2.5" : "block"} ${celula.semDado ? "text-[length:var(--text-body-sm)] font-medium text-muted-foreground" : "text-[length:var(--text-body)] font-bold text-foreground sm:text-[length:var(--text-body-lg)]"}`}
           >
+            {celula.partido && <PartyLogoMark sigla={celula.partido} className="h-8 w-11 rounded-[6px] p-0.5 sm:h-9 sm:w-12 sm:rounded-[8px] sm:p-1" />}
             {celula.valor}
           </span>
           {celula.detalhe && <span className="block text-[length:var(--text-caption)] font-medium leading-snug text-muted-foreground">{celula.detalhe}</span>}
