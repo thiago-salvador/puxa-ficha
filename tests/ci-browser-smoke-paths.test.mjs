@@ -70,4 +70,10 @@ describe("recorte do job Rotas e acessibilidade", () => {
     assert.doesNotMatch(job, /install-deps|pin-apt-mirrors|ms-playwright/)
     assert.match(ci, /node scripts\/ci\/browser-smoke-paths\.mjs/)
   })
+
+  it("nenhum job do ci.yml instala dependência de sistema pelo apt do runner", () => {
+    const ci = readFileSync(".github/workflows/ci.yml", "utf8")
+    assert.doesNotMatch(ci, /apt-get|pin-apt-mirrors|install-deps|--with-deps/)
+    assert.equal((ci.match(/uses: \.\/\.github\/actions\/poppler/g) ?? []).length, 2)
+  })
 })

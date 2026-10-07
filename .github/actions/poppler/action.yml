@@ -1,0 +1,28 @@
+name: Poppler (pdftotext) sem apt
+description: >-
+  Instala o poppler pelo conda-forge, na mesma versão que o apt do Ubuntu 24.04
+  instalava (24.02.0), com o ambiente em cache. Não depende dos mirrors do
+  Ubuntu, que em 07/10/2026 deixaram o apt-get update pendurado até o timeout.
+runs:
+  using: composite
+  steps:
+    - id: micromamba
+      uses: mamba-org/setup-micromamba@f457c30a868e4760d3a6fcea5f25dc655b8edf39 # v3.2.1
+      with:
+        environment-name: poppler
+        condarc: |
+          channels:
+            - conda-forge
+        create-args: poppler=24.02.0
+        cache-environment: true
+        post-cleanup: none
+
+    - name: pdftotext no PATH
+      shell: bash
+      env:
+        AMBIENTE: ${{ steps.micromamba.outputs.environment-path }}
+      run: |
+        set -euo pipefail
+        [ -x "$AMBIENTE/bin/pdftotext" ] || { echo "::error::pdftotext ausente em $AMBIENTE"; exit 1; }
+        echo "$AMBIENTE/bin" >> "$GITHUB_PATH"
+        "$AMBIENTE/bin/pdftotext" -v

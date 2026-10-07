@@ -136,12 +136,10 @@ jobs:
           node-version: 24
           cache: npm
 
+      # pdftotext sem apt: o poppler vem do conda-forge, com cache (ver a action).
       - name: Preparar leitura dos relatórios públicos em PDF
-        timeout-minutes: 3
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install --no-install-recommends -y poppler-utils
-          pdftotext -v
+        timeout-minutes: 5
+        uses: ./.github/actions/poppler
 
       - name: Install dependencies
         run: npm ci
@@ -297,12 +295,10 @@ jobs:
           node-version: 24
           cache: npm
 
+      # pdftotext sem apt: o poppler vem do conda-forge, com cache (ver a action).
       - name: Preparar leitura dos relatórios públicos em PDF
-        timeout-minutes: 3
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install --no-install-recommends -y poppler-utils
-          pdftotext -v
+        timeout-minutes: 5
+        uses: ./.github/actions/poppler
 
       - name: Install dependencies
         run: npm ci
