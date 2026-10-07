@@ -141,6 +141,30 @@ test("evidencia despublicada (par sumiu do pre-filtro) retira", () => {
   assert.deepEqual(plano.retirar.map((r) => r.causa), ["par_ausente"])
 })
 
+test("par ausente de candidatura com atualizacao encerrada fica publicado; das demais continua retirado", () => {
+  const p = par("Cria o corredor multimodal")
+  const ativa = { ...publicadoOntem(p), candidato_id: "id-cand" }
+  const plano = planejarReconciliacao({ ativas: [ativa], publicadasAgora: new Set(), pares: [], encerradas: new Set(["id-cand"]) })
+  assert.deepEqual(plano.retirar, [])
+  assert.deepEqual(plano.mantidosPorCoorteEncerrada.map((m) => m.id), ["row-1"])
+  const outra = planejarReconciliacao({ ativas: [ativa], publicadasAgora: new Set(), pares: [], encerradas: new Set(["id-outro"]) })
+  assert.deepEqual(outra.retirar.map((r) => r.causa), ["par_ausente"])
+  const semId = planejarReconciliacao({ ativas: [{ ...ativa, candidato_id: null }], publicadasAgora: new Set(), pares: [], encerradas: new Set(["id-cand"]) })
+  assert.deepEqual(semId.retirar.map((r) => r.causa), ["par_ausente"], "sem candidato_id a linha nao prova que saiu da coorte")
+  // Entrada alterada de candidatura encerrada nao ocorre (o par nao existe no snapshot), mas se existir a regra antiga vale.
+  const alterado = { ...p, compromisso: { ...p.compromisso, descricao: "Outra proposta." } }
+  const comPar = planejarReconciliacao({ ativas: [ativa], publicadasAgora: new Set(), pares: [alterado], encerradas: new Set(["id-cand"]) })
+  assert.deepEqual(comPar.retirar.map((r) => r.causa), ["entrada_alterada"])
+})
+
+test("publicador le candidato_id e a coorte antes de reconciliar", () => {
+  const fonte = readFileSync("scripts/promessa-evidencia-publicar.ts", "utf8")
+  const bloco = fonte.slice(fonte.indexOf("const planoDe = async"), fonte.indexOf("const contagemPlano"))
+  assert.match(bloco, /select\("id,candidato_id,/u)
+  assert.match(bloco, /await carregarCoorteAtualizacao\(leitor\)/u)
+  assert.match(bloco, /encerradas: new Set\(coorte\.encerradasPorId\.keys\(\)\)/u)
+})
+
 test("vinculo republicado nesta execucao nao entra na reconciliacao", () => {
   const p = par("Cria o corredor multimodal")
   const ativa = publicadoOntem(p)
@@ -156,7 +180,7 @@ test("vinculo antigo sem impressao que a cascata nao reaprova: fica publicado, s
   assert.deepEqual(plano.retirar, [])
   assert.equal(plano.mantidosPorVariancia.length, 1)
   assert.equal(plano.mantidosPorVariancia[0].sem_impressao_anterior, true)
-  assert.deepEqual(Object.keys(plano).sort(), ["mantidosPorDecisaoEditorial", "mantidosPorVariancia", "retirar"], "o plano nao tem caminho de carimbo")
+  assert.deepEqual(Object.keys(plano).sort(), ["mantidosPorCoorteEncerrada", "mantidosPorDecisaoEditorial", "mantidosPorVariancia", "retirar"], "o plano nao tem caminho de carimbo")
   // Execucao seguinte com a mesma rejeicao: continua igual, ainda sem impressao.
   const seguinte = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set(), pares: [p] })
   assert.deepEqual(seguinte, plano)
@@ -171,7 +195,7 @@ test("vinculo antigo sem impressao que a cascata reaprova recebe a impressao pel
   const antigo = { ...publicadoOntem(p), motivo: "aprovado pelas quatro camadas da cascata c2" }
   const chave = [linha.programa_chave, linha.tema_id, linha.tipo_evidencia, linha.evidencia_ref].join("|")
   const plano = planejarReconciliacao({ ativas: [antigo], publicadasAgora: new Set([chave]), pares: [p] })
-  assert.deepEqual(plano, { retirar: [], mantidosPorVariancia: [], mantidosPorDecisaoEditorial: [] })
+  assert.deepEqual(plano, { retirar: [], mantidosPorVariancia: [], mantidosPorDecisaoEditorial: [], mantidosPorCoorteEncerrada: [] })
 })
 
 test("vinculo antigo sem impressao cujo par sumiu e retirado", () => {
