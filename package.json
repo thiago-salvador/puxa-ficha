@@ -244,7 +244,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
-    "@sentry/nextjs": "^10.75.0",
+    "@sentry/nextjs": "^11.4.0",
     "@supabase/supabase-js": "^2.117.2",
     "@tanstack/react-virtual": "^3.14.13",
     "@vercel/functions": "^3.9.9",
