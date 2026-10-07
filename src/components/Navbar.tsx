@@ -7,12 +7,13 @@ import { Search } from "lucide-react"
 
 import { useGlobalSearch, useModKShortcutLabel } from "@/components/GlobalSearchProvider"
 
-const NAV_ITEMS = [
+const NAV_ITEMS: { href: string; label: string; external?: boolean }[] = [
   { href: "/", label: "2º Turno" },
   { href: "/1o-turno", label: "1º Turno" },
   { href: "/doadores", label: "Doadores" },
   { href: "/quiz", label: "Quiz" },
   { href: "/sobre", label: "Sobre" },
+  { href: "https://apoia.se/puxaficha", label: "Apoie o projeto", external: true },
 ]
 
 const subscribeHydration = () => () => undefined
@@ -409,6 +410,34 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
             <ul className="mt-auto mb-auto flex min-h-0 flex-col gap-0.5 overflow-y-auto sm:gap-1">
               {NAV_ITEMS.map((item, index) => (
                 <li key={item.href} className="overflow-hidden">
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={closeMenu}
+                      className="nav-link menu-nav-link"
+                      ref={(element) => {
+                        navLinkRefs.current[index] = element
+                      }}
+                    >
+                    <div className="link-stripe" />
+                    <span className="link-text font-heading text-[clamp(2.2rem,7vw,3.5rem)]">
+                      {item.label}
+                    </span>
+                    <svg
+                      className="link-arrow size-6"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                    </a>
+                  ) : (
                   <Link
                     href={item.href}
                     prefetch={false}
@@ -434,6 +463,7 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
                       <path d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
                   </Link>
+                  )}
                 </li>
               ))}
             </ul>
