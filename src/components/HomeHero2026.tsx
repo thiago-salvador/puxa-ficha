@@ -1,4 +1,4 @@
-// cspell:ignore recolhivel acessivel
+// cspell:ignore recolhivel acessivel creditos
 import type { ComponentProps } from "react"
 import Image, { getImageProps } from "next/image"
 import Link from "next/link"
@@ -58,6 +58,16 @@ function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | nul
   // A própria foto também some na borda que aponta para o centro e embaixo: nunca aparece um corte reto.
   const lateralFoto = `linear-gradient(${esquerda ? "to right" : "to left"}, #000 0%, #000 62%, transparent 100%)`
   const baseFoto = "linear-gradient(to bottom, #000 0%, #000 82%, transparent 100%)"
+  const imagemRetrato = getImageProps({
+    src,
+    alt: "",
+    width: retrato?.largura ?? 960,
+    height: retrato?.altura ?? 1280,
+    priority: true,
+    loader: carregadorOtimizado,
+    // Foto horizontal aparece quase na largura da tela; retrato vertical, em pouco mais da metade.
+    sizes: proporcao > 1.2 ? "(min-width: 1024px) 100vw, 1px" : "(min-width: 1024px) 60vw, 1px",
+  }).props
   return (
     <div
       aria-hidden="true"
@@ -73,16 +83,7 @@ function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | nul
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- atributos do getImageProps (otimizador do Next), montados no servidor */}
       <img
-        {...getImageProps({
-          src,
-          alt: "",
-          width: retrato?.largura ?? 960,
-          height: retrato?.altura ?? 1280,
-          priority: true,
-          loader: carregadorOtimizado,
-          // Foto horizontal aparece quase na largura da tela; retrato vertical, em pouco mais da metade.
-          sizes: proporcao > 1.2 ? "(min-width: 1024px) 100vw, 1px" : "(min-width: 1024px) 60vw, 1px",
-        }).props}
+        {...imagemRetrato}
         alt=""
         className="absolute top-0 max-w-none"
         style={{

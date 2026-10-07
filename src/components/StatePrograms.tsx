@@ -3,7 +3,6 @@
 import { useId, useState } from "react"
 import { ArrowUpRight, ChevronDown, FileText, Info, List } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
 import type { StateProgram } from "@/lib/state-programs"
 import type { ProgramRunningMate } from "@/lib/vice-official-status"
@@ -101,7 +100,6 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
   /** UF da página de estado; na home fica vazio e o seletor pede um estado. */
   ufAtual?: string
 }) {
-  const router = useRouter()
   const painelId = useId()
   const slugsFinalistas = new Set(abaFinalistas?.slugs ?? [])
   const finalistas = programsTodos.filter(p => slugsFinalistas.has(p.slug))
@@ -180,7 +178,11 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
           <option value="all">Todas as candidaturas</option>
           {alphabetical.map(p => <option key={p.slug} value={p.slug}>{p.nome_urna}</option>)}
         </select></label>
-        <label className={styles.governadores}>Governadores<select value={ufAtual ?? ""} onChange={e => { if (e.target.value) router.push(`/uf/${e.target.value.toLowerCase()}#programas`) }}>
+        {/* Navegação completa de propósito: chega rolada em #programas e não exige o app router, que falta quando o componente é renderizado fora dele (testes). */}
+        <label className={styles.governadores}>Governadores<select value={ufAtual ?? ""} onChange={e => {
+          // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- ver comentário acima
+          if (e.target.value) window.location.assign(`/uf/${e.target.value.toLowerCase()}#programas`)
+        }}>
           {!ufAtual && <option value="">Escolha um estado</option>}
           {ESTADOS.map(({ uf, nome }) => <option key={uf} value={uf}>{nome}</option>)}
         </select></label>
