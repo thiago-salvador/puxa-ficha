@@ -9,6 +9,8 @@ test("hero da home: preload e imagem compartilham srcset responsivo sem baixar o
   assert.match(page, /loading: "eager"/)
   assert.match(page, /fetchPriority: "high"/)
   assert.match(page, /preload\(heroImage\.src,/)
+  // Com os finalistas o hero mostra os retratos: a imagem do dossiê só tem preload no hero de fallback.
+  assert.match(page, /if \(!finalistasPresidente\) \{[\s\S]*?preload\(heroImage\.src,/)
   assert.match(page, /imageSrcSet:\s*heroImage\.srcSet/)
   assert.match(page, /imageSizes:\s*heroImage\.sizes/)
   assert.match(page, /preload\("\/images\/hero-dossie-mobile\.webp", \{[^}]*media: "\(max-width: 640px\)"/)

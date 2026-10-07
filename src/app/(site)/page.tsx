@@ -92,15 +92,6 @@ export default async function Home() {
     fetchPriority: "high",
     className: "h-full w-full object-cover",
   })
-  // O hero é o elemento LCP da home. Sem preload, o navegador só descobria a
-  // imagem depois de ler o HTML e competir com os scripts (Lighthouse
-  // mobile: 283 ms de atraso de descoberta, LCP 4,8 s). Uma dica por faixa,
-  // espelhando o <picture> do hero, para o preload não baixar a versão errada.
-  preload("/images/hero-dossie-mobile.webp", { as: "image", fetchPriority: "high", media: "(max-width: 640px)" })
-  preload(heroImage.src, {
-    as: "image", fetchPriority: "high", media: "(min-width: 641px)",
-    imageSrcSet: heroImage.srcSet, imageSizes: heroImage.sizes,
-  })
 
   const [todosResumosResource, comparaveisResource, fasesEleitorais, fotos] = await Promise.all([
     getCandidatosComResumoResource(),
@@ -144,6 +135,18 @@ export default async function Home() {
   const temResultado = hasResultados1Turno(resultados)
   const presidente = temResultado ? getDisputa1Turno("Presidente", "BR", resultados) : null
   const finalistasPresidente = finalistasDaDisputa(presidente)
+  if (!finalistasPresidente) {
+    // O hero é o elemento LCP da home. Sem preload, o navegador só descobria a
+    // imagem depois de ler o HTML e competir com os scripts (Lighthouse
+    // mobile: 283 ms de atraso de descoberta, LCP 4,8 s). Uma dica por faixa,
+    // espelhando o <picture> do hero, para o preload não baixar a versão errada.
+    // Com os finalistas, o hero mostra os retratos e não usa esta imagem.
+    preload("/images/hero-dossie-mobile.webp", { as: "image", fetchPriority: "high", media: "(max-width: 640px)" })
+    preload(heroImage.src, {
+      as: "image", fetchPriority: "high", media: "(min-width: 641px)",
+      imageSrcSet: heroImage.srcSet, imageSizes: heroImage.sizes,
+    })
+  }
   // Arquivo de alianças validado contra o snapshot; inválido, a seção e as linhas de apoio somem.
   const aliancas = temResultado ? getAliancas2Turno(resultados) : null
   const compararPresidente = linkCompararFinalistas(candidatosGrade)

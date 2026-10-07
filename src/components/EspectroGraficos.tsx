@@ -158,16 +158,29 @@ export function ArcoSenado({ linha, id }: { linha: LinhaEspectro; id: string }) 
   return (
     <div className="relative mx-auto w-full max-w-[340px]" data-pf-espectro-hemiciclo={id}>
       <svg viewBox="0 0 240 124" className="block h-auto w-full" role="img" aria-label={`Senado, ${NUMERO.format(linha.vagas)} cadeiras em disputa nesta eleição: ${resumo}.`}>
-        {segmentos.map(({ classe, d }) => (
-          <path
-            key={classe}
-            d={d}
-            fill="none"
-            stroke={SVG_ESTILO[classe].fill}
-            strokeWidth={espessura}
-            strokeDasharray={classe === "pendente" ? "4 3" : undefined}
-          />
-        ))}
+        <defs>
+          <pattern id={`${id}-hachura`} width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="5" height="5" fill="#ffffff" />
+            <line x1="0" y1="0" x2="0" y2="5" stroke="var(--gray-600)" strokeWidth="1.6" />
+          </pattern>
+        </defs>
+        {segmentos.map(({ classe, d }) => {
+          const estilo = SVG_ESTILO[classe]
+          // Sem classificação (branco) e pendente (cinza claro) somem no fundo da página:
+          // ganham contorno por baixo e, no caso sem classificação, a mesma hachura do hemiciclo.
+          const comContorno = classe === "sem_classificacao" || classe === "pendente"
+          return (
+            <g key={classe} data-pf-arco-classe={classe}>
+              {comContorno && <path d={d} fill="none" stroke={estilo.stroke} strokeWidth={espessura} />}
+              <path
+                d={d}
+                fill="none"
+                stroke={classe === "sem_classificacao" ? `url(#${id}-hachura)` : estilo.fill}
+                strokeWidth={comContorno ? espessura - 3 : espessura}
+              />
+            </g>
+          )
+        })}
       </svg>
       <p className="pointer-events-none absolute inset-x-0 bottom-0 text-center leading-none" aria-hidden="true">
         <span className="block font-heading text-[clamp(2rem,4vw,3rem)] tabular-nums text-foreground">{NUMERO.format(linha.eleitos)}</span>
