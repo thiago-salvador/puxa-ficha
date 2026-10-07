@@ -67,12 +67,57 @@ export function rotuloContagem2Turno(dias: number | null): string | null {
   return dias === 1 ? "Falta 1 dia" : `Faltam ${dias} dias`
 }
 
-/** Versão curta para a faixa fixa no celular: "20 dias", "1 dia", "Hoje"; null quando a data já passou. */
-export function rotuloContagemCurto2Turno(dias: number | null): string | null {
-  if (dias === null || dias < 0) return null
-  if (dias === 0) return "Hoje"
-  return dias === 1 ? "1 dia" : `${dias} dias`
+/**
+ * Abertura das seções no 2º turno: 8h de Brasília, igual em todo o país (TSE,
+ * ver `guia-votacao.ts`). O Brasil não tem horário de verão desde 2019.
+ */
+const ABERTURA_2TURNO_2026 = `${DATA_2TURNO_2026}T08:00:00-03:00`
+
+/**
+ * Minutos inteiros até a abertura das seções, arredondados para cima (faltando
+ * 30 s, ainda falta 1 minuto). Zero ou negativo depois da abertura; null para
+ * instante inválido.
+ */
+export function minutosAte2Turno(agora: string | number, alvo: string = ABERTURA_2TURNO_2026): number | null {
+  const ms = new Date(alvo).getTime() - new Date(agora).getTime()
+  if (Number.isNaN(ms)) return null
+  return Math.ceil(ms / 60_000)
 }
+
+function unidade(valor: number, singular: string, plural: string): string {
+  return `${valor} ${valor === 1 ? singular : plural}`
+}
+
+/**
+ * Contagem regressiva até a abertura das seções. Longa: "Faltam 18 dias, 4
+ * horas e 32 minutos" (unidades zeradas à esquerda somem). Curta, para a faixa
+ * fixa no celular: "18d 04h 32m". Depois da abertura vale o dia de calendário:
+ * "É hoje" ("Hoje" na curta) em 25/10 e null depois.
+ */
+export function rotuloContagemRegressiva2Turno(
+  minutos: number | null,
+  dias: number | null,
+  curto = false,
+): string | null {
+  if (minutos === null) return null
+  if (minutos <= 0) return dias === 0 ? (curto ? "Hoje" : "É hoje") : null
+  const d = Math.floor(minutos / 1440)
+  const h = Math.floor((minutos % 1440) / 60)
+  const m = minutos % 60
+  if (curto) {
+    const hh = String(h).padStart(2, "0")
+    const mm = String(m).padStart(2, "0")
+    return d > 0 ? `${d}d ${hh}h ${mm}m` : h > 0 ? `${h}h ${mm}m` : `${m}m`
+  }
+  const partes = [
+    ...(d > 0 ? [unidade(d, "dia", "dias")] : []),
+    ...(d > 0 || h > 0 ? [unidade(h, "hora", "horas")] : []),
+    unidade(m, "minuto", "minutos"),
+  ]
+  const lista = partes.length === 1 ? partes[0] : `${partes.slice(0, -1).join(", ")} e ${partes[partes.length - 1]}`
+  return `${partes.length === 1 && m === 1 ? "Falta" : "Faltam"} ${lista}`
+}
+
 
 /** Os dois finalistas na ordem de votos do 1º turno; null se a disputa não tem exatamente dois. */
 export function finalistasDaDisputa(
