@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Suspense } from "react"
 import { Footer } from "@/components/Footer"
 import { DoadoresBusca, DoadoresBuscaForm } from "@/components/DoadoresBusca"
-import { DOADOR_REVERSE_DISCLAIMER } from "@/lib/doador-reverse-shared"
 import { buildTwitterMetadata } from "@/lib/metadata"
 
 const title = "Busca por doador | Puxa Ficha"
@@ -35,31 +34,20 @@ export const metadata: Metadata = {
 export default function DoadoresPage() {
   return (
     <div className="min-h-screen bg-background">
-      <section className="border-b border-border bg-black text-white">
-        <div className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
-          <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-neutral-400">
-            Financiamento
-          </p>
-          <h1
-            className="mt-2 font-heading uppercase leading-[0.9] tracking-tight"
-            style={{ fontSize: "clamp(28px, 6vw, 48px)" }}
-          >
-            Quem este nome financiou
-          </h1>
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-neutral-300">
-            Busca nas declarações de campanha já publicadas no Puxa Ficha. Resultados para busca semelhante ao
-            termo que você digitou (grafias do TSE variam entre eleições). A busca pública é por nome; quando
-            a base passar a incluir CNPJ ou identificadores derivados na declaração, isso não muda o uso
-            desta página — serve para correlacionar dados na fonte, não para consulta por CPF.
-          </p>
-        </div>
+      <section className="mx-auto max-w-7xl px-5 pb-6 pt-24 sm:pt-28 md:px-12 lg:pt-32">
+        <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.2em] text-muted-foreground">Financiamento</p>
+        <h1
+          className="mt-2 font-heading uppercase leading-[0.9] text-foreground"
+          style={{ fontSize: "clamp(36px, 7vw, 80px)" }}
+        >
+          Quem este nome financiou
+        </h1>
+        <p className="mt-3 max-w-3xl text-[length:var(--text-body)] font-medium leading-relaxed text-muted-foreground sm:text-[length:var(--text-body-lg)]">
+          Busque um nome nas declarações de campanha publicadas no Puxa Ficha.
+        </p>
       </section>
 
-      <section className="mx-auto max-w-3xl px-5 py-10 md:px-8 md:py-12" aria-label="Busca por doadores">
-        <p className="mb-6 rounded-lg border border-border bg-secondary/40 px-4 py-3 text-[length:var(--text-body-sm)] leading-relaxed text-muted-foreground">
-          {DOADOR_REVERSE_DISCLAIMER}
-        </p>
-
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-12" aria-label="Busca por doadores">
         <Suspense fallback={<DoadoresBuscaForm q="" />}>
           <DoadoresBusca />
         </Suspense>

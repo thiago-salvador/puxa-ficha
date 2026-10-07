@@ -60,6 +60,9 @@ export default function QuizPage() {
           >
             Quem me representa?
           </h1>
+          <p className="mt-4 max-w-3xl text-[length:var(--text-body)] font-medium leading-relaxed text-white/90 sm:text-[length:var(--text-body-lg)]">
+            Responda afirmações sobre temas políticos e compare suas respostas com as posições dos candidatos.
+          </p>
         </div>
       </section>
 
