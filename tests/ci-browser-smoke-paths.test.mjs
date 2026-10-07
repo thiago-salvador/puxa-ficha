@@ -1,6 +1,7 @@
 import assert from "node:assert/strict"
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
-import { join } from "node:path"
+import { dirname, join } from "node:path"
+import { fileURLToPath } from "node:url"
 import { describe, it } from "node:test"
 
 import {
@@ -9,7 +10,10 @@ import {
   diffAcionaSmoke,
 } from "../scripts/ci/browser-smoke-paths.mjs"
 
-const alcancados = arquivosAlcancadosPeloApp()
+// Raiz do repo a partir do próprio teste: não depende do diretório de execução.
+const RAIZ = join(dirname(fileURLToPath(import.meta.url)), "..")
+const lerCi = () => readFileSync(join(RAIZ, ".github/workflows/ci.yml"), "utf8")
+const alcancados = arquivosAlcancadosPeloApp(RAIZ)
 
 describe("recorte do job Rotas e acessibilidade", () => {
   it("mudança só em rotina, auditoria e testes de unidade não sobe o navegador (diff do PR #677)", () => {
@@ -69,7 +73,7 @@ describe("recorte do job Rotas e acessibilidade", () => {
   })
 
   it("dado lido em runtime continua no conjunto mesmo apagado no diff", () => {
-    const raiz = mkdtempSync(join(process.cwd(), ".tmp-smoke-apagado-"))
+    const raiz = mkdtempSync(join(RAIZ, ".tmp-smoke-apagado-"))
     try {
       mkdirSync(join(raiz, "src", "lib"), { recursive: true })
       writeFileSync(join(raiz, "src", "lib", "pesquisas.ts"), 'readFileSync(resolve(process.cwd(), "scripts/data/apagado.json"), "utf8")\n')
@@ -82,13 +86,26 @@ describe("recorte do job Rotas e acessibilidade", () => {
   })
 
   it("arquivo importado e apagado no diff continua acionando o job", () => {
-    const raiz = mkdtempSync(join(process.cwd(), ".tmp-smoke-import-apagado-"))
+    const raiz = mkdtempSync(join(RAIZ, ".tmp-smoke-import-apagado-"))
     try {
       mkdirSync(join(raiz, "tests", "visual"), { recursive: true })
       // O spec ainda importa um helper de scripts/ que o diff apagou.
       writeFileSync(join(raiz, "tests", "visual", "a11y.spec.ts"), 'import { bypass } from "../../scripts/vercel-automation-bypass"\n')
       const conjunto = arquivosAlcancadosPeloApp(raiz)
       assert.equal(caminhoAcionaSmoke("scripts/vercel-automation-bypass.ts", conjunto), true)
+    } finally {
+      rmSync(raiz, { recursive: true, force: true })
+    }
+  })
+
+  it("dado montado com join(process.cwd(), ...) também conta", () => {
+    const raiz = mkdtempSync(join(RAIZ, ".tmp-smoke-join-"))
+    try {
+      mkdirSync(join(raiz, "src", "lib"), { recursive: true })
+      writeFileSync(join(raiz, "src", "lib", "leitura.ts"), 'readFileSync(join(process.cwd(), "scripts", "data", "pesquisas.json"), "utf8")\n')
+      const conjunto = arquivosAlcancadosPeloApp(raiz)
+      assert.equal(caminhoAcionaSmoke("scripts/data/pesquisas.json", conjunto), true)
+      assert.equal(caminhoAcionaSmoke("scripts/data/outro.json", conjunto), false)
     } finally {
       rmSync(raiz, { recursive: true, force: true })
     }
@@ -105,11 +122,11 @@ describe("recorte do job Rotas e acessibilidade", () => {
   })
 
   it("o ci.yml roda o job na imagem do Playwright e só quando o recorte manda", () => {
-    const ci = readFileSync(".github/workflows/ci.yml", "utf8")
+    const ci = lerCi()
     const inicio = ci.indexOf("\n  browser-smoke:")
     const job = ci.slice(inicio, ci.indexOf("\n  browser-smoke-recorte:"))
     assert.match(job, /needs: browser-smoke-recorte/)
-    assert.match(job, /needs\.browser-smoke-recorte\.result != 'success'/)
+    assert.match(job, /if: always\(\) && \(needs\.browser-smoke-recorte\.result != 'success' \|\| needs\.browser-smoke-recorte\.outputs\.aplica == 'true'\)/)
     assert.match(job, /image: mcr\.microsoft\.com\/playwright:v\$\{\{ needs\.browser-smoke-recorte\.outputs\.playwright \}\}-noble/)
     assert.doesNotMatch(job, /install-deps|pin-apt-mirrors|ms-playwright/)
     assert.match(job, /options: --user 1001 --ipc=host/)
@@ -118,7 +135,7 @@ describe("recorte do job Rotas e acessibilidade", () => {
   })
 
   it("nenhum job do ci.yml instala dependência de sistema pelo apt do runner", () => {
-    const ci = readFileSync(".github/workflows/ci.yml", "utf8")
+    const ci = lerCi()
     assert.doesNotMatch(ci, /apt-get|pin-apt-mirrors|install-deps|--with-deps/)
     assert.equal((ci.match(/uses: \.\/\.github\/actions\/poppler/g) ?? []).length, 2)
   })
