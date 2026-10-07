@@ -12,7 +12,8 @@ import {
   montarLadoALado,
   montarLadoALadoExtra,
   rotuloContagem2Turno,
-  rotuloContagemCurto2Turno,
+  minutosAte2Turno,
+  rotuloContagemRegressiva2Turno,
   selecionarPesquisasDoConfronto,
   SEM_DADO,
   SEM_DADO_VERIFICADO,
@@ -85,21 +86,42 @@ describe("contagem até o 2º turno", () => {
 
   it("rótulo singular, plural, dia da votação e some depois", () => {
     assert.equal(rotuloContagem2Turno(20), "Faltam 20 dias")
-    assert.equal(rotuloContagemCurto2Turno(20), "20 dias")
-    assert.equal(rotuloContagemCurto2Turno(1), "1 dia")
-    assert.equal(rotuloContagemCurto2Turno(0), "Hoje")
-    assert.equal(rotuloContagemCurto2Turno(-1), null)
-    assert.equal(rotuloContagemCurto2Turno(null), null)
     assert.equal(rotuloContagem2Turno(1), "Falta 1 dia")
     assert.equal(rotuloContagem2Turno(0), "É hoje")
     assert.equal(rotuloContagem2Turno(-1), null)
     assert.equal(rotuloContagem2Turno(null), null)
   })
 
+  it("minutos até a abertura das seções, 8h de Brasília em 25/10", () => {
+    // 05/10 12:00 em Brasília: 19 dias e 20 horas até 25/10 8:00.
+    assert.equal(minutosAte2Turno("2026-10-05T15:00:00Z"), 19 * 1440 + 20 * 60)
+    assert.equal(minutosAte2Turno("2026-10-25T10:59:30Z"), 1)
+    assert.equal(minutosAte2Turno("2026-10-25T11:00:00Z"), 0)
+    assert.ok((minutosAte2Turno("2026-10-25T15:00:00Z") ?? 0) < 0)
+    assert.equal(minutosAte2Turno("não é data"), null)
+  })
+
+  it("contagem regressiva longa e curta, singular, dia da votação e some depois", () => {
+    const m = (d: number, h: number, min: number) => d * 1440 + h * 60 + min
+    assert.equal(rotuloContagemRegressiva2Turno(m(18, 4, 32), 18), "Faltam 18 dias, 4 horas e 32 minutos")
+    assert.equal(rotuloContagemRegressiva2Turno(m(1, 1, 1), 1), "Faltam 1 dia, 1 hora e 1 minuto")
+    assert.equal(rotuloContagemRegressiva2Turno(m(2, 0, 5), 2), "Faltam 2 dias, 0 horas e 5 minutos")
+    assert.equal(rotuloContagemRegressiva2Turno(m(0, 3, 0), 0), "Faltam 3 horas e 0 minutos")
+    assert.equal(rotuloContagemRegressiva2Turno(1, 0), "Falta 1 minuto")
+    assert.equal(rotuloContagemRegressiva2Turno(m(18, 4, 2), 18, true), "18d 04h 02m")
+    assert.equal(rotuloContagemRegressiva2Turno(m(0, 3, 7), 0, true), "3h 07m")
+    assert.equal(rotuloContagemRegressiva2Turno(9, 0, true), "9m")
+    assert.equal(rotuloContagemRegressiva2Turno(0, 0), "É hoje")
+    assert.equal(rotuloContagemRegressiva2Turno(-120, 0, true), "Hoje")
+    assert.equal(rotuloContagemRegressiva2Turno(-1440, -1), null)
+    assert.equal(rotuloContagemRegressiva2Turno(null, null), null)
+  })
+
   it("o componente lê o relógio do servidor na hidratação e não chama new Date() no render", () => {
     const fonte = readFileSync("src/components/ContagemSegundoTurno.tsx", "utf8")
     assert.match(fonte, /useSyncExternalStore\(/)
     assert.match(fonte, /\(\) => diasAte2Turno\(referenceNow\)/)
+    assert.match(fonte, /\(\) => minutosAte2Turno\(referenceNow\)/)
     assert.doesNotMatch(fonte, /new Date\(\)/)
   })
 })

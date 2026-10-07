@@ -34,7 +34,7 @@ export function FaixaFixa2Turno({ finalistas, referenceNow, href }: FaixaFixa2Tu
       inert={!visivel}
       className={`fixed inset-x-0 top-16 z-header border-b border-white/15 bg-black text-white transition-[transform,opacity] duration-200 motion-reduce:transition-none ${visivel ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"}`}
     >
-      <div className="mx-auto flex min-h-11 max-w-7xl items-center justify-between gap-2 px-5 sm:gap-3 md:px-12">
+      <div className="mx-auto flex min-h-11 max-w-7xl flex-wrap items-center justify-between gap-x-2 px-5 sm:gap-x-3 md:px-12">
         {/* Cada lado não quebra por dentro; em tela muito estreita a quebra cai no "x", nunca corta o número. */}
         <p className="flex min-w-0 flex-wrap items-baseline gap-x-1 py-1.5 font-heading text-[length:var(--text-body-sm)] uppercase leading-tight tabular-nums sm:gap-x-1.5 sm:text-[length:var(--text-body-lg)]" data-pf-faixa-placar>
           <span className="whitespace-nowrap">
@@ -46,8 +46,8 @@ export function FaixaFixa2Turno({ finalistas, referenceNow, href }: FaixaFixa2Tu
             {b.nome} {b.percentual}
           </span>
         </p>
-        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* Abaixo de 640px a contagem curta ("20 dias") cabe ao lado do link sem estourar 320px. */}
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+          {/* Abaixo de 640px vai a contagem curta ("17d 12h 10m"). Quando placar e contagem não cabem na mesma linha, a contagem e o link descem para uma segunda linha, à direita. */}
           <span className="inline-flex sm:hidden">
             <ContagemSegundoTurno referenceNow={referenceNow} variante="escuro" curto />
           </span>
