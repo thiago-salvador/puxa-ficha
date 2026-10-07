@@ -1,6 +1,10 @@
 "use client"
 
 import { useState, type KeyboardEvent, type ReactNode } from "react"
+import { getEstadoUFs } from "@/lib/br-uf"
+
+/** Siglas válidas: o estado aberto é sempre um item desta lista, nunca o texto lido do DOM. */
+const SIGLAS = getEstadoUFs().map((uf) => uf.toUpperCase())
 
 /**
  * Mapa do Senado: o estado clicado (ou escolhido por Enter/Espaço) troca o card
@@ -20,8 +24,9 @@ export function SenadoMapa({
 }) {
   const [aberta, setAberta] = useState(inicial)
   const escolher = (alvo: EventTarget) => {
-    const uf = (alvo as Element).closest?.("[data-pf-senado-uf]")?.getAttribute("data-pf-senado-uf")?.toUpperCase()
-    if (uf && cards[uf]) setAberta(uf)
+    const lida = (alvo as Element).closest?.("[data-pf-senado-uf]")?.getAttribute("data-pf-senado-uf")?.toUpperCase()
+    const sigla = SIGLAS.find((s) => s === lida)
+    if (sigla && cards[sigla]) setAberta(sigla)
   }
   const teclado = (e: KeyboardEvent) => {
     if (e.key !== "Enter" && e.key !== " ") return

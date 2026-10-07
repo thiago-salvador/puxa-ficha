@@ -52,11 +52,12 @@ export function PresidentePorEstadoInterativo({
   const [todas, setTodas] = useState(false)
   const [aba, setAba] = useState<"tabela" | "mapa">("tabela")
   const atual = linhas.find((l) => l.uf === selecionada) ?? linhas[0]
-  const ufsValidas = new Set(linhas.map((l) => l.uf))
 
   function escolherNoMapa(alvo: EventTarget) {
-    const uf = (alvo as Element).closest?.("[data-pf-mapa-uf]")?.getAttribute("data-pf-mapa-uf")
-    if (uf && ufsValidas.has(uf)) setSelecionada(uf)
+    const lida = (alvo as Element).closest?.("[data-pf-mapa-uf]")?.getAttribute("data-pf-mapa-uf")
+    // O estado escolhido é a sigla da própria lista, nunca o texto lido do DOM.
+    const linha = linhas.find((l) => l.uf === lida)
+    if (linha) setSelecionada(linha.uf)
   }
 
   return (
