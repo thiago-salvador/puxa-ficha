@@ -69,8 +69,9 @@ const ESPECIFICADOR = /(?:\bfrom\s*|\bimport\s*\(\s*|\brequire\s*\(\s*|^\s*impor
 // Só arquivo de dado: comentário que cita um script não pode puxar o grafo dele.
 const CAMINHO_LITERAL = /["'`](?:\.\/)?((?:scripts|data|tests)\/[^"'`\s$]+\.(?:json|jsonl|csv|tsv|ya?ml|txt|geojson))["'`]/g
 // O mesmo caminho montado em partes: join(process.cwd(), "scripts", "data", "x.json").
-const CAMINHO_EM_PARTES = /\b(?:join|resolve)\(\s*process\.cwd\(\)\s*,\s*((?:["'][^"'`$]+["']\s*,?\s*)+)\)/g
-const PARTE = /["']([^"']+)["']/g
+// Captura linear até o ")" e extrai as partes depois: sem quantificador aninhado (ReDoS).
+const CAMINHO_EM_PARTES = /\b(?:join|resolve)\(\s*process\.cwd\(\)\s*,([^()]*)\)/g
+const PARTE = /["']([^"'`$]+)["']/g
 const DADO = /^(?:scripts|data|tests)\/[^\s]+\.(?:json|jsonl|csv|tsv|ya?ml|txt|geojson)$/
 
 function normalizar(caminho) {
@@ -135,6 +136,8 @@ export function arquivosAlcancadosPeloApp(raiz = RAIZ_PADRAO) {
       vistos.add(alvo)
     }
     for (const casamento of fonte.matchAll(CAMINHO_EM_PARTES)) {
+      // Só partes literais: se sobrar variável ou template entre elas, o caminho não é estático.
+      if (casamento[1].replace(PARTE, "").replace(/[\s,]/g, "") !== "") continue
       const caminho = [...casamento[1].matchAll(PARTE)].map((parte) => parte[1].replace(/^\.?\/+|\/+$/g, "")).join("/")
       if (DADO.test(caminho)) vistos.add(join(raiz, caminho))
     }
