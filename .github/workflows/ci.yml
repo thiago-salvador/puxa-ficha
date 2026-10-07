@@ -502,7 +502,9 @@ jobs:
             echo "aplica=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          MUDADOS="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
+          # --no-renames: renomeação vira remoção + adição, e a origem (ex.: rota
+          # movida de src/ para docs/) também passa pelo classificador.
+          MUDADOS="$(git diff --name-only --no-renames "$BASE_SHA" "$HEAD_SHA")"
           APLICA="$(printf '%s\n' "$MUDADOS" | node scripts/ci/browser-smoke-paths.mjs)"
           printf '%s\n' "$MUDADOS"
           echo "aplica=$APLICA" >> "$GITHUB_OUTPUT"

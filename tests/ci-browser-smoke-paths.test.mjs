@@ -1,5 +1,6 @@
 import assert from "node:assert/strict"
-import { readFileSync } from "node:fs"
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { join } from "node:path"
 import { describe, it } from "node:test"
 
 import {
@@ -61,6 +62,25 @@ describe("recorte do job Rotas e acessibilidade", () => {
     }
   })
 
+  it("fixtures que o smoke executa sobem o navegador", () => {
+    assert.equal(caminhoAcionaSmoke("tests/fixtures/doador-reverse-sample.json", alcancados), true)
+    assert.equal(caminhoAcionaSmoke("tests/fixtures/visual/api.ts", alcancados), true)
+    assert.equal(caminhoAcionaSmoke("tests/fixtures/visual/senado-polls.ts", alcancados), true)
+  })
+
+  it("dado lido em runtime continua no conjunto mesmo apagado no diff", () => {
+    const raiz = mkdtempSync(join(process.cwd(), ".tmp-smoke-apagado-"))
+    try {
+      mkdirSync(join(raiz, "src", "lib"), { recursive: true })
+      writeFileSync(join(raiz, "src", "lib", "pesquisas.ts"), 'readFileSync(resolve(process.cwd(), "scripts/data/apagado.json"), "utf8")\n')
+      const conjunto = arquivosAlcancadosPeloApp(raiz)
+      assert.ok(conjunto.has("scripts/data/apagado.json"))
+      assert.equal(caminhoAcionaSmoke("scripts/data/apagado.json", conjunto), true)
+    } finally {
+      rmSync(raiz, { recursive: true, force: true })
+    }
+  })
+
   it("caminho desconhecido roda o job (falha fechada)", () => {
     assert.equal(caminhoAcionaSmoke("pasta-nova/arquivo.ts", alcancados), true)
     assert.equal(caminhoAcionaSmoke("tailwind.config.ts", alcancados), true)
@@ -81,6 +101,7 @@ describe("recorte do job Rotas e acessibilidade", () => {
     assert.doesNotMatch(job, /install-deps|pin-apt-mirrors|ms-playwright/)
     assert.match(job, /options: --user 1001 --ipc=host/)
     assert.match(ci, /node scripts\/ci\/browser-smoke-paths\.mjs/)
+    assert.match(ci, /git diff --name-only --no-renames/)
   })
 
   it("nenhum job do ci.yml instala dependência de sistema pelo apt do runner", () => {

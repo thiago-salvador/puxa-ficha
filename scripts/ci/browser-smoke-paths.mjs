@@ -9,7 +9,8 @@ import { fileURLToPath } from "node:url"
 const RAIZ_PADRAO = resolve(dirname(fileURLToPath(import.meta.url)), "../..")
 
 // Pastas que o app serve ou que o próprio job executa.
-const PREFIXOS_DO_APP = ["src/", "public/", "tests/visual/", ".github/actions/"]
+// tests/fixtures/visual/ substitui módulos do app no build E2E (PF_VISUAL_FIXTURE_BUILD).
+const PREFIXOS_DO_APP = ["src/", "public/", "tests/visual/", "tests/fixtures/visual/", ".github/actions/"]
 
 // Arquivos de raiz que mudam o build, o runtime ou o próprio job.
 const ARQUIVOS_DO_APP = new Set([
@@ -66,7 +67,7 @@ const ESPECIFICADOR = /(?:\bfrom\s*|\bimport\s*\(\s*|\brequire\s*\(\s*|^\s*impor
 // Arquivo lido em runtime por caminho literal relativo à raiz, sem import
 // (ex.: readFileSync(resolve(process.cwd(), "scripts/data/pesquisas-governadores-2026.json"))).
 // Só arquivo de dado: comentário que cita um script não pode puxar o grafo dele.
-const CAMINHO_LITERAL = /["'`]((?:scripts|data)\/[^"'`\s]+\.(?:json|csv|tsv|ya?ml|txt|geojson))["'`]/g
+const CAMINHO_LITERAL = /["'`](?:\.\/)?((?:scripts|data|tests)\/[^"'`\s$]+\.(?:json|jsonl|csv|tsv|ya?ml|txt|geojson))["'`]/g
 
 function normalizar(caminho) {
   return caminho.trim().replaceAll("\\", "/").replace(/^\.\//, "")
@@ -97,7 +98,16 @@ function resolverImport(raiz, deArquivo, especificador) {
 
 /** Arquivos do repositório que o app alcança pelos imports, a partir de src/ e das entradas de raiz. */
 export function arquivosAlcancadosPeloApp(raiz = RAIZ_PADRAO) {
-  const fila = [...listar(join(raiz, "src")), ...ENTRADAS_DE_RAIZ.map((f) => join(raiz, f)).filter((f) => existsSync(f))]
+  // Além do app, o que o próprio job executa: configs do Playwright e specs de tests/visual.
+  const configsPlaywright = existsSync(raiz)
+    ? readdirSync(raiz).filter((nome) => /^playwright[^/]*\.config\.ts$/.test(nome)).map((nome) => join(raiz, nome))
+    : []
+  const fila = [
+    ...listar(join(raiz, "src")),
+    ...listar(join(raiz, "tests", "visual")),
+    ...configsPlaywright,
+    ...ENTRADAS_DE_RAIZ.map((f) => join(raiz, f)).filter((f) => existsSync(f)),
+  ]
   const vistos = new Set()
   while (fila.length > 0) {
     const arquivo = fila.pop()
@@ -111,8 +121,9 @@ export function arquivosAlcancadosPeloApp(raiz = RAIZ_PADRAO) {
     }
     for (const casamento of fonte.matchAll(CAMINHO_LITERAL)) {
       const alvo = join(raiz, casamento[1])
-      // Entra no conjunto sem ser lido: dado não importa nada.
-      if (existsSync(alvo) && statSync(alvo).isFile()) vistos.add(alvo)
+      // Entra no conjunto sem ser lido (dado não importa nada) e mesmo que o
+      // diff o tenha apagado: o app continua tentando lê-lo.
+      vistos.add(alvo)
     }
   }
   return new Set([...vistos].map((f) => normalizar(relative(raiz, f))))
