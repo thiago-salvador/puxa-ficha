@@ -20,7 +20,10 @@
  * mudança desde a publicação original. Decisão editorial manda: linha cujo
  * `revisado_por` não é da cascata (ver `scripts/lib/compromisso-evidencia-decisao.ts`)
  * não é sobrescrita pelo upsert nem retirada pela reconciliação, esteja ela
- * publicada ou retirada. Para retirar vínculos por decisão, usar
+ * publicada ou retirada. Candidatura com atualização encerrada (fora da coorte,
+ * ver `scripts/lib/coorte-atualizacao.ts`) sai do snapshot do coletor; o par
+ * ausente dela é efeito do corte da coleta, não evidência despublicada, e o
+ * vínculo fica publicado como estava. Para retirar vínculos por decisão, usar
  * `scripts/promessa-evidencia-decidir.ts`. Toda escrita passa por `escreverAuditado`. Cada execução
  * grava uma amostra dos publicados para auditoria e, com `--apply`, um recibo
  * por candidato em `coleta_log` (ver `promessa-evidencia-recibos.ts`).
@@ -31,6 +34,7 @@ import path from "node:path"
 import { fileURLToPath, pathToFileURL } from "node:url"
 
 import { chaveDoVinculo, ehDecisaoEditorial, PREFIXO_REVISOR_CASCATA } from "./lib/compromisso-evidencia-decisao"
+import { carregarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { escreverAuditado } from "./lib/escrita-auditada"
 import { ensureSupabaseClient } from "./lib/supabase"
 import type { ParCandidato } from "./promessa-evidencia-pares"
@@ -82,6 +86,7 @@ const chaveVinculo = (programa: string, tema: string | null, tipo: string, ref: 
 
 export type VinculoAtivo = {
   id: string
+  candidato_id?: string | null
   programa_chave: string
   tema_id: string | null
   tipo_evidencia: string
@@ -100,20 +105,25 @@ export type PlanoReconciliacao = {
   mantidosPorVariancia: Array<{ id: string; chave: string; impressao: string; sem_impressao_anterior: boolean }>
   /** Publicados por decisão editorial: a cascata não os retira. */
   mantidosPorDecisaoEditorial: Array<{ id: string; chave: string }>
+  /** Par ausente porque a candidatura saiu da coorte de atualização: a ficha congela, o vínculo fica. */
+  mantidosPorCoorteEncerrada: Array<{ id: string; chave: string }>
 }
 
 /**
  * Decide o destino de cada vínculo ativo que a cascata não aprovou nesta
  * execução. Puro. Retira só com entrada alterada ou par ausente; o resto é
- * variância do modelo e fica publicado.
+ * variância do modelo e fica publicado. Par ausente de candidatura em
+ * `encerradas` (ids com atualização encerrada) não retira: o coletor deixou de
+ * olhar a ficha, a evidência não foi despublicada.
  */
 export function planejarReconciliacao(input: {
   ativas: ReadonlyArray<VinculoAtivo>
   publicadasAgora: ReadonlySet<string>
   pares: ReadonlyArray<Pick<ParCandidato, "programaChave" | "compromisso" | "evidencia">>
+  encerradas?: ReadonlySet<string>
 }): PlanoReconciliacao {
   const atual = new Map(input.pares.map((p) => [chaveVinculo(p.programaChave, p.compromisso.temaId, p.evidencia.tipo, p.evidencia.ref), impressaoDaEntrada(p)]))
-  const plano: PlanoReconciliacao = { retirar: [], mantidosPorVariancia: [], mantidosPorDecisaoEditorial: [] }
+  const plano: PlanoReconciliacao = { retirar: [], mantidosPorVariancia: [], mantidosPorDecisaoEditorial: [], mantidosPorCoorteEncerrada: [] }
   for (const ativa of input.ativas) {
     const chave = chaveVinculo(ativa.programa_chave, ativa.tema_id, ativa.tipo_evidencia, ativa.evidencia_ref)
     if (input.publicadasAgora.has(chave)) continue
@@ -123,6 +133,10 @@ export function planejarReconciliacao(input: {
     }
     const impressaoAtual = atual.get(chave)
     if (!impressaoAtual) {
+      if (ativa.candidato_id && input.encerradas?.has(ativa.candidato_id)) {
+        plano.mantidosPorCoorteEncerrada.push({ id: ativa.id, chave })
+        continue
+      }
       plano.retirar.push({ id: ativa.id, chave, causa: "par_ausente" })
       continue
     }
@@ -294,12 +308,16 @@ async function main(): Promise<void> {
   }
   const planoDe = async (leitor: ReturnType<typeof ensureSupabaseClient>) => {
     const { data, error } = await leitor.from("compromisso_evidencia")
-      .select("id,programa_chave,tema_id,tipo_evidencia,evidencia_ref,motivo,revisado_por").eq("origem", "cascata").eq("verificado", true)
+      .select("id,candidato_id,programa_chave,tema_id,tipo_evidencia,evidencia_ref,motivo,revisado_por").eq("origem", "cascata").eq("verificado", true)
     if (error) throw new Error(error.message)
+    // Fail-closed: sem a coorte não há como separar corte de coleta de evidência
+    // despublicada, então a leitura com erro derruba a reconciliação.
+    const coorte = await carregarCoorteAtualizacao(leitor)
     const plano = planejarReconciliacao({
       ativas: (data ?? []) as VinculoAtivo[],
       publicadasAgora: new Set(linhas.map((l) => chaveVinculo(l.programa_chave, l.tema_id, l.tipo_evidencia, l.evidencia_ref))),
       pares,
+      encerradas: new Set(coorte.encerradasPorId.keys()),
     })
     const arquivo = path.join(PASTA, `variancia-${agora.slice(0, 10)}.json`)
     writeFileSync(arquivo, `${JSON.stringify({ gerado_em: agora, modo: apply ? "apply" : "dry-run", ...plano, preservadasPorDecisaoEditorial: preservadas }, null, 1)}\n`)
@@ -311,6 +329,7 @@ async function main(): Promise<void> {
     mantidos_com_impressao: plano.mantidosPorVariancia.filter((m) => !m.sem_impressao_anterior).length,
     mantidos_sem_impressao_revisao: plano.mantidosPorVariancia.filter((m) => m.sem_impressao_anterior).length,
     mantidos_por_decisao_editorial: plano.mantidosPorDecisaoEditorial.length,
+    mantidos_por_coorte_encerrada: plano.mantidosPorCoorteEncerrada.length,
   })
   if (!db) {
     // Dry-run lê o estado publicado (somente leitura) para mostrar o plano de
