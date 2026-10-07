@@ -63,6 +63,10 @@ const ENTRADAS_DE_RAIZ = [
 
 const EXTENSOES = ["", ".ts", ".tsx", ".mts", ".mjs", ".js", ".json", "/index.ts", "/index.tsx", "/index.js"]
 const ESPECIFICADOR = /(?:\bfrom\s*|\bimport\s*\(\s*|\brequire\s*\(\s*|^\s*import\s+)["']([^"']+)["']/gm
+// Arquivo lido em runtime por caminho literal relativo à raiz, sem import
+// (ex.: readFileSync(resolve(process.cwd(), "scripts/data/pesquisas-governadores-2026.json"))).
+// Só arquivo de dado: comentário que cita um script não pode puxar o grafo dele.
+const CAMINHO_LITERAL = /["'`]((?:scripts|data)\/[^"'`\s]+\.(?:json|csv|tsv|ya?ml|txt|geojson))["'`]/g
 
 function normalizar(caminho) {
   return caminho.trim().replaceAll("\\", "/").replace(/^\.\//, "")
@@ -104,6 +108,11 @@ export function arquivosAlcancadosPeloApp(raiz = RAIZ_PADRAO) {
     for (const casamento of fonte.matchAll(ESPECIFICADOR)) {
       const alvo = resolverImport(raiz, arquivo, casamento[1])
       if (alvo && !alvo.includes("/node_modules/") && !vistos.has(alvo)) fila.push(alvo)
+    }
+    for (const casamento of fonte.matchAll(CAMINHO_LITERAL)) {
+      const alvo = join(raiz, casamento[1])
+      // Entra no conjunto sem ser lido: dado não importa nada.
+      if (existsSync(alvo) && statSync(alvo).isFile()) vistos.add(alvo)
     }
   }
   return new Set([...vistos].map((f) => normalizar(relative(raiz, f))))

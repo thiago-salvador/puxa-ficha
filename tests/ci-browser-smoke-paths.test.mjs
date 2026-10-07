@@ -48,6 +48,17 @@ describe("recorte do job Rotas e acessibilidade", () => {
     assert.ok(fora.length > 0, "o app importa ao menos um arquivo de scripts/")
     for (const caminho of fora) assert.equal(caminhoAcionaSmoke(caminho, alcancados), true, caminho)
     assert.ok(alcancados.has("scripts/data/falas-candidatos.json"))
+    // Lidos por readFileSync com caminho literal, sem import.
+    for (const lido of [
+      "scripts/data/pesquisas-presidencia-2026.json",
+      "scripts/data/pesquisas-governadores-2026.json",
+      "scripts/data/pesquisas-eleitorais-fontes.json",
+      "scripts/data/pesquisas-governadores-fontes.json",
+      "scripts/data/pesquisas-senado-2026.json",
+    ]) {
+      assert.ok(alcancados.has(lido), lido)
+      assert.equal(caminhoAcionaSmoke(lido, alcancados), true, lido)
+    }
   })
 
   it("caminho desconhecido roda o job (falha fechada)", () => {
@@ -68,6 +79,7 @@ describe("recorte do job Rotas e acessibilidade", () => {
     assert.match(job, /needs\.browser-smoke-recorte\.result != 'success'/)
     assert.match(job, /image: mcr\.microsoft\.com\/playwright:v\$\{\{ needs\.browser-smoke-recorte\.outputs\.playwright \}\}-noble/)
     assert.doesNotMatch(job, /install-deps|pin-apt-mirrors|ms-playwright/)
+    assert.match(job, /options: --user 1001 --ipc=host/)
     assert.match(ci, /node scripts\/ci\/browser-smoke-paths\.mjs/)
   })
 

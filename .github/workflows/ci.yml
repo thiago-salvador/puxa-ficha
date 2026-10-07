@@ -384,7 +384,9 @@ jobs:
     timeout-minutes: 30
     container:
       image: mcr.microsoft.com/playwright:v${{ needs.browser-smoke-recorte.outputs.playwright }}-noble
-      options: --user 1001
+      # --ipc=host: recomendação oficial do Playwright em Docker; sem ela o
+      # Chromium usa o /dev/shm pequeno do container e pode cair sem memória.
+      options: --user 1001 --ipc=host
     env:
       SUPABASE_URL: https://placeholder.supabase.co
       SUPABASE_ANON_KEY: placeholder-anon-key
