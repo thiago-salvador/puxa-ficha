@@ -34,7 +34,7 @@ function BrasilIcon({ className }: { className?: string }) {
           <path key={s.sigla} d={s.d} />
         ))}
       </g>
-      <g fill="var(--background)" stroke="var(--background)" strokeWidth={4} strokeLinejoin="round">
+      <g style={{ fill: "var(--background)", stroke: "var(--background)" }} strokeWidth={4} strokeLinejoin="round">
         {BRAZIL_STATES.map((s) => (
           <path key={s.sigla} d={s.d} />
         ))}
