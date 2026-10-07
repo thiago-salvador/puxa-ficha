@@ -15,7 +15,7 @@
         "sq_candidato": "110002554073",
         "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/buscar/2026/MT/20322002026/candidato/110002554073",
         "expected_descricao_situacao": "Deferido",
-        "expected_descricao_totalizacao": "Concorrendo"
+        "expected_descricao_totalizacao": "Não eleito"
       }
     ]
   },
