@@ -180,8 +180,10 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
         </select></label>
         {/* Navegação completa de propósito: chega rolada em #programas e não exige o app router, que falta quando o componente é renderizado fora dele (testes). */}
         <label className={styles.governadores}>Governadores<select value={ufAtual ?? ""} onChange={e => {
+          // A UF da URL é a da lista fixa de estados, nunca o valor lido do DOM.
+          const estado = ESTADOS.find(({ uf }) => uf === e.target.value)
           // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- ver comentário acima
-          if (e.target.value) window.location.assign(`/uf/${e.target.value.toLowerCase()}#programas`)
+          if (estado) window.location.assign(`/uf/${estado.uf.toLowerCase()}#programas`)
         }}>
           {!ufAtual && <option value="">Escolha um estado</option>}
           {ESTADOS.map(({ uf, nome }) => <option key={uf} value={uf}>{nome}</option>)}
