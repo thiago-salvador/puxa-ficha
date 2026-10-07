@@ -2,6 +2,7 @@ import assert from "node:assert/strict"
 import { test } from "node:test"
 import { renderToStaticMarkup } from "react-dom/server"
 import { EspectroEleitos1Turno } from "@/components/EspectroEleitos1Turno"
+import { ArcoSenado } from "@/components/EspectroGraficos"
 import { Resultado1TurnoBrasil } from "@/components/Resultado1TurnoBrasil"
 import { getEspectroPartidario } from "@/data/quiz/espectro-partidario"
 import { classeDaMedia, classificarEspectro, contarEspectroEleitos } from "@/lib/espectro-eleitos"
@@ -185,12 +186,10 @@ test("metodologia conta partidos com os dois eixos documentados e com curadoria,
   assert.equal(m.fonte_nos_dois_eixos, documentados.length)
 })
 
-test("componente mostra a linha Total em negrito, a nota de pendência e o link da metodologia", () => {
+test("componente mostra os blocos por órgão, a nota de pendência e o link da metodologia", () => {
   const html = renderToStaticMarkup(<EspectroEleitos1Turno data={dados()} />)
   assert.match(html, /id="espectro"/)
-  assert.match(html, /Espectro político dos eleitos/)
-  assert.match(html, /<th scope="row" class="px-3 py-3 font-bold">Total<\/th>/)
-  assert.match(html, /9 de 11 vagas/)
+  assert.match(html, /Como ficou o poder/)
   assert.match(html, /Sem classificação/)
   assert.match(html, /Decidido no 2º turno, em 25\/10: Governador \(RJ\)\./)
   assert.match(html, /Sem fechamento oficial do TSE: Governador \(RJ\); Deputado Estadual e Distrital \(DF\)\./)
@@ -198,7 +197,7 @@ test("componente mostra a linha Total em negrito, a nota de pendência e o link 
   assert.match(html, /href="\/quiz\/metodologia"/)
   assert.match(html, /Como classificamos os partidos/)
   assert.match(html, /Por partido/)
-  // Visual antes da tabela: hemiciclo do Senado e da Câmara, quadrados dos governadores e barra das assembleias.
+  // Câmara em pontos, Senado em arco, governadores por campo e barra das assembleias.
   assert.match(html, /data-pf-espectro-hemiciclo="espectro-senado"/)
   assert.match(html, /data-pf-espectro-hemiciclo="espectro-camara"/)
   assert.match(html, /data-pf-espectro-governadores/)
@@ -241,4 +240,16 @@ test("legenda dos governadores só diz 2º turno quando a pendência tem candida
   )
   assert.doesNotMatch(semEleito, /\(2º turno\)/)
   assert.match(semEleito, /Rio de Janeiro: sem eleito definido/)
+})
+
+test("arco do Senado: sem classificação e vaga pendente aparecem com contorno, nunca branco sobre branco", () => {
+  const html = renderToStaticMarkup(
+    <ArcoSenado id="t" linha={{ cargo: "Senador", eleitos: 52, vagas: 54, esquerda: 20, centro: 10, direita: 20, sem_classificacao: 2, partidos: [] }} />,
+  )
+  const sem = html.match(/<g data-pf-arco-classe="sem_classificacao">(.*?)<\/g>/)?.[1] ?? ""
+  assert.match(sem, /stroke="var\(--gray-600\)"/)
+  assert.match(sem, /stroke="url\(#t-hachura\)"/)
+  assert.doesNotMatch(sem, /stroke="#ffffff"/)
+  const pendente = html.match(/<g data-pf-arco-classe="pendente">(.*?)<\/g>/)?.[1] ?? ""
+  assert.match(pendente, /stroke="var\(--gray-400\)"/)
 })

@@ -8,10 +8,11 @@ test("home presents presidential programs then national polls", async ({ page })
   await expect(polls).toBeVisible()
   await expect(programs.getByText("Contexto do estado", { exact: true })).toHaveCount(0)
   await expect(programs.getByRole("button", { name: "Resumo do programa", exact: true })).toHaveAttribute("aria-pressed", "true")
-  await expect(programs.getByRole("combobox", { name: "Tema do programa" })).toHaveCount(0)
+  await expect(programs.getByRole("navigation", { name: "Tema do programa" })).toHaveCount(0)
   await programs.getByRole("button", { name: "Por tema", exact: true }).click()
-  await programs.getByRole("combobox", { name: "Tema do programa" }).selectOption("saude")
-  await expect(programs.getByRole("combobox", { name: "Tema do programa" })).toHaveValue("saude")
+  const temas = programs.getByRole("navigation", { name: "Tema do programa" })
+  await temas.getByRole("button", { name: "Saúde", exact: true }).click()
+  await expect(temas.getByRole("button", { name: "Saúde", exact: true })).toHaveAttribute("aria-pressed", "true")
   const order = await page.locator("h2").allTextContents()
   expect(order.indexOf("O que está nos programas")).toBeGreaterThan(order.indexOf("Presidenciáveis"))
   expect(order.indexOf("A evolução da disputa")).toBeGreaterThan(order.indexOf("O que está nos programas"))
@@ -34,11 +35,14 @@ test("first-turn national poll fits a 375px viewport", async ({ browser }) => {
   }))
   expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport)
   await page.locator("#programas").getByRole("button", { name: "Por tema", exact: true }).click()
-  const otherThemes = page.getByRole("combobox", { name: "Tema do programa" })
-  if (await otherThemes.count()) {
-    const longestTheme = await otherThemes.evaluate((select: HTMLSelectElement) =>
-      [...select.options].sort((a, b) => b.text.length - a.text.length)[0].value)
-    await otherThemes.selectOption(longestTheme)
+  // "Outros temas" vem recolhido: abre antes de medir, para o maior título entrar na conta.
+  const outrosTemas = page.getByRole("navigation", { name: "Tema do programa" }).locator("summary", { hasText: "Outros temas" })
+  if (await outrosTemas.count()) await outrosTemas.click()
+  const themeButtons = page.getByRole("navigation", { name: "Tema do programa" }).getByRole("button")
+  if (await themeButtons.count()) {
+    const textos = await themeButtons.allTextContents()
+    const longestTheme = [...textos].sort((a, b) => b.length - a.length)[0]
+    await page.getByRole("navigation", { name: "Tema do programa" }).getByRole("button", { name: longestTheme, exact: true }).click()
     expect(await page.evaluate(() => document.documentElement.scrollWidth))
       .toBeLessThanOrEqual(dimensions.viewport)
   }

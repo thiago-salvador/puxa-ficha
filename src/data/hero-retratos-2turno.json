@@ -1,0 +1,27 @@
+{
+  "_doc": "Retratos largos do hero do 2º turno (Wikimedia Commons). proporcao = largura/altura do arquivo; rosto_x = fração da largura onde fica o centro do rosto, medida na imagem. escala = altura da foto em relação à área (1 = mesma altura; maior amplia e corta embaixo). rosto_largura = fração da largura ocupada pelo rosto (limita o tamanho para o rosto caber no vão fora do texto).",
+  "retratos": {
+    "flavio-bolsonaro": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Foto_oficial_do_senador_Fl%C3%A1vio_Bolsonaro_%28v._AgSen%29.jpg",
+      "largura": 1358,
+      "altura": 1441,
+      "rosto_x": 0.535,
+      "credito": "Agência Senado",
+      "licenca": "Atribuição",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Foto_oficial_do_senador_Fl%C3%A1vio_Bolsonaro_(v._AgSen).jpg",
+      "escala": 1.3,
+      "rosto_largura": 0.39
+    },
+    "lula": {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_%28horizontal%29.jpg/1920px-Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_%28horizontal%29.jpg",
+      "largura": 3543,
+      "altura": 1700,
+      "rosto_x": 0.49,
+      "credito": "Palácio do Planalto",
+      "licenca": "CC BY 2.0",
+      "pagina": "https://commons.wikimedia.org/wiki/File:Foto_oficial_de_Luiz_In%C3%A1cio_Lula_da_Silva_(horizontal).jpg",
+      "escala": 1,
+      "rosto_largura": 0.22
+    }
+  }
+}

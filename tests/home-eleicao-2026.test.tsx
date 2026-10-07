@@ -156,8 +156,9 @@ describe("hero da home", () => {
     assert.doesNotMatch(html, /var\(--espectro-/)
     assert.match(html, /data-pf-hero-faixa/)
     assert.doesNotMatch(visivel, /Vão ao 2º turno em 25 de outubro/)
-    assert.match(visivel, /NOME MUITO LONGO DA SILVA AAA · nº 10 47,50% 400 votos/)
-    assert.match(visivel, /BIA BBB · nº 10 44,25% 350 votos/)
+    // Layout de 06/10: nome, partido e número, o rótulo do 1º turno, % e votos de cada finalista.
+    assert.match(visivel, /NOME MUITO LONGO DA SILVA AAA · nº 10 1º turno Resultado do 1º turno 47,50% 400 votos/)
+    assert.match(visivel, /BIA BBB · nº 10 1º turno Resultado do 1º turno 44,25% 350 votos/)
     assert.match(html, /href="\/candidato\/nome-longo"/)
     assert.match(html, /href="\/candidato\/bia"/)
     // Link explícito para a ficha de quem segue na disputa, com o nome no nome acessível.
@@ -369,8 +370,10 @@ describe("rotas da eleição", () => {
     assert.match(home, /href="\/1o-turno"[\s\S]*?Arquivo do 1º turno/)
     assert.doesNotMatch(home, /Resultado completo do 1º turno/)
     // Os duelos estaduais vêm de Governadores2Turno; o bloco do 1º turno entra sem os duelos para não repetir.
-    assert.match(home, /<Resultado1TurnoEstados[^>]*blocos=\{\["eleitos", "sem-dado"\]\}/)
-    assert.match(home, /<Resultado1TurnoEstados[^>]*blocos=\{\["senado"\]\}/)
+    // Pontos e processos só com a lista ao vivo: no fallback viriam zerados.
+    assert.match(home, /<GovernadoresEleitos1Turno[^>]*resumos=\{todosResumosResource\.sourceStatus === "live" \? todosResumos : null\}/)
+    assert.match(home, /<Resultado1TurnoEstados[^>]*blocos=\{\["sem-dado"\]\}/)
+    assert.match(home, /<Senado1Turno[^>]*data=\{resultados\}/)
   })
 })
 

@@ -81,7 +81,7 @@ export function MeuEstadoDuelos({
           )}
         </p>
       </div>
-      <ul className="border-b border-border" data-pf-revelar="auto">
+      <ul className="grid border-b border-border lg:grid-cols-2 lg:gap-x-12" data-pf-revelar="auto">
         {ordenados.map((d) => {
           const meu = d.uf === uf
           return (

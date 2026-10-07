@@ -321,7 +321,7 @@ export default async function UfHubPage({
 
       <div className="mx-auto max-w-7xl space-y-12 px-5 py-12 md:px-12">
         <SlashDivider />
-        <StatePrograms scopeTitle={`Governo ${presentation.ofState}`} programs={programsResource.data} runningMates={runningMates} abaFinalistas={abaFinalistas} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
+        <StatePrograms ufAtual={uf.toUpperCase()} scopeTitle={`Governo ${presentation.ofState}`} programs={programsResource.data} runningMates={runningMates} abaFinalistas={abaFinalistas} unavailable={programsResource.unavailable || resumosResource.sourceStatus !== "live"} context={indicadores.filter(row => row.indicador === "homicidios_100k" && row.valor != null).sort((a, b) => b.ano - a.ano).slice(0, 1).map(row => ({ themeId: "seguranca", label: STATE_INDICATOR_CONFIG.homicidios_100k.label, value: STATE_INDICATOR_CONFIG.homicidios_100k.format(row.valor!), year: String(row.ano), source: row.fonte }))} />
         <SlashDivider />
         <StatePolls polls={pollsResource.data} candidates={candidatos.map(({ slug, nome_urna, foto_url }) => ({ slug, nome_urna, foto_url }))} unavailable={pollsResource.unavailable} resultadoEleitoralPublicado={candidatos.some((candidato) => Boolean(candidato.fase_eleitoral_2026))} turnos={turnosPesquisa} />
         <SlashDivider />

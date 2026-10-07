@@ -17,7 +17,7 @@ describe("PT-BR navigation copy", () => {
 
     assert.match(navbar, /href: \"\/\", label: \"2º Turno\"/)
     assert.match(navbar, /href: \"\/1o-turno\", label: \"1º Turno\"/)
-    assert.match(footer, /Páginas/)
+    assert.match(footer, /Eleição 2026/)
     assert.match(footer, /href: \"\/\", label: \"2º Turno\"/)
     assert.match(footer, /href: \"\/1o-turno\", label: \"1º Turno\"/)
     assert.doesNotMatch(`${navbar}\n${footer}`, /Presidencia|Paginas/)
