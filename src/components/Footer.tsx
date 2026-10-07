@@ -67,7 +67,7 @@ const LINK = "inline-flex min-h-11 items-center text-[length:var(--text-body-sm)
 const LINK_BARRA = "inline-flex min-h-11 items-center text-[length:var(--text-caption)] font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
 
 function FooterLinkItem({ link, className = LINK }: { link: FooterLink; className?: string }) {
-  if (link.external || link.href.startsWith("mailto:")) {
+  if (link.external || /^mailto:/i.test(link.href)) {
     return (
       <a
         href={link.href}

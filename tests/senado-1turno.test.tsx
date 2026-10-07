@@ -33,3 +33,19 @@ describe("senado no 1º turno", () => {
     assert.equal(renderToStaticMarkup(<Senado1Turno ufs={ufs} data={{ ...data, disputas: [] }} />), "")
   })
 })
+
+describe("senado com vaga ainda sem eleito", () => {
+  it("card usa a posição real de quem ficou de fora e as vagas da disputa, sem margem para a vaga pendente", () => {
+    const parcial = structuredClone(data)
+    const sen = (parcial.disputas ?? []).filter((d) => d.cargo === "Senador")
+    const maior = [...sen].sort((a, b) => (b.totais.eleitorado ?? 0) - (a.totais.eleitorado ?? 0))[0]
+    const faseFora = maior.candidatos.find((c) => c.fase !== "eleito" && c.posicao !== null)!.fase
+    const segundoEleito = maior.candidatos.filter((c) => c.fase === "eleito").sort((a, b) => (a.posicao ?? 0) - (b.posicao ?? 0))[1]
+    segundoEleito.fase = faseFora
+    const html = renderToStaticMarkup(<Senado1Turno ufs={ufs} data={parcial} />)
+    const card = html.slice(html.indexOf(`data-pf-senado-card="${maior.uf.toLowerCase()}"`))
+    assert.match(card, new RegExp(`${maior.vagas} vagas`))
+    assert.match(card, new RegExp(`${segundoEleito.posicao}º colocado`))
+    assert.doesNotMatch(card, /atrás da/)
+  })
+})

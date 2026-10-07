@@ -7,7 +7,7 @@ import { formatarPercentual, formatarVotos, type CandidatoResultado1Turno, type 
 import { dividirVotosValidos, fotoDe, larguraBarra, type FotosCandidatos } from "@/lib/resultados-1turno-vista"
 import { coresDosFinalistas } from "@/lib/cores-finalistas"
 import { retratoHero, type RetratoHero } from "@/lib/hero-retratos-2turno"
-import { finalistasDaDisputa, formatarDataPesquisa, type Pesquisa2TurnoLinha } from "@/lib/segundo-turno-2026"
+import { finalistasDaDisputa, formatarData2Turno, formatarDataPesquisa, type Pesquisa2TurnoLinha } from "@/lib/segundo-turno-2026"
 import type { NumeroHero1Turno } from "@/lib/home-eleicao-2026"
 import type { HomeHeroMetrics } from "@/lib/home-hero-metrics"
 import { PROCESSO_DISCIPLINAR_AVISO } from "@/lib/processos-justica-total"
@@ -178,7 +178,7 @@ function BarraVotosHero({ presidente, cores }: { presidente: DisputaResultado1Tu
   const [a, b] = finalistas
   if (!a || !b) return null
   const resumo = `Votos válidos: ${a.nome_urna} ${formatarPercentual(a.percentual_validos)}, demais candidatos ${formatarPercentual(demais.percentual)}, ${b.nome_urna} ${formatarPercentual(b.percentual_validos)}.`
-  const demaisTexto = demais.candidatos === 1 ? "Demais: 1 candidato" : `Demais ${demais.candidatos} candidatos`
+  const demaisTexto = demais.candidatos === 1 ? "Demais 1 candidato" : `Demais ${demais.candidatos} candidatos`
   const lado = (c: CandidatoResultado1Turno, cor: string, direita: boolean) => (
     <div className={`min-w-0 ${direita ? "text-right" : ""}`}>
       <p className={`flex items-center gap-2 font-bold uppercase tracking-[0.04em] text-white ${direita ? "justify-end" : ""}`}>
@@ -245,7 +245,7 @@ function DueloHero({
             Presidência / 2º turno
           </h2>
           <p className="hero-fade mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[clamp(0.8125rem,1.15vw,1.15rem)] font-bold uppercase tracking-[0.06em] text-white" style={{ animationDelay: "0.25s" }}>
-            <span>2º turno em 25 de outubro</span>
+            <span>2º turno em {formatarData2Turno()}</span>
             <ContagemSegundoTurno referenceNow={referenceNow} variante="escuro" />
           </p>
           <div
@@ -519,8 +519,8 @@ export function HomeHero2026({ imagem, temResultado, presidente, fotos, pesquisa
           <div className="hero-fade" style={{ animationDelay: "0.3s" }}>
             {temSegundoTurno && (
               <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[length:var(--text-body)] font-bold uppercase tracking-[0.06em] text-white sm:text-[length:var(--text-body-lg)]">
-                <span className="sm:hidden" aria-hidden="true">2º turno em 25/10</span>
-                <span className="max-sm:sr-only">2º turno em 25 de outubro</span>
+                <span className="sm:hidden" aria-hidden="true">2º turno em {formatarData2Turno("curto")}</span>
+                <span className="max-sm:sr-only">2º turno em {formatarData2Turno()}</span>
                 <ContagemSegundoTurno referenceNow={referenceNow} variante="escuro" />
               </p>
             )}

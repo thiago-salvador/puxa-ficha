@@ -135,7 +135,7 @@ export function Aliancas2TurnoSecao({
             {listaDeclarados("a", "Nenhum apoio registrado na captura.")}
           </div>
           <div data-pf-grupo="neutro">
-            <CabecalhoGrupo rotulo="Neutro ou voto liberado" percentual={segmento("neutro").percentual} cor="var(--gray-400)" />
+            <CabecalhoGrupo rotulo="Neutro, voto liberado ou voto nulo" percentual={segmento("neutro").percentual} cor="var(--gray-400)" />
             {listaDeclarados("neutro", "Nenhuma posição neutra registrada na captura.")}
           </div>
         </div>

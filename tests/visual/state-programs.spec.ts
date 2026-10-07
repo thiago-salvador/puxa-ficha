@@ -68,6 +68,9 @@ for (const width of [1440, 765, 375]) {
       await section.getByRole("button", { name: view, exact: true }).click()
       if (view === "Por tema") {
         const temas = section.getByRole("navigation", { name: "Tema do programa" })
+        // "Outros temas" vem recolhido: abre antes de medir, para o maior título entrar na conta.
+        const outros = temas.locator("summary", { hasText: "Outros temas" })
+        if (await outros.count()) await outros.click()
         const textos = await temas.getByRole("button").allTextContents()
         const longest = [...textos].sort((a, b) => b.length - a.length)[0]
         await temas.getByRole("button", { name: longest, exact: true }).click()

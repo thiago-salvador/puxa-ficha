@@ -29,6 +29,8 @@ interface EstadoSenado {
   nome: string
   eleitos: CandidatoResultado1Turno[]
   fora: CandidatoResultado1Turno | null
+  /** Vagas da disputa (não o número de eleitos já marcados). */
+  vagas: number
   eleitorado: number
 }
 
@@ -71,12 +73,13 @@ function Eleito({ c, fotos }: { c: CandidatoResultado1Turno; fotos?: FotosCandid
 }
 
 function Card({ e, fotos }: { e: EstadoSenado; fotos?: FotosCandidatos }) {
-  const segunda = e.eleitos[1]?.percentual_validos ?? null
+  // Distância só com todas as vagas preenchidas: com eleito pendente, "atrás da última vaga" não existe.
+  const ultimaVaga = e.eleitos.length >= e.vagas ? (e.eleitos[e.eleitos.length - 1]?.percentual_validos ?? null) : null
   const foraPct = e.fora?.percentual_validos ?? null
   return (
     <article className="rounded-[6px] border border-border bg-[var(--gray-50)] p-5 xl:p-6" data-pf-senado-card={e.uf.toLowerCase()}>
       <p className="text-[length:var(--text-body-sm)] font-bold uppercase text-muted-foreground">
-        {e.nome} · {e.uf} <span className="font-medium normal-case text-foreground">· {e.eleitos.length === 1 ? "1 vaga" : `${e.eleitos.length} vagas`}</span>
+        {e.nome} · {e.uf} <span className="font-medium normal-case text-foreground">· {e.vagas === 1 ? "1 vaga" : `${e.vagas} vagas`}</span>
       </p>
       <ul className="mt-4">
         {e.eleitos.map((c) => (
@@ -88,13 +91,13 @@ function Card({ e, fotos }: { e: EstadoSenado; fotos?: FotosCandidatos }) {
           <p className="text-[length:var(--text-caption)] font-bold uppercase text-foreground">Ficou de fora</p>
           <p className="mt-1.5 flex items-baseline justify-between gap-3 text-[length:var(--text-body-sm)]">
             <span className="min-w-0 font-medium text-muted-foreground">
-              3º colocado: <span className="font-bold text-foreground">{nomeLegivel(e.fora.nome_urna)}</span> ({e.fora.partido})
+              {e.fora.posicao}º colocado: <span className="font-bold text-foreground">{nomeLegivel(e.fora.nome_urna)}</span> ({e.fora.partido})
             </span>
             <span className="shrink-0 font-bold tabular-nums text-foreground">{formatarPercentual(foraPct)}</span>
           </p>
-          {segunda !== null && foraPct !== null && (
+          {ultimaVaga !== null && foraPct !== null && (
             <p className="mt-1 text-[length:var(--text-caption)] font-medium text-muted-foreground">
-              <span className="font-bold text-foreground">{formatarMargem(segunda - foraPct)}</span> atrás da segunda vaga
+              <span className="font-bold text-foreground">{formatarMargem(ultimaVaga - foraPct)}</span> atrás da {e.vagas === 2 ? "segunda" : "última"} vaga
             </p>
           )}
         </div>
@@ -130,6 +133,7 @@ export function Senado1Turno({ ufs, data, fotos }: { ufs: string[]; data: Result
       nome: getEstadoNome(uf) ?? sigla,
       eleitos,
       fora: ordenados.find((c) => c.fase !== "eleito") ?? null,
+      vagas: disputa.vagas,
       eleitorado: disputa.totais.eleitorado ?? 0,
     }]
   })

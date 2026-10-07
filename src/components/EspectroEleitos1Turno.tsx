@@ -141,7 +141,7 @@ export function EspectroEleitos1Turno({ data = getResultados1Turno() }: { data?:
             <TituloBloco titulo="Senado" linha={senado} />
             <ArcoSenado linha={senado} id="espectro-senado" />
             <p className="text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
-              Senadores eleitos nesta eleição: {NUMERO.format(senado.vagas)} das 81 cadeiras.
+              Senadores eleitos nesta eleição: {NUMERO.format(senado.eleitos)} das 81 cadeiras.
             </p>
             <ListaSenado linha={senado} />
           </figure>

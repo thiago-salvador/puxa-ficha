@@ -52,6 +52,14 @@ export function diasAte2Turno(agora: string | number, alvo: string = DATA_2TURNO
   return Math.round((dia - hoje) / 86_400_000)
 }
 
+const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+
+/** Data da votação, da mesma constante da contagem: "25 de outubro" ou, curta, "25/10". */
+export function formatarData2Turno(estilo: "longo" | "curto" = "longo", alvo: string = DATA_2TURNO_2026): string {
+  const [, mes, dia] = alvo.split("-")
+  return estilo === "curto" ? `${dia}/${mes}` : `${Number(dia)} de ${MESES[Number(mes) - 1]}`
+}
+
 /** "Faltam 20 dias", "Falta 1 dia", "É hoje"; null quando a data já passou. */
 export function rotuloContagem2Turno(dias: number | null): string | null {
   if (dias === null || dias < 0) return null

@@ -25,8 +25,8 @@ function valido(r: RetratoHero | undefined): r is RetratoHero {
 }
 
 /** Retrato largo do hero para o slug, ou null (o hero cai na foto da ficha). */
-export function retratoHero(slug: string | null | undefined): RetratoHero | null {
+export function retratoHero(slug: string | null | undefined, tabela: Record<string, RetratoHero> = RETRATOS): RetratoHero | null {
   if (!slug) return null
-  const r = RETRATOS[slug]
+  const r = tabela[slug]
   return valido(r) ? r : null
 }

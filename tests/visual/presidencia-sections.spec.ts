@@ -35,6 +35,9 @@ test("first-turn national poll fits a 375px viewport", async ({ browser }) => {
   }))
   expect(dimensions.content).toBeLessThanOrEqual(dimensions.viewport)
   await page.locator("#programas").getByRole("button", { name: "Por tema", exact: true }).click()
+  // "Outros temas" vem recolhido: abre antes de medir, para o maior título entrar na conta.
+  const outrosTemas = page.getByRole("navigation", { name: "Tema do programa" }).locator("summary", { hasText: "Outros temas" })
+  if (await outrosTemas.count()) await outrosTemas.click()
   const themeButtons = page.getByRole("navigation", { name: "Tema do programa" }).getByRole("button")
   if (await themeButtons.count()) {
     const textos = await themeButtons.allTextContents()

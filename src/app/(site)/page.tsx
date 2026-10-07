@@ -72,12 +72,12 @@ export const metadata: Metadata = {
 const LINK_SETA =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold underline underline-offset-4 hover:text-[var(--gray-600)]"
 
-function pesquisasPresidenciais(): StatePollScenario[] {
-  // O catálogo falha fechado com JSON inválido; aqui isso só esconde as pesquisas do 2º turno.
+function pesquisasPresidenciais(): StatePollScenario[] | null {
+  // O catálogo falha fechado com JSON inválido: null esconde a seção, sem dizer que não há pesquisa.
   try {
     return loadPresidentialPolls()
   } catch {
-    return []
+    return null
   }
 }
 
@@ -154,7 +154,9 @@ export default async function Home() {
     ? ([finalistasPresidente[0].slug, finalistasPresidente[1].slug] as [string, string])
     : null
   // Limite alto: a tendência usa todas as pesquisas do confronto; a lista mostra só as seis mais recentes.
-  const pesquisas2Turno = slugsFinalistas ? selecionarPesquisasDoConfronto(pesquisasPresidenciais(), slugsFinalistas, 60) : []
+  // "Nenhuma pesquisa publicada" só com o catálogo lido e os dois slugs: falha de dado não vira ausência de pesquisa.
+  const catalogoPesquisas = slugsFinalistas ? pesquisasPresidenciais() : null
+  const pesquisas2Turno = slugsFinalistas && catalogoPesquisas ? selecionarPesquisasDoConfronto(catalogoPesquisas, slugsFinalistas, 60) : []
   // Programas só dos dois finalistas à Presidência; sem o par publicado, todos os candidatos.
   const candidatosProgramas = slugsFinalistas
     ? candidatos.filter((candidato) => slugsFinalistas.includes(candidato.slug))
@@ -289,7 +291,7 @@ export default async function Home() {
               linhas={pesquisas2Turno}
               nomes={[finalistasPresidente[0].nome_urna, finalistasPresidente[1].nome_urna]}
               partidos={[finalistasPresidente[0].partido, finalistasPresidente[1].partido]}
-              mostrarVazio
+              mostrarVazio={catalogoPesquisas !== null}
             />
           )}
 

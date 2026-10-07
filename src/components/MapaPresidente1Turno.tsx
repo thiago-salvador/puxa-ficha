@@ -35,6 +35,7 @@ export function MapaPresidente1Turno({ data }: { data: Pick<Resultados1Turno, "p
 
   const contagemPorSq = new Map(mapa.contagem.map((c) => [c.sq, c.ufs]))
   const finalistas = primeira.finalistas.map((f) => ({
+    sq: f.sq,
     nome: nomeLegivel(f.nome_urna),
     partido: f.partido,
     cor: corDoPartido(f.partido)?.cor ?? null,
@@ -51,7 +52,7 @@ export function MapaPresidente1Turno({ data }: { data: Pick<Resultados1Turno, "p
       nome: l.nome,
       pcts: [pa, pb],
       textos: [formatarPercentual(pa), formatarPercentual(pb)],
-      vencedor: l.vencedor ? { nome: nomeLegivel(l.vencedor.nome_urna), cor: l.cor?.cor ?? null } : null,
+      vencedor: l.vencedor ? { sq: l.vencedor.sq, nome: nomeLegivel(l.vencedor.nome_urna), cor: l.cor?.cor ?? null } : null,
       diferenca: pa !== null && pb !== null ? formatarMargem(Math.abs(pa - pb)) : null,
       href: href1Turno(l.uf),
       destaque: maiores.has(l.uf),

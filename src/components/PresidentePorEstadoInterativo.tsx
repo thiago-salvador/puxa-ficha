@@ -12,7 +12,7 @@ export interface UfPresidenteLinha {
   /** % dos válidos de cada finalista, na ordem da disputa nacional. */
   pcts: [number | null, number | null]
   textos: [string, string]
-  vencedor: { nome: string; cor: string | null } | null
+  vencedor: { sq: string; nome: string; cor: string | null } | null
   /** "13,7 p.p." entre os dois finalistas; null sem dado. */
   diferenca: string | null
   href: string
@@ -21,6 +21,7 @@ export interface UfPresidenteLinha {
 }
 
 export interface FinalistaLegenda {
+  sq: string
   nome: string
   partido: string
   cor: string | null
@@ -126,7 +127,7 @@ export function PresidentePorEstadoInterativo({
                       </button>
                     </th>
                     {l.textos.map((t, i) => (
-                      <td key={i} className={`py-2 pr-2 text-right sm:pr-6 ${ativa && l.vencedor?.nome === finalistas[i].nome ? "font-bold text-foreground" : "font-medium text-foreground"}`}>
+                      <td key={i} className={`py-2 pr-2 text-right sm:pr-6 ${ativa && l.vencedor?.sq === finalistas[i].sq ? "font-bold text-foreground" : "font-medium text-foreground"}`}>
                         {t}
                       </td>
                     ))}

@@ -248,6 +248,17 @@ export function TabelaGovernadores({ linha, data }: { linha: LinhaEspectro; data
           </li>
         ))}
       </ul>
+      {/* O nome de quem foi eleito também fica visível (não só em title e sr-only), recolhido para a tabela seguir curta. */}
+      <details className="mt-2" data-pf-espectro-gov-nomes>
+        <summary className="inline-flex min-h-11 cursor-pointer items-center text-[length:var(--text-body-sm)] font-bold text-foreground underline underline-offset-4">
+          Ver os governadores por estado
+        </summary>
+        <ul className="mt-1 grid gap-x-6 gap-y-1 text-[length:var(--text-caption)] font-medium text-muted-foreground sm:grid-cols-2">
+          {[...ufs].sort((a, b) => a.descricao.localeCompare(b.descricao, "pt-BR")).map((u) => (
+            <li key={u.uf}>{u.descricao}</li>
+          ))}
+        </ul>
+      </details>
       {todasNo2Turno && (
         <p className="mt-2 text-[length:var(--text-caption)] font-medium text-muted-foreground">
           2º turno em 25/10 · {pendentes.length} {pendentes.length === 1 ? "governo ainda em disputa" : "governos ainda em disputa"}.
