@@ -93,7 +93,7 @@ function Card({ e, fotos }: { e: Eleito; fotos?: FotosCandidatos }) {
       <div className="mt-3 flex items-center gap-4">
         <FotoCandidato candidato={e.eleito} fotos={fotos} tamanho={80} className="size-16 shrink-0 lg:size-14 xl:size-20" initialsClassName="text-lg" />
         <div className="min-w-0">
-          <h4 className="break-words font-heading text-[length:var(--text-heading)] uppercase leading-none text-foreground">{e.eleito.nome_urna}</h4>
+          <h3 className="break-words font-heading text-[length:var(--text-heading)] uppercase leading-none text-foreground">{e.eleito.nome_urna}</h3>
           <p className="mt-1 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
             {e.eleito.partido}
             {e.eleito.numero ? ` · nº ${e.eleito.numero}` : ""}
