@@ -9,8 +9,8 @@ import type { ProgramaGovernoManifestoPublico, ProgramaGovernoResumo } from "@/l
 import { STATE_PROGRAM_CORE_THEMES, stateProgramTheme } from "@/lib/state-program-themes"
 import { IndicadorFonteTag } from "./IndicadorFonteTag"
 import { AbasFiltro } from "./AbasFiltro"
-import { PartyLogoMark } from "./PartyLogoMark"
-import { getPartyLogoUrl, safeHref } from "@/lib/utils"
+import { corDoPartido } from "@/lib/cores-finalistas"
+import { safeHref } from "@/lib/utils"
 import styles from "./StatePrograms.module.css"
 
 export type StateProgramContext = { themeId: string; label: string; value: string; year: string; source: string }
@@ -45,9 +45,38 @@ function ProgramSummary({ manifesto, slug, name }: { manifesto: ProgramaGovernoM
         <ChevronDown size={17} aria-hidden="true" className={expanded ? styles.rotated : undefined} />
         {expanded ? "Recolher resumo" : "Ler resumo completo"}
       </button>
+      <span aria-hidden="true" className={styles.actionDivider} />
       <Link prefetch={false} href={`/candidato/${slug}?tab=programa`} aria-label={`Abrir programa de ${name}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
     </div>
     {expanded && <ProgramEvidence evidencias={resumo.frases.flatMap(frase => frase.evidencias)} manifesto={manifesto} />}
+  </>
+}
+
+/** Por tema: prévia do primeiro item do tema; o completo abre os demais itens com trechos e fonte. */
+function ThemeSummary({ items, manifesto, slug, name }: {
+  items: ProgramaGovernoResumo["temas"]
+  manifesto: ProgramaGovernoManifestoPublico
+  slug: string
+  name: string
+}) {
+  const [expanded, setExpanded] = useState(false)
+  const bodyId = useId()
+  return <>
+    <div id={bodyId}>
+      {expanded ? items.map(item => <div key={item.id} className={styles.themeItem}>
+        <h5>No programa · {item.titulo}</h5>
+        <p className={styles.summaryText}>{item.descricao}</p>
+        <ProgramEvidence evidencias={item.evidencias} manifesto={manifesto} />
+      </div>) : <p className={`${styles.summaryText} ${styles.preview}`}>{items[0].descricao}</p>}
+    </div>
+    <div className={styles.actions}>
+      <button type="button" aria-expanded={expanded} aria-controls={bodyId} aria-label={`${expanded ? "Recolher resumo" : "Ler resumo completo"} de ${name}`} onClick={() => setExpanded(!expanded)}>
+        <ChevronDown size={17} aria-hidden="true" className={expanded ? styles.rotated : undefined} />
+        {expanded ? "Recolher resumo" : "Ler resumo completo"}
+      </button>
+      <span aria-hidden="true" className={styles.actionDivider} />
+      <Link prefetch={false} href={`/candidato/${slug}?tab=programa`} aria-label={`Abrir programa de ${name}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
+    </div>
   </>
 }
 
@@ -73,7 +102,6 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
   const [view, setView] = useState<"summary" | "themes">("summary")
   const [themeEscolhido, setTheme] = useState("seguranca")
   const [candidate, setCandidate] = useState("all")
-  const [order, setOrder] = useState("asc")
   const themes = [...new Map(programs.flatMap(p => p.manifesto?.estado === "aprovado" ? p.manifesto.resumo?.temas ?? [] : []).map(t => {
     const group = stateProgramTheme(t)
     return [group.id, group.title] as const
@@ -83,8 +111,41 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
   const theme = STATE_PROGRAM_CORE_THEMES.some(([id]) => id === themeEscolhido) || themes.some(([id]) => id === themeEscolhido) ? themeEscolhido : "seguranca"
   const alphabetical = [...programs].sort((a, b) => a.nome_urna.localeCompare(b.nome_urna, "pt-BR"))
   const filtered = alphabetical.filter(p => candidate === "all" || p.slug === candidate)
-  const visible = order === "desc" ? filtered.toReversed() : filtered
+  const visible = filtered
+  const themeTitle = [...STATE_PROGRAM_CORE_THEMES, ...otherThemes].find(([id]) => id === theme)?.[1] ?? theme
   const indicators = context.filter(c => c.themeId === theme)
+
+  const listaProgramas = (
+        <div id={painelId} className={`${styles.programs} ${visible.length === 2 ? styles.pair : ""}`} {...(comAbas ? { role: "tabpanel" } : {})}>
+      {visible.map(p => {
+        const manifesto = p.manifesto?.estado === "aprovado" && p.manifesto.resumo ? p.manifesto : null
+        const items = manifesto?.resumo?.temas.filter(t => stateProgramTheme(t).id === theme) ?? []
+        const party = p.partido_sigla ?? manifesto?.fonte.partido
+        const partyColor = corDoPartido(party)?.cor ?? "var(--gray-950)"
+        const runningMate = runningMates[p.slug]
+        return <article key={`${p.slug}-${view}`} className={styles.program} aria-labelledby={`program-${p.slug}-title`}>
+          <header className={styles.identity}>
+            <span aria-hidden="true" className={styles.accent} style={{ background: partyColor }} />
+            <h4 id={`program-${p.slug}-title`}><Link prefetch={false} href={`/candidato/${p.slug}`}>{p.nome_urna}</Link></h4>
+            <p className={styles.party} style={{ color: partyColor }}>{party ? <><span className="sr-only">Partido </span>{party}</> : "Partido indisponível"}</p>
+            <p className={styles.runningMate}>Vice: {typeof runningMate === "object"
+              ? <>{runningMate.name} (<a href={safeHref(runningMate.source_url) ?? undefined} target="_blank" rel="noopener noreferrer" title={`Fonte consultada em ${runningMate.checked_at.slice(0, 10)}`}>{runningMate.status}</a>)</>
+              : runningMate ?? "informação indisponível"}</p>
+          </header>
+          <div className={styles.content}>
+            {!manifesto ? <>
+              <p className={styles.notice}><FileText size={20} aria-hidden="true" />Programa revisado indisponível nesta cobertura.</p>
+              <Link prefetch={false} className={styles.textLink} href={`/candidato/${p.slug}`}>Consultar ficha <ArrowUpRight size={17} aria-hidden="true" /></Link>
+            </> : view === "summary" ? <ProgramSummary manifesto={manifesto} slug={p.slug} name={p.nome_urna} />
+              : items.length > 0 ? <ThemeSummary items={items} manifesto={manifesto} slug={p.slug} name={p.nome_urna} /> : <>
+                <p className={styles.notice}>Tema não identificado no resumo revisado. Isso não significa ausência no documento completo.</p>
+                <Link prefetch={false} className={styles.textLink} href={`/candidato/${p.slug}?tab=programa`} aria-label={`Abrir programa de ${p.nome_urna}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
+              </>}
+          </div>
+        </article>
+      })}
+    </div>
+  )
 
   return <section id="programas" className={styles.section} aria-labelledby="state-programs-title">
     <header className={styles.heading}>
@@ -109,66 +170,44 @@ export function StatePrograms({ programs: programsTodos, context = [], unavailab
           <option value="all">Todas as candidaturas</option>
           {alphabetical.map(p => <option key={p.slug} value={p.slug}>{p.nome_urna}</option>)}
         </select></label>
-        <label>Ordenação<select value={order} onChange={e => setOrder(e.target.value)}>
-          <option value="asc">Nome: A a Z</option><option value="desc">Nome: Z a A</option>
-        </select></label>
+        <p className={styles.neutralNote}>Candidaturas em ordem alfabética, sem avaliação ou preferência.</p>
       </div>
     </div>
-    {view === "themes" && <div className={styles.themeBar}>
-      <label>Tema do programa<select value={theme} onChange={e => setTheme(e.target.value)}>
-        <optgroup label="Temas principais">{STATE_PROGRAM_CORE_THEMES.map(([id, title]) => <option key={id} value={id}>{title}</option>)}</optgroup>
-        {otherThemes.length > 0 && <optgroup label="Outros temas">{otherThemes.map(([id, title]) => <option key={id} value={id}>{title}</option>)}</optgroup>}
-      </select></label>
-      {showContext && <aside className={styles.context} aria-label="Contexto do estado">
-        <h3>Contexto do estado</h3>
-        {indicators.length > 0 ? indicators.map(c => <div key={c.label}>
-          <p><strong>{c.value}</strong> {c.label} · {c.year}</p><IndicadorFonteTag fonte={c.source} />
-        </div>) : <p>Indicador relacionado a este tema indisponível nesta cobertura.</p>}
-        <p>Indicadores de contexto, sem atribuição de causa ou de resultado às candidaturas.</p>
-      </aside>}
-    </div>}
     <div className={styles.listHeading}>
-      <div><h3>{scopeTitle}</h3><p>{order === "asc" ? "Candidaturas em ordem alfabética" : "Candidaturas em ordem alfabética inversa"}, sem avaliação ou preferência.</p></div>
+      <h3>{scopeTitle}</h3>
       <details className={styles.help}>
         <summary>Como ler os resumos <Info size={16} aria-hidden="true" /></summary>
         <p>Os resumos são baseados nos documentos e revisados editorialmente. Abra o resumo completo para consultar os trechos e suas fontes. Na leitura por tema, a ausência no resumo não significa ausência no documento completo.</p>
       </details>
     </div>
     {unavailable && <p role="status" className={styles.notice}>Não foi possível carregar os programas agora. Consulte as fichas das candidaturas.</p>}
-    <p className="sr-only" role="status">{visible.length} {visible.length === 1 ? "candidatura exibida" : "candidaturas exibidas"}. {view === "summary" ? "Resumo do programa" : `Tema: ${[...STATE_PROGRAM_CORE_THEMES, ...otherThemes].find(([id]) => id === theme)?.[1] ?? theme}`}.</p>
-    <div id={painelId} className={styles.programs} {...(comAbas ? { role: "tabpanel" } : {})}>
-      {visible.map(p => {
-        const manifesto = p.manifesto?.estado === "aprovado" && p.manifesto.resumo ? p.manifesto : null
-        const items = manifesto?.resumo?.temas.filter(t => stateProgramTheme(t).id === theme) ?? []
-        const party = p.partido_sigla ?? manifesto?.fonte.partido
-        const hasPartyLogo = party && getPartyLogoUrl(party)
-        const runningMate = runningMates[p.slug]
-        return <article key={`${p.slug}-${view}`} className={styles.program} aria-labelledby={`program-${p.slug}-title`}>
-          <header className={styles.identity}>
-            <h4 id={`program-${p.slug}-title`}><Link prefetch={false} href={`/candidato/${p.slug}`}>{p.nome_urna}</Link></h4>
-            <p className={styles.runningMate}>Vice: {typeof runningMate === "object"
-              ? <>{runningMate.name} (<a href={safeHref(runningMate.source_url) ?? undefined} target="_blank" rel="noopener noreferrer" title={`Fonte consultada em ${runningMate.checked_at.slice(0, 10)}`}>{runningMate.status}</a>)</>
-              : runningMate ?? "informação indisponível"}</p>
-            {hasPartyLogo ? <span className={styles.partyLogo} role="img" aria-label={`Partido ${party}`}>
-              <PartyLogoMark sigla={party} className="h-8 w-12 rounded-none border-0 p-0 shadow-none sm:h-8 sm:w-12 sm:rounded-none sm:p-0" />
-            </span> : <span className="sr-only">{party ? `Partido ${party}. Logo indisponível.` : "Partido indisponível."}</span>}
-          </header>
-          <div className={styles.content}>
-            {!manifesto ? <>
-              <p className={styles.notice}><FileText size={20} aria-hidden="true" />Programa revisado indisponível nesta cobertura.</p>
-              <Link prefetch={false} className={styles.textLink} href={`/candidato/${p.slug}`}>Consultar ficha <ArrowUpRight size={17} aria-hidden="true" /></Link>
-            </> : view === "summary" ? <ProgramSummary manifesto={manifesto} slug={p.slug} name={p.nome_urna} /> : <>
-              {items.length > 0 ? items.map(item => <div key={item.id} className={styles.themeItem}>
-                <h5>No programa · {item.titulo}</h5>
-                <p className={styles.summaryText}>{item.descricao}</p>
-                <ProgramEvidence evidencias={item.evidencias} manifesto={manifesto} />
-              </div>) : <p className={styles.notice}>Tema não identificado no resumo revisado. Isso não significa ausência no documento completo.</p>}
-              <Link prefetch={false} className={styles.textLink} href={`/candidato/${p.slug}?tab=programa`} aria-label={`Abrir programa de ${p.nome_urna}`}>Abrir programa <ArrowUpRight size={17} aria-hidden="true" /></Link>
-            </>}
-          </div>
-        </article>
-      })}
-    </div>
+    <p className="sr-only" role="status">{visible.length} {visible.length === 1 ? "candidatura exibida" : "candidaturas exibidas"}. {view === "summary" ? "Resumo do programa" : `Tema: ${themeTitle}`}.</p>
+    {view === "summary" ? listaProgramas : <div className={styles.themeLayout}>
+      <nav className={styles.themeNav} aria-label="Tema do programa">
+        <h4>Temas</h4>
+        <ul>
+          {STATE_PROGRAM_CORE_THEMES.map(([id, title]) => <li key={id}><button type="button" aria-pressed={theme === id} onClick={() => setTheme(id)}>{title}</button></li>)}
+        </ul>
+        {otherThemes.length > 0 && <>
+          <p className={styles.themeGroup}>Outros temas</p>
+          <ul>
+            {otherThemes.map(([id, title]) => <li key={id}><button type="button" aria-pressed={theme === id} onClick={() => setTheme(id)}>{title}</button></li>)}
+          </ul>
+        </>}
+      </nav>
+      <div className={styles.themeBody}>
+        <h4 className={styles.themeTitle}>{themeTitle}</h4>
+        <p className={styles.themeLead}>Prévias dos resumos.</p>
+        {showContext && <aside className={styles.context} aria-label="Contexto do estado">
+          <h3>Contexto do estado</h3>
+          {indicators.length > 0 ? indicators.map(c => <div key={c.label}>
+            <p><strong>{c.value}</strong> {c.label} · {c.year}</p><IndicadorFonteTag fonte={c.source} />
+          </div>) : <p>Indicador relacionado a este tema indisponível nesta cobertura.</p>}
+          <p>Indicadores de contexto, sem atribuição de causa ou de resultado às candidaturas.</p>
+        </aside>}
+        {listaProgramas}
+      </div>
+    </div>}
     {visible.length === 0 && !unavailable && <p className={styles.notice}>Nenhuma candidatura disponível nesta cobertura.</p>}
     <p className={styles.disclaimer}><Info size={18} aria-hidden="true" />Os resumos apresentam o conteúdo dos documentos. Propostas e realizações relatadas não comprovam execução.</p>
   </section>
