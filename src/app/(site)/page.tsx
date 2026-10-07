@@ -297,7 +297,8 @@ export default async function Home() {
 
           <div className="space-y-12">
             <Governadores2Turno candidatos={todosCandidatos} fotos={fotos} data={resultados} aliancas={aliancas} />
-            <GovernadoresEleitos1Turno ufs={ufs} data={resultados} fotos={fotos} resumos={todosResumos} />
+            {/* Números da ficha só com a lista ao vivo: no fallback, pontos e processos vêm zerados e virariam "0". */}
+            <GovernadoresEleitos1Turno ufs={ufs} data={resultados} fotos={fotos} resumos={todosResumosResource.sourceStatus === "live" ? todosResumos : null} />
             <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["sem-dado"]} />
           </div>
 

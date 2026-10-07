@@ -370,7 +370,8 @@ describe("rotas da eleição", () => {
     assert.match(home, /href="\/1o-turno"[\s\S]*?Arquivo do 1º turno/)
     assert.doesNotMatch(home, /Resultado completo do 1º turno/)
     // Os duelos estaduais vêm de Governadores2Turno; o bloco do 1º turno entra sem os duelos para não repetir.
-    assert.match(home, /<GovernadoresEleitos1Turno[^>]*resumos=\{todosResumos\}/)
+    // Pontos e processos só com a lista ao vivo: no fallback viriam zerados.
+    assert.match(home, /<GovernadoresEleitos1Turno[^>]*resumos=\{todosResumosResource\.sourceStatus === "live" \? todosResumos : null\}/)
     assert.match(home, /<Resultado1TurnoEstados[^>]*blocos=\{\["sem-dado"\]\}/)
     assert.match(home, /<Senado1Turno[^>]*data=\{resultados\}/)
   })
