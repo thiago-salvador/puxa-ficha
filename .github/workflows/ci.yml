@@ -373,10 +373,22 @@ jobs:
   # classe de regressao. Prova registrada em 2026-08-04: com o nonce removido
   # localmente, todas as rotas falham com "Executing inline script violates
   # the following Content Security Policy directive 'script-src self'".
+  # Roda dentro da imagem oficial do Playwright, na versão do package-lock: o
+  # navegador e as dependências de sistema já vêm nela. Acabou o apt no runner,
+  # que em 07/10/2026 caiu duas vezes seguidas com archive.ubuntu.com fora do ar
+  # (run 37674397721), e acabou o download de ~250 MB por rodada.
+  # Só roda quando o diff toca o que o app carrega (browser-smoke-recorte). Job
+  # pulado conta como verde no branch protection; se o recorte falhar, este job
+  # roda (needs.result != success), então a falha do recorte nunca vira verde.
   browser-smoke:
     name: Rotas e acessibilidade (build local)
+    needs: browser-smoke-recorte
+    if: always() && (needs.browser-smoke-recorte.result != 'success' || needs.browser-smoke-recorte.outputs.aplica == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    container:
+      image: mcr.microsoft.com/playwright:v${{ needs.browser-smoke-recorte.outputs.playwright }}-noble
+      options: --user 1001
     env:
       SUPABASE_URL: https://placeholder.supabase.co
       SUPABASE_ANON_KEY: placeholder-anon-key
@@ -397,92 +409,6 @@ jobs:
         run: npm ci
 
       # Sem cache, cada rodada baixava de novo os ~250 MB de Chromium e WebKit.
-      # Medido em 18/08/2026, sete execucoes do mesmo dia: 48s, 59s, 65s, 80s,
-      # 136s, 287s e 1487s. A ultima nao terminou, foi morta pelo timeout do job
-      # e levou o PR com ela. Variacao de 30x nao e volume de download: e o
-      # apt-get do --with-deps travando.
-      # A chave e a VERSAO do Playwright, nao o hash do package-lock. Com o
-      # lock inteiro, qualquer bump de dependencia invalidaria os 363 MB de
-      # navegador, e o dependabot deste repo roda toda segunda com ate 4 PRs:
-      # o cache viveria menos de uma semana. Os binarios so mudam quando a
-      # versao do Playwright muda. Lido do lockfile, que existe antes do npm ci.
-      - name: Versao do Playwright, para a chave do cache
-        id: pw-versao
-        run: |
-          echo "v=$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")" >> "$GITHUB_OUTPUT"
-
-      - name: Cache dos navegadores do Playwright
-        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ steps.pw-versao.outputs.v }}
-
-      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
-      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
-      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
-      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
-      # traz. O que muda e a resiliencia: cada tentativa morre em 6 min em vez
-      # de pendurar ate os 25 do job, e tenta de novo, porque trava de apt e
-      # transitoria.
-      # A causa raiz do travamento, achada no log de 18/08: o apt do runner tenta
-      # o mirror azure.archive.ubuntu.com, que responde Ign, e fica pendurado sem
-      # timeout. Com estes limites ele desiste do mirror morto em 15s e cai no
-      # archive.ubuntu.com, que responde.
-      - uses: ./.github/actions/pin-apt-mirrors
-
-      # WebKit e obrigatorio, nao escolha: o projeto `mobile` do
-      # playwright.config emula iPhone 14, e todo device iPhone do Playwright
-      # roda em WebKit. O --with-deps tambem fica, porque o WebKit depende de
-      # bibliotecas (libwoff, libhyphen, libmanette) que a imagem do runner nao
-      # traz.
-      #
-      # O `timeout` mata o processo pai, mas o apt-get NETO sobrevive segurando
-      # /var/lib/apt/lists/lock, e por isso a segunda tentativa morria em 2s com
-      # "Could not get lock ... held by process". Medido na primeira execucao
-      # desta mudanca. Por isso a limpeza entre tentativas.
-      # Separado em DOIS passos de proposito. Juntos, num --with-deps unico, o
-      # cache nunca ajudava: o apt roda toda vez, e ele e a parte lenta e
-      # instavel. Separando, o cache mata de fato o download de ~250 MB de
-      # navegador, e sobra so o apt.
-      #
-      # As dependencias de sistema do WebKit sao ~125 pacotes (libwoff, libhyphen,
-      # libmanette, gstreamer). Em 18/08 uma tentativa de 6 min morreu no meio do
-      # download com o mirror azure respondendo Ign, por isso o teto por tentativa
-      # e maior aqui do que a intuicao sugere.
-      #
-      # `pkill -x` casa NOME EXATO. A versao anterior usava `pkill -f
-      # 'apt-get|dpkg'`, e o -f casa contra a linha de comando inteira: a linha do
-      # proprio pkill contem "apt-get", entao ele se matava. O log de 18/08 mostra
-      # "3451 Killed sudo pkill -9 -f 'apt-get|dpkg'".
-      - name: Dependencias de sistema dos navegadores (apt)
-        timeout-minutes: 22
-        run: |
-          limpar_apt() {
-            sudo pkill -9 -x apt-get 2>/dev/null || true
-            sudo pkill -9 -x dpkg 2>/dev/null || true
-            sudo rm -f /var/lib/apt/lists/lock /var/cache/apt/archives/lock \
-                       /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend 2>/dev/null || true
-            sudo dpkg --configure -a 2>/dev/null || true
-          }
-          for tentativa in 1 2; do
-            # Sem -k, o GNU timeout manda SIGTERM e espera para sempre se o
-            # apt-get neto ignorar o sinal. Em 19/08 o a11y ficou 11+ min no
-            # primeiro install-deps (run 32263428277). -k 15 manda SIGKILL.
-            if timeout -k 15 300 npx playwright install-deps chromium webkit; then
-              exit 0
-            fi
-            echo "::warning::tentativa $tentativa de instalar dependencias falhou ou travou em 5 min"
-            limpar_apt
-            sleep 10
-          done
-          echo "::error::duas tentativas de instalar as dependencias de sistema falharam"
-          exit 1
-
-      # Este e o passo que o cache serve. Com hit, sai em segundos.
-      - name: Install Playwright browsers
-        timeout-minutes: 10
-        run: npx playwright install chromium webkit
-
       - name: Build (produção, env placeholder)
         run: npm run build
 
@@ -537,3 +463,48 @@ jobs:
             playwright-report/
             test-results/
           retention-days: 7
+
+  # Decide se o browser-smoke precisa rodar e lê a versão do Playwright para a
+  # imagem. Push na main roda sempre; no PR, só quando o diff toca o que o app
+  # carrega (scripts/ci/browser-smoke-paths.mjs, testado). Base indisponível
+  # roda por precaução.
+  browser-smoke-recorte:
+    name: Recorte do smoke de rotas
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      aplica: ${{ steps.recorte.outputs.aplica }}
+      playwright: ${{ steps.versao.outputs.v }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Versão do Playwright do package-lock
+        id: versao
+        run: |
+          set -euo pipefail
+          v="$(node -p "require('./package-lock.json').packages['node_modules/playwright'].version")"
+          [[ "$v" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "::error::versão do Playwright inválida: $v"; exit 1; }
+          echo "v=$v" >> "$GITHUB_OUTPUT"
+
+      - name: Validar classificador do recorte
+        run: node --test tests/ci-browser-smoke-paths.test.mjs
+
+      - name: Decidir se o diff toca o app
+        id: recorte
+        env:
+          EVENTO: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENTO" != "pull_request" ] || ! git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            echo "aplica=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          MUDADOS="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
+          APLICA="$(printf '%s\n' "$MUDADOS" | node scripts/ci/browser-smoke-paths.mjs)"
+          printf '%s\n' "$MUDADOS"
+          echo "aplica=$APLICA" >> "$GITHUB_OUTPUT"
