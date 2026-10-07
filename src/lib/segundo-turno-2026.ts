@@ -52,6 +52,14 @@ export function diasAte2Turno(agora: string | number, alvo: string = DATA_2TURNO
   return Math.round((dia - hoje) / 86_400_000)
 }
 
+const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+
+/** Data da votação, da mesma constante da contagem: "25 de outubro" ou, curta, "25/10". */
+export function formatarData2Turno(estilo: "longo" | "curto" = "longo", alvo: string = DATA_2TURNO_2026): string {
+  const [, mes, dia] = alvo.split("-")
+  return estilo === "curto" ? `${dia}/${mes}` : `${Number(dia)} de ${MESES[Number(mes) - 1]}`
+}
+
 /** "Faltam 20 dias", "Falta 1 dia", "É hoje"; null quando a data já passou. */
 export function rotuloContagem2Turno(dias: number | null): string | null {
   if (dias === null || dias < 0) return null
@@ -94,6 +102,8 @@ export interface CelulaLadoALado {
   valor: string
   detalhe?: string
   semDado: boolean
+  /** Sigla para o logo do partido (só a linha "Partido"). */
+  partido?: string
 }
 
 export interface LinhaLadoALado {
@@ -120,7 +130,8 @@ function celulaResultado(c: CandidatoResultado1Turno): CelulaLadoALado {
 
 function celulaPartido(c: CandidatoResultado1Turno): CelulaLadoALado {
   if (!c.partido) return vazio()
-  return { valor: c.partido, detalhe: c.numero ? `nº ${c.numero}` : undefined, semDado: false }
+  // Partido e número na mesma linha ("PL · nº 22"), como no estudo de layout de 06/10.
+  return { valor: c.numero ? `${c.partido} · nº ${c.numero}` : c.partido, semDado: false, partido: c.partido }
 }
 
 function celulaVice(c: CandidatoResultado1Turno): CelulaLadoALado {

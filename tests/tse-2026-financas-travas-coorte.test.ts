@@ -8,7 +8,7 @@ import {
   type EstadoProducao,
   type PlanoFinancas2026,
 } from "../scripts/lib/tse-2026-financas-plano"
-import { lerArgs, travasDoPortao } from "../scripts/tse-2026-financas"
+import { idsDaCoorteDasTravas, lerArgs, travasDoPortao } from "../scripts/tse-2026-financas"
 
 // Forma do live de 29/09: coorte focada de 48 fichas, 32 alteradas, produção com 400 fichas fora da coorte.
 function cenario(fichas = 48, alteradas = 32) {
@@ -99,5 +99,45 @@ describe("travas do writer em coorte focada", () => {
     assert.ok(revisado >= 0 && retornoRevisado > revisado && falha > retornoRevisado, "o ramo revisado retorna antes de gravar recibos de falha")
     assert.match(reprovado.slice(revisado, retornoRevisado), /portao-reprovado\.json/)
     assert.doesNotMatch(reprovado.slice(revisado, retornoRevisado), /gravarRecibosDeFalha/)
+  })
+})
+
+describe("travas do agendado com o corte do turno ativo", () => {
+  // Forma do agendado de 07/10: coorte de 16 fichas, 11 com receita no pacote e na produção, centenas encerradas publicadas.
+  function cenarioCorte() {
+    const coorte = Array.from({ length: 16 }, (_, index) => ({ id: `c${index}`, slug: `p${index}` }))
+    const comReceita = coorte.slice(0, 11)
+    const plano = {
+      acoes: comReceita.map((ficha, index) => ({
+        tipo: "atualizar_financiamento" as const, slug: ficha.slug, id: `f${index}`,
+        antes: { total_arrecadado: 100 }, depois: { total_arrecadado: 110 },
+      })),
+      recibos: coorte.map((ficha, index) => ({ candidato_id: ficha.id, alvo: ficha.slug, fonte: FONTE_RECIBO_FINANCIAMENTO, resultado: index < 11 ? "encontrado" : "vazio", detalhe: "{}" })),
+      revisao: [],
+      resumo: { fichas_publicas: coorte.length },
+    } as unknown as PlanoFinancas2026
+    const linha = (candidato_id: string) => ({ candidato_id, ano_eleicao: 2026 }) as unknown as EstadoProducao["financiamento"][number]
+    const estado: EstadoProducao = {
+      financiamento: [...comReceita.map((ficha) => linha(ficha.id)), ...Array.from({ length: 460 }, (_, index) => linha(`encerrada${index}`))],
+      verificacoes: [], patrimonio: [], ausencias: [],
+    }
+    return { plano, estado, coorte }
+  }
+  const agendado = () => lerArgs(["--apply", "--agendado"])
+
+  it("sem o corte, reproduz a falha de 07/10; com o corte, a cobertura mede só a coorte", () => {
+    const { plano, estado, coorte } = cenarioCorte()
+    const semCorte = idsDaCoorteDasTravas(coorte, { coortePrivada: false, recortadaPeloTurno: false })
+    assert.equal(semCorte, null)
+    assert.ok(travasDoPortao(agendado(), plano, estado, semCorte, true).some((falha) => falha.includes("regressão")))
+    const comCorte = idsDaCoorteDasTravas(coorte, { coortePrivada: false, recortadaPeloTurno: true })
+    assert.deepEqual(travasDoPortao(agendado(), plano, estado, comCorte, true), [])
+  })
+
+  it("com o corte, pacote que perde receita da coorte continua travando", () => {
+    const { plano, estado, coorte } = cenarioCorte()
+    const regrediu = { ...plano, recibos: plano.recibos.map((r) => ({ ...r, resultado: "vazio" })) } as unknown as PlanoFinancas2026
+    const ids = idsDaCoorteDasTravas(coorte, { coortePrivada: false, recortadaPeloTurno: true })
+    assert.ok(travasDoPortao(agendado(), regrediu, estado, ids, true).some((falha) => falha.includes("regressão")))
   })
 })

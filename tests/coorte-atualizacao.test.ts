@@ -15,7 +15,7 @@ import {
   filtrarCoorteAtualizacao,
   isTabelaFaseAusente,
 } from "../scripts/lib/coorte-atualizacao"
-import { lerCandidaturasEncerradas, semEncerradasPorSlug, semEncerradasPorSq } from "../scripts/lib/data-freshness/coorte-atualizacao"
+import { lerCandidaturasEncerradas, semEncerradasPorSlug, semEncerradasPorSq, semOrfasDeVagaEncerrada } from "../scripts/lib/data-freshness/coorte-atualizacao"
 import { buildCoverageMatrix, lerEncerradasDoSnapshot, missingReceiptCells, blockingCells } from "../scripts/audit/audit-cobertura-fichas"
 import { checkProcessosReceipts } from "../scripts/audit/check-processos-receipts"
 import type { FaseEleitoral2026 } from "../src/lib/types"
@@ -157,5 +157,40 @@ describe("frescor e réguas tratam ficha congelada como encerrada", () => {
   it("coorteAtualizacaoDe ignora linha sem encerramento", () => {
     const c = coorteAtualizacaoDe([{ candidato_id: "x", slug: "gov-2t", fase_eleitoral: "segundo_turno", fase_turno: 1, atualizacao_encerrada_em: null as unknown as string }])
     assert.equal(c.encerradas.size, 0)
+  })
+})
+
+describe("auditoria: candidatura substituída numa vaga encerrada", () => {
+  // Caso de 07/10: o titular substituído (PABLO MARÇAL) nunca teve ficha; a vigente da vaga foi encerrada.
+  const vaga = (l: { uf: string | null; cargo: string; sq: string }) => `${l.uf ?? "BR"}:${l.cargo}:${l.sq}`
+  const linha = (sq_candidato: string, cargo = "PRESIDENTE", coligacao = "col-1") => ({ sq_candidato, uf: null, cargo, sq: coligacao })
+  const recorte = lerCandidaturasEncerradas([{ candidato_id: "c1", slug: "vigente", atualizacao_encerrada_em: "2026-10-05T00:00:00Z", sq_candidatos: ["sq-vigente"] }])
+
+  const resolvidas = new Set(["sq-substituido"])
+
+  it("sai a substituída sem ficha; fica a candidatura publicada ativa, mesmo na mesma vaga", () => {
+    const oficial = [linha("sq-vigente"), linha("sq-substituido"), linha("sq-ativo-mesma-vaga"), linha("sq-outra-vaga", "PRESIDENTE", "col-2")]
+    const publicados = new Set(["sq-vigente", "sq-ativo-mesma-vaga"])
+    const restantes = semOrfasDeVagaEncerrada(oficial, publicados, recorte, vaga, resolvidas).map((l) => l.sq_candidato)
+    assert.deepEqual(restantes, ["sq-vigente", "sq-ativo-mesma-vaga", "sq-outra-vaga"])
+    // O recorte por SQ continua tirando a vigente encerrada depois.
+    assert.deepEqual(semEncerradasPorSq(semOrfasDeVagaEncerrada(oficial, publicados, recorte, vaga, resolvidas), recorte).map((l) => l.sq_candidato), ["sq-ativo-mesma-vaga", "sq-outra-vaga"])
+  })
+
+  it("candidatura nova na vaga encerrada, sem evidência de substituição ou inaptidão, continua cobrada", () => {
+    const oficial = [linha("sq-vigente"), linha("sq-substituido"), linha("sq-nova")]
+    const restantes = semOrfasDeVagaEncerrada(oficial, new Set(["sq-vigente"]), recorte, vaga, resolvidas).map((l) => l.sq_candidato)
+    assert.deepEqual(restantes, ["sq-vigente", "sq-nova"])
+  })
+
+  it("vaga sem ficha publicada encerrada não fecha, nem para quem tem evidência", () => {
+    const oficial = [linha("sq-vigente"), linha("sq-substituido")]
+    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set<string>(), recorte, vaga, resolvidas).map((l) => l.sq_candidato), ["sq-vigente", "sq-substituido"])
+  })
+
+  it("sem recorte ou sem evidência, nada muda", () => {
+    const oficial = [linha("sq-vigente"), linha("sq-substituido")]
+    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set(["sq-vigente"]), lerCandidaturasEncerradas([]), vaga, resolvidas), oficial)
+    assert.deepEqual(semOrfasDeVagaEncerrada(oficial, new Set(["sq-vigente"]), recorte, vaga, new Set<string>()), oficial)
   })
 })

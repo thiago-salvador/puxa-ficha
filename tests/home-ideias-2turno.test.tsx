@@ -19,7 +19,7 @@ import { formatarMargem, montarMapaPresidente } from "@/lib/mapa-presidente-uf"
 import { MEU_ESTADO_CHAVE, lerUfSalva, ordenarComMeuEstado, salvarUf } from "@/lib/meu-estado"
 import { modoCompartilhar, nomeLegivel, textoDoDuelo } from "@/lib/compartilhar-duelo"
 import { COR_ESPECTRO_HEX, coresDosFinalistas } from "@/lib/cores-finalistas"
-import { getResultados1Turno, type CandidatoResultado1Turno, type DisputaResultado1Turno, type PresidenteUf1Turno, type Resultados1Turno } from "@/lib/resultados-1turno"
+import { formatarPercentual, getResultados1Turno, type CandidatoResultado1Turno, type DisputaResultado1Turno, type PresidenteUf1Turno, type Resultados1Turno } from "@/lib/resultados-1turno"
 import { MapaPresidente1Turno } from "@/components/MapaPresidente1Turno"
 import { Pesquisas2Turno } from "@/components/SegundoTurnoPresidente"
 import { Governadores2Turno } from "@/components/SegundoTurnoGovernadores"
@@ -203,6 +203,15 @@ describe("tendência das pesquisas do 2º turno", () => {
     assert.doesNotMatch(html, /data-pf-tendencia-2turno/)
     assert.match(html, /data-pf-pesquisas-2turno/)
   })
+
+  it("sem pesquisa do 2º turno, some por padrão e mostra o aviso na home", () => {
+    assert.equal(renderToStaticMarkup(<Pesquisas2Turno linhas={[]} nomes={["FLAVIO BOLSONARO", "LULA"]} />), "")
+    const html = renderToStaticMarkup(<Pesquisas2Turno linhas={[]} nomes={["FLAVIO BOLSONARO", "LULA"]} mostrarVazio />)
+    assert.match(html, /data-pf-pesquisas-2turno-vazio/)
+    assert.match(html, /Nenhuma pesquisa do 2º turno publicada ainda/)
+    assert.match(html, /Flavio Bolsonaro x Lula/)
+    assert.doesNotMatch(html, /data-pf-pesquisas-2turno="true"/)
+  })
 })
 
 describe("duelos de governador: vantagem e meu estado", () => {
@@ -288,14 +297,25 @@ describe("mapa do 1º turno por UF", () => {
     const html = renderToStaticMarkup(<MapaPresidente1Turno data={getResultados1Turno()} />)
     assert.equal((html.match(/data-pf-mapa-uf=/g) ?? []).length, 27)
     assert.equal((html.match(/<title>/g) ?? []).length, 27)
-    assert.match(html, /<details[^>]*data-pf-mapa-tabela/)
-    assert.doesNotMatch(html, /<details[^>]*open/)
+    assert.match(html, /data-pf-mapa-tabela/)
+    assert.match(html, /aria-expanded="false"[^>]*data-pf-mapa-ver-todas/)
     assert.equal((html.match(/data-pf-mapa-linha=/g) ?? []).length, 27)
+    assert.equal((html.match(/<tr class="(?!hidden)[^"]*"[^>]*data-pf-mapa-linha=/g) ?? []).length, 8, "lista curta: 8 maiores eleitorados")
+    assert.match(html, /data-pf-mapa-detalhe="SP"/)
+    assert.match(html, /data-pf-mapa-destaque="SP"/)
+    assert.match(html, /href="\/1o-turno\/sp"/)
     const porUf = getResultados1Turno().presidente_por_uf ?? []
     const venceu = (nome: string) => porUf.filter((u) => u.vencedor.nome_urna === nome).length
     for (const nome of new Set(porUf.map((u) => u.vencedor.nome_urna))) {
-      assert.match(html, new RegExp(`mais votado em ${venceu(nome)} estado`))
+      assert.match(html, new RegExp(`mais votado em ${venceu(nome)} UF`))
     }
+    // UF real em que o segundo finalista nacional venceu: as colunas seguem a ordem nacional, nunca o vencedor local.
+    const invertida = porUf.find((u) => u.vencedor.sq === u.finalistas[1].sq)
+    assert.ok(invertida, "o snapshot tem UF vencida pelo segundo finalista")
+    const linha = html.slice(html.indexOf(`data-pf-mapa-linha="${invertida.uf}"`))
+    const [pa, pb] = invertida.finalistas.map((f) => formatarPercentual(f.percentual_validos))
+    const celulas = [...linha.slice(0, linha.indexOf("</tr>")).matchAll(/<td[^>]*>([^<]*)<\/td>/g)].map((m) => m[1])
+    assert.deepEqual(celulas.slice(0, 2), [pa, pb])
   })
 
   it("sem dado por UF, o mapa some", () => {

@@ -9,6 +9,8 @@ test("hero da home: preload e imagem compartilham srcset responsivo sem baixar o
   assert.match(page, /loading: "eager"/)
   assert.match(page, /fetchPriority: "high"/)
   assert.match(page, /preload\(heroImage\.src,/)
+  // Com os finalistas o hero mostra os retratos: a imagem do dossiê só tem preload no hero de fallback.
+  assert.match(page, /if \(!finalistasPresidente\) \{[\s\S]*?preload\(heroImage\.src,/)
   assert.match(page, /imageSrcSet:\s*heroImage\.srcSet/)
   assert.match(page, /imageSizes:\s*heroImage\.sizes/)
   assert.match(page, /preload\("\/images\/hero-dossie-mobile\.webp", \{[^}]*media: "\(max-width: 640px\)"/)
@@ -26,4 +28,11 @@ test("a faixa \"Sobre o projeto\" do fim da página saiu: o hero voltou ao topo"
   const page = readFileSync("src/app/(site)/page.tsx", "utf8")
   assert.doesNotMatch(page, /Sobre o projeto/)
   assert.doesNotMatch(page, /hero-dossie-mobile\.webp" \/>/)
+})
+
+test("hero com finalistas: foto de celular escondida no desktop não tem preload nem baixa em tamanho real", () => {
+  const hero = readFileSync("src/components/HomeHero2026.tsx", "utf8")
+  const foto = hero.match(/data-pf-hero-foto-celular>[\s\S]*?<Image ([^>]*)\/>/)?.[1] ?? ""
+  assert.match(foto, /sizes="\(min-width: 1024px\) 1px,/)
+  assert.doesNotMatch(foto, /\b(priority|preload)\b/)
 })

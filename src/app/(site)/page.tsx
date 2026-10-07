@@ -16,17 +16,17 @@ import { HomeQuizIntro } from "@/components/HomeQuizIntro"
 import { HomeRecentUpdates } from "@/components/HomeRecentUpdates"
 import { HomeRecentUpdatesData } from "@/components/HomeRecentUpdatesData"
 import { PresidentialElectionSections } from "@/components/PresidentialElectionSections"
-import { SlashDivider } from "@/components/SlashDivider"
 import { Footer } from "@/components/Footer"
 import { DataSourceNotice } from "@/components/DataSourceNotice"
 import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { JsonLd } from "@/components/JsonLd"
 import { RevelarBarras } from "@/components/RevelarBarras"
 import { HomeHero2026 } from "@/components/HomeHero2026"
-import { ResultadoPreviaBanner, TituloSecao } from "@/components/Resultado1TurnoPartes"
+import { ResultadoPreviaBanner } from "@/components/Resultado1TurnoPartes"
 import { Resultado1TurnoEstados } from "@/components/Resultado1TurnoEstados"
+import { GovernadoresEleitos1Turno } from "@/components/GovernadoresEleitos1Turno"
+import { Senado1Turno } from "@/components/Senado1Turno"
 import { EspectroEleitos1Turno } from "@/components/EspectroEleitos1Turno"
-import { UfResultadoSelector } from "@/components/UfResultadoSelector"
 import { LadoALado2Turno, Pesquisas2Turno } from "@/components/SegundoTurnoPresidente"
 import { Governadores2Turno } from "@/components/SegundoTurnoGovernadores"
 import { MapaPresidente1Turno } from "@/components/MapaPresidente1Turno"
@@ -72,12 +72,12 @@ export const metadata: Metadata = {
 const LINK_SETA =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold underline underline-offset-4 hover:text-[var(--gray-600)]"
 
-function pesquisasPresidenciais(): StatePollScenario[] {
-  // O catálogo falha fechado com JSON inválido; aqui isso só esconde as pesquisas do 2º turno.
+function pesquisasPresidenciais(): StatePollScenario[] | null {
+  // O catálogo falha fechado com JSON inválido: null esconde a seção, sem dizer que não há pesquisa.
   try {
     return loadPresidentialPolls()
   } catch {
-    return []
+    return null
   }
 }
 
@@ -91,15 +91,6 @@ export default async function Home() {
     loading: "eager",
     fetchPriority: "high",
     className: "h-full w-full object-cover",
-  })
-  // O hero é o elemento LCP da home. Sem preload, o navegador só descobria a
-  // imagem depois de ler o HTML e competir com os scripts (Lighthouse
-  // mobile: 283 ms de atraso de descoberta, LCP 4,8 s). Uma dica por faixa,
-  // espelhando o <picture> do hero, para o preload não baixar a versão errada.
-  preload("/images/hero-dossie-mobile.webp", { as: "image", fetchPriority: "high", media: "(max-width: 640px)" })
-  preload(heroImage.src, {
-    as: "image", fetchPriority: "high", media: "(min-width: 641px)",
-    imageSrcSet: heroImage.srcSet, imageSizes: heroImage.sizes,
   })
 
   const [todosResumosResource, comparaveisResource, fasesEleitorais, fotos] = await Promise.all([
@@ -144,6 +135,18 @@ export default async function Home() {
   const temResultado = hasResultados1Turno(resultados)
   const presidente = temResultado ? getDisputa1Turno("Presidente", "BR", resultados) : null
   const finalistasPresidente = finalistasDaDisputa(presidente)
+  if (!finalistasPresidente) {
+    // O hero é o elemento LCP da home. Sem preload, o navegador só descobria a
+    // imagem depois de ler o HTML e competir com os scripts (Lighthouse
+    // mobile: 283 ms de atraso de descoberta, LCP 4,8 s). Uma dica por faixa,
+    // espelhando o <picture> do hero, para o preload não baixar a versão errada.
+    // Com os finalistas, o hero mostra os retratos e não usa esta imagem.
+    preload("/images/hero-dossie-mobile.webp", { as: "image", fetchPriority: "high", media: "(max-width: 640px)" })
+    preload(heroImage.src, {
+      as: "image", fetchPriority: "high", media: "(min-width: 641px)",
+      imageSrcSet: heroImage.srcSet, imageSizes: heroImage.sizes,
+    })
+  }
   // Arquivo de alianças validado contra o snapshot; inválido, a seção e as linhas de apoio somem.
   const aliancas = temResultado ? getAliancas2Turno(resultados) : null
   const compararPresidente = linkCompararFinalistas(candidatosGrade)
@@ -151,7 +154,9 @@ export default async function Home() {
     ? ([finalistasPresidente[0].slug, finalistasPresidente[1].slug] as [string, string])
     : null
   // Limite alto: a tendência usa todas as pesquisas do confronto; a lista mostra só as seis mais recentes.
-  const pesquisas2Turno = slugsFinalistas ? selecionarPesquisasDoConfronto(pesquisasPresidenciais(), slugsFinalistas, 60) : []
+  // "Nenhuma pesquisa publicada" só com o catálogo lido e os dois slugs: falha de dado não vira ausência de pesquisa.
+  const catalogoPesquisas = slugsFinalistas ? pesquisasPresidenciais() : null
+  const pesquisas2Turno = slugsFinalistas && catalogoPesquisas ? selecionarPesquisasDoConfronto(catalogoPesquisas, slugsFinalistas, 60) : []
   // Programas só dos dois finalistas à Presidência; sem o par publicado, todos os candidatos.
   const candidatosProgramas = slugsFinalistas
     ? candidatos.filter((candidato) => slugsFinalistas.includes(candidato.slug))
@@ -271,20 +276,9 @@ export default async function Home() {
               profissoes={profissoesFinalistas}
             />
           )}
-          {presidente && aliancas && <Aliancas2TurnoSecao aliancas={aliancas} disputa={presidente} data={resultados} />}
+          {presidente && aliancas && <Aliancas2TurnoSecao aliancas={aliancas} disputa={presidente} />}
           <div>
-            {finalistasPresidente && (
-              <Pesquisas2Turno
-                linhas={pesquisas2Turno}
-                nomes={[finalistasPresidente[0].nome_urna, finalistasPresidente[1].nome_urna]}
-                partidos={[finalistasPresidente[0].partido, finalistasPresidente[1].partido]}
-              />
-            )}
-            {(resultados.presidente_por_uf?.length ?? 0) > 0 && (
-              <div className="mt-16 sm:mt-20">
-                <MapaPresidente1Turno data={resultados} />
-              </div>
-            )}
+            {(resultados.presidente_por_uf?.length ?? 0) > 0 && <MapaPresidente1Turno data={resultados} />}
             <p className="mt-2">
               <Link href="/1o-turno" className={LINK_SETA}>
                 Arquivo do 1º turno <ArrowRight className="size-3.5" aria-hidden="true" />
@@ -292,23 +286,23 @@ export default async function Home() {
             </p>
           </div>
 
+          {finalistasPresidente && (
+            <Pesquisas2Turno
+              linhas={pesquisas2Turno}
+              nomes={[finalistasPresidente[0].nome_urna, finalistasPresidente[1].nome_urna]}
+              partidos={[finalistasPresidente[0].partido, finalistasPresidente[1].partido]}
+              mostrarVazio={catalogoPesquisas !== null}
+            />
+          )}
+
           <div className="space-y-12">
             <Governadores2Turno candidatos={todosCandidatos} fotos={fotos} data={resultados} aliancas={aliancas} />
-            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["eleitos", "sem-dado"]} />
+            {/* Números da ficha só com a lista ao vivo: no fallback, pontos e processos vêm zerados e virariam "0". */}
+            <GovernadoresEleitos1Turno ufs={ufs} data={resultados} fotos={fotos} resumos={todosResumosResource.sourceStatus === "live" ? todosResumos : null} />
+            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["sem-dado"]} />
           </div>
 
-          <section id="senado-1turno" className="scroll-mt-24" aria-labelledby="senado-1turno-titulo">
-            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-              <TituloSecao titulo="Senado" id="senado-1turno-titulo">
-                As duas vagas de cada estado foram decididas no 1º turno.
-              </TituloSecao>
-              <div className="w-full max-w-sm">
-                <UfResultadoSelector options={opcoesUf} basePath="/1o-turno" />
-              </div>
-            </div>
-            <SlashDivider className="mb-8 mt-6" />
-            <Resultado1TurnoEstados ufs={ufs} data={resultados} fotos={fotos} blocos={["senado"]} />
-          </section>
+          <Senado1Turno ufs={ufs} data={resultados} fotos={fotos} />
 
           <EspectroEleitos1Turno data={resultados} />
         </div>

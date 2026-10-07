@@ -24,7 +24,7 @@ test.describe("Doadores page SSR", () => {
     await expect(page.locator("input[name=q]")).toHaveValue("silva")
 
     // Results heading with the query term
-    await expect(page.getByText('Resultados para busca semelhante a "silva"')).toBeVisible()
+    await expect(page.getByText('Resultados para "silva"')).toBeVisible()
 
     // Fixture donor names rendered in the result list
     await expect(page.getByText("JOAO GONCALVES SILVA")).toBeVisible()

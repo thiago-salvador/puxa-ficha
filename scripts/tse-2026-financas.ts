@@ -130,11 +130,15 @@ async function selecionarTudo<T>(
   }
 }
 
+// Leituras de fichas que a coorte de atualização recortou (corte do turno ativo).
+const RECORTADAS_PELO_TURNO = new WeakSet<readonly FichaPublica[]>()
+
 export async function carregarPublicos(): Promise<FichaPublica[]> {
   // coorte-atualizacao: aplica
   const rows = await selecionarTudo<FichaPublica>("candidatos_publico", "id, slug", (q) => q.order("slug"))
   if (rows.length === 0) throw new Error("candidatos_publico vazio: nada a planejar")
   const current = await aplicarCoorteAtualizacao(rows, "tse-2026-financas")
+  if (current.length < rows.length) RECORTADAS_PELO_TURNO.add(current)
   const cohortPath = process.env.PF_TSE_COHORT_PROFILES
   if (!cohortPath) return current
   const snapshot = JSON.parse(readFileSync(assertOutsideRepository(cohortPath, "PF_TSE_COHORT_PROFILES"), "utf8")) as FichaPublica[]
@@ -594,8 +598,24 @@ export function travasDoPortao(
   ]
 }
 
+/**
+ * Coorte que recorta o estado de produção nas travas. Além da coorte privada
+ * (PF_TSE_COHORT_PROFILES), vale a coorte de atualização quando o corte do turno
+ * está ativo: as fichas encerradas seguem publicadas, congeladas, e contá-las
+ * reprovaria todo dia um pacote completo (07/10: 16 fichas contra centenas).
+ */
+export function idsDaCoorteDasTravas(
+  publicos: readonly FichaPublica[],
+  origem: { coortePrivada: boolean; recortadaPeloTurno: boolean },
+): ReadonlySet<string> | null {
+  return origem.coortePrivada || origem.recortadaPeloTurno ? new Set(publicos.map((ficha) => ficha.id)) : null
+}
+
 function idsDaCoorteFixada(publicos: readonly FichaPublica[]): ReadonlySet<string> | null {
-  return process.env.PF_TSE_COHORT_PROFILES ? new Set(publicos.map((ficha) => ficha.id)) : null
+  return idsDaCoorteDasTravas(publicos, {
+    coortePrivada: Boolean(process.env.PF_TSE_COHORT_PROFILES),
+    recortadaPeloTurno: RECORTADAS_PELO_TURNO.has(publicos),
+  })
 }
 
 /** Dry-run: roda sobre o plano revisado as mesmas travas do live e grava `travas.json`. Não escreve no banco. */
