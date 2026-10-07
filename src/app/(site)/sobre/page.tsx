@@ -85,7 +85,7 @@ function Secao({
         {titulo}
       </h2>
       {subtitulo ? (
-        <p className="mt-2 text-[length:var(--text-body-lg)] font-medium leading-snug text-muted-foreground sm:text-[22px]">{subtitulo}</p>
+        <p className="mt-2 text-[length:var(--text-body-lg)] font-medium leading-snug text-muted-foreground sm:text-[length:var(--text-heading-sm)]">{subtitulo}</p>
       ) : null}
       <div className="mt-6">{children}</div>
     </section>
@@ -148,7 +148,7 @@ export default function SobrePage() {
           <h1 className="mt-2 font-heading uppercase leading-[0.85] text-white" style={{ fontSize: "clamp(36px, 8vw, 80px)" }}>
             Sobre o Puxa Ficha
           </h1>
-          <p className="mt-3 text-[length:var(--text-body-lg)] font-medium text-white/90 sm:text-[22px]">Política com contexto.</p>
+          <p className="mt-3 text-[length:var(--text-body-lg)] font-medium text-white/90 sm:text-[length:var(--text-heading-sm)]">Política com contexto.</p>
         </div>
       </section>
 
