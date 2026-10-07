@@ -143,7 +143,7 @@ describe("hero da home", () => {
     assert.match(html, /<h1[^>]*>Puxa Ficha<\/h1>/)
     assert.match(visivel, /2º turno em 25 de outubro/)
     assert.match(html, /data-pf-contagem-2turno="20"/)
-    assert.match(visivel, /Faltam 20 dias/)
+    assert.match(visivel, /Faltam 19 dias, 20 horas e 0 minutos/)
     assert.match(html, /data-pf-hero-duelo="Presidente"/)
     // Mesmo duelo do topo do 1º turno, com a barra dos votos válidos, e a faixa horizontal abaixo dela.
     assert.match(html, /data-pf-duelo-1turno="Presidente"/)
