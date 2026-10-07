@@ -115,7 +115,9 @@ function FinalistaHero({ candidato, cor, coluna, foto }: { candidato: CandidatoR
         {/* Abaixo do lg a foto vem acima do nome, nunca atrás do texto. */}
         {foto && (
           <div aria-hidden="true" className="relative mb-3 aspect-square w-full max-w-[180px] overflow-hidden lg:hidden" data-pf-hero-foto-celular>
-            <Image src={foto} alt="" fill priority sizes="(min-width: 640px) 180px, 45vw" className="object-cover object-[center_15%]" />
+            {/* Escondida do lg em diante (lá entra o RetratoFundo): sizes de 1px e sem preload, para o
+                desktop não baixar estas fotos junto com os retratos largos. */}
+            <Image src={foto} alt="" fill loading="eager" sizes="(min-width: 1024px) 1px, (min-width: 640px) 180px, 45vw" className="object-cover object-[center_15%]" />
           </div>
         )}
         <span aria-hidden="true" className="block h-1.5 w-full rounded-[1px] sm:h-2" style={{ background: cor }} />

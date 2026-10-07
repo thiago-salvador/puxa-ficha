@@ -29,3 +29,10 @@ test("a faixa \"Sobre o projeto\" do fim da página saiu: o hero voltou ao topo"
   assert.doesNotMatch(page, /Sobre o projeto/)
   assert.doesNotMatch(page, /hero-dossie-mobile\.webp" \/>/)
 })
+
+test("hero com finalistas: foto de celular escondida no desktop não tem preload nem baixa em tamanho real", () => {
+  const hero = readFileSync("src/components/HomeHero2026.tsx", "utf8")
+  const foto = hero.match(/data-pf-hero-foto-celular>[\s\S]*?<Image ([^>]*)\/>/)?.[1] ?? ""
+  assert.match(foto, /sizes="\(min-width: 1024px\) 1px,/)
+  assert.doesNotMatch(foto, /\b(priority|preload)\b/)
+})
