@@ -53,3 +53,23 @@ export function semEncerradasPorSlug<T extends { slug?: string | null }>(linhas:
   if (recorte.slugs.size === 0) return [...linhas]
   return linhas.filter((linha) => !linha.slug || !recorte.slugs.has(linha.slug))
 }
+
+/**
+ * Candidatura oficial nunca publicada que divide a vaga (uf:cargo:coligação) com uma
+ * candidatura publicada e encerrada: o titular substituído ou a vice inapta da chapa.
+ * Antes do corte ela casava com a vigente publicada ("substituted" ou "inactive_vice");
+ * com a vigente fora da comparação, sobraria sozinha e viraria "inclusion". Recebe o
+ * oficial e o publicado ANTES do recorte por SQ, porque é a vigente encerrada que fecha a vaga.
+ */
+export function semOrfasDeVagaEncerrada<T extends { sq_candidato: string }>(
+  oficial: readonly T[],
+  sqsPublicados: ReadonlySet<string>,
+  recorte: RecorteCoorte,
+  vaga: (linha: T) => string,
+): T[] {
+  if (recorte.sqs.size === 0) return [...oficial]
+  const fechadas = new Set(oficial
+    .filter((linha) => recorte.sqs.has(linha.sq_candidato) && sqsPublicados.has(linha.sq_candidato))
+    .map(vaga))
+  return oficial.filter((linha) => sqsPublicados.has(linha.sq_candidato) || !fechadas.has(vaga(linha)))
+}

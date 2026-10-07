@@ -21,7 +21,8 @@ function okPayload(url: string): Record<string, unknown> {
     return {
       id,
       descricaoSituacao: url.includes("110002553937") ? "Indeferido" : "Deferido",
-      descricaoTotalizacao: "Concorrendo",
+      // Estado do TSE desde o resultado do 1º turno (07/10): a canônica não foi eleita.
+      descricaoTotalizacao: url.includes("110002554073") ? "Não eleito" : "Concorrendo",
       arquivos: [],
     }
   }
@@ -121,6 +122,21 @@ test("baseline anterior ao deferimento de 25/09 volta a alertar", async () => {
   assert.equal(report.status, "review_required")
   assert.deepEqual(report.alerts.map((alert) => alert.sq_candidato), ["110002554073"])
   assert.equal(report.alerts[0]?.details.expected_descricao_situacao, "Deferido")
+})
+
+test("canônica de Laudicério voltando a Concorrendo depois do resultado alerta", async () => {
+  const report = await collectTseDependentMonitors(config, mkdtempSync(join(tmpdir(), "tse-laudicerio-totalizacao-")), {
+    attempts: 1,
+    fetchImpl: async (input) => {
+      const url = String(input)
+      const payload = okPayload(url)
+      if (url.includes("110002554073")) payload.descricaoTotalizacao = "Concorrendo"
+      return response(payload)
+    },
+  })
+  assert.equal(report.status, "review_required")
+  assert.deepEqual(report.alerts.map((alert) => alert.sq_candidato), ["110002554073"])
+  assert.equal(report.alerts[0]?.details.expected_descricao_totalizacao, "Não eleito")
 })
 
 test("mudança no registro histórico de Laudicério também volta a alertar", async () => {

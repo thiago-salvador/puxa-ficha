@@ -17,6 +17,7 @@ import {
   type PublicCandidateSummary,
 } from "../../src/lib/candidate-publication-integrity";
 import {
+  candidacySlot,
   compareCandidacies,
   reviewedSubstitutedViceSqs,
   reviewedSubstitutedTitularSqs,
@@ -64,6 +65,7 @@ import {
   lerCandidaturasEncerradas,
   semEncerradasPorSlug,
   semEncerradasPorSq,
+  semOrfasDeVagaEncerrada,
 } from "../lib/data-freshness/coorte-atualizacao";
 import type { LinhaSiteCandidatoTse } from "../lib/candidate-sites-tse";
 import type { JulgamentoTse } from "../lib/tse-situacao-julgamento";
@@ -502,6 +504,8 @@ async function main(): Promise<void> {
   // turno sai da comparação nos dois lados (publicado aqui, oficial antes de
   // compareCandidacies). A ficha continua no ar, congelada.
   const recorteCoorte = lerCandidaturasEncerradas(published.atualizacao_encerrada);
+  // SQs publicados antes do recorte: fecham a vaga das candidaturas substituídas (semOrfasDeVagaEncerrada).
+  const sqsPublicadosAntesDoRecorte = new Set(published.records.map((record) => record.sq_candidato).filter(Boolean));
   published.records = semEncerradasPorSq(published.records, recorteCoorte);
   if (published.public_profiles) published.public_profiles = semEncerradasPorSlug(published.public_profiles, recorteCoorte);
   if (published.public_candidacies) published.public_candidacies = semEncerradasPorSlug(published.public_candidacies, recorteCoorte);
@@ -758,7 +762,7 @@ async function main(): Promise<void> {
     return;
   }
 
-  official = semEncerradasPorSq(official, recorteCoorte);
+  official = semEncerradasPorSq(semOrfasDeVagaEncerrada(official, sqsPublicadosAntesDoRecorte, recorteCoorte, candidacySlot), recorteCoorte);
   currentOfficial = semEncerradasPorSq(currentOfficial, recorteCoorte);
   const comparison = compareCandidacies(
     official,
