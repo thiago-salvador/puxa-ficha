@@ -1,6 +1,7 @@
 // cspell:ignore eleitorado legivel
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { BRAZIL_STATES } from "@/data/brazil-states"
 import { getEstadoNome } from "@/lib/br-uf"
 import { nomeLegivel } from "@/lib/compartilhar-duelo"
 import { corDoPartido } from "@/lib/cores-finalistas"
@@ -16,20 +17,12 @@ import {
 import type { FotosCandidatos } from "@/lib/resultados-1turno-vista"
 import { FotoCandidato, NomeDoCandidato, TituloSecao } from "@/components/Resultado1TurnoPartes"
 import { SlashDivider } from "@/components/SlashDivider"
-import { SenadoMosaico, type QuadradoSenado } from "@/components/SenadoMosaico"
+import { SenadoMapa } from "@/components/SenadoMapa"
+import { RotulosMapaBrasil } from "@/components/RotulosMapaBrasil"
 
 const NUMERO = new Intl.NumberFormat("pt-BR")
 
-/** Posição aproximada de cada UF no mapa do Brasil: [linha, coluna], base 1. */
-const POSICAO: Record<string, [number, number]> = {
-  RR: [1, 3], AP: [1, 4],
-  AM: [2, 2], PA: [2, 3], MA: [2, 4], CE: [2, 5], RN: [2, 6],
-  AC: [3, 1], RO: [3, 2], TO: [3, 3], PI: [3, 4], PE: [3, 5], PB: [3, 6],
-  MT: [4, 2], GO: [4, 3], BA: [4, 4], SE: [4, 5], AL: [4, 6],
-  MS: [5, 2], DF: [5, 3], MG: [5, 4], ES: [5, 5],
-  PR: [6, 2], SP: [6, 3], RJ: [6, 4],
-  RS: [7, 1], SC: [7, 2],
-}
+const SEM_COR = "var(--gray-300)"
 
 interface EstadoSenado {
   uf: string
@@ -128,7 +121,7 @@ export function Senado1Turno({ ufs, data, fotos }: { ufs: string[]; data: Result
   const estados: EstadoSenado[] = ufs.flatMap((uf) => {
     const disputa = getDisputa1Turno("Senador", uf, data)
     const sigla = uf.toUpperCase()
-    if (!disputa || !POSICAO[sigla]) return []
+    if (!disputa) return []
     const ordenados = disputa.candidatos.filter((c) => c.posicao !== null).sort((a, b) => (a.posicao ?? 0) - (b.posicao ?? 0))
     const eleitos = ordenados.filter((c) => c.fase === "eleito")
     if (eleitos.length === 0) return []
@@ -142,12 +135,53 @@ export function Senado1Turno({ ufs, data, fotos }: { ufs: string[]; data: Result
   })
   if (estados.length === 0) return null
 
-  const quadrados: QuadradoSenado[] = estados.map((e) => {
-    const [linha, coluna] = POSICAO[e.uf]
-    const cores = [0, 1].map((i) => corDoPartido(e.eleitos[i]?.partido)?.cor ?? null) as [string | null, string | null]
-    const nomes = e.eleitos.map((c) => `${c.nome_urna} (${c.partido})`).join(" e ")
-    return { uf: e.uf, linha, coluna, cores, rotulo: `${e.nome}: ${nomes}` }
-  })
+  const porUf = new Map(estados.map((e) => [e.uf, e]))
+  /** Cor cheia com as duas vagas do mesmo lado; listras com uma vaga de cada lado. */
+  const pares = new Map<string, [string, string]>()
+  const preenchimento = (e: EstadoSenado | undefined): string => {
+    if (!e) return SEM_COR
+    const [a, b] = [0, 1].map((i) => corDoPartido(e.eleitos[i]?.partido))
+    const ca = a?.cor ?? SEM_COR
+    const cb = e.eleitos.length > 1 ? (b?.cor ?? SEM_COR) : ca
+    if (ca === cb) return ca
+    const [x, y] = [ca, cb].sort()
+    const id = `pf-senado-listra-${[a?.classe ?? "sem", b?.classe ?? "sem"].sort().join("-")}`
+    pares.set(id, [x, y])
+    return `url(#${id})`
+  }
+  const fills = new Map(BRAZIL_STATES.map((estado) => [estado.sigla, preenchimento(porUf.get(estado.sigla))]))
+  const mapa = (
+    <svg viewBox="-20 -20 900 950" role="group" aria-label="Mapa do Senado: as duas vagas de cada estado pelo lado do partido de cada eleito" className="block w-full" data-pf-senado-mapa>
+      <defs>
+        {[...pares].map(([id, [x, y]]) => (
+          <pattern key={id} id={id} width={18} height={18} patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width={9} height={18} fill={x} />
+            <rect x={9} width={9} height={18} fill={y} />
+          </pattern>
+        ))}
+      </defs>
+      {BRAZIL_STATES.map((estado) => {
+        const e = porUf.get(estado.sigla)
+        const rotulo = e ? `${e.nome}: ${e.eleitos.map((c) => `${c.nome_urna} (${c.partido})`).join(" e ")}` : `${estado.name}: sem dado`
+        return (
+          <path
+            key={estado.sigla}
+            id={`pf-senado-uf-${estado.sigla}`}
+            d={estado.d}
+            data-pf-senado-uf={estado.sigla.toLowerCase()}
+            fill={fills.get(estado.sigla)}
+            stroke="var(--background)"
+            strokeWidth={estado.sigla === "DF" ? 2.4 : 1.2}
+            {...(e ? { role: "button", tabIndex: 0, "aria-label": `${rotulo}. Ver detalhes` } : { role: "img", "aria-label": rotulo })}
+            className="cursor-pointer outline-none transition-opacity duration-150 hover:opacity-85 focus-visible:opacity-80 motion-reduce:transition-none"
+          >
+            <title>{rotulo}</title>
+          </path>
+        )
+      })}
+      <RotulosMapaBrasil contorno />
+    </svg>
+  )
   const inicial = [...estados].sort((a, b) => b.eleitorado - a.eleitorado)[0].uf
   const cards = Object.fromEntries(estados.map((e) => [e.uf, <Card key={e.uf} e={e} fotos={fotos} />]))
 
@@ -171,6 +205,14 @@ export function Senado1Turno({ ufs, data, fotos }: { ufs: string[]; data: Result
           {c.rotulo}: <span className="font-bold tabular-nums text-foreground">{c.vagas} {c.vagas === 1 ? "vaga" : "vagas"}</span>
         </li>
       ))}
+      <li className="flex items-center gap-1.5">
+        <span
+          aria-hidden="true"
+          className="inline-block size-3 rounded-[3px]"
+          style={{ background: "repeating-linear-gradient(45deg, var(--gray-700) 0 3px, var(--gray-300) 3px 6px)" }}
+        />
+        Listrado: uma vaga de cada lado
+      </li>
       {semClasse > 0 && (
         <li className="flex items-center gap-1.5">
           <span aria-hidden="true" className="inline-block size-3 rounded-[3px]" style={{ background: "var(--gray-300)" }} />
@@ -183,10 +225,10 @@ export function Senado1Turno({ ufs, data, fotos }: { ufs: string[]; data: Result
   return (
     <section id="senado-1turno" className="scroll-mt-24" aria-labelledby="senado-1turno-titulo">
       <TituloSecao titulo="Senado" id="senado-1turno-titulo">
-        As duas vagas de cada estado foram decididas no 1º turno. Cada quadrado mostra o lado do partido de cada eleito.
+        As duas vagas de cada estado foram decididas no 1º turno. A cor mostra o lado do partido dos eleitos.
       </TituloSecao>
       <SlashDivider className="mb-5 mt-4" />
-      <SenadoMosaico quadrados={quadrados} cards={cards} legenda={legenda} inicial={inicial} />
+      <SenadoMapa mapa={mapa} cards={cards} legenda={legenda} inicial={inicial} />
       <p className="mt-4 text-[length:var(--text-caption)] font-medium text-muted-foreground">
         Fonte: TSE, resultado do 1º turno. Lado do partido pela mesma régua da seção de espectro.
       </p>

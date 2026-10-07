@@ -10,7 +10,7 @@ const ufs = getEstadoUFs()
 const disputas = (data.disputas ?? []).filter((d) => d.cargo === "Senador")
 
 describe("senado no 1º turno", () => {
-  it("mosaico com as 27 UFs e card do maior eleitorado, com eleitos, suplentes e quem ficou de fora", () => {
+  it("mapa com as 27 UFs e card do maior eleitorado, com eleitos, suplentes e quem ficou de fora", () => {
     const html = renderToStaticMarkup(<Senado1Turno ufs={ufs} data={data} />)
     assert.equal((html.match(/data-pf-senado-uf=/g) ?? []).length, 27)
     const maior = [...disputas].sort((a, b) => (b.totais.eleitorado ?? 0) - (a.totais.eleitorado ?? 0))[0]
