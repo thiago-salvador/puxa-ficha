@@ -39,7 +39,7 @@ const SOCIAL_CARD_PHOTO_TIMEOUT_MS = 5_000
 async function normalizePhotoBytes(bytes: Buffer): Promise<string | null> {
   if (bytes.byteLength === 0 || bytes.byteLength > SOCIAL_CARD_PHOTO_MAX_BYTES) return null
   try {
-    // sharp is optional in some runtimes; a missing decoder should use initials.
+    // A decoder failure should use initials instead of breaking the card.
     const { default: sharp } = await import("sharp")
     const image = sharp(bytes, { limitInputPixels: SOCIAL_CARD_PHOTO_MAX_PIXELS, failOn: "error" })
     const metadata = await image.metadata()
