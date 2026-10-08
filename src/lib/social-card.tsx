@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises"
+import { readFile, stat } from "node:fs/promises"
 import { join, resolve } from "node:path"
 import { ImageResponse } from "next/og"
 import type { FichaCandidato } from "./types"
@@ -31,7 +31,47 @@ export const CARD_SIZES: Record<CardFormat, { width: number; height: number }> =
 // Existing candidate photos in the local corpus are below 500 KiB; 2 MiB
 // leaves generous room for larger source images while bounding stream/base64 memory.
 const SOCIAL_CARD_PHOTO_MAX_BYTES = 2 * 1024 * 1024
+const SOCIAL_CARD_PHOTO_MAX_PIXELS = 40_000_000
+const SOCIAL_CARD_PHOTO_MAX_DIMENSION = 1080
 const SOCIAL_CARD_PHOTO_TIMEOUT_MS = 5_000
+
+/** Decode and re-encode photos as PNG so Satori never trusts a declared MIME. */
+async function normalizePhotoBytes(bytes: Buffer): Promise<string | null> {
+  if (bytes.byteLength === 0 || bytes.byteLength > SOCIAL_CARD_PHOTO_MAX_BYTES) return null
+  try {
+    // A decoder failure should use initials instead of breaking the card.
+    const { default: sharp } = await import("sharp")
+    const image = sharp(bytes, { limitInputPixels: SOCIAL_CARD_PHOTO_MAX_PIXELS, failOn: "error" })
+    const metadata = await image.metadata()
+    if (!metadata.width || !metadata.height || metadata.width * metadata.height > SOCIAL_CARD_PHOTO_MAX_PIXELS) {
+      return null
+    }
+    const png = await image
+      .rotate()
+      .resize({
+        width: SOCIAL_CARD_PHOTO_MAX_DIMENSION,
+        height: SOCIAL_CARD_PHOTO_MAX_DIMENSION,
+        fit: "inside",
+        withoutEnlargement: true,
+      })
+      .png()
+      .toBuffer()
+    return `data:image/png;base64,${png.toString("base64")}`
+  } catch {
+    return null
+  }
+}
+
+async function normalizePhotoDataUri(uri: string): Promise<string | null> {
+  const maxBase64Length = Math.ceil(SOCIAL_CARD_PHOTO_MAX_BYTES / 3) * 4
+  const maxHeaderLength = 1024
+  if (uri.length > maxBase64Length + maxHeaderLength) return null
+  const match = /^data:[^,]{1,1024};base64,([A-Za-z0-9+/]*={0,2})$/i.exec(uri)
+  if (!match || match[1].length > maxBase64Length) return null
+  const bytes = Buffer.from(match[1], "base64")
+  if (bytes.byteLength > SOCIAL_CARD_PHOTO_MAX_BYTES || bytes.toString("base64") !== match[1]) return null
+  return normalizePhotoBytes(bytes)
+}
 
 /** Fetch an external image and return a data-URI usable inside Satori JSX. */
 export async function fetchPhotoAsBase64(url: string | null): Promise<string | null> {
@@ -124,21 +164,22 @@ export async function fetchPhotoAsBase64(url: string | null): Promise<string | n
  */
 export async function loadPhotoAsDataUri(path: string | null): Promise<string | null> {
   if (!path) return null
-  if (path.startsWith("data:image/")) return path
+  if (path.startsWith("data:")) return normalizePhotoDataUri(path)
   if (path.startsWith("/") && !path.startsWith("//") && !path.includes("..")) {
     try {
       const publicDir = resolve(join(process.cwd(), "public"))
       const filePath = resolve(join(publicDir, path.slice(1).split(/[?#]/)[0]))
       if (!filePath.startsWith(publicDir + "/")) return null
+      const fileStat = await stat(filePath)
+      if (!fileStat.isFile() || fileStat.size === 0 || fileStat.size > SOCIAL_CARD_PHOTO_MAX_BYTES) return null
       const data = await readFile(filePath)
-      const lower = filePath.toLowerCase()
-      const mime = lower.endsWith(".png") ? "png" : lower.endsWith(".webp") ? "webp" : "jpeg"
-      return `data:image/${mime};base64,${data.toString("base64")}`
+      return normalizePhotoBytes(data)
     } catch {
       return null
     }
   }
-  return fetchPhotoAsBase64(path)
+  const dataUri = await fetchPhotoAsBase64(path)
+  return dataUri ? normalizePhotoDataUri(dataUri) : null
 }
 
 // ── Formatting helpers (pure, no external import for Satori compat) ──
