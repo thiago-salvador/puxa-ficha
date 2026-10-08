@@ -8864,6 +8864,33 @@
         "fetched_url": "https://www.diariodoamapa.com.br/cadernos/politica/carlos-cley-defende-participacao-popular-no-orcamento-e-estatizacao-de-servicos-publicos/",
         "method": "codex_source_review"
       }
+    },
+    {
+      "id": "ca50d09291e0e07003f07b68e757c2f59944b9a21b9d89d45ccc68d13d78491b",
+      "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+      "candidate_slug": "flavio-bolsonaro",
+      "candidate_name": "Flavio Bolsonaro",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "Vou participar de debates. Eu acho que são importantes.",
+      "context": "“Eu já queria ter participado no primeiro turno de debates com o Lula. Vou participar de debates. Eu acho que são importantes. É o que eu sempre quis, eu quero comparar os programas de governo, eu quero comparar os governos do Lula com o nosso governo, e eu tenho a convicção de que a gente vai ser vitorioso nesse debate\", afirmou.",
+      "event_context": "A declaração foi dada após Flávio ser questionado por jornalistas sobre a cobrança feita por Lula para que sua equipe organize a participação do presidente em debates no segundo turno. O senador Flávio Bolsonaro (PL-RJ), candidato à Presidência da República, afirmou nesta terça-feira (6) que vai participar de debates contra o presidente Luiz Inácio Lula da Silva (PT) no segundo turno das eleições.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-06",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/politica/noticia/2026/10/06/flavio-diz-que-vai-participar-de-debates-contra-lula-no-2o-turno-eu-ja-queria-ter-participado.ghtml",
+      "article_title": "Flávio diz que vai participar de debates contra Lula no 2º turno: ‘Eu já queria ter participado’ | G1",
+      "article_published_at": "2026-10-06T12:34:58.098-03:00",
+      "observed_at": "2026-10-08T08:44:18.043Z",
+      "source_sha256": "8b349c496bb089c39ceef56a70e70f780ae795c463811c2f48311f04c39680de",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "As declarações foram dadas no comitê de campanha do partido, em Brasília (leia mais abaixo).",
+        "identity_excerpt": "O senador Flávio Bolsonaro (PL-RJ), candidato à Presidência da República, afirmou nesta terça-feira (6) que vai participar de debates contra o presidente Luiz Inácio Lula da Silva (PT) no segundo turno das eleições.",
+        "date_excerpt": "O senador Flávio Bolsonaro (PL-RJ), candidato à Presidência da República, afirmou nesta terça-feira (6) que vai participar de debates contra o presidente Luiz Inácio Lula da Silva (PT) no segundo turno das eleições.",
+        "fetched_url": "https://g1.globo.com/politica/noticia/2026/10/06/flavio-diz-que-vai-participar-de-debates-contra-lula-no-2o-turno-eu-ja-queria-ter-participado.ghtml",
+        "method": "codex_source_review"
+      }
     }
   ]
 }
