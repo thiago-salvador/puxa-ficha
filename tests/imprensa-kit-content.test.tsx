@@ -46,6 +46,7 @@ const rows: Row[] = [
 ]
 const generatedAt = "2026-09-28T17:02:00.000Z"
 const numbers = content.kitNumbers(computeImprensaFacts(rows), generatedAt)
+const numbersComFinalistas = content.kitNumbers(computeImprensaFacts(rows), generatedAt, 16)
 
 function words(text: string): number {
   return text.split(/\s+/).filter(Boolean).length
@@ -53,7 +54,7 @@ function words(text: string): number {
 
 function allStrings(): string[] {
   const out: string[] = [content.projectCitation, content.founderBio]
-  for (const n of [numbers, null]) {
+  for (const n of [numbers, numbersComFinalistas, null]) {
     out.push(content.kitOneLine(n))
     for (const text of content.kitPressTexts(n)) out.push(text.label, ...text.paragraphs)
     for (const q of content.kitQuestions(n)) out.push(q.question, q.answer, q.sourceLabel ?? "")
@@ -64,7 +65,38 @@ function allStrings(): string[] {
 
 describe("kit de imprensa: números calculados", () => {
   it("tira cada número das linhas do dataset e a data do generatedAt", () => {
-    assert.deepEqual(numbers, { total: 1234, patrimonios: 1000, comProcesso: 37, homonimos: 11, cargos: "presidente, governador e Senado", data: "28/09/2026" })
+    assert.deepEqual(numbers, { total: 1234, patrimonios: 1000, comProcesso: 37, homonimos: 11, cargos: "presidente, governador e Senado", data: "28/09/2026", finalistas: null })
+  })
+
+  it("conta os finalistas do 2º turno só quando há ao menos um", () => {
+    assert.equal(numbersComFinalistas?.finalistas, 16)
+    assert.equal(content.kitNumbers(computeImprensaFacts(rows), generatedAt, 0)?.finalistas, null)
+    assert.equal(content.kitNumbers(computeImprensaFacts(rows), generatedAt, null)?.finalistas, null)
+    assert.equal(content.kitNumbers(null, generatedAt, 16), null)
+  })
+
+  it("cita os finalistas na frase e nos três textos, e a frase do 2º turno não afirma número sem contagem", () => {
+    assert.match(content.kitOneLine(numbersComFinalistas), /em 2026, inclusive os 16 finalistas do 2º turno, com link para a fonte oficial/)
+    assert.doesNotMatch(content.kitOneLine(numbers), /finalistas do 2º turno/)
+    // O texto de 50 palavras cita os finalistas na frase de abertura; os de 100 e 250 têm a frase própria do 2º turno.
+    const [curto, ...longos] = content.kitPressTexts(numbersComFinalistas)
+    assert.match(curto.paragraphs.join(" "), /em 2026, inclusive os 16 finalistas do 2º turno:/)
+    for (const text of longos) {
+      assert.match(text.paragraphs.join(" "), /No 2º turno, as fichas dos 16 finalistas seguem sendo atualizadas\./, text.label)
+    }
+    for (const n of [numbers, null]) {
+      const [curtoSem, ...longosSem] = content.kitPressTexts(n)
+      assert.doesNotMatch(curtoSem.paragraphs.join(" "), /finalista/, "sem contagem, o texto curto não fala de finalistas")
+      for (const text of longosSem) {
+        const joined = text.paragraphs.join(" ")
+        assert.match(joined, /No 2º turno, as fichas dos finalistas seguem sendo atualizadas\./, text.label)
+        assert.doesNotMatch(joined, /dos \d+ finalistas/, text.label)
+      }
+    }
+    const um = content.kitNumbers(computeImprensaFacts(rows), generatedAt, 1)
+    assert.match(content.kitOneLine(um), /, inclusive 1 finalista do 2º turno,/)
+    assert.match(content.kitPressTexts(um)[0].paragraphs.join(" "), /em 2026, inclusive 1 finalista do 2º turno:/)
+    assert.match(content.kitPressTexts(um)[1].paragraphs.join(" "), /No 2º turno, a ficha do finalista segue sendo atualizada\./)
   })
 
   it("insere os números nos textos, na frase e na FAQ de homônimos", () => {
@@ -110,7 +142,8 @@ describe("kit de imprensa: números calculados", () => {
     assert.equal(content.kitNumbers(null, generatedAt), null)
     assert.equal(content.kitNumbers(computeImprensaFacts([]), generatedAt), null)
     const texts = [content.kitOneLine(null), ...content.kitPressTexts(null).flatMap((text) => text.paragraphs), ...content.kitQuestions(null).map((q) => q.answer)]
-    for (const text of texts) assert.doesNotMatch(text.replace(/2026/g, ""), /\d/, text)
+    // "2026" e o ordinal "2º turno" são texto fixo, não número do dataset.
+    for (const text of texts) assert.doesNotMatch(text.replace(/2026/g, "").replace(/\dº/g, ""), /\d/, text)
     // Sem dataset, a frase não afirma quais cargos estão cobertos.
     for (const text of texts) assert.doesNotMatch(text, /a presidente|governador/, text)
   })
@@ -118,10 +151,14 @@ describe("kit de imprensa: números calculados", () => {
 
 describe("kit de imprensa: redação", () => {
   it("mantém os tamanhos aproximados de 50, 100 e 250 palavras", () => {
-    const [t50, t100, t250] = content.kitPressTexts(numbers).map((text) => words(text.paragraphs.join(" ")))
-    assert.ok(t50 >= 40 && t50 <= 60, `50 palavras: ${t50}`)
-    assert.ok(t100 >= 85 && t100 <= 115, `100 palavras: ${t100}`)
-    assert.ok(t250 >= 200 && t250 <= 275, `250 palavras: ${t250}`)
+    // A frase do 2º turno e a autoria somam cerca de 10 palavras a cada texto; as faixas de 50 e 100 subiram por isso.
+    for (const n of [numbers, numbersComFinalistas]) {
+      const [t50, t100, t250] = content.kitPressTexts(n).map((text) => words(text.paragraphs.join(" ")))
+      assert.ok(t50 >= 40 && t50 <= 70, `50 palavras: ${t50}`)
+      assert.ok(t100 >= 85 && t100 <= 125, `100 palavras: ${t100}`)
+      assert.ok(t250 >= 200 && t250 <= 275, `250 palavras: ${t250}`)
+      assert.ok(t50 < t100 && t100 < t250, `ordem dos tamanhos: ${t50} < ${t100} < ${t250}`)
+    }
   })
 
   it("mantém as ressalvas em todos os textos", () => {

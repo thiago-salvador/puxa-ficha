@@ -1,5 +1,7 @@
+// cspell:words cenarios cenario
 import type { Metadata } from "next"
-import { ImprensaPack, type PackPollGroup } from "@/components/imprensa/pack/ImprensaPack"
+import { ImprensaPack, type PackPollGroup, type PackPolls } from "@/components/imprensa/pack/ImprensaPack"
+import { segundoTurnoImprensa } from "@/lib/imprensa-2turno"
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import { getImprensaDatasetCached } from "@/lib/imprensa-cache"
 import { selectPresidencyPolls, summarizeRegisteredPolls } from "@/lib/imprensa-uf-pack"
@@ -11,17 +13,25 @@ export const revalidate = 43200
 
 export const metadata: Metadata = {
   title: "Presidência | Pacote de imprensa | Puxa Ficha",
-  description: "Pacote de imprensa dos candidatos a presidente: fatos calculados, patrimônio, processos, sanções, cota e vice, pesquisas com registro no TSE, mudanças verificadas, CSV e citação.",
+  description: "Pacote de imprensa dos finalistas a presidente no 2º turno: fatos calculados, patrimônio, processos, sanções, cota e vice, pesquisas com registro no TSE, mudanças verificadas, CSV, citação e o histórico do 1º turno.",
   alternates: { canonical: "/imprensa/presidencia" },
 }
 
-function loadPresidencyPolls(): PackPollGroup[] {
-  const base = { id: "presidente", title: "Presidência", chart: null }
+function loadPresidencyPolls(): PackPolls {
   try {
-    return [{ ...base, polls: summarizeRegisteredPolls(selectPresidencyPolls(carregarPesquisasEleitorais())), unavailable: false }]
+    const all = selectPresidencyPolls(carregarPesquisasEleitorais())
+    const doTurno = (turn: 1 | 2): PackPollGroup[] => [{
+      id: `presidente-${turn}t`,
+      title: "Presidência",
+      chart: null,
+      polls: summarizeRegisteredPolls(all.filter((poll) => poll.cenarios.some((cenario) => cenario.turn === turn))),
+      unavailable: false,
+    }]
+    return { segundoTurno: doTurno(2), historico: doTurno(1) }
   } catch {
     console.error("Imprensa presidency polls could not be loaded")
-    return [{ ...base, polls: [], unavailable: true }]
+    const unavailable = (turn: 1 | 2): PackPollGroup[] => [{ id: `presidente-${turn}t`, title: "Presidência", chart: null, polls: [], unavailable: true }]
+    return { segundoTurno: unavailable(2), historico: unavailable(1) }
   }
 }
 
@@ -43,6 +53,7 @@ export default async function ImprensaPresidenciaPage() {
       dataset={pageDataset}
       updates={updates}
       polls={loadPresidencyPolls()}
+      turno={{ slugs: segundoTurnoImprensa().slugs, resultadoHref: "/1o-turno" }}
       alertsEnabled={isAlertsEmailFeatureEnabled()}
     />
   )

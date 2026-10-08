@@ -9,6 +9,7 @@ import { CiteBox } from "@/components/imprensa/CiteBox"
 import { ImprensaSubnav } from "@/components/imprensa/ImprensaSubnav"
 import { TrustFooter } from "@/components/imprensa/TrustFooter"
 import { CopyText } from "@/components/imprensa/kit/CopyText"
+import { segundoTurnoImprensa, separarPorTurno } from "@/lib/imprensa-2turno"
 import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
 import { computeImprensaFacts } from "@/lib/imprensa-facts"
 import { citationFormats, founderBio, kitNumbers, kitOneLine, kitPressTexts, kitQuestions, projectCitation } from "./content"
@@ -59,7 +60,8 @@ export default async function ImprensaKit() {
   } catch {
     // Sem dataset, os textos saem sem números. Nunca com zero no lugar do dado.
   }
-  const numbers = kitNumbers(dataset ? computeImprensaFacts(dataset.rows) : null, dataset?.generatedAt)
+  const finalistas = dataset ? separarPorTurno(dataset.rows, segundoTurnoImprensa().slugs).segundoTurno.length : null
+  const numbers = kitNumbers(dataset ? computeImprensaFacts(dataset.rows) : null, dataset?.generatedAt, finalistas)
   const texts = kitPressTexts(numbers)
   const questions = kitQuestions(numbers)
 

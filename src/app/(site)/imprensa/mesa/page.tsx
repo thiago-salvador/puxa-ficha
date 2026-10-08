@@ -13,7 +13,8 @@ import { computeMesaCoverage, parseMesaCom, parseMesaSort } from "@/components/i
 import { isAlertsEmailFeatureEnabled } from "@/lib/alerts-feature"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { computeImprensaFacts } from "@/lib/imprensa-facts"
-import { formatImprensaStamp, imprensaUfPath, normalizeRecorteUf } from "@/lib/imprensa-nav"
+import { datasetDoTurno, opcoesMesa2Turno } from "@/lib/imprensa-2turno"
+import { formatImprensaStamp, imprensaHref, imprensaUfPath, normalizeRecorteUf, parseImprensaTurno } from "@/lib/imprensa-nav"
 import { getImprensaUfName } from "@/lib/imprensa-uf-pack"
 import {
   normalizeImprensaFilters,
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 }
 
-type SearchParams = { cargo?: string | string[]; uf?: string | string[]; ordem?: string | string[]; com?: string | string[] }
+type SearchParams = { cargo?: string | string[]; uf?: string | string[]; ordem?: string | string[]; com?: string | string[]; turno?: string | string[] }
 
 const NUMBER = new Intl.NumberFormat("pt-BR")
 const CARGO_NOUN: Record<string, string> = { Presidente: "presidente", Governador: "governador", Senador: "senador" }
@@ -62,10 +63,12 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
   const filters: ImprensaFilters = normalizeImprensaFilters({ cargo: first(params.cargo), uf: first(params.uf) })
   const initialSort = parseMesaSort(first(params.ordem))
   const initialCom = parseMesaCom(first(params.com))
+  const turno = parseImprensaTurno(first(params.turno))
   let dataset: ImprensaPageDataset | null = null
   let sourceError: string | null = null
   try {
-    dataset = await getImprensaDatasetCached(filters)
+    // O recorte do 2º turno corta as linhas depois do cache, pelas fichas dos finalistas.
+    dataset = datasetDoTurno(await getImprensaDatasetCached(filters), turno)
   } catch {
     sourceError = "A consulta pública está indisponível no momento."
   }
@@ -73,15 +76,19 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
   const generatedAt = dataset?.generatedAt ?? null
   const facts = computeImprensaFacts(rows)
   const coverage = computeMesaCoverage(rows)
-  const cargos = [...(dataset?.availableCargos ?? [])]
-  const ufs = [...(dataset?.availableUfs ?? [])]
+  // No 2º turno, as opções saem do snapshot: Senado e UFs sem disputa não levam a lista vazia,
+  // e escolher RJ não esconde as outras UFs nem Presidente.
+  const opcoes2Turno = turno === 2 ? opcoesMesa2Turno() : null
+  const cargos = opcoes2Turno ? [...opcoes2Turno.cargos] : [...(dataset?.availableCargos ?? [])]
+  const ufs = opcoes2Turno ? [...opcoes2Turno.ufs] : [...(dataset?.availableUfs ?? [])]
   if (filters.cargo && !cargos.includes(filters.cargo)) cargos.unshift(filters.cargo)
   if (filters.uf && !ufs.includes(filters.uf)) ufs.unshift(filters.uf)
-  const recorte = { cargo: filters.cargo, uf: filters.uf }
+  const recorte = { cargo: filters.cargo, uf: filters.uf, turno }
   const packUf = normalizeRecorteUf(filters.uf)
   const query = new URLSearchParams()
   if (filters.cargo) query.set("cargo", filters.cargo)
   if (filters.uf) query.set("uf", filters.uf)
+  if (turno === 2) query.set("turno", "2")
   const queryString = query.toString()
   const exportSuffix = queryString ? `&${queryString}` : ""
   const alertsEnabled = isAlertsEmailFeatureEnabled()
@@ -100,7 +107,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
           <h1 id="mesa-titulo" className={styles.heroTitle}>Mesa de apuração</h1>
           <p className={styles.heroSub}>Quem disputa, com fonte</p>
           <p className={styles.heroCopy}>
-            O que TSE, tribunais, CGU, TCU, Câmara e Senado registram sobre os candidatos
+            O que TSE, tribunais, CGU, TCU, Câmara e Senado registram sobre {turno === 2 ? "os finalistas do 2º turno" : "os candidatos"}
             {cargoNouns.length ? ` a ${joinPt(cargoNouns)}` : ""}. Cada número tem fonte oficial, data de coleta e grau de confirmação.
           </p>
           {sourceError ? (
@@ -121,6 +128,13 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
           <SectionHead num="01" id="mesa-recorte">Recorte</SectionHead>
           <form className={styles.filters} action="/imprensa/mesa" method="get" aria-label="Filtrar candidatos">
             <div className={styles.field}>
+              <label htmlFor="imprensa-turno">Turno</label>
+              <select id="imprensa-turno" name="turno" defaultValue={turno === 2 ? "2" : ""}>
+                <option value="2">2º turno (finalistas)</option>
+                <option value="">1º turno (todos os candidatos)</option>
+              </select>
+            </div>
+            <div className={styles.field}>
               <label htmlFor="imprensa-cargo">Cargo</label>
               <select id="imprensa-cargo" name="cargo" defaultValue={filters.cargo ?? ""}>
                 <option value="">Todos os cargos</option>
@@ -136,7 +150,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
             </div>
             <div className={styles.formActions}>
               <button className={styles.submit} type="submit">Aplicar recorte</button>
-              <Link className={styles.reset} href="/imprensa/mesa">Limpar</Link>
+              <Link className={styles.reset} href={imprensaHref("/imprensa/mesa", { turno })}>Limpar</Link>
             </div>
           </form>
           <p className={styles.lead}>

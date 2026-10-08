@@ -25,6 +25,27 @@ export function buildSalaPromise(total: number | null, cargos: readonly string[]
   return `O que TSE, tribunais, CGU e Congresso registram sobre ${quem}. Cada dado com link para a fonte oficial e data de coleta.`
 }
 
+function juntarPt(items: readonly string[]): string {
+  return items.length <= 1 ? items.join("") : `${items.slice(0, -1).join(", ")} e ${items.at(-1)}`
+}
+
+/**
+ * Frase do hero da Sala no 2º turno. `total` conta os finalistas com linha
+ * pública no dataset (null quando a contagem falhou: a frase sai sem número);
+ * `ufsGovernador` são as UFs com 2º turno para governador, em ordem.
+ */
+export function buildSalaPromise2Turno(total: number | null, temPresidencia: boolean, ufsGovernador: readonly string[]): string {
+  const quem = total === null || total === 0
+    ? "os finalistas do 2º turno"
+    : total === 1 ? "1 finalista do 2º turno" : `os ${new Intl.NumberFormat("pt-BR").format(total)} finalistas do 2º turno`
+  const disputas = [
+    temPresidencia ? "presidente" : null,
+    ufsGovernador.length ? `governador em ${juntarPt(ufsGovernador)}` : null,
+  ].filter((item): item is string => item !== null)
+  const alvo = disputas.length ? `: ${juntarPt(disputas)}` : ""
+  return `O que TSE, tribunais, CGU e Congresso registram sobre ${quem}${alvo}. Cada dado com link para a fonte oficial e data de coleta.`
+}
+
 export interface SalaUfCount {
   uf: ImprensaUf
   total: number

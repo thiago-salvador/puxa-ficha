@@ -122,6 +122,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.4,
     },
     {
+      url: `${SITE_ORIGIN}/imprensa/1o-turno`,
+      changeFrequency: "weekly",
+      priority: 0.3,
+    },
+    {
       url: `${SITE_ORIGIN}/imprensa/frescor`,
       changeFrequency: "daily",
       priority: 0.3,

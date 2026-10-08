@@ -63,7 +63,7 @@ export default async function ImprensaComoColetamosPage() {
           <p className={styles.eyebrow}>Imprensa · Método</p>
           <h1 className={styles.heroTitle}>Como coletamos</h1>
           <p className={styles.heroCopy}>
-            De onde vem cada dado das fichas, quando cada fonte foi lida pela última vez e o que fazemos quando um nome aparece sem confirmação.
+            De onde vem cada dado das fichas, quando cada fonte foi lida pela última vez e o que fazemos quando um nome aparece sem confirmação. Depois do 1º turno, a coleta segue só para as fichas dos finalistas do 2º turno; as demais ficam com os dados da última coleta.
           </p>
           {counts ? (
             <p className={styles.heroFacts}>
