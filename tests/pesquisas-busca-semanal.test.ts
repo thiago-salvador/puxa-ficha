@@ -118,10 +118,17 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
     assert.equal(listed.resultado.status, "publicado")
     assert.equal(poll.state, "publicado")
   }
-  // The first card is the most recently published round.
+  // Cards are grouped by scenario; dates descend within each group.
   for (const list of [lula, pablo]) {
-    assert.ok(list.every((p) => (p.publicationDate.value ?? "") <= (list[0].publicationDate.value ?? "")))
+    for (const grupo of new Set(list.map((p) => p.grupo))) {
+      const grouped = list.filter((p) => p.grupo === grupo)
+      assert.ok(grouped.every((p) => (p.publicationDate.value ?? "") <= (grouped[0].publicationDate.value ?? "")))
+    }
   }
+  const segundoTurno = lula.find((p) => p.grupo === "segundo_turno")
+  assert.equal(segundoTurno?.id, "poderdata-br-08134-2026")
+  assert.equal(segundoTurno?.cenario.id, "poderdata-br-08134-2026-2t")
+  assert.equal(segundoTurno?.resultado.valuePercent, 44)
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].id, "quaest-ac-02370-2026")
   assert.equal(listarPesquisasGovernadorPorSlug("alan-rick", "AC")[0].resultado.valuePercent, 33)
   assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 32.6)

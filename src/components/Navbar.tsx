@@ -149,7 +149,7 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
       tlRef.current = tl
 
       if (isMenuOpen) {
-        tl.set(navWrap, { display: "block" })
+        tl.set(navWrap, { display: "block", immediateRender: true })
         if (menuTexts.length) {
           tl.fromTo(menuTexts, { yPercent: 0 }, { yPercent: -100, stagger: 0.1, duration: 0.35 })
         }

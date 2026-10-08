@@ -237,6 +237,7 @@ export function validarRodada(rodada: RodadaColetada, aliases: DecisoesAlias): s
 const TERMOS_NAO_CANDIDATO = new Set([
   "branco", "brancos", "nulo", "nulos", "nenhum", "nenhum deles", "nenhum dos dois", "indeciso", "indecisos",
   "ns", "nr", "nao sabe", "nao sabem", "nao respondeu", "nao responderam",
+  "nao souberam", "nao quiseram responder",
 ])
 
 /** "Brancos e nulos", "NS / NR", "Não sabe ou não respondeu": cada parte precisa ser um termo do vocabulário. */
