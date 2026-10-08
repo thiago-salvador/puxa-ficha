@@ -201,6 +201,26 @@ describe("importação manual auditada de pesquisas", () => {
     assert.deepEqual(doLula.map((entry) => entry.grupo), ["segundo_turno"])
   })
 
+  it("preserva resposta literal de não resposta no 2º turno sem aceitar nomes na composição", () => {
+    const label = "não souberam ou não quiseram responder"
+    const segundo = rodada({ registration: "BR-99985/2026", scenarios: [{
+      kind: "estimulado", turn: 2, question: null,
+      results: [...rodada().scenarios[0].results.slice(0, 3), { raw_label: label, value_percent: 15 }],
+    }] })
+    const decisoes = { BR: { ...aliases.BR, [label]: null } }
+    const result = importarRodadas([segundo], decisoes, "2026-10-08T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(result.problems, [])
+    const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(result.catalogos.pres), JSON.stringify(result.catalogos.presFontes))
+    const resposta = catalogo.pesquisas.find((poll) => poll.id === "instituto-exemplo-br-99985-2026")!.cenarios[0].resultados
+      .find((entry) => entry.rawLabel === label)!
+    assert.equal(resposta.valuePercent, 15)
+    assert.equal(resposta.matchStatus, "not_candidate")
+    const desconhecido = "não souberam ou Ciro"
+    segundo.scenarios[0].results[3].raw_label = desconhecido
+    const invalid = importarRodadas([segundo], { BR: { ...decisoes.BR, [desconhecido]: null } }, "2026-10-08T12:00:00Z", carregarCatalogos())
+    assert.ok(invalid.problems.some((problem) => problem.includes(`linha "${desconhecido}" que não é finalista`)))
+  })
+
   it("separa 1º e 2º turno da mesma rodada sem exigir nota entre turnos", () => {
     const primeiro = rodada().scenarios[0]
     const governador = rodada({ uf: "PI", registration: "PI-99990/2026", scenarios: [

@@ -2801,6 +2801,83 @@
         }
       },
       "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "poderdata-br-08134-2026-revisao-20261008",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "PoderData",
+        "commissioner": "PoderData, recursos próprios",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "sbtnews.sbt.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-05",
+          "end": "2026-10-07"
+        },
+        "published_at": "2026-10-08",
+        "sample_size": 3000,
+        "method": "Entrevistas por telefone",
+        "margin_of_error_pp": 1.8,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-08134/2026",
+        "result_url": "https://sbtnews.sbt.com.br/noticia/politica/poder-data-aya-flavio-53-x-47-lula-em-votos-validos",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-08134/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-08T12:08:01Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "4af7ab8867ddc63ca50713b2d8751f9de861ba28c5a00166db845a908533dfdb",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/politica/poder-data-aya-flavio-53-x-47-lula-em-votos-validos",
+            "https://www.poder360.com.br/poderdata/flavio-tem-53-contra-47-de-lula-no-2o-turno-diz-poderdata-aya/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/politica/poder-data-aya-flavio-53-x-47-lula-em-votos-validos",
+            "https://www.poder360.com.br/poderdata/flavio-tem-53-contra-47-de-lula-no-2o-turno-diz-poderdata-aya/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/politica/poder-data-aya-flavio-53-x-47-lula-em-votos-validos",
+            "https://www.poder360.com.br/poderdata/flavio-tem-53-contra-47-de-lula-no-2o-turno-diz-poderdata-aya/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://sbtnews.sbt.com.br/noticia/politica/poder-data-aya-flavio-53-x-47-lula-em-votos-validos",
+            "https://www.poder360.com.br/poderdata/flavio-tem-53-contra-47-de-lula-no-2o-turno-diz-poderdata-aya/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-08T12:08:01Z"
     }
   ],
   "media_fallback_policy": {
