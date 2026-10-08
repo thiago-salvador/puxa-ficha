@@ -70,7 +70,8 @@ describe("ImprensaFacts", () => {
 describe("ImprensaSubnav", () => {
   it("marca a página atual, leva o recorte e mostra o selo de data", () => {
     const html = renderToStaticMarkup(<ImprensaSubnav current="mesa" recorte={{ uf: "BA" }} generatedAt="2026-09-28T17:02:00.000Z" />)
-    assert.match(html, /<a[^>]*aria-current="page"[^>]*href="\/imprensa\/mesa\?uf=BA"/)
+    assert.match(html, /<a[^>]*aria-current="page"[^>]*href="\/imprensa\/mesa\?uf=BA&amp;turno=2"/)
+    assert.match(html, /href="\/imprensa\/1o-turno"/)
     assert.equal(html.match(/aria-current=/g)?.length, 1)
     assert.match(html, /href="\/imprensa\/uf\/ba"/)
     assert.match(html, /<time dateTime="2026-09-28T17:02:00.000Z">Dados de 28\/09, 14:02<\/time>/)

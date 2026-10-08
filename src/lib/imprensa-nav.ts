@@ -6,7 +6,7 @@ import { isImprensaUf, type ImprensaUf } from "@/lib/imprensa-uf-pack"
  * servidor e de cliente.
  */
 
-export type ImprensaNavId = "sala" | "estado" | "presidencia" | "mesa" | "atualizacoes" | "frescor" | "kit"
+export type ImprensaNavId = "sala" | "estado" | "presidencia" | "mesa" | "atualizacoes" | "frescor" | "kit" | "arquivo"
 
 export type ImprensaPath =
   | "/imprensa"
@@ -15,18 +15,27 @@ export type ImprensaPath =
   | "/imprensa/atualizacoes"
   | "/imprensa/frescor"
   | "/imprensa/kit"
+  | "/imprensa/1o-turno"
   | `/imprensa/uf/${Lowercase<ImprensaUf>}`
 
 export interface ImprensaRecorte {
   uf?: string | null
   cargo?: string | null
+  /** 2 recorta a Mesa nos finalistas do 2º turno; null mostra todos os candidatos do 1º turno. */
+  turno?: 2 | null
 }
 
 /** Âncora da escolha de estado na Sala, destino de "Seu estado" quando ainda não há UF. */
 export const IMPRENSA_STATE_CHOOSER_ID = "estados"
 
 /** Nomes dos parâmetros da Mesa. `cargo` e `uf` já existem; `ordem` e `com` são novos. */
-export const MESA_PARAM = { cargo: "cargo", uf: "uf", ordem: "ordem", com: "com" } as const
+export const MESA_PARAM = { cargo: "cargo", uf: "uf", ordem: "ordem", com: "com", turno: "turno" } as const
+
+/** `?turno=2` vale só como "2"; qualquer outro valor é o recorte completo. */
+export function parseImprensaTurno(value: string | string[] | null | undefined): 2 | null {
+  const raw = Array.isArray(value) ? value[0] : value
+  return raw?.trim() === "2" ? 2 : null
+}
 
 /** Valores de `?ordem=` na Mesa. Cada um ordena por um único campo numérico oficial. */
 export const MESA_ORDEM = {
@@ -60,13 +69,14 @@ type NavEntry = { id: ImprensaNavId; label: string; description: string }
  * o bloco "Nesta sala" usa também a descrição.
  */
 export const IMPRENSA_NAV: readonly NavEntry[] = [
-  { id: "sala", label: "Sala", description: "Fatos do dia, pacotes por estado e as mudanças mais recentes." },
+  { id: "sala", label: "Sala", description: "Quem está no 2º turno, fatos do dia dos finalistas, pacotes por estado e as mudanças mais recentes." },
   { id: "estado", label: "Seu estado", description: "Fatos, candidatos, chapas e mudanças de cada UF, reunidos em um pacote." },
-  { id: "presidencia", label: "Presidência", description: "Pacote dos candidatos a presidente, com patrimônio, processos, vice e pesquisas registradas." },
-  { id: "mesa", label: "Mesa", description: "Uma linha por candidato, com fonte, data e grau de confirmação, para ordenar e filtrar." },
+  { id: "presidencia", label: "Presidência", description: "Pacote dos dois finalistas a presidente, com patrimônio, processos, vice e pesquisas do 2º turno; os demais ficam no histórico." },
+  { id: "mesa", label: "Mesa", description: "Uma linha por finalista do 2º turno, com fonte, data e grau de confirmação, para ordenar e filtrar. Os demais candidatos seguem no filtro de turno." },
   { id: "atualizacoes", label: "O que mudou", description: "Mudanças de candidatura, partido e patrimônio detectadas nas fontes oficiais, com antes e depois." },
   { id: "frescor", label: "Como coletamos", description: "De onde vem cada dado, quando foi a última coleta de cada fonte e como tratamos homônimos." },
   { id: "kit", label: "Kit", description: "Frase para citar, textos de apresentação, logo, arquivos e perguntas frequentes." },
+  { id: "arquivo", label: "1º turno", description: "Arquivo do 1º turno: os fatos e os pacotes de todos os candidatos, como estavam até o fim da apuração." },
 ]
 
 /** Páginas que filtram por cargo e UF na query. As demais ignoram o recorte. */
@@ -91,8 +101,8 @@ export function imprensaUfPath(uf: ImprensaUf): ImprensaPath {
 /**
  * Monta o link de uma página da seção levando o recorte que ela aceita.
  * Mesa e O que mudou recebem `cargo` e `uf` na query (UF em maiúsculas, como a
- * Mesa já lê). As outras páginas não recebem recorte. `extra` acrescenta
- * `ordem` e `com` na Mesa.
+ * Mesa já lê). A Mesa também recebe `turno=2`. As outras páginas não recebem
+ * recorte. `extra` acrescenta `ordem` e `com` na Mesa.
  */
 export function imprensaHref(path: ImprensaPath, recorte: ImprensaRecorte = {}, extra: MesaQuery = {}): string {
   const query = new URLSearchParams()
@@ -103,6 +113,7 @@ export function imprensaHref(path: ImprensaPath, recorte: ImprensaRecorte = {}, 
     if (uf) query.set(MESA_PARAM.uf, uf)
   }
   if (path === "/imprensa/mesa") {
+    if (recorte.turno === 2) query.set(MESA_PARAM.turno, "2")
     if (extra.ordem) query.set(MESA_PARAM.ordem, extra.ordem)
     if (extra.com) query.set(MESA_PARAM.com, extra.com)
   }
@@ -130,10 +141,12 @@ export function buildImprensaNav(recorte: ImprensaRecorte = {}): ImprensaNavItem
         ? { id, label: `${label} · ${uf}`, description, href: imprensaUfPath(uf) }
         : { id, label, description, href: `/imprensa#${IMPRENSA_STATE_CHOOSER_ID}` }
       case "presidencia": return { id, label, description, href: imprensaHref("/imprensa/presidencia") }
-      case "mesa": return { id, label, description, href: imprensaHref("/imprensa/mesa", recorte) }
+      // A barra abre a Mesa no 2º turno; quem já escolheu "todos" (turno null) continua lá.
+      case "mesa": return { id, label, description, href: imprensaHref("/imprensa/mesa", { ...recorte, turno: recorte.turno === undefined ? 2 : recorte.turno }) }
       case "atualizacoes": return { id, label, description, href: imprensaHref("/imprensa/atualizacoes", recorte) }
       case "frescor": return { id, label, description, href: imprensaHref("/imprensa/frescor") }
       case "kit": return { id, label, description, href: imprensaHref("/imprensa/kit") }
+      case "arquivo": return { id, label, description, href: imprensaHref("/imprensa/1o-turno") }
     }
   })
 }

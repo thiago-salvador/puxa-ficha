@@ -59,8 +59,18 @@ describe("SalaSectionsNav", () => {
   it("mostra só o dado vivo recebido e nenhum número inventado", () => {
     const html = renderToStaticMarkup(<SalaSectionsNav live={{ mesa: "1.234 candidatos com linha pública" }} />)
     assert.match(textOf(html, "nesta-sala-mesa-texto"), /1\.234 candidatos com linha pública$/)
-    for (const id of ["estado", "presidencia", "atualizacoes", "frescor", "kit"]) {
-      assert.doesNotMatch(textOf(html, `nesta-sala-${id}-texto`), /\d/, `sem dado vivo em ${id}`)
+    // Os ordinais "1º" e "2º" das descrições são texto fixo, não dado vivo.
+    for (const id of ["estado", "presidencia", "atualizacoes", "frescor", "kit", "arquivo"]) {
+      assert.doesNotMatch(textOf(html, `nesta-sala-${id}-texto`).replace(/\dº/g, ""), /\d/, `sem dado vivo em ${id}`)
     }
+  })
+
+  it("o card 1º turno aponta para o arquivo e recebe o dado vivo da chave arquivo", () => {
+    const html = renderToStaticMarkup(<SalaSectionsNav live={{ arquivo: "632 candidatos no arquivo" }} />)
+    const arquivo = links(html).find((link) => link.href === "/imprensa/1o-turno")
+    assert.ok(arquivo, "card do arquivo presente")
+    assert.equal(textOf(html, arquivo.labelledby), "1º turno")
+    assert.match(textOf(html, "nesta-sala-arquivo-texto"), /632 candidatos no arquivo$/)
+    assert.doesNotMatch(textOf(html, "nesta-sala-mesa-texto"), /632/)
   })
 })

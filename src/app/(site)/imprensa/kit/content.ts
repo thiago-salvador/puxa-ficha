@@ -17,6 +17,8 @@ export interface KitNumbers {
   cargos: string
   /** Data do dataset em dd/mm/aaaa, horário de Brasília. */
   data: string | null
+  /** Finalistas do 2º turno com linha pública no dataset; null sem recorte. */
+  finalistas: number | null
 }
 
 const NUMBER = new Intl.NumberFormat("pt-BR")
@@ -32,7 +34,7 @@ function formatKitDate(generatedAt: string | null | undefined): string | null {
   return new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "2-digit", year: "numeric", timeZone: "America/Sao_Paulo" }).format(date)
 }
 
-export function kitNumbers(facts: ImprensaFacts | null, generatedAt: string | null | undefined): KitNumbers | null {
+export function kitNumbers(facts: ImprensaFacts | null, generatedAt: string | null | undefined, finalistas: number | null = null): KitNumbers | null {
   if (!facts || facts.total === 0) return null
   return {
     total: facts.total,
@@ -41,7 +43,22 @@ export function kitNumbers(facts: ImprensaFacts | null, generatedAt: string | nu
     homonimos: facts.processos.indeterminado,
     cargos: formatImprensaCargoList(facts.porCargo.map((item) => item.cargo)),
     data: formatKitDate(generatedAt),
+    finalistas: finalistas && finalistas > 0 ? finalistas : null,
   }
+}
+
+/** ", inclusive os 16 finalistas do 2º turno": só com a contagem do recorte. */
+function inclusiveFinalistas(n: KitNumbers | null): string {
+  if (!n?.finalistas) return ""
+  return n.finalistas === 1 ? ", inclusive 1 finalista do 2º turno" : `, inclusive os ${NUMBER.format(n.finalistas)} finalistas do 2º turno`
+}
+
+/** Frase sobre o 2º turno nos textos prontos; sem contagem, a frase não afirma número. */
+function fraseSegundoTurno(n: KitNumbers | null): string {
+  if (!n?.finalistas) return "No 2º turno, as fichas dos finalistas seguem sendo atualizadas."
+  return n.finalistas === 1
+    ? "No 2º turno, a ficha do finalista segue sendo atualizada."
+    : `No 2º turno, as fichas dos ${NUMBER.format(n.finalistas)} finalistas seguem sendo atualizadas.`
 }
 
 /**
@@ -67,7 +84,7 @@ export const projectCitation = "Puxa Ficha (puxaficha.com.br), consulta pública
 
 /** Frase citável sobre o projeto, com o total de candidatos calculado. */
 export function kitOneLine(n: KitNumbers | null): string {
-  return `O Puxa Ficha (puxaficha.com.br) reúne o que TSE, tribunais, CGU, Câmara e Senado registram sobre ${candidatos(n)} em 2026, com link para a fonte oficial e a data de coleta em cada dado.`
+  return `O Puxa Ficha (puxaficha.com.br) reúne o que TSE, tribunais, CGU, Câmara e Senado registram sobre ${candidatos(n)} em 2026${inclusiveFinalistas(n)}, com link para a fonte oficial e a data de coleta em cada dado.`
 }
 
 export interface KitText {
@@ -92,21 +109,21 @@ export function kitPressTexts(n: KitNumbers | null): KitText[] {
       id: "50",
       label: "50 palavras",
       paragraphs: [
-        `O Puxa Ficha (puxaficha.com.br) mostra dados oficiais sobre ${candidatos(n)} em 2026: patrimônio, processos com número e fonte, sanções federais, cota parlamentar e chapas. Cada dado tem fonte e data de coleta. ${AUTORIA_CURTA} O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero.`,
+        `O Puxa Ficha (puxaficha.com.br) mostra dados oficiais sobre ${candidatos(n)} em 2026${inclusiveFinalistas(n)}: patrimônio, processos com número e fonte, sanções federais, cota parlamentar e chapas. Cada dado tem fonte e data de coleta. ${AUTORIA_CURTA} O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero.`,
       ],
     },
     {
       id: "100",
       label: "100 palavras",
       paragraphs: [
-        `O Puxa Ficha (puxaficha.com.br) reúne dados oficiais sobre ${candidatos(n)} em 2026. Cada dado tem link para a fonte e a data de coleta. ${patrimonio} O site também mostra registros em cadastros federais de sanções da CGU, gastos da cota parlamentar na Câmara e no Senado e a composição das chapas. ${AUTORIA} O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero. Confira a fonte original antes de publicar.`,
+        `O Puxa Ficha (puxaficha.com.br) reúne dados oficiais sobre ${candidatos(n)} em 2026. Cada dado tem link para a fonte e a data de coleta. ${patrimonio} O site também mostra registros em cadastros federais de sanções da CGU, gastos da cota parlamentar na Câmara e no Senado e a composição das chapas. ${fraseSegundoTurno(n)} ${AUTORIA} O site não recomenda voto. Processo não é condenação. Ausência de dado não é zero. Confira a fonte original antes de publicar.`,
       ],
     },
     {
       id: "250",
       label: "250 palavras",
       paragraphs: [
-        `O Puxa Ficha (puxaficha.com.br) é uma consulta pública de dados oficiais sobre ${candidatos(n)} nas eleições de 2026. Cada ficha reúne o que TSE, tribunais, CGU, Câmara e Senado registram sobre a pessoa, com link para o documento de origem e a data em que o dado foi coletado. ${AUTORIA}`,
+        `O Puxa Ficha (puxaficha.com.br) é uma consulta pública de dados oficiais sobre ${candidatos(n)} nas eleições de 2026. Cada ficha reúne o que TSE, tribunais, CGU, Câmara e Senado registram sobre a pessoa, com link para o documento de origem e a data em que o dado foi coletado. ${fraseSegundoTurno(n)} ${AUTORIA}`,
         `${patrimonioLongo} O site também mostra registros nos cadastros federais de sanções da CGU (CEIS, CNEP e CEAF), os gastos da cota parlamentar de quem teve mandato na Câmara ou no Senado e a composição das chapas, com vice e suplentes conforme o arquivo do TSE.`,
         homonimos,
         "O site não recomenda voto. Processo não é condenação: a situação de cada caso está no documento do tribunal. Quando um dado não foi encontrado ou não foi consultado, a ficha diz isso, e ausência de dado não é zero. O código é aberto e as correções são públicas. Antes de publicar, confira o dado na fonte original e registre a data da consulta.",

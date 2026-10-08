@@ -156,6 +156,13 @@ a.lineValue:hover { text-decoration-color: var(--ink); }
 .takeList a:hover span:first-child { text-decoration: underline; text-underline-offset: 3px; }
 .takeHint { color: var(--muted); display: block; font-size: 13px; font-weight: 500; line-height: 1.4; }
 .arrow { flex-shrink: 0; height: 18px; width: 18px; }
+.history { display: grid; gap: 18px; margin-top: 18px; }
+.historyCards { border-top: 1px solid var(--ink); padding-top: 4px; }
+.historyCards > summary { align-items: center; cursor: pointer; display: flex; font-size: 15px; font-weight: 800; gap: 8px; min-height: 48px; }
+.historyCards > summary::after { content: "+"; font-size: 20px; font-weight: 400; margin-left: auto; }
+.historyCards[open] > summary::after { content: "−"; }
+.historyCards[open] > summary { margin-bottom: 12px; }
+.historyCards .cards { margin-bottom: 18px; }
 .legendWrap { padding: 8px 0 28px; }
 
 @media (max-width: 800px) {

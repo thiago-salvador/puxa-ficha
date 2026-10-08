@@ -1,4 +1,6 @@
+import { datasetDoTurno, nomeExportTurno } from "@/lib/imprensa-2turno"
 import { getImprensaDataset, normalizeImprensaFilters } from "@/lib/imprensa-data"
+import { parseImprensaTurno } from "@/lib/imprensa-nav"
 import {
   assertExportSize,
   exportHeaders,
@@ -14,7 +16,11 @@ function queryFilters(request: Request) {
 }
 
 async function loadDataset(request: Request) {
-  return getImprensaDataset(queryFilters(request))
+  return datasetDoTurno(await getImprensaDataset(queryFilters(request)), turnoFromRequest(request))
+}
+
+function turnoFromRequest(request: Request): 2 | null {
+  return parseImprensaTurno(new URL(request.url).searchParams.get("turno"))
 }
 
 export async function GET(request: Request) {
@@ -27,7 +33,7 @@ export async function GET(request: Request) {
       status: 200,
       headers: exportHeaders(
         format === "csv" ? "text/csv; charset=utf-8" : "application/json; charset=utf-8",
-        format === "csv" ? "puxa-ficha-imprensa.csv" : "puxa-ficha-imprensa.json",
+        nomeExportTurno(format === "csv" ? "puxa-ficha-imprensa.csv" : "puxa-ficha-imprensa.json", turnoFromRequest(request)),
         dataset,
       ),
     })

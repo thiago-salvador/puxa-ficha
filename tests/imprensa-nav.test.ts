@@ -12,6 +12,7 @@ import {
   MESA_ORDEM,
   MESA_PARAM,
   normalizeRecorteUf,
+  parseImprensaTurno,
 } from "../src/lib/imprensa-nav"
 
 describe("imprensaHref", () => {
@@ -39,14 +40,57 @@ describe("imprensaHref", () => {
     }
   })
 
+  it("leva turno=2 só na Mesa e ignora o turno nas outras páginas", () => {
+    assert.equal(imprensaHref("/imprensa/mesa", { turno: 2 }), "/imprensa/mesa?turno=2")
+    assert.equal(imprensaHref("/imprensa/mesa", { uf: "ba", cargo: "Governador", turno: 2 }), "/imprensa/mesa?cargo=Governador&uf=BA&turno=2")
+    assert.equal(imprensaHref("/imprensa/mesa", { uf: "BA", turno: null }), "/imprensa/mesa?uf=BA")
+    assert.equal(imprensaHref("/imprensa/atualizacoes", { uf: "BA", turno: 2 }), "/imprensa/atualizacoes?uf=BA")
+    assert.equal(imprensaHref("/imprensa/1o-turno", { uf: "BA", turno: 2 }), "/imprensa/1o-turno")
+    assert.equal(MESA_PARAM.turno, "turno")
+  })
+
   it("usa a UF em minúsculas na rota do pacote", () => {
     assert.equal(imprensaUfPath("BA"), "/imprensa/uf/ba")
   })
 })
 
+describe("parseImprensaTurno", () => {
+  it("devolve 2 só para o valor \"2\", aceitando lista e espaços", () => {
+    assert.equal(parseImprensaTurno("2"), 2)
+    assert.equal(parseImprensaTurno(" 2 "), 2)
+    assert.equal(parseImprensaTurno(["2", "1"]), 2)
+  })
+
+  it("devolve null para qualquer outro valor ou ausência", () => {
+    for (const value of ["1", "", "02", "dois", "2x", undefined, null, [], ["1", "2"]] as const) {
+      assert.equal(parseImprensaTurno(value as string | string[] | null | undefined), null, JSON.stringify(value))
+    }
+  })
+})
+
 describe("buildImprensaNav", () => {
-  it("mantém a ordem e os rótulos da barra", () => {
-    assert.deepEqual(IMPRENSA_NAV.map((item) => item.label), ["Sala", "Seu estado", "Presidência", "Mesa", "O que mudou", "Como coletamos", "Kit"])
+  it("mantém a ordem e os rótulos da barra, com o 1º turno como arquivo no fim", () => {
+    assert.deepEqual(IMPRENSA_NAV.map((item) => item.label), ["Sala", "Seu estado", "Presidência", "Mesa", "O que mudou", "Como coletamos", "Kit", "1º turno"])
+    assert.equal(IMPRENSA_NAV.length, 8)
+    assert.deepEqual(IMPRENSA_NAV.at(-1)?.id, "arquivo")
+  })
+
+  it("a barra abre a Mesa no 2º turno e o 1º turno aponta para o arquivo", () => {
+    const nav = Object.fromEntries(buildImprensaNav().map((item) => [item.id, item]))
+    assert.equal(nav.mesa.href, "/imprensa/mesa?turno=2")
+    assert.equal(nav.arquivo.href, "/imprensa/1o-turno")
+    assert.equal(nav.arquivo.label, "1º turno")
+  })
+
+  it("a descrição das páginas de recorte cita o 2º turno", () => {
+    for (const id of ["sala", "presidencia", "mesa"]) {
+      assert.match(IMPRENSA_NAV.find((item) => item.id === id)?.description ?? "", /2º turno/, id)
+    }
+  })
+
+  it("turno null explícito mantém a Mesa com todos os candidatos", () => {
+    const mesa = buildImprensaNav({ uf: "BA", turno: null }).find((item) => item.id === "mesa")
+    assert.equal(mesa?.href, "/imprensa/mesa?uf=BA")
   })
 
   it("sem UF, Seu estado leva à escolha de estado na Sala", () => {
@@ -58,10 +102,11 @@ describe("buildImprensaNav", () => {
     const nav = Object.fromEntries(buildImprensaNav({ uf: "ba", cargo: "Senador" }).map((item) => [item.id, item]))
     assert.equal(nav.estado.label, "Seu estado · BA")
     assert.equal(nav.estado.href, "/imprensa/uf/ba")
-    assert.equal(nav.mesa.href, "/imprensa/mesa?cargo=Senador&uf=BA")
+    assert.equal(nav.mesa.href, "/imprensa/mesa?cargo=Senador&uf=BA&turno=2")
     assert.equal(nav.atualizacoes.href, "/imprensa/atualizacoes?cargo=Senador&uf=BA")
     assert.equal(nav.sala.href, "/imprensa")
     assert.equal(nav.presidencia.href, "/imprensa/presidencia")
+    assert.equal(nav.arquivo.href, "/imprensa/1o-turno")
   })
 })
 

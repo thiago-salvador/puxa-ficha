@@ -29,6 +29,8 @@ import type { Chapa2026, Patrimonio, TCUVerificacao } from "@/lib/types"
 export interface ImprensaFilters {
   cargo: string | null
   uf: string | null
+  /** Presente só no recorte do 2º turno, aplicado depois do dataset (src/lib/imprensa-2turno.ts). */
+  turno?: 2
 }
 
 export interface ImprensaRow {

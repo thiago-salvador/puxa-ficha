@@ -1,4 +1,4 @@
-// cspell:words homonimos homonimo presidencia colinha
+// cspell:words homonimos homonimo presidencia
 import type { ReactNode } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -12,6 +12,8 @@ import { ImprensaSubnav } from "@/components/imprensa/ImprensaSubnav"
 import { TrustFooter } from "@/components/imprensa/TrustFooter"
 import shell from "@/components/imprensa/imprensa-shell.module.css"
 import type { ImprensaPageDataset } from "@/lib/imprensa-cache"
+import { separarPorTurno } from "@/lib/imprensa-2turno"
+import { formatarData2Turno } from "@/lib/segundo-turno-2026"
 import { computeImprensaFacts } from "@/lib/imprensa-facts"
 import { imprensaHref, imprensaUfPath, type ImprensaPath, type ImprensaRecorte } from "@/lib/imprensa-nav"
 import {
@@ -52,6 +54,7 @@ const GROUP_TITLE: Record<string, string> = {
 }
 
 const POLLS_VISIBLE = 6
+const DATA_2TURNO = formatarData2Turno("curto")
 
 function fieldLabel(field: string): string {
   return field === "patrimonio" ? "Patrimônio" : field === "situacao" ? "Situação da candidatura" : "Partido"
@@ -87,7 +90,7 @@ function PollRow({ poll }: { poll: RegisteredPoll }) {
   )
 }
 
-function PollGroup({ group }: { group: PackPollGroup }) {
+function PollGroup({ group, emptyText }: { group: PackPollGroup; emptyText: string }) {
   const visible = group.polls.slice(0, POLLS_VISIBLE)
   const rest = group.polls.slice(POLLS_VISIBLE)
   return (
@@ -96,7 +99,7 @@ function PollGroup({ group }: { group: PackPollGroup }) {
       {group.unavailable ? (
         <p className={styles.lead}>Não foi possível carregar as pesquisas agora. Isso não quer dizer que não há pesquisa registrada.</p>
       ) : group.polls.length === 0 ? (
-        <p className={styles.lead}>Nenhuma pesquisa publicada no site para este cargo.</p>
+        <p className={styles.lead}>{emptyText}</p>
       ) : (
         <>
           <ul className={styles.pollList}>{visible.map((poll) => <PollRow key={poll.id} poll={poll} />)}</ul>
@@ -123,51 +126,102 @@ function TakeLink({ href, title, hint, external = false }: { href: string; title
   return <li>{external ? <a href={href}>{content}</a> : <Link href={href}>{content}</Link>}</li>
 }
 
+/** Recorte do 2º turno do pacote, calculado pela página a partir do snapshot oficial do 1º turno. */
+export interface PackTurno {
+  /** Fichas que seguem no 2º turno. */
+  slugs: ReadonlySet<string>
+  /** Estado cujo governo foi decidido no 1º turno: o eleito. */
+  governoDecidido?: { nome: string; partido: string; href: string | null } | null
+  /** Eleitos ao Senado no 1º turno, já com partido ("Nome (PARTIDO)"). */
+  senadoEleitos?: readonly string[]
+  /** Resultado oficial do recorte no 1º turno. */
+  resultadoHref: string
+}
+
+export interface PackPolls {
+  /** Pesquisas com cenário de 2º turno; null omite o bloco. */
+  segundoTurno: PackPollGroup[] | null
+  /** Pesquisas com cenário de 1º turno, no histórico; null omite o bloco. */
+  historico: PackPollGroup[] | null
+}
+
+function compareLinksOf(groups: ReturnType<typeof groupPackRows<ImprensaPageDataset["rows"][number]>>) {
+  return groups
+    .map((group) => ({ cargo: group.cargo, link: packCompareLink(group.cargo, group.rows.map((row) => row.slug)) }))
+    .filter((item): item is { cargo: string; link: NonNullable<ReturnType<typeof packCompareLink>> } => item.link !== null)
+}
+
+function CandidateGroups({ groups, generatedAt }: { groups: ReturnType<typeof groupPackRows<ImprensaPageDataset["rows"][number]>>; generatedAt: string }) {
+  return (
+    <>
+      {groups.map((group) => (
+        <div key={group.cargo} data-pack-group={group.cargo}>
+          <h3 className={styles.subhead}>{GROUP_TITLE[group.cargo] ?? group.cargo} · <span className={styles.num}>{group.rows.length}</span></h3>
+          <div className={styles.cards}>
+            {group.rows.map((row) => <PackCandidateCard key={row.slug} row={row} generatedAt={generatedAt} />)}
+          </div>
+        </div>
+      ))}
+    </>
+  )
+}
+
 /**
  * Modelo de página do pacote de imprensa, igual para o estado e para a
- * Presidência: fatos do recorte, cards com dados, pesquisas registradas,
- * mudanças verificadas e o que levar embora.
+ * Presidência. Abre com quem segue no 2º turno (fatos, cards, pesquisas do
+ * 2º turno) e guarda no fim o histórico do 1º turno com todos os candidatos.
  */
 export function ImprensaPack({
   scope,
   dataset,
   updates,
   polls,
+  turno,
   alertsEnabled,
 }: {
   scope: PackScope
   dataset: ImprensaPageDataset | null
   updates: ImprensaUfUpdates | null
-  /** null omite a seção (recorte sem fonte de pesquisas no site). */
-  polls: PackPollGroup[] | null
+  polls: PackPolls
+  turno: PackTurno
   alertsEnabled: boolean
 }) {
   const isEstado = scope.kind === "estado"
-  const recorte: ImprensaRecorte = isEstado ? { uf: scope.uf } : { cargo: "Presidente" }
+  const recorteTodos: ImprensaRecorte = isEstado ? { uf: scope.uf, turno: null } : { cargo: "Presidente", turno: null }
+  const recorte2: ImprensaRecorte = { ...recorteTodos, turno: 2 }
   const path: ImprensaPath = isEstado ? imprensaUfPath(scope.uf) : "/imprensa/presidencia"
   const scopeLabel = isEstado ? scope.name : "Presidência"
   const short = isEstado ? scope.uf : "Presidência"
   const de = isEstado ? ufPrepositions(scope.uf).de : "da Presidência"
   const em = isEstado ? ufPrepositions(scope.uf).em : "na Presidência"
-  const rows = dataset?.rows ?? []
+  const allRows = dataset?.rows ?? []
+  const { segundoTurno: rows, historico } = separarPorTurno(allRows, turno.slugs)
   const facts = computeImprensaFacts(rows)
+  const factsTodos = computeImprensaFacts(allRows)
   const groups = groupPackRows(rows)
+  const groupsHistorico = groupPackRows(historico)
   const note = homonimoNote(facts.processos.indeterminado, facts.total)
   const exportQuery = isEstado ? `uf=${scope.uf}` : "cargo=Presidente"
-  const compareLinks = groups
-    .map((group) => ({ cargo: group.cargo, link: packCompareLink(group.cargo, group.rows.map((row) => row.slug)) }))
-    .filter((item): item is { cargo: string; link: NonNullable<ReturnType<typeof packCompareLink>> } => item.link !== null)
+  const compareLinks = compareLinksOf(groups)
+  const decidido = isEstado ? turno.governoDecidido ?? null : null
+  const semSegundoTurno = rows.length === 0
   let section = 0
   const next = () => ++section
 
   return (
     <div className={styles.shell}>
-      <ImprensaSubnav current={isEstado ? "estado" : "presidencia"} recorte={recorte} generatedAt={dataset?.generatedAt ?? null} />
+      <ImprensaSubnav current={isEstado ? "estado" : "presidencia"} recorte={recorte2} generatedAt={dataset?.generatedAt ?? null} />
       <header className={styles.hero}>
         <div className={styles.heroInner}>
-          <p className={styles.eyebrow}>{isEstado ? "Pacote do estado" : "Pacote da Presidência"}</p>
+          <p className={styles.eyebrow}>{isEstado ? "Pacote do estado" : "Pacote da Presidência"} · 2º turno</p>
           <h1 className={styles.heroTitle}>{isEstado ? scope.name : "Presidência"}</h1>
-          {dataset && <p className={styles.headline} data-pack-headline>{packHeadline(facts.porCargo, facts.total)}</p>}
+          {dataset && (
+            <p className={styles.headline} data-pack-headline>
+              {semSegundoTurno
+                ? decidido ? `Governo decidido no 1º turno: ${decidido.nome} (${decidido.partido}). Em ${DATA_2TURNO}, o voto é só para presidente.` : "Nenhum finalista do 2º turno neste recorte."
+                : `${rows.length} ${rows.length === 1 ? "finalista" : "finalistas"} ${isEstado ? "ao governo" : "a presidente"} no 2º turno. No 1º turno: ${packHeadline(factsTodos.porCargo, factsTodos.total).replace(/\.$/, "")}.`}
+            </p>
+          )}
           <SlashDivider className={styles.heroDivider} color="text-white" />
           <nav aria-label="Pacotes por recorte" className={styles.chooser}>
             <Link href="/imprensa/presidencia" aria-current={isEstado ? undefined : "page"}>Presidência</Link>
@@ -183,55 +237,47 @@ export function ImprensaPack({
           <section className={styles.section}>
             <NoticePanel tone="caution" eyebrow="Fonte temporariamente indisponível" description="Não foi possível carregar os candidatos deste recorte. Os fatos e a contagem não estão disponíveis neste momento." className="max-w-3xl" />
           </section>
+        ) : semSegundoTurno ? (
+          <section className={styles.section} aria-labelledby="pack-sem-2turno">
+            <SectionHead num={next()} id="pack-sem-2turno">Sem 2º turno {isEstado ? "para governador" : "neste recorte"}</SectionHead>
+            <p className={styles.lead}>
+              {decidido
+                ? <>O governo {de} foi decidido no 1º turno: {decidido.href ? <Link className={styles.inlineLink} href={decidido.href}>{decidido.nome}</Link> : decidido.nome} ({decidido.partido}) venceu com a maioria dos votos válidos. Em {DATA_2TURNO}, o eleitorado {de} vota só para presidente.</>
+                : "Nenhum candidato deste recorte segue no 2º turno."}
+            </p>
+            <p className={styles.lead}><Link className={styles.inlineLink} href="/imprensa/presidencia">Abrir o pacote da Presidência</Link> · <Link className={styles.inlineLink} href={turno.resultadoHref}>Ver o resultado do 1º turno</Link></p>
+          </section>
         ) : (
           <>
             <section className={styles.section} aria-labelledby="pack-fatos">
-              <SectionHead num={next()} id="pack-fatos">Fatos {de}</SectionHead>
-              <ImprensaFacts facts={facts} scopeLabel={scopeLabel} recorte={recorte} linkToMesa />
+              <SectionHead num={next()} id="pack-fatos">Fatos do 2º turno</SectionHead>
+              <ImprensaFacts facts={facts} scopeLabel={`${scopeLabel} · 2º turno`} recorte={recorte2} linkToMesa />
             </section>
 
             <section className={styles.section} aria-labelledby="pack-candidatos">
-              <SectionHead num={next()} id="pack-candidatos">Candidatos</SectionHead>
-              {rows.length === 0 ? (
-                <p className={styles.lead}>Não há candidatos publicados neste recorte no conjunto consultado.</p>
-              ) : (
-                <>
-                  {compareLinks.length > 0 && (
-                    <>
-                      <div className={styles.compareRow}>
-                        {compareLinks.map(({ cargo, link }) => (
-                          <Link key={cargo} className={styles.pill} href={link.href} data-compare={cargo}>
-                            {link.label} <ArrowRight aria-hidden="true" className={styles.arrow} />
-                          </Link>
-                        ))}
-                      </div>
-                      {compareLinks.some(({ link }) => link.partial) && (
-                        <p className={styles.compareNote}>O comparador mostra até 4 nomes por vez. Quando há mais, ele abre com os 4 primeiros em ordem alfabética, e os outros podem ser escolhidos lá.</p>
-                      )}
-                    </>
-                  )}
-                  <p className={styles.notice}>Patrimônio é declaração ao TSE, não auditoria, e a variação é nominal, sem correção pela inflação. Processo não é condenação. Cada linha abre o dado na ficha, com a fonte oficial.</p>
-                  {groups.map((group) => (
-                    <div key={group.cargo} data-pack-group={group.cargo}>
-                      <h3 className={styles.subhead}>{GROUP_TITLE[group.cargo] ?? group.cargo} · <span className={styles.num}>{group.rows.length}</span></h3>
-                      <div className={styles.cards}>
-                        {group.rows.map((row) => <PackCandidateCard key={row.slug} row={row} generatedAt={dataset.generatedAt} />)}
-                      </div>
-                    </div>
+              <SectionHead num={next()} id="pack-candidatos">Quem segue na disputa</SectionHead>
+              {compareLinks.length > 0 && (
+                <div className={styles.compareRow}>
+                  {compareLinks.map(({ cargo, link }) => (
+                    <Link key={cargo} className={styles.pill} href={link.href} data-compare={cargo}>
+                      {link.label} <ArrowRight aria-hidden="true" className={styles.arrow} />
+                    </Link>
                   ))}
-                  {note && <p className={styles.notice} data-homonimos={facts.processos.indeterminado}>{note}</p>}
-                </>
+                </div>
               )}
+              {compareLinks.some(({ link }) => link.partial) && <p className={styles.compareNote}>O comparador mostra até 4 nomes por vez. Quando há mais, ele abre com os 4 primeiros em ordem alfabética, e os outros podem ser escolhidos lá.</p>}
+              <p className={styles.notice}>Patrimônio é declaração ao TSE, não auditoria, e a variação é nominal, sem correção pela inflação. Processo não é condenação. Cada linha abre o dado na ficha, com a fonte oficial.</p>
+              <CandidateGroups groups={groups} generatedAt={dataset.generatedAt} />
+              {note && <p className={styles.notice} data-homonimos={facts.processos.indeterminado}>{note}</p>}
             </section>
           </>
         )}
 
-        {polls !== null && (
+        {polls.segundoTurno !== null && !semSegundoTurno && (
           <section className={styles.section} aria-labelledby="pack-pesquisas">
-            <SectionHead num={next()} id="pack-pesquisas">Pesquisas registradas</SectionHead>
-            <p className={styles.lead}>Pesquisa eleitoral só pode ser divulgada com registro no TSE. Cada linha traz o instituto, a data de divulgação e o número do registro.</p>
-            <p className={styles.lead}>Cobertura parcial: esta lista não reúne todas as pesquisas divulgadas.</p>
-            {polls.map((group) => <PollGroup key={group.id} group={group} />)}
+            <SectionHead num={next()} id="pack-pesquisas">Pesquisas do 2º turno</SectionHead>
+            <p className={styles.lead}>Pesquisa eleitoral só pode ser divulgada com registro no TSE. Cada linha traz o instituto, a data de divulgação e o número do registro. Cobertura parcial: esta lista não reúne todas as pesquisas divulgadas.</p>
+            {polls.segundoTurno.map((group) => <PollGroup key={group.id} group={group} emptyText="Nenhuma pesquisa de 2º turno publicada no site até agora." />)}
           </section>
         )}
 
@@ -256,27 +302,63 @@ export function ImprensaPack({
               </ul>
             </>
           )}
-          <p className={styles.lead} style={{ marginTop: 14 }}><Link className={styles.inlineLink} href={imprensaHref("/imprensa/atualizacoes", recorte)}>Ver tudo o que mudou {em}</Link></p>
+          <p className={styles.lead} style={{ marginTop: 14 }}><Link className={styles.inlineLink} href={imprensaHref("/imprensa/atualizacoes", recorteTodos)}>Ver tudo o que mudou {em}</Link></p>
         </section>
+
+        {dataset !== null && (
+          <section id="historico-1turno" className={styles.section} aria-labelledby="pack-historico">
+            <SectionHead num={next()} id="pack-historico">Histórico do 1º turno</SectionHead>
+            <p className={styles.lead}>
+              Todos os candidatos {de} no 1º turno, inclusive quem saiu da disputa. Depois do 1º turno, só as fichas dos finalistas continuam sendo atualizadas; cada ficha mostra até quando foi atualizada.
+              {turno.senadoEleitos && turno.senadoEleitos.length > 0 ? ` Eleitos ao Senado: ${joinPt(turno.senadoEleitos)}.` : ""}
+            </p>
+            <p className={styles.lead}><Link className={styles.inlineLink} href={turno.resultadoHref}>Resultado oficial do 1º turno {de}</Link></p>
+            <div className={styles.history}>
+              <ImprensaFacts facts={factsTodos} scopeLabel={`${scopeLabel} · 1º turno`} recorte={recorteTodos} linkToMesa />
+              {historico.length > 0 && (
+                <details className={styles.historyCards} open={semSegundoTurno || undefined}>
+                  <summary>{semSegundoTurno ? "Candidatos do 1º turno" : isEstado ? "Quem saiu da disputa ou foi eleito no 1º turno" : "Quem saiu da disputa"} · <span className={styles.num}>{historico.length}</span></summary>
+                  {compareLinksOf(groupsHistorico).length > 0 && semSegundoTurno && (
+                    <div className={styles.compareRow}>
+                      {compareLinksOf(groupsHistorico).map(({ cargo, link }) => (
+                        <Link key={cargo} className={styles.pill} href={link.href} data-compare={cargo}>
+                          {link.label} <ArrowRight aria-hidden="true" className={styles.arrow} />
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {semSegundoTurno && compareLinksOf(groupsHistorico).some(({ link }) => link.partial) && <p className={styles.compareNote}>O comparador mostra até 4 nomes por vez. Quando há mais, ele abre com os 4 primeiros em ordem alfabética, e os outros podem ser escolhidos lá.</p>}
+                  <CandidateGroups groups={groupsHistorico} generatedAt={dataset.generatedAt} />
+                </details>
+              )}
+              {polls.historico !== null && polls.historico.length > 0 && (
+                <details className={styles.historyCards}>
+                  <summary>Pesquisas do 1º turno</summary>
+                  {polls.historico.map((group) => <PollGroup key={group.id} group={group} emptyText="Nenhuma pesquisa publicada no site para este cargo." />)}
+                </details>
+              )}
+            </div>
+          </section>
+        )}
 
         <section className={styles.section} aria-labelledby="pack-levar">
           <SectionHead num={next()} id="pack-levar">Levar embora</SectionHead>
           <div className={styles.takeGrid}>
             <ul className={styles.takeList}>
-              <TakeLink external href={`/api/imprensa/export?format=csv&${exportQuery}`} title={`CSV ${de}`} hint="Uma linha por candidato, com a data de geração." />
-              <TakeLink external href={`/api/imprensa/export?format=json&${exportQuery}`} title={`JSON ${de}`} hint="Os mesmos dados, para programas e planilhas." />
+              {!semSegundoTurno && <TakeLink external href={`/api/imprensa/export?format=csv&${exportQuery}&turno=2`} title={`CSV do 2º turno ${de}`} hint="Uma linha por finalista, com a data de geração." />}
+              <TakeLink external href={`/api/imprensa/export?format=csv&${exportQuery}`} title={`CSV do 1º turno ${de}`} hint="Todos os candidatos do recorte, com a data de geração." />
+              <TakeLink external href={`/api/imprensa/export?format=json&${exportQuery}`} title={`JSON do 1º turno ${de}`} hint="Os mesmos dados, para programas e planilhas." />
               {alertsEnabled ? (
-                <TakeLink href={`${imprensaHref("/imprensa/mesa", recorte)}#alertas`} title={`Alerta por email ${de}`} hint="Cadastro na Mesa, por cargo e UF." />
+                <TakeLink href={`${imprensaHref("/imprensa/mesa", recorte2)}#alertas`} title={`Alerta por email ${de}`} hint="Cadastro na Mesa, por cargo e UF." />
               ) : (
-                <TakeLink href={imprensaHref("/imprensa/atualizacoes", recorte)} title={`O que mudou ${em}`} hint="O alerta por email não está disponível agora." />
+                <TakeLink href={imprensaHref("/imprensa/atualizacoes", recorteTodos)} title={`O que mudou ${em}`} hint="O alerta por email não está disponível agora." />
               )}
-              <TakeLink href={imprensaHref("/imprensa/mesa", recorte)} title={`Abrir a Mesa ${em}`} hint="Tabela com fonte e estado de cada dado." />
-              <TakeLink href="/colinha" title={isEstado ? `Como votar ${em} (colinha)` : "Como votar (colinha)"} hint="Lista dos seis votos para levar à urna." />
+              <TakeLink href={imprensaHref("/imprensa/mesa", semSegundoTurno ? recorteTodos : recorte2)} title={`Abrir a Mesa ${em}`} hint="Tabela com fonte e estado de cada dado." />
             </ul>
             {dataset && (
               <CiteBox
                 label="Citar este pacote"
-                citation={packCitation({ scopeLabel: isEstado ? `${de.split(" ")[0]} ${scope.name}` : "da Presidência", path, rows, generatedAt: dataset.generatedAt })}
+                citation={packCitation({ scopeLabel: isEstado ? `${de.split(" ")[0]} ${scope.name}` : "da Presidência", path, rows: semSegundoTurno ? allRows : rows, generatedAt: dataset.generatedAt })}
               />
             )}
           </div>
@@ -291,4 +373,8 @@ export function ImprensaPack({
       <Footer />
     </div>
   )
+}
+
+function joinPt(items: readonly string[]): string {
+  return items.length <= 1 ? items.join("") : `${items.slice(0, -1).join(", ")} e ${items.at(-1)}`
 }
