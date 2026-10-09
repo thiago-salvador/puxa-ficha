@@ -9,23 +9,30 @@
       "quem": "ESCRITOR AUGUSTO CURY",
       "tipo": "candidato",
       "partido": "AVANTE",
-      "posicao": "neutro",
-      "apoia": null,
-      "data_declaracao": "2026-10-04",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
       "fontes": [
         {
-          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/05/cury-renan-caiado-e-zema-falam-sobre-apoio-no-2o-turno.ghtml",
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/08/augusto-cury-declara-apoio-a-flavio-bolsonaro-no-segundo-turno.ghtml",
           "veiculo": "g1",
-          "publicado_em": "2026-10-05T12:09:00-03:00",
-          "trecho": "Eu me silencio completamente em relação àqueles que estarão no segundo turno"
+          "publicado_em": "2026-10-08T18:41:00-03:00",
+          "trecho": "declarou nesta quinta-feira (8) apoio a Flávio Bolsonaro (PL) no segundo turno da eleição presidencial"
         },
         {
-          "url": "https://www.cnnbrasil.com.br/eleicoes/quem-zema-cury-renan-e-caiado-apoiarao-no-segundo-turno-entenda/",
-          "veiculo": "CNN Brasil",
-          "publicado_em": "2026-10-05T11:02:23-03:00",
-          "trecho": "declarou que não apoiará nenhum postulante no segundo turno e que manterá a neutralidade"
+          "url": "https://www.infomoney.com.br/politica/augusto-cury-declara-apoio-a-flavio-bolsonaro-no-segundo-turno/",
+          "veiculo": "InfoMoney",
+          "publicado_em": "2026-10-08T19:58:00-03:00",
+          "trecho": "Tive uma longa conversa com Flávio, olho no olho, sem filtros e sem rodeios."
+        },
+        {
+          "url": "https://www.estadao.com.br/politica/eleicoes/caiado-zema-e-cury-declaram-apoio-a-flavio-bolsonaro-no-2-turno-renan-libera-apoiadores-do-missao/",
+          "veiculo": "Estadão",
+          "publicado_em": "2026-10-08T20:35:00-03:00",
+          "trecho": "vão apoiar Flávio Bolsonaro (PL) na segunda etapa da disputa"
         }
-      ]
+      ],
+      "observacao": "Apoio condicionado a compromissos e sem participação no governo, segundo o próprio Cury."
     },
     {
       "disputa": "Presidente",
