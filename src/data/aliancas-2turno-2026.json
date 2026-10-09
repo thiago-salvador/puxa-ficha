@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-05T21:50:00-03:00",
+  "coletado_em": "2026-10-08T22:40:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -48,6 +48,18 @@
           "veiculo": "g1",
           "publicado_em": "2026-10-05T12:09:00-03:00",
           "trecho": "Quer votar em um, quer votar no outro? Fique à vontade"
+        },
+        {
+          "url": "https://www.estadao.com.br/politica/eleicoes/caiado-zema-e-cury-declaram-apoio-a-flavio-bolsonaro-no-2-turno-renan-libera-apoiadores-do-missao/",
+          "veiculo": "Estadão",
+          "publicado_em": "2026-10-08T20:35:00-03:00",
+          "trecho": "liberou os apoiadores e não deve oferecer apoio nem ao senador do PL e nem ao presidente Luiz Inácio Lula da Silva (PT)"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/veja-os-partidos-que-declararam-apoio-a-flavio-bolsonaro-e-a-lula/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-08T19:01:00-03:00",
+          "trecho": "Eu odeio o PT. Eu jamais vou votar no Lula."
         }
       ]
     },
@@ -57,29 +69,30 @@
       "quem": "RONALDO CAIADO",
       "tipo": "candidato",
       "partido": "PSD",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-06",
       "fontes": [
         {
-          "url": "https://www.estadao.com.br/politica/eleicoes/caiado-vai-receber-flavio-bolsonaro-nesta-terca-para-declarar-apoio-no-segundo-turno-diz-aliado/",
+          "url": "https://g1.globo.com/go/goias/eleicoes/2026/noticia/2026/10/06/caiado-goias-apoio-flavio-campanha-2turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-06T16:30:00-03:00",
+          "trecho": "anunciaram, nesta terça-feira (6), apoio a Flávio Bolsonaro (PL) no segundo turno presidencial"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/caiado-oficializa-apoio-a-flavio-no-segundo-turno-em-evento-em-goiania/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-06T16:29:00-03:00",
+          "trecho": "oficializou, nesta terça-feira (6), seu apoio a Flávio Bolsonaro (PL)"
+        },
+        {
+          "url": "https://www.estadao.com.br/politica/eleicoes/caiado-zema-e-cury-declaram-apoio-a-flavio-bolsonaro-no-2-turno-renan-libera-apoiadores-do-missao/",
           "veiculo": "Estadão",
-          "publicado_em": "2026-10-05T18:30:07-03:00",
-          "trecho": "Sim, vou recebê-lo. Amanhã farei meu comunicado"
-        },
-        {
-          "url": "https://www.poder360.com.br/poder-eleicoes-2026/romeu-zema-declara-apoio-a-flavio-bolsonaro-no-2o-turno/",
-          "veiculo": "Poder360",
-          "publicado_em": "2026-10-05T19:48:06-03:00",
-          "trecho": "Ronaldo Caiado (PSD) ainda não se manifestou a respeito."
-        },
-        {
-          "url": "https://veja.abril.com.br/brasil/caiado-decide-apoiar-flavio-no-2o-turno-veja-os-detalhes/",
-          "veiculo": "Veja",
-          "publicado_em": "2026-10-05T18:49:32-03:00",
-          "trecho": "vão declarar apoio formal à sua candidatura na disputa contra o presidente Lula"
+          "publicado_em": "2026-10-08T20:35:00-03:00",
+          "trecho": "vão apoiar Flávio Bolsonaro (PL) na segunda etapa da disputa"
         }
-      ]
+      ],
+      "observacao": "Apoio anunciado em evento em Goiânia; o PSD nacional segue neutro e liberou os diretórios."
     },
     {
       "disputa": "Presidente",
@@ -100,8 +113,8 @@
         {
           "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/05/zema-declara-apoio-a-flavio-bolsonaro-no-segundo-turno.ghtml",
           "veiculo": "g1",
-          "publicado_em": null,
-          "trecho": "Zema declarou nesta segunda-feira (5) apoio a Flávio Bolsonaro (PL) no segundo turno"
+          "publicado_em": "2026-10-05T18:54:00-03:00",
+          "trecho": "declarou nesta segunda-feira (5) apoio a Flávio Bolsonaro (PL) no segundo turno da eleição presidencial"
         },
         {
           "url": "https://www.cartacapital.com.br/politica/cury-renan-caiado-e-zema-o-que-os-candidatos-da-terceira-via-disseram-sobre-o-2o-turno/",
@@ -117,10 +130,23 @@
       "quem": "SAMARA",
       "tipo": "candidato",
       "partido": "UP",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/up-de-samara-martins-declara-apoio-a-lula-no-2o-turno-das-eleicoes/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-08T17:42:00-03:00",
+          "trecho": "declarou nesta quinta-feira (8) apoio à reeleição do presidente Luiz Inácio Lula da Silva (PT) no segundo turno"
+        },
+        {
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/08/unidade-popular-declara-apoio-a-lula-no-segundo-turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-08T18:05:00-03:00",
+          "trecho": "declarou nesta quinta-feira (8) apoio ao presidente Luiz Inácio Lula da Silva (PT) no segundo turno"
+        }
+      ]
     },
     {
       "disputa": "Presidente",
@@ -128,17 +154,24 @@
       "quem": "HERTZ DIAS",
       "tipo": "candidato",
       "partido": "PSTU",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-07",
       "fontes": [
         {
-          "url": "https://opiniaosocialista.com.br/eleicoes-2026-cada-voto-nas-candidaturas-do-pstu-ajudou-a-fortalecer-um-programa-socialista-para-o-brasil/",
-          "veiculo": "Opinião Socialista (PSTU)",
-          "publicado_em": "2026-10-05T12:54:09-03:00",
-          "trecho": "Nos próximos dias, a direção do PSTU se reunirá para discutir o balanço dessas eleições e definir sua posição neste 2º turno."
+          "url": "https://www.cnnbrasil.com.br/eleicoes/pstu-de-hertz-dias-declara-apoio-critico-a-lula-no-2o-turno/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-07T20:51:00-03:00",
+          "trecho": "declarou nesta quarta-feira (7) apoio “crítico” à candidatura do presidente Luiz Inácio Lula da Silva (PT) no segundo turno"
+        },
+        {
+          "url": "https://www.infomoney.com.br/mercados/pcb-e-pstu-farao-apoio-critico-a-lula-e-ao-pt-no-segundo-turno/",
+          "veiculo": "InfoMoney (Estadão Conteúdo)",
+          "publicado_em": "2026-10-08T09:18:00-03:00",
+          "trecho": "farão “voto crítico no 13” (em referência ao número do PT), mas “nenhum apoio” ao governo Lula"
         }
-      ]
+      ],
+      "observacao": "Apoio descrito como 'crítico': voto em Lula, sem apoio ao governo."
     },
     {
       "disputa": "Presidente",
@@ -146,10 +179,30 @@
       "quem": "CLARIANA BARAO",
       "tipo": "candidato",
       "partido": "DC",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/politica/noticia/2026/10/07/ex-candidata-a-presidencia-clariana-barao-declara-apoio-a-flavio-bolsonaro-no-2o-turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-07T15:49:00-03:00",
+          "trecho": "declarou nesta quarta-feira (7) apoio a Flávio Bolsonaro (PL) no segundo turno da eleição presidencial"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/clariana-barao-anuncia-apoio-a-flavio-bolsonaro-no-segundo-turno/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-07T18:35:00-03:00",
+          "trecho": "anunciou nesta quarta-feira (7) apoio a Flávio Bolsonaro (PL) na segunda etapa da eleição"
+        },
+        {
+          "url": "https://www.metropoles.com/brasil/ex-candidata-do-dc-clariana-barao-declara-apoio-a-flavio-no-2o-turno",
+          "veiculo": "Metrópoles",
+          "publicado_em": "2026-10-07T18:09:00-03:00",
+          "trecho": "declarou, nesta quarta-feira (7/10), apoio a Flávio Bolsonaro (PL) no segundo turno das eleições de 2026"
+        }
+      ],
+      "observacao": "Cobrou de Flávio atenção a direitos de mulheres e crianças."
     },
     {
       "disputa": "Presidente",
@@ -157,10 +210,24 @@
       "quem": "EDMILSON COSTA",
       "tipo": "candidato",
       "partido": "PCB",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-06",
+      "fontes": [
+        {
+          "url": "https://pcb.org.br/portal2/34339",
+          "veiculo": "PCB (site oficial)",
+          "publicado_em": "2026-10-06T00:00:00-03:00",
+          "trecho": "devemos atuar de forma militante na campanha para eleger Lula e derrotar Flávio Bolsonaro"
+        },
+        {
+          "url": "https://www.infomoney.com.br/mercados/pcb-e-pstu-farao-apoio-critico-a-lula-e-ao-pt-no-segundo-turno/",
+          "veiculo": "InfoMoney (Estadão Conteúdo)",
+          "publicado_em": "2026-10-08T09:18:00-03:00",
+          "trecho": "O PCB foi na mesma linha e destacou que é preciso derrotar a extrema-direita e apoiar a candidatura do atual presidente no segundo turno."
+        }
+      ],
+      "observacao": "Apoio descrito pelo partido como independente do governo Lula."
     },
     {
       "disputa": "Presidente",
@@ -171,7 +238,20 @@
       "posicao": "sem_declaracao",
       "apoia": null,
       "data_declaracao": null,
-      "fontes": []
+      "fontes": [
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/veja-os-partidos-que-declararam-apoio-a-flavio-bolsonaro-e-a-lula/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-08T19:01:00-03:00",
+          "trecho": "também não anunciou uma decisão"
+        },
+        {
+          "url": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/06/quem-vai-apoiar-quem-no-segundo-turno-das-eleicoes-2026.ghtml",
+          "veiculo": "Valor Econômico",
+          "publicado_em": "2026-10-06T18:08:00-03:00",
+          "trecho": "O candidato do Democrata não apontou apoio a nenhum dos dois nomes do segundo turno."
+        }
+      ]
     },
     {
       "disputa": "Presidente",
@@ -188,6 +268,18 @@
           "veiculo": "Diário Causa Operária (PCO)",
           "publicado_em": "2026-10-05T00:00:13-03:00",
           "trecho": "PCO realizará Conferência Nacional para discutir o segundo turno"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/veja-os-partidos-que-declararam-apoio-a-flavio-bolsonaro-e-a-lula/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-08T19:01:00-03:00",
+          "trecho": "informou que definirá sua posição em uma Conferência Nacional"
+        },
+        {
+          "url": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/06/quem-vai-apoiar-quem-no-segundo-turno-das-eleicoes-2026.ghtml",
+          "veiculo": "Valor Econômico",
+          "publicado_em": "2026-10-06T18:08:00-03:00",
+          "trecho": "a legenda se reunirá no próximo domingo para discutir sobre o segundo turno"
         }
       ]
     },
@@ -208,10 +300,24 @@
       "quem": "MISSÃO",
       "tipo": "partido",
       "partido": "MISSÃO",
-      "posicao": "sem_declaracao",
+      "posicao": "liberou",
       "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "data_declaracao": "2026-10-04",
+      "fontes": [
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/renan-diz-que-nao-apoiara-ninguem-no-2o-turno-facam-o-que-quiserem/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-04T22:35:30-03:00",
+          "trecho": "Eu não vou ter campanha nem para voto nulo, nem para ninguém, faça o que vocês quiserem"
+        },
+        {
+          "url": "https://www.estadao.com.br/politica/eleicoes/caiado-zema-e-cury-declaram-apoio-a-flavio-bolsonaro-no-2-turno-renan-libera-apoiadores-do-missao/",
+          "veiculo": "Estadão",
+          "publicado_em": "2026-10-08T20:35:00-03:00",
+          "trecho": "O cofundador do Movimento Brasil Livre (MBL) e do partido Missão liberou apoiadores para votar como preferirem."
+        }
+      ],
+      "observacao": "Presidente do Missão disse que os apoiadores votem como quiserem."
     },
     {
       "disputa": "Presidente",
@@ -226,7 +332,7 @@
         {
           "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/10/04/psd-anuncia-neutralidade-no-segundo-turno-entre-lula-e-flavio-e-libera-apoios-nos-estados.ghtml",
           "veiculo": "O Globo",
-          "publicado_em": null,
+          "publicado_em": "2026-10-04T22:32:00-03:00",
           "trecho": "cada diretório estadual, parlamentar, liderança partidária, filiados e militantes terão liberdade para definir seu apoio na eleição presidencial"
         },
         {
@@ -239,7 +345,7 @@
           "url": "https://www.poder360.com.br/poder-eleicoes-2026/psd-deixa-integrantes-livres-para-escolher-apoio-no-2o-turno/",
           "veiculo": "Poder360",
           "publicado_em": "2026-10-04T23:59:14-03:00",
-          "trecho": "não adotará uma posição nacional entre Flávio Bolsonaro (PL) e o presidente Lula (PT)"
+          "trecho": "não adotará uma posição nacional entre Flávio Bolsonaro (PL) e o presidente Luiz Inácio Lula da Silva (PT)"
         },
         {
           "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/renan-descarta-apoio-no-2o-turno-psd-de-caiado-libera-bases-estaduais",
@@ -255,21 +361,21 @@
       "quem": "NOVO",
       "tipo": "partido",
       "partido": "NOVO",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
       "fontes": [
         {
-          "url": "https://www1.folha.uol.com.br/colunas/painel/2026/10/novo-vai-declarar-apoio-a-flavio-bolsonaro-no-segundo-turno.shtml",
-          "veiculo": "Folha de S.Paulo (Painel)",
-          "publicado_em": "2026-10-04T23:04:00-03:00",
-          "trecho": "O partido Novo vai declarar, nos próximos dias, apoio ao senador Flávio Bolsonaro (PL) no segundo turno."
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/07/apos-anuncio-de-zema-partido-novo-tambem-declara-apoio-a-flavio-bolsonaro.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-07T11:43:00-03:00",
+          "trecho": "O partido Novo declarou nesta quarta-feira (7) apoio à candidatura de Flávio Bolsonaro (PL) no 2º turno da eleição presidencial."
         },
         {
-          "url": "https://www.poder360.com.br/poder-eleicoes-2026/romeu-zema-declara-apoio-a-flavio-bolsonaro-no-2o-turno/",
-          "veiculo": "Poder360",
-          "publicado_em": "2026-10-05T19:48:06-03:00",
-          "trecho": "a assessoria do partido Novo informou que a sigla deve se manifestar na 3º feira (6.out)"
+          "url": "https://www.cartacapital.com.br/politica/novo-declara-apoio-a-flavio-bolsonaro-no-2o-turno/",
+          "veiculo": "CartaCapital",
+          "publicado_em": null,
+          "trecho": "O partido Novo declarou, nesta quarta-feira 7, que vai apoiar Flávio Bolsonaro (PL) na disputa de segundo turno para Presidência da República."
         }
       ]
     },
@@ -279,10 +385,23 @@
       "quem": "UP",
       "tipo": "partido",
       "partido": "UP",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/08/unidade-popular-declara-apoio-a-lula-no-segundo-turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-08T18:05:00-03:00",
+          "trecho": "O Unidade Popular (UP), partido da ex-candidata à Presidência Samara Martins, declarou nesta quinta-feira (8) apoio ao presidente Luiz Inácio Lula da Silva (PT)"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/up-de-samara-martins-declara-apoio-a-lula-no-2o-turno-das-eleicoes/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-08T17:42:00-03:00",
+          "trecho": "declarou nesta quinta-feira (8) apoio à reeleição do presidente Luiz Inácio Lula da Silva (PT) no segundo turno"
+        }
+      ]
     },
     {
       "disputa": "Presidente",
@@ -290,17 +409,24 @@
       "quem": "PSTU",
       "tipo": "partido",
       "partido": "PSTU",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-07",
       "fontes": [
         {
-          "url": "https://opiniaosocialista.com.br/eleicoes-2026-cada-voto-nas-candidaturas-do-pstu-ajudou-a-fortalecer-um-programa-socialista-para-o-brasil/",
-          "veiculo": "Opinião Socialista (PSTU)",
-          "publicado_em": "2026-10-05T12:54:09-03:00",
-          "trecho": "Nos próximos dias, a direção do PSTU se reunirá para discutir o balanço dessas eleições e definir sua posição neste 2º turno."
+          "url": "https://www.cnnbrasil.com.br/eleicoes/pstu-de-hertz-dias-declara-apoio-critico-a-lula-no-2o-turno/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-07T20:51:00-03:00",
+          "trecho": "declarou nesta quarta-feira (7) apoio “crítico” à candidatura do presidente Luiz Inácio Lula da Silva (PT) no segundo turno"
+        },
+        {
+          "url": "https://www.infomoney.com.br/mercados/pcb-e-pstu-farao-apoio-critico-a-lula-e-ao-pt-no-segundo-turno/",
+          "veiculo": "InfoMoney (Estadão Conteúdo)",
+          "publicado_em": "2026-10-08T09:18:00-03:00",
+          "trecho": "farão “voto crítico no 13” (em referência ao número do PT), mas “nenhum apoio” ao governo Lula"
         }
-      ]
+      ],
+      "observacao": "Apoio 'crítico': voto em Lula, sem apoio ao governo."
     },
     {
       "disputa": "Presidente",
@@ -319,10 +445,24 @@
       "quem": "PCB",
       "tipo": "partido",
       "partido": "PCB",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-06",
+      "fontes": [
+        {
+          "url": "https://pcb.org.br/portal2/34339",
+          "veiculo": "PCB (site oficial)",
+          "publicado_em": "2026-10-06T00:00:00-03:00",
+          "trecho": "devemos atuar de forma militante na campanha para eleger Lula e derrotar Flávio Bolsonaro"
+        },
+        {
+          "url": "https://www.infomoney.com.br/mercados/pcb-e-pstu-farao-apoio-critico-a-lula-e-ao-pt-no-segundo-turno/",
+          "veiculo": "InfoMoney (Estadão Conteúdo)",
+          "publicado_em": "2026-10-08T09:18:00-03:00",
+          "trecho": "O PCB foi na mesma linha e destacou que é preciso derrotar a extrema-direita e apoiar a candidatura do atual presidente no segundo turno."
+        }
+      ],
+      "observacao": "Apoio mantendo independência em relação ao governo Lula."
     },
     {
       "disputa": "Presidente",
@@ -350,6 +490,12 @@
           "veiculo": "Diário Causa Operária (PCO)",
           "publicado_em": "2026-10-05T00:00:13-03:00",
           "trecho": "PCO realizará Conferência Nacional para discutir o segundo turno"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/veja-os-partidos-que-declararam-apoio-a-flavio-bolsonaro-e-a-lula/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-08T19:01:00-03:00",
+          "trecho": "informou que definirá sua posição em uma Conferência Nacional"
         }
       ]
     },
@@ -368,6 +514,12 @@
           "veiculo": "ac24horas",
           "publicado_em": "2026-10-05T11:44:46-03:00",
           "trecho": "decidiu adiar a definição sobre qual candidatura apoiará no segundo turno"
+        },
+        {
+          "url": "https://contilnetnoticias.com.br/destaque/alysson-diz-que-silencio-de-bocalom-e-natural-e-revela-conversa-sobre-apoio-a-mailza/",
+          "veiculo": "ContilNet",
+          "publicado_em": "2026-10-07T12:59:00-03:00",
+          "trecho": "até o momento da entrevista, ainda não havia oficializado apoio a nenhuma das duas candidaturas"
         }
       ]
     },
@@ -380,7 +532,14 @@
       "posicao": "sem_declaracao",
       "apoia": null,
       "data_declaracao": null,
-      "fontes": []
+      "fontes": [
+        {
+          "url": "https://noticiasdahora.com.br/politica/thor-dantas-diz-que-eleicao-de-segundo-turno-e-mais-dificil-escolher-e-deixa-duvidas-sobre-apoio-do-psb-no-acre/",
+          "veiculo": "Notícias da Hora",
+          "publicado_em": "2026-10-08T12:34:00-03:00",
+          "trecho": "Sem revelar se apoia Alan Rick (Republicanos) ou Mailza Assis (PP), ele afirmou que esta é uma eleição mais difícil."
+        }
+      ]
     },
     {
       "disputa": "Governador",
@@ -406,17 +565,24 @@
       "quem": "DAVID ALMEIDA",
       "tipo": "candidato",
       "partido": "AVANTE",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
+      "posicao": "apoio",
+      "apoia": "OMAR AZIZ",
+      "data_declaracao": "2026-10-06",
       "fontes": [
         {
-          "url": "https://www.acritica.com/politica/maria-do-carmo-fala-em-reconstruir-pontes-para-eventual-apoio-de-cidade-e-david-1.416952",
-          "veiculo": "A Crítica",
-          "publicado_em": "2026-10-04T21:57:53-03:00",
-          "trecho": "Maria do Carmo não negou a possibilidade"
+          "url": "https://g1.globo.com/am/amazonas/noticia/2026/10/06/liderado-por-david-almeida-avante-anuncia-apoio-a-omar-aziz-no-segundo-turno-das-eleicoes-2026.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-06T19:17:00-03:00",
+          "trecho": "O partido Avante anunciou apoio à candidatura de Omar Aziz (PSD) no segundo turno da eleição para o Governo do Amazonas em 2026."
+        },
+        {
+          "url": "https://revistacenarium.com.br/david-almeida-e-avante-declaram-apoio-a-omar-aziz-no-2o-turno-no-amazonas/",
+          "veiculo": "Revista Cenarium",
+          "publicado_em": "2026-10-06T18:14:00-03:00",
+          "trecho": "David Almeida (Avante) vai apoiar o senador Omar Aziz (PSD) no segundo turno"
         }
-      ]
+      ],
+      "observacao": "Apoio decidido pelo Avante-AM, que ele preside."
     },
     {
       "disputa": "Governador",
@@ -424,17 +590,24 @@
       "quem": "PAULA BELMONTE",
       "tipo": "candidato",
       "partido": "PSDB",
-      "posicao": "sem_declaracao",
+      "posicao": "neutro",
       "apoia": null,
-      "data_declaracao": null,
+      "data_declaracao": "2026-10-06",
       "fontes": [
         {
-          "url": "https://agendacapital.com.br/segundo-turno-no-df-para-onde-vao-os-213-mil-votos-de-paula-e-kiko/",
-          "veiculo": "Agenda Capital",
-          "publicado_em": "2026-10-05T09:37:08-03:00",
-          "trecho": "evitaram anunciar imediatamente apoio a qualquer um dos dois candidatos que seguem na corrida"
+          "url": "https://g1.globo.com/df/distrito-federal/eleicoes/2026/noticia/2026/10/06/terceira-mais-votada-no-df-paula-belmonte-decide-ficar-neutra-no-2o-turno-para-governo-psdb-libera-apoio-a-grass.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-06T19:29:00-03:00",
+          "trecho": "A deputada distrital Paula Belmonte (PSDB) decidiu ficar neutra na disputa do segundo turno pelo governo do Distrito Federal."
+        },
+        {
+          "url": "https://www.metropoles.com/colunas/grande-angular/paula-belmonte-decide-ficar-neutra-no-2o-turno-das-eleicoes-para-o-gdf",
+          "veiculo": "Metrópoles",
+          "publicado_em": null,
+          "trecho": "A decisão foi tomada durante reunião da Executiva do PSDB no DF"
         }
-      ]
+      ],
+      "observacao": "O PSDB-DF decidiu pela neutralidade e liberou apoios individuais."
     },
     {
       "disputa": "Governador",
@@ -442,17 +615,24 @@
       "quem": "KIKO CAPUTO",
       "tipo": "candidato",
       "partido": "NOVO",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
+      "posicao": "apoio",
+      "apoia": "CELINA LEÃO",
+      "data_declaracao": "2026-10-07",
       "fontes": [
         {
-          "url": "https://agendacapital.com.br/segundo-turno-no-df-para-onde-vao-os-213-mil-votos-de-paula-e-kiko/",
-          "veiculo": "Agenda Capital",
-          "publicado_em": "2026-10-05T09:37:08-03:00",
-          "trecho": "evitaram anunciar imediatamente apoio a qualquer um dos dois candidatos que seguem na corrida"
+          "url": "https://www.metropoles.com/distrito-federal/kiko-caputo-declara-apoio-a-celina-leao-para-o-gdf-no-segundo-turno",
+          "veiculo": "Metrópoles",
+          "publicado_em": "2026-10-07T15:35:00-03:00",
+          "trecho": "Kiko Caputo anunciou apoio à Celina Leão (PP) para o segundo turno"
+        },
+        {
+          "url": "https://noticias.r7.com/eleicoes/2026/kiko-caputo-declara-apoio-a-celina-leao-no-2-turno-apos-assinatura-de-carta-compromisso-07102026/",
+          "veiculo": "R7",
+          "publicado_em": "2026-10-07T15:53:00-03:00",
+          "trecho": "declarou apoio a Celina Leão"
         }
-      ]
+      ],
+      "observacao": "Apoio do Novo-DF após Celina Leão assinar uma carta-compromisso."
     },
     {
       "disputa": "Governador",
@@ -462,13 +642,19 @@
       "partido": "PSB",
       "posicao": "apoio",
       "apoia": "LEANDRO GRASS",
-      "data_declaracao": null,
+      "data_declaracao": "2026-10-04",
       "fontes": [
         {
           "url": "https://agendacapital.com.br/segundo-turno-no-df-para-onde-vao-os-213-mil-votos-de-paula-e-kiko/",
           "veiculo": "Agenda Capital",
           "publicado_em": "2026-10-05T09:37:08-03:00",
           "trecho": "já declarou apoio a Leandro Grass"
+        },
+        {
+          "url": "https://www.metropoles.com/distrito-federal/cappelli-declara-apoio-a-leandro-grass-no-segundo-turno-da-disputa-pelo-gdf",
+          "veiculo": "Metrópoles",
+          "publicado_em": "2026-10-04T21:41:00-03:00",
+          "trecho": "No 2° turno, votarei em Leandro Grass"
         }
       ]
     },
@@ -487,6 +673,12 @@
           "veiculo": "Folha Vitória",
           "publicado_em": "2026-10-04T20:30:53-03:00",
           "trecho": "não pretende anunciar, neste momento, apoio individual a nenhum dos candidatos"
+        },
+        {
+          "url": "https://newsespiritosanto.com.br/helder-e-o-pt-ainda-discutem-apoio-no-segundo-turno-no-espirito-santo/",
+          "veiculo": "News Espírito Santo",
+          "publicado_em": "2026-10-06T00:00:00-03:00",
+          "trecho": "Sobre o segundo turno do Espírito Santo, nós ainda vamos fazer conversas no partido"
         }
       ]
     },
@@ -499,7 +691,14 @@
       "posicao": "sem_declaracao",
       "apoia": null,
       "data_declaracao": null,
-      "fontes": []
+      "fontes": [
+        {
+          "url": "https://expressorio.com.br/william-siri-cobra-eduardo-paes-por-medidas-para-servidores-e-diz-que-nao-apoiara-douglas-ruas/",
+          "veiculo": "Expresso Rio",
+          "publicado_em": "2026-10-06T15:01:00-03:00",
+          "trecho": "afirmou que não declarará apoio a Douglas Ruas (PL) no segundo turno"
+        }
+      ]
     },
     {
       "disputa": "Governador",
@@ -507,17 +706,18 @@
       "quem": "ÁLVARO DIAS",
       "tipo": "candidato",
       "partido": "PL",
-      "posicao": "sem_declaracao",
+      "posicao": "neutro",
       "apoia": null,
-      "data_declaracao": "2026-10-05",
+      "data_declaracao": "2026-10-06",
       "fontes": [
         {
-          "url": "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/10/05/apos-derrota-na-eleicao-para-o-governo-do-rn-alvaro-dias-diz-que-a-direita-cresceu.ghtml",
-          "veiculo": "g1",
-          "publicado_em": null,
-          "trecho": "No segundo turno estaremos lado a lado com Flávio Bolsonaro novamente"
+          "url": "https://saibamais.jor.br/2026/10/apos-derrota-alvaro-dias-caminha-para-neutralidade-no-2o-turno-do-rn/",
+          "veiculo": "Saiba Mais",
+          "publicado_em": "2026-10-07T00:00:00-03:00",
+          "trecho": "Defendo uma posição de neutralidade por não concordar com a candidatura de Allyson."
         }
-      ]
+      ],
+      "observacao": "Defende neutralidade do PL no RN; o partido ainda não formalizou a posição."
     },
     {
       "disputa": "Governador",
@@ -525,15 +725,784 @@
       "quem": "LAUREZ MOREIRA",
       "tipo": "candidato",
       "partido": "PSD",
+      "posicao": "apoio",
+      "apoia": "VICENTINHO JÚNIOR",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/08/laurez-moreira-declara-apoio-a-vicentinho-junior-no-2o-turno-do-governo-do-tocantins.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-08T19:12:00-03:00",
+          "trecho": "O vice-governador Laurez Moreira declarou apoio a Vicentinho Júnior no 2º turno para o governo do Tocantins."
+        },
+        {
+          "url": "https://gazetadocerrado.com.br/tocantins/laurez-moreira-declara-apoio-a-vicentinho-junior-no-2o-turno-o-momento-e-dele/",
+          "veiculo": "Gazeta do Cerrado",
+          "publicado_em": "2026-10-08T17:03:00-03:00",
+          "trecho": "Laurez confirmou o apoio"
+        }
+      ],
+      "observacao": "Declarou o apoio por vídeo enviado à TV Anhanguera."
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "AL",
+      "quem": "JHC",
+      "tipo": "governador",
+      "partido": "PSDB",
+      "situacao": "eleito",
       "posicao": "sem_declaracao",
       "apoia": null,
       "data_declaracao": null,
       "fontes": [
         {
-          "url": "https://tocantins.jornalopcao.com.br/bastidores/gutierres-e-dida-moreira-nomes-ligados-a-laurez-se-aproximam-de-vicentinho-junior-601573/",
-          "veiculo": "Jornal Opção (TO)",
-          "publicado_em": "2026-10-05T17:44:58-03:00",
-          "trecho": "As conversas ocorrem antes de uma manifestação pública de Laurez sobre o segundo turno."
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-06T09:24:00-03:00",
+          "trecho": "Outros quatro governadores — JHC (PSDB-AL), Eduardo Braide (PSD-MA), Dr. Furlan (PSD-AP) e Raquel Lyra (PSD-PE) — não declararam apoio a nenhum dos dois candidatos."
+        },
+        {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-06T09:24:00-03:00",
+          "trecho": "Vamos reunir o nosso grupo político para discutir, com o resultado das eleições de Alagoas, o posicionamento sobre as eleições nacionais."
+        },
+        {
+          "url": "https://www.bnewsalagoas.com.br/noticias/politica/celia-se-antecipa-a-jhc-sobre-apoio-aos-presidenciaveis-e-declara-voto-em-flavio-no-2-turno.html",
+          "veiculo": "BNews Alagoas",
+          "publicado_em": null,
+          "trecho": "antes mesmo de o governador eleito JHC ter definido e divulgado quem dedicará apoio no segundo turno"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "AP",
+      "quem": "DR. FURLAN",
+      "tipo": "governador",
+      "partido": "PSD",
+      "situacao": "eleito",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-06T09:24:00-03:00",
+          "trecho": "Outros quatro governadores — JHC (PSDB-AL), Eduardo Braide (PSD-MA), Dr. Furlan (PSD-AP) e Raquel Lyra (PSD-PE) — não declararam apoio a nenhum dos dois candidatos."
+        },
+        {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-06T09:24:00-03:00",
+          "trecho": "sem apoiar nenhum candidato à Presidência"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BA",
+      "quem": "JERÔNIMO RODRIGUES",
+      "tipo": "governador",
+      "partido": "PT",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-04",
+      "fontes": [
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/reeleito-jeronimo-diz-que-bahia-seguira-avancando-e-reforca-apoio-a-lula/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": null,
+          "trecho": "Agora, vamos arregaçar as mangas e seguir para o segundo turno das eleições, ao lado do presidente Lula, para garantirmos a vitória da democracia. Vamos à luta!"
+        },
+        {
+          "url": "https://www.band.com.br/politica/eleicoes/flavio-x-lula-veja-mapa-atualizado-de-aliancas-aos-candidatos-no-2o-turno",
+          "veiculo": "Band",
+          "publicado_em": "2026-10-08T06:00:00-03:00",
+          "trecho": "Jerônimo reafirmou aliança total com Lula para a etapa final da disputa"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "CE",
+      "quem": "ELMANO DE FREITAS",
+      "tipo": "governador",
+      "partido": "PT",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/ce/ceara/eleicoes/2026/noticia/2026/10/05/meta-do-2o-turno-e-conseguir-mais-de-70percent-de-votos-para-lula-no-ceara-afirma-governador-elmano-de-freitas.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-05T12:28:00-03:00",
+          "trecho": "Meta do 2º turno é conseguir mais de 70% de votos para Lula no Ceará, afirma governador Elmano de Freitas"
+        },
+        {
+          "url": "https://www.band.com.br/politica/eleicoes/flavio-x-lula-veja-mapa-atualizado-de-aliancas-aos-candidatos-no-2o-turno",
+          "veiculo": "Band",
+          "publicado_em": "2026-10-08T06:00:00-03:00",
+          "trecho": "reuniu-se com Lula em Brasília para organizar ações de campanha com o objetivo de ampliar a votação do presidente no estado para mais de 70%"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "GO",
+      "quem": "DANIEL VILELA",
+      "tipo": "governador",
+      "partido": "MDB",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://www.correiobraziliense.com.br/politica/2026/10/7515026-apos-ser-reeleito-daniel-vilela-declara-apoio-a-flavio-bolsonaro.html",
+          "veiculo": "Correio Braziliense",
+          "publicado_em": "2026-10-05T15:42:00-03:00",
+          "trecho": "A opção é o Flávio para a gente buscar dele um compromisso de fazer um governo que possa ser diferente e que possa atender às expectativas dos brasileiros"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "MA",
+      "quem": "EDUARDO BRAIDE",
+      "tipo": "governador",
+      "partido": "PSD",
+      "situacao": "eleito",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://oimparcial.com.br/noticias/2026/10/apos-vitoria-em-1o-turno-no-maranhao-braide-adia-definicao-de-apoio-presidencial/",
+          "veiculo": "O Imparcial",
+          "publicado_em": null,
+          "trecho": "afirmou que adiará seu posicionamento sobre o segundo turno da eleição presidencial"
+        },
+        {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-06T09:24:00-03:00",
+          "trecho": "Outros quatro governadores — JHC (PSDB-AL), Eduardo Braide (PSD-MA), Dr. Furlan (PSD-AP) e Raquel Lyra (PSD-PE) — não declararam apoio a nenhum dos dois candidatos."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "MG",
+      "quem": "CLEITINHO AZEVEDO",
+      "tipo": "governador",
+      "partido": "REPUBLICANOS",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://www.metropoles.com/minas-gerais/cleitinho-prestigia-apoio-do-republicanos-a-flavio-no-2o-turno",
+          "veiculo": "Metrópoles",
+          "publicado_em": null,
+          "trecho": "Eu estou apoiando o Flávio"
+        },
+        {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-06T09:24:00-03:00",
+          "trecho": "Cleitinho e Pivetta declararam voto em Flávio mesmo sem terem recebido apoio formal do candidato ou do PL em suas campanhas estaduais."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "MS",
+      "quem": "EDUARDO RIEDEL",
+      "tipo": "governador",
+      "partido": "PP",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://www.campograndenews.com.br/politica/riedel-chega-a-brasilia-e-aparece-de-maos-dadas-com-flavio-bolsonaro",
+          "veiculo": "Campo Grande News",
+          "publicado_em": "2026-10-07T10:48:00-03:00",
+          "trecho": "Estamos em Brasília para ratificar nosso apoio ao presidente Flávio Bolsonaro"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "MT",
+      "quem": "OTAVIANO PIVETTA",
+      "tipo": "governador",
+      "partido": "REPUBLICANOS",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-06T09:24:00-03:00",
+          "trecho": "Cleitinho e Pivetta declararam voto em Flávio mesmo sem terem recebido apoio formal do candidato ou do PL em suas campanhas estaduais."
+        },
+        {
+          "url": "https://veja.abril.com.br/politica/quem-sao-os-12-governadores-eleitos-que-foram-dar-apoio-a-flavio-bolsonaro/",
+          "veiculo": "Veja",
+          "publicado_em": "2026-10-08T17:07:00-03:00",
+          "trecho": "Em ato político em Brasília nesta quinta-feira, 8, declararam apoio ao presidenciável"
+        },
+        {
+          "url": "https://www.band.com.br/politica/eleicoes/flavio-x-lula-veja-mapa-atualizado-de-aliancas-aos-candidatos-no-2o-turno",
+          "veiculo": "Band",
+          "publicado_em": "2026-10-08T06:00:00-03:00",
+          "trecho": "Também reforçaram apoio imediato os governadores eleitos Cleitinho Azevedo (Minas Gerais) e Otaviano Pivetta (Mato Grosso)."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "PA",
+      "quem": "DR. DANIEL",
+      "tipo": "governador",
+      "partido": "PODE",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-06",
+      "fontes": [
+        {
+          "url": "https://www.brasil247.com/brasil/governador-eleito-do-para-dr-daniel-anuncia-apoio-a-flavio-bolsonaro-no-2o-turno/",
+          "veiculo": "Brasil 247",
+          "publicado_em": "2026-10-06T21:30:00-03:00",
+          "trecho": "estarei caminhando lado a lado com vocês no segundo turno, pedindo votos para Flávio Bolsonaro"
+        },
+        {
+          "url": "https://www.metropoles.com/colunas/grande-angular/governador-diz-que-quer-reverter-vantagem-de-lula-sobre-flavio-no-para",
+          "veiculo": "Metrópoles",
+          "publicado_em": null,
+          "trecho": "declarou apoio a Flávio Bolsonaro (PL) na disputa pela Presidência da República e afirmou que vai trabalhar para reverter vantagem de Lula (PT) no estado"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "PB",
+      "quem": "LUCAS RIBEIRO",
+      "tipo": "governador",
+      "partido": "PP",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/10/07/lucas-ribeiro-contraria-pp-e-coordena-campanha-de-lula.html",
+          "veiculo": "O POVO",
+          "publicado_em": "2026-10-07",
+          "trecho": "Após a reunião, Lucas reafirmou o apoio à candidatura de Lula"
+        },
+        {
+          "url": "https://noticias.r7.com/eleicoes/pp-promete-neutralidade-a-lula-para-eleger-lucas-ribeiro-na-pb-e-em-tres-dias-fecha-com-flavio-07102026/",
+          "veiculo": "R7",
+          "publicado_em": "2026-10-07",
+          "trecho": "Posou ao lado do presidente e reafirmou o apoio nas redes."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "PE",
+      "quem": "RAQUEL LYRA",
+      "tipo": "governador",
+      "partido": "PSD",
+      "situacao": "eleito",
+      "posicao": "neutro",
+      "apoia": null,
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://www.metropoles.com/brasil/reeleita-em-pernambuco-raquel-lyra-adota-neutralidade-entre-flavio-e-lula",
+          "veiculo": "Metrópoles",
+          "publicado_em": "2026-10-08",
+          "trecho": "confirmou nesta quinta-feira (8/10) que manterá uma posição de neutralidade na disputa presidencial do segundo turno"
+        },
+        {
+          "url": "https://g1.globo.com/politica/blog/andreia-sadi/post/2026/10/06/raquel-lyra-diz-ser-grata-a-lula-mas-evita-declarar-apoio-no-2o-turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-06",
+          "trecho": "mas evitou declarar apoio ao petista no segundo turno da eleição presidencial"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "PI",
+      "quem": "RAFAEL FONTELES",
+      "tipo": "governador",
+      "partido": "PT",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://www.parlamentopiaui.com.br/noticia/rafael-se-reune-com-lula-em-brasilia-para-alinhar-estrategias-para-o-segundo-turno",
+          "veiculo": "Parlamento Piauí",
+          "publicado_em": null,
+          "trecho": "A meta é garantir 80% dos votos válidos para Lula no Piauí, dando a nossa contribuição para essa grande vitória"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "PR",
+      "quem": "SERGIO MORO",
+      "tipo": "governador",
+      "partido": "PL",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://www.infomoney.com.br/politica/governadores-eleitos-do-sul-gravam-video-pedindo-votos-para-flavio-no-2o-turno/",
+          "veiculo": "InfoMoney",
+          "publicado_em": "2026-10-08T18:07:00-03:00",
+          "trecho": "Vamos, efetivamente, aposentar Lula e o PT neste segundo turno das eleições, elegendo Flávio Bolsonaro"
+        },
+        {
+          "url": "https://veja.abril.com.br/politica/quem-sao-os-12-governadores-eleitos-que-foram-dar-apoio-a-flavio-bolsonaro/",
+          "veiculo": "Veja",
+          "publicado_em": "2026-10-08T17:07:00-03:00",
+          "trecho": "Em ato político em Brasília nesta quinta-feira, 8, declararam apoio ao presidenciável"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "RO",
+      "quem": "MARCOS ROGÉRIO",
+      "tipo": "governador",
+      "partido": "PL",
+      "situacao": "eleito",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "RR",
+      "quem": "ARTHUR HENRIQUE",
+      "tipo": "governador",
+      "partido": "PL",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://revistacenarium.com.br/arthur-henrique-projeta-80-dos-votos-para-flavio-bolsonaro-no-segundo-turno-em-roraima/",
+          "veiculo": "Revista Cenarium",
+          "publicado_em": null,
+          "trecho": "estabeleceu a meta de alcançar 80% dos votos para o candidato à Presidência da República, Flávio Bolsonaro (PL), no segundo turno"
+        },
+        {
+          "url": "https://veja.abril.com.br/politica/quem-sao-os-12-governadores-eleitos-que-foram-dar-apoio-a-flavio-bolsonaro/",
+          "veiculo": "Veja",
+          "publicado_em": "2026-10-08T17:07:00-03:00",
+          "trecho": "Em ato político em Brasília nesta quinta-feira, 8, declararam apoio ao presidenciável"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "RS",
+      "quem": "ZUCCO",
+      "tipo": "governador",
+      "partido": "PL",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://www.osul.com.br/apos-reuniao-com-flavio-bolsonaro-governador-eleito-zucco-gravou-video-nos-precisamos-eleger-flavio-bolsonaro-dia-25",
+          "veiculo": "Jornal O Sul",
+          "publicado_em": "2026-10-08",
+          "trecho": "nós precisamos eleger Flávio Bolsonaro dia 25"
+        },
+        {
+          "url": "https://www.infomoney.com.br/politica/governadores-eleitos-do-sul-gravam-video-pedindo-votos-para-flavio-no-2o-turno/",
+          "veiculo": "InfoMoney",
+          "publicado_em": "2026-10-08T18:07:00-03:00",
+          "trecho": "os três governadores da região Sul vão fazer um grande chamamento para elegermos Flávio Bolsonaro agora, dia 25 de outubro"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "SC",
+      "quem": "JORGINHO MELLO",
+      "tipo": "governador",
+      "partido": "PL",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://www.santacatarinaempauta.com.br/2026/10/08/jorginho-carol-e-carlos-participam-de-reuniao-do-pl-com-flavio-bolsonaro-em-brasilia/",
+          "veiculo": "Santa Catarina em Pauta",
+          "publicado_em": "2026-10-08",
+          "trecho": "O Flávio sabe que pode contar conosco"
+        },
+        {
+          "url": "https://hojecentrosul.com.br/governadores-eleitos-do-sul-se-unem-em-brasilia-para-eleger-flavio-bolsonaro-no-segundo-turno/",
+          "veiculo": "Hoje no Centro Sul",
+          "publicado_em": "2026-10-08",
+          "trecho": "gravaram um vídeo conjunto convocando os eleitores dos três estados a participarem da campanha para o segundo turno"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "SE",
+      "quem": "FÁBIO",
+      "tipo": "governador",
+      "partido": "PSD",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://sbtnews.sbt.com.br/noticia/politica/mitidieri-diz-que-abstencao-pode-decidir-2-turno",
+          "veiculo": "SBT News",
+          "publicado_em": "2026-10-05T18:50:00-03:00",
+          "trecho": "O presidente conta conosco e vai precisar ainda mais do apoio dos votos do Nordeste para ajudar a reverter o resultado no cenário nacional"
+        },
+        {
+          "url": "https://www.band.com.br/politica/eleicoes/flavio-x-lula-veja-mapa-atualizado-de-aliancas-aos-candidatos-no-2o-turno",
+          "veiculo": "Band",
+          "publicado_em": "2026-10-08T06:00:00-03:00",
+          "trecho": "confirmou atuação ativa a favor da reeleição de Lula"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "SP",
+      "quem": "TARCÍSIO",
+      "tipo": "governador",
+      "partido": "REPUBLICANOS",
+      "situacao": "eleito",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://www.metropoles.com/minas-gerais/cleitinho-prestigia-apoio-do-republicanos-a-flavio-no-2o-turno",
+          "veiculo": "Metrópoles",
+          "publicado_em": null,
+          "trecho": "Tarcísio também declarou apoio ao candidato do PL e afirmou que o Republicanos estará ao lado dele na disputa pelo Palácio do Planalto."
+        },
+        {
+          "url": "https://g1.globo.com/sp/sao-paulo/eleicoes/2026/noticia/2026/10/02/tarcisio-diz-que-apoiara-flavio-bolsonaro-em-eventual-2o-turno-presidencial-e-que-podera-ajuda-lo-ate-fora-de-sp.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-02T19:18:00-03:00",
+          "trecho": "Tarcísio de Freitas afirmou nesta sexta-feira (2) que apoiará Flávio Bolsonaro em eventual segundo turno presidencial."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "AC",
+      "quem": "MAILZA ASSIS",
+      "tipo": "governador",
+      "partido": "PP",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-06",
+      "fontes": [
+        {
+          "url": "https://contilnetnoticias.com.br/destaque/em-reuniao-da-uniao-progressista-mailza-reafirma-apoio-a-flavio-no-2-turno/",
+          "veiculo": "ContilNet",
+          "publicado_em": "2026-10-08",
+          "trecho": "No 2º turno meu apoio é de Flávio Bolsonaro para presidente do Brasil."
+        },
+        {
+          "url": "https://agazetadoacre.com/2026/10/noticias/politica/flavio-bolsonaro-agradece-apoio-de-mailza-no-2o-turno-estou-contando-muito-com-quem-tem-voto/",
+          "veiculo": "A Gazeta do Acre",
+          "publicado_em": "2026-10-07",
+          "trecho": "quero reafirmar meu apoio, nossa luta vai continuar."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "AC",
+      "quem": "ALAN RICK",
+      "tipo": "governador",
+      "partido": "REPUBLICANOS",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://ac24horas.com/2026/10/07/alan-rick-grava-video-e-pede-apoio-a-flavio-bolsonaro-no-segundo-turno/",
+          "veiculo": "ac24horas",
+          "publicado_em": "2026-10-07T17:55:00-03:00",
+          "trecho": "Dia 25 é 22, é Flávio Bolsonaro, o nosso presidente, para o Brasil mudar e o Acre mudar."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "AM",
+      "quem": "OMAR AZIZ",
+      "tipo": "governador",
+      "partido": "PSD",
+      "situacao": "segundo_turno",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "AM",
+      "quem": "PROFESSORA MARIA DO CARMO",
+      "tipo": "governador",
+      "partido": "PL",
+      "situacao": "segundo_turno",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "DF",
+      "quem": "CELINA LEÃO",
+      "tipo": "governador",
+      "partido": "PP",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-06",
+      "fontes": [
+        {
+          "url": "https://www.metropoles.com/distrito-federal/celina-leao-confirma-apoio-a-flavio-bolsonaro-consolidar-os-indecisos",
+          "veiculo": "Metrópoles",
+          "publicado_em": "2026-10-06",
+          "trecho": "Não tem nenhum estado que não vai estar fechado com Flávio Bolsonaro. Fechamos a questão sem exceção de nenhum estado"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "DF",
+      "quem": "LEANDRO GRASS",
+      "tipo": "governador",
+      "partido": "PT",
+      "situacao": "segundo_turno",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "ES",
+      "quem": "LORENZO PAZOLINI",
+      "tipo": "governador",
+      "partido": "REPUBLICANOS",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://www.folhavitoria.com.br/eleicoes/republicanos-declara-apoio-a-flavio-bolsonaro-em-evento-com-pazolini/",
+          "veiculo": "Folha Vitória",
+          "publicado_em": "2026-10-07T22:03:00-03:00",
+          "trecho": "Estamos juntos, capixabas, é 10 e 22"
+        },
+        {
+          "url": "https://www.agazeta.com.br/es/politica/pazolini-espera-ter-flavio-bolsonaro-ao-seu-lado-em-campanha-no-2-turno-no-es-1026",
+          "veiculo": "A Gazeta (ES)",
+          "publicado_em": "2026-10-06",
+          "trecho": "Esperamos que Flávio esteja aqui, pessoalmente, nos apoiando nessa jornada."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "ES",
+      "quem": "RICARDO FERRAÇO",
+      "tipo": "governador",
+      "partido": "MDB",
+      "situacao": "segundo_turno",
+      "posicao": "neutro",
+      "apoia": null,
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://www.agazeta.com.br/es/politica/2-turno-e-uma-nova-eleicao-diz-ricardo-ferraco-apos-resultado-para-governo-do-es-1026",
+          "veiculo": "A Gazeta (ES)",
+          "publicado_em": "2026-10-05T18:35:00-03:00",
+          "trecho": "Porque nós não estamos decidindo aqui no Espírito Santo, numa campanha para governador, quem vai presidir o país."
+        },
+        {
+          "url": "https://www.seculodiario.com.br/politica/lorenzo-pazolini-e-ricardo-ferraco-vao-disputar-segundo-turno-para-governador/",
+          "veiculo": "Século Diário",
+          "publicado_em": "2026-10-04",
+          "trecho": "Ricardo Ferraço, em contraposição, declarou-se neutro em relação à eleição presidencial"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "RJ",
+      "quem": "DOUGLAS RUAS",
+      "tipo": "governador",
+      "partido": "PL",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/10/08/apos-decisao-do-tse-ruas-diz-que-eleicao-acabou-ve-recado-da-populacao-a-velha-politica-e-pede-votos-para-flavio.ghtml",
+          "veiculo": "O Globo",
+          "publicado_em": "2026-10-08",
+          "trecho": "Estarei todos os dias nas ruas até o dia 25 para eleger o Flávio."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "RJ",
+      "quem": "EDUARDO PAES",
+      "tipo": "governador",
+      "partido": "PSD",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://www1.folha.uol.com.br/poder/2026/10/faco-campanha-mas-nao-sou-vassalo-do-lula-diz-eduardo-paes.shtml",
+          "veiculo": "Folha de S.Paulo",
+          "publicado_em": "2026-10",
+          "trecho": "voto no presidente Lula, faço campanha para o presidente Lula"
+        },
+        {
+          "url": "https://cbn.globo.com/politica/noticia/2026/10/07/na-primeira-agenda-pos-1o-turno-paes-diz-que-quer-conquistar-tambem-eleitores-de-flavio-bolsonaro.ghtml",
+          "veiculo": "CBN / Globo",
+          "publicado_em": "2026-10-07T14:54:00-03:00",
+          "trecho": "Nesta quarta-feira, na Rocinha, ele reafirmou o apoio a Lula"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "RN",
+      "quem": "ALLYSON",
+      "tipo": "governador",
+      "partido": "UNIÃO",
+      "situacao": "segundo_turno",
+      "posicao": "neutro",
+      "apoia": null,
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://agorarn.com.br/politica/allyson-reafirma-neutralidade/",
+          "veiculo": "Agora RN",
+          "publicado_em": "2026-10-08",
+          "trecho": "Allyson afirmou que manterá a posição de neutralidade adotada durante o primeiro turno"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "RN",
+      "quem": "CADU DE LULA",
+      "tipo": "governador",
+      "partido": "PT",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/10/05/um-dia-apos-a-eleicao-allyson-diz-estar-na-estrada-e-cadu-encontra-lula-em-brasilia.ghtml",
+          "veiculo": "G1 RN",
+          "publicado_em": "2026-10-05T18:21:00-03:00",
+          "trecho": "É assim que a gente vai vencer as eleições, juntos com o presidente Lula"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "TO",
+      "quem": "PROFESSORA DORINHA",
+      "tipo": "governador",
+      "partido": "UNIÃO",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-07",
+      "fontes": [
+        {
+          "url": "https://t1noticias.com.br/politica/flavio-bolsonaro-declara-apoio-a-dorinha-no-2o-turno-para-o-governo-do-tocantins/144165/",
+          "veiculo": "T1 Notícias",
+          "publicado_em": "2026-10-07T14:13:00-03:00",
+          "trecho": "Para presidente, Flávio Bolsonaro 22"
+        },
+        {
+          "url": "https://ogirassol.com.br/politica/flavio-bolsonaro-declara-apoio-a-dorinha-no-segundo-turno-para-o-futuro-do-tocantins-o-melhor-e-dorinha/",
+          "veiculo": "O Girassol",
+          "publicado_em": "2026-10-07",
+          "trecho": "Para presidente, Flávio Bolsonaro 22"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "TO",
+      "quem": "VICENTINHO JÚNIOR",
+      "tipo": "governador",
+      "partido": "PSDB",
+      "situacao": "segundo_turno",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://gazetadocerrado.com.br/politica/eleicoes/2o-turno-vicentinho-anuncia-iolanda-recebe-adesao-de-vereadores-de-gurupi-e-se-posiciona-a-favor-de-flavio-bolsonaro-nao-vou-me-reinventar/",
+          "veiculo": "Gazeta do Cerrado",
+          "publicado_em": "2026-10-05T17:50:00-03:00",
+          "trecho": "Torço pelo presidente Flávio"
+        },
+        {
+          "url": "https://clebertoledo.com.br/politica/vicentinho-junior-abre-2o-turno-com-apoio-de-luciano-gutierres-iolanda-e-vereadores-de-gurupi-critica-pesquisas-e-reforca-voto-em-flavio/",
+          "veiculo": "Cleber Toledo",
+          "publicado_em": "2026-10-05",
+          "trecho": "votou em Flávio Bolsonaro (PL) no primeiro turno e repetirá o voto"
         }
       ]
     }
