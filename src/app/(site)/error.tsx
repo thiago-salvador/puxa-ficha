@@ -2,6 +2,7 @@
 
 import { useEffect } from "react"
 import * as Sentry from "@sentry/nextjs"
+import { recoverFromStaleDeploy } from "@/lib/stale-deploy-recovery"
 import Link from "next/link"
 
 export default function Error({
@@ -12,7 +13,9 @@ export default function Error({
   reset: () => void
 }) {
   useEffect(() => {
-    Sentry.captureException(error)
+    // Aba presa em deploy antigo: recarrega uma vez em vez de mostrar erro.
+    const reloading = recoverFromStaleDeploy(error)
+    Sentry.captureException(error, reloading ? { tags: { stale_deploy_reload: "1" } } : undefined)
     console.error(error)
   }, [error])
 
