@@ -221,6 +221,30 @@ describe("importação manual auditada de pesquisas", () => {
     assert.ok(invalid.problems.some((problem) => problem.includes(`linha "${desconhecido}" que não é finalista`)))
   })
 
+  it("preserva as respostas literais da Vox no 2º turno e recusa nome de terceiro", () => {
+    const branco = "Votos nulos, brancos ou eleitores que não escolhem nenhum nome"
+    const indeciso = "Não souberam ou não opinaram"
+    const segundo = rodada({ registration: "BR-99984/2026", scenarios: [{
+      kind: "estimulado", turn: 2, question: null,
+      results: [
+        { raw_label: "Lula", value_percent: 44.2 },
+        { raw_label: "Flávio Bolsonaro", value_percent: 42.7 },
+        { raw_label: branco, value_percent: 3.4 },
+        { raw_label: indeciso, value_percent: 9.7 },
+      ],
+    }] })
+    const decisoes = { BR: { ...aliases.BR, "Lula": "lula", "Flávio Bolsonaro": "flavio-bolsonaro", [branco]: null, [indeciso]: null } }
+    const result = importarRodadas([segundo], decisoes, "2026-10-09T12:00:00Z", carregarCatalogos())
+    assert.deepEqual(result.problems, [])
+    const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(result.catalogos.pres), JSON.stringify(result.catalogos.presFontes))
+    const respostas = catalogo.pesquisas.find((poll) => poll.id === "instituto-exemplo-br-99984-2026")!.cenarios[0].resultados
+    assert.deepEqual(respostas.filter((entry) => entry.matchStatus === "not_candidate").map((entry) => [entry.rawLabel, entry.valuePercent]), [[branco, 3.4], [indeciso, 9.7]])
+    const desconhecido = "Votos nulos, brancos ou Ciro"
+    segundo.scenarios[0].results[2].raw_label = desconhecido
+    const invalid = importarRodadas([segundo], { BR: { ...decisoes.BR, [desconhecido]: null } }, "2026-10-09T12:00:00Z", carregarCatalogos())
+    assert.ok(invalid.problems.some((problem) => problem.includes(`linha "${desconhecido}" que não é finalista`)))
+  })
+
   it("separa 1º e 2º turno da mesma rodada sem exigir nota entre turnos", () => {
     const primeiro = rodada().scenarios[0]
     const governador = rodada({ uf: "PI", registration: "PI-99990/2026", scenarios: [

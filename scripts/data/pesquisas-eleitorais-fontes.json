@@ -2951,6 +2951,156 @@
         }
       },
       "consulted_at": "2026-10-09T01:03:32Z"
+    },
+    {
+      "id": "atlasintel-br-03663-2026-revisao-20261009",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "AtlasIntel",
+        "commissioner": "AtlasIntel",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-03",
+          "end": "2026-10-08"
+        },
+        "published_at": "2026-10-09",
+        "sample_size": 5026,
+        "method": null,
+        "margin_of_error_pp": 1,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-03663/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-outubro-2026-segundo-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-03663/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-09T12:14:24Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "af6122906f66d7b06e853d41245efc27e1966f77ff0df802acc4300a666a34a4",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-outubro-2026-segundo-turno/",
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/atlas-intel-flavio-tem-52-8-e-lula-47-2-no-segundo-turno"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-outubro-2026-segundo-turno/",
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/atlas-intel-flavio-tem-52-8-e-lula-47-2-no-segundo-turno"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-outubro-2026-segundo-turno/",
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/atlas-intel-flavio-tem-52-8-e-lula-47-2-no-segundo-turno"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/atlasintel-presidente-outubro-2026-segundo-turno/",
+            "https://sbtnews.sbt.com.br/noticia/eleicoes/atlas-intel-flavio-tem-52-8-e-lula-47-2-no-segundo-turno"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-09T12:14:24Z"
+    },
+    {
+      "id": "vox-brasil-br-09623-2026-revisao-20261009",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Vox Brasil",
+        "commissioner": "Vox Brasil",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-05",
+          "end": "2026-10-07"
+        },
+        "published_at": "2026-10-09",
+        "sample_size": 2100,
+        "method": "Entrevista presencial domiciliar",
+        "margin_of_error_pp": 2.15,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-09623/2026",
+        "result_url": "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-442-das-intencoes-de-voto-no-2o-turno-flavio-427/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-09623/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-09T12:14:24Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "fed4b8816e4875558b1601c5370ea47466c463ffaa794e5b5ed74f0835949d22",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-442-das-intencoes-de-voto-no-2o-turno-flavio-427/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-442-das-intencoes-de-voto-no-2o-turno-flavio-427/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-442-das-intencoes-de-voto-no-2o-turno-flavio-427/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-442-das-intencoes-de-voto-no-2o-turno-flavio-427/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-09T12:14:24Z"
     }
   ],
   "media_fallback_policy": {
