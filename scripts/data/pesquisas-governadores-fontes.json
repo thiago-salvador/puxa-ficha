@@ -12556,6 +12556,79 @@
         }
       },
       "consulted_at": "2026-10-05T12:42:58Z"
+    },
+    {
+      "id": "datafolha-df-03365-2026-revisao-20261009",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Datafolha",
+        "commissioner": "TV Globo e Folha de S.Paulo",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-06",
+          "end": "2026-10-07"
+        },
+        "published_at": "2026-10-08",
+        "sample_size": 910,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": null,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          2
+        ],
+        "registration_id": "DF-03365/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-lidera-disputa-de-2o-turno-no-df-com-55-contra-37-de-grass.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-03365/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-09T01:03:32Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "6789392141f3331cff93dfeede92eecb0e13730c80409a63e7a4286c9286c821",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-lidera-disputa-de-2o-turno-no-df-com-55-contra-37-de-grass.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-lidera-disputa-de-2o-turno-no-df-com-55-contra-37-de-grass.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-lidera-disputa-de-2o-turno-no-df-com-55-contra-37-de-grass.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/datafolha-celina-leao-lidera-disputa-de-2o-turno-no-df-com-55-contra-37-de-grass.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-09T01:03:32Z"
     }
   ]
 }
