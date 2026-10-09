@@ -1,0 +1,541 @@
+{
+  "versao": 1,
+  "coletado_em": "2026-10-05T21:50:00-03:00",
+  "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
+  "itens": [
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "ESCRITOR AUGUSTO CURY",
+      "tipo": "candidato",
+      "partido": "AVANTE",
+      "posicao": "neutro",
+      "apoia": null,
+      "data_declaracao": "2026-10-04",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/05/cury-renan-caiado-e-zema-falam-sobre-apoio-no-2o-turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-05T12:09:00-03:00",
+          "trecho": "Eu me silencio completamente em relação àqueles que estarão no segundo turno"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/quem-zema-cury-renan-e-caiado-apoiarao-no-segundo-turno-entenda/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-05T11:02:23-03:00",
+          "trecho": "declarou que não apoiará nenhum postulante no segundo turno e que manterá a neutralidade"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "RENAN SANTOS",
+      "tipo": "candidato",
+      "partido": "MISSÃO",
+      "posicao": "liberou",
+      "apoia": null,
+      "data_declaracao": "2026-10-04",
+      "fontes": [
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/renan-diz-que-nao-apoiara-ninguem-no-2o-turno-facam-o-que-quiserem/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-04T22:35:30-03:00",
+          "trecho": "Eu não vou ter campanha nem para voto nulo, nem para ninguém, faça o que vocês quiserem"
+        },
+        {
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/05/cury-renan-caiado-e-zema-falam-sobre-apoio-no-2o-turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": "2026-10-05T12:09:00-03:00",
+          "trecho": "Quer votar em um, quer votar no outro? Fique à vontade"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "RONALDO CAIADO",
+      "tipo": "candidato",
+      "partido": "PSD",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://www.estadao.com.br/politica/eleicoes/caiado-vai-receber-flavio-bolsonaro-nesta-terca-para-declarar-apoio-no-segundo-turno-diz-aliado/",
+          "veiculo": "Estadão",
+          "publicado_em": "2026-10-05T18:30:07-03:00",
+          "trecho": "Sim, vou recebê-lo. Amanhã farei meu comunicado"
+        },
+        {
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/romeu-zema-declara-apoio-a-flavio-bolsonaro-no-2o-turno/",
+          "veiculo": "Poder360",
+          "publicado_em": "2026-10-05T19:48:06-03:00",
+          "trecho": "Ronaldo Caiado (PSD) ainda não se manifestou a respeito."
+        },
+        {
+          "url": "https://veja.abril.com.br/brasil/caiado-decide-apoiar-flavio-no-2o-turno-veja-os-detalhes/",
+          "veiculo": "Veja",
+          "publicado_em": "2026-10-05T18:49:32-03:00",
+          "trecho": "vão declarar apoio formal à sua candidatura na disputa contra o presidente Lula"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "ZEMA",
+      "tipo": "candidato",
+      "partido": "NOVO",
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/romeu-zema-declara-apoio-a-flavio-bolsonaro-no-2o-turno/",
+          "veiculo": "Poder360",
+          "publicado_em": "2026-10-05T19:48:06-03:00",
+          "trecho": "Voto contra o PT, voto no Flávio Bolsonaro."
+        },
+        {
+          "url": "https://g1.globo.com/politica/eleicoes/2026/noticia/2026/10/05/zema-declara-apoio-a-flavio-bolsonaro-no-segundo-turno.ghtml",
+          "veiculo": "g1",
+          "publicado_em": null,
+          "trecho": "Zema declarou nesta segunda-feira (5) apoio a Flávio Bolsonaro (PL) no segundo turno"
+        },
+        {
+          "url": "https://www.cartacapital.com.br/politica/cury-renan-caiado-e-zema-o-que-os-candidatos-da-terceira-via-disseram-sobre-o-2o-turno/",
+          "veiculo": "CartaCapital",
+          "publicado_em": "2026-10-05T16:59:32-03:00",
+          "trecho": "declarou seu voto em Flávio Bolsonaro (PL) e contra o PT"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "SAMARA",
+      "tipo": "candidato",
+      "partido": "UP",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "HERTZ DIAS",
+      "tipo": "candidato",
+      "partido": "PSTU",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://opiniaosocialista.com.br/eleicoes-2026-cada-voto-nas-candidaturas-do-pstu-ajudou-a-fortalecer-um-programa-socialista-para-o-brasil/",
+          "veiculo": "Opinião Socialista (PSTU)",
+          "publicado_em": "2026-10-05T12:54:09-03:00",
+          "trecho": "Nos próximos dias, a direção do PSTU se reunirá para discutir o balanço dessas eleições e definir sua posição neste 2º turno."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "CLARIANA BARAO",
+      "tipo": "candidato",
+      "partido": "DC",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "EDMILSON COSTA",
+      "tipo": "candidato",
+      "partido": "PCB",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "VETERINÁRIO WILSON GRASSI",
+      "tipo": "candidato",
+      "partido": "DEMOCRATA",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "RUI COSTA PIMENTA",
+      "tipo": "candidato",
+      "partido": "PCO",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://causaoperaria.org.br/2026/pco-realizara-conferencia-nacional-para-discutir-o-segundo-turno/",
+          "veiculo": "Diário Causa Operária (PCO)",
+          "publicado_em": "2026-10-05T00:00:13-03:00",
+          "trecho": "PCO realizará Conferência Nacional para discutir o segundo turno"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "AVANTE",
+      "tipo": "partido",
+      "partido": "AVANTE",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "MISSÃO",
+      "tipo": "partido",
+      "partido": "MISSÃO",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "PSD",
+      "tipo": "partido",
+      "partido": "PSD",
+      "posicao": "neutro",
+      "apoia": null,
+      "data_declaracao": "2026-10-04",
+      "fontes": [
+        {
+          "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/10/04/psd-anuncia-neutralidade-no-segundo-turno-entre-lula-e-flavio-e-libera-apoios-nos-estados.ghtml",
+          "veiculo": "O Globo",
+          "publicado_em": null,
+          "trecho": "cada diretório estadual, parlamentar, liderança partidária, filiados e militantes terão liberdade para definir seu apoio na eleição presidencial"
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/psd-de-caiado-adota-neutralidade-e-libera-diretorios-em-2o-turno/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-04T22:31:54-03:00",
+          "trecho": "decidiu adotar neutralidade na disputa presidencial do segundo turno e liberar diretórios estaduais"
+        },
+        {
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/psd-deixa-integrantes-livres-para-escolher-apoio-no-2o-turno/",
+          "veiculo": "Poder360",
+          "publicado_em": "2026-10-04T23:59:14-03:00",
+          "trecho": "não adotará uma posição nacional entre Flávio Bolsonaro (PL) e o presidente Lula (PT)"
+        },
+        {
+          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/renan-descarta-apoio-no-2o-turno-psd-de-caiado-libera-bases-estaduais",
+          "veiculo": "Agência Brasil",
+          "publicado_em": "2026-10-05T15:41:00-03:00",
+          "trecho": "vai liberar os diretórios estaduais para que definam o apoio no 2º turno"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "NOVO",
+      "tipo": "partido",
+      "partido": "NOVO",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://www1.folha.uol.com.br/colunas/painel/2026/10/novo-vai-declarar-apoio-a-flavio-bolsonaro-no-segundo-turno.shtml",
+          "veiculo": "Folha de S.Paulo (Painel)",
+          "publicado_em": "2026-10-04T23:04:00-03:00",
+          "trecho": "O partido Novo vai declarar, nos próximos dias, apoio ao senador Flávio Bolsonaro (PL) no segundo turno."
+        },
+        {
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/romeu-zema-declara-apoio-a-flavio-bolsonaro-no-2o-turno/",
+          "veiculo": "Poder360",
+          "publicado_em": "2026-10-05T19:48:06-03:00",
+          "trecho": "a assessoria do partido Novo informou que a sigla deve se manifestar na 3º feira (6.out)"
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "UP",
+      "tipo": "partido",
+      "partido": "UP",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "PSTU",
+      "tipo": "partido",
+      "partido": "PSTU",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://opiniaosocialista.com.br/eleicoes-2026-cada-voto-nas-candidaturas-do-pstu-ajudou-a-fortalecer-um-programa-socialista-para-o-brasil/",
+          "veiculo": "Opinião Socialista (PSTU)",
+          "publicado_em": "2026-10-05T12:54:09-03:00",
+          "trecho": "Nos próximos dias, a direção do PSTU se reunirá para discutir o balanço dessas eleições e definir sua posição neste 2º turno."
+        }
+      ]
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "DC",
+      "tipo": "partido",
+      "partido": "DC",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "PCB",
+      "tipo": "partido",
+      "partido": "PCB",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "DEMOCRATA",
+      "tipo": "partido",
+      "partido": "DEMOCRATA",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Presidente",
+      "uf": "BR",
+      "quem": "PCO",
+      "tipo": "partido",
+      "partido": "PCO",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://causaoperaria.org.br/2026/pco-realizara-conferencia-nacional-para-discutir-o-segundo-turno/",
+          "veiculo": "Diário Causa Operária (PCO)",
+          "publicado_em": "2026-10-05T00:00:13-03:00",
+          "trecho": "PCO realizará Conferência Nacional para discutir o segundo turno"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "AC",
+      "quem": "TIÃO BOCALOM",
+      "tipo": "candidato",
+      "partido": "PSDB",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://ac24horas.com/2026/10/05/bocalom-adia-decisao-sobre-apoio-no-2o-turno-e-aguarda-conversa-com-alysson-bestene/",
+          "veiculo": "ac24horas",
+          "publicado_em": "2026-10-05T11:44:46-03:00",
+          "trecho": "decidiu adiar a definição sobre qual candidatura apoiará no segundo turno"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "AC",
+      "quem": "THOR DANTAS",
+      "tipo": "candidato",
+      "partido": "PSB",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Governador",
+      "uf": "AM",
+      "quem": "ROBERTO CIDADE",
+      "tipo": "candidato",
+      "partido": "UNIÃO",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://www.acritica.com/politica/maria-do-carmo-fala-em-reconstruir-pontes-para-eventual-apoio-de-cidade-e-david-1.416952",
+          "veiculo": "A Crítica",
+          "publicado_em": "2026-10-04T21:57:53-03:00",
+          "trecho": "Maria do Carmo não negou a possibilidade"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "AM",
+      "quem": "DAVID ALMEIDA",
+      "tipo": "candidato",
+      "partido": "AVANTE",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://www.acritica.com/politica/maria-do-carmo-fala-em-reconstruir-pontes-para-eventual-apoio-de-cidade-e-david-1.416952",
+          "veiculo": "A Crítica",
+          "publicado_em": "2026-10-04T21:57:53-03:00",
+          "trecho": "Maria do Carmo não negou a possibilidade"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "DF",
+      "quem": "PAULA BELMONTE",
+      "tipo": "candidato",
+      "partido": "PSDB",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://agendacapital.com.br/segundo-turno-no-df-para-onde-vao-os-213-mil-votos-de-paula-e-kiko/",
+          "veiculo": "Agenda Capital",
+          "publicado_em": "2026-10-05T09:37:08-03:00",
+          "trecho": "evitaram anunciar imediatamente apoio a qualquer um dos dois candidatos que seguem na corrida"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "DF",
+      "quem": "KIKO CAPUTO",
+      "tipo": "candidato",
+      "partido": "NOVO",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://agendacapital.com.br/segundo-turno-no-df-para-onde-vao-os-213-mil-votos-de-paula-e-kiko/",
+          "veiculo": "Agenda Capital",
+          "publicado_em": "2026-10-05T09:37:08-03:00",
+          "trecho": "evitaram anunciar imediatamente apoio a qualquer um dos dois candidatos que seguem na corrida"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "DF",
+      "quem": "RICARDO CAPPELLI",
+      "tipo": "candidato",
+      "partido": "PSB",
+      "posicao": "apoio",
+      "apoia": "LEANDRO GRASS",
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://agendacapital.com.br/segundo-turno-no-df-para-onde-vao-os-213-mil-votos-de-paula-e-kiko/",
+          "veiculo": "Agenda Capital",
+          "publicado_em": "2026-10-05T09:37:08-03:00",
+          "trecho": "já declarou apoio a Leandro Grass"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "ES",
+      "quem": "HELDER SALOMÃO",
+      "tipo": "candidato",
+      "partido": "PT",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": "2026-10-04",
+      "fontes": [
+        {
+          "url": "https://www.folhavitoria.com.br/eleicoes/derrotado-nas-urnas-helder-salomao-ainda-vai-decidir-quem-apoiar-no-2o-turno/",
+          "veiculo": "Folha Vitória",
+          "publicado_em": "2026-10-04T20:30:53-03:00",
+          "trecho": "não pretende anunciar, neste momento, apoio individual a nenhum dos candidatos"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "RJ",
+      "quem": "WILLIAM SIRI",
+      "tipo": "candidato",
+      "partido": "PSOL",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": []
+    },
+    {
+      "disputa": "Governador",
+      "uf": "RN",
+      "quem": "ÁLVARO DIAS",
+      "tipo": "candidato",
+      "partido": "PL",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": "2026-10-05",
+      "fontes": [
+        {
+          "url": "https://g1.globo.com/rn/rio-grande-do-norte/eleicoes/2026/noticia/2026/10/05/apos-derrota-na-eleicao-para-o-governo-do-rn-alvaro-dias-diz-que-a-direita-cresceu.ghtml",
+          "veiculo": "g1",
+          "publicado_em": null,
+          "trecho": "No segundo turno estaremos lado a lado com Flávio Bolsonaro novamente"
+        }
+      ]
+    },
+    {
+      "disputa": "Governador",
+      "uf": "TO",
+      "quem": "LAUREZ MOREIRA",
+      "tipo": "candidato",
+      "partido": "PSD",
+      "posicao": "sem_declaracao",
+      "apoia": null,
+      "data_declaracao": null,
+      "fontes": [
+        {
+          "url": "https://tocantins.jornalopcao.com.br/bastidores/gutierres-e-dida-moreira-nomes-ligados-a-laurez-se-aproximam-de-vicentinho-junior-601573/",
+          "veiculo": "Jornal Opção (TO)",
+          "publicado_em": "2026-10-05T17:44:58-03:00",
+          "trecho": "As conversas ocorrem antes de uma manifestação pública de Laurez sobre o segundo turno."
+        }
+      ]
+    }
+  ]
+}

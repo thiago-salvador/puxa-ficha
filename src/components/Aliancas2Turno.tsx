@@ -5,6 +5,7 @@ import {
   eliminadosDaDisputa,
   formatarColeta,
   formatarDiaDeclaracao,
+  governadoresPorPosicao,
   itemDoEliminado,
   rotuloPosicao,
   type Aliancas2Turno,
@@ -46,13 +47,27 @@ function CabecalhoGrupo({ rotulo, percentual, cor, hachura = false }: { rotulo: 
 }
 
 /** Uma declaração: nome; partido, posição (fora do grupo de apoio), data e fonte. */
-function EntradaDeclarada({ item, nome, partido, mostrarPosicao, chave }: { item: ItemAlianca; nome: string; partido: string; mostrarPosicao: boolean; chave: string }) {
+function EntradaDeclarada({
+  item,
+  nome,
+  partido,
+  mostrarPosicao,
+  chave,
+  marcador = "eliminado",
+}: {
+  item: ItemAlianca
+  nome: string
+  partido: string
+  mostrarPosicao: boolean
+  chave: string
+  marcador?: "eliminado" | "governador"
+}) {
   const fonte = primeiraFonte(item)
   const href = fonte ? safeHref(fonte.url) : null
   const dia = formatarDiaDeclaracao(item.data_declaracao)
   const meta = [partido, mostrarPosicao ? rotuloPosicao(item) : null, dia].filter(Boolean).join(" · ")
   return (
-    <li className="py-3" data-pf-eliminado={chave} data-pf-posicao={item.posicao}>
+    <li className="py-3" {...{ [`data-pf-${marcador}`]: chave }} data-pf-posicao={item.posicao}>
       <p className="text-[length:var(--text-body)] font-bold text-foreground">{nome}</p>
       <p className="mt-0.5 text-[length:var(--text-caption)] font-medium text-muted-foreground">
         <span className="tabular-nums">{meta}</span>
@@ -68,6 +83,81 @@ function EntradaDeclarada({ item, nome, partido, mostrarPosicao, chave }: { item
         )}
       </p>
     </li>
+  )
+}
+
+const SITUACAO_GOVERNADOR = { eleito: "eleito", segundo_turno: "no 2º turno" } as const
+
+function metaGovernador(i: ItemAlianca): string {
+  return `${i.uf} · ${i.partido} · ${i.situacao ? SITUACAO_GOVERNADOR[i.situacao] : ""}`
+}
+
+/**
+ * Governadores eleitos e finalistas estaduais com posição sobre a Presidência.
+ * Fora da barra: não foram candidatos a presidente, então não há voto a somar.
+ */
+function BlocoGovernadores({
+  governadores,
+  fa,
+  fb,
+  cores,
+  coleta,
+}: {
+  governadores: NonNullable<ReturnType<typeof governadoresPorPosicao>>
+  fa: string
+  fb: string
+  cores: { a: string; b: string }
+  coleta: string
+}) {
+  const lista = (itens: ItemAlianca[], mostrarPosicao: boolean, vazio: string) =>
+    itens.length === 0 ? (
+      <p className="py-3 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">{vazio}</p>
+    ) : (
+      <ul className="divide-y divide-border">
+        {itens.map((i) => (
+          <EntradaDeclarada key={`${i.uf}:${i.quem}`} item={i} nome={nomeLegivel(i.quem)} partido={metaGovernador(i)} mostrarPosicao={mostrarPosicao} chave={`${i.uf.toLowerCase()}:${i.sq}`} marcador="governador" />
+        ))}
+      </ul>
+    )
+  const rotulo = (cor: string, texto: string, n: number) => (
+    <h4 className="flex items-baseline gap-2 text-[length:var(--text-body)] font-bold text-foreground">
+      <span aria-hidden="true" className="inline-block size-2.5 shrink-0 translate-y-[-1px] rounded-full" style={{ backgroundColor: cor }} />
+      <span className="min-w-0">{texto}</span>
+      <span className="ml-auto pl-3 font-heading text-[length:var(--text-heading-sm)] leading-none tabular-nums">{n}</span>
+    </h4>
+  )
+  return (
+    <div className="mt-6" data-pf-aliancas-governadores>
+      <h3 className="text-[length:var(--text-body)] font-bold text-foreground">Governadores eleitos e candidatos no 2º turno estadual</h3>
+      <p className="mt-1 max-w-prose text-[length:var(--text-caption)] font-medium text-muted-foreground">
+        Posição sobre a Presidência. Não entram na conta de votos acima: não foram candidatos a presidente.
+      </p>
+      <div className="mt-3 grid rounded-[6px] border border-border lg:grid-cols-2 lg:divide-x lg:divide-border">
+        <div className="space-y-6 p-5 sm:p-6" data-pf-governadores-grupo="a">
+          <div>
+            {rotulo(cores.a, `Apoia ${nomeLegivel(fa)}`, governadores.a.length)}
+            {lista(governadores.a, false, "Nenhum apoio registrado na captura.")}
+          </div>
+          {governadores.neutro.length > 0 && (
+            <div data-pf-governadores-grupo="neutro">
+              {rotulo("var(--gray-400)", "Neutro, voto liberado ou voto nulo", governadores.neutro.length)}
+              {lista(governadores.neutro, true, "")}
+            </div>
+          )}
+        </div>
+        <div className="space-y-6 border-t border-border p-5 sm:p-6 lg:border-t-0" data-pf-governadores-grupo="b">
+          <div>
+            {rotulo(cores.b, `Apoia ${nomeLegivel(fb)}`, governadores.b.length)}
+            {lista(governadores.b, false, "Nenhum apoio registrado na captura.")}
+          </div>
+        </div>
+      </div>
+      {governadores.sem.length > 0 && (
+        <p className="mt-3 max-w-prose text-[length:var(--text-caption)] font-medium text-muted-foreground" data-pf-governadores-sem>
+          Sem declaração pública até {coleta}: {governadores.sem.map((i) => `${nomeLegivel(i.quem)} (${i.uf})`).join(", ")}.
+        </p>
+      )}
+    </div>
   )
 }
 
@@ -101,6 +191,7 @@ export function Aliancas2TurnoSecao({
     const chave: ChaveSegmento = !item || item.posicao === "sem_declaracao" ? "sem" : item.posicao === "apoio" ? (item.apoia_sq === fa.sq ? "a" : "b") : "neutro"
     grupos[chave].push({ c, item })
   }
+  const governadores = governadoresPorPosicao(aliancas, disputa)
   const partidos = aliancas.itens.filter((i) => i.tipo === "partido" && i.disputa === "Presidente")
   const partidosDeclarados = partidos.filter((i) => i.posicao !== "sem_declaracao")
   const partidosSem = partidos.filter((i) => i.posicao === "sem_declaracao")
@@ -184,6 +275,8 @@ export function Aliancas2TurnoSecao({
           </div>
         </div>
       </div>
+
+      {governadores && <BlocoGovernadores governadores={governadores} fa={fa.nome_urna} fb={fb.nome_urna} cores={cores} coleta={coleta} />}
 
       <details className="group mt-6 text-[length:var(--text-caption)] font-medium leading-relaxed text-muted-foreground" data-pf-aliancas-nota>
         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center font-bold text-foreground underline decoration-dotted underline-offset-4 [&::-webkit-details-marker]:hidden">
