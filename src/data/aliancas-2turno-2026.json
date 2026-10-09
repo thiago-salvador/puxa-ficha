@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-08T22:40:00-03:00",
+  "coletado_em": "2026-10-09T09:15:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -1102,10 +1102,17 @@
       "tipo": "governador",
       "partido": "PL",
       "situacao": "eleito",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-08",
+      "fontes": [
+        {
+          "url": "https://veja.abril.com.br/politica/quem-sao-os-12-governadores-eleitos-que-foram-dar-apoio-a-flavio-bolsonaro/",
+          "veiculo": "VEJA",
+          "publicado_em": "2026-10-08T17:07:00-03:00",
+          "trecho": "declararam apoio ao presidenciável: Luciano Zucco (PL-RS), ... Marcos Rogério (PL-RO), Arthur Henrique (PL-RR)"
+        }
+      ]
     },
     {
       "disputa": "Presidente",
