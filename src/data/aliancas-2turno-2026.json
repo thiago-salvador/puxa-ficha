@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-10T11:50:00-03:00",
+  "coletado_em": "2026-10-10T19:35:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -722,6 +722,12 @@
           "veiculo": "Saiba Mais",
           "publicado_em": "2026-10-07T00:00:00-03:00",
           "trecho": "Defendo uma posição de neutralidade por não concordar com a candidatura de Allyson."
+        },
+        {
+          "url": "https://agorarn.com.br/politica/pl-decide-ficar-neutro-no-2o-turno-mas-libera-filiados-a-apoiarem-allyson-no-rn/",
+          "veiculo": "Agora RN",
+          "publicado_em": "2026-10-09T23:11:00-03:00",
+          "trecho": "Eu sou disciplinado. A decisão que foi tomada vai ser seguida."
         }
       ],
       "observacao": "Defende neutralidade do PL no RN; o partido ainda não formalizou a posição."
