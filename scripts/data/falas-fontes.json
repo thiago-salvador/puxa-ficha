@@ -862,6 +862,13 @@
       "origin": "https://www.acritica.com",
       "listing": "/policia/",
       "articlePath": "/policia/"
+    },
+    {
+      "id": "brasil-de-fato",
+      "publisher": "Brasil de Fato",
+      "origin": "https://www.brasildefato.com.br",
+      "listing": "/2026/",
+      "articlePath": "/2026/"
     }
   ]
 }
