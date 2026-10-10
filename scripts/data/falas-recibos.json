@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-recibos-v1",
-  "updated_at": "2026-09-30T09:53:40.102Z",
+  "updated_at": "2026-10-10T09:12:04.189Z",
   "receipts": [
     {
       "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
@@ -29,10 +29,10 @@
     {
       "candidate_id": "c7e3a004-99ba-426b-af65-206e3066c496",
       "candidate_slug": "alan-rick",
-      "searched_at": "2026-09-30T08:25:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
-      "result": "sem_fala"
+      "searched_at": "2026-10-10T08:31:20.298Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
+      "result": "com_fala"
     },
     {
       "candidate_id": "18d872c1-3e51-4856-9a93-2ca53b35d78f",
@@ -357,10 +357,10 @@
     {
       "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
       "candidate_slug": "douglas-ruas",
-      "searched_at": "2026-09-30T08:41:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
-      "result": "sem_fala"
+      "searched_at": "2026-10-10T08:31:24.091Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
+      "result": "com_fala"
     },
     {
       "candidate_id": "dcc4a93e-4114-43e9-b067-4581ed12cfd5",
@@ -533,10 +533,10 @@
     {
       "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
       "candidate_slug": "flavio-bolsonaro",
-      "searched_at": "2026-09-30T08:38:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
-      "result": "sem_fala"
+      "searched_at": "2026-10-10T08:31:21.661Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
+      "result": "com_fala"
     },
     {
       "candidate_id": "4a883517-cf35-49d1-9a80-26857f27687c",
@@ -869,10 +869,10 @@
     {
       "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
       "candidate_slug": "leandro-grass",
-      "searched_at": "2026-09-30T08:45:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
-      "result": "sem_fala"
+      "searched_at": "2026-10-10T08:31:22.957Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
+      "result": "com_fala"
     },
     {
       "candidate_id": "9677309d-5b33-4973-9bbb-d92b766557a3",
@@ -965,17 +965,17 @@
     {
       "candidate_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
       "candidate_slug": "lula",
-      "searched_at": "2026-09-30T08:42:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
+      "searched_at": "2026-10-10T08:31:22.263Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
       "result": "com_fala"
     },
     {
       "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
       "candidate_slug": "mailza-assis",
-      "searched_at": "2026-09-30T08:25:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
+      "searched_at": "2026-10-10T08:49:03.000Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
       "result": "com_fala"
     },
     {
@@ -1077,10 +1077,10 @@
     {
       "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
       "candidate_slug": "omar-aziz",
-      "searched_at": "2026-09-30T08:29:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
-      "result": "sem_fala"
+      "searched_at": "2026-10-10T08:31:21.153Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
+      "result": "com_fala"
     },
     {
       "candidate_id": "b6e8c205-a2b7-4a26-9b65-e7a3b3b2f601",
@@ -1549,10 +1549,10 @@
     {
       "candidate_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
       "candidate_slug": "vicentinho-junior",
-      "searched_at": "2026-09-30T08:47:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
-      "result": "sem_fala"
+      "searched_at": "2026-10-10T08:41:44.338Z",
+      "window_from": "2026-09-27",
+      "window_to": "2026-10-10",
+      "result": "com_fala"
     },
     {
       "candidate_id": "2cb5e948-08ea-4a25-8124-6aaac3155c70",
