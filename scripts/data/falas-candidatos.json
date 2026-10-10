@@ -8891,6 +8891,33 @@
         "fetched_url": "https://g1.globo.com/politica/noticia/2026/10/06/flavio-diz-que-vai-participar-de-debates-contra-lula-no-2o-turno-eu-ja-queria-ter-participado.ghtml",
         "method": "codex_source_review"
       }
+    },
+    {
+      "id": "5e6fc45c452c45f6e66b3a34f03f1c56950d4f72155d6061187e276d750199fe",
+      "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+      "candidate_slug": "mailza-assis",
+      "candidate_name": "Mailza Assis",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Olha, eu ainda nem sentei com a minha equipe para discutir debates. Isso aí a gente vai resolver, vamos ver como é que vai ser o decorrer da campanha",
+      "context": "“Olha, eu ainda nem sentei com a minha equipe para discutir debates. Isso aí a gente vai resolver, vamos ver como é que vai ser o decorrer da campanha”, declarou.",
+      "event_context": "A governadora Mailza Assis (Progressistas), candidata ao governo do Acre no segundo turno, afirmou nesta sexta-feira (9) que ainda não discutiu com sua equipe a participação nos debates eleitorais. A declaração foi dada ao ser questionada sobre a possibilidade de confrontos diretos com o senador Alan Rick (Republicanos), seu adversário na disputa pelo governo estadual.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-09",
+      "publisher": "ac24horas",
+      "article_url": "https://ac24horas.com/2026/10/09/mailza-diz-que-ainda-vai-discutir-participacao-em-debates-e-confirma-conversa-com-bocalom/",
+      "article_title": "Mailza diz que ainda vai discutir participação em debates e confirma conversa com Bocalom",
+      "article_published_at": "2026-10-09T17:09:34-05:00",
+      "observed_at": "2026-10-10T08:37:27.004Z",
+      "source_sha256": "9dd13f6e278cc95cd73367d5d8084292d96da849810912863c5ce90a9c41bbfd",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "“Olha, eu ainda nem sentei com a minha equipe para discutir debates. Isso aí a gente vai resolver, vamos ver como é que vai ser o decorrer da campanha”, declarou.",
+        "identity_excerpt": "A governadora Mailza Assis (Progressistas), candidata ao governo do Acre no segundo turno, afirmou nesta sexta-feira (9) que ainda não discutiu com sua equipe a participação nos debates eleitorais. A declaração foi dada ao ser questionada sobre a possibilidade de confrontos diretos com o senador Alan Rick (Republicanos), seu adversário na disputa pelo governo estadual.",
+        "date_excerpt": "A governadora Mailza Assis (Progressistas), candidata ao governo do Acre no segundo turno, afirmou nesta sexta-feira (9) que ainda não discutiu com sua equipe a participação nos debates eleitorais. A declaração foi dada ao ser questionada sobre a possibilidade de confrontos diretos com o senador Alan Rick (Republicanos), seu adversário na disputa pelo governo estadual.",
+        "fetched_url": "https://ac24horas.com/2026/10/09/mailza-diz-que-ainda-vai-discutir-participacao-em-debates-e-confirma-conversa-com-bocalom/",
+        "method": "codex_source_review"
+      }
     }
   ]
 }
