@@ -652,12 +652,15 @@ describe("o registro real, contra a passagem vazia", () => {
     // promoção reclassificou sem mexer no universo dos 71.
     assert.equal(
       recomputarDiagnosticoSha256(todos),
-      // v6, renovacao de 29/09 contra o snapshot publicado pelo TSE em 16/09
-      // (catalogo `metadata_modified` 2026-09-16T13:36), antes do vencimento de
-      // 02/10. Classes, contagens e o universo dos 71 ficaram identicos. O valor
-      // anterior era `7501c389…7d7cd261`, da v5 (02/09), e antes dele
-      // `1d1f45b9…3ae8030b`, da v4 (25/08).
-      "03569d4e82774cfd52b3943b4bb0f198bcb2c6851f41c144099038344a249139",
+      // v7, renovacao de 11/10 contra o consulta_cand republicado pelo TSE em
+      // 11/10 19:36 (sha256 c50885c9…2c99; o catalogo segue com
+      // `metadata_modified` 2026-09-16T13:36). O pacote pos 1o turno traz uma
+      // linha por turno para quem foi ao 2o; o gerador agora colapsa linhas do
+      // mesmo SQ com identidade igual (colapsarLinhasPorTurno). Classes,
+      // contagens e o universo dos 71 ficaram identicos aos da v6. O valor
+      // anterior era `03569d4e…4a249139`, da v6 (29/09), antes `7501c389…7d7cd261`,
+      // da v5 (02/09), e `1d1f45b9…3ae8030b`, da v4 (25/08).
+      "734880054cfda44c3e70a4927a834b8414825bd3173cc6c38984d0605539aaed",
     )
     assert.equal(
       recomputarSlugsHash(todos),
