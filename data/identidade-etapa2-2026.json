@@ -3,7 +3,7 @@
   "versao": 2,
   "execucao": "pf-reverificacao-20260809",
   "pleito": 2026,
-  "decidido_em": "2026-09-29",
+  "decidido_em": "2026-10-11",
   "total": 71,
   "contrato": {
     "classe_que_promove_chave": "match_fresco",
@@ -14,7 +14,7 @@
     "janela_registro": "convencoes ate 05/08; pedidos de registro ate 15/08 as 19h (Resolucao TSE 23.609/2019, art. 19). As nao-localizacoes EXIGEM recheque apos 15/08 e nunca sao lidas como ausencia de registro."
   },
   "renovacao": {
-    "revalidar_ate": "2026-10-29",
+    "revalidar_ate": "2026-11-10",
     "responsavel": "dono do repositorio, unico autor de migrations e unico operador do banco (Settings/WORKFLOWS.md)",
     "procedimento": [
       "npm run data:identidade-etapa2:fontes",
@@ -35,19 +35,19 @@
     "gerador": "scripts/audit/gerar-identidade-etapa2.ts",
     "modo": "reclassificar",
     "diagnostico_gitignorado": "output/pf-reverificacao-20260809/diagnostico-final-71.json",
-    "diagnostico_final_71_sha256": "03569d4e82774cfd52b3943b4bb0f198bcb2c6851f41c144099038344a249139",
+    "diagnostico_final_71_sha256": "734880054cfda44c3e70a4927a834b8414825bd3173cc6c38984d0605539aaed",
     "slugs_derivados_71_sha256": "c05993541835f5ee06879ae084b96450fd78f44e97feffac86987431e22bcff9",
     "universo_83_sha256": "653fff9c9ec7391eeeb5ee16b5d98c64182abb057b356fe1bd1a8df973385b53",
     "db_snapshot_83_sha256": "4d7a002c09ba6182792e60d86ca179d9070ec2dc487ac256e63bd71dbe2f9f99",
     "ledger_b2_sha256": "78dec9789bdd4952cbf781f5bd4952a75f919b4a82903e6869a42468cc168fc0",
     "nascimentos": "data/identidade-etapa2-nascimentos.json",
     "nascimentos_sha256": "5a87f9d786c723425fd1ad0ad1e7ff4ecdc7872b6a4fe1cdf6841467f540cc37",
-    "catalog_sha256": "5d64f38668709ad4ce9f81cf69f7e1271a869d5382f8c1555cb7465e7edd89c8",
-    "catalog_fetched_at": "2026-09-29T18:27:21.441Z",
-    "snapshot_tse_sha256": "2403647c21e8c6782978f8187e5707eae5ec42c933b1f167c7347e60506e4398",
-    "snapshot_complemento_sha256": "99c601737e3626d8ed6ddb90b8cd6c92ab153bbf35284614cd9497f0dd7bb1ec",
-    "snapshot_redes_sha256": "e3e81325d712dc65c7de32d2af48c0f447e2834a7b0a705c58abcaa8faa469b5",
-    "dt_geracao_tse": "29/09/2026 12:31:16"
+    "catalog_sha256": "02cbc38b6d6ec4a12e263f897feba889031f8527fb6e9c30150ffdf864eb3ca6",
+    "catalog_fetched_at": "2026-10-11T22:32:45.738Z",
+    "snapshot_tse_sha256": "c50885c94f872c96a46a37bffc774ecd351dcf578689d17ee2eb7dd178302c99",
+    "snapshot_complemento_sha256": "5b0a0be48a7fd0742cb795598144a135d026b4eb1e4a1dba3d538580a7e606bc",
+    "snapshot_redes_sha256": "576ac371db547b4eca73d9c9cc34589a4f7a7c4bd97643028e368d802ba4685a",
+    "dt_geracao_tse": "11/10/2026 16:30:33"
   },
   "contagem": {
     "proxima_possivel_urna": 5,
@@ -385,7 +385,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 10
+        "social_count": 12
       }
     },
     {
@@ -625,7 +625,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 214
+        "social_count": 245
       }
     },
     {
@@ -805,7 +805,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 46
+        "social_count": 48
       }
     },
     {
@@ -1425,7 +1425,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 9
+        "social_count": 10
       }
     },
     {

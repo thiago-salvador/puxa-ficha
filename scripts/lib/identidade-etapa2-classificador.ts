@@ -53,6 +53,49 @@ export interface LinhaTse {
   DT_NASCIMENTO?: string
 }
 
+const CAMPOS_DE_IDENTIDADE = [
+  "NM_CANDIDATO",
+  "NM_URNA_CANDIDATO",
+  "DS_CARGO",
+  "SG_UF",
+  "SG_PARTIDO",
+  "NR_CANDIDATO",
+  "DT_NASCIMENTO",
+] as const
+
+/**
+ * Depois do 1º turno, o consulta_cand traz uma linha por turno para quem foi ao
+ * 2º: a mesma candidatura (mesmo SQ_CANDIDATO) aparece duas vezes. Sem colapsar,
+ * a cascata conta dois hits e rebaixa um casamento exato para `ambiguo` ou para
+ * a regra seguinte (renovação de 11/10/2026: 6 match_fresco perdidos só por isso).
+ *
+ * Colapsa só quando TODAS as linhas do SQ concordam nos campos de identidade.
+ * Se divergirem em qualquer um, mantém todas, e a cascata segue tratando o caso
+ * como ambíguo: o portão continua fail-closed.
+ */
+export function colapsarLinhasPorTurno<T extends LinhaTse & { NR_TURNO?: string }>(
+  linhas: readonly T[],
+): T[] {
+  const porSq = new Map<string, T[]>()
+  for (const linha of linhas) {
+    const sq = String(linha.SQ_CANDIDATO)
+    porSq.set(sq, [...(porSq.get(sq) ?? []), linha])
+  }
+  const saida: T[] = []
+  for (const grupo of porSq.values()) {
+    const concordam = grupo.every((linha) =>
+      CAMPOS_DE_IDENTIDADE.every((campo) => (linha[campo] ?? "") === (grupo[0]![campo] ?? "")),
+    )
+    if (grupo.length === 1 || !concordam) {
+      saida.push(...grupo)
+      continue
+    }
+    const turno = (linha: T) => Number(linha.NR_TURNO ?? Number.POSITIVE_INFINITY)
+    saida.push(grupo.reduce((menor, linha) => (turno(linha) < turno(menor) ? linha : menor)))
+  }
+  return saida
+}
+
 export interface PerfilDaFicha {
   slug: string
   nome_completo: string
