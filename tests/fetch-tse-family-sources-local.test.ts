@@ -166,3 +166,26 @@ it("registra falha antes da resposta sem status nem bytes", async (t) => {
     assert.match(error.message, /sem resposta HTTP/)
   } finally { rmSync(dir, { recursive: true, force: true }) }
 })
+
+it("respeita o prazo total da etapa: não repete nem começa download sem tempo", async (t) => {
+  t.mock.method(console, "error", () => {})
+  const { dir, path } = tempZipPath()
+  try {
+    let clock = 0
+    const now = () => clock
+    const net = scripted([() => { clock += 60_000; return interrupted(20) }])
+    // 100 s de prazo: a 1ª tentativa consome 60 s; a 2ª exigiria 15 s de espera + 30 s mínimos.
+    const cut = await download(URL_2004, path, { sleep: async () => {}, now, fetchImpl: net.fetchImpl, deadline: 100_000 }).then(() => null, (e: unknown) => e)
+    assert.ok(cut instanceof DownloadError)
+    assert.equal(net.calls(), 1)
+    assert.equal(cut.diagnostic.prazo_esgotado, true)
+    assert.match(cut.message, /1 tentativa\(s\); prazo total da etapa esgotado/)
+
+    const none = scripted([complete])
+    const late = await download(URL_2004, path, { sleep: async () => {}, now: () => 90_000, fetchImpl: none.fetchImpl, deadline: 100_000 }).then(() => null, (e: unknown) => e)
+    assert.ok(late instanceof DownloadError)
+    assert.equal(none.calls(), 0)
+    assert.equal(late.message, "prazo total da etapa esgotado antes do download")
+    assert.equal(pendingFrom("historico_politico", 2004, "https://dadosabertos.tse.jus.br", late).diagnostic?.prazo_esgotado, true)
+  } finally { rmSync(dir, { recursive: true, force: true }) }
+})

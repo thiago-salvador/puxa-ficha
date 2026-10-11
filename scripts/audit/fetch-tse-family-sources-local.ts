@@ -30,7 +30,7 @@ type DownloadAttempt = {
   erro: string
   causa: Array<{ name: string; code: string | null; message: string }>
 }
-type DownloadDiagnostic = { url: string; tentativas: DownloadAttempt[] }
+type DownloadDiagnostic = { url: string; tentativas: DownloadAttempt[]; prazo_esgotado?: boolean }
 
 export class DownloadError extends Error {
   constructor(message: string, readonly diagnostic: DownloadDiagnostic) { super(message) }
@@ -123,12 +123,12 @@ function errorText(error: unknown): string {
 
 function describeDownloadFailure(diagnostic: DownloadDiagnostic): string {
   const last = diagnostic.tentativas.at(-1)
-  if (!last) return "download sem tentativa registrada"
+  if (!last) return diagnostic.prazo_esgotado ? "prazo total da etapa esgotado antes do download" : "download sem tentativa registrada"
   const of = last.content_length === null ? "" : ` de ${last.content_length}`
   const status = last.http_status === null ? "sem resposta HTTP" : `HTTP ${last.http_status}`
   const cause = last.causa.map((item) => [item.code, item.message].filter(Boolean).join(" ")).join(" <- ")
   return `${last.erro} na etapa ${last.etapa} (${status}, ${last.bytes_recebidos}${of} bytes, ${Math.round(last.duracao_ms / 1000)} s` +
-    `${cause ? `, causa: ${cause}` : ""}; ${diagnostic.tentativas.length} tentativa(s))`
+    `${cause ? `, causa: ${cause}` : ""}; ${diagnostic.tentativas.length} tentativa(s)${diagnostic.prazo_esgotado ? "; prazo total da etapa esgotado" : ""})`
 }
 
 type DownloadOptions = {
@@ -138,7 +138,13 @@ type DownloadOptions = {
   backoffMs?: readonly number[]
   timeoutMs?: number
   now?: () => number
+  /** Instante (ms) em que a etapa inteira precisa ter terminado. Sem ele, o
+   *  retry poderia levar o job além do teto e o manifesto com o diagnóstico
+   *  nunca seria escrito. */
+  deadline?: number
 }
+
+const MIN_ATTEMPT_MS = 30_000
 
 class AttemptFailure extends Error {
   constructor(readonly attempt: DownloadAttempt, readonly retryable: boolean) { super(attempt.erro) }
@@ -210,10 +216,14 @@ export async function download(url: string, path: string, options: DownloadOptio
   const backoff = options.backoffMs ?? [15_000, 60_000]
   const sleep = options.sleep ?? ((ms: number) => new Promise<void>((done) => setTimeout(done, ms)))
   const once = { fetchImpl: options.fetchImpl ?? fetch, timeoutMs: options.timeoutMs ?? 600_000, now: options.now ?? Date.now }
+  const deadline = options.deadline ?? Number.POSITIVE_INFINITY
   const history: DownloadAttempt[] = []
+  let prazoEsgotado = false
   for (let attempt = 1; attempt <= attempts; attempt++) {
+    const remaining = deadline - once.now()
+    if (remaining < MIN_ATTEMPT_MS) { prazoEsgotado = true; break }
     try {
-      const result = await downloadOnce(url, path, attempt, once)
+      const result = await downloadOnce(url, path, attempt, { ...once, timeoutMs: Math.min(once.timeoutMs, remaining) })
       return { ...result, tentativas: attempt }
     } catch (error) {
       rmSync(path, { force: true })
@@ -221,10 +231,12 @@ export async function download(url: string, path: string, options: DownloadOptio
       history.push(error.attempt)
       console.error(JSON.stringify({ download: basename(new URL(url).pathname), ...error.attempt }))
       if (!error.retryable || attempt === attempts) break
-      await sleep(backoff[Math.min(attempt - 1, backoff.length - 1)] ?? 0)
+      const wait = backoff[Math.min(attempt - 1, backoff.length - 1)] ?? 0
+      if (deadline - once.now() < wait + MIN_ATTEMPT_MS) { prazoEsgotado = true; break }
+      await sleep(wait)
     }
   }
-  const diagnostic = { url, tentativas: history }
+  const diagnostic: DownloadDiagnostic = prazoEsgotado ? { url, tentativas: history, prazo_esgotado: true } : { url, tentativas: history }
   throw new DownloadError(describeDownloadFailure(diagnostic), diagnostic)
 }
 
@@ -261,6 +273,11 @@ async function main(): Promise<void> {
   const out = assertOutsideRepository(destination, "destino")
   mkdirSync(out, { recursive: true, mode: 0o700 })
   const cacheDirectory = option("cache-dir")
+  // Prazo da etapa inteira, abaixo do teto do job (120 min), para o manifesto
+  // com as pendências e o diagnóstico sempre chegar a ser escrito.
+  const prazoMin = Number(option("prazo-min") ?? 80)
+  if (!Number.isFinite(prazoMin) || prazoMin <= 0) throw new Error("--prazo-min precisa ser um número positivo de minutos")
+  const deadline = Date.now() + prazoMin * 60_000
   const assets: Asset[] = []
   const pending: Pending[] = []
   for (const year of years.sort((a, b) => a - b)) {
@@ -294,7 +311,7 @@ async function main(): Promise<void> {
           const filename = basename(new URL(resource.url).pathname)
           const temporary = join(out, `${filename}.${process.pid}.tmp`)
           try {
-            const result = await download(resource.url, temporary)
+            const result = await download(resource.url, temporary, { deadline })
             const path = join(out, `${filename.slice(0, -4)}-${result.sha256.slice(0, 12)}.zip`)
             if (existsSync(path)) {
               if (await fileSha256(path) !== result.sha256) throw new Error(`cache local diverge do SHA: ${path}`)
@@ -323,7 +340,7 @@ async function main(): Promise<void> {
         let local: { path: string; sha256: string; bytes: number; reused_cache?: boolean } | null = await localCache(resource.url, cacheDirectory)
         if (!local) {
         try {
-          const result = await download(resource.url, temporary)
+          const result = await download(resource.url, temporary, { deadline })
           const path = join(out, `${filename.slice(0, -4)}-${result.sha256.slice(0, 12)}.zip`)
           if (existsSync(path)) {
             if (await fileSha256(path) !== result.sha256) throw new Error(`cache local diverge do SHA: ${path}`)
