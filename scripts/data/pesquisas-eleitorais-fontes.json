@@ -3101,6 +3101,79 @@
         }
       },
       "consulted_at": "2026-10-09T12:14:24Z"
+    },
+    {
+      "id": "ipespe-br-00933-2026-revisao-20261012",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Ipespe",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "folha.uol.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-06",
+          "end": "2026-10-08"
+        },
+        "published_at": "2026-10-10",
+        "sample_size": 1500,
+        "method": "Entrevistas por telefone",
+        "margin_of_error_pp": 2.6,
+        "confidence_level_pct": null,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-00933/2026",
+        "result_url": "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-tem-527-dos-votos-validos-no-2o-turno-contra-473-de-lula-diz-ipespe.shtml",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-00933/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-12T12:18:47Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "5fd552206f8c3b44f111be67e8778c679567a7694532d085000299d4ba8a6fd6",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-tem-527-dos-votos-validos-no-2o-turno-contra-473-de-lula-diz-ipespe.shtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-tem-527-dos-votos-validos-no-2o-turno-contra-473-de-lula-diz-ipespe.shtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-tem-527-dos-votos-validos-no-2o-turno-contra-473-de-lula-diz-ipespe.shtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-tem-527-dos-votos-validos-no-2o-turno-contra-473-de-lula-diz-ipespe.shtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-12T12:18:47Z"
     }
   ],
   "media_fallback_policy": {
