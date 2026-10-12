@@ -22,6 +22,7 @@ import {
 } from "@/lib/candidatura-proveniencia"
 import { anosDePleitoDisputado } from "@/lib/pleitos-disputados"
 import { gastoParlamentarEmRevisao } from "@/lib/gastos-parlamentares-em-revisao"
+import { normalizarDetalhamentoGasto } from "@/lib/gasto-detalhamento"
 import { buildFinanciamentoEleicoes } from "@/lib/financiamento-eleicoes"
 import { publicDoadorRecorrente } from "@/lib/doador-recorrente-publico"
 import {
@@ -702,28 +703,15 @@ export function fonteUrlGastoParlamentar(detalhamento: unknown, rowYear?: number
 }
 
 function publicGastosParlamentares(row: FichaCandidato["gastos_parlamentares"][number], index: number) {
-  const detalhamentoBruto = row.detalhamento as unknown
-  const detalhamento = Array.isArray(detalhamentoBruto)
-    ? detalhamentoBruto
-    : detalhamentoBruto && typeof detalhamentoBruto === "object"
-      ? Array.isArray((detalhamentoBruto as Record<string, unknown>).categorias)
-        ? (detalhamentoBruto as Record<string, unknown>).categorias as unknown[]
-        : Object.entries(detalhamentoBruto).map(([categoria, valor]) => ({ categoria, valor }))
-      : []
-
   return {
     id: compactPublicId("gasto", row.id, index),
     casa: casaParlamentarDaFonte(row.fonte),
     ano: row.ano,
     total_gasto: row.total_gasto,
     coletado_em: row.coletado_em ?? null,
-    detalhamento: detalhamento.map((item) => ({
-      categoria: typeof item.categoria === "string" ? item.categoria : "",
-      valor: typeof item.valor === "number" ? item.valor : Number(item.valor) || 0,
-      fornecedor:
-        "fornecedor" in item && typeof item.fornecedor === "string"
-          ? maskDocumentLikeSequences(item.fornecedor)
-          : undefined,
+    detalhamento: normalizarDetalhamentoGasto(row.detalhamento).map((item) => ({
+      ...item,
+      fornecedor: item.fornecedor === undefined ? undefined : maskDocumentLikeSequences(item.fornecedor),
     })),
     gastos_destaque: (row.gastos_destaque ?? []).map((item) => ({
       descricao: maskDocumentLikeSequences(item.descricao),

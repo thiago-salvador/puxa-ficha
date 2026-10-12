@@ -19,6 +19,7 @@ import {
   processStatusRepeatsDescription,
 } from "@/lib/processos-display"
 import { formatPartyTransitionLabel } from "@/lib/party-switches"
+import { normalizarDetalhamentoGasto } from "@/lib/gasto-detalhamento"
 import { getCurrentPublicYear } from "@/lib/public-date"
 import { formatBRL } from "@/lib/utils"
 import {
@@ -143,7 +144,7 @@ function financiamentoDescription(f: Financiamento): string | undefined {
 }
 
 function topGastoDescription(g: GastoParlamentar): string | undefined {
-  const d = g.detalhamento ?? []
+  const d = normalizarDetalhamentoGasto(g.detalhamento)
   if (d.length === 0 || g.total_gasto <= 0) return undefined
   const sorted = [...d].sort((a, b) => b.valor - a.valor)
   const top = sorted[0]
