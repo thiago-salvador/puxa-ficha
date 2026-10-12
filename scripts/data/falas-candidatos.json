@@ -9023,6 +9023,95 @@
         "fetched_url": "https://www.brasildefato.com.br/2026/10/06/sentimento-de-indignacao-tem-que-se-transformar-em-esperanca-diz-leandro-grass-sobre-2o-turno-no-df/",
         "method": "codex_source_review"
       }
+    },
+    {
+      "id": "bcf801a8a2ea09784ac04d3b4eb0c009aa0042725aa55344297ece4b8d687050",
+      "candidate_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+      "candidate_slug": "celina-leao",
+      "candidate_name": "Celina Leao",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "É um absurdo. Eu acho que o PT caiu na vala do desespero, na vala do crime, porque isso é um crime, você produzir um panfleto físico com o número errado de uma candidata.",
+      "context": "“É um absurdo. Eu acho que o PT caiu na vala do desespero, na vala do crime, porque isso é um crime, você produzir um panfleto físico com o número errado de uma candidata. Eles esqueceram que eu coloquei 14 mil câmeras nessa cidade, nós vamos pegar esses criminosos”, declarou.",
+      "event_context": "A matéria atribui a Celina a alegação de que adversários produziram panfletos com o número de sua candidatura errado. Em outro lado, a assessoria de Leandro Grass negou participação da campanha e dos partidos da coligação e repudiou a acusação por falta de evidências. A governadora e candidata à reeleição, Celina Leão (PP), afirmou neste domingo (11/10) que adversários produziram panfletos com o número errado de sua candidatura com o objetivo de prejudicar sua votação no primeiro turno das eleições.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-11",
+      "publisher": "Correio Braziliense",
+      "article_url": "https://www.correiobraziliense.com.br/cidades-df/2026/10/7518859-celina-leao-acusa-adversarios-de-espalhar-panfletos-com-numero-de-votacao-errado.html",
+      "article_title": "Celina Leão acusa adversários de espalhar panfletos com número de votação errado",
+      "article_published_at": "2026-10-11T15:29:15+00:00",
+      "observed_at": "2026-10-12T08:40:32.014Z",
+      "source_sha256": "f40e0fb46669a9542be1be6cc034ed0b79b9055dee594d55b2f8288384608636",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "“A campanha de Leandro Grass e os partidos que formam a coligação não têm qualquer responsabilidade sobre esse material e repudiam as acusações sem evidências que as comprovem. Estamos fazendo uma campanha limpa e respeitando a legislação”, diz o texto.",
+        "identity_excerpt": "A governadora e candidata à reeleição, Celina Leão (PP), afirmou neste domingo (11/10) que adversários produziram panfletos com o número errado de sua candidatura com o objetivo de prejudicar sua votação no primeiro turno das eleições.",
+        "date_excerpt": "A governadora e candidata à reeleição, Celina Leão (PP), afirmou neste domingo (11/10) que adversários produziram panfletos com o número errado de sua candidatura com o objetivo de prejudicar sua votação no primeiro turno das eleições.",
+        "fetched_url": "https://www.correiobraziliense.com.br/cidades-df/2026/10/7518859-celina-leao-acusa-adversarios-de-espalhar-panfletos-com-numero-de-votacao-errado.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "827ed5f2cacdc9ac6152a6d71dcaf9ed2f2ae4773819dc0897f95e9b9c559d8c",
+      "candidate_id": "9fe469dc-058f-487d-b888-ba113f5535ae",
+      "candidate_slug": "omar-aziz",
+      "candidate_name": "Omar Aziz",
+      "office": "Governador",
+      "uf": "AM",
+      "quote_text": "Você tem que incentivar e criar metas para esses profissionais da educação e também você tem que dar uma boa alimentação.",
+      "context": "\"Não há forma de melhorar sem a valorização dos profissionais da educação. Você tem que incentivar e criar metas para esses profissionais da educação e também você tem que dar uma boa alimentação. O aluno mau alimentado, como está sendo alimentado hoje com uma merenda de baixa qualidade, ele não tem condições de aprender mais. Nós temos que trabalhar a infraestrutura e nós temos que trabalhar o ser humano também.\"",
+      "event_context": "O texto registra a agenda de campanha de Omar em Manaus no sábado (10) e informa que, após uma reunião na Cúria Metropolitana, ele falou à Rede Amazônica sobre propostas de educação. Os candidatos ao governo do Amazonas, Omar Aziz (PSD) e Professora Maria do Carmo (PL), cumpriram agendas de campanha neste sábado (10), em Manaus, na disputa pelo segundo turno das eleições estaduais.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-10",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/10/10/eleicoes-no-am-omar-aziz-defende-reforco-na-merenda-escolar-e-professora-maria-do-carmo-propoe-incentivos-para-a-educacao.ghtml",
+      "article_title": "Eleições no AM: Omar Aziz defende reforço na merenda escolar, e Professora Maria do Carmo propõe incentivos para a educação | G1",
+      "article_published_at": "2026-10-10T19:45:54.385-03:00",
+      "observed_at": "2026-10-12T08:40:32.014Z",
+      "source_sha256": "c8d2ccd047807b1d51d79e5b1a71d0446b433846b9b79884b8f8b8dea5971b8b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "Os candidatos ao governo do Amazonas, Omar Aziz (PSD) e Professora Maria do Carmo (PL), cumpriram agendas de campanha neste sábado (10), em Manaus, na disputa pelo segundo turno das eleições estaduais.",
+        "identity_excerpt": "O candidato Omar Aziz participou, na manhã deste sábado, de uma reunião fechada na Cúria Metropolitana, situada na Zona Sul de Manaus. Após o encontro, Aziz falou à Rede Amazônica sobre propostas voltadas à educação, dentre elas a valorização dos professores e reforço da merenda escolar.",
+        "date_excerpt": "Os candidatos ao governo do Amazonas, Omar Aziz (PSD) e Professora Maria do Carmo (PL), cumpriram agendas de campanha neste sábado (10), em Manaus, na disputa pelo segundo turno das eleições estaduais.",
+        "fetched_url": "https://g1.globo.com/am/amazonas/eleicoes/2026/noticia/2026/10/10/eleicoes-no-am-omar-aziz-defende-reforco-na-merenda-escolar-e-professora-maria-do-carmo-propoe-incentivos-para-a-educacao.ghtml",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "32507f31d178c6d571ff57fc56f9feb859f79e0e1985af698a10b467951939a0",
+      "candidate_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+      "candidate_slug": "ricardo-ferraco",
+      "candidate_name": "Ricardo Ferraço",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "Sou uma pessoa reconhecidamente de centro-direita, mas sou democrático. Entendo e respeito a pluralidade, não tenho viés autoritário. Sou uma pessoa que sabe dialogar, mobilizar e que tem capacidade de construir agenda",
+      "context": "“Sou uma pessoa reconhecidamente de centro-direita, mas sou democrático. Entendo e respeito a pluralidade, não tenho viés autoritário. Sou uma pessoa que sabe dialogar, mobilizar e que tem capacidade de construir agenda”, afirmou o candidato ao ser questionado sobre como deve desafiar as estatísticas de conseguir uma virada no segundo turno.",
+      "event_context": "Sabatina de A Gazeta e CBN Vitória sobre a disputa do segundo turno para o governo do Espírito Santo. Ricardo Ferraço (MDB) foi entrevistado nesta sexta-feira (9) por A Gazeta e pela CBN Vitória, dentro da programação da cobertura das Eleições 2026 da Rede Gazeta. A sabatina com o governador do Espírito Santo, que disputa a reeleição, ocorreu às 10h, com transmissão ao vivo pelo site, pela rádio e pelas redes sociais.",
+      "event_type": "sabatina",
+      "occurred_on": "2026-10-09",
+      "publisher": "A Gazeta",
+      "article_url": "https://www.agazeta.com.br/es/politica/sou-de-centro-direita-mas-sou-democratico-diz-ricardo-em-sabatina-de-a-gazeta-e-cbn-1026",
+      "article_title": "“Sou de centro-direita, mas sou democrático”, diz Ricardo em sabatina de A Gazeta e CBN",
+      "article_published_at": "2026-10-09T14:12:04.000Z",
+      "observed_at": "2026-10-12T08:41:51.826Z",
+      "source_sha256": "fc15a69068206e8da3d74eb4a6d4f7c4dfdbcafd8cb3c414ccd3bd67307413c1",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Ricardo Ferraço (MDB) afirmou que o segundo turno é momento de debater os projetos para o futuro do Espírito Santo",
+        "date_excerpt": "Ricardo Ferraço (MDB) foi entrevistado nesta sexta-feira (9) por A Gazeta e pela CBN Vitória, dentro da programação da cobertura das Eleições 2026 da Rede Gazeta. A sabatina com o governador do Espírito Santo, que disputa a reeleição, ocorreu às 10h, com transmissão ao vivo pelo site, pela rádio e pelas redes sociais.",
+        "fetched_url": "https://www.agazeta.com.br/es/politica/sou-de-centro-direita-mas-sou-democratico-diz-ricardo-em-sabatina-de-a-gazeta-e-cbn-1026",
+        "method": "codex_source_review",
+        "supporting_sources": [
+          {
+            "url": "https://www.agazeta.com.br/es/politica/a-gazeta-e-cbn-vitoria-entrevistam-ricardo-ferraco-nesta-sexta-9-as-10h-1026",
+            "sha256": "bd639fe62be2087a11f5f99435b52ef6662257c6933d8421df13c1d04df87dc7",
+            "excerpts": [
+              "Ricardo Ferraço (MDB) foi entrevistado nesta sexta-feira (9) por A Gazeta e pela CBN Vitória, dentro da programação da cobertura das Eleições 2026 da Rede Gazeta. A sabatina com o governador do Espírito Santo, que disputa a reeleição, ocorreu às 10h, com transmissão ao vivo pelo site, pela rádio e pelas redes sociais."
+            ]
+          }
+        ]
+      }
     }
   ]
 }

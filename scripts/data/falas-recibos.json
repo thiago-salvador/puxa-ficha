@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-recibos-v1",
-  "updated_at": "2026-10-10T09:12:04.189Z",
+  "updated_at": "2026-10-12T08:55:23.730Z",
   "receipts": [
     {
       "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
@@ -357,9 +357,9 @@
     {
       "candidate_id": "097dc8d0-d05d-42cb-91a0-0582dd561f76",
       "candidate_slug": "douglas-ruas",
-      "searched_at": "2026-10-10T08:31:24.091Z",
-      "window_from": "2026-09-27",
-      "window_to": "2026-10-10",
+      "searched_at": "2026-10-12T08:25:16.147Z",
+      "window_from": "2026-09-29",
+      "window_to": "2026-10-12",
       "result": "com_fala"
     },
     {
@@ -533,9 +533,9 @@
     {
       "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
       "candidate_slug": "flavio-bolsonaro",
-      "searched_at": "2026-10-10T08:31:21.661Z",
-      "window_from": "2026-09-27",
-      "window_to": "2026-10-10",
+      "searched_at": "2026-10-12T08:25:16.147Z",
+      "window_from": "2026-09-29",
+      "window_to": "2026-10-12",
       "result": "com_fala"
     },
     {
@@ -869,9 +869,9 @@
     {
       "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
       "candidate_slug": "leandro-grass",
-      "searched_at": "2026-10-10T08:31:22.957Z",
-      "window_from": "2026-09-27",
-      "window_to": "2026-10-10",
+      "searched_at": "2026-10-12T08:25:16.147Z",
+      "window_from": "2026-09-29",
+      "window_to": "2026-10-12",
       "result": "com_fala"
     },
     {
@@ -1277,9 +1277,9 @@
     {
       "candidate_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
       "candidate_slug": "ricardo-ferraco",
-      "searched_at": "2026-09-30T08:49:00.000Z",
-      "window_from": "2026-09-17",
-      "window_to": "2026-09-30",
+      "searched_at": "2026-10-12T08:34:19.000Z",
+      "window_from": "2026-09-29",
+      "window_to": "2026-10-12",
       "result": "com_fala"
     },
     {
@@ -1549,9 +1549,9 @@
     {
       "candidate_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
       "candidate_slug": "vicentinho-junior",
-      "searched_at": "2026-10-10T08:41:44.338Z",
-      "window_from": "2026-09-27",
-      "window_to": "2026-10-10",
+      "searched_at": "2026-10-12T08:25:16.147Z",
+      "window_from": "2026-09-29",
+      "window_to": "2026-10-12",
       "result": "com_fala"
     },
     {
