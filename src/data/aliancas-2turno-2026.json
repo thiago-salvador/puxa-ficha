@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-10T19:35:00-03:00",
+  "coletado_em": "2026-10-12T09:23:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -488,21 +488,15 @@
       "quem": "PCO",
       "tipo": "partido",
       "partido": "PCO",
-      "posicao": "sem_declaracao",
+      "posicao": "voto_nulo",
       "apoia": null,
-      "data_declaracao": null,
+      "data_declaracao": "2026-10-11",
       "fontes": [
         {
-          "url": "https://causaoperaria.org.br/2026/pco-realizara-conferencia-nacional-para-discutir-o-segundo-turno/",
+          "url": "https://causaoperaria.org.br/2026/pco-aprova-nenhum-voto-aos-candidatos-do-capital/",
           "veiculo": "Diário Causa Operária (PCO)",
-          "publicado_em": "2026-10-05T00:00:13-03:00",
-          "trecho": "PCO realizará Conferência Nacional para discutir o segundo turno"
-        },
-        {
-          "url": "https://www.cnnbrasil.com.br/eleicoes/veja-os-partidos-que-declararam-apoio-a-flavio-bolsonaro-e-a-lula/",
-          "veiculo": "CNN Brasil",
-          "publicado_em": "2026-10-08T19:01:00-03:00",
-          "trecho": "informou que definirá sua posição em uma Conferência Nacional"
+          "publicado_em": "2026-10-12",
+          "trecho": "aprovou a orientação de voto nulo nas disputas restantes"
         }
       ]
     },
@@ -1315,10 +1309,17 @@
       "tipo": "governador",
       "partido": "PL",
       "situacao": "segundo_turno",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-11",
+      "fontes": [
+        {
+          "url": "https://www.acritica.com/politica/carreata-em-apoio-a-flavio-bolsonaro-e-maria-do-carmo-percorre-ruas-de-manaus-1.417704",
+          "veiculo": "A Crítica",
+          "publicado_em": "2026-10-11T18:00:00-03:00",
+          "trecho": "a direita está unida no firme propósito de eleger Flávio Bolsonaro e a Professora Maria"
+        }
+      ]
     },
     {
       "disputa": "Presidente",
