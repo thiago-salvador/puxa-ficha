@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "kind": "tse-identidade-risco",
-  "gerado_em": "2026-09-29",
-  "origem": "uniao dos perfis com identidade em revisao na rodada completa do agente TSE local de 29/09 e no live revisado do L8; celulas liberadas pelo L8 com evidencia de SQ",
+  "gerado_em": "2026-10-11",
+  "origem": "uniao dos perfis com identidade em revisao na rodada completa do agente TSE local de 29/09 e no live revisado do L8; celulas liberadas pelo L8 com evidencia de SQ. Em 11/10 sai pazolini: identidade confirmada pela etapa 2 (match_fresco, SQ 2026 80002552682, #699), SQ 2026 no seed (#700), e nenhum outro criterio de identityRiskSlugsFromArtifacts na rodada de 08/10 nem no plano de financas de 11/10",
   "slugs": [
     "adailton-furia",
     "adriano-funileiro",
@@ -65,7 +65,6 @@
     "natasha-slhessarenko",
     "omar-aziz",
     "orleans-brandao",
-    "pazolini",
     "ravenna-castro",
     "reginaldo-lima",
     "renato-gomes",
