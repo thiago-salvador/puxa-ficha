@@ -35,24 +35,24 @@
     "gerador": "scripts/audit/gerar-identidade-etapa2.ts",
     "modo": "reclassificar",
     "diagnostico_gitignorado": "output/pf-reverificacao-20260809/diagnostico-final-71.json",
-    "diagnostico_final_71_sha256": "734880054cfda44c3e70a4927a834b8414825bd3173cc6c38984d0605539aaed",
+    "diagnostico_final_71_sha256": "74e98e4945da144f7bf37b7ea3c8f0cd3608205171a193d45dd2ae80ae065287",
     "slugs_derivados_71_sha256": "c05993541835f5ee06879ae084b96450fd78f44e97feffac86987431e22bcff9",
     "universo_83_sha256": "653fff9c9ec7391eeeb5ee16b5d98c64182abb057b356fe1bd1a8df973385b53",
     "db_snapshot_83_sha256": "4d7a002c09ba6182792e60d86ca179d9070ec2dc487ac256e63bd71dbe2f9f99",
     "ledger_b2_sha256": "78dec9789bdd4952cbf781f5bd4952a75f919b4a82903e6869a42468cc168fc0",
     "nascimentos": "data/identidade-etapa2-nascimentos.json",
-    "nascimentos_sha256": "5a87f9d786c723425fd1ad0ad1e7ff4ecdc7872b6a4fe1cdf6841467f540cc37",
-    "catalog_sha256": "02cbc38b6d6ec4a12e263f897feba889031f8527fb6e9c30150ffdf864eb3ca6",
-    "catalog_fetched_at": "2026-10-11T22:32:45.738Z",
-    "snapshot_tse_sha256": "c50885c94f872c96a46a37bffc774ecd351dcf578689d17ee2eb7dd178302c99",
-    "snapshot_complemento_sha256": "5b0a0be48a7fd0742cb795598144a135d026b4eb1e4a1dba3d538580a7e606bc",
-    "snapshot_redes_sha256": "576ac371db547b4eca73d9c9cc34589a4f7a7c4bd97643028e368d802ba4685a",
-    "dt_geracao_tse": "11/10/2026 16:30:33"
+    "nascimentos_sha256": "3ad7081bbde4d9799079a68dc245cebcfa3bbe356c4d6c8ce50ad7f5f32831f4",
+    "catalog_sha256": "244af8428db595220d07325ffed607cf52fa71f9a4fd48839f970f5f95fa8f03",
+    "catalog_fetched_at": "2026-10-11T23:53:19.257Z",
+    "snapshot_tse_sha256": "d61242bfa99e5c3cfe6a8e53ed38439b7dd4b22de575d1f50dc17e91144272fe",
+    "snapshot_complemento_sha256": "93b0fd444d8c2036f066dfaff0a8420b8713abbbc63a8e6b8ccf76245236bcbc",
+    "snapshot_redes_sha256": "dd4b77e6f49ec285a39ebd7d7f2ae5577e226ab8cda086123ad8e1a5baa8db3e",
+    "dt_geracao_tse": "11/10/2026 19:31:40"
   },
   "contagem": {
     "proxima_possivel_urna": 5,
-    "match_fresco": 49,
-    "revisao_identidade": 13,
+    "match_fresco": 50,
+    "revisao_identidade": 12,
     "registro_encontrado_outro_cargo": 2,
     "conflito_cargo_uf": 1,
     "nao_localizado_pelos_matchers": 1
@@ -1554,8 +1554,8 @@
       "nome_urna": "Pazolini",
       "cargo_disputado": "Governador",
       "estado": "ES",
-      "classe": "revisao_identidade",
-      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "classe": "match_fresco",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato)",
       "hits": [
         {
           "sq": "80002552682",
@@ -1566,7 +1566,17 @@
           "partido": "REPUBLICANOS",
           "numero": "10"
         }
-      ]
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "80002552682"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 6
+      }
     },
     {
       "slug": "renan-santos",
