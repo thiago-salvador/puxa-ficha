@@ -9,7 +9,10 @@
  * - toda fonte com URL https; posição declarada exige ao menos uma fonte com trecho literal;
  * - `apoia` precisa ser um dos dois finalistas daquela disputa no snapshot;
  * - candidato que não casa com um eliminado da disputa fica marcado como
- *   "fora do resultado" e não entra em conta de votos.
+ *   "fora do resultado" e não entra em conta de votos;
+ * - `governador` é apoio presidencial de quem governa ou disputa um estado:
+ *   `disputa` Presidente, `uf` do estado e `situacao` conferida no snapshot
+ *   (eleito no 1º turno ou finalista do 2º). Sem par no snapshot, o arquivo cai.
  *
  * Nada aqui diz para onde vão os votos: a barra mostra os votos dos eliminados
  * agrupados pela posição declarada pelo candidato. Declaração não transfere voto.
@@ -32,6 +35,10 @@ import { stripAccents } from "@/lib/strip-accents"
 const POSICOES_ALIANCA = ["apoio", "neutro", "liberou", "voto_nulo", "sem_declaracao"] as const
 export type PosicaoAlianca = (typeof POSICOES_ALIANCA)[number]
 type DisputaAlianca = "Presidente" | "Governador"
+const TIPOS_ALIANCA = ["candidato", "partido", "governador"] as const
+type TipoAlianca = (typeof TIPOS_ALIANCA)[number]
+/** Só para `governador`: eleito no 1º turno ou ainda no 2º turno do estado. */
+type SituacaoGovernador = "eleito" | "segundo_turno"
 
 export interface FonteAlianca {
   url: string
@@ -44,14 +51,15 @@ export interface ItemAlianca {
   disputa: DisputaAlianca
   uf: string
   quem: string
-  tipo: "candidato" | "partido"
+  tipo: TipoAlianca
   partido: string
+  situacao: SituacaoGovernador | null
   posicao: PosicaoAlianca
   apoia: string | null
   data_declaracao: string | null
   fontes: FonteAlianca[]
   observacao: string | null
-  /** Eliminado do snapshot com quem o item casou (só candidato). */
+  /** Eliminado do snapshot com quem o item casou (candidato) ou o governador/finalista (governador). */
   sq: string | null
   /** Finalista apoiado, como está no snapshot (só `apoio`). */
   apoia_sq: string | null
@@ -120,9 +128,15 @@ export function validarAliancas(raw: unknown, data: Resultados1Turno): Aliancas2
     if (i.disputa !== "Presidente" && i.disputa !== "Governador") return null
     if (!texto(i.uf)) return null
     const uf = i.uf.toUpperCase()
-    if (i.disputa === "Presidente" ? uf !== "BR" : !/^[A-Z]{2}$/.test(uf) || uf === "BR") return null
+    if (!(TIPOS_ALIANCA as readonly unknown[]).includes(i.tipo)) return null
+    const tipo = i.tipo as TipoAlianca
+    const governador = tipo === "governador"
+    if (governador && i.disputa !== "Presidente") return null
+    const ufInvalida = !/^[A-Z]{2}$/.test(uf) || uf === "BR"
+    if (i.disputa === "Presidente" && !governador ? uf !== "BR" : ufInvalida) return null
     if (!texto(i.quem) || !texto(i.partido)) return null
-    if (i.tipo !== "candidato" && i.tipo !== "partido") return null
+    const situacao = i.situacao ?? null
+    if (governador ? situacao !== "eleito" && situacao !== "segundo_turno" : situacao !== null) return null
     if (!(POSICOES_ALIANCA as readonly unknown[]).includes(i.posicao)) return null
     const posicao = i.posicao as PosicaoAlianca
     const apoia = i.apoia ?? null
@@ -145,11 +159,11 @@ export function validarAliancas(raw: unknown, data: Resultados1Turno): Aliancas2
       })
     }
     if (posicao !== "sem_declaracao" && !fontes.some((f) => f.trecho.length > 0)) return null
-    const chave = `${i.disputa}:${uf}:${i.tipo}:${normalizarNomeUrna(i.quem)}`
+    const chave = `${i.disputa}:${uf}:${tipo}:${normalizarNomeUrna(i.quem)}`
     if (vistos.has(chave)) return null
     vistos.add(chave)
 
-    const disputa = getDisputa1Turno(i.disputa, uf, data)
+    const disputa = getDisputa1Turno(i.disputa, governador ? "BR" : uf, data)
     let apoiaSq: string | null = null
     let apoiaNome: string | null = null
     if (apoia !== null) {
@@ -160,15 +174,20 @@ export function validarAliancas(raw: unknown, data: Resultados1Turno): Aliancas2
       apoiaNome = alvo.nome_urna
     }
     let sq: string | null = null
-    if (i.tipo === "candidato") {
+    if (tipo === "candidato") {
       sq = eliminadosDaDisputa(disputa).find((c) => mesmoCandidato(i.quem as string, i.partido as string, c))?.sq ?? null
+    } else if (governador) {
+      const estadual = getDisputa1Turno("Governador", uf, data)
+      sq = estadual?.candidatos.find((c) => c.fase === situacao && mesmoCandidato(i.quem as string, i.partido as string, c))?.sq ?? null
+      if (!sq) return null
     }
     itens.push({
       disputa: i.disputa,
       uf,
       quem: i.quem,
-      tipo: i.tipo,
+      tipo,
       partido: i.partido,
+      situacao: governador ? (situacao as SituacaoGovernador) : null,
       posicao,
       apoia,
       data_declaracao: dataDeclaracao,
@@ -177,7 +196,7 @@ export function validarAliancas(raw: unknown, data: Resultados1Turno): Aliancas2
       sq,
       apoia_sq: apoiaSq,
       apoia_nome_urna: apoiaNome,
-      fora_do_resultado: i.tipo === "candidato" && sq === null,
+      fora_do_resultado: tipo === "candidato" && sq === null,
     })
   }
   // Dois itens para o mesmo eliminado tornariam a conta ambígua.
@@ -278,6 +297,34 @@ export function barraEliminados(aliancas: Aliancas2Turno, disputa: DisputaResult
   const segmentos = (["a", "b", "neutro", "sem"] as const).map((k) => ({ ...base[k], percentual: (base[k].votos / validos) * 100 }))
   const votos = segmentos.reduce((n, s) => n + s.votos, 0)
   return { votos, percentual: (votos / validos) * 100, votosValidos: validos, finalistas, segmentos }
+}
+
+export interface GovernadoresPresidente {
+  /** Apoio declarado ao primeiro finalista do snapshot. */
+  a: ItemAlianca[]
+  b: ItemAlianca[]
+  /** Neutro, voto liberado ou voto nulo. */
+  neutro: ItemAlianca[]
+  sem: ItemAlianca[]
+}
+
+/**
+ * Posição na disputa presidencial de governadores eleitos e finalistas
+ * estaduais, por lado. Ordem: UF, depois nome. Null sem nenhum item governador.
+ */
+export function governadoresPorPosicao(aliancas: Aliancas2Turno, disputa: DisputaResultado1Turno | null): GovernadoresPresidente | null {
+  const finalistas = finalistasDaDisputa(disputa)
+  const itens = aliancas.itens
+    .filter((i) => i.tipo === "governador")
+    .sort((x, y) => x.uf.localeCompare(y.uf) || x.quem.localeCompare(y.quem, "pt-BR"))
+  if (!finalistas || itens.length === 0) return null
+  const out: GovernadoresPresidente = { a: [], b: [], neutro: [], sem: [] }
+  for (const i of itens) {
+    if (i.posicao === "sem_declaracao") out.sem.push(i)
+    else if (i.posicao === "apoio") out[i.apoia_sq === finalistas[0].sq ? "a" : "b"].push(i)
+    else out.neutro.push(i)
+  }
+  return out
 }
 
 /** Apoio declarado de um eliminado a um finalista do governo da UF, para a linha sob o duelo. */

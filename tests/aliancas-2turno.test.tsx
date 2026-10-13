@@ -1,4 +1,4 @@
-// cspell:ignore liberou cappelli garotinho zema flavio cury
+// cspell:ignore liberou cappelli garotinho zema flavio cury tarcisio jeronimo paes
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
@@ -10,6 +10,7 @@ import {
   formatarColeta,
   formatarDiaDeclaracao,
   getAliancas2Turno,
+  governadoresPorPosicao,
   montarMeuCandidatoSaiu,
   normalizarNomeUrna,
   ressalvaSubJudice,
@@ -23,7 +24,12 @@ import { Governadores2Turno } from "@/components/SegundoTurnoGovernadores"
 import { RessalvaSubJudice } from "@/components/RessalvaSubJudice"
 
 const data = getResultados1Turno()
-const bruto = JSON.parse(readFileSync("src/data/aliancas-2turno-2026.json", "utf8")) as { itens: Array<Record<string, unknown>> } & Record<string, unknown>
+type Bruto = { itens: Array<Record<string, unknown>> } & Record<string, unknown>
+// Testes de comportamento usam a captura congelada de 05/10; o arquivo publicado muda a cada coleta
+// e só precisa cumprir o contrato (primeiro teste).
+const bruto = JSON.parse(readFileSync("tests/fixtures/aliancas-2turno-20261005.json", "utf8")) as Bruto
+const publicado = JSON.parse(readFileSync("src/data/aliancas-2turno-2026.json", "utf8")) as Bruto
+const fixture = () => validarAliancas(bruto, data)
 const copia = () => JSON.parse(JSON.stringify(bruto)) as typeof bruto
 const presidente = getDisputa1Turno("Presidente", "BR", data)!
 
@@ -38,9 +44,14 @@ const indice = (quem: string) => bruto.itens.findIndex((i) => i.quem === quem)
 describe("alianças do 2º turno: carregador estrito", () => {
   it("o arquivo do repositório passa e casa todos os candidatos com o snapshot", () => {
     const a = getAliancas2Turno(data)
-    assert.ok(a)
-    assert.equal(a.itens.length, bruto.itens.length)
+    assert.ok(a, "arquivo publicado fora do contrato: a seção some do site")
+    assert.equal(a.itens.length, publicado.itens.length)
     assert.deepEqual(a.itens.filter((i) => i.fora_do_resultado).map((i) => i.quem), [])
+  })
+
+  it("a captura congelada passa e casa nome com acento", () => {
+    const a = fixture()
+    assert.ok(a)
     const zema = a.itens.find((i) => i.quem === "ZEMA")!
     assert.equal(zema.apoia_nome_urna, "FLAVIO BOLSONARO", "acento do arquivo não impede o casamento")
   })
@@ -84,7 +95,7 @@ describe("alianças do 2º turno: carregador estrito", () => {
   })
 
   it("casa nome curto do TSE com o nome completo do arquivo só no mesmo partido", () => {
-    const a = getAliancas2Turno(data)!
+    const a = fixture()!
     const cappelli = a.itens.find((i) => i.quem === "RICARDO CAPPELLI")!
     assert.ok(cappelli.sq)
     const outroPartido = comItem((it) => { it[indice("RICARDO CAPPELLI")].partido = "PT" })!
@@ -92,9 +103,68 @@ describe("alianças do 2º turno: carregador estrito", () => {
   })
 })
 
+const fonteFicticia = [{ url: "https://exemplo.com.br/x", veiculo: "Exemplo", publicado_em: null, trecho: "trecho literal" }]
+function governador(quem: string, uf: string, partido: string, situacao: unknown, posicao: string, apoia: string | null): Record<string, unknown> {
+  return { disputa: "Presidente", uf, quem, tipo: "governador", partido, situacao, posicao, apoia, data_declaracao: "2026-10-06", fontes: posicao === "sem_declaracao" ? [] : fonteFicticia, observacao: null }
+}
+/** Arquivo real sem governadores, mais os itens dados. */
+function comGovernadores(...novos: Record<string, unknown>[]) {
+  const c = copia()
+  c.itens = [...c.itens.filter((i) => i.tipo !== "governador"), ...novos]
+  return validarAliancas(c, data)
+}
+
+describe("alianças do 2º turno: governadores sobre a Presidência", () => {
+  it("eleito e finalista estadual casam com o snapshot e não entram na barra", () => {
+    const a = comGovernadores(
+      governador("TARCÍSIO", "SP", "REPUBLICANOS", "eleito", "apoio", "FLÁVIO BOLSONARO"),
+      governador("JERÔNIMO RODRIGUES", "BA", "PT", "eleito", "apoio", "LULA"),
+      governador("EDUARDO PAES", "RJ", "PSD", "segundo_turno", "neutro", null),
+      governador("SERGIO MORO", "PR", "PL", "eleito", "sem_declaracao", null),
+    )!
+    assert.ok(a)
+    const g = governadoresPorPosicao(a, presidente)!
+    const [fa] = presidente.candidatos.filter((c) => c.fase === "segundo_turno")
+    const chaveFlavio = normalizarNomeUrna(fa.nome_urna) === "FLAVIO BOLSONARO" ? "a" : "b"
+    assert.deepEqual(g[chaveFlavio].map((i) => i.quem), ["TARCÍSIO"])
+    assert.deepEqual(g[chaveFlavio === "a" ? "b" : "a"].map((i) => i.quem), ["JERÔNIMO RODRIGUES"])
+    assert.deepEqual(g.neutro.map((i) => i.quem), ["EDUARDO PAES"])
+    assert.deepEqual(g.sem.map((i) => i.quem), ["SERGIO MORO"])
+    assert.ok(a.itens.filter((i) => i.tipo === "governador").every((i) => i.sq && !i.fora_do_resultado))
+    const semGov = comGovernadores()!
+    assert.deepEqual(barraEliminados(a, presidente)!.segmentos, barraEliminados(semGov, presidente)!.segmentos, "governador não pinta a barra")
+    assert.equal(governadoresPorPosicao(semGov, presidente), null)
+  })
+
+  it("falha fechado: situação que não bate com o snapshot, UF nacional, disputa de governador, situação em outro tipo", () => {
+    assert.equal(comGovernadores(governador("TARCÍSIO", "SP", "REPUBLICANOS", "segundo_turno", "apoio", "LULA")), null, "Tarcísio foi eleito")
+    assert.equal(comGovernadores(governador("EDUARDO PAES", "RJ", "PSD", "eleito", "neutro", null)), null, "Paes está no 2º turno")
+    assert.equal(comGovernadores(governador("FULANO", "SP", "PL", "eleito", "neutro", null)), null, "sem par no snapshot")
+    assert.equal(comGovernadores(governador("TARCÍSIO", "SP", "REPUBLICANOS", null, "neutro", null)), null, "sem situação")
+    assert.equal(comGovernadores(governador("TARCÍSIO", "BR", "REPUBLICANOS", "eleito", "neutro", null)), null)
+    assert.equal(comGovernadores({ ...governador("TARCÍSIO", "SP", "REPUBLICANOS", "eleito", "neutro", null), disputa: "Governador" }), null)
+    assert.equal(comGovernadores(governador("TARCÍSIO", "SP", "REPUBLICANOS", "eleito", "apoio", "EDUARDO PAES")), null, "apoia quem não disputa a Presidência")
+    assert.equal(comItem((it) => { it[0].situacao = "eleito" }), null, "situação só vale para governador")
+  })
+
+  it("renderiza o bloco de governadores com UF, partido e situação, e some sem itens", () => {
+    const a = comGovernadores(
+      governador("TARCÍSIO", "SP", "REPUBLICANOS", "eleito", "apoio", "FLÁVIO BOLSONARO"),
+      governador("SERGIO MORO", "PR", "PL", "eleito", "sem_declaracao", null),
+    )!
+    const html = renderToStaticMarkup(<Aliancas2TurnoSecao aliancas={a} disputa={presidente} />)
+    assert.match(html, /data-pf-aliancas-governadores/)
+    assert.match(html, /SP · REPUBLICANOS · eleito/)
+    assert.equal((html.match(/data-pf-governador=/g) ?? []).length, 1)
+    assert.match(html, /data-pf-governadores-sem[^>]*>Sem declaração pública até [^:]+: Sergio Moro \(PR\)\./)
+    const sem = renderToStaticMarkup(<Aliancas2TurnoSecao aliancas={comGovernadores()!} disputa={presidente} />)
+    assert.doesNotMatch(sem, /data-pf-aliancas-governadores/)
+  })
+})
+
 describe("barra dos votos dos eliminados", () => {
   it("soma os votos dos 10 eliminados sobre os válidos do snapshot, por posição declarada", () => {
-    const a = getAliancas2Turno(data)!
+    const a = fixture()!
     const barra = barraEliminados(a, presidente)!
     const eliminados = presidente.candidatos.filter((c) => c.fase === "nao_eleito")
     const soma = eliminados.reduce((n, c) => n + c.votos, 0)
@@ -110,7 +180,7 @@ describe("barra dos votos dos eliminados", () => {
   })
 
   it("sem finalistas ou sem eliminados não há barra", () => {
-    const a = getAliancas2Turno(data)!
+    const a = fixture()!
     const sem2Turno: DisputaResultado1Turno = { ...presidente, candidatos: presidente.candidatos.map((c) => ({ ...c, fase: c.fase === "segundo_turno" ? "eleito" : c.fase })) }
     assert.equal(barraEliminados(a, sem2Turno), null)
     assert.equal(barraEliminados(a, null), null)
@@ -134,7 +204,7 @@ describe("formatos e rótulos", () => {
 })
 
 describe("Meu candidato saiu: dados do seletor", () => {
-  const a = getAliancas2Turno(data)!
+  const a = fixture()!
   const dados = montarMeuCandidatoSaiu(a, data)!
 
   it("Presidente primeiro, depois só os governos com 2º turno, sem finalistas na lista", () => {
@@ -229,7 +299,7 @@ describe("ressalva de votos anulados sub judice", () => {
 
 describe("renderização", () => {
   it("seção agrupa os eliminados pela posição, com o % de cada grupo e o aviso de que apoio não transfere votos", () => {
-    const html = renderToStaticMarkup(<Aliancas2TurnoSecao aliancas={getAliancas2Turno(data)!} disputa={presidente} />)
+    const html = renderToStaticMarkup(<Aliancas2TurnoSecao aliancas={fixture()!} disputa={presidente} />)
     assert.match(html, /Quem apoia quem/)
     assert.match(html, /Apoio declarado não transfere votos\./)
     assert.match(html, /Sem declaração encontrada não significa neutralidade\./)
@@ -239,13 +309,13 @@ describe("renderização", () => {
     const pcts = [...html.matchAll(/data-pf-grupo-percentual="true">([\d,]+%)/g)].map((m) => m[1])
     const somaGrupos = pcts.reduce((n, p) => n + Number(p.replace("%", "").replace(",", ".")), 0)
     assert.ok(Math.abs(somaGrupos - 7.81) < 0.03, `soma dos grupos ${somaGrupos}`)
-    assert.match(html, /Consulta em 05\/10, 21h50/)
+    assert.match(html, new RegExp(`Consulta em ${formatarColeta(String(bruto.coletado_em))}`))
     assert.doesNotMatch(html, /data-pf-meu-candidato-saiu/)
     assert.doesNotMatch(html, /vão para|migram|transferem para/i)
   })
 
   it("duelo de governador ganha a linha de apoio só no DF e a ressalva só no RJ", () => {
-    const html = renderToStaticMarkup(<Governadores2Turno candidatos={[]} data={data} aliancas={getAliancas2Turno(data)} />)
+    const html = renderToStaticMarkup(<Governadores2Turno candidatos={[]} data={data} aliancas={fixture()} />)
     assert.deepEqual([...html.matchAll(/data-pf-apoio-governador="(\w+)"/g)].map((m) => m[1]), ["DF"])
     assert.match(html, /Apoio declarado: <span[^>]*>Ricardo Cappelli<\/span> \(PSB\) a <span[^>]*>Leandro Grass<\/span>/)
     assert.equal((html.match(/data-pf-ressalva-sub-judice/g) ?? []).length, 1)
@@ -258,7 +328,7 @@ describe("renderização", () => {
   })
 
   it("apoios por UF vêm só de candidatos com apoio declarado", () => {
-    const a = getAliancas2Turno(data)
+    const a = fixture()
     assert.deepEqual(apoiosGovernador(a, "df").map((i) => i.quem), ["RICARDO CAPPELLI"])
     assert.deepEqual(apoiosGovernador(a, "RJ"), [])
     assert.deepEqual(apoiosGovernador(null, "DF"), [])

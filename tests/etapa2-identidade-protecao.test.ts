@@ -631,9 +631,11 @@ describe("o registro real, contra a passagem vazia", () => {
     // quase todos apareciam como nao localizados. Nao e o gerador ficando permissivo, e a
     // janela tendo fechado. Conferi os 49 contra o CSV oficial: 49 de 49 com o sequencial
     // presente no pacote, zero ausente.
+    // v8 (11/10): pazolini sai de revisao_identidade para match_fresco pela chave
+    // independente (data de nascimento da candidatura de 2018, SQ do seed).
     assert.deepEqual(indice.contagem(), {
-      match_fresco: 49,
-      revisao_identidade: 13,
+      match_fresco: 50,
+      revisao_identidade: 12,
       conflito_cargo_uf: 1,
       registro_encontrado_outro_cargo: 2,
       proxima_possivel_urna: 5,
@@ -652,12 +654,20 @@ describe("o registro real, contra a passagem vazia", () => {
     // promoção reclassificou sem mexer no universo dos 71.
     assert.equal(
       recomputarDiagnosticoSha256(todos),
-      // v6, renovacao de 29/09 contra o snapshot publicado pelo TSE em 16/09
-      // (catalogo `metadata_modified` 2026-09-16T13:36), antes do vencimento de
-      // 02/10. Classes, contagens e o universo dos 71 ficaram identicos. O valor
-      // anterior era `7501c389…7d7cd261`, da v5 (02/09), e antes dele
-      // `1d1f45b9…3ae8030b`, da v4 (25/08).
-      "03569d4e82774cfd52b3943b4bb0f198bcb2c6851f41c144099038344a249139",
+      // v8, 11/10: entra a chave independente de pazolini em
+      // data/identidade-etapa2-nascimentos.json (consulta_cand 2018, SQ 80000624435,
+      // a mesma do seed); ele passa a match_fresco e nenhuma outra entrada muda.
+      // O valor anterior era `73488005…5539aaed`, da v7.
+      //
+      // v7, renovacao de 11/10 contra o consulta_cand republicado pelo TSE em
+      // 11/10 19:36 (sha256 c50885c9…2c99; o catalogo segue com
+      // `metadata_modified` 2026-09-16T13:36). O pacote pos 1o turno traz uma
+      // linha por turno para quem foi ao 2o; o gerador agora colapsa linhas do
+      // mesmo SQ com identidade igual (colapsarLinhasPorTurno). Classes,
+      // contagens e o universo dos 71 ficaram identicos aos da v6. O valor
+      // anterior era `03569d4e…4a249139`, da v6 (29/09), antes `7501c389…7d7cd261`,
+      // da v5 (02/09), e `1d1f45b9…3ae8030b`, da v4 (25/08).
+      "74e98e4945da144f7bf37b7ea3c8f0cd3608205171a193d45dd2ae80ae065287",
     )
     assert.equal(
       recomputarSlugsHash(todos),
@@ -665,16 +675,16 @@ describe("o registro real, contra a passagem vazia", () => {
     )
   })
 
-  it("as 22 bloqueadas não têm chave nem frentes, e o laço não é vazio", () => {
-    assert.equal(bloqueadas.length, 22)
+  it("as 21 bloqueadas não têm chave nem frentes, e o laço não é vazio", () => {
+    assert.equal(bloqueadas.length, 21)
     for (const e of bloqueadas) {
       assert.equal(Object.hasOwn(e, "chave"), false, `${e.slug} expõe chave`)
       assert.equal(Object.hasOwn(e, "frentes_tse"), false, `${e.slug} expõe frentes_tse`)
     }
   })
 
-  it("os 49 match_fresco TÊM chave e frentes (o positivo que faltava)", () => {
-    assert.equal(frescos.length, 49)
+  it("os 50 match_fresco TÊM chave e frentes (o positivo que faltava)", () => {
+    assert.equal(frescos.length, 50)
     for (const e of frescos) {
       assert.equal(e.chave?.type, "SQ_CANDIDATO")
       assert.match(e.chave?.value ?? "", /^\d+$/)
@@ -718,6 +728,7 @@ describe("o registro real, contra a passagem vazia", () => {
       "mateus-simoes",
       "otaviano-pivetta",
       "paula-belmonte",
+      "pazolini",
       "renan-santos",
       "requiao-filho",
       "ricardo-ferraco",
@@ -786,7 +797,6 @@ describe("o registro real, contra a passagem vazia", () => {
       "joao-henrique-catan",
       "lais-chaud",
       "natasha-slhessarenko",
-      "pazolini",
       "witer-naves",
       ],
     )
@@ -798,7 +808,8 @@ describe("o registro real, contra a passagem vazia", () => {
     // Eram 6 quando o bloqueado tinha 49. Com a regeneracao de 17/08 o bloqueado caiu para
     // 22, e este numero acompanha. O que o teste guarda nao e o valor, e o fato de a pista
     // sobreviver: limpar os hits para "esconder o SQ" continuaria quebrando aqui.
-    assert.equal(bloqueadas.filter((e) => e.hits.some((h) => h.sq)).length, 21)
+    // 21 -> 20 em 11/10: pazolini, que tinha hit, foi promovido por chave independente.
+    assert.equal(bloqueadas.filter((e) => e.hits.some((h) => h.sq)).length, 20)
   })
 
   it("todo slug do registro existe no seed", () => {

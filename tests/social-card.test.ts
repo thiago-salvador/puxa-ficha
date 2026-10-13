@@ -6,8 +6,10 @@ import {
   CARD_SIZES,
   extractCardData,
   buildSocialCardJsx,
+  buildSocialCard,
   cardSourceLabelFromUrl,
   fetchPhotoAsBase64,
+  loadPhotoAsDataUri,
   type CardFormat,
 } from "../src/lib/social-card"
 import type { FichaCandidato } from "../src/lib/types"
@@ -531,13 +533,67 @@ describe("buildSocialCardJsx", () => {
 })
 
 test("foto curada em public/ entra no card de perfil; caminho fora de public/ não", async () => {
-  const { loadPhotoAsDataUri } = await import("../src/lib/social-card")
   const photo = await loadPhotoAsDataUri("/candidates/samara-martins.jpg")
-  assert.ok(photo?.startsWith("data:image/jpeg;base64,"))
+  assert.ok(photo?.startsWith("data:image/png;base64,"))
   assert.ok((photo?.length ?? 0) > 1000)
   assert.equal(await loadPhotoAsDataUri("/../package.json"), null)
   assert.equal(await loadPhotoAsDataUri("//evil.example/x.jpg"), null)
   assert.equal(await loadPhotoAsDataUri("/candidates/nao-existe.jpg"), null)
   assert.equal(await loadPhotoAsDataUri(null), null)
-  assert.equal(await loadPhotoAsDataUri("data:image/png;base64,AQID"), "data:image/png;base64,AQID")
+  assert.equal(await loadPhotoAsDataUri("data:image/png;base64,AQID"), null)
+})
+
+test("normaliza AVIF curado para PNG renderizável no ImageResponse", async () => {
+  const photo = await loadPhotoAsDataUri("/candidates/gisvaldo-oliveira.avif")
+  assert.ok(photo?.startsWith("data:image/png;base64,"))
+
+  const response = await buildSocialCard(
+    extractCardData(makeFicha({ foto_url: "/candidates/gisvaldo-oliveira.avif" }), photo),
+    "feed",
+  )
+  const image = await response.arrayBuffer()
+  assert.ok(image.byteLength > 10_000)
+  assert.equal(new Uint8Array(image)[0], 0x89)
+  assert.equal(new Uint8Array(image)[1], 0x50)
+})
+
+test("normaliza fotos válidas, ignora MIME declarado e usa iniciais para bytes inválidos", async (t) => {
+  const sharp = (await import("sharp")).default
+  const png = await sharp({
+    create: { width: 48, height: 32, channels: 3, background: { r: 180, g: 40, b: 60 } },
+  }).png().toBuffer()
+  const jpeg = await sharp(png).jpeg().toBuffer()
+  const webp = await sharp(png).webp().toBuffer()
+  const dataUri = (mime: string, bytes: Buffer) => `data:image/${mime};base64,${bytes.toString("base64")}`
+
+  for (const photo of [
+    await loadPhotoAsDataUri(dataUri("png", png)),
+    await loadPhotoAsDataUri(dataUri("jpeg", jpeg)),
+    await loadPhotoAsDataUri(dataUri("webp", webp)),
+    await loadPhotoAsDataUri(dataUri("webp", jpeg)), // The declared MIME does not match the bytes.
+    await loadPhotoAsDataUri(`data:IMAGE/JPEG;base64,${jpeg.toString("base64")}`),
+    await loadPhotoAsDataUri(`data:image/jpeg;charset=binary;base64,${jpeg.toString("base64")}`),
+    await loadPhotoAsDataUri(`data:application/octet-stream;base64,${jpeg.toString("base64")}`),
+  ]) {
+    assert.ok(photo?.startsWith("data:image/png;base64,"))
+  }
+
+  assert.equal(await loadPhotoAsDataUri(dataUri("jpeg", jpeg.subarray(0, jpeg.length - 24))), null)
+  assert.equal(await loadPhotoAsDataUri("data:image/png;base64,AQID"), null)
+  assert.equal(await loadPhotoAsDataUri(`data:image/png;base64,${"A".repeat(2_800_000)}`), null)
+
+  const remoteUrl = "https://www.camara.leg.br/photo.webp"
+  let remoteContentType = "image/webp"
+  t.mock.method(globalThis, "fetch", async () => new Response(jpeg, {
+    headers: { "content-type": remoteContentType },
+  }))
+  for (remoteContentType of ["image/jpeg", "image/jpeg; charset=binary", "image/JPEG", "application/octet-stream"]) {
+    assert.ok((await loadPhotoAsDataUri(remoteUrl))?.startsWith("data:image/png;base64,"), remoteContentType)
+  }
+
+  const fallbackData = extractCardData(makeFicha({ nome_urna: "MARIA SILVA" }), null)
+  const fallbackMarkup = renderToStaticMarkup(buildSocialCardJsx(fallbackData, "feed"))
+  assert.match(fallbackMarkup, />MS</)
+  const fallbackResponse = await buildSocialCard(fallbackData, "feed")
+  assert.ok((await fallbackResponse.arrayBuffer()).byteLength > 10_000)
 })
