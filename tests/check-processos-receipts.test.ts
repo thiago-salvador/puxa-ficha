@@ -1,5 +1,8 @@
 import assert from "node:assert/strict"
 import { spawnSync } from "node:child_process"
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import { fileURLToPath } from "node:url"
 import test from "node:test"
 
@@ -39,7 +42,7 @@ test("candidato público novo sem recibo reprova, enquanto recibo válido passa"
 test("CLI do gate sai 1 com candidato novo sem recibo e 0 no controle", () => {
   const checker = fileURLToPath(new URL("../scripts/audit/check-processos-receipts.ts", import.meta.url))
   const fixture = (name: string) => fileURLToPath(new URL(`./fixtures/processos-receipts/${name}.json`, import.meta.url))
-  const run = (name: string) => spawnSync(process.execPath, ["--import", "tsx", checker, `--input=${fixture(name)}`], {
+  const run = (name: string) => spawnSync(process.execPath, ["--import", "tsx", checker, `--input=${fixture(name)}`, `--now=${now.toISOString()}`], {
     encoding: "utf8",
   })
   const control = run("with-receipt")
@@ -53,13 +56,76 @@ test("CLI do gate sai 1 com candidato novo sem recibo e 0 no controle", () => {
 test("separa recibo vencido, erro, indeterminado, encontrado e vazio confirmado", () => {
   const report = checkProcessosReceipts([
     row(),
-    row({ candidate_id: "id-2", slug: "stale", receipt_candidate_id: "id-2", receipt_slug: "stale", receipt_executed_at: "2026-09-01T10:00:00.000Z", receipt_result: "encontrado", receipt_volume: 1 }),
+    row({ candidate_id: "id-2", slug: "stale", receipt_candidate_id: "id-2", receipt_slug: "stale", receipt_executed_at: "2026-09-09T14:00:00.000Z", receipt_result: "encontrado", receipt_volume: 1 }),
     row({ candidate_id: "id-3", slug: "erro", receipt_candidate_id: "id-3", receipt_slug: "erro", receipt_result: "erro" }),
     row({ candidate_id: "id-4", slug: "incerto", receipt_candidate_id: "id-4", receipt_slug: "incerto", receipt_result: "bloqueado" }),
     row({ candidate_id: "id-5", slug: "achado", receipt_candidate_id: "id-5", receipt_slug: "achado", receipt_result: "encontrado", receipt_volume: 1 }),
   ], { now })
   assert.deepEqual(report.summary, { sem_recibo: 0, stale: 1, erro: 1, indeterminado: 1, encontrado: 1, vazio_confirmado: 1, atualizacao_encerrada: 0 })
+  assert.equal(report.stale_overdue, 0)
   assert.equal(report.ok, true)
+})
+
+const DAY_MS = 24 * 60 * 60 * 1000
+const executadoHa = (dias: number, extraMs = 0) => new Date(now.getTime() - dias * DAY_MS - extraMs).toISOString()
+const vencido = (id: string, dias: number, extraMs = 0, overrides: Partial<CoverageSnapshotRow> = {}) =>
+  row({ candidate_id: id, slug: id, receipt_candidate_id: id, receipt_slug: id, receipt_executed_at: executadoHa(dias, extraMs), ...overrides })
+
+test("recibo da coorte ativa vencido além da tolerância reprova; dentro dela só alerta", () => {
+  const dentro = checkProcessosReceipts([row(), vencido("id-2", 14, 60_000), vencido("id-3", 15)], { now })
+  assert.equal(dentro.summary.stale, 2)
+  assert.equal(dentro.stale_overdue, 0)
+  assert.equal(dentro.stale_grace_days, 1)
+  assert.equal(dentro.ok, true)
+
+  const alem = checkProcessosReceipts([row(), vencido("id-2", 15, 60_000), vencido("id-3", 30)], { now })
+  assert.equal(alem.summary.stale, 2)
+  assert.equal(alem.stale_overdue, 2)
+  assert.equal(alem.ok, false)
+})
+
+test("coorte encerrada não reprova por recibo vencido, e tudo recente aprova", () => {
+  const congelado = checkProcessosReceipts([row(), vencido("id-2", 40, 0, { atualizacao_encerrada_em: "2026-10-04" })], { now })
+  assert.equal(congelado.summary.atualizacao_encerrada, 1)
+  assert.equal(congelado.stale_overdue, 0)
+  assert.equal(congelado.ok, true)
+
+  const recente = checkProcessosReceipts([row(), vencido("id-2", 9), vencido("id-3", 13)], { now })
+  assert.equal(recente.summary.stale, 0)
+  assert.equal(recente.ok, true)
+})
+
+test("tolerância é configurável e não aceita valor inválido", () => {
+  assert.equal(checkProcessosReceipts([vencido("id-1", 14, 60_000)], { now, staleGraceDays: 0 }).ok, false)
+  assert.throws(() => checkProcessosReceipts([row()], { now, staleGraceDays: -1 }), /staleGraceDays/)
+})
+
+test("CLI sai 1 e anota erro com recibo além da tolerância, alerta sem reprovar dentro dela, sem dado nominal", () => {
+  const checker = fileURLToPath(new URL("../scripts/audit/check-processos-receipts.ts", import.meta.url))
+  const dir = mkdtempSync(join(tmpdir(), "pf-recibos-"))
+  try {
+    const run = (rows: CoverageSnapshotRow[]) => {
+      const input = join(dir, "snapshot.json")
+      writeFileSync(input, JSON.stringify({ rows }))
+      return spawnSync(process.execPath, ["--import", "tsx", checker, `--input=${input}`, `--now=${now.toISOString()}`], { encoding: "utf8" })
+    }
+    const alem = run([row(), vencido("candidato-vencido", 18)])
+    assert.equal(alem.status, 1, alem.stderr)
+    assert.equal(JSON.parse(alem.stdout).stale_overdue, 1)
+    assert.match(alem.stderr, /::error::Recibos judiciais da coorte ativa com mais de 15 dias: 1\./)
+    assert.doesNotMatch(alem.stdout + alem.stderr, /candidato-vencido/)
+
+    const dentro = run([row(), vencido("candidato-vencido", 14, 60_000)])
+    assert.equal(dentro.status, 0, dentro.stderr)
+    assert.equal(JSON.parse(dentro.stdout).summary.stale, 1)
+    assert.match(dentro.stderr, /::warning::Recibos judiciais da coorte ativa com mais de 14 dias: 1 /)
+
+    const recente = run([row()])
+    assert.equal(recente.status, 0, recente.stderr)
+    assert.equal(recente.stderr, "")
+  } finally {
+    rmSync(dir, { recursive: true, force: true })
+  }
 })
 
 test("não aceita identidade, fonte, escopo ou timestamp fora do contrato", () => {

@@ -25,6 +25,14 @@ repo_url="https://github.com/thiago-salvador/puxa-ficha.git"
 # precisa de um caminho que continue existindo.
 repo="$(dirname "$(git -C "$origem" rev-parse --path-format=absolute --git-common-dir)")"
 git -C "$repo" rev-parse --git-dir >/dev/null 2>&1 || falhar "clone não encontrado a partir de $origem"
+# O launchd não lê pastas protegidas pela privacidade do macOS (TCC): com o
+# clone nelas, toda rodada agendada morre em "clone Git inválido" (01-12/10/2026).
+repo_real="$(cd "$repo" && pwd -P)"
+home_real="$(cd "$HOME" && pwd -P)"
+case "$repo_real/" in
+  "$home_real/Documents/"* | "$home_real/Desktop/"* | "$home_real/Downloads/"* | "$home_real/Library/Mobile Documents/"*)
+    falhar "o clone $repo_real fica numa pasta que o launchd não lê; instale a partir de um clone em ~/Library/Application Support/puxa-ficha/repo" ;;
+esac
 
 # Só instala o que está na main publicada: HEAD igual à main recém-buscada
 # (conferida com ls-remote) e scripts/checagens-local/ limpo e idêntico a ela.

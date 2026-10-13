@@ -85,6 +85,27 @@ Se o Mac estiver desligado, a semana passa sem coleta; o agente não transforma
 ausência de execução em `vazio_confirmado`. Se a `main` ou o launcher instalado
 divergirem, a rodada para com erro no log antes de ler segredos.
 
+## Sinal de falha
+
+O launchd guarda só o código de saída da última rodada (`last exit code` em
+`launchctl print gui/$(id -u)/br.com.puxaficha.checagens-local`), e um novo `bootstrap` o zera. Por
+isso a rodada agendada também deixa um sinal em
+`~/Library/Application Support/puxa-ficha/`:
+
+- `checagens-local.ultima-rodada`: código, horário UTC e caminho do log da última
+  rodada agendada.
+- `checagens-local.falha`: criado quando a rodada termina com código diferente de
+  zero, com o mesmo conteúdo. Só uma rodada agendada bem-sucedida o apaga. A
+  falha também aparece na Central de Notificações do macOS, e a rodada
+  seguinte registra no log que a anterior falhou.
+
+Rodada manual com `--verificar` não mexe nesses arquivos. Se o sinal não
+puder ser gravado, a rodada termina com erro, mesmo que a coleta tenha
+passado. O instalador recusa clone em
+`~/Documents`, `~/Desktop`, `~/Downloads` ou no iCloud Drive, pastas que o
+launchd não lê: instalar a partir de um clone em
+`~/Library/Application Support/puxa-ficha/repo`.
+
 ## Verificação e retorno
 
 Após uma rodada, conferir `COLETA_OK`, `resumo.json`, 7/7 `ok` e o SHA do log.
