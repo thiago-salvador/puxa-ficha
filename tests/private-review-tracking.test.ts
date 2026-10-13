@@ -69,7 +69,7 @@ test("tracked files contain no private review material", () => {
     "data/chapas-2026-tse-20260815.json": { sha256: "18a2cda2a23b2b5b93b00a88d0ba8c1821ffc5b8818c1c6fee380dd2c35f0136", reason: "TSE consulta_cand snapshot of 2026 tickets" },
     "data/chapas-2026-tse-20260827.json": { sha256: "e4213819c7e786f5814f949c5dab80fe16b9c8886fe6514bae4134df982483c1", reason: "TSE consulta_cand snapshot of 2026 tickets" },
     "data/freshness-closeout-20260905.json": { sha256: "28f1153bc2221dbc230f3623ca15bc3de7cd2755ed1103496e32bd72e6908800", reason: "public candidate profile pinned by the freshness closeout apply" },
-    "data/identidade-etapa2-nascimentos.json": { sha256: "b41a927e99cd5cfe73c85db6ada0956b40ad0ccebc1f1d8e85998daea3433a4d", reason: "birth dates used as the independent identity key of stage 2" },
+    "data/identidade-etapa2-nascimentos.json": { sha256: "eb5d001358d4890e8ab0ff53b8224e033221db3495b1fd1c1e4633d33d5bff1c", reason: "birth dates used as the independent identity key of stage 2" },
     "data/siqueira-to-20260907.json": { sha256: "e32d7a42adf8bba8f76b5df7e4adad2754fd0aef81a23d49086b906934f5cf2c", reason: "official-source admission package of one candidate; no CPF or contact data" },
     "data/tse-profile-links-20260827.json": { sha256: "1b76aa159fe3f294a1d91653e45c524167a3cdf67f49818f7b09c864ae4ac40f", reason: "TSE profile links matched by civil name and birth date" },
   }

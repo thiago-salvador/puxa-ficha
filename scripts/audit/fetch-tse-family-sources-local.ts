@@ -15,13 +15,40 @@ type Family = "perfil_atual" | "historico_politico" | "patrimonio" | "financiame
 type Resource = { name?: string; url?: string; format?: string }
 type Catalog = { resources?: Resource[]; metadata_modified?: string }
 type Asset = { family: Family; year: number; path: string; url: string; sha256: string; bytes: number; catalog_url: string; catalog_revision: string | null; reused_cache?: boolean }
-type Pending = { family: Family; year: number; catalog_url: string; reason: string }
+type Pending = { family: Family; year: number; catalog_url: string; reason: string; diagnostic?: DownloadDiagnostic }
+
+/** Fatos observados numa tentativa de download, sem interpretação de causa.
+ *  `etapa` diz onde parou: resposta (antes do status), status (HTTP não ok),
+ *  corpo (leitura interrompida) ou validacao (arquivo recebido, mas inválido). */
+type DownloadAttempt = {
+  tentativa: number
+  etapa: "resposta" | "status" | "corpo" | "validacao"
+  http_status: number | null
+  content_length: number | null
+  bytes_recebidos: number
+  duracao_ms: number
+  erro: string
+  causa: Array<{ name: string; code: string | null; message: string }>
+}
+type DownloadDiagnostic = { url: string; tentativas: DownloadAttempt[]; prazo_esgotado?: boolean }
+
+export class DownloadError extends Error {
+  constructor(message: string, readonly diagnostic: DownloadDiagnostic) { super(message) }
+}
 
 export function assertCompleteAssets(assets: readonly Asset[], pending: readonly Pending[]): void {
   if (assets.length === 0 || pending.length > 0) {
     const faltantes = pending.map((item) => `${item.family}/${item.year} (${item.reason})`).join("; ")
     throw new Error(`pacotes oficiais incompletos: ${assets.length} asset(s), ${pending.length} pendente(s)${faltantes ? `: ${faltantes}` : ""}`)
   }
+}
+
+/** Pendência com o diagnóstico do download preservado no manifesto (0600, fora do repo). */
+export function pendingFrom(family: Family, year: number, catalogUrl: string, error: unknown): Pending {
+  const reason = error instanceof Error ? error.message : String(error)
+  return error instanceof DownloadError
+    ? { family, year, catalog_url: catalogUrl, reason, diagnostic: error.diagnostic }
+    : { family, year, catalog_url: catalogUrl, reason }
 }
 
 const CATALOG_BASE = "https://dadosabertos.tse.jus.br/api/3/action/package_show?id="
@@ -72,30 +99,145 @@ function select(resources: Resource[], family: Family, year: number): { name: st
   return { name: filtered[0]!.name ?? "", url: filtered[0]!.url! }
 }
 
-async function download(url: string, path: string): Promise<{ sha256: string; bytes: number }> {
-  const response = await fetch(url, { signal: AbortSignal.timeout(600_000) })
-  if (!response.ok || !response.body) throw new Error(`${basename(path)}: HTTP ${response.status}`)
+/** Cadeia de `cause` como observada (undici põe o motivo real do "terminated"
+ *  em `cause`, por exemplo UND_ERR_SOCKET). Limitada para não crescer sem fim. */
+function causeChain(error: unknown): DownloadAttempt["causa"] {
+  const chain: DownloadAttempt["causa"] = []
+  let current: unknown = error instanceof Error ? error.cause : undefined
+  while (current && chain.length < 4) {
+    const item = current as { name?: unknown; code?: unknown; message?: unknown; cause?: unknown }
+    chain.push({
+      name: typeof item.name === "string" ? item.name : typeof current,
+      code: typeof item.code === "string" ? item.code : null,
+      message: String(typeof item.message === "string" ? item.message : current).slice(0, 200),
+    })
+    current = item.cause
+  }
+  return chain
+}
+
+function errorText(error: unknown): string {
+  if (!(error instanceof Error)) return String(error).slice(0, 200)
+  return `${error.name === "Error" ? "" : `${error.name}: `}${error.message}`.slice(0, 200)
+}
+
+function describeDownloadFailure(diagnostic: DownloadDiagnostic): string {
+  const last = diagnostic.tentativas.at(-1)
+  if (!last) return diagnostic.prazo_esgotado ? "prazo total da etapa esgotado antes do download" : "download sem tentativa registrada"
+  const of = last.content_length === null ? "" : ` de ${last.content_length}`
+  const status = last.http_status === null ? "sem resposta HTTP" : `HTTP ${last.http_status}`
+  const cause = last.causa.map((item) => [item.code, item.message].filter(Boolean).join(" ")).join(" <- ")
+  return `${last.erro} na etapa ${last.etapa} (${status}, ${last.bytes_recebidos}${of} bytes, ${Math.round(last.duracao_ms / 1000)} s` +
+    `${cause ? `, causa: ${cause}` : ""}; ${diagnostic.tentativas.length} tentativa(s)${diagnostic.prazo_esgotado ? "; prazo total da etapa esgotado" : ""})`
+}
+
+type DownloadOptions = {
+  fetchImpl?: typeof fetch
+  sleep?: (ms: number) => Promise<void>
+  attempts?: number
+  backoffMs?: readonly number[]
+  timeoutMs?: number
+  now?: () => number
+  /** Instante (ms) em que a etapa inteira precisa ter terminado. Sem ele, o
+   *  retry poderia levar o job além do teto e o manifesto com o diagnóstico
+   *  nunca seria escrito. */
+  deadline?: number
+}
+
+const MIN_ATTEMPT_MS = 30_000
+
+class AttemptFailure extends Error {
+  constructor(readonly attempt: DownloadAttempt, readonly retryable: boolean) { super(attempt.erro) }
+}
+
+async function downloadOnce(url: string, path: string, attempt: number, options: Required<Pick<DownloadOptions, "fetchImpl" | "timeoutMs" | "now">>): Promise<{ sha256: string; bytes: number }> {
+  const started = options.now()
   let bytes = 0
+  let status: number | null = null
+  let contentLength: number | null = null
+  const fail = (etapa: DownloadAttempt["etapa"], error: unknown, retryable: boolean): AttemptFailure => new AttemptFailure({
+    tentativa: attempt, etapa, http_status: status, content_length: contentLength, bytes_recebidos: bytes,
+    duracao_ms: options.now() - started, erro: errorText(error), causa: causeChain(error),
+  }, retryable)
+  let response: Response
+  try {
+    response = await options.fetchImpl(url, { signal: AbortSignal.timeout(options.timeoutMs) })
+  } catch (error) {
+    throw fail("resposta", error, true)
+  }
+  status = response.status
+  // Com content-encoding, o tamanho declarado é do corpo comprimido; não compara.
+  const encoding = (response.headers.get("content-encoding") ?? "identity").toLowerCase()
+  const declared = Number(response.headers.get("content-length"))
+  contentLength = encoding === "identity" && Number.isFinite(declared) && declared > 0 ? declared : null
+  if (!response.ok || !response.body) {
+    // 4xx (salvo 429) não muda repetindo; 5xx e 429 podem ser transitórios.
+    throw fail("status", new Error(`${basename(path)}: HTTP ${response.status}`), status === 429 || status >= 500)
+  }
   const hash = createHash("sha256")
-  const source = Readable.fromWeb(response.body as never)
+  // Lê direto do corpo: Readable.fromWeb descarta o buffer quando o fluxo
+  // falha, e os bytes recebidos antes do erro sumiriam do diagnóstico.
+  const reader = response.body.getReader()
+  let overLimit = false
   async function* measured() {
-    for await (const value of source) {
-      const chunk = Buffer.from(value as Uint8Array)
+    for (;;) {
+      const { done, value } = await reader.read()
+      if (done) return
+      const chunk = Buffer.from(value)
       bytes += chunk.length
-      if (bytes > MAX_BYTES) throw new Error(`${basename(path)} excede limite local de 2 GB`)
+      if (bytes > MAX_BYTES) { overLimit = true; throw new Error(`${basename(path)} excede limite local de 2 GB`) }
       hash.update(chunk)
       yield chunk
     }
   }
-  await pipeline(Readable.from(measured()), createWriteStream(path, { mode: 0o600, flags: "wx" }))
-  if (bytes < 4) throw new Error(`${basename(path)} vazio/incompleto`)
+  try {
+    await pipeline(Readable.from(measured()), createWriteStream(path, { mode: 0o600, flags: "wx" }))
+  } catch (error) {
+    await reader.cancel().catch(() => {})
+    throw fail("corpo", error, !overLimit)
+  }
+  if (contentLength !== null && bytes !== contentLength) {
+    throw fail("corpo", new Error(`${basename(path)}: corpo com ${bytes} de ${contentLength} bytes declarados`), true)
+  }
+  if (bytes < 4) throw fail("validacao", new Error(`${basename(path)} vazio/incompleto`), false)
   const fd = openSync(path, "r")
   try {
     const magic = Buffer.alloc(4)
     readSync(fd, magic, 0, 4, 0)
-    if (magic[0] !== 0x50 || magic[1] !== 0x4b || magic[2] !== 0x03 || magic[3] !== 0x04) throw new Error(`${basename(path)} não é ZIP`)
+    if (magic[0] !== 0x50 || magic[1] !== 0x4b || magic[2] !== 0x03 || magic[3] !== 0x04) throw fail("validacao", new Error(`${basename(path)} não é ZIP`), false)
   } finally { closeSync(fd) }
   return { sha256: hash.digest("hex"), bytes }
+}
+
+/** Baixa com retry limitado da leitura. Cada tentativa recomeça do zero em
+ *  arquivo novo; o diagnóstico de todas as tentativas segue no erro final. */
+export async function download(url: string, path: string, options: DownloadOptions = {}): Promise<{ sha256: string; bytes: number; tentativas: number }> {
+  const attempts = options.attempts ?? 3
+  const backoff = options.backoffMs ?? [15_000, 60_000]
+  const sleep = options.sleep ?? ((ms: number) => new Promise<void>((done) => setTimeout(done, ms)))
+  const once = { fetchImpl: options.fetchImpl ?? fetch, timeoutMs: options.timeoutMs ?? 600_000, now: options.now ?? Date.now }
+  const deadline = options.deadline ?? Number.POSITIVE_INFINITY
+  const history: DownloadAttempt[] = []
+  let prazoEsgotado = false
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    const remaining = deadline - once.now()
+    if (remaining < MIN_ATTEMPT_MS) { prazoEsgotado = true; break }
+    try {
+      const result = await downloadOnce(url, path, attempt, { ...once, timeoutMs: Math.min(once.timeoutMs, remaining) })
+      return { ...result, tentativas: attempt }
+    } catch (error) {
+      rmSync(path, { force: true })
+      if (!(error instanceof AttemptFailure)) throw error
+      history.push(error.attempt)
+      console.error(JSON.stringify({ download: basename(new URL(url).pathname), ...error.attempt }))
+      if (!error.retryable || attempt === attempts) break
+      const wait = backoff[Math.min(attempt - 1, backoff.length - 1)] ?? 0
+      if (deadline - once.now() < wait + MIN_ATTEMPT_MS) { prazoEsgotado = true; break }
+      await sleep(wait)
+    }
+  }
+  const diagnostic: DownloadDiagnostic = prazoEsgotado ? { url, tentativas: history, prazo_esgotado: true } : { url, tentativas: history }
+  throw new DownloadError(describeDownloadFailure(diagnostic), diagnostic)
 }
 
 async function fileSha256(path: string): Promise<string> {
@@ -131,6 +273,11 @@ async function main(): Promise<void> {
   const out = assertOutsideRepository(destination, "destino")
   mkdirSync(out, { recursive: true, mode: 0o700 })
   const cacheDirectory = option("cache-dir")
+  // Prazo da etapa inteira, abaixo do teto do job (120 min), para o manifesto
+  // com as pendências e o diagnóstico sempre chegar a ser escrito.
+  const prazoMin = Number(option("prazo-min") ?? 80)
+  if (!Number.isFinite(prazoMin) || prazoMin <= 0) throw new Error("--prazo-min precisa ser um número positivo de minutos")
+  const deadline = Date.now() + prazoMin * 60_000
   const assets: Asset[] = []
   const pending: Pending[] = []
   for (const year of years.sort((a, b) => a - b)) {
@@ -164,7 +311,7 @@ async function main(): Promise<void> {
           const filename = basename(new URL(resource.url).pathname)
           const temporary = join(out, `${filename}.${process.pid}.tmp`)
           try {
-            const result = await download(resource.url, temporary)
+            const result = await download(resource.url, temporary, { deadline })
             const path = join(out, `${filename.slice(0, -4)}-${result.sha256.slice(0, 12)}.zip`)
             if (existsSync(path)) {
               if (await fileSha256(path) !== result.sha256) throw new Error(`cache local diverge do SHA: ${path}`)
@@ -179,7 +326,7 @@ async function main(): Promise<void> {
         }
         assets.push({ family: item.family, year, path: local.path, url: resource.url, sha256: local.sha256, bytes: local.bytes, catalog_url: item.from.url, catalog_revision: item.from.data.metadata_modified ?? null, reused_cache: "reused_cache" in local ? true : undefined })
       } catch (error) {
-        pending.push({ family: item.family, year, catalog_url: item.from.url, reason: error instanceof Error ? error.message : String(error) })
+        pending.push(pendingFrom(item.family, year, item.from.url, error))
       }
     }
     if (!selectedFamilies.has("financiamento")) continue
@@ -193,7 +340,7 @@ async function main(): Promise<void> {
         let local: { path: string; sha256: string; bytes: number; reused_cache?: boolean } | null = await localCache(resource.url, cacheDirectory)
         if (!local) {
         try {
-          const result = await download(resource.url, temporary)
+          const result = await download(resource.url, temporary, { deadline })
           const path = join(out, `${filename.slice(0, -4)}-${result.sha256.slice(0, 12)}.zip`)
           if (existsSync(path)) {
             if (await fileSha256(path) !== result.sha256) throw new Error(`cache local diverge do SHA: ${path}`)
@@ -207,7 +354,7 @@ async function main(): Promise<void> {
         }
         assets.push({ family: "financiamento", year, path: local.path, url: resource.url, sha256: local.sha256, bytes: local.bytes, catalog_url: financeCatalog.url, catalog_revision: financeCatalog.data.metadata_modified ?? null, reused_cache: "reused_cache" in local ? true : undefined })
       } catch (error) {
-        pending.push({ family: "financiamento", year, catalog_url: financeCatalog.url, reason: error instanceof Error ? error.message : String(error) })
+        pending.push(pendingFrom("financiamento", year, financeCatalog.url, error))
       }
     }
   }

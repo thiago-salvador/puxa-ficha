@@ -452,6 +452,26 @@ describe("timeline-utils", () => {
     assert.ok(g?.description?.includes("60"))
   })
 
+  it("gastos com detalhamento legado em objeto não derrubam a timeline", () => {
+    // Formato de 915 linhas no banco; a imagem da timeline respondia 500.
+    const legado = {
+      proveniencia: { fonte_url: "https://dadosabertos.camara.leg.br/api/v2/deputados/1/despesas" },
+      categorias: [
+        { categoria: "Passagens", valor: 400 },
+        { categoria: "Divulgacao", valor: 600 },
+      ],
+    } as unknown as FichaCandidato["gastos_parlamentares"][number]["detalhamento"]
+    const ev = buildTimelineEvents(
+      fichaStub({
+        gastos_parlamentares: [
+          { id: "g1", candidato_id: "1", ano: 2022, total_gasto: 1000, detalhamento: legado, gastos_destaque: [] },
+        ],
+      }),
+    )
+    const g = ev.find((e) => e.type === "gasto_parlamentar")
+    assert.equal(g?.description, "Maior rubrica: Divulgacao (60%)")
+  })
+
   it("cargo with periodo_fim null has no year_end on event", () => {
     const ev = buildTimelineEvents(
       fichaStub({

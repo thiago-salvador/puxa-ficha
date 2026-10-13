@@ -3,7 +3,7 @@
   "versao": 2,
   "execucao": "pf-reverificacao-20260809",
   "pleito": 2026,
-  "decidido_em": "2026-09-29",
+  "decidido_em": "2026-10-11",
   "total": 71,
   "contrato": {
     "classe_que_promove_chave": "match_fresco",
@@ -14,7 +14,7 @@
     "janela_registro": "convencoes ate 05/08; pedidos de registro ate 15/08 as 19h (Resolucao TSE 23.609/2019, art. 19). As nao-localizacoes EXIGEM recheque apos 15/08 e nunca sao lidas como ausencia de registro."
   },
   "renovacao": {
-    "revalidar_ate": "2026-10-29",
+    "revalidar_ate": "2026-11-10",
     "responsavel": "dono do repositorio, unico autor de migrations e unico operador do banco (Settings/WORKFLOWS.md)",
     "procedimento": [
       "npm run data:identidade-etapa2:fontes",
@@ -35,24 +35,24 @@
     "gerador": "scripts/audit/gerar-identidade-etapa2.ts",
     "modo": "reclassificar",
     "diagnostico_gitignorado": "output/pf-reverificacao-20260809/diagnostico-final-71.json",
-    "diagnostico_final_71_sha256": "03569d4e82774cfd52b3943b4bb0f198bcb2c6851f41c144099038344a249139",
+    "diagnostico_final_71_sha256": "74e98e4945da144f7bf37b7ea3c8f0cd3608205171a193d45dd2ae80ae065287",
     "slugs_derivados_71_sha256": "c05993541835f5ee06879ae084b96450fd78f44e97feffac86987431e22bcff9",
     "universo_83_sha256": "653fff9c9ec7391eeeb5ee16b5d98c64182abb057b356fe1bd1a8df973385b53",
     "db_snapshot_83_sha256": "4d7a002c09ba6182792e60d86ca179d9070ec2dc487ac256e63bd71dbe2f9f99",
     "ledger_b2_sha256": "78dec9789bdd4952cbf781f5bd4952a75f919b4a82903e6869a42468cc168fc0",
     "nascimentos": "data/identidade-etapa2-nascimentos.json",
-    "nascimentos_sha256": "5a87f9d786c723425fd1ad0ad1e7ff4ecdc7872b6a4fe1cdf6841467f540cc37",
-    "catalog_sha256": "5d64f38668709ad4ce9f81cf69f7e1271a869d5382f8c1555cb7465e7edd89c8",
-    "catalog_fetched_at": "2026-09-29T18:27:21.441Z",
-    "snapshot_tse_sha256": "2403647c21e8c6782978f8187e5707eae5ec42c933b1f167c7347e60506e4398",
-    "snapshot_complemento_sha256": "99c601737e3626d8ed6ddb90b8cd6c92ab153bbf35284614cd9497f0dd7bb1ec",
-    "snapshot_redes_sha256": "e3e81325d712dc65c7de32d2af48c0f447e2834a7b0a705c58abcaa8faa469b5",
-    "dt_geracao_tse": "29/09/2026 12:31:16"
+    "nascimentos_sha256": "3ad7081bbde4d9799079a68dc245cebcfa3bbe356c4d6c8ce50ad7f5f32831f4",
+    "catalog_sha256": "244af8428db595220d07325ffed607cf52fa71f9a4fd48839f970f5f95fa8f03",
+    "catalog_fetched_at": "2026-10-11T23:53:19.257Z",
+    "snapshot_tse_sha256": "d61242bfa99e5c3cfe6a8e53ed38439b7dd4b22de575d1f50dc17e91144272fe",
+    "snapshot_complemento_sha256": "93b0fd444d8c2036f066dfaff0a8420b8713abbbc63a8e6b8ccf76245236bcbc",
+    "snapshot_redes_sha256": "dd4b77e6f49ec285a39ebd7d7f2ae5577e226ab8cda086123ad8e1a5baa8db3e",
+    "dt_geracao_tse": "11/10/2026 19:31:40"
   },
   "contagem": {
     "proxima_possivel_urna": 5,
-    "match_fresco": 49,
-    "revisao_identidade": 13,
+    "match_fresco": 50,
+    "revisao_identidade": 12,
     "registro_encontrado_outro_cargo": 2,
     "conflito_cargo_uf": 1,
     "nao_localizado_pelos_matchers": 1
@@ -385,7 +385,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 10
+        "social_count": 12
       }
     },
     {
@@ -625,7 +625,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 214
+        "social_count": 245
       }
     },
     {
@@ -805,7 +805,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 46
+        "social_count": 48
       }
     },
     {
@@ -1425,7 +1425,7 @@
         "registration": true,
         "complement": true,
         "social_networks": true,
-        "social_count": 9
+        "social_count": 10
       }
     },
     {
@@ -1554,8 +1554,8 @@
       "nome_urna": "Pazolini",
       "cargo_disputado": "Governador",
       "estado": "ES",
-      "classe": "revisao_identidade",
-      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF; identidade não confirmada por chave independente",
+      "classe": "match_fresco",
+      "motivo": "nome civil da ficha é subconjunto do nome TSE + cargo + UF, e data de nascimento idêntica à do nosso cadastro (chave independente prevista no contrato)",
       "hits": [
         {
           "sq": "80002552682",
@@ -1566,7 +1566,17 @@
           "partido": "REPUBLICANOS",
           "numero": "10"
         }
-      ]
+      ],
+      "chave": {
+        "type": "SQ_CANDIDATO",
+        "value": "80002552682"
+      },
+      "frentes_tse": {
+        "registration": true,
+        "complement": true,
+        "social_networks": true,
+        "social_count": 6
+      }
     },
     {
       "slug": "renan-santos",

@@ -27,6 +27,7 @@ import { join, resolve } from "node:path"
 import {
   CARGOS_ALVO,
   classificarIdentidade,
+  colapsarLinhasPorTurno,
   derivarUniversoNoSafeMatch,
   type LinhaLedgerB2,
   type LinhaTse,
@@ -269,7 +270,8 @@ function main(): void {
     }
   }
 
-  const todas = lerCsvDoZip(ZIPS[0].arquivo, ZIPS[0].entrada) as unknown as LinhaTse[]
+  // Uma linha por turno para quem foi ao 2º turno: ver colapsarLinhasPorTurno.
+  const todas = colapsarLinhasPorTurno(lerCsvDoZip(ZIPS[0].arquivo, ZIPS[0].entrada) as unknown as LinhaTse[])
   const complementares = lerCsvDoZip(ZIPS[1].arquivo, ZIPS[1].entrada)
   const redes = lerCsvDoZip(ZIPS[2].arquivo, ZIPS[2].entrada)
 

@@ -3896,7 +3896,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AM|1|estimulada|lista-atlasintel-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-33fe227286810620",
+      "exact_aliases_version": "monitor-2026-91b89aae2cd14afc",
       "exact_aliases": [
         {
           "raw_label": "Cabo Daciolo",
@@ -4139,6 +4139,24 @@
           "geography": "Amazonas",
           "turn": 1,
           "scenario_id": "ipen-am-00196-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Omar Aziz",
+          "candidate_slug": "omar-aziz",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 2,
+          "scenario_id": "poderdata-am-08245-2026-2t"
+        },
+        {
+          "raw_label": "Professora Maria do Carmo",
+          "candidate_slug": "maria-do-carmo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 2,
+          "scenario_id": "poderdata-am-08245-2026-2t"
         }
       ],
       "pesquisas": [
@@ -5096,6 +5114,131 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 5.3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "poderdata-am-08245-2026",
+          "source_id": "poderdata-am-08245-2026-revisao-20261013",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "PoderData",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "RealTimeAM Portal de Notícias Ltda",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-08",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-11",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-12",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1200,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores e eleitoras com 16 anos de idade ou mais.",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.8,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Pesquisa telefônica IVR",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "AM-08245/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Amazonas",
+            "code": "AM"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.poder360.com.br/poderdata/omar-aziz-tem-56-e-maria-do-carmo-tem-44-no-am-diz-poderdata/",
+            "supporting_urls": [
+              "https://static.poder360.com.br/uploads/2026/10/Relatorio-PoderData-Eleitoral-Amazonas-2Turno-11out26.pdf"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-13T12:09:41Z",
+            "capture": {
+              "format": "text",
+              "sha256": "6d4c921a5c3e74a946c2ebaaf1542e43757832aa3262ef6c609bde01fe0e4700",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "poderdata-am-08245-2026-2t",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": "E se o 2º turno para governador do Amazonas for entre Omar Aziz e Professora Maria do Carmo, em quem você votaria?",
+                "status": "publicado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|1db9320e4b7931738ab33a40f5994fe2d6123fe7ef914e427bd30a63bc64d8ab|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Omar Aziz",
+                  "candidate_slug": "omar-aziz",
+                  "match_status": "exact_alias",
+                  "value_percent": 52,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Maria do Carmo",
+                  "candidate_slug": "maria-do-carmo",
+                  "match_status": "exact_alias",
+                  "value_percent": 42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/Nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
                   "status": "publicado"
                 }
               ]
