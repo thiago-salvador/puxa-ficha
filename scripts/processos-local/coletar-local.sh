@@ -33,6 +33,20 @@ echo "Log: $log"
 exec >>"$log" 2>&1
 echo "== $(date -u +%Y-%m-%dT%H:%M:%SZ) inicio modo=$modo pid=$$"
 
+# Sinal da rodada agendada (runbook, "Sinal de falha"): o launchd guarda só o
+# último código de saída, e um novo bootstrap o zera. A falha grava
+# processos-local.falha, que só uma rodada boa apaga, e avisa na Central de Notificações.
+sinal="$dir_estado/processos-local.ultima-rodada"
+marcador_falha="$dir_estado/processos-local.falha"
+[ ! -f "$marcador_falha" ] || echo "AVISO: a rodada agendada anterior falhou: $(cat "$marcador_falha")"
+registrar_sinal() {
+  printf 'rc=%s fim=%s log=%s\n' "$1" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$log" >"$sinal"
+  if [ "$1" -eq 0 ]; then rm -f "$marcador_falha"; return 0; fi
+  cp "$sinal" "$marcador_falha"
+  [ -n "${PF_SEM_NOTIFICACAO:-}" ] || [ ! -x /usr/bin/osascript ] ||
+    /usr/bin/osascript -e "display notification \"Código $1. Log: $log\" with title \"Puxa Ficha: processos-local falhou\"" >/dev/null 2>&1 || true
+}
+
 trava="$dir_log/.processos-local.lock"
 if ! mkdir "$trava" 2>/dev/null; then
   pid_anterior="$(cat "$trava/pid" 2>/dev/null || true)"
@@ -59,6 +73,7 @@ limpar() {
     rmdir "$trava"
   fi
   echo "== $(date -u +%Y-%m-%dT%H:%M:%SZ) fim rc=$rc"
+  [ "$modo" != "coletar" ] || registrar_sinal "$rc"
 }
 trap limpar EXIT
 

@@ -138,6 +138,7 @@ fingir cobertura seria pior que declarar o limite.
   `erro`; recibo válido nunca é rebaixado para `erro`, nem pelo aplicador.
   Recibo `erro` é renovado na execução seguinte, em qualquer idade.
   `check-processos-receipts.ts` roda antes e depois e reprova candidato
-  público sem recibo.
+  público sem recibo ou, na coorte ativa, com recibo de mais de 15 dias
+  (14 do SLA mais 1 de tolerância para rodada atrasada; acima de 14 só alerta).
 - O catálogo de frescor separa a busca judicial (`processos-judiciais`, 336 h,
   semanal) da curadoria editorial, que segue com 1.800 h.

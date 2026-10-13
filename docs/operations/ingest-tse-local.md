@@ -150,6 +150,26 @@ bash "$HOME/Library/Application Support/puxa-ficha/ingest-tse-local.sh" \
   "$HOME/Library/Application Support/puxa-ficha/repo"
 ```
 
+## Sinal de falha
+
+O launchd guarda só o código de saída da última rodada (`last exit code` em
+`launchctl print gui/$(id -u)/br.com.puxaficha.ingest-tse`), e um novo `bootstrap` o zera. Por
+isso toda rodada sem `--verificar`, agendada ou manual, também deixa um sinal em
+`~/Library/Application Support/puxa-ficha/`:
+
+- `ingest-tse.ultima-rodada`: código, horário UTC e caminho do log da última
+  rodada agendada.
+- `ingest-tse.falha`: criado quando a rodada termina com código diferente de
+  zero, com o mesmo conteúdo. Só uma rodada agendada bem-sucedida o apaga. A
+  falha também aparece na Central de Notificações do macOS, e a rodada
+  seguinte registra no log que a anterior falhou.
+
+Rodada com `--verificar` não mexe nesses arquivos. Se o sinal não puder ser
+gravado, a rodada termina com erro, mesmo que a coleta tenha passado. O instalador recusa clone em
+`~/Documents`, `~/Desktop`, `~/Downloads` ou no iCloud Drive, pastas que o
+launchd não lê: instalar a partir de um clone em
+`~/Library/Application Support/puxa-ficha/repo`.
+
 ## Atualização e desinstalação
 
 O launcher instalado é uma cópia. Se mudar na `main`, a autoconferência para

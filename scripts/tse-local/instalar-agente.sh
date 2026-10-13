@@ -11,6 +11,14 @@ rotulo="br.com.puxaficha.ingest-tse"
 repo_url="https://github.com/thiago-salvador/puxa-ficha.git"
 repo="$(dirname "$(git -C "$origem" rev-parse --path-format=absolute --git-common-dir)")"
 git -C "$repo" rev-parse --git-dir >/dev/null 2>&1 || falhar "clone não encontrado a partir de $origem"
+# O launchd não lê pastas protegidas pela privacidade do macOS (TCC): com o
+# clone nelas, toda rodada agendada morre em "clone Git inválido" (01-12/10/2026).
+repo_real="$(cd "$repo" && pwd -P)"
+home_real="$(cd "$HOME" && pwd -P)"
+case "$repo_real/" in
+  "$home_real/Documents/"* | "$home_real/Desktop/"* | "$home_real/Downloads/"* | "$home_real/Library/Mobile Documents/"*)
+    falhar "o clone $repo_real fica numa pasta que o launchd não lê; instale a partir de um clone em ~/Library/Application Support/puxa-ficha/repo" ;;
+esac
 git -C "$repo" fetch --quiet --no-tags "$repo_url" "+refs/heads/main:refs/remotes/origin/main"
 sha_main="$(git -C "$repo" rev-parse --verify "refs/remotes/origin/main^{commit}")"
 [ "$(git -C "$repo" ls-remote "$repo_url" refs/heads/main | cut -f1)" = "$sha_main" ] || falhar "main buscada difere do ls-remote"

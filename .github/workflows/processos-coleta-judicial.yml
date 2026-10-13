@@ -9,7 +9,9 @@ name: Coleta judicial por candidato
 # Este workflow não consulta DJEN nem DataJud e não grava nada. Ele só confere
 # a consistência dos recibos no banco com o mesmo checker de 14 dias, três
 # horas depois da coleta local, e publica um resumo só com contagens. Recibo
-# ausente ou inválido continua reprovando a execução.
+# ausente ou inválido continua reprovando a execução. Recibo da coorte ativa
+# com mais de 14 dias (duas rodadas locais seguidas sem renovar) gera alerta;
+# com mais de 15, o que na agenda chega na terceira rodada, reprova.
 
 on:
   schedule:

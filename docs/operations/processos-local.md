@@ -96,7 +96,41 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/br.com.puxaficha.process
 ```
 
 Se o Mac estiver desligado, a rodada passa. O agente não transforma ausência de
-execução em recibo. A conferência do GitHub continua apontando recibo ausente.
+execução em recibo. A conferência do GitHub continua apontando recibo ausente,
+e reprova quando um recibo da coorte ativa passa de 15 dias (14 do SLA mais 1
+de tolerância). Com a renovação a partir de 9 dias, segunda e quinta, o recibo
+chega a 11 dias numa semana normal, e uma rodada perdida é coberta pela
+seguinte antes da conferência. Duas rodadas seguidas sem renovar levam o
+recibo a 14 dias e geram alerta (`::warning::`); a terceira reprova
+(`::error::`), uns 7 dias depois da primeira falha. A tolerância de 1 dia
+absorve rodada atrasada, que o launchd executa quando o Mac acorda.
+
+A mesma regra vale para o alvo cujo CNJ foi para revisão humana: o recibo
+anterior dele não é renovado, e passados 15 dias a conferência depois da coleta
+reprova, a rodada local grava o marcador de falha e o workflow fica vermelho
+até a revisão. É o comportamento esperado: o SLA daquele candidato está
+vencido.
+
+## Sinal de falha
+
+O launchd guarda só o código de saída da última rodada (`last exit code` em
+`launchctl print gui/$(id -u)/br.com.puxaficha.processos-local`), e um novo `bootstrap` o zera. Por
+isso a rodada agendada também deixa um sinal em
+`~/Library/Application Support/puxa-ficha/`:
+
+- `processos-local.ultima-rodada`: código, horário UTC e caminho do log da última
+  rodada agendada.
+- `processos-local.falha`: criado quando a rodada termina com código diferente de
+  zero, com o mesmo conteúdo. Só uma rodada agendada bem-sucedida o apaga. A
+  falha também aparece na Central de Notificações do macOS, e a rodada
+  seguinte registra no log que a anterior falhou.
+
+Rodada manual com `--verificar` ou `--dry-run` não mexe nesses arquivos. Se
+o sinal não puder ser gravado, a rodada termina com erro, mesmo que a coleta
+tenha passado. O instalador recusa clone em
+`~/Documents`, `~/Desktop`, `~/Downloads` ou no iCloud Drive, pastas que o
+launchd não lê: instalar a partir de um clone em
+`~/Library/Application Support/puxa-ficha/repo`.
 
 ## Renovação e suspensão
 
