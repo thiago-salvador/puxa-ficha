@@ -246,7 +246,7 @@
     "@base-ui/react": "^1.6.0",
     "@sentry/nextjs": "^10.75.0",
     "@supabase/supabase-js": "^2.117.2",
-    "@tanstack/react-virtual": "^3.14.13",
+    "@tanstack/react-virtual": "^3.14.14",
     "@vercel/functions": "^3.9.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
