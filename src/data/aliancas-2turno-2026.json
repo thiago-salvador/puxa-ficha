@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-12T09:23:00-03:00",
+  "coletado_em": "2026-10-13T09:12:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -266,27 +266,15 @@
       "quem": "RUI COSTA PIMENTA",
       "tipo": "candidato",
       "partido": "PCO",
-      "posicao": "sem_declaracao",
+      "posicao": "voto_nulo",
       "apoia": null,
-      "data_declaracao": null,
+      "data_declaracao": "2026-10-12",
       "fontes": [
         {
-          "url": "https://causaoperaria.org.br/2026/pco-realizara-conferencia-nacional-para-discutir-o-segundo-turno/",
-          "veiculo": "Diário Causa Operária (PCO)",
-          "publicado_em": "2026-10-05T00:00:13-03:00",
-          "trecho": "PCO realizará Conferência Nacional para discutir o segundo turno"
-        },
-        {
-          "url": "https://www.cnnbrasil.com.br/eleicoes/veja-os-partidos-que-declararam-apoio-a-flavio-bolsonaro-e-a-lula/",
-          "veiculo": "CNN Brasil",
-          "publicado_em": "2026-10-08T19:01:00-03:00",
-          "trecho": "informou que definirá sua posição em uma Conferência Nacional"
-        },
-        {
-          "url": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/06/quem-vai-apoiar-quem-no-segundo-turno-das-eleicoes-2026.ghtml",
-          "veiculo": "Valor Econômico",
-          "publicado_em": "2026-10-06T18:08:00-03:00",
-          "trecho": "a legenda se reunirá no próximo domingo para discutir sobre o segundo turno"
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/partido-da-causa-operaria-orienta-eleitores-a-votarem-nulo-no-2o-turno/",
+          "veiculo": "Poder360",
+          "publicado_em": "2026-10-12T17:33:12-03:00",
+          "trecho": "Em publicações no X (antigo Twitter), o presidente do partido, Rui Costa Pimenta, reforçou a posição"
         }
       ]
     },
@@ -497,6 +485,12 @@
           "veiculo": "Diário Causa Operária (PCO)",
           "publicado_em": "2026-10-12",
           "trecho": "aprovou a orientação de voto nulo nas disputas restantes"
+        },
+        {
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/partido-da-causa-operaria-orienta-eleitores-a-votarem-nulo-no-2o-turno/",
+          "veiculo": "Poder360",
+          "publicado_em": "2026-10-12T17:33:12-03:00",
+          "trecho": "O PCO (Partido da Causa Operária) decidiu orientar seus eleitores a votarem nulo no 2º turno das eleições presidenciais"
         }
       ]
     },
