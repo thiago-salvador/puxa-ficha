@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import Link from "next/link"
 import * as Sentry from "@sentry/nextjs"
+import { recoverFromStaleDeploy } from "@/lib/stale-deploy-recovery"
 
 interface RouteErrorStateProps {
   error: Error & { digest?: string }
@@ -24,7 +25,9 @@ export function RouteErrorState({
   useEffect(() => {
     // O console mantém o debug local; sem o captureException o erro de rota
     // pública nunca chega ao Sentry (achado do master review de 15/08).
-    Sentry.captureException(error)
+    // Aba presa em deploy antigo: recarrega uma vez em vez de mostrar erro.
+    const reloading = recoverFromStaleDeploy(error)
+    Sentry.captureException(error, reloading ? { tags: { stale_deploy_reload: "1" } } : undefined)
     console.error(error)
   }, [error])
 
