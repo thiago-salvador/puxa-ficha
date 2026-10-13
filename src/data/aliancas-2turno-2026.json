@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-13T09:12:00-03:00",
+  "coletado_em": "2026-10-13T19:12:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -1341,10 +1341,17 @@
       "tipo": "governador",
       "partido": "PT",
       "situacao": "segundo_turno",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": []
+      "posicao": "apoio",
+      "apoia": "LULA",
+      "data_declaracao": "2026-10-09",
+      "fontes": [
+        {
+          "url": "https://pt.org.br/esta-e-a-passeata-dos-que-amam-a-bandeira-verde-e-amarela-do-brasil-diz-lula-no-df/",
+          "veiculo": "PT (pt.org.br)",
+          "publicado_em": "2026-10-09T13:40:00-03:00",
+          "trecho": "Sim ao Brasil, sim às crianças, sim às mulheres, sim aos jovens, sim à democracia e sim à cidadania! Viva o Brasil e viva Lula!”, finalizou Grass"
+        }
+      ]
     },
     {
       "disputa": "Presidente",
