@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-13T19:12:00-03:00",
+  "coletado_em": "2026-10-14T19:12:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -242,21 +242,15 @@
       "quem": "VETERINÁRIO WILSON GRASSI",
       "tipo": "candidato",
       "partido": "DEMOCRATA",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
+      "posicao": "apoio",
+      "apoia": "FLÁVIO BOLSONARO",
+      "data_declaracao": "2026-10-14",
       "fontes": [
         {
-          "url": "https://www.cnnbrasil.com.br/eleicoes/veja-os-partidos-que-declararam-apoio-a-flavio-bolsonaro-e-a-lula/",
-          "veiculo": "CNN Brasil",
-          "publicado_em": "2026-10-08T19:01:00-03:00",
-          "trecho": "também não anunciou uma decisão"
-        },
-        {
-          "url": "https://valor.globo.com/politica/eleicoes-2026/noticia/2026/10/06/quem-vai-apoiar-quem-no-segundo-turno-das-eleicoes-2026.ghtml",
-          "veiculo": "Valor Econômico",
-          "publicado_em": "2026-10-06T18:08:00-03:00",
-          "trecho": "O candidato do Democrata não apontou apoio a nenhum dos dois nomes do segundo turno."
+          "url": "https://www.metropoles.com/brasil/eleicoes-2026-wilson-grassi-anuncia-apoio-a-flavio-bolsonaro-no-2o-turno",
+          "veiculo": "Metrópoles",
+          "publicado_em": "2026-10-14T18:15:00-03:00",
+          "trecho": "Wilson Grassi Júnior ... anunciou na quarta-feira (14/10) que apoiará Flávio Bolsonaro (PL) na disputa do segundo turno."
         }
       ]
     },
