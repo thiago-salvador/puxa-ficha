@@ -3247,6 +3247,229 @@
         }
       },
       "consulted_at": "2026-10-13T12:09:41Z"
+    },
+    {
+      "id": "futura-inteligencia-br-00650-2026-revisao-20261014",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Futura Inteligência",
+        "commissioner": "100% Cidades",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "exame.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-07",
+          "end": "2026-10-10"
+        },
+        "published_at": "2026-10-13",
+        "sample_size": 2000,
+        "method": "Entrevista telefônica assistida por computador (CATI)",
+        "margin_of_error_pp": 2.2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-00650/2026",
+        "result_url": "https://exame.com/brasil/pesquisa-para-presidente-futura-flavio-bolsonaro-tem-518-e-lula-482-no-2o-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-00650/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-14T12:20:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "e8b202c77f9175c1fe06f3164aaf0b9d952e92d96e6a315dd54819ef730395a1",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-para-presidente-futura-flavio-bolsonaro-tem-518-e-lula-482-no-2o-turno/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-para-presidente-futura-flavio-bolsonaro-tem-518-e-lula-482-no-2o-turno/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-para-presidente-futura-flavio-bolsonaro-tem-518-e-lula-482-no-2o-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://exame.com/brasil/pesquisa-para-presidente-futura-flavio-bolsonaro-tem-518-e-lula-482-no-2o-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-14T12:20:58Z"
+    },
+    {
+      "id": "poderdata-br-01209-2026-revisao-20261014",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "PoderData",
+        "commissioner": "PoderData (recursos próprios)",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "admin.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-10",
+          "end": "2026-10-12"
+        },
+        "published_at": "2026-10-13",
+        "sample_size": 3000,
+        "method": "Pesquisa telefônica IVR",
+        "margin_of_error_pp": 1.8,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-01209/2026",
+        "result_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-PoderData-Eleitoral-12out26.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-01209/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-14T12:20:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "445c1c934f06d802b1e99bed5671e13431e3c0c10c192334ee44cda5559d1a86",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-PoderData-Eleitoral-12out26.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-51-dos-votos-validos-no-2o-turno-lula-49/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-PoderData-Eleitoral-12out26.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-51-dos-votos-validos-no-2o-turno-lula-49/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-PoderData-Eleitoral-12out26.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-51-dos-votos-validos-no-2o-turno-lula-49/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-PoderData-Eleitoral-12out26.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/poderdata-aya-flavio-tem-51-dos-votos-validos-no-2o-turno-lula-49/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-14T12:20:58Z"
+    },
+    {
+      "id": "gerp-br-07877-2026-revisao-20261014",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Gerp",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gauchazh.clicrbs.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-08",
+          "end": "2026-10-12"
+        },
+        "published_at": "2026-10-13",
+        "sample_size": 2400,
+        "method": "Entrevistas telefônicas assistidas por computador",
+        "margin_of_error_pp": 2.04,
+        "confidence_level_pct": 95.55,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-07877/2026",
+        "result_url": "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/flavio-tem-53-das-intencoes-de-voto-e-lula-44-no-segundo-turno-aponta-gerp-cmv6n3yrq00dl013qjgcig9ri.html",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-07877/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-14T12:20:58Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "508931f35a76a56bbe45099031ef135e5b17370fa3db7b354ea02b731cd53d52",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/flavio-tem-53-das-intencoes-de-voto-e-lula-44-no-segundo-turno-aponta-gerp-cmv6n3yrq00dl013qjgcig9ri.html"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/flavio-tem-53-das-intencoes-de-voto-e-lula-44-no-segundo-turno-aponta-gerp-cmv6n3yrq00dl013qjgcig9ri.html"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/flavio-tem-53-das-intencoes-de-voto-e-lula-44-no-segundo-turno-aponta-gerp-cmv6n3yrq00dl013qjgcig9ri.html"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/10/flavio-tem-53-das-intencoes-de-voto-e-lula-44-no-segundo-turno-aponta-gerp-cmv6n3yrq00dl013qjgcig9ri.html"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-14T12:20:58Z"
     }
   ],
   "media_fallback_policy": {

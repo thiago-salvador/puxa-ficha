@@ -126,9 +126,18 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
     }
   }
   const segundoTurno = lula.find((p) => p.grupo === "segundo_turno")
-  assert.equal(segundoTurno?.id, "nexus-br-07997-2026")
-  assert.equal(segundoTurno?.cenario.id, "nexus-br-07997-2026-2t")
-  assert.equal(segundoTurno?.resultado.valuePercent, 45)
+  assert.equal(segundoTurno?.id, "gerp-br-07877-2026")
+  assert.equal(segundoTurno?.cenario.id, "gerp-br-07877-2026-2t")
+  assert.equal(segundoTurno?.resultado.valuePercent, 44)
+  for (const [id, value] of [
+    ["nexus-br-07997-2026", 45],
+    ["poderdata-br-01209-2026", 46],
+    ["futura-inteligencia-br-00650-2026", 46.6],
+  ] as const) {
+    const rodada = lula.find((p) => p.id === id && p.grupo === "segundo_turno")
+    assert.equal(rodada?.cenario.id, `${id}-2t`)
+    assert.equal(rodada?.resultado.valuePercent, value)
+  }
   const ipespeSegundoTurno = lula.find((p) => p.id === "ipespe-br-00933-2026" && p.grupo === "segundo_turno")
   assert.equal(ipespeSegundoTurno?.cenario.id, "ipespe-br-00933-2026-2t")
   assert.equal(ipespeSegundoTurno?.resultado.valuePercent, 44)
