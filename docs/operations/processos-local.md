@@ -108,10 +108,12 @@ absorve rodada atrasada, que o launchd executa quando o Mac acorda.
 Processo que a decisão editorial mandou não publicar não trava a renovação. O
 aplicador tira do recibo novo o item de `ocorrencias_ambiguas` ou
 `homonimos_descartados` cujo par (candidato, CNJ) bate exatamente com
-`scripts/data/processos-decisao-editorial.json`, grava no detalhe só a contagem
-(`excluidos_decisao_editorial: N`) e informa a contagem e as chaves de hash no
-JSON de saída (`excluidos_por_veto_editorial`, `excluidos_por_veto`). O
-resultado do recibo não muda: quem estava `indeterminado` continua assim.
+`scripts/data/processos-decisao-editorial.json`. O recibo não registra a
+retirada, porque o detalhe é exposto na API pública: a contagem do motivo
+acompanha a lista restante. A quantidade e as chaves de hash saem só no JSON do
+aplicador (`excluidos_por_veto_editorial`, `excluidos_por_veto`). A retirada nunca
+gera ausência confirmada: `vazio_confirmado` que perdeu uma ocorrência ambígua
+renova como `indeterminado`, e quem já estava `indeterminado` continua assim.
 
 Continua indo para revisão humana, sem renovar o recibo anterior, o alvo cujo CNJ
 vetado esteja em outro lugar do plano (por exemplo em `processos`, entre os

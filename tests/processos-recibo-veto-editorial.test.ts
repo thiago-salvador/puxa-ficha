@@ -3,6 +3,7 @@ import { describe, it } from "node:test"
 
 import {
   bloquearPlanosPorDecisao,
+  cnjsPorSlugDaEvidencia,
   criarPlanos,
   excluirVetadosDaEvidencia,
   type PlanoRegistro,
@@ -57,7 +58,7 @@ function evidenciaCom(slug: string, overrides: Record<string, unknown> = {}): Ev
     ocorrencias_ambiguas: [],
     homonimos_descartados: [],
     classificacao: "bloqueado",
-    motivo: "ocorrencias por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
+    motivo: "3 ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua",
     processos: [],
     ...overrides,
   }
@@ -85,7 +86,7 @@ function cnjsPorSlug(evidencia: Evidencia): Map<string, string[]> {
 }
 
 describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
-  it("renova o recibo sem o CNJ vetado, grava só a contagem e mantém o resto igual", () => {
+  it("renova o recibo sem o CNJ vetado e sem deixar rastro da retirada no recibo", () => {
     const vetos = decisoes([SLUG, VETADO])
     const bruta = evidenciaCom(SLUG, {
       // O mesmo processo aparece com máscara e só com dígitos: é um único par.
@@ -99,7 +100,10 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     const texto = detalhe(plano)
     assert.ok(!texto.includes(SEM_MASCARA(VETADO)) && !texto.includes(VETADO), "CNJ vetado não pode ir ao recibo")
     assert.ok(texto.includes(PERMITIDO), "ocorrência não vetada continua auditável")
-    assert.match(texto, /excluidos_decisao_editorial: 1(?:;|$)/)
+    // O recibo vira JSON público: nem contador, nem hash, e a contagem do motivo bate com a lista.
+    assert.ok(!/exclu|veto|decis/i.test(texto), "recibo não pode sinalizar a retirada")
+    assert.match(texto, /motivo: 1 ocorrencia\(s\) por nome exato/)
+    assert.equal((texto.match(/"numero_cnj"/g) ?? []).length, 1)
     assert.deepEqual(exclusoes, [{ slug: SLUG, quantidade: 1, hashes: [chaveDecisao(SLUG, VETADO)] }])
     // Nenhum hash ou CNJ do veto vai para os argumentos do registrador.
     assert.ok(plano.args.every((arg) => !arg.includes(chaveDecisao(SLUG, VETADO))))
@@ -124,7 +128,7 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
 
     assert.equal(exclusoes[0].quantidade, 2)
     assert.deepEqual(exclusoes[0].hashes, [chaveDecisao(SLUG, VETADO), chaveDecisao(SLUG, PERMITIDO)].sort())
-    assert.match(detalhe(plano), /excluidos_decisao_editorial: 2(?:;|$)/)
+    assert.ok(!/exclu|veto|decis/i.test(detalhe(plano)))
     assert.ok(!detalhe(plano).includes(SEM_MASCARA(VETADO)) && !detalhe(plano).includes(SEM_MASCARA(PERMITIDO)))
   })
 
@@ -136,6 +140,8 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     assert.equal(plano.resultado, "indeterminado")
     assert.equal(plano.classificacao, "bloqueado")
     assert.match(detalhe(plano), /ocorrencias_ambiguas: \[\]/)
+    assert.match(detalhe(plano), /motivo: conclusao bloqueada por identidade ambigua/)
+    assert.ok(!/\b0 ocorrencia/.test(detalhe(plano)))
     assert.ok(plano.args.some((arg) => arg === "--resultado=indeterminado"))
   })
 
@@ -146,7 +152,6 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
 
     assert.deepEqual(exclusoes, [])
     assert.deepEqual(criarPlanos(evidencia), criarPlanos(bruta))
-    assert.ok(!detalhe(criarPlanos(evidencia)[0]).includes("excluidos_decisao_editorial"))
   })
 
   it("o veto vale por par candidato e CNJ: o mesmo CNJ em outro candidato não é excluído", () => {
@@ -204,5 +209,64 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
 
     assert.deepEqual(bloqueio.planos, [])
     assert.equal(bloqueio.bloqueados, 1)
+  })
+
+  it("retirada por veto nunca vira ausência confirmada: vazio_confirmado com ocorrência vetada renova como indeterminado", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const bruta = evidenciaCom(SLUG, {
+      classificacao: "vazio_confirmado",
+      motivo: "nenhum processo atribuivel no escopo declarado",
+      ocorrencias_ambiguas: [ambigua(VETADO)],
+    })
+    // Antes da retirada o guarda recusa: ausência não se afirma com ocorrência aberta.
+    assert.throws(() => criarPlanos(bruta), /vazio_confirmado exige ausência de ocorrências ambíguas/)
+
+    const { evidencia, exclusoes } = excluirVetadosDaEvidencia(bruta, vetos)
+    const [plano] = criarPlanos(evidencia)
+
+    assert.equal(exclusoes.length, 1)
+    assert.equal(plano.resultado, "indeterminado")
+    assert.equal(plano.classificacao, "bloqueado")
+    assert.ok(plano.args.includes("--resultado=indeterminado"))
+    assert.ok(!plano.args.some((arg) => arg.includes("vazio_confirmado") && arg.startsWith("--resultado=")))
+    assert.ok(plano.args.every((arg) => !arg.includes(SEM_MASCARA(VETADO)) && !arg.includes(VETADO)), "CNJ vetado fora de todos os argumentos")
+    assert.ok(!/exclu|veto|decis/i.test(detalhe(plano)))
+    assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(bruta, evidencia), vetos).bloqueados, 0)
+  })
+
+  it("vazio_confirmado sem ocorrência vetada continua recusado se houver ocorrência ambígua", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const bruta = evidenciaCom(SLUG, {
+      classificacao: "vazio_confirmado",
+      motivo: "nenhum processo atribuivel no escopo declarado",
+      ocorrencias_ambiguas: [ambigua(PERMITIDO)],
+    })
+    const { evidencia } = excluirVetadosDaEvidencia(bruta, vetos)
+
+    assert.throws(() => criarPlanos(evidencia), /vazio_confirmado exige ausência de ocorrências ambíguas/)
+  })
+
+  it("a barreira da decisão continua vendo CNJ vetado em achado publicável, recibo anterior e argumentos", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const original = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(VETADO), ambigua(PERMITIDO)] })
+    const { evidencia } = excluirVetadosDaEvidencia(original, vetos)
+    const [plano] = criarPlanos(evidencia)
+
+    // Retirado de propósito: o plano renovado passa.
+    assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(original, evidencia), vetos).bloqueados, 0)
+
+    // Achado publicável vem da evidência original, mesmo que a filtrada o perdesse.
+    const comAchado = evidenciaCom(SLUG, { classificacao: "encontrado", processos: [ambigua(VETADO)] })
+    const semAchado = evidenciaCom(SLUG, { classificacao: "encontrado", processos: [] })
+    assert.ok(cnjsPorSlugDaEvidencia(comAchado, semAchado).get(SLUG)?.includes(VETADO))
+    assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(comAchado, semAchado), vetos).planos.length, 0)
+
+    // CNJ do recibo anterior continua barrando.
+    const anterior = new Map([[SLUG, [VETADO]]])
+    assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(original, evidencia, anterior), vetos).planos.length, 0)
+
+    // CNJ vetado nos argumentos do registrador continua barrando.
+    const contaminado = { ...plano, args: [...plano.args, `--evidencia-publicavel=https://comunicaapi.pje.jus.br/consulta?numeroProcesso=${SEM_MASCARA(VETADO)}`] }
+    assert.equal(bloquearPlanosPorDecisao([contaminado], cnjsPorSlugDaEvidencia(original, evidencia), vetos).planos.length, 0)
   })
 })

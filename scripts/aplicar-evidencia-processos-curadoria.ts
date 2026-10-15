@@ -81,8 +81,6 @@ interface RegistroEvidencia {
   classificacao: ClassificacaoEvidencia
   motivo: string
   processos: Array<Record<string, unknown>>
-  /** Pares CNJ retirados do recibo por decisão editorial "não publicar" (só a contagem vai ao detalhe). */
-  excluidos_por_veto?: number
 }
 
 interface LoteEvidencia {
@@ -447,12 +445,6 @@ function evidenciasPublicaveis(
   })
 }
 
-/** Campo do detalhe que declara quantos pares o veto editorial tirou do recibo; sem veto, nada muda no texto. */
-function detalheExclusaoPorVeto(candidato: RegistroEvidencia): string[] {
-  const excluidos = candidato.excluidos_por_veto ?? 0
-  return excluidos > 0 ? [`excluidos_decisao_editorial: ${excluidos}`] : []
-}
-
 function homonimosAuditaveis(
   homonimos: Array<Record<string, unknown>>,
   caminho: string,
@@ -544,7 +536,6 @@ function criarPlanoIdentidadeNaoConfirmada(
     ...(tentativas.anos.length > 0 ? [`anos consultados: ${textoLimpo(tentativas.anos.join(", "))}`] : []),
     `ocorrencias_ambiguas: ${JSON.stringify(ambiguos)}`,
     `homonimos_descartados: ${JSON.stringify(homonimos)}`,
-    ...detalheExclusaoPorVeto(candidato),
   ].join("; ")
   const args = [
     argumento("slug", candidato.slug),
@@ -654,7 +645,6 @@ function criarPlano(candidato: RegistroEvidencia, lote: LoteEvidencia): PlanoReg
     `motivo: ${textoLimpo(candidato.motivo)}`,
     `ocorrencias_ambiguas: ${JSON.stringify(ambiguos)}`,
     `homonimos_descartados: ${JSON.stringify(homonimos)}`,
-    ...detalheExclusaoPorVeto(candidato),
   ].join("; ")
 
   const args = [
@@ -1082,6 +1072,20 @@ export interface ExclusaoPorVeto {
   hashes: string[]
 }
 
+const MOTIVO_AMBIGUIDADE = "conclusao bloqueada por identidade ambigua"
+
+/**
+ * O motivo da coleta abre com a contagem de ocorrências ambíguas. Depois da
+ * retirada, contagem e lista têm de continuar iguais: o recibo (e o JSON
+ * público que o repete) não pode sugerir que algo foi retirado.
+ */
+function motivoSemVetados(motivo: string, originais: number, restantes: number): string {
+  const contagem = /^(\d+) ocorrencia\(s\)/.exec(motivo)
+  if (restantes === 0) return MOTIVO_AMBIGUIDADE
+  if (contagem && Number(contagem[1]) === originais) return motivo.replace(/^\d+/, String(restantes))
+  return motivo
+}
+
 /**
  * Renova o recibo sem o CNJ que a decisão editorial mandou não publicar. Só
  * sai da evidência o item de `ocorrencias_ambiguas` ou `homonimos_descartados`
@@ -1089,8 +1093,10 @@ export interface ExclusaoPorVeto {
  * de hash, nada aproximado. Processo publicável (`processos`), CNJ fora do
  * arquivo de vetos e qualquer outro caminho seguem como antes, e o
  * `bloquearPlanosPorDecisao` continua a barrar o plano que ainda carregar um
- * CNJ vetado. A classificação não muda: sem o item, o recibo segue
- * `indeterminado` e não vira ausência confirmada.
+ * CNJ vetado. Nada da retirada vai ao recibo: a contagem e os hashes só saem no
+ * JSON do aplicador. A retirada nunca produz ausência confirmada: o candidato
+ * `vazio_confirmado` que perdeu uma ocorrência ambígua vira `bloqueado`, ou
+ * seja, recibo `indeterminado`.
  */
 export function excluirVetadosDaEvidencia(
   evidencia: EvidenciaFinal,
@@ -1107,19 +1113,50 @@ export function excluirVetadosDaEvidencia(
         hashes.add(chaveDecisao(candidato.slug, numero))
         return false
       }
-      const ocorrenciasAmbiguas = (candidato.ocorrencias_ambiguas ?? []).filter(manter)
+      const ambiguasOriginais = candidato.ocorrencias_ambiguas ?? []
+      const ocorrenciasAmbiguas = ambiguasOriginais.filter(manter)
       const homonimosDescartados = candidato.homonimos_descartados.filter(manter)
       if (hashes.size === 0) return candidato
       exclusoes.push({ slug: candidato.slug, quantidade: hashes.size, hashes: [...hashes].sort() })
+      const retirouAmbigua = ocorrenciasAmbiguas.length < ambiguasOriginais.length
+      // Ausência confirmada exige zero ocorrência ambígua: a que o veto escondeu continua contando.
+      const virouBloqueado = retirouAmbigua && candidato.classificacao === "vazio_confirmado"
       return {
         ...candidato,
         ocorrencias_ambiguas: ocorrenciasAmbiguas,
         homonimos_descartados: homonimosDescartados,
-        excluidos_por_veto: hashes.size,
+        classificacao: virouBloqueado ? "bloqueado" as const : candidato.classificacao,
+        motivo: virouBloqueado
+          ? MOTIVO_AMBIGUIDADE
+          : retirouAmbigua ? motivoSemVetados(candidato.motivo, ambiguasOriginais.length, ocorrenciasAmbiguas.length) : candidato.motivo,
       }
     }),
   }))
   return { evidencia: { ...evidencia, lotes }, exclusoes }
+}
+
+/**
+ * CNJs que cada recibo carregaria, para a barreira da decisão editorial. Os
+ * achados publicáveis (`processos`) vêm sempre da evidência ORIGINAL: a retirada
+ * por veto não os toca e, se um dia tocasse, a barreira ainda os veria. Ocorrência
+ * ambígua e homônimo vêm da evidência já filtrada (o que o recibo de fato leva);
+ * os CNJs do recibo anterior entram sempre.
+ */
+export function cnjsPorSlugDaEvidencia(
+  original: EvidenciaFinal,
+  filtrada: EvidenciaFinal,
+  cnjsDosRecibos: ReadonlyMap<string, readonly string[]> = new Map(),
+): Map<string, string[]> {
+  const processosOriginais = new Map(original.lotes.flatMap((lote) => lote.candidatos)
+    .map((candidato) => [candidato.slug, candidato.processos]))
+  return new Map(filtrada.lotes.flatMap((lote) => lote.candidatos).map((candidato) => [
+    candidato.slug,
+    [
+      ...(processosOriginais.get(candidato.slug) ?? candidato.processos),
+      ...(candidato.ocorrencias_ambiguas ?? []),
+      ...candidato.homonimos_descartados,
+    ].map((item) => String(item.numero_cnj ?? "")).concat(cnjsDosRecibos.get(candidato.slug) ?? []),
+  ]))
 }
 
 /** Quem pode registrar confirmação editorial de identidade. */
@@ -1432,7 +1469,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   const opcoes = lerOpcoes(argv)
   const decisoes = carregarDecisoes()
   const bruto = JSON.parse(readFileSync(opcoes.evidence, "utf8")) as unknown
-  const { evidencia, exclusoes: exclusoesPorVeto } = excluirVetadosDaEvidencia(validarEvidencia(bruto), decisoes)
+  const evidenciaOriginal = validarEvidencia(bruto)
+  const { evidencia, exclusoes: exclusoesPorVeto } = excluirVetadosDaEvidencia(evidenciaOriginal, decisoes)
   const excluidosPorVeto = exclusoesPorVeto.reduce((total, item) => total + item.quantidade, 0)
   const planosCriados = criarPlanos(evidencia)
   let planos = planosCriados
@@ -1459,14 +1497,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     const encontrados = linha.detalhe?.match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []
     cnjsDosRecibos.set(linha.alvo, [...(cnjsDosRecibos.get(linha.alvo) ?? []), ...encontrados])
   }
-  const cnjsPorSlug = new Map(evidencia.lotes.flatMap((lote) => lote.candidatos).map((candidato) => [
-    candidato.slug,
-    [
-      ...candidato.processos,
-      ...(candidato.ocorrencias_ambiguas ?? []),
-      ...candidato.homonimos_descartados,
-    ].map((item) => String(item.numero_cnj ?? "")).concat(cnjsDosRecibos.get(candidato.slug) ?? []),
-  ]))
+  const cnjsPorSlug = cnjsPorSlugDaEvidencia(evidenciaOriginal, evidencia, cnjsDosRecibos)
   const bloqueio = bloquearPlanosPorDecisao(planos, cnjsPorSlug, decisoes)
   planos = bloqueio.planos
   revisaoHumana.push(...bloqueio.revisaoHumana)
