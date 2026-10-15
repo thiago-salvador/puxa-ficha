@@ -12706,6 +12706,152 @@
         }
       },
       "consulted_at": "2026-10-13T12:09:41Z"
+    },
+    {
+      "id": "quaest-ac-05379-2026-revisao-20261015",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rádio TV do Amazonas LTDA",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-09",
+          "end": "2026-10-12"
+        },
+        "published_at": "2026-10-13",
+        "sample_size": 1098,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Acre",
+        "rounds": [
+          2
+        ],
+        "registration_id": "AC-05379/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-acre-outubro-2026-segundo-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AC-05379/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-15T12:12:42Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "413af64a1eaff50662088a55811e24df25d50458a303074cbca49546fd0130d5",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-acre-outubro-2026-segundo-turno/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-acre-outubro-2026-segundo-turno/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-acre-outubro-2026-segundo-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-acre-outubro-2026-segundo-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-15T12:12:42Z"
+    },
+    {
+      "id": "quaest-am-09760-2026-revisao-20261015",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "Rádio TV do Amazonas Ltda",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-09",
+          "end": "2026-10-12"
+        },
+        "published_at": "2026-10-13",
+        "sample_size": 1098,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amazonas",
+        "rounds": [
+          2
+        ],
+        "registration_id": "AM-09760/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-amazonas-outubro-2026-segundo-turno/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AM-09760/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-15T12:12:42Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "eb6c4e0473d08c0398b7663873419e568d67142e73e6b45852d3de5b8857d78a",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-amazonas-outubro-2026-segundo-turno/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-amazonas-outubro-2026-segundo-turno/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-amazonas-outubro-2026-segundo-turno/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-amazonas-outubro-2026-segundo-turno/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-15T12:12:42Z"
     }
   ]
 }

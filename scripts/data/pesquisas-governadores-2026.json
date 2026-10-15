@@ -20,7 +20,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AC|1|estimulada|lista-quaest-2026-08-27-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-3eff46e3470d9849",
+      "exact_aliases_version": "monitor-2026-1a10aea70072744e",
       "exact_aliases": [
         {
           "raw_label": "Alan Rick",
@@ -342,6 +342,24 @@
           "geography": "Acre",
           "turn": 1,
           "scenario_id": "quaest-ac-02370-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Mailza Assis (PP)",
+          "candidate_slug": "mailza-assis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 2,
+          "scenario_id": "quaest-ac-05379-2026-2t"
+        },
+        {
+          "raw_label": "Alan Rick (Republicanos)",
+          "candidate_slug": "alan-rick",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 2,
+          "scenario_id": "quaest-ac-05379-2026-2t"
         }
       ],
       "pesquisas": [
@@ -1241,6 +1259,129 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-ac-05379-2026",
+          "source_id": "quaest-ac-05379-2026-revisao-20261015",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Rádio TV do Amazonas LTDA",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-09",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-12",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-13",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1098,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "AC-05379/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Acre",
+            "code": "AC"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-acre-outubro-2026-segundo-turno/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-15T12:12:42Z",
+            "capture": {
+              "format": "text",
+              "sha256": "413af64a1eaff50662088a55811e24df25d50458a303074cbca49546fd0130d5",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-ac-05379-2026-2t",
+              "turn": 2,
+              "geography": "Acre",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AC|2|estimulada|940ebd668de8dd5d27eee603d359f16085c5b17604b698a9934999b436db02a9|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Mailza Assis (PP)",
+                  "candidate_slug": "mailza-assis",
+                  "match_status": "exact_alias",
+                  "value_percent": 49,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Alan Rick (Republicanos)",
+                  "candidate_slug": "alan-rick",
+                  "match_status": "exact_alias",
+                  "value_percent": 32,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/nenhum",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 10,
                   "status": "publicado"
                 }
               ]
@@ -3896,7 +4037,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AM|1|estimulada|lista-atlasintel-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-91b89aae2cd14afc",
+      "exact_aliases_version": "monitor-2026-5ec4ce256be94cf8",
       "exact_aliases": [
         {
           "raw_label": "Cabo Daciolo",
@@ -4157,6 +4298,24 @@
           "geography": "Amazonas",
           "turn": 2,
           "scenario_id": "poderdata-am-08245-2026-2t"
+        },
+        {
+          "raw_label": "Omar Aziz (PSD)",
+          "candidate_slug": "omar-aziz",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 2,
+          "scenario_id": "quaest-am-09760-2026-2t"
+        },
+        {
+          "raw_label": "Professora Maria do Carmo (PL)",
+          "candidate_slug": "maria-do-carmo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 2,
+          "scenario_id": "quaest-am-09760-2026-2t"
         }
       ],
       "pesquisas": [
@@ -5239,6 +5398,129 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 2,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-am-09760-2026",
+          "source_id": "quaest-am-09760-2026-revisao-20261015",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Rádio TV do Amazonas Ltda",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-09",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-12",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-13",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1098,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "AM-09760/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Amazonas",
+            "code": "AM"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/quaest-governador-amazonas-outubro-2026-segundo-turno/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-15T12:12:42Z",
+            "capture": {
+              "format": "text",
+              "sha256": "eb6c4e0473d08c0398b7663873419e568d67142e73e6b45852d3de5b8857d78a",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-am-09760-2026-2t",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|1db9320e4b7931738ab33a40f5994fe2d6123fe7ef914e427bd30a63bc64d8ab|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Omar Aziz (PSD)",
+                  "candidate_slug": "omar-aziz",
+                  "match_status": "exact_alias",
+                  "value_percent": 51,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Maria do Carmo (PL)",
+                  "candidate_slug": "maria-do-carmo",
+                  "match_status": "exact_alias",
+                  "value_percent": 37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Branco/nulo/nenhum",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 6,
                   "status": "publicado"
                 }
               ]
@@ -10195,7 +10477,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|DF|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-c68b481f359d04dd",
+      "exact_aliases_version": "monitor-2026-bd9aac15b65d3350",
       "exact_aliases": [
         {
           "raw_label": "Cappelli",
@@ -11031,6 +11313,24 @@
           "geography": "Distrito Federal",
           "turn": 2,
           "scenario_id": "datafolha-df-03365-2026-2t"
+        },
+        {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-df-01170-2026-2t"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-df-01170-2026-2t"
         }
       ],
       "pesquisas": [
@@ -13406,6 +13706,129 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 5,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-df-01170-2026",
+          "source_id": "real-time-big-data-estaduais-2026",
+          "source_status": "aprovado",
+          "publishable_by_default": true,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-09",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-13",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-14",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "DF-01170/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Distrito Federal",
+            "code": "DF"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-governador-distrito-federal-outubro-2026-segundo-turno/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-15T12:12:42Z",
+            "capture": {
+              "format": "text",
+              "sha256": "1c8a97c0b9dfd8248bd1957f54248a9338789b12d52acc9caed0ebc96a6ee734",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-df-01170-2026-2t",
+              "turn": 2,
+              "geography": "Distrito Federal",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|2|estimulada|2ba233a041744a27fd1e249d2721bffaf6219a7bcc66a173470b330775406c99|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão (PP)",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 53,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass (PT)",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 36,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/Não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
                   "status": "publicado"
                 }
               ]
