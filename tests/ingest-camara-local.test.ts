@@ -272,6 +272,17 @@ describe("agente local da Câmara", () => {
     assert.deepEqual(doScript, doWorkflow)
   })
 
+  it("revalidação cai para o workflow quando o segredo falta ou o endpoint não responde 2xx", () => {
+    assert.match(script, /case "\$status" in 2\?\?\) revalidado=1 ;; esac/)
+    assert.match(script, /gh workflow run revalidate-cache\.yml --repo thiago-salvador\/puxa-ficha -f "tags=\$tags_csv"/)
+    assert.match(script, /\[ "\$revalidado" -eq 1 \] \|\| \[ "\$rc" -ne 0 \] \|\| rc=1/)
+    assert.ok(script.indexOf("curl -sS") < script.indexOf("gh workflow run"), "tenta o endpoint antes do workflow")
+    const tagsCsv = JSON.parse(/tags_json='([^']+)'/.exec(script)?.[1] ?? "null").join(",")
+    assert.equal(tagsCsv.split(",").length, 10)
+    assert.doesNotMatch(tagsCsv, /[\s\[\]"]/)
+    assert.match(readFileSync(".github/workflows/revalidate-cache.yml", "utf8"), /workflow_dispatch:\s+inputs:\s+tags:/)
+  })
+
   it("instalador só instala o que está na main publicada", () => {
     assert.match(instalador, /git ls-remote "\$repo_url" refs\/heads\/main/)
     assert.match(instalador, /\[ "\$head_origem" = "\$sha_main" \] \|\| falhar/)
