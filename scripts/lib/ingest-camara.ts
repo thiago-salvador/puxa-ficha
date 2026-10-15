@@ -106,13 +106,15 @@ export async function coletarPaginasCamara<T>(
     const declaredLast = parseLastPageFromLinks(json.links)
     if (declaredLast == null) {
       // A API v2 devolve apenas rel=self (sem rel=last) quando o conjunto e vazio.
-      // So aceitamos isso na pagina 1, sem nenhum link rel=last e com dados vazios,
-      // e somente se uma segunda chamada identica confirmar o mesmo vazio.
-      if (page !== 1 || dados.length !== 0 || hasLastLink(json.links)) {
+      // So aceitamos isso na pagina 1, com dados vazios e links exatamente no
+      // formato documentado (so rel=self com href), e somente se uma segunda
+      // chamada identica confirmar o mesmo vazio. Links ausentes, vazios ou com
+      // qualquer rel de continuacao (next, last, prev, first) continuam falhando.
+      if (page !== 1 || dados.length !== 0 || !isSelfOnlyLinks(json.links)) {
         throw new Error(`Paginação Câmara sem rel=last válido (${url})`)
       }
       const confirm = await fetchPage(url)
-      if (!Array.isArray(confirm.json.dados) || confirm.json.dados.length !== 0 || hasLastLink(confirm.json.links)) {
+      if (!Array.isArray(confirm.json.dados) || confirm.json.dados.length !== 0 || !isSelfOnlyLinks(confirm.json.links)) {
         throw new Error(`Resposta vazia Câmara sem rel=last não corroborada por segunda chamada (${url})`)
       }
       break
@@ -262,8 +264,9 @@ export function parseDeclaredCountFromLinks(
   return parseLastPageFromLinks(links)
 }
 
-function hasLastLink(links: { rel: string; href: string }[] | undefined): boolean {
-  return (links ?? []).some((l) => l.rel === "last")
+function isSelfOnlyLinks(links: { rel: string; href: string }[] | undefined): boolean {
+  if (!Array.isArray(links) || links.length === 0) return false
+  return links.every((l) => l?.rel === "self" && typeof l.href === "string" && l.href.trim() !== "")
 }
 
 function parseLastPageFromLinks(links: { rel: string; href: string }[] | undefined): number | null {

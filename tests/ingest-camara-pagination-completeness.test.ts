@@ -69,6 +69,32 @@ describe("completude de paginação da Câmara", () => {
     assert.equal(calls, 2)
   })
 
+  it("rejeita vazio com links ausentes, vazios, sem href ou com rel de continuação", async () => {
+    const variantes = [
+      undefined,
+      [],
+      [{ rel: "self", href: "" }],
+      [{ rel: "self", href: "?pagina=1" }, { rel: "next", href: "?pagina=2" }],
+      [{ rel: "next", href: "?pagina=2" }],
+      [{ rel: "self", href: "?pagina=1" }, { rel: "first", href: "?pagina=1" }],
+    ]
+    for (const links of variantes) {
+      let calls = 0
+      await assert.rejects(() => coletarPaginasCamara("https://example.test/items", {}, async () => {
+        calls += 1
+        return { json: { dados: [], links } } as never
+      }), /sem rel=last válido/)
+      assert.equal(calls, 1)
+    }
+    const selfOnly = { json: { dados: [], links: [{ rel: "self", href: "?pagina=1" }] } }
+    let calls = 0
+    await assert.rejects(() => coletarPaginasCamara("https://example.test/items", {}, async () => {
+      calls += 1
+      return calls === 1 ? selfOnly : { json: { dados: [], links: [{ rel: "self", href: "?pagina=1" }, { rel: "next", href: "?pagina=2" }] } }
+    }), /não corroborada/)
+    assert.equal(calls, 2)
+  })
+
   it("mantém falha fechada para dados preenchidos sem rel=last ou com rel=last inválido", async () => {
     await assert.rejects(() => coletarPaginasCamara("https://example.test/items", {}, async () => (
       { json: { dados: ["x"], links: [{ rel: "self", href: "?pagina=1" }] } }
