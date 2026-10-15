@@ -26,7 +26,7 @@ import {
 import { supabase } from "./lib/supabase"
 import { registrarColetaOuFalhar, type EntradaColeta } from "./lib/coleta-log"
 import { normalizarTextoJudicial } from "./curadoria-processos-lote"
-import { carregarDecisoes, decididoNaoPublicar } from "./lib/processos-decisao-editorial"
+import { carregarDecisoes, chaveDecisao, decididoNaoPublicar } from "./lib/processos-decisao-editorial"
 import { stripAccents } from "../src/lib/strip-accents"
 
 const TOTAL_CANDIDATOS = 185
@@ -1064,6 +1064,116 @@ export function bloquearPlanosPorDecisao(
   return { planos: permitidos, revisaoHumana, bloqueados }
 }
 
+export interface ExclusaoPorVeto {
+  slug: string
+  /** Pares (candidato, CNJ) distintos retirados do recibo. */
+  quantidade: number
+  /** `chaveDecisao` de cada par, em ordem; é a chave do arquivo de vetos, nunca o CNJ. */
+  hashes: string[]
+}
+
+const CONTAGEM_NO_MOTIVO = /^(\d+)( ocorrencia\(s\) por nome exato sem segundo identificador)/
+
+/**
+ * O motivo que o coletor grava abre com a contagem de ocorrências ambíguas e
+ * pode ter sufixo (por exemplo, o teto público do DJEN). O detalhe do recibo
+ * chega à API pública, então contagem e lista têm de continuar iguais depois da
+ * retirada e o sufixo fica como está. `null` quando o motivo não tem a forma do
+ * coletor: nesse caso não há como renovar sem deixar rastro.
+ */
+function motivoSemVetados(motivo: string, originais: number, restantes: number): string | null {
+  const contagem = CONTAGEM_NO_MOTIVO.exec(motivo)
+  if (!contagem || Number(contagem[1]) !== originais) return null
+  return motivo.replace(CONTAGEM_NO_MOTIVO, `${restantes}$2`)
+}
+
+/**
+ * Renova o recibo sem o CNJ que a decisão editorial mandou não publicar. Só
+ * sai da evidência o item de `ocorrencias_ambiguas` ou `homonimos_descartados`
+ * com CNJ válido e par (candidato, CNJ) idêntico a um veto: coincidência exata
+ * de hash, nada aproximado. Processo publicável (`processos`), CNJ fora do
+ * arquivo de vetos e qualquer outro caminho seguem como antes, e o
+ * `bloquearPlanosPorDecisao` continua a barrar o plano que ainda carregar um
+ * CNJ vetado. Nada da retirada vai ao recibo: a contagem e os hashes só saem no
+ * JSON do aplicador.
+ *
+ * O recibo renovado tem de ter uma forma que o coletor produz. Por isso a
+ * retirada só vale quando sobra ao menos uma ocorrência ambígua e, para
+ * `bloqueado`, quando o motivo tem a forma do coletor. Fora disso o candidato
+ * fica intacto e o plano vai para a revisão humana, como antes. A retirada
+ * nunca gera ausência confirmada: `vazio_confirmado` que perdeu uma ocorrência
+ * ambígua vira `bloqueado`, ou seja, recibo `indeterminado`.
+ */
+export function excluirVetadosDaEvidencia(
+  evidencia: EvidenciaFinal,
+  decisoes: ReadonlySet<string>,
+): { evidencia: EvidenciaFinal; exclusoes: ExclusaoPorVeto[] } {
+  const exclusoes: ExclusaoPorVeto[] = []
+  const lotes = evidencia.lotes.map((lote) => ({
+    ...lote,
+    candidatos: lote.candidatos.map((candidato) => {
+      // Mesma checagem de `criarPlanos`, sobre TODOS os itens: o item vetado
+      // com campo de auditoria inválido falha antes de sair, como sem o veto.
+      const caminho = `lote ${lote.numero}/${candidato.slug}`
+      homonimosAuditaveis(candidato.homonimos_descartados, `${caminho}.homonimos_descartados`)
+      homonimosAuditaveis(candidato.ocorrencias_ambiguas ?? [], `${caminho}.ocorrencias_ambiguas`)
+      const hashes = new Set<string>()
+      const manter = (item: Record<string, unknown>): boolean => {
+        const numero = item.numero_cnj
+        if (typeof numero !== "string" || !cnjValido(numero) || !decididoNaoPublicar(decisoes, candidato.slug, numero)) return true
+        hashes.add(chaveDecisao(candidato.slug, numero))
+        return false
+      }
+      const ambiguasOriginais = candidato.ocorrencias_ambiguas ?? []
+      const ocorrenciasAmbiguas = ambiguasOriginais.filter(manter)
+      const homonimosDescartados = candidato.homonimos_descartados.filter(manter)
+      if (hashes.size === 0) return candidato
+      const retirouAmbigua = ocorrenciasAmbiguas.length < ambiguasOriginais.length
+      // Sem ocorrência ambígua restante a forma do recibo seria inédita: revisão humana.
+      if (retirouAmbigua && ocorrenciasAmbiguas.length === 0) return candidato
+      let classificacao = candidato.classificacao
+      let motivo = candidato.motivo
+      if (retirouAmbigua && (candidato.classificacao === "bloqueado" || candidato.classificacao === "vazio_confirmado")) {
+        // Ausência confirmada exige zero ocorrência ambígua: a que o veto escondeu continua contando.
+        const base = candidato.classificacao === "bloqueado"
+          ? candidato.motivo
+          : `${ambiguasOriginais.length} ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua`
+        const ajustado = motivoSemVetados(base, ambiguasOriginais.length, ocorrenciasAmbiguas.length)
+        if (ajustado === null) return candidato
+        classificacao = "bloqueado"
+        motivo = ajustado
+      }
+      exclusoes.push({ slug: candidato.slug, quantidade: hashes.size, hashes: [...hashes].sort() })
+      return { ...candidato, ocorrencias_ambiguas: ocorrenciasAmbiguas, homonimos_descartados: homonimosDescartados, classificacao, motivo }
+    }),
+  }))
+  return { evidencia: { ...evidencia, lotes }, exclusoes }
+}
+
+/**
+ * CNJs que cada recibo carregaria, para a barreira da decisão editorial. Os
+ * achados publicáveis (`processos`) vêm sempre da evidência ORIGINAL: a retirada
+ * por veto não os toca e, se um dia tocasse, a barreira ainda os veria. Ocorrência
+ * ambígua e homônimo vêm da evidência já filtrada (o que o recibo de fato leva);
+ * os CNJs do recibo anterior entram sempre.
+ */
+export function cnjsPorSlugDaEvidencia(
+  original: EvidenciaFinal,
+  filtrada: EvidenciaFinal,
+  cnjsDosRecibos: ReadonlyMap<string, readonly string[]> = new Map(),
+): Map<string, string[]> {
+  const processosOriginais = new Map(original.lotes.flatMap((lote) => lote.candidatos)
+    .map((candidato) => [candidato.slug, candidato.processos]))
+  return new Map(filtrada.lotes.flatMap((lote) => lote.candidatos).map((candidato) => [
+    candidato.slug,
+    [
+      ...(processosOriginais.get(candidato.slug) ?? candidato.processos),
+      ...(candidato.ocorrencias_ambiguas ?? []),
+      ...candidato.homonimos_descartados,
+    ].map((item) => String(item.numero_cnj ?? "")).concat(cnjsDosRecibos.get(candidato.slug) ?? []),
+  ]))
+}
+
 /** Quem pode registrar confirmação editorial de identidade. */
 export const DECISORES_EDITORIAIS: readonly string[] = ["Thiago Salvador"]
 
@@ -1374,7 +1484,9 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   const opcoes = lerOpcoes(argv)
   const decisoes = carregarDecisoes()
   const bruto = JSON.parse(readFileSync(opcoes.evidence, "utf8")) as unknown
-  const evidencia = validarEvidencia(bruto)
+  const evidenciaOriginal = validarEvidencia(bruto)
+  const { evidencia, exclusoes: exclusoesPorVeto } = excluirVetadosDaEvidencia(evidenciaOriginal, decisoes)
+  const excluidosPorVeto = exclusoesPorVeto.reduce((total, item) => total + item.quantidade, 0)
   const planosCriados = criarPlanos(evidencia)
   let planos = planosCriados
 
@@ -1400,14 +1512,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     const encontrados = linha.detalhe?.match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []
     cnjsDosRecibos.set(linha.alvo, [...(cnjsDosRecibos.get(linha.alvo) ?? []), ...encontrados])
   }
-  const cnjsPorSlug = new Map(evidencia.lotes.flatMap((lote) => lote.candidatos).map((candidato) => [
-    candidato.slug,
-    [
-      ...candidato.processos,
-      ...(candidato.ocorrencias_ambiguas ?? []),
-      ...candidato.homonimos_descartados,
-    ].map((item) => String(item.numero_cnj ?? "")).concat(cnjsDosRecibos.get(candidato.slug) ?? []),
-  ]))
+  const cnjsPorSlug = cnjsPorSlugDaEvidencia(evidenciaOriginal, evidencia, cnjsDosRecibos)
   const bloqueio = bloquearPlanosPorDecisao(planos, cnjsPorSlug, decisoes)
   planos = bloqueio.planos
   revisaoHumana.push(...bloqueio.revisaoHumana)
@@ -1420,6 +1525,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       coorte_atual: evidencia.coorte_atual,
       candidatos_validados: planosCriados.length,
       decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
+      excluidos_por_veto_editorial: excluidosPorVeto,
+      excluidos_por_veto: exclusoesPorVeto,
       revisao_humana: revisaoHumana,
       mudancas: mudancas.map((plano) => ({ slug: plano.slug, resultado: plano.resultado, args: [...plano.args, "--dry-run"] })),
     }, null, 2))
@@ -1442,6 +1549,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       }, {}),
       candidatos_validados: planos.length,
       decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
+      excluidos_por_veto_editorial: excluidosPorVeto,
+      excluidos_por_veto: exclusoesPorVeto,
       revisao_humana: revisaoHumana,
       lotes_validados: evidencia.lotes.length,
       planos_exibidos: selecionados.length,
@@ -1482,6 +1591,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       backup: backupPath,
       candidatos_validados: planosCriados.length,
       decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
+      excluidos_por_veto_editorial: excluidosPorVeto,
+      excluidos_por_veto: exclusoesPorVeto,
       candidatos_pulados: preflight.equivalentes.length,
       candidatos_inseridos: preflight.pendentes.length,
       mantidos_sem_rebaixar: mantidosSemRebaixar,
