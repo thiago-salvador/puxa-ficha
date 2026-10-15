@@ -16,7 +16,7 @@ BEGIN
     RAISE EXCEPTION 'fase-turno-1-rj-20261015221500 rollback: recibo inválido ou rollback repetido';
   END IF;
   SELECT detalhe::jsonb INTO r FROM public.coleta_log WHERE execucao = 'migration:20261015221500';
-  IF jsonb_array_length(r->'linhas') <> 2 THEN
+  IF jsonb_typeof(r->'linhas') IS DISTINCT FROM 'array' OR jsonb_array_length(r->'linhas') <> 2 THEN
     RAISE EXCEPTION 'fase-turno-1-rj-20261015221500 rollback: recibo sem as 2 linhas';
   END IF;
   FOR linha IN SELECT value FROM jsonb_array_elements(r->'linhas') LOOP
