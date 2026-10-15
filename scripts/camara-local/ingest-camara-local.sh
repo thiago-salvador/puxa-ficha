@@ -55,8 +55,8 @@ tags_json='["public-candidatos","public-candidato-metadata","public-candidato-fi
 # concluir, porque a prova de cobertura lê o site público logo depois e um
 # cache ainda velho geraria recibos sobre um DTO desatualizado. Devolve 0 só
 # com confirmação (HTTP 2xx ou run com conclusão success).
-# O run é identificado por id maior que o último run existente antes do
-# disparo, sem depender do relógio local. Esperas limitadas; os argumentos
+# O run é identificado pela URL que o gh devolve no disparo; sem ela, por id
+# maior que o último run existente antes do disparo, sem depender do relógio local. Esperas limitadas; os argumentos
 # opcionais (intervalo em segundos, tentativas de busca e de espera) existem
 # para os testes.
 revalidar_cache() {
@@ -64,7 +64,7 @@ revalidar_cache() {
   local intervalo="${1:-10}"
   local tentativas_busca="${2:-6}"
   local tentativas_espera="${3:-36}"
-  local status cabecalho tags_csv antes run_id n info
+  local status cabecalho tags_csv antes saida run_id n info
   if [ -n "$segredo_revalidacao" ]; then
     cabecalho="$base/revalidate-header"
     printf 'x-pf-revalidate-secret: %s\n' "$segredo_revalidacao" >"$cabecalho"
@@ -81,14 +81,18 @@ revalidar_cache() {
   antes="$(gh run list --workflow revalidate-cache.yml --repo "$repo_gh" --event workflow_dispatch -L 1 \
     --json databaseId --jq '.[0].databaseId // 0' 2>/dev/null || true)"
   case "$antes" in "" | *[!0-9]*) echo "revalidate via workflow: não consegui ler o último run"; return 1 ;; esac
-  if ! gh workflow run revalidate-cache.yml --repo "$repo_gh" -f "tags=$tags_csv"; then
-    echo "revalidate via workflow revalidate-cache.yml falhou ao despachar"
+  if ! saida="$(gh workflow run revalidate-cache.yml --repo "$repo_gh" -f "tags=$tags_csv" 2>&1)"; then
+    echo "revalidate via workflow revalidate-cache.yml falhou ao despachar: $saida"
     return 1
   fi
+  echo "$saida"
 
-  run_id=""
+  # O gh devolve a URL do run criado (.../actions/runs/<id>): esse id exato é
+  # o nosso, mesmo que outro disparo concorrente exista. Sem a URL, cai para a
+  # descoberta por id maior que o último run anterior ao disparo.
+  run_id="$(printf '%s\n' "$saida" | sed -n 's#.*/actions/runs/\([0-9][0-9]*\).*#\1#p' | tail -n 1)"
   n=0
-  while [ "$n" -lt "$tentativas_busca" ]; do
+  while [ -z "$run_id" ] && [ "$n" -lt "$tentativas_busca" ]; do
     sleep "$intervalo"
     run_id="$(gh run list --workflow revalidate-cache.yml --repo "$repo_gh" --event workflow_dispatch -L 10 \
       --json databaseId --jq "[.[] | select(.databaseId > $antes) | .databaseId] | min // empty" 2>/dev/null || true)"
@@ -107,6 +111,7 @@ revalidar_cache() {
       --jq '.status + " " + (.conclusion // "")' 2>/dev/null || true)"
     case "$info" in
       "completed success") echo "revalidate via workflow concluído: run $run_id success"; return 0 ;;
+      "completed cancelled") echo "revalidate via workflow CANCELADO: run $run_id (outro disparo concorrente pode tê-lo cancelado)"; return 1 ;;
       completed*) echo "revalidate via workflow terminou sem sucesso: run $run_id (${info#completed })"; return 1 ;;
     esac
     sleep "$intervalo"

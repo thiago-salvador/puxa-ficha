@@ -282,6 +282,7 @@ describe("agente local da Câmara", () => {
       segredo?: string
       curlStatus?: string
       dispatchRc?: string
+      dispatchOut?: string
       antes?: string
       depois?: string
       view?: string
@@ -300,7 +301,7 @@ describe("agente local da Câmara", () => {
         stub("gh", [
           'echo "gh $*" >> "$STUB_LOG"',
           'case "$1 $2" in',
-          '  "workflow run") exit "${STUB_DISPATCH_RC:-0}" ;;',
+          '  "workflow run") if [ -n "${STUB_DISPATCH_OUT-}" ]; then echo "$STUB_DISPATCH_OUT"; fi; exit "${STUB_DISPATCH_RC:-0}" ;;',
           '  "run list")',
           '    n="$(cat "$STUB_DIR/n" 2>/dev/null || echo 0)"; n=$((n + 1)); echo "$n" > "$STUB_DIR/n"',
           '    if [ "$n" -eq 1 ]; then echo "${STUB_ANTES-100}"; else echo "${STUB_DEPOIS-101}"; fi ;;',
@@ -327,6 +328,7 @@ describe("agente local da Câmara", () => {
             STUB_LOG: log,
             STUB_CURL_STATUS: cenario.curlStatus ?? "000",
             STUB_DISPATCH_RC: cenario.dispatchRc ?? "0",
+            STUB_DISPATCH_OUT: cenario.dispatchOut ?? "",
             ...(cenario.antes === undefined ? {} : { STUB_ANTES: cenario.antes }),
             ...(cenario.depois === undefined ? {} : { STUB_DEPOIS: cenario.depois }),
             STUB_VIEW: cenario.view ?? "completed success",
@@ -359,6 +361,28 @@ describe("agente local da Câmara", () => {
       assert.match(r.chamadas, /^gh workflow run revalidate-cache\.yml --repo thiago-salvador\/puxa-ficha -f tags=public-candidatos,public-candidato-metadata,/m)
       assert.match(r.chamadas, /^gh run view 101 /m)
       assert.match(r.stdout, /run 101/)
+    })
+
+    it("com a URL do run no disparo, espera esse id exato mesmo havendo run mais novo de outro disparo", () => {
+      const r = rodar({ dispatchOut: "https://github.com/thiago-salvador/puxa-ficha/actions/runs/555", depois: "999" })
+      assert.equal(r.rc, "0")
+      assert.match(r.chamadas, /^gh run view 555 /m)
+      assert.doesNotMatch(r.chamadas, /^gh run view (101|999) /m)
+      assert.equal((r.chamadas.match(/^gh run list /gm) ?? []).length, 1, "só a leitura anterior ao disparo")
+      assert.match(r.stdout, /run 555/)
+    })
+
+    it("sem a URL no disparo usa a descoberta por id (fallback)", () => {
+      const r = rodar({ dispatchOut: "workflow disparado" })
+      assert.equal(r.rc, "0")
+      assert.match(r.chamadas, /^gh run view 101 /m)
+      assert.equal((r.chamadas.match(/^gh run list /gm) ?? []).length, 2)
+    })
+
+    it("run próprio cancelado conta como falha com linha clara", () => {
+      const r = rodar({ dispatchOut: "https://github.com/thiago-salvador/puxa-ficha/actions/runs/555", view: "completed cancelled" })
+      assert.equal(r.rc, "1")
+      assert.match(r.stdout, /CANCELADO: run 555/)
     })
 
     it("sem segredo local vai direto ao workflow, sem chamar o curl", () => {
