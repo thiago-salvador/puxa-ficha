@@ -1112,6 +1112,11 @@ export function excluirVetadosDaEvidencia(
   const lotes = evidencia.lotes.map((lote) => ({
     ...lote,
     candidatos: lote.candidatos.map((candidato) => {
+      // Mesma checagem de `criarPlanos`, sobre TODOS os itens: o item vetado
+      // com campo de auditoria inválido falha antes de sair, como sem o veto.
+      const caminho = `lote ${lote.numero}/${candidato.slug}`
+      homonimosAuditaveis(candidato.homonimos_descartados, `${caminho}.homonimos_descartados`)
+      homonimosAuditaveis(candidato.ocorrencias_ambiguas ?? [], `${caminho}.ocorrencias_ambiguas`)
       const hashes = new Set<string>()
       const manter = (item: Record<string, unknown>): boolean => {
         const numero = item.numero_cnj

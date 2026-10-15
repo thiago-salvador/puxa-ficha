@@ -217,12 +217,13 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     assert.ok(detalhe(criarPlanos(evidencia)[0]).includes(VETADO))
   })
 
-  it("CNJ inválido nunca é excluído por aproximação", () => {
+  it("CNJ inválido nunca é excluído por aproximação: a evidência falha como sem o veto", () => {
     const invalido = VETADO.replace(/-\d{2}\./, (dv) => (dv === "-00." ? "-01." : "-00."))
     const vetos = new Set([chaveDecisao(SLUG, invalido)])
-    const { exclusoes } = excluirVetadosDaEvidencia(evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(invalido)] }), vetos)
+    const bruta = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(invalido)] })
 
-    assert.deepEqual(exclusoes, [])
+    assert.throws(() => criarPlanos(bruta), /identificador de processo invalido/)
+    assert.throws(() => excluirVetadosDaEvidencia(bruta, vetos), /identificador de processo invalido/)
   })
 
   it("processo publicável vetado não é excluído: o plano segue para revisão humana e não é gravado", () => {
@@ -333,5 +334,21 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     // CNJ vetado nos argumentos do registrador continua barrando.
     const contaminado = { ...plano, args: [...plano.args, `--evidencia-publicavel=https://comunicaapi.pje.jus.br/consulta?numeroProcesso=${SEM_MASCARA(VETADO)}`] }
     assert.equal(bloquearPlanosPorDecisao([contaminado], cnjsPorSlugDaEvidencia(original, evidencia), vetos).planos.length, 0)
+  })
+
+  it("item vetado com CNJ válido mas campo de auditoria inválido continua falhando, como antes do veto", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const semTribunal = { numero_cnj: VETADO, motivo: "nome exato sem segundo identificador" }
+    const tribunalInvalido = { ...ambigua(VETADO), tribunal: "tribunal invalido!" }
+    for (const defeituoso of [semTribunal, tribunalInvalido]) {
+      for (const campo of ["ocorrencias_ambiguas", "homonimos_descartados"]) {
+        const bruta = evidenciaCom(SLUG, {
+          ocorrencias_ambiguas: [ambigua(PERMITIDO)],
+          [campo]: campo === "ocorrencias_ambiguas" ? [ambigua(PERMITIDO), defeituoso] : [defeituoso],
+        })
+        assert.throws(() => criarPlanos(bruta), /tribunal/, "sem o veto a evidência já falhava")
+        assert.throws(() => excluirVetadosDaEvidencia(bruta, vetos), /tribunal/, "o veto não pode esconder a falha")
+      }
+    }
   })
 })
