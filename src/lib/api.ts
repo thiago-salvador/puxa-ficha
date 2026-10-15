@@ -134,6 +134,16 @@ const CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO = CANDIDATO_COLUMNS.replace
 const CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT = CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO.replace(/, foto_credito$/, "")
 const CANDIDATO_COLUMNS_LEGACY = CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT.replace(/, verificacao_campos$/, "")
 
+// Projeção das listas públicas (home, 1º turno, hubs, sitemap). Sem
+// `verificacao_campos`: só a ficha lê esse JSON (selo de frescor, situação da
+// candidatura, redes sociais), e ele sozinho levava `getCandidatosResource()`
+// sem filtro a 3,5 MB, `getCandidatosComResumoResource()` a 3,6 MB e a lista de
+// senadores a 2,6 MB, todas acima do limite de 2 MB por item do Data Cache. A
+// ficha continua usando `CANDIDATO_COLUMNS`.
+const CANDIDATO_LIST_COLUMNS = CANDIDATO_COLUMNS.replace(/, verificacao_campos(?=,)/, "")
+const CANDIDATO_LIST_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO = CANDIDATO_LIST_COLUMNS.replace(/, formacao_instituicao$/, "")
+const CANDIDATO_LIST_COLUMNS_WITHOUT_PHOTO_CREDIT = CANDIDATO_LIST_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO.replace(/, foto_credito$/, "")
+
 const PATRIMONIO_AUSENCIA_OFICIAL_COLUMNS =
   "ano_eleicao, ano_arquivo, sq_candidato, uf_candidatura, cargo_candidatura, data_eleicao, tipo_eleicao, fonte_url, verificado_em, detalhe"
 /** Conjunto lido em origin/main (93455ebc), antes de 20260915220000. */
@@ -362,15 +372,12 @@ async function getCandidatosResourceUncached(
 
     return query.order("nome_urna").abortSignal(signal) as unknown as SupabaseRunResult<Candidato[]>
   }, { attemptTimeoutMs: SUPABASE_FIRST_FOLD_ATTEMPT_TIMEOUT_MS })
-  let result = await load(CANDIDATO_COLUMNS)
+  let result = await load(CANDIDATO_LIST_COLUMNS)
   if (isMissingOptionalCandidateColumnError(result.error)) {
-    result = await load(CANDIDATO_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO)
+    result = await load(CANDIDATO_LIST_COLUMNS_WITHOUT_FORMACAO_INSTITUICAO)
   }
   if (isMissingOptionalCandidateColumnError(result.error)) {
-    result = await load(CANDIDATO_COLUMNS_WITHOUT_PHOTO_CREDIT)
-  }
-  if (isMissingOptionalCandidateColumnError(result.error)) {
-    result = await load(CANDIDATO_COLUMNS_LEGACY)
+    result = await load(CANDIDATO_LIST_COLUMNS_WITHOUT_PHOTO_CREDIT)
   }
   const { data, error } = result
 
@@ -400,7 +407,7 @@ const getCachedCandidatosResource = unstableCacheWithSingleFlight(
   // Bumped 2026-05-15: swap da coorte presidencial remove tarcisio/eduardo-leite
   // da superficie publica e adiciona augusto-cury/cabo-daciolo/edmilson-costa.
   // Bumped 2026-05-22: publicacao da lista editorial de pre-candidatos dos lotes 1 e 2.
-  ["public-candidatos-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "candidate-roster-cas-20260915", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, RESULTADOS_1TURNO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidatos-resource", "central-party-sanitize", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "candidate-roster-cas-20260915", "nome-urna-display-title-case-20260924", "lista-sem-verificacao-20261015", SENADO_CACHE_VARIANT, RESULTADOS_1TURNO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos"],
@@ -2540,7 +2547,7 @@ const getCachedCandidatosComResumoResource = unstableCacheWithSingleFlight(
     rejectPartialForCache(getCandidatosComResumoResourceUncached(cargo, estado)),
   // Bumped 2026-04-26: dados de candidato vem ja sanitizados via getCandidatosResource;
   // o suffix forca bust de cache antigo do Bloco 1.
-  ["public-candidatos-resumo-resource", "central-party-sanitize", "sort-count-nullability-20260908", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "patrimonio-atipico-grade-20260916", "nome-urna-display-title-case-20260924", SENADO_CACHE_VARIANT, RESULTADOS_1TURNO_CACHE_VARIANT, CURRENT_DATA_WAVE],
+  ["public-candidatos-resumo-resource", "central-party-sanitize", "sort-count-nullability-20260908", "presidential-cohort-20260515", "public-profile-density-20260517", "pre-candidates-lote12-20260522", "photos-names-20260610", "andre-portugues-lote8-20260630", "escopo-executivo-20260726", "cache-poison-fix-20260802", "no-cache-resumo-parcial-20260804", "chapas-tse-20260815", "onda-p-20260814", "party-siglas-lote2-20260815", "patrimonio-atipico-grade-20260916", "nome-urna-display-title-case-20260924", "lista-sem-verificacao-20261015", SENADO_CACHE_VARIANT, RESULTADOS_1TURNO_CACHE_VARIANT, CURRENT_DATA_WAVE],
   {
     revalidate: APP_DATA_REVALIDATE_SECONDS,
     tags: ["public-candidatos-resumo"],

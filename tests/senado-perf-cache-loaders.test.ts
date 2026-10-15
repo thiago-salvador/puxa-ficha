@@ -147,8 +147,13 @@ interface StubState {
   candidatosUrls: URL[]
 }
 
+interface StubOptions {
+  /** Colunas que o banco "ainda não tem": qualquer `select` que as contenha responde 400 com código 42703. */
+  missingColumns?: string[]
+}
+
 /** PostgREST mínimo: aplica `select`, `cargo_disputado=eq.` e `neq.` sobre as linhas dadas. */
-function stubPostgrest(rows: Row[]): StubState {
+function stubPostgrest(rows: Row[], options: StubOptions = {}): StubState {
   const state: StubState = { candidatosSelects: [], candidatosUrls: [] }
   globalThis.fetch = (async (input: RequestInfo | URL) => {
     const url = new URL(String(input instanceof Request ? input.url : input))
@@ -158,6 +163,18 @@ function stubPostgrest(rows: Row[]): StubState {
       state.candidatosUrls.push(url)
       const cargoFilter = url.searchParams.get("cargo_disputado")
       const columns = select.split(",").map((column) => column.trim())
+      const missing = (options.missingColumns ?? []).find((column) => columns.includes(column))
+      if (missing) {
+        return new Response(
+          JSON.stringify({
+            code: "42703",
+            message: `column candidatos_publico.${missing} does not exist`,
+            details: null,
+            hint: null,
+          }),
+          { status: 400, headers: { "content-type": "application/json" } },
+        )
+      }
       const filtered = rows.filter((row) => {
         if (cargoFilter?.startsWith("eq.")) return row.cargo_disputado === cargoFilter.slice(3)
         if (cargoFilter?.startsWith("neq.")) return row.cargo_disputado !== cargoFilter.slice(4)
@@ -186,20 +203,13 @@ const governadores = Array.from({ length: 120 }, (_, index) => syntheticRow(1000
 const presidentes = Array.from({ length: 12 }, (_, index) => syntheticRow(2000 + index, "Presidente"))
 
 describe("contagem por UF para o mapa de /parlamentares e /governadores", () => {
-  it("o caminho antigo (lista completa) passa de 2 MB com 309 senadores sintéticos", async (t) => {
-    const api = await loadApi()
-    stubPostgrest(senadores)
-
-    const resource = await api.getCandidatosResource("Senador")
-
-    assert.equal(resource.data.length, 309)
-    const call = lastCacheCall("public-candidatos-resource")
-    assert.ok(call?.bytes, "camada de cache não foi exercitada")
-    t.diagnostic(`lista completa em cache: ${call.bytes} bytes`)
-    assert.ok(
-      call.bytes > DATA_CACHE_ITEM_LIMIT_BYTES,
-      `a fixture precisa reproduzir o estouro medido (${call.bytes} bytes)`,
-    )
+  it("a fixture reproduz o estouro: a linha completa, com verificacao_campos, passa de 2 MB", (t) => {
+    const full = [...presidentes, ...governadores, ...senadores]
+    const fullBytes = Buffer.byteLength(JSON.stringify(full), "utf8")
+    const senadoresBytes = Buffer.byteLength(JSON.stringify(senadores), "utf8")
+    t.diagnostic(`coorte completa com verificacao_campos: ${fullBytes} bytes; só senadores: ${senadoresBytes} bytes`)
+    assert.ok(fullBytes > DATA_CACHE_ITEM_LIMIT_BYTES, `fixture com ${fullBytes} bytes não reproduz o estouro`)
+    assert.ok(senadoresBytes > DATA_CACHE_ITEM_LIMIT_BYTES, `senadores com ${senadoresBytes} bytes não reproduzem o estouro`)
   })
 
   it("projeta só `estado`, filtra o cargo e cabe muito abaixo de 2 MB", async (t) => {
@@ -288,5 +298,89 @@ describe("índice de busca global com a coorte do Senado", () => {
       call.bytes < DATA_CACHE_ITEM_LIMIT_BYTES / 4,
       `índice em cache ficou em ${call.bytes} bytes`,
     )
+  })
+})
+
+describe("listas públicas de candidatos sem verificacao_campos", () => {
+  function assertNoVerificacao(selects: string[]) {
+    assert.ok(selects.length > 0, "a lista precisa consultar candidatos_publico")
+    for (const select of selects) {
+      const columns = select.split(",").map((column) => column.trim())
+      assert.ok(!columns.includes("verificacao_campos"), `select da lista ainda carrega verificacao_campos: ${select}`)
+      // As colunas que a grade e os hubs renderizam continuam na projeção.
+      for (const kept of ["id", "slug", "nome_urna", "biografia", "foto_url", "partido_sigla", "cargo_disputado", "estado"]) {
+        assert.ok(columns.includes(kept), `select da lista perdeu ${kept}: ${select}`)
+      }
+    }
+  }
+
+  it("getCandidatosResource() sem filtro cabe no Data Cache com a coorte completa", async (t) => {
+    const api = await loadApi()
+    const state = stubPostgrest([...presidentes, ...governadores, ...senadores])
+
+    const resource = await api.getCandidatosResource()
+
+    assert.equal(resource.sourceStatus, "live")
+    assert.equal(resource.data.length, presidentes.length + governadores.length + senadores.length)
+    assertNoVerificacao(state.candidatosSelects)
+    const call = lastCacheCall("public-candidatos-resource")
+    assert.ok(call?.bytes, "camada de cache não foi exercitada")
+    assert.equal(call.outcome, "resolved")
+    assert.ok(call.keys.includes("lista-sem-verificacao-20261015"), `chaves: ${call.keys.join(", ")}`)
+    t.diagnostic(`lista sem filtro em cache: ${call.bytes} bytes`)
+    assert.ok(call.bytes < DATA_CACHE_ITEM_LIMIT_BYTES, `lista sem filtro ficou em ${call.bytes} bytes`)
+  })
+
+  it("getCandidatosResource(\"Senador\") cabe no Data Cache (fotos do 1º turno)", async (t) => {
+    const api = await loadApi()
+    const state = stubPostgrest([...governadores, ...senadores])
+
+    const resource = await api.getCandidatosResource("Senador")
+
+    assert.equal(resource.data.length, senadores.length)
+    assertNoVerificacao(state.candidatosSelects)
+    const call = lastCacheCall("public-candidatos-resource")
+    assert.ok(call?.bytes, "camada de cache não foi exercitada")
+    t.diagnostic(`lista de senadores em cache: ${call.bytes} bytes`)
+    assert.ok(call.bytes < DATA_CACHE_ITEM_LIMIT_BYTES, `lista de senadores ficou em ${call.bytes} bytes`)
+  })
+
+  it("coluna opcional ausente (42703) refaz a consulta sem ela e nunca volta a pedir verificacao_campos", async () => {
+    const api = await loadApi()
+    const state = stubPostgrest([...governadores, ...senadores], {
+      missingColumns: ["formacao_instituicao", "foto_credito"],
+    })
+
+    const resource = await api.getCandidatosResource()
+
+    assert.equal(resource.sourceStatus, "live")
+    assert.equal(resource.data.length, governadores.length + senadores.length)
+
+    const sequence = state.candidatosSelects.map((select) => select.split(",").map((column) => column.trim()))
+    assert.equal(sequence.length, 3, `tentativas: ${state.candidatosSelects.join(" | ")}`)
+    const [full, semFormacaoInstituicao, semFotoCredito] = sequence
+    assert.ok(full.includes("formacao_instituicao") && full.includes("foto_credito"))
+    assert.deepEqual(semFormacaoInstituicao, full.filter((column) => column !== "formacao_instituicao"))
+    assert.deepEqual(semFotoCredito, semFormacaoInstituicao.filter((column) => column !== "foto_credito"))
+    for (const columns of sequence) {
+      assert.ok(!columns.includes("verificacao_campos"), `tentativa ainda carrega verificacao_campos: ${columns.join(",")}`)
+    }
+  })
+
+  it("getCandidatosComResumoResource() cabe no Data Cache com a coorte completa", async (t) => {
+    const api = await loadApi()
+    const state = stubPostgrest([...presidentes, ...governadores, ...senadores])
+
+    const resource = await api.getCandidatosComResumoResource()
+
+    assert.equal(resource.sourceStatus, "live")
+    assert.equal(resource.data.length, presidentes.length + governadores.length + senadores.length)
+    assertNoVerificacao(state.candidatosSelects)
+    const call = lastCacheCall("public-candidatos-resumo-resource")
+    assert.ok(call?.bytes, "camada de cache do resumo não foi exercitada")
+    assert.equal(call.outcome, "resolved")
+    assert.ok(call.keys.includes("lista-sem-verificacao-20261015"), `chaves: ${call.keys.join(", ")}`)
+    t.diagnostic(`lista com resumo em cache: ${call.bytes} bytes`)
+    assert.ok(call.bytes < DATA_CACHE_ITEM_LIMIT_BYTES, `lista com resumo ficou em ${call.bytes} bytes`)
   })
 })
