@@ -111,9 +111,12 @@ aplicador tira do recibo novo o item de `ocorrencias_ambiguas` ou
 `scripts/data/processos-decisao-editorial.json`. O recibo não registra a
 retirada, porque o detalhe é exposto na API pública: a contagem do motivo
 acompanha a lista restante. A quantidade e as chaves de hash saem só no JSON do
-aplicador (`excluidos_por_veto_editorial`, `excluidos_por_veto`). A retirada nunca
-gera ausência confirmada: `vazio_confirmado` que perdeu uma ocorrência ambígua
-renova como `indeterminado`, e quem já estava `indeterminado` continua assim.
+aplicador (`excluidos_por_veto_editorial`, `excluidos_por_veto`). A retirada só vale
+quando sobra ao menos uma ocorrência ambígua e o motivo tem a forma do coletor
+(contagem no início, sufixo do teto do DJEN preservado); sem isso o recibo teria
+uma forma que o coletor nunca produz, e o alvo segue para a revisão humana. A
+retirada nunca gera ausência confirmada: `vazio_confirmado` que perdeu uma
+ocorrência ambígua renova como `indeterminado`.
 
 Continua indo para revisão humana, sem renovar o recibo anterior, o alvo cujo CNJ
 vetado esteja em outro lugar do plano (por exemplo em `processos`, entre os

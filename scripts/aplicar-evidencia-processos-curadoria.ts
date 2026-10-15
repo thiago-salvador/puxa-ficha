@@ -1072,18 +1072,19 @@ export interface ExclusaoPorVeto {
   hashes: string[]
 }
 
-const MOTIVO_AMBIGUIDADE = "conclusao bloqueada por identidade ambigua"
+const CONTAGEM_NO_MOTIVO = /^(\d+)( ocorrencia\(s\) por nome exato sem segundo identificador)/
 
 /**
- * O motivo da coleta abre com a contagem de ocorrências ambíguas. Depois da
- * retirada, contagem e lista têm de continuar iguais: o recibo (e o JSON
- * público que o repete) não pode sugerir que algo foi retirado.
+ * O motivo que o coletor grava abre com a contagem de ocorrências ambíguas e
+ * pode ter sufixo (por exemplo, o teto público do DJEN). O detalhe do recibo
+ * chega à API pública, então contagem e lista têm de continuar iguais depois da
+ * retirada e o sufixo fica como está. `null` quando o motivo não tem a forma do
+ * coletor: nesse caso não há como renovar sem deixar rastro.
  */
-function motivoSemVetados(motivo: string, originais: number, restantes: number): string {
-  const contagem = /^(\d+) ocorrencia\(s\)/.exec(motivo)
-  if (restantes === 0) return MOTIVO_AMBIGUIDADE
-  if (contagem && Number(contagem[1]) === originais) return motivo.replace(/^\d+/, String(restantes))
-  return motivo
+function motivoSemVetados(motivo: string, originais: number, restantes: number): string | null {
+  const contagem = CONTAGEM_NO_MOTIVO.exec(motivo)
+  if (!contagem || Number(contagem[1]) !== originais) return null
+  return motivo.replace(CONTAGEM_NO_MOTIVO, `${restantes}$2`)
 }
 
 /**
@@ -1094,9 +1095,14 @@ function motivoSemVetados(motivo: string, originais: number, restantes: number):
  * arquivo de vetos e qualquer outro caminho seguem como antes, e o
  * `bloquearPlanosPorDecisao` continua a barrar o plano que ainda carregar um
  * CNJ vetado. Nada da retirada vai ao recibo: a contagem e os hashes só saem no
- * JSON do aplicador. A retirada nunca produz ausência confirmada: o candidato
- * `vazio_confirmado` que perdeu uma ocorrência ambígua vira `bloqueado`, ou
- * seja, recibo `indeterminado`.
+ * JSON do aplicador.
+ *
+ * O recibo renovado tem de ter uma forma que o coletor produz. Por isso a
+ * retirada só vale quando sobra ao menos uma ocorrência ambígua e, para
+ * `bloqueado`, quando o motivo tem a forma do coletor. Fora disso o candidato
+ * fica intacto e o plano vai para a revisão humana, como antes. A retirada
+ * nunca gera ausência confirmada: `vazio_confirmado` que perdeu uma ocorrência
+ * ambígua vira `bloqueado`, ou seja, recibo `indeterminado`.
  */
 export function excluirVetadosDaEvidencia(
   evidencia: EvidenciaFinal,
@@ -1117,19 +1123,23 @@ export function excluirVetadosDaEvidencia(
       const ocorrenciasAmbiguas = ambiguasOriginais.filter(manter)
       const homonimosDescartados = candidato.homonimos_descartados.filter(manter)
       if (hashes.size === 0) return candidato
-      exclusoes.push({ slug: candidato.slug, quantidade: hashes.size, hashes: [...hashes].sort() })
       const retirouAmbigua = ocorrenciasAmbiguas.length < ambiguasOriginais.length
-      // Ausência confirmada exige zero ocorrência ambígua: a que o veto escondeu continua contando.
-      const virouBloqueado = retirouAmbigua && candidato.classificacao === "vazio_confirmado"
-      return {
-        ...candidato,
-        ocorrencias_ambiguas: ocorrenciasAmbiguas,
-        homonimos_descartados: homonimosDescartados,
-        classificacao: virouBloqueado ? "bloqueado" as const : candidato.classificacao,
-        motivo: virouBloqueado
-          ? MOTIVO_AMBIGUIDADE
-          : retirouAmbigua ? motivoSemVetados(candidato.motivo, ambiguasOriginais.length, ocorrenciasAmbiguas.length) : candidato.motivo,
+      // Sem ocorrência ambígua restante a forma do recibo seria inédita: revisão humana.
+      if (retirouAmbigua && ocorrenciasAmbiguas.length === 0) return candidato
+      let classificacao = candidato.classificacao
+      let motivo = candidato.motivo
+      if (retirouAmbigua && (candidato.classificacao === "bloqueado" || candidato.classificacao === "vazio_confirmado")) {
+        // Ausência confirmada exige zero ocorrência ambígua: a que o veto escondeu continua contando.
+        const base = candidato.classificacao === "bloqueado"
+          ? candidato.motivo
+          : `${ambiguasOriginais.length} ocorrencia(s) por nome exato sem segundo identificador; conclusao bloqueada por identidade ambigua`
+        const ajustado = motivoSemVetados(base, ambiguasOriginais.length, ocorrenciasAmbiguas.length)
+        if (ajustado === null) return candidato
+        classificacao = "bloqueado"
+        motivo = ajustado
       }
+      exclusoes.push({ slug: candidato.slug, quantidade: hashes.size, hashes: [...hashes].sort() })
+      return { ...candidato, ocorrencias_ambiguas: ocorrenciasAmbiguas, homonimos_descartados: homonimosDescartados, classificacao, motivo }
     }),
   }))
   return { evidencia: { ...evidencia, lotes }, exclusoes }
