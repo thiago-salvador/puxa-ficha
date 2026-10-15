@@ -77,8 +77,9 @@ export async function fetchOfficialWithRetry(
 export function validateContentLength(declared: string | null, actualBytes: number, url: string, contentEncoding: string | null = null): void {
   // Com content-encoding (gzip, br...), o Content-Length descreve o corpo comprimido
   // e o fetch entrega o corpo ja decodificado; os tamanhos nao sao comparaveis.
-  const encoding = (contentEncoding ?? "identity").trim().toLowerCase()
-  if (encoding !== "" && encoding !== "identity") return
+  // So pula para codificacoes que o fetch decodifica; qualquer outra mantem a checagem.
+  const encodings = (contentEncoding ?? "").split(",").map((item) => item.trim().toLowerCase()).filter((item) => item !== "" && item !== "identity")
+  if (encodings.length > 0 && encodings.every((item) => ["gzip", "x-gzip", "deflate", "br"].includes(item))) return
   if (declared !== null && (!/^\d+$/.test(declared) || Number(declared) !== actualBytes)) {
     throw new Error(`${url}: Content-Length divergente (${declared} declarado, ${actualBytes} recebido)`)
   }
