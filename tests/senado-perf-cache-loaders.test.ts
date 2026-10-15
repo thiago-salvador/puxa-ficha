@@ -147,8 +147,13 @@ interface StubState {
   candidatosUrls: URL[]
 }
 
+interface StubOptions {
+  /** Colunas que o banco "ainda não tem": qualquer `select` que as contenha responde 400 com código 42703. */
+  missingColumns?: string[]
+}
+
 /** PostgREST mínimo: aplica `select`, `cargo_disputado=eq.` e `neq.` sobre as linhas dadas. */
-function stubPostgrest(rows: Row[]): StubState {
+function stubPostgrest(rows: Row[], options: StubOptions = {}): StubState {
   const state: StubState = { candidatosSelects: [], candidatosUrls: [] }
   globalThis.fetch = (async (input: RequestInfo | URL) => {
     const url = new URL(String(input instanceof Request ? input.url : input))
@@ -158,6 +163,18 @@ function stubPostgrest(rows: Row[]): StubState {
       state.candidatosUrls.push(url)
       const cargoFilter = url.searchParams.get("cargo_disputado")
       const columns = select.split(",").map((column) => column.trim())
+      const missing = (options.missingColumns ?? []).find((column) => columns.includes(column))
+      if (missing) {
+        return new Response(
+          JSON.stringify({
+            code: "42703",
+            message: `column candidatos_publico.${missing} does not exist`,
+            details: null,
+            hint: null,
+          }),
+          { status: 400, headers: { "content-type": "application/json" } },
+        )
+      }
       const filtered = rows.filter((row) => {
         if (cargoFilter?.startsWith("eq.")) return row.cargo_disputado === cargoFilter.slice(3)
         if (cargoFilter?.startsWith("neq.")) return row.cargo_disputado !== cargoFilter.slice(4)
@@ -326,6 +343,28 @@ describe("listas públicas de candidatos sem verificacao_campos", () => {
     assert.ok(call?.bytes, "camada de cache não foi exercitada")
     t.diagnostic(`lista de senadores em cache: ${call.bytes} bytes`)
     assert.ok(call.bytes < DATA_CACHE_ITEM_LIMIT_BYTES, `lista de senadores ficou em ${call.bytes} bytes`)
+  })
+
+  it("coluna opcional ausente (42703) refaz a consulta sem ela e nunca volta a pedir verificacao_campos", async () => {
+    const api = await loadApi()
+    const state = stubPostgrest([...governadores, ...senadores], {
+      missingColumns: ["formacao_instituicao", "foto_credito"],
+    })
+
+    const resource = await api.getCandidatosResource()
+
+    assert.equal(resource.sourceStatus, "live")
+    assert.equal(resource.data.length, governadores.length + senadores.length)
+
+    const sequence = state.candidatosSelects.map((select) => select.split(",").map((column) => column.trim()))
+    assert.equal(sequence.length, 3, `tentativas: ${state.candidatosSelects.join(" | ")}`)
+    const [full, semFormacaoInstituicao, semFotoCredito] = sequence
+    assert.ok(full.includes("formacao_instituicao") && full.includes("foto_credito"))
+    assert.deepEqual(semFormacaoInstituicao, full.filter((column) => column !== "formacao_instituicao"))
+    assert.deepEqual(semFotoCredito, semFormacaoInstituicao.filter((column) => column !== "foto_credito"))
+    for (const columns of sequence) {
+      assert.ok(!columns.includes("verificacao_campos"), `tentativa ainda carrega verificacao_campos: ${columns.join(",")}`)
+    }
   })
 
   it("getCandidatosComResumoResource() cabe no Data Cache com a coorte completa", async (t) => {
