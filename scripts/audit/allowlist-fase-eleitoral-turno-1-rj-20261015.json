@@ -1,0 +1,48 @@
+{
+  "versao": "2026-10-15",
+  "_comentario": "Allowlist fechada da migration 20261015221500 (correção do resultado do 1º turno de 2026 para o governo do RJ depois da retotalização), plano sha256 fc1899924e6bf8d8026a4a89aab7b7d16b7085602717bb8bcc6e664608a1b2f1.",
+  "fonte": "Divulgação oficial de resultados do TSE (resultados.tse.jus.br/oficial), arquivo do RJ retotalizado em 10/10/2026; URL e SHA-256 no cabeçalho da migration e no recibo. Proclamação do TRE-RJ em 15/10/2026.",
+  "motivo": "Corrigir a fase eleitoral de Douglas Ruas (eleito) e Eduardo Paes (não eleito) e encerrar a atualização dos dois, sem despublicar ficha nem apagar dado.",
+  "coorte": [
+    "douglas-ruas",
+    "eduardo-paes"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "candidaturas_fase_2026",
+      "ref": "fase-turno-1-rj-20261015221500",
+      "campos": [
+        "candidato_id",
+        "sq_candidato_2026",
+        "cargo_disputado",
+        "fase_eleitoral",
+        "fase_turno",
+        "atualizacao_encerrada_em",
+        "situacao_tse",
+        "fonte_url",
+        "fonte_sha256",
+        "migration_version",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20261015221500",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}

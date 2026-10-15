@@ -8839,8 +8839,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/rj/rj-c0003-e006259-u.json",
-        "sha256": "a76307dfeddacff97a336180fe4491595190f9b206e7545f6a037d2a68657160",
-        "gerado_tse": "04/10/2026 22:23:10"
+        "sha256": "85822afa330c4b85eaf3f517bced5c2f0f32395da564a9baf10b2c582255924e",
+        "gerado_tse": "10/10/2026 15:09:50"
       },
       "totais": {
         "secoes": 37675,
@@ -8853,8 +8853,8 @@
         "votos_validos": 8394627,
         "brancos": 501537,
         "percentual_brancos": 5.093883555,
-        "nulos": 675292,
-        "percentual_nulos": 6.858634186
+        "nulos": 949703,
+        "percentual_nulos": 9.6457021
       },
       "candidatos": [
         {
@@ -9022,27 +9022,6 @@
               "tipo": "v",
               "nome": "CAETANO ALBUQUERQUE",
               "partido": "PCO"
-            }
-          ]
-        },
-        {
-          "sq": "190002550196",
-          "numero": "10",
-          "nome": "ANTHONY WILLIAM GAROTINHO MATHEUS DE OLIVEIRA",
-          "nome_urna": "GAROTINHO",
-          "partido": "REPUBLICANOS",
-          "votos": 274411,
-          "percentual_validos": null,
-          "posicao": null,
-          "situacao_tse": "Não eleito",
-          "destinacao": "Anulado sub judice",
-          "fase": "fora_da_disputa",
-          "slug": "garotinho",
-          "companheiros": [
-            {
-              "tipo": "v",
-              "nome": "ANDRÉ MONTEIRO",
-              "partido": "DEMOCRATA"
             }
           ]
         }
