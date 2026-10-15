@@ -49,6 +49,73 @@ revalidate_url="https://puxaficha.com.br/api/revalidate"
 # tests/ingest-camara-local.test.ts reprova divergência.
 tags_json='["public-candidatos","public-candidato-metadata","public-candidato-ficha","public-candidatos-resumo","public-candidatos-comparaveis","public-indicadores-all","public-indicadores-estado","quiz-dataset","ranking-data","doador-reverse"]'
 
+# Revalida o cache público. Primeiro tenta o endpoint com o segredo local; se o
+# segredo faltar ou a resposta não for 2xx, despacha o workflow
+# `revalidate-cache.yml` (que usa o segredo do repositório) e ESPERA o run
+# concluir, porque a prova de cobertura lê o site público logo depois e um
+# cache ainda velho geraria recibos sobre um DTO desatualizado. Devolve 0 só
+# com confirmação (HTTP 2xx ou run com conclusão success).
+# O run é identificado por id maior que o último run existente antes do
+# disparo, sem depender do relógio local. Esperas limitadas; os argumentos
+# opcionais (intervalo em segundos, tentativas de busca e de espera) existem
+# para os testes.
+revalidar_cache() {
+  local repo_gh="thiago-salvador/puxa-ficha"
+  local intervalo="${1:-10}"
+  local tentativas_busca="${2:-6}"
+  local tentativas_espera="${3:-36}"
+  local status cabecalho tags_csv antes run_id n info
+  if [ -n "$segredo_revalidacao" ]; then
+    cabecalho="$base/revalidate-header"
+    printf 'x-pf-revalidate-secret: %s\n' "$segredo_revalidacao" >"$cabecalho"
+    status="$(printf '{"tags":%s}' "$tags_json" | curl -sS -o "$base/revalidate.json" -w '%{http_code}' \
+      -X POST "$revalidate_url" -H "content-type: application/json" -H "@$cabecalho" --data-binary @- || true)"
+    echo "revalidate HTTP $status"
+    case "$status" in 2??) return 0 ;; esac
+  else
+    echo "revalidate direto pulado: PF_REVALIDATE_SECRET ausente no arquivo de credenciais"
+  fi
+
+  # tags_json é uma lista JSON de strings simples; o workflow espera tags separadas por vírgula.
+  tags_csv="$(printf '%s' "$tags_json" | tr -d '[]"')"
+  antes="$(gh run list --workflow revalidate-cache.yml --repo "$repo_gh" --event workflow_dispatch -L 1 \
+    --json databaseId --jq '.[0].databaseId // 0' 2>/dev/null || true)"
+  case "$antes" in "" | *[!0-9]*) echo "revalidate via workflow: não consegui ler o último run"; return 1 ;; esac
+  if ! gh workflow run revalidate-cache.yml --repo "$repo_gh" -f "tags=$tags_csv"; then
+    echo "revalidate via workflow revalidate-cache.yml falhou ao despachar"
+    return 1
+  fi
+
+  run_id=""
+  n=0
+  while [ "$n" -lt "$tentativas_busca" ]; do
+    sleep "$intervalo"
+    run_id="$(gh run list --workflow revalidate-cache.yml --repo "$repo_gh" --event workflow_dispatch -L 10 \
+      --json databaseId --jq "[.[] | select(.databaseId > $antes) | .databaseId] | min // empty" 2>/dev/null || true)"
+    case "$run_id" in "" | *[!0-9]*) run_id="" ;; *) break ;; esac
+    n=$((n + 1))
+  done
+  if [ -z "$run_id" ]; then
+    echo "revalidate via workflow: run despachado não apareceu a tempo"
+    return 1
+  fi
+  echo "revalidate via workflow despachado: run $run_id"
+
+  n=0
+  while [ "$n" -lt "$tentativas_espera" ]; do
+    info="$(gh run view "$run_id" --repo "$repo_gh" --json status,conclusion \
+      --jq '.status + " " + (.conclusion // "")' 2>/dev/null || true)"
+    case "$info" in
+      "completed success") echo "revalidate via workflow concluído: run $run_id success"; return 0 ;;
+      completed*) echo "revalidate via workflow terminou sem sucesso: run $run_id (${info#completed })"; return 1 ;;
+    esac
+    sleep "$intervalo"
+    n=$((n + 1))
+  done
+  echo "revalidate via workflow: run $run_id não concluiu a tempo"
+  return 1
+}
+
 carimbo="$(date -u +%Y%m%dT%H%M%SZ)"
 mkdir -p "$dir_log" "$dir_estado"
 chmod 700 "$dir_log" "$dir_estado"
@@ -201,30 +268,9 @@ if [ "$rc_complementos" -ne 0 ]; then rc="$rc_complementos"; fi
 
 # Como o job `revalidate` do Actions: revalida mesmo com erro parcial, para
 # publicar o que chegou ao banco; o rc do ingest continua sendo o do script.
-# Primeiro tenta o endpoint com o segredo local; se o segredo faltar ou a
-# resposta não for 2xx, despacha o workflow `revalidate-cache.yml` (que usa o
-# segredo do repositório). O rc só vira 1 se os dois caminhos falharem.
+# Ver revalidar_cache: o rc só vira 1 se nenhum dos dois caminhos confirmar.
 revalidado=0
-if [ -n "$segredo_revalidacao" ]; then
-  cabecalho="$base/revalidate-header"
-  printf 'x-pf-revalidate-secret: %s\n' "$segredo_revalidacao" >"$cabecalho"
-  status="$(printf '{"tags":%s}' "$tags_json" | curl -sS -o "$base/revalidate.json" -w '%{http_code}' \
-    -X POST "$revalidate_url" -H "content-type: application/json" -H "@$cabecalho" --data-binary @- || true)"
-  echo "revalidate HTTP $status"
-  case "$status" in 2??) revalidado=1 ;; esac
-else
-  echo "revalidate direto pulado: PF_REVALIDATE_SECRET ausente no arquivo de credenciais"
-fi
-if [ "$revalidado" -ne 1 ]; then
-  # tags_json é uma lista JSON de strings simples; o workflow espera tags separadas por vírgula.
-  tags_csv="$(printf '%s' "$tags_json" | tr -d '[]"')"
-  if gh workflow run revalidate-cache.yml --repo thiago-salvador/puxa-ficha -f "tags=$tags_csv"; then
-    echo "revalidate via workflow revalidate-cache.yml despachado (execução assíncrona; conferir no Actions)"
-    revalidado=1
-  else
-    echo "revalidate via workflow revalidate-cache.yml falhou ao despachar"
-  fi
-fi
+if revalidar_cache; then revalidado=1; fi
 [ "$revalidado" -eq 1 ] || [ "$rc" -ne 0 ] || rc=1
 
 # A prova de cobertura é uma segunda leitura: captura a revisão oficial e o

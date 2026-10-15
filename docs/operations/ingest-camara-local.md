@@ -77,9 +77,10 @@ requisição não mudam nada, porque a conexão não chega ao TLS.
 7. revalida o cache público com as mesmas tags do `ingest.yml`: primeiro por
    `POST /api/revalidate`, se o arquivo de credenciais trouxer
    `PF_REVALIDATE_SECRET`; se o segredo faltar ou a resposta não for 2xx,
-   despacha o workflow `revalidate-cache.yml` com `gh workflow run` (a
-   execução é assíncrona e usa o segredo do repositório). O código de saída só
-   vira 1 se os dois caminhos falharem;
+   despacha o workflow `revalidate-cache.yml` com `gh workflow run`, localiza o
+   run disparado e espera até 6 minutos a conclusão com sucesso (o passo
+   seguinte lê o site público, então não segue sobre cache ainda desatualizado).
+   O código de saída vira 1 se nenhum dos dois caminhos confirmar;
 8. relê os perfis públicos e as votações-chave, calcula a matriz atual e captura
    as fontes parlamentares oficiais apenas dos slugs com células legislativas
    abertas; monta recibos de cobertura e aplica somente os que passam pela
@@ -158,7 +159,7 @@ Nenhum destes passos é feito por agente ou CI.
    `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/br.com.puxaficha.ingest-camara.plist`.
 5. **Primeira rodada assistida (opcional):**
    `launchctl kickstart gui/$(id -u)/br.com.puxaficha.ingest-camara` e
-   conferir no log `ingest camara rc=0` e `revalidate HTTP 200` (ou a linha de workflow despachado, no caminho alternativo).
+   conferir no log `ingest camara rc=0` e `revalidate HTTP 200` (ou `revalidate via workflow concluído: run <id> success`, no caminho alternativo).
 6. **Manter o Mac ligado na quarta de madrugada.** Se ele estiver dormindo no
    horário, o launchd roda a tarefa ao acordar; se estiver desligado, a
    semana passa sem coleta e a auditoria de frescor acusa.
