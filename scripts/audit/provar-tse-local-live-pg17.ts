@@ -86,8 +86,10 @@ async function serve(): Promise<void> {
       res.writeHead(200, { "content-type": "application/json" })
       res.end(JSON.stringify({ sourceStatus: "live", data: candidate }))
     } catch (error) {
+      // O detalhe fica no stderr local; a resposta HTTP nao carrega dados do erro capturado.
+      console.error(error instanceof Error ? error.message : String(error))
       res.writeHead(500, { "content-type": "application/json" })
-      res.end(JSON.stringify({ error: error instanceof Error ? error.message : String(error) }))
+      res.end(JSON.stringify({ error: "readback local falhou" }))
     }
   })
   server.listen(Number(process.env.PF_TSE_LIVE_SERVER_PORT ?? 43871), "127.0.0.1")
