@@ -74,7 +74,12 @@ export async function fetchOfficialWithRetry(
   throw lastError instanceof Error ? lastError : new Error(String(lastError ?? "fetch falhou"))
 }
 
-export function validateContentLength(declared: string | null, actualBytes: number, url: string): void {
+export function validateContentLength(declared: string | null, actualBytes: number, url: string, contentEncoding: string | null = null): void {
+  // Com content-encoding (gzip, br...), o Content-Length descreve o corpo comprimido
+  // e o fetch entrega o corpo ja decodificado; os tamanhos nao sao comparaveis.
+  // So pula para codificacoes que o fetch decodifica; qualquer outra mantem a checagem.
+  const encodings = (contentEncoding ?? "").split(",").map((item) => item.trim().toLowerCase()).filter((item) => item !== "" && item !== "identity")
+  if (encodings.length > 0 && encodings.every((item) => ["gzip", "x-gzip", "deflate", "br"].includes(item))) return
   if (declared !== null && (!/^\d+$/.test(declared) || Number(declared) !== actualBytes)) {
     throw new Error(`${url}: Content-Length divergente (${declared} declarado, ${actualBytes} recebido)`)
   }
@@ -306,7 +311,7 @@ async function fetchRaw(url: string): Promise<{ bytes: Buffer; contentType: stri
   const response = await fetchOfficialWithRetry(parsed.href, { signal: AbortSignal.timeout(120_000), headers: { Accept: "application/json" } })
   const contentType = response.headers.get("content-type") ?? ""
   const bytes = Buffer.from(await response.arrayBuffer())
-  validateContentLength(response.headers.get("content-length"), bytes.length, url)
+  validateContentLength(response.headers.get("content-length"), bytes.length, url, response.headers.get("content-encoding"))
   if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`)
   if (bytes.length > MAX_BYTES) throw new Error(`${url}: resposta excede ${MAX_BYTES} bytes`)
   if (!/json/i.test(contentType)) throw new Error(`${url}: formato não JSON (${contentType || "sem content-type"}); XML/CSV permanece unresolved`)
@@ -318,7 +323,7 @@ async function fetchZip(url: string): Promise<Buffer> {
   const response = await fetchOfficialWithRetry(officialUrl(url).href, { signal: AbortSignal.timeout(45_000), headers: { Accept: "application/zip, application/octet-stream" } })
   if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`)
   const bytes = Buffer.from(await response.arrayBuffer())
-  validateContentLength(response.headers.get("content-length"), bytes.length, url)
+  validateContentLength(response.headers.get("content-length"), bytes.length, url, response.headers.get("content-encoding"))
   if (!bytes.length || bytes.length > MAX_BYTES) throw new Error(`ZIP vazio ou acima do limite: ${url}`)
   return bytes
 }
@@ -477,7 +482,7 @@ async function captureCeapsCsv(destination: string, year: number): Promise<Page 
   const url = `${CEAPS}_${year}.csv`
   const response = await fetchOfficialWithRetry(officialUrl(url).href, { signal: AbortSignal.timeout(120_000), headers: { Accept: "text/csv, application/octet-stream" } })
   const sourceBytes = Buffer.from(await response.arrayBuffer())
-  validateContentLength(response.headers.get("content-length"), sourceBytes.length, url)
+  validateContentLength(response.headers.get("content-length"), sourceBytes.length, url, response.headers.get("content-encoding"))
   if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`)
   if (sourceBytes.length > MAX_BYTES) throw new Error(`${url}: resposta excede ${MAX_BYTES} bytes`)
   const sourceSha256 = sha256(sourceBytes)

@@ -1,5 +1,8 @@
 import assert from "node:assert/strict"
-import { readdirSync, readFileSync } from "node:fs"
+import { spawnSync } from "node:child_process"
+import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
+import { tmpdir } from "node:os"
+import { join } from "node:path"
 import { afterEach, describe, it } from "node:test"
 import { parse } from "yaml"
 
@@ -270,6 +273,139 @@ describe("agente local da Câmara", () => {
     const doWorkflow = JSON.parse(/TAGS_JSON: >-\n\s+(\[.*\])/.exec(textoWorkflow)?.[1] ?? "null")
     assert.ok(Array.isArray(doWorkflow) && doWorkflow.length > 0)
     assert.deepEqual(doScript, doWorkflow)
+  })
+
+  describe("revalidação do cache (função revalidar_cache, com gh e curl simulados)", () => {
+    const funcao = /\nrevalidar_cache\(\) \{[\s\S]*?\n\}\n/.exec(script)?.[0] ?? ""
+
+    type Cenario = {
+      segredo?: string
+      curlStatus?: string
+      dispatchRc?: string
+      dispatchOut?: string
+      antes?: string
+      depois?: string
+      view?: string
+      esperaTentativas?: string
+    }
+
+    function rodar(cenario: Cenario) {
+      const dir = mkdtempSync(join(tmpdir(), "pf-reval-"))
+      try {
+        const bin = join(dir, "bin")
+        mkdirSync(bin)
+        const log = join(dir, "chamadas.log")
+        writeFileSync(log, "")
+        const stub = (nome: string, corpo: string) => writeFileSync(join(bin, nome), `#!/bin/bash\n${corpo}\n`, { mode: 0o755 })
+        stub("curl", 'cat >/dev/null\necho "curl $*" >> "$STUB_LOG"\necho "$STUB_CURL_STATUS"')
+        stub("gh", [
+          'echo "gh $*" >> "$STUB_LOG"',
+          'case "$1 $2" in',
+          '  "workflow run") if [ -n "${STUB_DISPATCH_OUT-}" ]; then echo "$STUB_DISPATCH_OUT"; fi; exit "${STUB_DISPATCH_RC:-0}" ;;',
+          '  "run list")',
+          '    n="$(cat "$STUB_DIR/n" 2>/dev/null || echo 0)"; n=$((n + 1)); echo "$n" > "$STUB_DIR/n"',
+          '    if [ "$n" -eq 1 ]; then echo "${STUB_ANTES-100}"; else echo "${STUB_DEPOIS-101}"; fi ;;',
+          '  "run view") echo "$STUB_VIEW" ;;',
+          "esac",
+          "exit 0",
+        ].join("\n"))
+        writeFileSync(join(dir, "funcao.sh"), funcao)
+        const tagsJson = /tags_json='([^']+)'/.exec(script)?.[1] ?? "[]"
+        const resultado = spawnSync("/bin/bash", ["-c", [
+          '. "$STUB_DIR/funcao.sh"',
+          `segredo_revalidacao='${cenario.segredo ?? ""}'`,
+          'base="$STUB_DIR"',
+          `tags_json='${tagsJson}'`,
+          'revalidate_url="https://example.invalid/api/revalidate"',
+          `revalidar_cache 0 2 ${cenario.esperaTentativas ?? "3"}`,
+          'echo "rc=$?"',
+        ].join("\n")], {
+          encoding: "utf8",
+          env: {
+            NODE_ENV: "test",
+            PATH: `${bin}:/usr/bin:/bin`,
+            STUB_DIR: dir,
+            STUB_LOG: log,
+            STUB_CURL_STATUS: cenario.curlStatus ?? "000",
+            STUB_DISPATCH_RC: cenario.dispatchRc ?? "0",
+            STUB_DISPATCH_OUT: cenario.dispatchOut ?? "",
+            ...(cenario.antes === undefined ? {} : { STUB_ANTES: cenario.antes }),
+            ...(cenario.depois === undefined ? {} : { STUB_DEPOIS: cenario.depois }),
+            STUB_VIEW: cenario.view ?? "completed success",
+          },
+        })
+        return { rc: /rc=(\d+)/.exec(resultado.stdout)?.[1], stdout: resultado.stdout, chamadas: readFileSync(log, "utf8") }
+      } finally {
+        rmSync(dir, { recursive: true, force: true })
+      }
+    }
+
+    it("a função existe e o ingest só segue com o resultado dela", () => {
+      assert.ok(funcao.length > 0, "revalidar_cache não encontrada")
+      assert.match(script, /if revalidar_cache; then revalidado=1; fi\n\[ "\$revalidado" -eq 1 \] \|\| \[ "\$rc" -ne 0 \] \|\| rc=1/)
+      assert.ok(script.indexOf("if revalidar_cache;") < script.indexOf("exportar-perfis-publicos.ts"), "revalida antes de ler o site público")
+      const tagsCsv = JSON.parse(/tags_json='([^']+)'/.exec(script)?.[1] ?? "null").join(",")
+      assert.equal(tagsCsv.split(",").length, 10)
+      assert.match(readFileSync(".github/workflows/revalidate-cache.yml", "utf8"), /workflow_dispatch:\s+inputs:\s+tags:/)
+    })
+
+    it("HTTP 2xx do endpoint basta e não chama o gh", () => {
+      const r = rodar({ segredo: "x", curlStatus: "200" })
+      assert.equal(r.rc, "0")
+      assert.doesNotMatch(r.chamadas, /^gh /m)
+    })
+
+    it("endpoint recusado (401) cai para o workflow e espera o run concluir com sucesso", () => {
+      const r = rodar({ segredo: "x", curlStatus: "401" })
+      assert.equal(r.rc, "0")
+      assert.match(r.chamadas, /^gh workflow run revalidate-cache\.yml --repo thiago-salvador\/puxa-ficha -f tags=public-candidatos,public-candidato-metadata,/m)
+      assert.match(r.chamadas, /^gh run view 101 /m)
+      assert.match(r.stdout, /run 101/)
+    })
+
+    it("com a URL do run no disparo, espera esse id exato mesmo havendo run mais novo de outro disparo", () => {
+      const r = rodar({ dispatchOut: "https://github.com/thiago-salvador/puxa-ficha/actions/runs/555", depois: "999" })
+      assert.equal(r.rc, "0")
+      assert.match(r.chamadas, /^gh run view 555 /m)
+      assert.doesNotMatch(r.chamadas, /^gh run view (101|999) /m)
+      assert.equal((r.chamadas.match(/^gh run list /gm) ?? []).length, 1, "só a leitura anterior ao disparo")
+      assert.match(r.stdout, /run 555/)
+    })
+
+    it("sem a URL no disparo usa a descoberta por id (fallback)", () => {
+      const r = rodar({ dispatchOut: "workflow disparado" })
+      assert.equal(r.rc, "0")
+      assert.match(r.chamadas, /^gh run view 101 /m)
+      assert.equal((r.chamadas.match(/^gh run list /gm) ?? []).length, 2)
+    })
+
+    it("run próprio cancelado conta como falha com linha clara", () => {
+      const r = rodar({ dispatchOut: "https://github.com/thiago-salvador/puxa-ficha/actions/runs/555", view: "completed cancelled" })
+      assert.equal(r.rc, "1")
+      assert.match(r.stdout, /CANCELADO: run 555/)
+    })
+
+    it("sem segredo local vai direto ao workflow, sem chamar o curl", () => {
+      const r = rodar({})
+      assert.equal(r.rc, "0")
+      assert.doesNotMatch(r.chamadas, /^curl /m)
+      assert.match(r.chamadas, /^gh workflow run /m)
+    })
+
+    it("falha o rc quando o run termina sem sucesso, não aparece, não conclui ou o disparo falha", () => {
+      assert.equal(rodar({ view: "completed failure" }).rc, "1")
+      assert.equal(rodar({ depois: "" }).rc, "1")
+      assert.equal(rodar({ view: "in_progress " }).rc, "1")
+      const semDisparo = rodar({ dispatchRc: "1" })
+      assert.equal(semDisparo.rc, "1")
+      assert.doesNotMatch(semDisparo.chamadas, /^gh run view /m)
+    })
+
+    it("não dispara o workflow se não consegue ler o último run existente", () => {
+      const r = rodar({ antes: "" })
+      assert.equal(r.rc, "1")
+      assert.doesNotMatch(r.chamadas, /^gh workflow run /m)
+    })
   })
 
   it("instalador só instala o que está na main publicada", () => {

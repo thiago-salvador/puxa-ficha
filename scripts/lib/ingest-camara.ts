@@ -104,7 +104,21 @@ export async function coletarPaginasCamara<T>(
     await onPage?.({ page, url, body })
     const dados = requireCamaraArray(json, url)
     const declaredLast = parseLastPageFromLinks(json.links)
-    if (declaredLast == null) throw new Error(`Paginação Câmara sem rel=last válido (${url})`)
+    if (declaredLast == null) {
+      // A API v2 devolve apenas rel=self (sem rel=last) quando o conjunto e vazio.
+      // So aceitamos isso na pagina 1, com dados vazios e links exatamente no
+      // formato documentado (so rel=self com href), e somente se uma segunda
+      // chamada identica confirmar o mesmo vazio. Links ausentes, vazios ou com
+      // qualquer rel de continuacao (next, last, prev, first) continuam falhando.
+      if (page !== 1 || dados.length !== 0 || !isSelfOnlyLinks(json.links)) {
+        throw new Error(`Paginação Câmara sem rel=last válido (${url})`)
+      }
+      const confirm = await fetchPage(url)
+      if (!Array.isArray(confirm.json.dados) || confirm.json.dados.length !== 0 || !isSelfOnlyLinks(confirm.json.links)) {
+        throw new Error(`Resposta vazia Câmara sem rel=last não corroborada por segunda chamada (${url})`)
+      }
+      break
+    }
     if (lastPage !== null && lastPage !== declaredLast) throw new Error(`Paginação Câmara mudou de total durante a coleta (${url})`)
     lastPage = declaredLast
     if (page > declaredLast) throw new Error(`Paginação Câmara excedeu última página declarada (${url})`)
@@ -248,6 +262,11 @@ export function parseDeclaredCountFromLinks(
 ): number | null {
   if (!Number.isFinite(itensNaPrimeiraPagina) || itensNaPrimeiraPagina < 0) return null
   return parseLastPageFromLinks(links)
+}
+
+function isSelfOnlyLinks(links: { rel: string; href: string }[] | undefined): boolean {
+  if (!Array.isArray(links) || links.length === 0) return false
+  return links.every((l) => l?.rel === "self" && typeof l.href === "string" && l.href.trim() !== "")
 }
 
 function parseLastPageFromLinks(links: { rel: string; href: string }[] | undefined): number | null {
