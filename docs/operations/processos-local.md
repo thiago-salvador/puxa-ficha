@@ -105,10 +105,25 @@ recibo a 14 dias e geram alerta (`::warning::`); a terceira reprova
 (`::error::`), uns 7 dias depois da primeira falha. A tolerância de 1 dia
 absorve rodada atrasada, que o launchd executa quando o Mac acorda.
 
-A mesma regra vale para o alvo cujo CNJ foi para revisão humana: o recibo
-anterior dele não é renovado, e passados 15 dias a conferência depois da coleta
-reprova, a rodada local grava o marcador de falha e o workflow fica vermelho
-até a revisão. É o comportamento esperado: o SLA daquele candidato está
+Processo que a decisão editorial mandou não publicar não trava a renovação. O
+aplicador tira do recibo novo o item de `ocorrencias_ambiguas` ou
+`homonimos_descartados` cujo par (candidato, CNJ) bate exatamente com
+`scripts/data/processos-decisao-editorial.json`. O recibo não registra a
+retirada, porque o detalhe é exposto na API pública: a contagem do motivo
+acompanha a lista restante. A quantidade e as chaves de hash saem só no JSON do
+aplicador (`excluidos_por_veto_editorial`, `excluidos_por_veto`). A retirada só vale
+quando sobra ao menos uma ocorrência ambígua e o motivo tem a forma do coletor
+(contagem no início, sufixo do teto do DJEN preservado); sem isso o recibo teria
+uma forma que o coletor nunca produz, e o alvo segue para a revisão humana. A
+retirada nunca gera ausência confirmada: `vazio_confirmado` que perdeu uma
+ocorrência ambígua renova como `indeterminado`.
+
+Continua indo para revisão humana, sem renovar o recibo anterior, o alvo cujo CNJ
+vetado esteja em outro lugar do plano (por exemplo em `processos`, entre os
+achados publicáveis, ou no recibo anterior) ou cuja confirmação editorial
+pendente não seja válida. Nesse caso, passados 15 dias a conferência depois da
+coleta reprova, a rodada local grava o marcador de falha e o workflow fica
+vermelho até a revisão. É o comportamento esperado: o SLA daquele candidato está
 vencido.
 
 ## Sinal de falha
