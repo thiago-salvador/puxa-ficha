@@ -26,7 +26,7 @@ import {
 import { supabase } from "./lib/supabase"
 import { registrarColetaOuFalhar, type EntradaColeta } from "./lib/coleta-log"
 import { normalizarTextoJudicial } from "./curadoria-processos-lote"
-import { carregarDecisoes, decididoNaoPublicar } from "./lib/processos-decisao-editorial"
+import { carregarDecisoes, chaveDecisao, decididoNaoPublicar } from "./lib/processos-decisao-editorial"
 import { stripAccents } from "../src/lib/strip-accents"
 
 const TOTAL_CANDIDATOS = 185
@@ -81,6 +81,8 @@ interface RegistroEvidencia {
   classificacao: ClassificacaoEvidencia
   motivo: string
   processos: Array<Record<string, unknown>>
+  /** Pares CNJ retirados do recibo por decisão editorial "não publicar" (só a contagem vai ao detalhe). */
+  excluidos_por_veto?: number
 }
 
 interface LoteEvidencia {
@@ -445,6 +447,12 @@ function evidenciasPublicaveis(
   })
 }
 
+/** Campo do detalhe que declara quantos pares o veto editorial tirou do recibo; sem veto, nada muda no texto. */
+function detalheExclusaoPorVeto(candidato: RegistroEvidencia): string[] {
+  const excluidos = candidato.excluidos_por_veto ?? 0
+  return excluidos > 0 ? [`excluidos_decisao_editorial: ${excluidos}`] : []
+}
+
 function homonimosAuditaveis(
   homonimos: Array<Record<string, unknown>>,
   caminho: string,
@@ -536,6 +544,7 @@ function criarPlanoIdentidadeNaoConfirmada(
     ...(tentativas.anos.length > 0 ? [`anos consultados: ${textoLimpo(tentativas.anos.join(", "))}`] : []),
     `ocorrencias_ambiguas: ${JSON.stringify(ambiguos)}`,
     `homonimos_descartados: ${JSON.stringify(homonimos)}`,
+    ...detalheExclusaoPorVeto(candidato),
   ].join("; ")
   const args = [
     argumento("slug", candidato.slug),
@@ -645,6 +654,7 @@ function criarPlano(candidato: RegistroEvidencia, lote: LoteEvidencia): PlanoReg
     `motivo: ${textoLimpo(candidato.motivo)}`,
     `ocorrencias_ambiguas: ${JSON.stringify(ambiguos)}`,
     `homonimos_descartados: ${JSON.stringify(homonimos)}`,
+    ...detalheExclusaoPorVeto(candidato),
   ].join("; ")
 
   const args = [
@@ -1064,6 +1074,54 @@ export function bloquearPlanosPorDecisao(
   return { planos: permitidos, revisaoHumana, bloqueados }
 }
 
+export interface ExclusaoPorVeto {
+  slug: string
+  /** Pares (candidato, CNJ) distintos retirados do recibo. */
+  quantidade: number
+  /** `chaveDecisao` de cada par, em ordem; é a chave do arquivo de vetos, nunca o CNJ. */
+  hashes: string[]
+}
+
+/**
+ * Renova o recibo sem o CNJ que a decisão editorial mandou não publicar. Só
+ * sai da evidência o item de `ocorrencias_ambiguas` ou `homonimos_descartados`
+ * com CNJ válido e par (candidato, CNJ) idêntico a um veto: coincidência exata
+ * de hash, nada aproximado. Processo publicável (`processos`), CNJ fora do
+ * arquivo de vetos e qualquer outro caminho seguem como antes, e o
+ * `bloquearPlanosPorDecisao` continua a barrar o plano que ainda carregar um
+ * CNJ vetado. A classificação não muda: sem o item, o recibo segue
+ * `indeterminado` e não vira ausência confirmada.
+ */
+export function excluirVetadosDaEvidencia(
+  evidencia: EvidenciaFinal,
+  decisoes: ReadonlySet<string>,
+): { evidencia: EvidenciaFinal; exclusoes: ExclusaoPorVeto[] } {
+  const exclusoes: ExclusaoPorVeto[] = []
+  const lotes = evidencia.lotes.map((lote) => ({
+    ...lote,
+    candidatos: lote.candidatos.map((candidato) => {
+      const hashes = new Set<string>()
+      const manter = (item: Record<string, unknown>): boolean => {
+        const numero = item.numero_cnj
+        if (typeof numero !== "string" || !cnjValido(numero) || !decididoNaoPublicar(decisoes, candidato.slug, numero)) return true
+        hashes.add(chaveDecisao(candidato.slug, numero))
+        return false
+      }
+      const ocorrenciasAmbiguas = (candidato.ocorrencias_ambiguas ?? []).filter(manter)
+      const homonimosDescartados = candidato.homonimos_descartados.filter(manter)
+      if (hashes.size === 0) return candidato
+      exclusoes.push({ slug: candidato.slug, quantidade: hashes.size, hashes: [...hashes].sort() })
+      return {
+        ...candidato,
+        ocorrencias_ambiguas: ocorrenciasAmbiguas,
+        homonimos_descartados: homonimosDescartados,
+        excluidos_por_veto: hashes.size,
+      }
+    }),
+  }))
+  return { evidencia: { ...evidencia, lotes }, exclusoes }
+}
+
 /** Quem pode registrar confirmação editorial de identidade. */
 export const DECISORES_EDITORIAIS: readonly string[] = ["Thiago Salvador"]
 
@@ -1374,7 +1432,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   const opcoes = lerOpcoes(argv)
   const decisoes = carregarDecisoes()
   const bruto = JSON.parse(readFileSync(opcoes.evidence, "utf8")) as unknown
-  const evidencia = validarEvidencia(bruto)
+  const { evidencia, exclusoes: exclusoesPorVeto } = excluirVetadosDaEvidencia(validarEvidencia(bruto), decisoes)
+  const excluidosPorVeto = exclusoesPorVeto.reduce((total, item) => total + item.quantidade, 0)
   const planosCriados = criarPlanos(evidencia)
   let planos = planosCriados
 
@@ -1420,6 +1479,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       coorte_atual: evidencia.coorte_atual,
       candidatos_validados: planosCriados.length,
       decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
+      excluidos_por_veto_editorial: excluidosPorVeto,
+      excluidos_por_veto: exclusoesPorVeto,
       revisao_humana: revisaoHumana,
       mudancas: mudancas.map((plano) => ({ slug: plano.slug, resultado: plano.resultado, args: [...plano.args, "--dry-run"] })),
     }, null, 2))
@@ -1442,6 +1503,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       }, {}),
       candidatos_validados: planos.length,
       decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
+      excluidos_por_veto_editorial: excluidosPorVeto,
+      excluidos_por_veto: exclusoesPorVeto,
       revisao_humana: revisaoHumana,
       lotes_validados: evidencia.lotes.length,
       planos_exibidos: selecionados.length,
@@ -1482,6 +1545,8 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       backup: backupPath,
       candidatos_validados: planosCriados.length,
       decisoes_editoriais_bloqueadas: bloqueio.bloqueados,
+      excluidos_por_veto_editorial: excluidosPorVeto,
+      excluidos_por_veto: exclusoesPorVeto,
       candidatos_pulados: preflight.equivalentes.length,
       candidatos_inseridos: preflight.pendentes.length,
       mantidos_sem_rebaixar: mantidosSemRebaixar,
