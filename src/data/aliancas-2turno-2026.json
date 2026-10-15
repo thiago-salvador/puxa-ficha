@@ -679,24 +679,6 @@
     },
     {
       "disputa": "Governador",
-      "uf": "RJ",
-      "quem": "WILLIAM SIRI",
-      "tipo": "candidato",
-      "partido": "PSOL",
-      "posicao": "sem_declaracao",
-      "apoia": null,
-      "data_declaracao": null,
-      "fontes": [
-        {
-          "url": "https://expressorio.com.br/william-siri-cobra-eduardo-paes-por-medidas-para-servidores-e-diz-que-nao-apoiara-douglas-ruas/",
-          "veiculo": "Expresso Rio",
-          "publicado_em": "2026-10-06T15:01:00-03:00",
-          "trecho": "afirmou que não declarará apoio a Douglas Ruas (PL) no segundo turno"
-        }
-      ]
-    },
-    {
-      "disputa": "Governador",
       "uf": "RN",
       "quem": "ÁLVARO DIAS",
       "tipo": "candidato",
@@ -1409,7 +1391,7 @@
       "quem": "DOUGLAS RUAS",
       "tipo": "governador",
       "partido": "PL",
-      "situacao": "segundo_turno",
+      "situacao": "eleito",
       "posicao": "apoio",
       "apoia": "FLÁVIO BOLSONARO",
       "data_declaracao": "2026-10-08",
@@ -1419,31 +1401,6 @@
           "veiculo": "O Globo",
           "publicado_em": "2026-10-08",
           "trecho": "Estarei todos os dias nas ruas até o dia 25 para eleger o Flávio."
-        }
-      ]
-    },
-    {
-      "disputa": "Presidente",
-      "uf": "RJ",
-      "quem": "EDUARDO PAES",
-      "tipo": "governador",
-      "partido": "PSD",
-      "situacao": "segundo_turno",
-      "posicao": "apoio",
-      "apoia": "LULA",
-      "data_declaracao": "2026-10-07",
-      "fontes": [
-        {
-          "url": "https://www1.folha.uol.com.br/poder/2026/10/faco-campanha-mas-nao-sou-vassalo-do-lula-diz-eduardo-paes.shtml",
-          "veiculo": "Folha de S.Paulo",
-          "publicado_em": "2026-10",
-          "trecho": "voto no presidente Lula, faço campanha para o presidente Lula"
-        },
-        {
-          "url": "https://cbn.globo.com/politica/noticia/2026/10/07/na-primeira-agenda-pos-1o-turno-paes-diz-que-quer-conquistar-tambem-eleitores-de-flavio-bolsonaro.ghtml",
-          "veiculo": "CBN / Globo",
-          "publicado_em": "2026-10-07T14:54:00-03:00",
-          "trecho": "Nesta quarta-feira, na Rocinha, ele reafirmou o apoio a Lula"
         }
       ]
     },

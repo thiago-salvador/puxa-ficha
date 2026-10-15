@@ -119,7 +119,7 @@ describe("alianças do 2º turno: governadores sobre a Presidência", () => {
     const a = comGovernadores(
       governador("TARCÍSIO", "SP", "REPUBLICANOS", "eleito", "apoio", "FLÁVIO BOLSONARO"),
       governador("JERÔNIMO RODRIGUES", "BA", "PT", "eleito", "apoio", "LULA"),
-      governador("EDUARDO PAES", "RJ", "PSD", "segundo_turno", "neutro", null),
+      governador("LEANDRO GRASS", "DF", "PT", "segundo_turno", "neutro", null),
       governador("SERGIO MORO", "PR", "PL", "eleito", "sem_declaracao", null),
     )!
     assert.ok(a)
@@ -128,7 +128,7 @@ describe("alianças do 2º turno: governadores sobre a Presidência", () => {
     const chaveFlavio = normalizarNomeUrna(fa.nome_urna) === "FLAVIO BOLSONARO" ? "a" : "b"
     assert.deepEqual(g[chaveFlavio].map((i) => i.quem), ["TARCÍSIO"])
     assert.deepEqual(g[chaveFlavio === "a" ? "b" : "a"].map((i) => i.quem), ["JERÔNIMO RODRIGUES"])
-    assert.deepEqual(g.neutro.map((i) => i.quem), ["EDUARDO PAES"])
+    assert.deepEqual(g.neutro.map((i) => i.quem), ["LEANDRO GRASS"])
     assert.deepEqual(g.sem.map((i) => i.quem), ["SERGIO MORO"])
     assert.ok(a.itens.filter((i) => i.tipo === "governador").every((i) => i.sq && !i.fora_do_resultado))
     const semGov = comGovernadores()!
@@ -138,7 +138,9 @@ describe("alianças do 2º turno: governadores sobre a Presidência", () => {
 
   it("falha fechado: situação que não bate com o snapshot, UF nacional, disputa de governador, situação em outro tipo", () => {
     assert.equal(comGovernadores(governador("TARCÍSIO", "SP", "REPUBLICANOS", "segundo_turno", "apoio", "LULA")), null, "Tarcísio foi eleito")
-    assert.equal(comGovernadores(governador("EDUARDO PAES", "RJ", "PSD", "eleito", "neutro", null)), null, "Paes está no 2º turno")
+    assert.equal(comGovernadores(governador("LEANDRO GRASS", "DF", "PT", "eleito", "neutro", null)), null, "Grass está no 2º turno")
+    assert.equal(comGovernadores(governador("EDUARDO PAES", "RJ", "PSD", "segundo_turno", "neutro", null)), null, "RJ terminou no 1º turno")
+    assert.ok(comGovernadores(governador("DOUGLAS RUAS", "RJ", "PL", "eleito", "neutro", null)), "Ruas eleito no 1º turno")
     assert.equal(comGovernadores(governador("FULANO", "SP", "PL", "eleito", "neutro", null)), null, "sem par no snapshot")
     assert.equal(comGovernadores(governador("TARCÍSIO", "SP", "REPUBLICANOS", null, "neutro", null)), null, "sem situação")
     assert.equal(comGovernadores(governador("TARCÍSIO", "BR", "REPUBLICANOS", "eleito", "neutro", null)), null)
@@ -211,7 +213,7 @@ describe("Meu candidato saiu: dados do seletor", () => {
     assert.equal(dados.coleta, "05/10, 21h50")
     const grupos = [...new Set(dados.opcoes.map((o) => o.grupo))]
     assert.equal(grupos[0], "Presidente")
-    assert.deepEqual(grupos.slice(1), ["Governador, Acre", "Governador, Amazonas", "Governador, Distrito Federal", "Governador, Espírito Santo", "Governador, Rio de Janeiro", "Governador, Rio Grande do Norte", "Governador, Tocantins"])
+    assert.deepEqual(grupos.slice(1), ["Governador, Acre", "Governador, Amazonas", "Governador, Distrito Federal", "Governador, Espírito Santo", "Governador, Rio Grande do Norte", "Governador, Tocantins"])
     assert.equal(dados.opcoes.filter((o) => o.grupo === "Presidente").length, 10)
     const nomes = dados.opcoes.map((o) => o.nome)
     for (const finalista of ["Flavio Bolsonaro", "Lula", "Douglas Ruas", "Eduardo Paes"]) assert.ok(!nomes.includes(finalista))
@@ -237,16 +239,17 @@ describe("Meu candidato saiu: dados do seletor", () => {
     assert.equal(zema.percentual, "0,27%")
     assert.equal(zema.votos, new Intl.NumberFormat("pt-BR").format(zemaNoSnapshot.votos))
 
-    const siri = dados.opcoes.find((o) => o.nome === "William Siri")!
-    assert.equal(siri.posicao.declarada, false)
-    assert.equal(siri.posicao.rotulo, "Sem declaração pública até 05/10, 21h50")
-    assert.equal(siri.posicao.fonte, null)
+    const helder = dados.opcoes.find((o) => o.nome === "Helder Salomão")!
+    assert.equal(helder.posicao.declarada, false)
+    assert.equal(helder.posicao.rotulo, "Sem declaração pública até 05/10, 21h50")
+    assert.equal(helder.posicao.fonte, null)
     // Quem não está no levantamento não ganha "sem declaração pública": ninguém procurou.
-    const foraDoLevantamento = dados.opcoes.find((o) => o.nome === "Coronel Busnello")!
+    const foraDoLevantamento = dados.opcoes.find((o) => o.nome === "Breno Barcelos")!
     assert.equal(foraDoLevantamento.posicao.declarada, false)
     assert.equal(foraDoLevantamento.posicao.rotulo, "Posição não levantada pelo Puxa Ficha")
-    assert.equal(siri.confronto.href, "/1o-turno/rj")
-    assert.equal(siri.confronto.rotulo, "Governador Rio de Janeiro: Douglas Ruas x Eduardo Paes")
+    assert.equal(helder.confronto.href, "/1o-turno/es")
+    assert.equal(helder.confronto.rotulo, "Governador Espírito Santo: Lorenzo Pazolini x Ricardo Ferraço")
+    assert.ok(!dados.opcoes.some((o) => o.nome === "William Siri"), "RJ terminou no 1º turno")
   })
 
   it("é serializável e some sem alianças válidas", () => {
@@ -260,23 +263,17 @@ function cand(p: Partial<CandidatoResultado1Turno> & Pick<CandidatoResultado1Tur
 }
 
 describe("ressalva de votos anulados sub judice", () => {
-  it("RJ real: Douglas Ruas passa de 50% sem os votos de Garotinho", () => {
+  it("RJ real: retotalizado sem os votos de Garotinho, Douglas Ruas eleito com 50,88% e sem ressalva", () => {
     const rj = getDisputa1Turno("Governador", "RJ", data)!
-    const r = ressalvaSubJudice(rj)!
     const ruas = rj.candidatos.find((c) => c.nome_urna === "DOUGLAS RUAS")!
-    const garotinho = rj.candidatos.find((c) => c.nome_urna === "GAROTINHO")!
-    assert.equal(r.votosAnulados, garotinho.votos)
-    assert.equal(r.percentualSemAnulados, (ruas.votos / rj.totais.votos_validos!) * 100)
-    assert.equal(r.percentualSemAnulados.toFixed(2), "50.88")
-    assert.equal(
-      textoRessalvaSubJudice(r),
-      `O TSE ainda conta no cálculo os ${new Intl.NumberFormat("pt-BR").format(garotinho.votos)} votos de Garotinho, anulados sub judice. Sem eles, Douglas Ruas teria 50,88% dos válidos: se a anulação for confirmada, a disputa pode terminar no 1º turno.`,
-    )
+    assert.equal(ruas.fase, "eleito")
+    assert.equal(ruas.percentual_validos!.toFixed(2), "50.88")
+    assert.equal(ressalvaSubJudice(rj), null)
   })
 
-  it("só o RJ tem a ressalva entre as disputas do snapshot (DF tem anulados, mas fica abaixo de 50%)", () => {
+  it("nenhuma disputa do snapshot tem a ressalva (DF tem anulados, mas fica abaixo de 50%)", () => {
     const com = data.disputas.filter((d) => ressalvaSubJudice(d)).map((d) => `${d.cargo}:${d.uf}`)
-    assert.deepEqual(com, ["Governador:RJ"])
+    assert.deepEqual(com, [])
   })
 
   it("caso sintético sem ressalva: sem anulados, líder abaixo de 50% ou % do TSE incoerente", () => {
@@ -289,7 +286,12 @@ describe("ressalva de votos anulados sub judice", () => {
         cand({ sq: "3", nome_urna: "C", votos: anuladoVotos, destinacao: "Anulado sub judice", fase: "fora_da_disputa" }),
       ],
     })
-    assert.ok(ressalvaSubJudice(base(100, 510, (510 / 1100) * 100)), "controle: 51% sem os anulados")
+    const controle = ressalvaSubJudice(base(100, 510, (510 / 1100) * 100))
+    assert.ok(controle, "controle: 51% sem os anulados")
+    assert.equal(
+      textoRessalvaSubJudice(controle),
+      "O TSE ainda conta no cálculo os 100 votos de C, anulados sub judice. Sem eles, A teria 51,00% dos válidos: se a anulação for confirmada, a disputa pode terminar no 1º turno.",
+    )
     assert.equal(ressalvaSubJudice(base(0, 510, 51)), null, "sem votos anulados")
     assert.equal(ressalvaSubJudice(base(100, 480, (480 / 1100) * 100)), null, "48% mesmo sem os anulados")
     assert.equal(ressalvaSubJudice(base(100, 510, 51)), null, "% do TSE não inclui os anulados: não afirma nada")
@@ -314,11 +316,11 @@ describe("renderização", () => {
     assert.doesNotMatch(html, /vão para|migram|transferem para/i)
   })
 
-  it("duelo de governador ganha a linha de apoio só no DF e a ressalva só no RJ", () => {
+  it("duelo de governador ganha a linha de apoio só no DF e nenhuma ressalva", () => {
     const html = renderToStaticMarkup(<Governadores2Turno candidatos={[]} data={data} aliancas={fixture()} />)
     assert.deepEqual([...html.matchAll(/data-pf-apoio-governador="(\w+)"/g)].map((m) => m[1]), ["DF"])
     assert.match(html, /Apoio declarado: <span[^>]*>Ricardo Cappelli<\/span> \(PSB\) a <span[^>]*>Leandro Grass<\/span>/)
-    assert.equal((html.match(/data-pf-ressalva-sub-judice/g) ?? []).length, 1)
+    assert.equal((html.match(/data-pf-ressalva-sub-judice/g) ?? []).length, 0)
     const semAliancas = renderToStaticMarkup(<Governadores2Turno candidatos={[]} data={data} aliancas={null} />)
     assert.doesNotMatch(semAliancas, /data-pf-apoio-governador/)
   })
