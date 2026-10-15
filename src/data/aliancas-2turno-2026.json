@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-14T19:12:00-03:00",
+  "coletado_em": "2026-10-15T09:17:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -251,6 +251,12 @@
           "veiculo": "Metrópoles",
           "publicado_em": "2026-10-14T18:15:00-03:00",
           "trecho": "Wilson Grassi Júnior ... anunciou na quarta-feira (14/10) que apoiará Flávio Bolsonaro (PL) na disputa do segundo turno."
+        },
+        {
+          "url": "https://www.poder360.com.br/poder-eleicoes-2026/grassi-rejeita-apoiar-lula-e-cobra-flavio-por-propostas-para-animais/",
+          "veiculo": "Poder360",
+          "publicado_em": "2026-10-14T19:44:00-03:00",
+          "trecho": "Grassi declarou apoio a Flávio Bolsonaro (PL) e divulgou uma carta com 5 propostas que pede ao senador que adote."
         }
       ]
     },
