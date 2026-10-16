@@ -813,7 +813,11 @@ export function validarPreflightRenovacao(
     const concluido = Date.parse(concluidoEmPorLote.get(plano.lote) ?? "")
     if (!Number.isFinite(concluido)) throw new Error(`preflight: lote ${plano.lote} sem concluido_em`)
     const esperado = detalheEsperadoDoPlano(plano)
-    if (linhas.some((linha) => linha.resultado === plano.resultado && linha.detalhe === esperado)) {
+    // Só o último recibo (o que o site lê) torna o plano equivalente. Um recibo
+    // antigo idêntico não basta: o último pode carregar CNJ vetado que só a
+    // renovação tira do recibo público.
+    const ultima = ultimoReciboPorAlvo(linhas).get(plano.slug)
+    if (ultima && ultima.resultado === plano.resultado && ultima.detalhe === esperado) {
       equivalentes.push(plano)
       continue
     }
@@ -829,7 +833,7 @@ export function validarPreflightRenovacao(
   return { pendentes, equivalentes }
 }
 
-function detalheEsperadoDoPlano(plano: PlanoRegistro): string {
+export function detalheEsperadoDoPlano(plano: PlanoRegistro): string {
   const argumentos = (nome: string): string[] => plano.args
     .filter((item) => item.startsWith(`--${nome}=`))
     .map((item) => item.slice(nome.length + 3))
@@ -974,14 +978,22 @@ export function cnjsPublicaveisDoTexto(valor: string): string[] {
 /**
  * Revalidação: só grava o plano cujo estado muda em relação ao último recibo
  * do alvo (resultado diferente, ou conjunto de CNJ publicáveis diferente).
- * Recibo que só renovaria a data fica de fora.
+ * Recibo que só renovaria a data fica de fora. Último recibo que ainda carrega
+ * CNJ vetado pela decisão editorial também conta como mudança: o plano que passou
+ * pela barreira não leva esse CNJ, e só o recibo novo o tira do recibo público.
  */
-export function filtrarMudancas(planos: PlanoRegistro[], existentes: LinhaExistentePreflight[]): PlanoRegistro[] {
+export function filtrarMudancas(
+  planos: PlanoRegistro[],
+  existentes: LinhaExistentePreflight[],
+  decisoes: ReadonlySet<string> = new Set(),
+): PlanoRegistro[] {
   const ultimo = ultimoReciboPorAlvo(existentes)
   return planos.filter((plano) => {
     const linha = ultimo.get(plano.slug)
     if (!linha) return true
     if (linha.resultado !== plano.resultado) return true
+    const noRecibo = (linha.detalhe ?? "").match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []
+    if (noRecibo.some((cnj) => decididoNaoPublicar(decisoes, plano.slug, cnj))) return true
     const publicaveis = cnjsPublicaveisDoTexto(plano.args.filter((arg) => arg.startsWith("--evidencia-publicavel=")).join(" "))
     const anteriores = cnjsPublicaveisDoTexto((linha.detalhe ?? "").split("; detalhe=")[0])
     return plano.resultado === "encontrado" && JSON.stringify(publicaveis) !== JSON.stringify(anteriores)
@@ -1154,13 +1166,16 @@ export function excluirVetadosDaEvidencia(
  * CNJs que cada recibo carregaria, para a barreira da decisão editorial. Os
  * achados publicáveis (`processos`) vêm sempre da evidência ORIGINAL: a retirada
  * por veto não os toca e, se um dia tocasse, a barreira ainda os veria. Ocorrência
- * ambígua e homônimo vêm da evidência já filtrada (o que o recibo de fato leva);
- * os CNJs do recibo anterior entram sempre.
+ * ambígua e homônimo vêm da evidência já filtrada (o que o recibo de fato leva).
+ * Os recibos anteriores ficam de fora de propósito: o recibo novo os substitui
+ * como último recibo (o que o site lê), então o CNJ vetado que só consta de recibo
+ * antigo sai de circulação com a renovação. Barrar por ele deixava a renovação
+ * parada para sempre e o CNJ vetado no recibo público. Um CNJ vetado que o plano
+ * novo carregue continua barrado pela evidência e pelos argumentos do plano.
  */
 export function cnjsPorSlugDaEvidencia(
   original: EvidenciaFinal,
   filtrada: EvidenciaFinal,
-  cnjsDosRecibos: ReadonlyMap<string, readonly string[]> = new Map(),
 ): Map<string, string[]> {
   const processosOriginais = new Map(original.lotes.flatMap((lote) => lote.candidatos)
     .map((candidato) => [candidato.slug, candidato.processos]))
@@ -1170,7 +1185,7 @@ export function cnjsPorSlugDaEvidencia(
       ...(processosOriginais.get(candidato.slug) ?? candidato.processos),
       ...(candidato.ocorrencias_ambiguas ?? []),
       ...candidato.homonimos_descartados,
-    ].map((item) => String(item.numero_cnj ?? "")).concat(cnjsDosRecibos.get(candidato.slug) ?? []),
+    ].map((item) => String(item.numero_cnj ?? "")),
   ]))
 }
 
@@ -1507,18 +1522,13 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     planos = semRebaixar.planos
     mantidosSemRebaixar = semRebaixar.mantidos.length
   }
-  const cnjsDosRecibos = new Map<string, string[]>()
-  for (const linha of existentesIniciais) {
-    const encontrados = linha.detalhe?.match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []
-    cnjsDosRecibos.set(linha.alvo, [...(cnjsDosRecibos.get(linha.alvo) ?? []), ...encontrados])
-  }
-  const cnjsPorSlug = cnjsPorSlugDaEvidencia(evidenciaOriginal, evidencia, cnjsDosRecibos)
+  const cnjsPorSlug = cnjsPorSlugDaEvidencia(evidenciaOriginal, evidencia)
   const bloqueio = bloquearPlanosPorDecisao(planos, cnjsPorSlug, decisoes)
   planos = bloqueio.planos
   revisaoHumana.push(...bloqueio.revisaoHumana)
   if (!opcoes.apply && opcoes.somenteMudancas) {
     // Único dry-run que lê o banco: precisa do último recibo de cada alvo.
-    const mudancas = filtrarMudancas(planos, existentesIniciais)
+    const mudancas = filtrarMudancas(planos, existentesIniciais, decisoes)
     console.log(JSON.stringify({
       modo: "dry-run-somente-mudancas",
       evidence: opcoes.evidence,
@@ -1572,7 +1582,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   try {
     const preflightCompleto = await executarPreflightRemoto(planos, evidencia)
     const preflight = opcoes.somenteMudancas
-      ? { ...preflightCompleto, pendentes: filtrarMudancas(preflightCompleto.pendentes, preflightCompleto.existentes) }
+      ? { ...preflightCompleto, pendentes: filtrarMudancas(preflightCompleto.pendentes, preflightCompleto.existentes, decisoes) }
       : preflightCompleto
     // Backup das linhas existentes dos alvos antes de qualquer escrita (0600, ao lado da evidência).
     const backupPath = `${opcoes.evidence}.backup-coleta_log-${new Date().toISOString().replace(/[:.]/g, "-")}.json`

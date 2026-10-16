@@ -120,11 +120,17 @@ ocorrência ambígua renova como `indeterminado`.
 
 Continua indo para revisão humana, sem renovar o recibo anterior, o alvo cujo CNJ
 vetado esteja em outro lugar do plano (por exemplo em `processos`, entre os
-achados publicáveis, ou no recibo anterior) ou cuja confirmação editorial
-pendente não seja válida. Nesse caso, passados 15 dias a conferência depois da
-coleta reprova, a rodada local grava o marcador de falha e o workflow fica
-vermelho até a revisão. É o comportamento esperado: o SLA daquele candidato está
-vencido.
+achados publicáveis, ou nos argumentos) ou cuja confirmação editorial
+pendente não seja válida. Se esse recibo não renovado passar de 15 dias, a
+conferência depois da coleta reprova, a rodada local grava o marcador de falha e
+o workflow fica vermelho até a revisão. É o comportamento esperado: o SLA
+daquele candidato está vencido.
+
+O CNJ vetado que só consta de um recibo anterior não barra a renovação. O
+recibo novo substitui o último recibo, que é o único que o site lê, então o CNJ
+sai de circulação com a renovação e o alvo não vai para a revisão humana. Os
+recibos antigos ficam como histórico e não entram na barreira. Com o recibo
+renovado, a conferência de frescor passa para esse candidato.
 
 ## Sinal de falha
 

@@ -5,7 +5,10 @@ import {
   bloquearPlanosPorDecisao,
   cnjsPorSlugDaEvidencia,
   criarPlanos,
+  detalheEsperadoDoPlano,
   excluirVetadosDaEvidencia,
+  filtrarMudancas,
+  validarPreflightRenovacao,
   type PlanoRegistro,
 } from "../scripts/aplicar-evidencia-processos-curadoria"
 import { chaveDecisao } from "../scripts/lib/processos-decisao-editorial"
@@ -312,7 +315,7 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     assert.throws(() => criarPlanos(evidencia), /vazio_confirmado exige ausência de ocorrências ambíguas/)
   })
 
-  it("a barreira da decisão continua vendo CNJ vetado em achado publicável, recibo anterior e argumentos", () => {
+  it("a barreira da decisão continua vendo CNJ vetado em achado publicável e argumentos, mas não em recibo anterior", () => {
     const vetos = decisoes([SLUG, VETADO])
     const original = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(VETADO), ambigua(PERMITIDO)] })
     const { evidencia } = excluirVetadosDaEvidencia(original, vetos)
@@ -327,9 +330,10 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     assert.ok(cnjsPorSlugDaEvidencia(comAchado, semAchado).get(SLUG)?.includes(VETADO))
     assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(comAchado, semAchado), vetos).planos.length, 0)
 
-    // CNJ do recibo anterior continua barrando.
-    const anterior = new Map([[SLUG, [VETADO]]])
-    assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(original, evidencia, anterior), vetos).planos.length, 0)
+    // CNJ vetado só no recibo anterior não barra: o recibo novo o substitui como último recibo.
+    const cnjsDoPlano = cnjsPorSlugDaEvidencia(original, evidencia).get(SLUG) ?? []
+    assert.ok(!cnjsDoPlano.includes(VETADO))
+    assert.equal(bloquearPlanosPorDecisao([plano], new Map([[SLUG, cnjsDoPlano]]), vetos).planos.length, 1)
 
     // CNJ vetado nos argumentos do registrador continua barrando.
     const contaminado = { ...plano, args: [...plano.args, `--evidencia-publicavel=https://comunicaapi.pje.jus.br/consulta?numeroProcesso=${SEM_MASCARA(VETADO)}`] }
@@ -350,5 +354,49 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
         assert.throws(() => excluirVetadosDaEvidencia(bruta, vetos), /tribunal/, "o veto não pode esconder a falha")
       }
     }
+  })
+})
+
+describe("--somente-mudancas com CNJ vetado no último recibo", () => {
+  it("renovação que só tira o CNJ vetado do recibo público conta como mudança", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const original = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(VETADO), ambigua(PERMITIDO)] })
+    const { evidencia } = excluirVetadosDaEvidencia(original, vetos)
+    const [plano] = criarPlanos(evidencia)
+    const recibo = (cnjs: string[]) => ({
+      alvo: SLUG,
+      resultado: plano.resultado,
+      detalhe: `revisao_em=2026-09-30; detalhe=ocorrencias_ambiguas: ${cnjs.join(", ")}`,
+      executado_em: "2026-09-30T09:00:00Z",
+    })
+
+    assert.equal(filtrarMudancas([plano], [recibo([VETADO, PERMITIDO])], vetos).length, 1)
+    assert.equal(filtrarMudancas([plano], [recibo([SEM_MASCARA(VETADO), PERMITIDO])], vetos).length, 1, "CNJ sem máscara")
+    assert.equal(filtrarMudancas([plano], [recibo([PERMITIDO])], vetos).length, 0, "sem CNJ vetado só renovaria a data")
+    assert.equal(filtrarMudancas([plano], [recibo([VETADO, PERMITIDO])]).length, 0, "sem decisões, nada muda")
+    assert.equal(
+      filtrarMudancas([plano], [{ ...recibo([VETADO]), executado_em: "2026-09-01T09:00:00Z" }, recibo([PERMITIDO])], vetos).length,
+      0,
+      "CNJ vetado só em recibo mais antigo não conta",
+    )
+  })
+})
+
+describe("preflight da renovação com CNJ vetado no último recibo", () => {
+  it("recibo antigo idêntico ao plano não torna equivalente quando o último recibo difere", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const original = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(VETADO), ambigua(PERMITIDO)] })
+    const { evidencia } = excluirVetadosDaEvidencia(original, vetos)
+    const [plano] = criarPlanos(evidencia)
+    const lotes = new Map([[plano.lote, "2026-10-16T12:00:00Z"]])
+    const identico = { alvo: SLUG, resultado: plano.resultado, detalhe: detalheEsperadoDoPlano(plano), executado_em: "2026-09-01T09:00:00Z" }
+    const comVetado = { alvo: SLUG, resultado: plano.resultado, detalhe: `revisao_em=2026-09-30; detalhe=ocorrencias_ambiguas: ${VETADO}`, executado_em: "2026-09-30T09:00:00Z" }
+
+    const comVetadoPorUltimo = validarPreflightRenovacao([plano], [SLUG], [identico, comVetado], lotes)
+    assert.equal(comVetadoPorUltimo.pendentes.length, 1)
+    assert.equal(filtrarMudancas(comVetadoPorUltimo.pendentes, [identico, comVetado], vetos).length, 1)
+
+    const identicoPorUltimo = validarPreflightRenovacao([plano], [SLUG], [comVetado, { ...identico, executado_em: "2026-10-01T09:00:00Z" }], lotes)
+    assert.equal(identicoPorUltimo.equivalentes.length, 1, "último recibo idêntico continua equivalente")
   })
 })
