@@ -312,7 +312,7 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     assert.throws(() => criarPlanos(evidencia), /vazio_confirmado exige ausência de ocorrências ambíguas/)
   })
 
-  it("a barreira da decisão continua vendo CNJ vetado em achado publicável, recibo anterior e argumentos", () => {
+  it("a barreira da decisão continua vendo CNJ vetado em achado publicável e argumentos, mas não em recibo anterior", () => {
     const vetos = decisoes([SLUG, VETADO])
     const original = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(VETADO), ambigua(PERMITIDO)] })
     const { evidencia } = excluirVetadosDaEvidencia(original, vetos)
@@ -327,9 +327,10 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
     assert.ok(cnjsPorSlugDaEvidencia(comAchado, semAchado).get(SLUG)?.includes(VETADO))
     assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(comAchado, semAchado), vetos).planos.length, 0)
 
-    // CNJ do recibo anterior continua barrando.
-    const anterior = new Map([[SLUG, [VETADO]]])
-    assert.equal(bloquearPlanosPorDecisao([plano], cnjsPorSlugDaEvidencia(original, evidencia, anterior), vetos).planos.length, 0)
+    // CNJ vetado só no recibo anterior não barra: o recibo novo o substitui como último recibo.
+    const cnjsDoPlano = cnjsPorSlugDaEvidencia(original, evidencia).get(SLUG) ?? []
+    assert.ok(!cnjsDoPlano.includes(VETADO))
+    assert.equal(bloquearPlanosPorDecisao([plano], new Map([[SLUG, cnjsDoPlano]]), vetos).planos.length, 1)
 
     // CNJ vetado nos argumentos do registrador continua barrando.
     const contaminado = { ...plano, args: [...plano.args, `--evidencia-publicavel=https://comunicaapi.pje.jus.br/consulta?numeroProcesso=${SEM_MASCARA(VETADO)}`] }

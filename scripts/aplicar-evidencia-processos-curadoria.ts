@@ -1154,13 +1154,16 @@ export function excluirVetadosDaEvidencia(
  * CNJs que cada recibo carregaria, para a barreira da decisão editorial. Os
  * achados publicáveis (`processos`) vêm sempre da evidência ORIGINAL: a retirada
  * por veto não os toca e, se um dia tocasse, a barreira ainda os veria. Ocorrência
- * ambígua e homônimo vêm da evidência já filtrada (o que o recibo de fato leva);
- * os CNJs do recibo anterior entram sempre.
+ * ambígua e homônimo vêm da evidência já filtrada (o que o recibo de fato leva).
+ * Os recibos anteriores ficam de fora de propósito: o recibo novo os substitui
+ * como último recibo (o que o site lê), então o CNJ vetado que só consta de recibo
+ * antigo sai de circulação com a renovação. Barrar por ele deixava a renovação
+ * parada para sempre e o CNJ vetado no recibo público. Um CNJ vetado que o plano
+ * novo carregue continua barrado pela evidência e pelos argumentos do plano.
  */
 export function cnjsPorSlugDaEvidencia(
   original: EvidenciaFinal,
   filtrada: EvidenciaFinal,
-  cnjsDosRecibos: ReadonlyMap<string, readonly string[]> = new Map(),
 ): Map<string, string[]> {
   const processosOriginais = new Map(original.lotes.flatMap((lote) => lote.candidatos)
     .map((candidato) => [candidato.slug, candidato.processos]))
@@ -1170,7 +1173,7 @@ export function cnjsPorSlugDaEvidencia(
       ...(processosOriginais.get(candidato.slug) ?? candidato.processos),
       ...(candidato.ocorrencias_ambiguas ?? []),
       ...candidato.homonimos_descartados,
-    ].map((item) => String(item.numero_cnj ?? "")).concat(cnjsDosRecibos.get(candidato.slug) ?? []),
+    ].map((item) => String(item.numero_cnj ?? "")),
   ]))
 }
 
@@ -1507,12 +1510,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     planos = semRebaixar.planos
     mantidosSemRebaixar = semRebaixar.mantidos.length
   }
-  const cnjsDosRecibos = new Map<string, string[]>()
-  for (const linha of existentesIniciais) {
-    const encontrados = linha.detalhe?.match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []
-    cnjsDosRecibos.set(linha.alvo, [...(cnjsDosRecibos.get(linha.alvo) ?? []), ...encontrados])
-  }
-  const cnjsPorSlug = cnjsPorSlugDaEvidencia(evidenciaOriginal, evidencia, cnjsDosRecibos)
+  const cnjsPorSlug = cnjsPorSlugDaEvidencia(evidenciaOriginal, evidencia)
   const bloqueio = bloquearPlanosPorDecisao(planos, cnjsPorSlug, decisoes)
   planos = bloqueio.planos
   revisaoHumana.push(...bloqueio.revisaoHumana)
