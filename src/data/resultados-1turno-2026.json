@@ -8839,8 +8839,8 @@
       "fase_calculada": false,
       "fonte": {
         "url": "https://resultados.tse.jus.br/oficial/ele2026/6259/dados/rj/rj-c0003-e006259-u.json",
-        "sha256": "a76307dfeddacff97a336180fe4491595190f9b206e7545f6a037d2a68657160",
-        "gerado_tse": "04/10/2026 22:23:10"
+        "sha256": "85822afa330c4b85eaf3f517bced5c2f0f32395da564a9baf10b2c582255924e",
+        "gerado_tse": "10/10/2026 15:09:50"
       },
       "totais": {
         "secoes": 37675,
@@ -8853,8 +8853,8 @@
         "votos_validos": 8394627,
         "brancos": 501537,
         "percentual_brancos": 5.093883555,
-        "nulos": 675292,
-        "percentual_nulos": 6.858634186
+        "nulos": 949703,
+        "percentual_nulos": 9.6457021
       },
       "candidatos": [
         {
@@ -8864,11 +8864,11 @@
           "nome_urna": "DOUGLAS RUAS",
           "partido": "PL",
           "votos": 4271199,
-          "percentual_validos": 49.269584468,
+          "percentual_validos": 50.880152269,
           "posicao": 1,
-          "situacao_tse": "2º turno",
+          "situacao_tse": "Eleito",
           "destinacao": "Válido",
-          "fase": "segundo_turno",
+          "fase": "eleito",
           "slug": "douglas-ruas",
           "companheiros": [
             {
@@ -8885,11 +8885,11 @@
           "nome_urna": "EDUARDO PAES",
           "partido": "PSD",
           "votos": 3706984,
-          "percentual_validos": 42.761192188,
+          "percentual_validos": 44.159007899,
           "posicao": 2,
-          "situacao_tse": "2º turno",
+          "situacao_tse": "Não eleito",
           "destinacao": "Válido",
-          "fase": "segundo_turno",
+          "fase": "nao_eleito",
           "slug": "eduardo-paes",
           "companheiros": [
             {
@@ -8906,7 +8906,7 @@
           "nome_urna": "WILLIAM SIRI",
           "partido": "PSOL",
           "votos": 235347,
-          "percentual_validos": 2.714799497,
+          "percentual_validos": 2.803543266,
           "posicao": 3,
           "situacao_tse": "Não eleito",
           "destinacao": "Válido",
@@ -8927,7 +8927,7 @@
           "nome_urna": "CORONEL BUSNELLO",
           "partido": "MISSÃO",
           "votos": 84889,
-          "percentual_validos": 0.979220532,
+          "percentual_validos": 1.011230159,
           "posicao": 4,
           "situacao_tse": "Não eleito",
           "destinacao": "Válido",
@@ -8948,7 +8948,7 @@
           "nome_urna": "ANDRÉ MARINHO",
           "partido": "NOVO",
           "votos": 45359,
-          "percentual_validos": 0.523229913,
+          "percentual_validos": 0.540333716,
           "posicao": 5,
           "situacao_tse": "Não eleito",
           "destinacao": "Válido",
@@ -8969,7 +8969,7 @@
           "nome_urna": "JULIETE",
           "partido": "UP",
           "votos": 33430,
-          "percentual_validos": 0.385625256,
+          "percentual_validos": 0.398230916,
           "posicao": 6,
           "situacao_tse": "Não eleito",
           "destinacao": "Válido",
@@ -8990,7 +8990,7 @@
           "nome_urna": "CYRO GARCIA",
           "partido": "PSTU",
           "votos": 14642,
-          "percentual_validos": 0.16889994,
+          "percentual_validos": 0.174421091,
           "posicao": 7,
           "situacao_tse": "Não eleito",
           "destinacao": "Válido",
@@ -9011,7 +9011,7 @@
           "nome_urna": "LUAN MONTEIRO",
           "partido": "PCO",
           "votos": 2777,
-          "percentual_validos": 0.032033543,
+          "percentual_validos": 0.033080684,
           "posicao": 8,
           "situacao_tse": "Não eleito",
           "destinacao": "Válido",
@@ -9022,27 +9022,6 @@
               "tipo": "v",
               "nome": "CAETANO ALBUQUERQUE",
               "partido": "PCO"
-            }
-          ]
-        },
-        {
-          "sq": "190002550196",
-          "numero": "10",
-          "nome": "ANTHONY WILLIAM GAROTINHO MATHEUS DE OLIVEIRA",
-          "nome_urna": "GAROTINHO",
-          "partido": "REPUBLICANOS",
-          "votos": 274411,
-          "percentual_validos": null,
-          "posicao": null,
-          "situacao_tse": "Não eleito",
-          "destinacao": "Anulado sub judice",
-          "fase": "fora_da_disputa",
-          "slug": "garotinho",
-          "companheiros": [
-            {
-              "tipo": "v",
-              "nome": "ANDRÉ MONTEIRO",
-              "partido": "DEMOCRATA"
             }
           ]
         }

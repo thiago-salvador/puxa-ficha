@@ -54118,7 +54118,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|TO|1|estimulada|lista-parana-pesquisas-2026-08-28-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-b59a32cdc0f0c1c2",
+      "exact_aliases_version": "monitor-2026-04e458cb8255124a",
       "exact_aliases": [
         {
           "raw_label": "Ataídes de Oliveira",
@@ -54674,6 +54674,24 @@
           "geography": "Tocantins",
           "turn": 1,
           "scenario_id": "quaest-to-01946-2026-1t-espontaneo"
+        },
+        {
+          "raw_label": "Vicentinho Júnior (PSDB)",
+          "candidate_slug": "vicentinho-junior",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "quaest-to-03829-2026-2t"
+        },
+        {
+          "raw_label": "Professora Dorinha (União)",
+          "candidate_slug": "professora-dorinha",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "quaest-to-03829-2026-2t"
         }
       ],
       "pesquisas": [
@@ -56160,6 +56178,131 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "quaest-to-03829-2026",
+          "source_id": "quaest-to-03829-2026-revisao-20261016",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Quaest",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Anhanguera",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-10",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-13",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-14",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1098,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Pessoas de 16 anos ou mais",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 3,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "TO-03829/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Tocantins",
+            "code": "TO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.cartacapital.com.br/cartaexpressa/quaest-vicentinho-tem-7-pontos-de-vantagem-sobre-dorinha-no-tocantins/",
+            "supporting_urls": [
+              "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/14/quaest-to-governador-segundo-turno-14-outubro.ghtml"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-16T12:20:09Z",
+            "capture": {
+              "format": "text",
+              "sha256": "baf0b512c34e2d25119d081c045e7543312ce865ee38e6a7f5050127c54360a6",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "quaest-to-03829-2026-2t",
+              "turn": 2,
+              "geography": "Tocantins",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|TO|2|estimulada|600695d7d7ef7b21caa8eb0615eafb95c8ab95d35bc097973c9fa58ed6dff352|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Vicentinho Júnior (PSDB)",
+                  "candidate_slug": "vicentinho-junior",
+                  "match_status": "exact_alias",
+                  "value_percent": 49,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Dorinha (União)",
+                  "candidate_slug": "professora-dorinha",
+                  "match_status": "exact_alias",
+                  "value_percent": 42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Brancos e nulos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Indecisos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 5,
                   "status": "publicado"
                 }
               ]
