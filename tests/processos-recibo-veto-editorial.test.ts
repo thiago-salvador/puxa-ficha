@@ -6,6 +6,7 @@ import {
   cnjsPorSlugDaEvidencia,
   criarPlanos,
   excluirVetadosDaEvidencia,
+  filtrarMudancas,
   type PlanoRegistro,
 } from "../scripts/aplicar-evidencia-processos-curadoria"
 import { chaveDecisao } from "../scripts/lib/processos-decisao-editorial"
@@ -351,5 +352,30 @@ describe("recibo judicial com CNJ vetado pela decisão editorial", () => {
         assert.throws(() => excluirVetadosDaEvidencia(bruta, vetos), /tribunal/, "o veto não pode esconder a falha")
       }
     }
+  })
+})
+
+describe("--somente-mudancas com CNJ vetado no último recibo", () => {
+  it("renovação que só tira o CNJ vetado do recibo público conta como mudança", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const original = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(VETADO), ambigua(PERMITIDO)] })
+    const { evidencia } = excluirVetadosDaEvidencia(original, vetos)
+    const [plano] = criarPlanos(evidencia)
+    const recibo = (cnjs: string[]) => ({
+      alvo: SLUG,
+      resultado: plano.resultado,
+      detalhe: `revisao_em=2026-09-30; detalhe=ocorrencias_ambiguas: ${cnjs.join(", ")}`,
+      executado_em: "2026-09-30T09:00:00Z",
+    })
+
+    assert.equal(filtrarMudancas([plano], [recibo([VETADO, PERMITIDO])], vetos).length, 1)
+    assert.equal(filtrarMudancas([plano], [recibo([SEM_MASCARA(VETADO), PERMITIDO])], vetos).length, 1, "CNJ sem máscara")
+    assert.equal(filtrarMudancas([plano], [recibo([PERMITIDO])], vetos).length, 0, "sem CNJ vetado só renovaria a data")
+    assert.equal(filtrarMudancas([plano], [recibo([VETADO, PERMITIDO])]).length, 0, "sem decisões, nada muda")
+    assert.equal(
+      filtrarMudancas([plano], [{ ...recibo([VETADO]), executado_em: "2026-09-01T09:00:00Z" }, recibo([PERMITIDO])], vetos).length,
+      0,
+      "CNJ vetado só em recibo mais antigo não conta",
+    )
   })
 })

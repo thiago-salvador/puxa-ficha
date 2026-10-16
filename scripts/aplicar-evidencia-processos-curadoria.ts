@@ -974,14 +974,22 @@ export function cnjsPublicaveisDoTexto(valor: string): string[] {
 /**
  * Revalidação: só grava o plano cujo estado muda em relação ao último recibo
  * do alvo (resultado diferente, ou conjunto de CNJ publicáveis diferente).
- * Recibo que só renovaria a data fica de fora.
+ * Recibo que só renovaria a data fica de fora. Último recibo que ainda carrega
+ * CNJ vetado pela decisão editorial também conta como mudança: o plano que passou
+ * pela barreira não leva esse CNJ, e só o recibo novo o tira do recibo público.
  */
-export function filtrarMudancas(planos: PlanoRegistro[], existentes: LinhaExistentePreflight[]): PlanoRegistro[] {
+export function filtrarMudancas(
+  planos: PlanoRegistro[],
+  existentes: LinhaExistentePreflight[],
+  decisoes: ReadonlySet<string> = new Set(),
+): PlanoRegistro[] {
   const ultimo = ultimoReciboPorAlvo(existentes)
   return planos.filter((plano) => {
     const linha = ultimo.get(plano.slug)
     if (!linha) return true
     if (linha.resultado !== plano.resultado) return true
+    const noRecibo = (linha.detalhe ?? "").match(/\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}|\d{20}/g) ?? []
+    if (noRecibo.some((cnj) => decididoNaoPublicar(decisoes, plano.slug, cnj))) return true
     const publicaveis = cnjsPublicaveisDoTexto(plano.args.filter((arg) => arg.startsWith("--evidencia-publicavel=")).join(" "))
     const anteriores = cnjsPublicaveisDoTexto((linha.detalhe ?? "").split("; detalhe=")[0])
     return plano.resultado === "encontrado" && JSON.stringify(publicaveis) !== JSON.stringify(anteriores)
@@ -1516,7 +1524,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   revisaoHumana.push(...bloqueio.revisaoHumana)
   if (!opcoes.apply && opcoes.somenteMudancas) {
     // Único dry-run que lê o banco: precisa do último recibo de cada alvo.
-    const mudancas = filtrarMudancas(planos, existentesIniciais)
+    const mudancas = filtrarMudancas(planos, existentesIniciais, decisoes)
     console.log(JSON.stringify({
       modo: "dry-run-somente-mudancas",
       evidence: opcoes.evidence,
@@ -1570,7 +1578,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
   try {
     const preflightCompleto = await executarPreflightRemoto(planos, evidencia)
     const preflight = opcoes.somenteMudancas
-      ? { ...preflightCompleto, pendentes: filtrarMudancas(preflightCompleto.pendentes, preflightCompleto.existentes) }
+      ? { ...preflightCompleto, pendentes: filtrarMudancas(preflightCompleto.pendentes, preflightCompleto.existentes, decisoes) }
       : preflightCompleto
     // Backup das linhas existentes dos alvos antes de qualquer escrita (0600, ao lado da evidência).
     const backupPath = `${opcoes.evidence}.backup-coleta_log-${new Date().toISOString().replace(/[:.]/g, "-")}.json`
