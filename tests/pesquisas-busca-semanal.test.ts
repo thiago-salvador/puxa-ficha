@@ -126,10 +126,11 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
     }
   }
   const segundoTurno = lula.find((p) => p.grupo === "segundo_turno")
-  assert.equal(segundoTurno?.id, "gerp-br-07877-2026")
-  assert.equal(segundoTurno?.cenario.id, "gerp-br-07877-2026-2t")
-  assert.equal(segundoTurno?.resultado.valuePercent, 44)
+  assert.equal(segundoTurno?.id, "datafolha-br-00466-2026")
+  assert.equal(segundoTurno?.cenario.id, "datafolha-br-00466-2026-2t")
+  assert.equal(segundoTurno?.resultado.valuePercent, 45)
   for (const [id, value] of [
+    ["gerp-br-07877-2026", 44],
     ["nexus-br-07997-2026", 45],
     ["poderdata-br-01209-2026", 46],
     ["futura-inteligencia-br-00650-2026", 46.6],

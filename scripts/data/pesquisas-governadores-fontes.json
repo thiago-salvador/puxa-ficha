@@ -12852,6 +12852,83 @@
         }
       },
       "consulted_at": "2026-10-15T12:12:42Z"
+    },
+    {
+      "id": "quaest-to-03829-2026-revisao-20261016",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Quaest",
+        "commissioner": "TV Anhanguera",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "cartacapital.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-10",
+          "end": "2026-10-13"
+        },
+        "published_at": "2026-10-14",
+        "sample_size": 1098,
+        "method": null,
+        "margin_of_error_pp": 3,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          2
+        ],
+        "registration_id": "TO-03829/2026",
+        "result_url": "https://www.cartacapital.com.br/cartaexpressa/quaest-vicentinho-tem-7-pontos-de-vantagem-sobre-dorinha-no-tocantins/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-03829/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-16T12:20:09Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "baf0b512c34e2d25119d081c045e7543312ce865ee38e6a7f5050127c54360a6",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/cartaexpressa/quaest-vicentinho-tem-7-pontos-de-vantagem-sobre-dorinha-no-tocantins/",
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/14/quaest-to-governador-segundo-turno-14-outubro.ghtml"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/cartaexpressa/quaest-vicentinho-tem-7-pontos-de-vantagem-sobre-dorinha-no-tocantins/",
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/14/quaest-to-governador-segundo-turno-14-outubro.ghtml"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/cartaexpressa/quaest-vicentinho-tem-7-pontos-de-vantagem-sobre-dorinha-no-tocantins/",
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/14/quaest-to-governador-segundo-turno-14-outubro.ghtml"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.cartacapital.com.br/cartaexpressa/quaest-vicentinho-tem-7-pontos-de-vantagem-sobre-dorinha-no-tocantins/",
+            "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/14/quaest-to-governador-segundo-turno-14-outubro.ghtml"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-16T12:20:09Z"
     }
   ]
 }
