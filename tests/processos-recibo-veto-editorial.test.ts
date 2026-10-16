@@ -5,8 +5,10 @@ import {
   bloquearPlanosPorDecisao,
   cnjsPorSlugDaEvidencia,
   criarPlanos,
+  detalheEsperadoDoPlano,
   excluirVetadosDaEvidencia,
   filtrarMudancas,
+  validarPreflightRenovacao,
   type PlanoRegistro,
 } from "../scripts/aplicar-evidencia-processos-curadoria"
 import { chaveDecisao } from "../scripts/lib/processos-decisao-editorial"
@@ -377,5 +379,24 @@ describe("--somente-mudancas com CNJ vetado no último recibo", () => {
       0,
       "CNJ vetado só em recibo mais antigo não conta",
     )
+  })
+})
+
+describe("preflight da renovação com CNJ vetado no último recibo", () => {
+  it("recibo antigo idêntico ao plano não torna equivalente quando o último recibo difere", () => {
+    const vetos = decisoes([SLUG, VETADO])
+    const original = evidenciaCom(SLUG, { ocorrencias_ambiguas: [ambigua(VETADO), ambigua(PERMITIDO)] })
+    const { evidencia } = excluirVetadosDaEvidencia(original, vetos)
+    const [plano] = criarPlanos(evidencia)
+    const lotes = new Map([[plano.lote, "2026-10-16T12:00:00Z"]])
+    const identico = { alvo: SLUG, resultado: plano.resultado, detalhe: detalheEsperadoDoPlano(plano), executado_em: "2026-09-01T09:00:00Z" }
+    const comVetado = { alvo: SLUG, resultado: plano.resultado, detalhe: `revisao_em=2026-09-30; detalhe=ocorrencias_ambiguas: ${VETADO}`, executado_em: "2026-09-30T09:00:00Z" }
+
+    const comVetadoPorUltimo = validarPreflightRenovacao([plano], [SLUG], [identico, comVetado], lotes)
+    assert.equal(comVetadoPorUltimo.pendentes.length, 1)
+    assert.equal(filtrarMudancas(comVetadoPorUltimo.pendentes, [identico, comVetado], vetos).length, 1)
+
+    const identicoPorUltimo = validarPreflightRenovacao([plano], [SLUG], [comVetado, { ...identico, executado_em: "2026-10-01T09:00:00Z" }], lotes)
+    assert.equal(identicoPorUltimo.equivalentes.length, 1, "último recibo idêntico continua equivalente")
   })
 })

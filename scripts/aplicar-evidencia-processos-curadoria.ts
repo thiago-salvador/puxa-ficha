@@ -813,7 +813,11 @@ export function validarPreflightRenovacao(
     const concluido = Date.parse(concluidoEmPorLote.get(plano.lote) ?? "")
     if (!Number.isFinite(concluido)) throw new Error(`preflight: lote ${plano.lote} sem concluido_em`)
     const esperado = detalheEsperadoDoPlano(plano)
-    if (linhas.some((linha) => linha.resultado === plano.resultado && linha.detalhe === esperado)) {
+    // Só o último recibo (o que o site lê) torna o plano equivalente. Um recibo
+    // antigo idêntico não basta: o último pode carregar CNJ vetado que só a
+    // renovação tira do recibo público.
+    const ultima = ultimoReciboPorAlvo(linhas).get(plano.slug)
+    if (ultima && ultima.resultado === plano.resultado && ultima.detalhe === esperado) {
       equivalentes.push(plano)
       continue
     }
@@ -829,7 +833,7 @@ export function validarPreflightRenovacao(
   return { pendentes, equivalentes }
 }
 
-function detalheEsperadoDoPlano(plano: PlanoRegistro): string {
+export function detalheEsperadoDoPlano(plano: PlanoRegistro): string {
   const argumentos = (nome: string): string[] => plano.args
     .filter((item) => item.startsWith(`--${nome}=`))
     .map((item) => item.slice(nome.length + 3))
