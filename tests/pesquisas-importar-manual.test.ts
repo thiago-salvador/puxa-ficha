@@ -245,6 +245,39 @@ describe("importação manual auditada de pesquisas", () => {
     assert.ok(invalid.problems.some((problem) => problem.includes(`linha "${desconhecido}" que não é finalista`)))
   })
 
+  it("aceita os rótulos literais de não voto de Futura, MDA, Gerp, Igape e DataVero no 2º turno", () => {
+    const rotulos = [
+      "Ninguém/Branco/Nulo",
+      "voto em branco ou nulo",
+      "Outros afirmaram que não votariam em nenhum dos candidatos",
+      "Não sabe/não opinou",
+      "não votar em nenhum dos candidatos",
+      "não sabem responder",
+      "não votar em nenhum dos candidatos e não sabem responder",
+    ]
+    rotulos.forEach((label, index) => {
+      const registration = `BR-${String(99970 + index)}/2026`
+      const segundo = rodada({ registration, scenarios: [{
+        kind: "estimulado", turn: 2, question: null,
+        results: [...rodada().scenarios[0].results.slice(0, 2), { raw_label: label, value_percent: 6 }],
+      }] })
+      const result = importarRodadas([segundo], { BR: { ...aliases.BR, [label]: null } }, "2026-10-17T12:00:00Z", carregarCatalogos())
+      assert.deepEqual(result.problems, [], label)
+      const catalogo = parsePesquisasEleitoraisJson(JSON.stringify(result.catalogos.pres), JSON.stringify(result.catalogos.presFontes))
+      const resposta = catalogo.pesquisas.find((poll) => poll.id === `instituto-exemplo-br-${String(99970 + index)}-2026`)!.cenarios[0].resultados
+        .find((entry) => entry.rawLabel === label)!
+      assert.equal(resposta.matchStatus, "not_candidate", label)
+    })
+    for (const desconhecido of ["Ninguém/Ciro", "voto em Ciro ou nulo", "Outros"]) {
+      const segundo = rodada({ registration: "BR-99969/2026", scenarios: [{
+        kind: "estimulado", turn: 2, question: null,
+        results: [...rodada().scenarios[0].results.slice(0, 2), { raw_label: desconhecido, value_percent: 6 }],
+      }] })
+      const invalid = importarRodadas([segundo], { BR: { ...aliases.BR, [desconhecido]: null } }, "2026-10-17T12:00:00Z", carregarCatalogos())
+      assert.ok(invalid.problems.some((problem) => problem.includes(`linha "${desconhecido}" que não é finalista`)), desconhecido)
+    }
+  })
+
   it("separa 1º e 2º turno da mesma rodada sem exigir nota entre turnos", () => {
     const primeiro = rodada().scenarios[0]
     const governador = rodada({ uf: "PI", registration: "PI-99990/2026", scenarios: [
