@@ -239,6 +239,9 @@ const TERMOS_NAO_CANDIDATO = new Set([
   "ns", "nr", "nao sabe", "nao sabem", "nao respondeu", "nao responderam",
   "nao souberam", "nao quiseram responder", "nao opinaram",
   "votos nulos", "eleitores que nao escolhem nenhum nome",
+  "ninguem", "voto em branco", "nao opinou", "nao sabem responder",
+  "nao votar em nenhum dos candidatos", "nao votariam em nenhum dos candidatos",
+  "outros afirmaram que nao votariam em nenhum dos candidatos",
 ])
 
 /** "Brancos e nulos", "NS / NR", "Não sabe ou não respondeu": cada parte precisa ser um termo do vocabulário. */
