@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-18T09:25:00-03:00",
+  "coletado_em": "2026-10-18T19:05:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -67,6 +67,12 @@
           "veiculo": "CNN Brasil",
           "publicado_em": "2026-10-08T19:01:00-03:00",
           "trecho": "Eu odeio o PT. Eu jamais vou votar no Lula."
+        },
+        {
+          "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/10/15/renan-santos-diz-que-perigo-e-maior-com-flavio-mas-descarta-apoio-a-lula-eu-nao-vou-votar-votem-em-quem-quiserem.ghtml",
+          "veiculo": "O Globo",
+          "publicado_em": "2026-10-15T17:15:21-03:00",
+          "trecho": "Eu não vou votar. A última vez, eu pedi voto nulo. Dessa vez, eu tô falando: \"votem em quem quiserem\""
         }
       ]
     },
@@ -905,6 +911,12 @@
           "veiculo": "Gazeta do Povo",
           "publicado_em": "2026-10-06T09:24:00-03:00",
           "trecho": "Cleitinho e Pivetta declararam voto em Flávio mesmo sem terem recebido apoio formal do candidato ou do PL em suas campanhas estaduais."
+        },
+        {
+          "url": "https://www.cnnbrasil.com.br/eleicoes/apos-fala-de-lula-cleitinho-reafirma-apoio-a-flavio-bolsonaro/",
+          "veiculo": "CNN Brasil",
+          "publicado_em": "2026-10-17T00:06:33-03:00",
+          "trecho": "O meu compromisso, o meu apoio à Presidência da República é Flávio Bolsonaro"
         }
       ]
     },
