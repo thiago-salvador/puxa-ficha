@@ -25,6 +25,23 @@ it("metadados JSON-LD só valem para ReportageNewsArticle da canônica", () => {
   assert.equal(extrairMetadadosArtigo(body.replace(`"url":"${url}"`, `"url":"${url}-outro"`)), null)
 })
 
+it("lê datas itemprop da mesma matéria e ignora metadados de vídeo aninhados", () => {
+  const published = "2026-09-09T12:00:00-03:00"
+  const modified = "2026-09-10T13:58:00-03:00"
+  const body = `<html><head><link rel="canonical" href="${url}"><meta property="og:url" content="${url}"><meta itemprop="datePublished" content="${published}"><meta itemprop="dateModified" content="${modified}"></head><body><time itemprop="datePublished" datetime="${published}">9/9/2026</time><div itemscope itemtype="https://schema.org/VideoObject"><meta itemprop="datePublished" content="2026-09-10T15:21:13Z"></div></body></html>`
+  assert.deepEqual(extrairMetadadosArtigo(body), { url, datePublished: published, dateModified: modified })
+})
+
+it("recusa metadados itemprop em conflito com a URL ou com JSON-LD da matéria", () => {
+  const published = "2026-09-09T12:00:00-03:00"
+  const modified = "2026-09-10T13:58:00-03:00"
+  const metadata = { "@type": "ReportageNewsArticle", url, datePublished: published, dateModified: modified }
+  const base = `<html><head><link rel="canonical" href="${url}"><meta property="og:url" content="${url}"><meta itemprop="datePublished" content="${published}"><meta itemprop="dateModified" content="${modified}"><script type="application/ld+json">${JSON.stringify(metadata)}</script></head></html>`
+  assert.equal(extrairMetadadosArtigo(base.replace(`content="${url}"`, `content="${url}-outro"`)), null)
+  assert.equal(extrairMetadadosArtigo(base.replace(`content="${published}"`, `content="2026-09-10T12:00:00-03:00"`)), null)
+  assert.equal(extrairMetadadosArtigo(base.replace(`dateModified":"${modified}`, `dateModified":"2026-09-11T13:58:00-03:00`)), null)
+})
+
 describe("falas recentes com fonte", () => {
   it("extrai literalmente, com identidade, evento, data e fonte", () => {
     const result = extract()

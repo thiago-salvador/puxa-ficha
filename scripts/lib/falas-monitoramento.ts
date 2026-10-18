@@ -159,21 +159,48 @@ export interface MetadadosArtigo {
   dateModified?: string
 }
 
-/** Reads only same-article JSON-LD metadata; unrelated structured data is not evidence. */
+/** Reads same-article JSON-LD or document-level itemprop metadata. */
 export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
   const $ = load(html)
-  const canonical = $("link[rel=canonical]").attr("href") ?? $("meta[property='og:url']").attr("content")
+  const canonicalLink = $("link[rel=canonical]").first().attr("href")
+  const openGraphUrl = $("meta[property='og:url']").first().attr("content")
+  if (canonicalLink && openGraphUrl && canonicalLink !== openGraphUrl) return null
+  const canonical = canonicalLink ?? openGraphUrl
   if (!canonical) return null
+  const validTimestamp = (value: unknown): value is string => {
+    if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(value) || !Number.isFinite(Date.parse(value))) return false
+    const day = value.slice(0, 10)
+    return new Date(`${day}T00:00:00Z`).toISOString().slice(0, 10) === day
+  }
+  const itempropDate = (property: "datePublished" | "dateModified") => {
+    const values = $(`[itemprop="${property}"]`).toArray()
+      .filter((element) => !$(element).parents("[itemscope]").length)
+      .map((element) => $(element).attr("content") ?? $(element).attr("datetime"))
+      .filter((value): value is string => typeof value === "string" && value.trim().length > 0)
+      .map((value) => value.trim())
+    const unique = [...new Set(values)]
+    return { value: unique.length === 1 ? unique[0] : undefined, conflict: unique.length > 1, invalid: unique.some((value) => !validTimestamp(value)) }
+  }
+  const itemPublished = itempropDate("datePublished")
+  const itemModified = itempropDate("dateModified")
+  if (itemPublished.conflict || itemPublished.invalid || itemModified.conflict || itemModified.invalid) return null
   const structured = $("script[type='application/ld+json']").toArray().flatMap((element) => {
     try { return noticiasEstruturadas(JSON.parse($(element).text())) } catch { return [] }
   })
   const matching = structured.filter((entry) => entry.url === canonical && (Array.isArray(entry["@type"]) ? entry["@type"].map(String).includes("ReportageNewsArticle") : entry["@type"] === "ReportageNewsArticle"))
-  if (matching.length !== 1) return null
-  const published = matching[0].datePublished
-  const modified = matching[0].dateModified
-  if (typeof published !== "string" || !/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(published) || !Number.isFinite(Date.parse(published))) return null
-  if (modified !== undefined && (typeof modified !== "string" || !/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(modified) || !Number.isFinite(Date.parse(modified)))) return null
-  return { url: canonical, datePublished: published, ...(modified ? { dateModified: modified } : {}) }
+  if (matching.length > 1) return null
+  if (matching.length === 1) {
+    const published = matching[0].datePublished
+    const modified = matching[0].dateModified
+    if (!validTimestamp(published) || (modified !== undefined && !validTimestamp(modified))) return null
+    if ((itemPublished.value && itemPublished.value !== published) || (itemModified.value && modified && itemModified.value !== modified)) return null
+    return { url: canonical, datePublished: published, ...((modified ?? itemModified.value) ? { dateModified: modified ?? itemModified.value } : {}) }
+  }
+  const sameArticle = structured.filter((entry) => entry.url === canonical)
+  if (sameArticle.some((entry) => (entry.datePublished !== undefined && entry.datePublished !== itemPublished.value)
+    || (entry.dateModified !== undefined && entry.dateModified !== itemModified.value))) return null
+  if (!itemPublished.value || !validTimestamp(itemPublished.value)) return null
+  return { url: canonical, datePublished: itemPublished.value, ...(itemModified.value ? { dateModified: itemModified.value } : {}) }
 }
 
 export function extrairArtigo(input: { html: string; url: string; source: FonteFalas; roster: CandidatoFalas[]; now: Date }): EvidenciaArtigo {

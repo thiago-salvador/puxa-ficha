@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-04T09:23:00.488Z",
+  "updated_at": "2026-10-18T08:33:48.878Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -9111,6 +9111,70 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "id": "7425f8e874cbef83e767df42e33522be2b22b9e993aeae7dccda9f74aca0e5ca",
+      "candidate_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+      "candidate_slug": "vicentinho-junior",
+      "candidate_name": "Vicentinho Junior",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Eu não busquei um apadrinhamento [...] eu busquei um homem que me permitisse um ambiente saudável.",
+      "context": "“Eu não busquei um apadrinhamento [...] eu busquei um homem que me permitisse um ambiente saudável. Que o Tocantins deseja já há algum tempo. E que haja uma sintonia entre o governador e seu vice.”",
+      "event_context": "Entrevista de Vicentinho Júnior no Jornal Anhanguera 2ª Edição (JA2), durante o segundo turno ao governo do Tocantins. nesta sexta-feira (16)",
+      "event_type": "entrevista",
+      "occurred_on": "2026-10-16",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/16/vicentinho-junior-detalha-aliancas-defende-ser-ficha-limpa-e-apresenta-propostas-para-saude-e-seguranca-publica.ghtml",
+      "article_title": "Em sabatina, Vicentinho detalha alianças e afirma ter ficha limpa | G1",
+      "article_published_at": "2026-10-16T19:29:59.156-03:00",
+      "article_modified_at": "2026-10-16T20:37:58.179-03:00",
+      "observed_at": "2026-10-18T08:33:48.878Z",
+      "source_sha256": "e0fa1ab7339d4970036de626b6f239fc0a3770e42c87944f99fec1a13914eb0d",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "No segundo turno da disputa pelo governo do Tocantins, Vicentinho Júnior (PSDB) foi o segundo candidato a ser entrevistado no Jornal Anhanguera 2ª Edição (JA2), nesta sexta-feira (16).",
+        "date_excerpt": "nesta sexta-feira (16)",
+        "fetched_url": "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/16/vicentinho-junior-detalha-aliancas-defende-ser-ficha-limpa-e-apresenta-propostas-para-saude-e-seguranca-publica.ghtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://g1.globo.com/to/tocantins/eleicoes/2026/noticia/2026/10/16/vicentinho-junior-detalha-aliancas-defende-ser-ficha-limpa-e-apresenta-propostas-para-saude-e-seguranca-publica.ghtml",
+          "datePublished": "2026-10-16T19:29:59.156-03:00",
+          "dateModified": "2026-10-16T20:37:58.179-03:00"
+        }
+      }
+    },
+    {
+      "id": "d21c6f06fa5733acebc74e478e4a9ab8df4e23219d0efe93469ec53b83fd3318",
+      "candidate_id": "c7e3a004-99ba-426b-af65-206e3066c496",
+      "candidate_slug": "alan-rick",
+      "candidate_name": "Alan Rick",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "A força da máquina é esmagadora.",
+      "context": "\"A força da máquina é esmagadora. O governo chega para os prefeitos e faz todo tipo de promessa [...] Nós não temos cargos para oferecer, nós não temos estrutura de secretarias para oferecer. O que nós temos para oferecer ao povo do Acre é um projeto de governo que traga de volta a esperança\", destacou.",
+      "event_context": "Sabatina da CBN Amazônia Rio Branco, no segundo turno ao governo do Acre. abriu, nesta terça-feira (13), a nova rodada de sabatinas",
+      "event_type": "sabatina",
+      "occurred_on": "2026-10-13",
+      "publisher": "g1",
+      "article_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/10/13/alan-rick-aposta-em-dialogo-com-prefeitos-para-buscar-virada-no-2o-turno-no-ac-forca-da-maquina-e-esmagadora.ghtml",
+      "article_title": "Alan Rick detalha estratégia para virada no 2º turno no Acre | G1",
+      "article_published_at": "2026-10-13T12:32:12.297-03:00",
+      "article_modified_at": "2026-10-13T12:36:23.988-03:00",
+      "observed_at": "2026-10-18T08:33:48.878Z",
+      "source_sha256": "defb4846138b2735bc8fda90191d001ba2acdcfb7ced36772f5140242936797b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Acre Alan Rick (Republicanos) abriu, nesta terça-feira (13), a nova rodada de sabatinas da CBN Amazônia Rio Branco voltada ao 2º turno das eleições estaduais.",
+        "date_excerpt": "abriu, nesta terça-feira (13), a nova rodada de sabatinas",
+        "fetched_url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/10/13/alan-rick-aposta-em-dialogo-com-prefeitos-para-buscar-virada-no-2o-turno-no-ac-forca-da-maquina-e-esmagadora.ghtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/10/13/alan-rick-aposta-em-dialogo-com-prefeitos-para-buscar-virada-no-2o-turno-no-ac-forca-da-maquina-e-esmagadora.ghtml",
+          "datePublished": "2026-10-13T12:32:12.297-03:00",
+          "dateModified": "2026-10-13T12:36:23.988-03:00"
+        }
       }
     }
   ]
