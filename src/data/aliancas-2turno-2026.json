@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-15T09:17:00-03:00",
+  "coletado_em": "2026-10-18T09:25:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -849,6 +849,12 @@
           "veiculo": "Correio Braziliense",
           "publicado_em": "2026-10-05T15:42:00-03:00",
           "trecho": "A opção é o Flávio para a gente buscar dele um compromisso de fazer um governo que possa ser diferente e que possa atender às expectativas dos brasileiros"
+        },
+        {
+          "url": "https://aredacao.com.br/daniel-vilela-participa-de-carreatas-em-apoio-a-flavio-bolsonaro-em-aparecida-e-anapolis/",
+          "veiculo": "A Redação",
+          "publicado_em": "2026-10-17T15:16:10-03:00",
+          "trecho": "E é exatamente isso que nós estamos defendendo, ao sinalizar o apoio à candidatura do Flávio"
         }
       ]
     },
@@ -1346,6 +1352,12 @@
       "apoia": "FLÁVIO BOLSONARO",
       "data_declaracao": "2026-10-07",
       "fontes": [
+        {
+          "url": "https://g1.globo.com/es/espirito-santo/noticia/2026/10/17/flavio-bolsonaro-faz-ato-com-apoiadores-na-avenida-dante-michelini-em-vitoria-no-es.ghtml",
+          "veiculo": "g1 ES",
+          "publicado_em": "2026-10-17T14:19:00-03:00",
+          "trecho": "Vamos estar junto com Flávio reescrevendo a história do Brasil, escrevendo a história do Espírito Santo"
+        },
         {
           "url": "https://www.folhavitoria.com.br/eleicoes/republicanos-declara-apoio-a-flavio-bolsonaro-em-evento-com-pazolini/",
           "veiculo": "Folha Vitória",
