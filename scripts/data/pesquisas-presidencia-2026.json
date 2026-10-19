@@ -35,7 +35,7 @@
     "comparability_key": "2026|Presidente|BR|1|estimulado|lista-oficial-sem-marcal"
   },
   "consulted_at": "2026-09-10T12:02:09Z",
-  "exact_aliases_version": "monitor-2026-f75765db310aab13",
+  "exact_aliases_version": "monitor-2026-429e39f9ff25cee7",
   "exact_aliases": [
     {
       "raw_label": "Lula",
@@ -3582,6 +3582,42 @@
       "geography": "Brasil",
       "turn": 2,
       "scenario_id": "datafolha-br-00466-2026-2t"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "ipespe-abrapel-br-00223-2026-2t"
+    },
+    {
+      "raw_label": "Lula",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "ipespe-abrapel-br-00223-2026-2t"
+    },
+    {
+      "raw_label": "Lula",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "vox-brasil-br-04332-2026-2t"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "vox-brasil-br-04332-2026-2t"
     }
   ],
   "alias_scope": {
@@ -13442,6 +13478,256 @@
               "candidate_slug": null,
               "match_status": "not_candidate",
               "value_percent": 2,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ipespe-abrapel-br-00223-2026",
+      "source_id": "ipespe-abrapel-br-00223-2026-revisao-20261019",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Ipespe/ABRAPEL",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": null,
+        "status": "indeterminado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-10-13",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-10-15",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-17",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 1500,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitorado brasileiro, de 16 anos e mais, de todas as regiões do País",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2.6,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95.45,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "entrevistas telefônicas",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-00223/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://ipespe.org.br/wp-content/uploads/2026/10/TRK-CAMPANHA-02_-IPESPE-ABRAPEL_2T_-13-a-15-OUT-2026.pdf",
+        "supporting_urls": [
+          "https://ipespe.org.br/pesquisa-ipespe-abrapel-2o-turno-tracking-da-campanha-weekly-tracking-rodada-02-13-a-15-de-outubro-de-2026/"
+        ],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-19T12:20:23Z",
+        "capture": {
+          "format": "text",
+          "sha256": "9dadfce52f71313af6f914192654971e2377fdd03cbd5c6a74ec6448e0f20ad8",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "ipespe-abrapel-br-00223-2026-2t",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": "Em qual dos dois candidatos – Flávio Bolsonaro ou Lula (RODÍZIO) – o(a) Sr(a) votaria para Presidente? (ESTIMULADA)",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|801d879e6f8742adeca3e7f9116981dcde286c37f446dc281bb32e07ad64de75|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 48,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 46,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ninguém / Branco / Nulo",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe / Não respondeu",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 3,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vox-brasil-br-04332-2026",
+      "source_id": "vox-brasil-br-04332-2026-revisao-20261019",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Vox Brasil",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": "Vox Brasil Opinião e Pesquisas LTDA",
+        "status": "publicado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-10-15",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-10-17",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-18",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2100,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores em todo o país",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2.15,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "abordagem presencial domiciliar e questionário estruturado",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-04332/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/RELATORIO-VOX-BRASIL-NACIONAL-10-2-TURNO-18-10-2026.pdf",
+        "supporting_urls": [
+          "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-51-dos-votos-validos-no-2o-turno-flavio-49/"
+        ],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-19T12:20:23Z",
+        "capture": {
+          "format": "text",
+          "sha256": "cd1eb078280f3eaf3dd711a7963b9680116adb118f030a02ff6367a3102dc1cd",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "vox-brasil-br-04332-2026-2t",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|801d879e6f8742adeca3e7f9116981dcde286c37f446dc281bb32e07ad64de75|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Lula",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 46.4,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 44.6,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Nenhum/Branco/Nulo",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 5,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Não sabe/Não opinou",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 3.9,
               "status": "publicado"
             }
           ]

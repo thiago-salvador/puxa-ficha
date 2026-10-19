@@ -12929,6 +12929,156 @@
         }
       },
       "consulted_at": "2026-10-16T12:20:09Z"
+    },
+    {
+      "id": "instituto-gazeta-de-pesquisas-igape-df-02733-2026-revisao-20261019",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Gazeta de Pesquisas (IGAPE)",
+        "commissioner": "TV Atual, afiliada da Record News",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "conexaorecord.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-12",
+          "end": "2026-10-14"
+        },
+        "published_at": "2026-10-14",
+        "sample_size": 1200,
+        "method": null,
+        "margin_of_error_pp": 2.8,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          2
+        ],
+        "registration_id": "DF-02733/2026",
+        "result_url": "https://www.conexaorecord.com.br/celina-leao-lidera-para-o-2-turno-na-pesquisa-estimulada-para-o-governo-do-df-aponta-igape/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-02733/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-19T12:20:23Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "403cf99151b37dda62d744eef3d289b3f7b250564b4f04c65315a1a3380e3c61",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/celina-leao-lidera-para-o-2-turno-na-pesquisa-estimulada-para-o-governo-do-df-aponta-igape/",
+            "https://jornaldebrasilia.com.br/brasilia/igape-celina-leao-tem-61-dos-votos-validos-e-abre-22-pontos-sobre-grass-no-df/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/celina-leao-lidera-para-o-2-turno-na-pesquisa-estimulada-para-o-governo-do-df-aponta-igape/",
+            "https://jornaldebrasilia.com.br/brasilia/igape-celina-leao-tem-61-dos-votos-validos-e-abre-22-pontos-sobre-grass-no-df/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/celina-leao-lidera-para-o-2-turno-na-pesquisa-estimulada-para-o-governo-do-df-aponta-igape/",
+            "https://jornaldebrasilia.com.br/brasilia/igape-celina-leao-tem-61-dos-votos-validos-e-abre-22-pontos-sobre-grass-no-df/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.conexaorecord.com.br/celina-leao-lidera-para-o-2-turno-na-pesquisa-estimulada-para-o-governo-do-df-aponta-igape/",
+            "https://jornaldebrasilia.com.br/brasilia/igape-celina-leao-tem-61-dos-votos-validos-e-abre-22-pontos-sobre-grass-no-df/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-19T12:20:23Z"
+    },
+    {
+      "id": "datavero-rn-01514-2026-revisao-20261019",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "DataVero",
+        "commissioner": "Diário do RN",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "diariodorn.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-13",
+          "end": "2026-10-15"
+        },
+        "published_at": "2026-10-16",
+        "sample_size": 1500,
+        "method": null,
+        "margin_of_error_pp": 2.53,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          2
+        ],
+        "registration_id": "RN-01514/2026",
+        "result_url": "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-01514/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-19T12:20:23Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "b72dc970e4385af17a11da0a123321080478a20890ebbed226abe367a0eb0ab0",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-19T12:20:23Z"
     }
   ]
 }
