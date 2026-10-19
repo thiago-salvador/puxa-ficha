@@ -3547,6 +3547,160 @@
         }
       },
       "consulted_at": "2026-10-16T12:12:25Z"
+    },
+    {
+      "id": "ipespe-abrapel-br-00223-2026-revisao-20261019",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Ipespe",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "ipespe.org.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-13",
+          "end": "2026-10-15"
+        },
+        "published_at": "2026-10-17",
+        "sample_size": 1500,
+        "method": "entrevistas telefônicas",
+        "margin_of_error_pp": 2.6,
+        "confidence_level_pct": 95.45,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-00223/2026",
+        "result_url": "https://ipespe.org.br/wp-content/uploads/2026/10/TRK-CAMPANHA-02_-IPESPE-ABRAPEL_2T_-13-a-15-OUT-2026.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-00223/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-19T12:20:23Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "9dadfce52f71313af6f914192654971e2377fdd03cbd5c6a74ec6448e0f20ad8",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://ipespe.org.br/wp-content/uploads/2026/10/TRK-CAMPANHA-02_-IPESPE-ABRAPEL_2T_-13-a-15-OUT-2026.pdf",
+            "https://ipespe.org.br/pesquisa-ipespe-abrapel-2o-turno-tracking-da-campanha-weekly-tracking-rodada-02-13-a-15-de-outubro-de-2026/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://ipespe.org.br/wp-content/uploads/2026/10/TRK-CAMPANHA-02_-IPESPE-ABRAPEL_2T_-13-a-15-OUT-2026.pdf",
+            "https://ipespe.org.br/pesquisa-ipespe-abrapel-2o-turno-tracking-da-campanha-weekly-tracking-rodada-02-13-a-15-de-outubro-de-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://ipespe.org.br/wp-content/uploads/2026/10/TRK-CAMPANHA-02_-IPESPE-ABRAPEL_2T_-13-a-15-OUT-2026.pdf",
+            "https://ipespe.org.br/pesquisa-ipespe-abrapel-2o-turno-tracking-da-campanha-weekly-tracking-rodada-02-13-a-15-de-outubro-de-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://ipespe.org.br/wp-content/uploads/2026/10/TRK-CAMPANHA-02_-IPESPE-ABRAPEL_2T_-13-a-15-OUT-2026.pdf",
+            "https://ipespe.org.br/pesquisa-ipespe-abrapel-2o-turno-tracking-da-campanha-weekly-tracking-rodada-02-13-a-15-de-outubro-de-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-19T12:20:23Z"
+    },
+    {
+      "id": "vox-brasil-br-04332-2026-revisao-20261019",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Vox Brasil",
+        "commissioner": "Vox Brasil Opinião e Pesquisas LTDA",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "admin.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-17"
+        },
+        "published_at": "2026-10-18",
+        "sample_size": 2100,
+        "method": "abordagem presencial domiciliar e questionário estruturado",
+        "margin_of_error_pp": 2.15,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-04332/2026",
+        "result_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/RELATORIO-VOX-BRASIL-NACIONAL-10-2-TURNO-18-10-2026.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-04332/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-19T12:20:23Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "cd1eb078280f3eaf3dd711a7963b9680116adb118f030a02ff6367a3102dc1cd",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/RELATORIO-VOX-BRASIL-NACIONAL-10-2-TURNO-18-10-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-51-dos-votos-validos-no-2o-turno-flavio-49/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/RELATORIO-VOX-BRASIL-NACIONAL-10-2-TURNO-18-10-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-51-dos-votos-validos-no-2o-turno-flavio-49/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/RELATORIO-VOX-BRASIL-NACIONAL-10-2-TURNO-18-10-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-51-dos-votos-validos-no-2o-turno-flavio-49/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/RELATORIO-VOX-BRASIL-NACIONAL-10-2-TURNO-18-10-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/vox-lula-tem-51-dos-votos-validos-no-2o-turno-flavio-49/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-19T12:20:23Z"
     }
   ],
   "media_fallback_policy": {

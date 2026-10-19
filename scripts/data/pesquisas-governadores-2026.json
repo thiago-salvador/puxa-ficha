@@ -10477,7 +10477,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|DF|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-bd9aac15b65d3350",
+      "exact_aliases_version": "monitor-2026-b56427136d90fc51",
       "exact_aliases": [
         {
           "raw_label": "Cappelli",
@@ -11331,6 +11331,24 @@
           "geography": "Distrito Federal",
           "turn": 2,
           "scenario_id": "real-time-big-data-df-01170-2026-2t"
+        },
+        {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 2,
+          "scenario_id": "instituto-gazeta-de-pesquisas-igape-df-02733-2026-2t"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 2,
+          "scenario_id": "instituto-gazeta-de-pesquisas-igape-df-02733-2026-2t"
         }
       ],
       "pesquisas": [
@@ -13829,6 +13847,124 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "instituto-gazeta-de-pesquisas-igape-df-02733-2026",
+          "source_id": "instituto-gazeta-de-pesquisas-igape-df-02733-2026-revisao-20261019",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Instituto Gazeta de Pesquisas (IGAPE)",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "TV Atual, afiliada da Record News",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-12",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-14",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-14",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1200,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores do Distrito Federal com 16 anos ou mais",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.8,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "DF-02733/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Distrito Federal",
+            "code": "DF"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.conexaorecord.com.br/celina-leao-lidera-para-o-2-turno-na-pesquisa-estimulada-para-o-governo-do-df-aponta-igape/",
+            "supporting_urls": [
+              "https://jornaldebrasilia.com.br/brasilia/igape-celina-leao-tem-61-dos-votos-validos-e-abre-22-pontos-sobre-grass-no-df/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-19T12:20:23Z",
+            "capture": {
+              "format": "text",
+              "sha256": "403cf99151b37dda62d744eef3d289b3f7b250564b4f04c65315a1a3380e3c61",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "instituto-gazeta-de-pesquisas-igape-df-02733-2026-2t",
+              "turn": 2,
+              "geography": "Distrito Federal",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|2|estimulada|2ba233a041744a27fd1e249d2721bffaf6219a7bcc66a173470b330775406c99|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão (PP)",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 55.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass (PT)",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 35.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8.4,
                   "status": "publicado"
                 }
               ]
@@ -40639,7 +40775,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|RN|1|estimulada|lista-instituto-exatus-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-c4061b32ae52f754",
+      "exact_aliases_version": "monitor-2026-43a11d4d64ebd14f",
       "exact_aliases": [
         {
           "raw_label": "Allyson Bezerra",
@@ -41144,6 +41280,24 @@
           "geography": "Rio Grande do Norte",
           "turn": 1,
           "scenario_id": "quaest-rn-09644-2026-1t"
+        },
+        {
+          "raw_label": "Cadu de Lula",
+          "candidate_slug": "cadu-xavier",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 2,
+          "scenario_id": "datavero-rn-01514-2026-2t"
+        },
+        {
+          "raw_label": "Allyson Bezerra",
+          "candidate_slug": "alysson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 2,
+          "scenario_id": "datavero-rn-01514-2026-2t"
         }
       ],
       "pesquisas": [
@@ -42400,6 +42554,135 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 14,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "datavero-rn-01514-2026",
+          "source_id": "datavero-rn-01514-2026-revisao-20261019",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "DataVero",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "Diário do RN",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-13",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-16",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1500,
+              "status": "publicado"
+            },
+            "population": {
+              "value": null,
+              "status": "indeterminado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.53,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "RN-01514/2026",
+              "status": "publicado"
+            },
+            "secondary_codes": [
+              {
+                "value": "BR-02367/2026",
+                "status": "publicado"
+              }
+            ],
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio Grande do Norte",
+            "code": "RN"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-19T12:20:23Z",
+            "capture": {
+              "format": "text",
+              "sha256": "b72dc970e4385af17a11da0a123321080478a20890ebbed226abe367a0eb0ab0",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "datavero-rn-01514-2026-2t",
+              "turn": 2,
+              "geography": "Rio Grande do Norte",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RN|2|estimulada|19e718a7bb4150b8caa4229f98c55f8ed0dd217153be8402c0966603cb7ee769|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Cadu de Lula",
+                  "candidate_slug": "cadu-xavier",
+                  "match_status": "exact_alias",
+                  "value_percent": 46.71,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Allyson Bezerra",
+                  "candidate_slug": "alysson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 45.73,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "não votar em nenhum dos candidatos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.32,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "não sabem responder",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.24,
                   "status": "publicado"
                 }
               ]
