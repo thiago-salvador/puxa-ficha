@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-18T19:05:00-03:00",
+  "coletado_em": "2026-10-19T19:15:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -871,21 +871,27 @@
       "tipo": "governador",
       "partido": "PSD",
       "situacao": "eleito",
-      "posicao": "sem_declaracao",
+      "posicao": "neutro",
       "apoia": null,
-      "data_declaracao": null,
+      "data_declaracao": "2026-10-19",
       "fontes": [
         {
-          "url": "https://oimparcial.com.br/noticias/2026/10/apos-vitoria-em-1o-turno-no-maranhao-braide-adia-definicao-de-apoio-presidencial/",
-          "veiculo": "O Imparcial",
-          "publicado_em": null,
-          "trecho": "afirmou que adiará seu posicionamento sobre o segundo turno da eleição presidencial"
+          "url": "https://johncutrim.com.br/braide-confirma-neutralidade-no-segundo-turno-entre-lula-e-flavio-bolsonaro-cada-maranhense-possa-escolher/",
+          "veiculo": "John Cutrim",
+          "publicado_em": "2026-10-19T16:21:41-03:00",
+          "trecho": "Eu tive votos de todos os lados, então eu vou manter a coerência no sentido de que cada maranhense possa escolher aquele candidato a presidente que melhor o represente"
         },
         {
-          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/flavio-avanca-segundo-turno-apoio-governadores/",
-          "veiculo": "Gazeta do Povo",
-          "publicado_em": "2026-10-06T09:24:00-03:00",
-          "trecho": "Outros quatro governadores — JHC (PSDB-AL), Eduardo Braide (PSD-MA), Dr. Furlan (PSD-AP) e Raquel Lyra (PSD-PE) — não declararam apoio a nenhum dos dois candidatos."
+          "url": "https://centraldenoticiasbrasil.com.br/materia/braide-descarta-apoio-a-lula-e-flavio-e-confirma-neutralidade-no-2o-turno",
+          "veiculo": "Central de Notícias Brasil",
+          "publicado_em": "2026-10-19T17:37:26-03:00",
+          "trecho": "Eu tive votos de todos os lados, então eu vou manter a coerência no sentido de que cada maranhense possa escolher aquele candidato a presidente que melhor o represente"
+        },
+        {
+          "url": "https://marrapa.com/2026/10/19/braide-confirma-neutralidade-no-segundo-turno-presidencial",
+          "veiculo": "Marrapa",
+          "publicado_em": "2026-10-19T12:28:00-03:00",
+          "trecho": "Eu tive votos de todos os lados, então eu vou manter a coerência no sentido de que cada maranhense possa escolher aquele candidato a presidente que melhor o represente"
         }
       ]
     },
@@ -1205,6 +1211,12 @@
           "veiculo": "Band",
           "publicado_em": "2026-10-08T06:00:00-03:00",
           "trecho": "confirmou atuação ativa a favor da reeleição de Lula"
+        },
+        {
+          "url": "https://fanf1.com.br/2026/10/19/e-claro-que-eu-nao-vou-dizer-que-fico-feliz-afirma-fabio-ao-comentar-apoio-de-andre-moura-a-flavio-bolsonaro/",
+          "veiculo": "Fan F1",
+          "publicado_em": "2026-10-19T10:13:49-03:00",
+          "trecho": "vou estar na rua pedindo voto para Lula, vamos caminhar aqui ao lado do presidente Lula e cada um pedindo voto dentro da sua realidade, dentro da sua estrutura"
         }
       ]
     },
