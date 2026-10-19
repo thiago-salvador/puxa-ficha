@@ -12972,11 +12972,12 @@
       },
       "criteria": {
         "methodology_transparency": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://www.conexaorecord.com.br/celina-leao-lidera-para-o-2-turno-na-pesquisa-estimulada-para-o-governo-do-df-aponta-igape/",
             "https://jornaldebrasilia.com.br/brasilia/igape-celina-leao-tem-61-dos-votos-validos-e-abre-22-pontos-sobre-grass-no-df/"
-          ]
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
         },
         "result_access": {
           "pass": true,
@@ -13049,10 +13050,11 @@
       },
       "criteria": {
         "methodology_transparency": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/"
-          ]
+          ],
+          "note": "Método de coleta não informado na divulgação lida; campo, amostra, margem e confiança foram preservados."
         },
         "result_access": {
           "pass": true,
@@ -13061,10 +13063,11 @@
           ]
         },
         "sample_identification": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://diariodorn.com.br/cadu-de-lula-vira-sobre-allyson-e-chega-a-5053-dos-votos-validos-contra-4947/"
-          ]
+          ],
+          "note": "População alvo não informada na divulgação lida; tamanho da amostra preservado."
         },
         "publication_stability": {
           "pass": true,

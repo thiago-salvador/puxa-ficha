@@ -3553,7 +3553,7 @@
       "status": "aprovado",
       "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
       "roles": {
-        "institute": "Ipespe/ABRAPEL",
+        "institute": "Ipespe",
         "commissioner": null,
         "official_registry": "TSE/PesqEle (registro informado na publicação)",
         "publication_vehicle": "ipespe.org.br",

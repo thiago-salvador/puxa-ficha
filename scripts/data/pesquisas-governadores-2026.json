@@ -42615,6 +42615,12 @@
               "value": "RN-01514/2026",
               "status": "publicado"
             },
+            "secondary_codes": [
+              {
+                "value": "BR-02367/2026",
+                "status": "publicado"
+              }
+            ],
             "url": {
               "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
               "status": "publicado"
