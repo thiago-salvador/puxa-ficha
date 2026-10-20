@@ -162,10 +162,16 @@ export interface MetadadosArtigo {
 /** Reads same-article JSON-LD or document-level itemprop metadata. */
 export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
   const $ = load(html)
-  const canonicalLink = $("link[rel=canonical]").first().attr("href")
-  const openGraphUrl = $("meta[property='og:url']").first().attr("content")
-  if (canonicalLink && openGraphUrl && canonicalLink !== openGraphUrl) return null
-  const canonical = canonicalLink ?? openGraphUrl
+  const uniqueValues = (selector: string, attribute: string) => {
+    // A present but empty value still counts, so it conflicts with any other value.
+    const values = $(selector).toArray().map((element) => $(element).attr(attribute)?.trim()).filter((value): value is string => value !== undefined)
+    const distinct = [...new Set(values)]
+    return { value: distinct.length === 1 && distinct[0] ? distinct[0] : undefined, conflict: distinct.length > 1 }
+  }
+  const canonicalLinks = uniqueValues("head link[rel=canonical]", "href")
+  const openGraphUrls = uniqueValues("head meta[property='og:url']", "content")
+  if (canonicalLinks.conflict || openGraphUrls.conflict || (canonicalLinks.value && openGraphUrls.value && canonicalLinks.value !== openGraphUrls.value)) return null
+  const canonical = canonicalLinks.value ?? openGraphUrls.value
   if (!canonical) return null
   const validTimestamp = (value: unknown): value is string => {
     if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}T.*(?:Z|[+-]\d{2}:\d{2})$/.test(value) || !Number.isFinite(Date.parse(value))) return false
@@ -173,7 +179,7 @@ export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
     return new Date(`${day}T00:00:00Z`).toISOString().slice(0, 10) === day
   }
   const itempropDate = (property: "datePublished" | "dateModified") => {
-    const values = $(`[itemprop="${property}"]`).toArray()
+    const values = $("head").find(`meta[itemprop="${property}"]`).toArray()
       .filter((element) => !$(element).parents("[itemscope]").length)
       .map((element) => $(element).attr("content") ?? $(element).attr("datetime"))
       .filter((value): value is string => typeof value === "string" && value.trim().length > 0)
@@ -197,6 +203,23 @@ export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
     return { url: canonical, datePublished: published, ...((modified ?? itemModified.value) ? { dateModified: modified ?? itemModified.value } : {}) }
   }
   const sameArticle = structured.filter((entry) => entry.url === canonical)
+  const ogType = uniqueValues("head meta[property='og:type']", "content")
+  const ogPublished = uniqueValues("head meta[property='article:published_time']", "content")
+  const ogModified = uniqueValues("head meta[property='article:modified_time']", "content")
+  const structuredMetadataConsistent = sameArticle.length === 0 || (sameArticle.length === 1
+    && ["datePublished", "dateModified"].every((property) => {
+      const value = sameArticle[0][property]
+      const expected = property === "datePublished" ? ogPublished.value : ogModified.value
+      return value === undefined || (validTimestamp(value) && validTimestamp(expected) && Date.parse(value) === Date.parse(expected))
+    }))
+  if (canonicalLinks.value && sameArticle.length <= 1 && structuredMetadataConsistent
+    && !matching.length && !itemPublished.value && !itemModified.value
+    && !ogType.conflict && ogType.value === "article" && !openGraphUrls.conflict
+    && openGraphUrls.value === canonical && !ogPublished.conflict && validTimestamp(ogPublished.value)
+    && !ogModified.conflict && (!ogModified.value || validTimestamp(ogModified.value))
+    ) {
+    return { url: canonical, datePublished: ogPublished.value, ...(ogModified.value ? { dateModified: ogModified.value } : {}) }
+  }
   if (sameArticle.some((entry) => (entry.datePublished !== undefined && entry.datePublished !== itemPublished.value)
     || (entry.dateModified !== undefined && entry.dateModified !== itemModified.value))) return null
   if (!itemPublished.value || !validTimestamp(itemPublished.value)) return null
