@@ -195,9 +195,12 @@ describe("ComparadorPanel: a mesma régua do overview vale na comparação, a li
     assert.match(fonte, /processosListaCount\(candidato\.total_processos, candidato\.processos_verificacao, processosNow, candidato\.processos_omitidos_sem_fonte_oficial \?\? 0\)/)
   })
 
-  it("a lista compacta e o aria-label usam o resolvedor compartilhado", () => {
+  it("a lista compacta usa o resolvedor compartilhado e é o nome acessível do botão", () => {
     const ocorrencias = fonte.match(/processosResumoLabel\(candidato\.total_processos, candidato\.processos_verificacao, processosNow, candidato\.processos_omitidos_sem_fonte_oficial \?\? 0\)/g) ?? []
-    assert.equal(ocorrencias.length, 2, "esperado no aria-label e na lista compacta")
+    assert.equal(ocorrencias.length, 1, "esperado só na lista compacta, que também nomeia o botão")
+    // O nome vem do texto visível do cartão (WCAG 2.5.3), não de um aria-label paralelo.
+    assert.doesNotMatch(fonte, /aria-label=\{`\$\{comparadorToggleLabel\(candidato\.nome_urna, selected\)\}\. /)
+    assert.match(fonte, /<span className="sr-only">\{comparadorToggleLabel\(candidato\.nome_urna, selected\)\}: <\/span>/)
     assert.doesNotMatch(fonte, /sem contagem de processos verificada/)
     assert.doesNotMatch(fonte, /sem contagem verificada/)
   })

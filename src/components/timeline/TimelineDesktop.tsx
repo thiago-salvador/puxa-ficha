@@ -575,8 +575,9 @@ export function TimelineDesktop({
                   const badgeX = Math.min(Math.max(cx + 12, LEFT_PAD + 8), chartRight - badgeWidth - 4)
                   const badgeY = cy - 11
 
-                  // The marker texts are drawn after the button, not inside it: its name
-                  // is ev.label and the glyph and badge are visual only (WCAG 2.5.3).
+                  // WCAG 2.5.3: the visible badge leads the button's name; the glyph is an
+                  // icon, drawn after the button so it stays out of the name.
+                  const markerLabel = showBadge && badgeLabel ? `${badgeLabel}: ${ev.label}` : ev.label
                   return (
                     <Fragment key={ev.id}>
                     <g
@@ -594,7 +595,7 @@ export function TimelineDesktop({
                           onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
                         }
                       }}
-                      aria-label={ev.label}
+                      aria-label={markerLabel}
                     >
                       <circle
                         cx={cx}
@@ -633,16 +634,28 @@ export function TimelineDesktop({
                         <circle cx={cx} cy={cy} r={6.5} fill={fill} stroke="#ffffff" strokeWidth={1.2} />
                       )}
                       {showBadge && badgeLabel ? (
-                        <rect
-                          x={badgeX}
-                          y={badgeY}
-                          width={badgeWidth}
-                          height={22}
-                          rx={11}
-                          fill={theme.softFill}
-                          stroke={theme.softStroke}
-                          strokeWidth={1}
-                        />
+                        <g>
+                          <rect
+                            x={badgeX}
+                            y={badgeY}
+                            width={badgeWidth}
+                            height={22}
+                            rx={11}
+                            fill={theme.softFill}
+                            stroke={theme.softStroke}
+                            strokeWidth={1}
+                          />
+                          <text
+                            x={badgeX + badgeWidth / 2}
+                            y={badgeY + 14}
+                            textAnchor="middle"
+                            fill={theme.text}
+                            className="pointer-events-none text-[length:var(--text-eyebrow)] font-bold"
+                            style={{ fontSize: 8 }}
+                          >
+                            {badgeLabel}
+                          </text>
+                        </g>
                       ) : null}
                     </g>
                     {glyph ? (
@@ -656,19 +669,6 @@ export function TimelineDesktop({
                         aria-hidden="true"
                       >
                         {glyph}
-                      </text>
-                    ) : null}
-                    {showBadge && badgeLabel ? (
-                      <text
-                        x={badgeX + badgeWidth / 2}
-                        y={badgeY + 14}
-                        textAnchor="middle"
-                        fill={theme.text}
-                        className="pointer-events-none text-[length:var(--text-eyebrow)] font-bold"
-                        style={{ fontSize: 8 }}
-                        aria-hidden="true"
-                      >
-                        {badgeLabel}
                       </text>
                     ) : null}
                     </Fragment>
