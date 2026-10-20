@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-19T19:15:00-03:00",
+  "coletado_em": "2026-10-20T19:12:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -680,6 +680,12 @@
           "veiculo": "News Espírito Santo",
           "publicado_em": "2026-10-06T00:00:00-03:00",
           "trecho": "Sobre o segundo turno do Espírito Santo, nós ainda vamos fazer conversas no partido"
+        },
+        {
+          "url": "https://www.agazeta.com.br/colunas/vitor-vogas/o-posicionamento-de-helder-salomao-no-segundo-turno-para-governador-1026",
+          "veiculo": "A Gazeta (ES)",
+          "publicado_em": "2026-10-19T13:31:00-03:00",
+          "trecho": "diferentemente de Coser, Helder não pedirá votos nem fará campanha por Ricardo"
         }
       ]
     },
