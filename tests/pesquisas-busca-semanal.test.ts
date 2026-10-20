@@ -126,10 +126,11 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
     }
   }
   const segundoTurno = lula.find((p) => p.grupo === "segundo_turno")
-  assert.equal(segundoTurno?.id, "vox-brasil-br-04332-2026")
-  assert.equal(segundoTurno?.cenario.id, "vox-brasil-br-04332-2026-2t")
-  assert.equal(segundoTurno?.resultado.valuePercent, 46.4)
+  assert.equal(segundoTurno?.id, "real-time-big-data-br-02952-2026")
+  assert.equal(segundoTurno?.cenario.id, "real-time-big-data-br-02952-2026-2t")
+  assert.equal(segundoTurno?.resultado.valuePercent, 45)
   for (const [id, value] of [
+    ["vox-brasil-br-04332-2026", 46.4],
     ["ipespe-abrapel-br-00223-2026", 46],
     ["datafolha-br-00466-2026", 45],
     ["gerp-br-07877-2026", 44],
