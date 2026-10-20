@@ -2,7 +2,7 @@
 
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import {
   clampTimeWindow,
@@ -575,9 +575,11 @@ export function TimelineDesktop({
                   const badgeX = Math.min(Math.max(cx + 12, LEFT_PAD + 8), chartRight - badgeWidth - 4)
                   const badgeY = cy - 11
 
+                  // The marker texts are drawn after the button, not inside it: its name
+                  // is ev.label and the glyph and badge are visual only (WCAG 2.5.3).
                   return (
+                    <Fragment key={ev.id}>
                     <g
-                      key={ev.id}
                       role="button"
                       tabIndex={0}
                     className="cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -630,43 +632,46 @@ export function TimelineDesktop({
                       ) : (
                         <circle cx={cx} cy={cy} r={6.5} fill={fill} stroke="#ffffff" strokeWidth={1.2} />
                       )}
-                      {glyph ? (
-                        <text
-                          x={cx}
-                          y={cy + 2.6}
-                          textAnchor="middle"
-                          className="pointer-events-none text-[6.5px] font-black uppercase"
-                          fill="#ffffff"
-                          style={{ fontSize: laneType === "projeto_lei" ? 5.8 : 6.5 }}
-                        >
-                          {glyph}
-                        </text>
-                      ) : null}
                       {showBadge && badgeLabel ? (
-                        <g>
-                          <rect
-                            x={badgeX}
-                            y={badgeY}
-                            width={badgeWidth}
-                            height={22}
-                            rx={11}
-                            fill={theme.softFill}
-                            stroke={theme.softStroke}
-                            strokeWidth={1}
-                          />
-                          <text
-                            x={badgeX + badgeWidth / 2}
-                            y={badgeY + 14}
-                            textAnchor="middle"
-                            fill={theme.text}
-                            className="pointer-events-none text-[length:var(--text-eyebrow)] font-bold"
-                            style={{ fontSize: 8 }}
-                          >
-                            {badgeLabel}
-                          </text>
-                        </g>
+                        <rect
+                          x={badgeX}
+                          y={badgeY}
+                          width={badgeWidth}
+                          height={22}
+                          rx={11}
+                          fill={theme.softFill}
+                          stroke={theme.softStroke}
+                          strokeWidth={1}
+                        />
                       ) : null}
                     </g>
+                    {glyph ? (
+                      <text
+                        x={cx}
+                        y={cy + 2.6}
+                        textAnchor="middle"
+                        className="pointer-events-none text-[6.5px] font-black uppercase"
+                        fill="#ffffff"
+                        style={{ fontSize: laneType === "projeto_lei" ? 5.8 : 6.5 }}
+                        aria-hidden="true"
+                      >
+                        {glyph}
+                      </text>
+                    ) : null}
+                    {showBadge && badgeLabel ? (
+                      <text
+                        x={badgeX + badgeWidth / 2}
+                        y={badgeY + 14}
+                        textAnchor="middle"
+                        fill={theme.text}
+                        className="pointer-events-none text-[length:var(--text-eyebrow)] font-bold"
+                        style={{ fontSize: 8 }}
+                        aria-hidden="true"
+                      >
+                        {badgeLabel}
+                      </text>
+                    ) : null}
+                    </Fragment>
                   )
                 })}
               </TimelineLane>

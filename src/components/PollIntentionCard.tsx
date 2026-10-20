@@ -129,7 +129,7 @@ export function PollIntentionCard({ pesquisas: todas, resultadoEleitoralPublicad
           target="_blank"
           rel="noreferrer"
           className="inline-flex min-h-11 shrink-0 items-center gap-1 text-[length:var(--text-eyebrow)] font-bold text-foreground underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
-          aria-label={`Ver divulgação pública de ${instituto} (abre em nova aba)`}
+          aria-label={`Fonte pública: divulgação de ${instituto} (abre em nova aba)`}
         >
           Fonte pública
           <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
