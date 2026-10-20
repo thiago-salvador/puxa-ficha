@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-18T08:33:48.878Z",
+  "updated_at": "2026-10-20T08:45:01.316Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -9174,6 +9174,156 @@
           "url": "https://g1.globo.com/ac/acre/eleicoes/2026/noticia/2026/10/13/alan-rick-aposta-em-dialogo-com-prefeitos-para-buscar-virada-no-2o-turno-no-ac-forca-da-maquina-e-esmagadora.ghtml",
           "datePublished": "2026-10-13T12:32:12.297-03:00",
           "dateModified": "2026-10-13T12:36:23.988-03:00"
+        }
+      }
+    },
+    {
+      "id": "f953af1f64bbe5c50cdf19115e630893416eff11bb69fe73ef142adda5e7daca",
+      "candidate_id": "538fb04d-8fb4-486f-a7dd-9c78399a6353",
+      "candidate_slug": "flavio-bolsonaro",
+      "candidate_name": "Flavio Bolsonaro",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "Você vai poder plantar, criar gado, vai fazer o que quiser na sua terra e o que você explorar da terra é seu.",
+      "context": "\"Vamos respeitar a propriedade privada. Você vai poder plantar, criar gado, vai fazer o que quiser na sua terra e o que você explorar da terra é seu. Esses entraves que existem ambientais por causa de razões ideológicas a gente vai acabar\", afirmou.",
+      "event_context": "Declaração em campanha durante ato de Flávio Bolsonaro em Marabá, no sudeste do Pará; promessa condicionada à eleição e associada à revisão de restrições ambientais que ele chama de ideológicas. afirmou nesta segunda-feira (19) em agenda na Amazônia",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-19",
+      "publisher": "Folha de S.Paulo",
+      "article_url": "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-critica-entraves-ambientais-e-diz-que-produtor-vai-fazer-o-que-quiser-na-sua-terra.shtml",
+      "article_title": "Flávio Bolsonaro critica entraves ambientais e diz que produtor 'vai fazer o que quiser na sua terra'",
+      "article_published_at": "2026-10-19T15:07:00Z",
+      "article_modified_at": "2026-10-19T20:29:00Z",
+      "observed_at": "2026-10-20T08:45:01.316Z",
+      "source_sha256": "2e48c485a44497a7fa79a27927fec1b96e43ad542ab0e21e57a81c500d7cdca0",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "Flávio Bolsonaro (PL) em ato de campanha em Marabá, no sudeste do Pará",
+        "identity_excerpt": "O senador e candidato à Presidência Flávio Bolsonaro (PL) afirmou nesta segunda-feira (19) em agenda na Amazônia que pretende, caso seja eleito, promover um programa de regularização fundiária e rever as restrições ambientais que, segundo ele, são motivadas por razões ideológicas.",
+        "date_excerpt": "afirmou nesta segunda-feira (19) em agenda na Amazônia",
+        "fetched_url": "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-critica-entraves-ambientais-e-diz-que-produtor-vai-fazer-o-que-quiser-na-sua-terra.shtml",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www1.folha.uol.com.br/poder/2026/10/flavio-bolsonaro-critica-entraves-ambientais-e-diz-que-produtor-vai-fazer-o-que-quiser-na-sua-terra.shtml",
+          "datePublished": "2026-10-19T15:07:00Z",
+          "dateModified": "2026-10-19T20:29:00Z"
+        }
+      }
+    },
+    {
+      "id": "771d1bab49792114fa94315e7d23a4f6cf2fddd7ca6340e1e17633244e3d0790",
+      "candidate_id": "d6740de5-c7d9-4978-ab49-b51a22481aa2",
+      "candidate_slug": "lula",
+      "candidate_name": "Lula",
+      "office": "Presidente",
+      "uf": null,
+      "quote_text": "Não deu para ganhar no primeiro turno, nós agora vamos ganhar no segundo turno",
+      "context": "“Eu confesso para você que eu achei que a gente podia ganhar as eleições no primeiro turno. Tal era a performance das coisas que havia realizado no governo. Não deu para ganhar no primeiro turno, nós agora vamos ganhar no segundo turno”, declarou.",
+      "event_context": "Sabatina do SBT durante a campanha presidencial de 2026. afirmou, nesta segunda-feira (19/10)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-10-19",
+      "publisher": "Correio Braziliense",
+      "article_url": "https://www.correiobraziliense.com.br/politica/2026/10/7523770-lula-aposta-em-mobilizacao-e-diz-estar-convencido-de-vitoria.html",
+      "article_title": "Lula aposta em mobilização e diz estar convencido de vitória no 2° turno",
+      "article_published_at": "2026-10-19T20:29:30+00:00",
+      "observed_at": "2026-10-20T08:45:01.316Z",
+      "source_sha256": "b90039313bd8b9b238ac93e92a4c566e13127f08ea5c1f77f63bf8e3a660b0ad",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O presidente Luiz Inácio Lula da Silva (PT) afirmou, nesta segunda-feira (19/10), estar convencido de que vencerá o segundo turno das eleições presidenciais, marcado para 25 de outubro.",
+        "date_excerpt": "afirmou, nesta segunda-feira (19/10)",
+        "fetched_url": "https://www.correiobraziliense.com.br/politica/2026/10/7523770-lula-aposta-em-mobilizacao-e-diz-estar-convencido-de-vitoria.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "ae5e0510da7efd41ebac92712db48c843852ecde7bda51e35b187e65cf5ab45a",
+      "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+      "candidate_slug": "leandro-grass",
+      "candidate_name": "Leandro Grass",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "Sou obcecado pela saúde pública. Não irei descansar enquanto a saúde não estiver bem",
+      "context": "Na conversa, Grass comentou que mergulhou no Sistema Único de Saúde (SUS) quando iniciou sua carreira política. “Sou usuário do sistema, me consulto na UBS perto da minha casa, mas só consegui entender mesmo quando virei deputado (distrital)”, disse. \"Sou obcecado pela saúde pública. Não irei descansar enquanto a saúde não estiver bem\", acrescentou.",
+      "event_context": "Declaração de Leandro Grass durante plenária on-line promovida pelo Sindicato dos Enfermeiros, ABEN-DF e pela deputada distrital Dayse Amarílio. Na noite desta segunda-feira (19/10)",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-19",
+      "publisher": "Correio Braziliense",
+      "article_url": "https://www.correiobraziliense.com.br/cidades-df/2026/10/7523811-a-saude-publica-e-minha-obsessao-afirma-leandro-grass-a-enfermeiros.html",
+      "article_title": "\"A saúde pública é minha obsessão\", afirma Leandro Grass a enfermeiros",
+      "article_published_at": "2026-10-19T21:47:33Z",
+      "observed_at": "2026-10-20T08:45:01.316Z",
+      "source_sha256": "c2feaea1c6f29cc88ba3bb86cd08b86144bd5c89b8545a298b2cbb9b338f2709",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "Grass comentou que uma das suas estratégias de campanha foi escutar usuários, profissionais e especialistas em saúde pública do DF para entender as principais demandas.",
+        "identity_excerpt": "Na noite desta segunda-feira (19/10), o candidato ao GDF Leandro Grass (PT) participou de uma uma plenária on-line promovida pelo Sindicato dos Enfermeiros, Associação Brasileira de Enfermagem (ABEN-DF) e pela deputada distrital Dayse Amarílio (PSB).",
+        "date_excerpt": "Na noite desta segunda-feira (19/10)",
+        "fetched_url": "https://www.correiobraziliense.com.br/cidades-df/2026/10/7523811-a-saude-publica-e-minha-obsessao-afirma-leandro-grass-a-enfermeiros.html",
+        "method": "codex_source_review"
+      }
+    },
+    {
+      "id": "db02b11aa82ddffa5e066f8250a6a953d6ed6c190790b41c3eb2ce0393a6143f",
+      "candidate_id": "91dc9c87-6811-494c-8c51-1bccfdf08c29",
+      "candidate_slug": "celina-leao",
+      "candidate_name": "Celina Leao",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "Olha, eu não entendi por que o Lula, que se diz defensor de banco público, nunca ajudou o BRB num aval.",
+      "context": "“Olha, eu não entendi por que o Lula, que se diz defensor de banco público, nunca ajudou o BRB num aval. Ele quis ficar longe do BRB, claro. Ele tinha destacado para resolver a compra do BRB Master ninguém mais, ninguém menos do que o Edinho, presidente do PT nacional”, disse Celina Leão ao questionar a postura do governo federal em relação à instituição financeira.",
+      "event_context": "Sabatina em rádio da capital do Distrito Federal. A frase registra a crítica de Celina ao governo federal, sem apresentá-la como fato confirmado sobre o BRB. Durante sabatina em rádio da capital nesta segunda-feira (19/10)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-10-19",
+      "publisher": "Correio Braziliense",
+      "article_url": "https://www.correiobraziliense.com.br/cidades-df/2026/10/7523390-celina-critica-governo-federal-por-omissao-com-brb-e-mudancas-no-fundo-constitucional.html",
+      "article_title": "Celina critica governo federal por omissão com BRB e mudanças no Fundo Constitucional",
+      "article_published_at": "2026-10-19T14:19:00+00:00",
+      "article_modified_at": "2026-10-19T15:20:50+00:00",
+      "observed_at": "2026-10-20T08:45:01.316Z",
+      "source_sha256": "7dc79bd999d372c1f8f5fee18f0a3165dda2ab8d9865441d0072cb6f45ea81dc",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "Durante sabatina em rádio da capital nesta segunda-feira (19/10), a governadora Celina Leão (PP) direcionou duras críticas ao governo federal e ao Partido dos Trabalhadores (PT), acusando a gestão federal de omissão na recuperação do Banco de Brasília (BRB) e de articular cortes nos recursos destinados ao Distrito Federal.",
+        "date_excerpt": "Durante sabatina em rádio da capital nesta segunda-feira (19/10)",
+        "fetched_url": "https://www.correiobraziliense.com.br/cidades-df/2026/10/7523390-celina-critica-governo-federal-por-omissao-com-brb-e-mudancas-no-fundo-constitucional.html",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www.correiobraziliense.com.br/cidades-df/2026/10/7523390-celina-critica-governo-federal-por-omissao-com-brb-e-mudancas-no-fundo-constitucional.html",
+          "datePublished": "2026-10-19T14:19:00+00:00",
+          "dateModified": "2026-10-19T15:20:50+00:00"
+        }
+      }
+    },
+    {
+      "id": "93e4db1f248b48d447e7cef18e2eae3a42d10545bc2a17ed3937c6680c22010c",
+      "candidate_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+      "candidate_slug": "vicentinho-junior",
+      "candidate_name": "Vicentinho Junior",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Se ele não sabe como fazer, eu sei",
+      "context": "Vicentinho também questionou a comparação das alíquotas do Tocantins com as praticadas em estados que cobram percentuais superiores. Como exemplo, mencionou o Espírito Santo, onde, segundo ele, a alíquota de referência do ICMS é de 17%. O candidato defendeu que o Tocantins considere experiências de estados com tributação menor, em vez de utilizar apenas aqueles com impostos mais elevados como parâmetro. “Se ele não sabe como fazer, eu sei”, declarou, em crítica à condução da política tributária estadual.",
+      "event_context": "Entrevista ao Jornal Opção Tocantins sobre propostas de redução do ICMS e isenção do IPVA anunciadas durante a campanha. afirmou, nesta quinta-feira, 8, em entrevista ao Jornal Opção Tocantins",
+      "event_type": "entrevista",
+      "occurred_on": "2026-10-08",
+      "publisher": "Jornal Opção Tocantins",
+      "article_url": "https://tocantins.jornalopcao.com.br/noticias/questionado-sobre-perda-de-arrecadacao-com-cortes-de-icms-e-ipva-vicentinho-diz-se-eles-nao-sabem-como-fazer-eu-sei-601862/",
+      "article_title": "Questionado sobre perda de arrecadação com cortes de ICMS e IPVA, Vicentinho diz: “Se eles não sabem como fazer, eu sei”",
+      "article_published_at": "2026-10-08T22:59:27+00:00",
+      "article_modified_at": "2026-10-08T23:02:25+00:00",
+      "observed_at": "2026-10-20T08:45:01.316Z",
+      "source_sha256": "718e54dbd19e7abf55255cdde35495d43a1ccea1ca2cc42d963c0aa0f69cd02f",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao governo do Tocantins Vicentinho Júnior (PSDB) afirmou, nesta quinta-feira, 8, em entrevista ao Jornal Opção Tocantins, que pretende cumprir as propostas de redução do ICMS e de isenção do IPVA anunciadas durante a campanha.",
+        "date_excerpt": "afirmou, nesta quinta-feira, 8, em entrevista ao Jornal Opção Tocantins",
+        "fetched_url": "https://tocantins.jornalopcao.com.br/noticias/questionado-sobre-perda-de-arrecadacao-com-cortes-de-icms-e-ipva-vicentinho-diz-se-eles-nao-sabem-como-fazer-eu-sei-601862/",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://tocantins.jornalopcao.com.br/noticias/questionado-sobre-perda-de-arrecadacao-com-cortes-de-icms-e-ipva-vicentinho-diz-se-eles-nao-sabem-como-fazer-eu-sei-601862/",
+          "datePublished": "2026-10-08T22:59:27+00:00",
+          "dateModified": "2026-10-08T23:02:25+00:00"
         }
       }
     }

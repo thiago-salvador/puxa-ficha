@@ -42,6 +42,64 @@ it("recusa metadados itemprop em conflito com a URL ou com JSON-LD da matéria",
   assert.equal(extrairMetadadosArtigo(base.replace(`dateModified":"${modified}`, `dateModified":"2026-09-11T13:58:00-03:00`)), null)
 })
 
+it("usa metadados Open Graph de artigo quando não há JSON-LD editorial canônico", () => {
+  const published = "2026-09-09T12:00:00-03:00"
+  const modified = "2026-09-10T13:58:00-03:00"
+  const metadata = { "@type": "NewsArticle", url, datePublished: published, dateModified: modified }
+  const body = html(paragraph, published).replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"><meta property="article:modified_time" content="${modified}"><script type="application/ld+json">${JSON.stringify(metadata)}</script></head>`)
+  assert.deepEqual(extrairMetadadosArtigo(body), { url, datePublished: published, dateModified: modified })
+})
+
+it("não deixa OG válido resgatar JSON-LD editorial canônico inválido", () => {
+  const valid = "2026-09-09T12:00:00-03:00"
+  const metadata = { "@type": "ReportageNewsArticle", url, datePublished: "2026-09-31T12:00:00-03:00", dateModified: valid }
+  const body = html(paragraph, valid).replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"><meta property="article:modified_time" content="${valid}"><script type="application/ld+json">${JSON.stringify(metadata)}</script></head>`)
+  assert.equal(extrairMetadadosArtigo(body), null)
+})
+
+it("recusa canonical ou og:url duplicados divergentes no fallback OG", () => {
+  const published = "2026-09-09T12:00:00-03:00"
+  const base = html(paragraph, published).replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"></head>`)
+  assert.equal(extrairMetadadosArtigo(base.replace("</head>", `<link rel="canonical" href="${url}-outro"></head>`)), null)
+  assert.equal(extrairMetadadosArtigo(base.replace("</head>", `<meta property="og:url" content="${url}-outro"></head>`)), null)
+})
+
+it("exige metadados OG e canonical no head para o fallback", () => {
+  const published = "2026-09-09T12:00:00-03:00"
+  const bodyOnly = html(paragraph, published).replace("</head>", "</head>").replace("</body>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"></body>`)
+  assert.equal(extrairMetadadosArtigo(bodyOnly), null)
+  const noCanonical = html(paragraph, published).replace(`<link rel="canonical" href="${url}">`, "")
+    .replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"></head>`)
+  assert.equal(extrairMetadadosArtigo(noCanonical), null)
+})
+
+it("não deixa dateModified nulo, falso ou vazio no JSON-LD ser tratado como ausência", () => {
+  const published = "2026-09-09T12:00:00-03:00"
+  for (const modified of [null, false, ""] as const) {
+    const metadata = { "@type": "NewsArticle", url, datePublished: published, dateModified: modified }
+    const body = html(paragraph, published).replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"><meta property="article:modified_time" content="${published}"><script type="application/ld+json">${JSON.stringify(metadata)}</script></head>`)
+    assert.equal(extrairMetadadosArtigo(body), null)
+  }
+})
+
+it("compara timestamps JSON-LD e OG pelo instante sem reescrever o valor OG", () => {
+  const ogPublished = "2026-09-09T12:00:00+00:00"
+  const ogModified = "2026-09-10T13:58:00+00:00"
+  const metadata = { "@type": "NewsArticle", url, datePublished: "2026-09-09T12:00:00Z", dateModified: "2026-09-10T13:58:00Z" }
+  const body = html(paragraph, ogPublished).replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"><meta property="article:modified_time" content="${ogModified}"><script type="application/ld+json">${JSON.stringify(metadata)}</script></head>`)
+  assert.deepEqual(extrairMetadadosArtigo(body), { url, datePublished: ogPublished, dateModified: ogModified })
+  const mismatch = body.replace('dateModified":"2026-09-10T13:58:00Z', 'dateModified":"2026-09-10T13:58:01Z')
+  assert.equal(extrairMetadadosArtigo(mismatch), null)
+})
+
+it("ignora itemprop fora de metadados do head e permite OG com JSON-LD sintaticamente inválido", () => {
+  const published = "2026-09-09T12:00:00-03:00"
+  const bodyOnly = html().replace("</body>", `<meta itemprop="datePublished" content="${published}"></body>`)
+  assert.equal(extrairMetadadosArtigo(bodyOnly), null)
+  const malformedJsonLd = html(paragraph, published).replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"><script type="application/ld+json">{not-json</script></head>`)
+  assert.deepEqual(extrairMetadadosArtigo(malformedJsonLd), { url, datePublished: published })
+})
+
 describe("falas recentes com fonte", () => {
   it("extrai literalmente, com identidade, evento, data e fonte", () => {
     const result = extract()
