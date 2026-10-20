@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-recibos-v1",
-  "updated_at": "2026-10-20T08:47:12.204Z",
+  "updated_at": "2026-10-20T09:05:09.434Z",
   "receipts": [
     {
       "candidate_id": "1d083d19-96c3-4a41-9d75-6abffacc4a3a",
@@ -64,7 +64,7 @@
       "searched_at": "2026-10-20T08:43:07.000Z",
       "window_from": "2026-10-07",
       "window_to": "2026-10-20",
-      "result": "sem_fala"
+      "result": "com_fala"
     },
     {
       "candidate_id": "b7a29b07-90d2-44c6-979d-d4d526321865",
@@ -176,7 +176,7 @@
       "searched_at": "2026-10-20T08:43:07.000Z",
       "window_from": "2026-10-07",
       "window_to": "2026-10-20",
-      "result": "sem_fala"
+      "result": "com_fala"
     },
     {
       "candidate_id": "d4f97034-9452-4517-88ba-afb29831adaa",

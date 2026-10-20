@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-20T08:45:01.316Z",
+  "updated_at": "2026-10-20T09:01:33.373Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -9325,6 +9325,81 @@
           "datePublished": "2026-10-08T22:59:27+00:00",
           "dateModified": "2026-10-08T23:02:25+00:00"
         }
+      }
+    },
+    {
+      "id": "a330afa14f122b8c157c8b4df50964d0b183b08ddb8396fa2e0c666fce787e11",
+      "candidate_id": "afb87309-0aee-4ecc-9ac6-e8402902321a",
+      "candidate_slug": "cadu-xavier",
+      "candidate_name": "Cadu de Lula",
+      "office": "Governador",
+      "uf": "RN",
+      "quote_text": "Eu quero retomar o que era, pagar 40% até 30 de junho, e voltar e complementar até 31 de dezembro, esse é o nosso objetivo, a gente quer chegar nisso, se Deus quiser, já a partir de 2028",
+      "context": "\"Eu quero retomar o que era, pagar 40% até 30 de junho, e voltar e complementar até 31 de dezembro, esse é o nosso objetivo, a gente quer chegar nisso, se Deus quiser, já a partir de 2028\", afirmou.",
+      "event_context": "Sabatina do Jornal da Manhã, da Jovem Pan News Natal, durante o segundo turno para o governo do Rio Grande do Norte. afirmou, nesta quarta-feira (14)",
+      "event_type": "sabatina",
+      "occurred_on": "2026-10-14",
+      "publisher": "Tribuna do Norte",
+      "article_url": "https://tribunadonorte.com.br/politica/cadu-promete-retomar-pagamento-antecipado-do-13o-salario-e-recuperar-capacidade-de-investimento-do-rn/",
+      "article_title": "Cadu promete retomar pagamento antecipado do 13º salário e recuperar capacidade de investimento do RN - Tribuna do Norte",
+      "article_published_at": "2026-10-14T12:16:33+00:00",
+      "article_modified_at": "2026-10-14T12:16:35+00:00",
+      "observed_at": "2026-10-20T09:01:33.373Z",
+      "source_sha256": "59914a55ad092f7d927233b27db0657daa784bd5ae5fea1171a58b671e5c10f7",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao Governo do Rio Grande do Norte Cadu de Lula (PT) afirmou, nesta quarta-feira (14), que pretende retomar o pagamento antecipado de parte do 13º salário dos servidores estaduais a partir de 2028, caso seja eleito. Durante sabatina no Jornal da Manhã, da Jovem Pan News Natal (93,5 FM), ele também defendeu o controle do crescimento das despesas públicas como caminho para recuperar a capacidade de investimento do Estado e apresentou propostas para infraestrutura e desenvolvimento econômico.",
+        "date_excerpt": "afirmou, nesta quarta-feira (14)",
+        "fetched_url": "https://tribunadonorte.com.br/politica/cadu-promete-retomar-pagamento-antecipado-do-13o-salario-e-recuperar-capacidade-de-investimento-do-rn/",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://tribunadonorte.com.br/politica/cadu-promete-retomar-pagamento-antecipado-do-13o-salario-e-recuperar-capacidade-de-investimento-do-rn/",
+          "datePublished": "2026-10-14T12:16:33+00:00",
+          "dateModified": "2026-10-14T12:16:35+00:00"
+        }
+      }
+    },
+    {
+      "id": "f72c093961d9eff0927dfa039812d74f9a14f0cb81876b7b1591d5fb35c2b43c",
+      "candidate_id": "71129af6-3c6d-4b0a-9030-b97984fc1e0b",
+      "candidate_slug": "alysson-bezerra",
+      "candidate_name": "Alysson Bezerra",
+      "office": "Governador",
+      "uf": "RN",
+      "quote_text": "Eu estou propondo colocar uma equipe técnica e qualificada.",
+      "context": "“Eu estou propondo colocar uma equipe técnica e qualificada. Uma equipe que sente na cadeira das secretarias para gerir e ter capacidade de interlocução, de ter conhecimento do que precisa ser feito e terá liberdade para tomar as medidas, que nós iremos organizar o estado, respeitando os direitos adquiridos de cada servidor”, destacou o ex-prefeito.",
+      "event_context": "Sabatina do Jornal da Manhã, da Jovem Pan News Natal, durante o segundo turno para o governo do Rio Grande do Norte. afirmou nesta segunda-feira (19), durante sabatina no Jornal da Manhã, da Jovem Pan News Natal",
+      "event_type": "sabatina",
+      "occurred_on": "2026-10-19",
+      "publisher": "Tribuna do Norte",
+      "article_url": "https://tribunadonorte.com.br/tn-nas-eleicoes-2026/allyson-defende-desburocratizacao-do-idema-e-secretariado-tecnico-para-modernizar-o-rn/",
+      "article_title": "Allyson defende desburocratização do Idema e secretariado técnico para modernizar o RN - Tribuna do Norte",
+      "article_published_at": "2026-10-19T13:16:51+00:00",
+      "article_modified_at": "2026-10-19T19:14:23+00:00",
+      "observed_at": "2026-10-20T09:01:33.373Z",
+      "source_sha256": "2faefc9e7025524b33f9b23b3bca9e3796d981f864a2a960ab89315c330daa90",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "O candidato ao Governo do Rio Grande do Norte Allyson Bezerra (União Brasil) afirmou nesta segunda-feira (19), durante sabatina no Jornal da Manhã, da Jovem Pan News Natal, que pretende modernizar a estrutura administrativa do Estado e formar um secretariado técnico e qualificado.",
+        "date_excerpt": "afirmou nesta segunda-feira (19), durante sabatina no Jornal da Manhã, da Jovem Pan News Natal",
+        "fetched_url": "https://tribunadonorte.com.br/tn-nas-eleicoes-2026/allyson-defende-desburocratizacao-do-idema-e-secretariado-tecnico-para-modernizar-o-rn/",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://tribunadonorte.com.br/tn-nas-eleicoes-2026/allyson-defende-desburocratizacao-do-idema-e-secretariado-tecnico-para-modernizar-o-rn/",
+          "datePublished": "2026-10-19T13:16:51+00:00",
+          "dateModified": "2026-10-19T19:14:23+00:00"
+        },
+        "supporting_sources": [
+          {
+            "url": "https://www.cnnbrasil.com.br/eleicoes/quem-sao-os-candidatos-a-governador-do-rio-grande-do-norte-em-2026/",
+            "sha256": "00e656f71a5e187cbad80a5584eafdde584920cb626644c8bb550e04f678b9d9",
+            "excerpts": [
+              "Allyson Leandro Bezerra Silva tem 34 anos e é natural de Mossoró, no interior do estado.",
+              "Allyson (União Brasil) - 44",
+              "O Rio Grande do Norte tem nove candidatos concorrendo ao cargo de governador do estado nas eleições de 2026."
+            ]
+          }
+        ]
       }
     }
   ]
