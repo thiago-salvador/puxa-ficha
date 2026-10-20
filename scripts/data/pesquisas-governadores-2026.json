@@ -54401,7 +54401,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|TO|1|estimulada|lista-parana-pesquisas-2026-08-28-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-04e458cb8255124a",
+      "exact_aliases_version": "monitor-2026-989ba1855ca5e42f",
       "exact_aliases": [
         {
           "raw_label": "Ataídes de Oliveira",
@@ -54975,6 +54975,24 @@
           "geography": "Tocantins",
           "turn": 2,
           "scenario_id": "quaest-to-03829-2026-2t"
+        },
+        {
+          "raw_label": "Vicentinho Junior",
+          "candidate_slug": "vicentinho-junior",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "parana-pesquisas-to-09349-2026-2t"
+        },
+        {
+          "raw_label": "Professora Dorinha",
+          "candidate_slug": "professora-dorinha",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "parana-pesquisas-to-09349-2026-2t"
         }
       ],
       "pesquisas": [
@@ -56586,6 +56604,134 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 5,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parana-pesquisas-to-09349-2026",
+          "source_id": "parana-pesquisas-to-09349-2026-revisao-20261020",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Paraná Pesquisas",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "FIETO - Federação das Indústrias do Estado do Tocantins",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-14",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-17",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-19",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1500,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Estado do Tocantins",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.5,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas telefônicas assistidas por computador (CATI).",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "TO-09349/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Tocantins",
+            "code": "TO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-3.pdf",
+            "supporting_urls": [
+              "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-09349-2026-outubro-2026/",
+              "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_220_TO_-RegistroTSE_TO-09349.pdf",
+              "https://exame.com/brasil/pesquisa-parana-vicentinho-junior-tem-525-e-dorinha-404-no-2o-turno/",
+              "https://www.poder360.com.br/poder-pesquisas/vicentinho-tem-566-e-dorinha-435-no-2o-turno-no-to-diz-pesquisa/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-20T12:14:45Z",
+            "capture": {
+              "format": "text",
+              "sha256": "dbf651be5140ab919c454e150340fa552c683a7e5c9ef8ad9851feee2a246751",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "parana-pesquisas-to-09349-2026-2t",
+              "turn": 2,
+              "geography": "Tocantins",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|TO|2|estimulada|600695d7d7ef7b21caa8eb0615eafb95c8ab95d35bc097973c9fa58ed6dff352|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Não sabe/ não opinou",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nenhum/ Branco/ Nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.1,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Vicentinho Junior",
+                  "candidate_slug": "vicentinho-junior",
+                  "match_status": "exact_alias",
+                  "value_percent": 52.5,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Dorinha",
+                  "candidate_slug": "professora-dorinha",
+                  "match_status": "exact_alias",
+                  "value_percent": 40.4,
                   "status": "publicado"
                 }
               ]

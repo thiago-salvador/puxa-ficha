@@ -35,7 +35,7 @@
     "comparability_key": "2026|Presidente|BR|1|estimulado|lista-oficial-sem-marcal"
   },
   "consulted_at": "2026-09-10T12:02:09Z",
-  "exact_aliases_version": "monitor-2026-429e39f9ff25cee7",
+  "exact_aliases_version": "monitor-2026-2e6d33a606a4ab1c",
   "exact_aliases": [
     {
       "raw_label": "Lula",
@@ -3618,6 +3618,60 @@
       "geography": "Brasil",
       "turn": 2,
       "scenario_id": "vox-brasil-br-04332-2026-2t"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro (PL)",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "real-time-big-data-br-02952-2026-2t"
+    },
+    {
+      "raw_label": "Lula (PT)",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "real-time-big-data-br-02952-2026-2t"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "futura-inteligencia-br-06715-2026-2t"
+    },
+    {
+      "raw_label": "Lula",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "futura-inteligencia-br-06715-2026-2t"
+    },
+    {
+      "raw_label": "Flávio Bolsonaro",
+      "candidate_slug": "flavio-bolsonaro",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "nexus-br-04499-2026-2t"
+    },
+    {
+      "raw_label": "Lula",
+      "candidate_slug": "lula",
+      "year": 2026,
+      "office": "Presidente",
+      "geography": "Brasil",
+      "turn": 2,
+      "scenario_id": "nexus-br-04499-2026-2t"
     }
   ],
   "alias_scope": {
@@ -13728,6 +13782,384 @@
               "candidate_slug": null,
               "match_status": "not_candidate",
               "value_percent": 3.9,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "real-time-big-data-br-02952-2026",
+      "source_id": "real-time-big-data-br-02952-2026-revisao-20261020",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Real Time Big Data",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": null,
+        "status": "indeterminado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-10-15",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-10-19",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-20",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2000,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores do território nacional",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "Pesquisa realizada telefonicamente, com entrevistadores humanos. Abordagem inicial por ligações telefônicas e disparos de mensagens virtuais.",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-02952/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Presidencial-BR-02952-2026-Out26.pdf",
+        "supporting_urls": [
+          "https://www.cnnbrasil.com.br/eleicoes/real-time-big-data-flavio-tem-52-dos-votos-validos-lula-48/",
+          "https://cartacapital.com.br/politica/real-time-big-data-flavio-tem-48-lula-45/"
+        ],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-20T12:14:45Z",
+        "capture": {
+          "format": "text",
+          "sha256": "edca33974551ae8c2edb763e74ebbbc07c7abacc4be19cf0a39769df41b7636f",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "real-time-big-data-br-02952-2026-2t",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": "DIA 25 DE OUTUBRO TEREMOS SEGUNDO TURNO PARA AS ELEIÇÕES, SE O SEGUNDO TURNO DA ELEIÇÃO PARA PRESIDENTE DA REPÚBLICA FOSSE HOJE, EM QUEM O (A) SENHOR (A) VOTARIA SE OS NOMES FOSSEM ESTES?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|801d879e6f8742adeca3e7f9116981dcde286c37f446dc281bb32e07ad64de75|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro (PL)",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 48,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula (PT)",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 45,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Nulo/Branco",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 5,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "NS/NR",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 2,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "futura-inteligencia-br-06715-2026",
+      "source_id": "futura-inteligencia-br-06715-2026-revisao-20261020",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Futura Inteligência",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": null,
+        "status": "indeterminado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-10-16",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-10-17",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-19",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2000,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores do Brasil com 16 anos ou mais",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2.2,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "Entrevista telefônica assistida por computador (CATI).",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-06715/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://static.poder360.com.br/uploads/2026/10/pesquisa-futura-eleicao-presidencial-19out2026.pdf",
+        "supporting_urls": [
+          "https://www.exame.com/brasil/pesquisa-futura-para-presidente-flavio-bolsonaro-tem-504-e-lula-496-no-2o-turno/",
+          "https://www.poder360.com.br/poder-eleicoes-2026/flavio-tem-504-dos-votos-validos-contra-496-de-lula-diz-pesquisa/"
+        ],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-20T12:14:45Z",
+        "capture": {
+          "format": "text",
+          "sha256": "d2a70aafd884851a885d0cf5ebe09f6d57397de53a2b8c0a11f08f80c4a1200b",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "futura-inteligencia-br-06715-2026-2t",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": "Se o 2º turno da eleição para Presidente da República fosse hoje, em qual destes candidatos você votaria?",
+            "status": "publicado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|801d879e6f8742adeca3e7f9116981dcde286c37f446dc281bb32e07ad64de75|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 48.3,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 47.5,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Ninguém/Branco/Nulo",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 2.4,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "NS/NR/Indeciso",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 1.9,
+              "status": "publicado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nexus-br-04499-2026",
+      "source_id": "nexus-br-04499-2026-revisao-20261020",
+      "source_status": "aprovado",
+      "publishable_by_default": false,
+      "state": "publicado",
+      "instituto": {
+        "value": "Nexus",
+        "status": "publicado"
+      },
+      "contratante": {
+        "value": null,
+        "status": "indeterminado"
+      },
+      "fieldwork": {
+        "start": {
+          "value": "2026-10-16",
+          "status": "publicado"
+        },
+        "end": {
+          "value": "2026-10-18",
+          "status": "publicado"
+        }
+      },
+      "publication_date": {
+        "value": "2026-10-19",
+        "status": "publicado"
+      },
+      "sample": {
+        "size": {
+          "value": 2002,
+          "status": "publicado"
+        },
+        "population": {
+          "value": "eleitores de 16 anos ou mais nas 27 unidades da Federação",
+          "status": "publicado"
+        }
+      },
+      "margin_error_pp": {
+        "value": 2,
+        "status": "publicado"
+      },
+      "confidence_percent": {
+        "value": 95,
+        "status": "publicado"
+      },
+      "method": {
+        "value": "entrevistas por telefone",
+        "status": "publicado"
+      },
+      "registration": {
+        "code": {
+          "value": "BR-04499/2026",
+          "status": "publicado"
+        },
+        "url": {
+          "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+          "status": "publicado"
+        }
+      },
+      "geography": {
+        "type": "nacional",
+        "label": "Brasil",
+        "code": "BR"
+      },
+      "office": "Presidente",
+      "provenance": {
+        "result_url": "https://www.nexus.fsb.com.br/estudos-divulgados/pesquisa-btg-nexus-de-intencao-de-votos-para-presidente-do-brasil-19-de-outubro-de-2026/",
+        "supporting_urls": [
+          "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/nexus-btg-pactual-presidente-outubro-2026-segundo-turno-2/",
+          "https://exame.com/brasil/pesquisa-para-presidente-hoje-veja-o-que-mostram-os-ultimos-levantamentos/"
+        ],
+        "source_kind": "divulgacao_jornalistica_publica",
+        "route_class": "importacao_manual_auditada",
+        "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+        "consulted_at": "2026-10-20T12:14:45Z",
+        "capture": {
+          "format": "text",
+          "sha256": "74e851951b4269b56719b23c792291bb3774b63a3286effacce42da71e68ba6a",
+          "status": "publicado"
+        }
+      },
+      "cenarios": [
+        {
+          "id": "nexus-br-04499-2026-2t",
+          "turn": 2,
+          "geography": "Brasil",
+          "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+          "question": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "comparability_key": "2026|Presidente|BR|2|estimulada|801d879e6f8742adeca3e7f9116981dcde286c37f446dc281bb32e07ad64de75|total_amostra",
+          "resultados": [
+            {
+              "raw_label": "Flávio Bolsonaro",
+              "candidate_slug": "flavio-bolsonaro",
+              "match_status": "exact_alias",
+              "value_percent": 46.5,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Lula",
+              "candidate_slug": "lula",
+              "match_status": "exact_alias",
+              "value_percent": 45.9,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "Nenhum, branco ou nulo",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 4.7,
+              "status": "publicado"
+            },
+            {
+              "raw_label": "não sabem ou não responderam",
+              "candidate_slug": null,
+              "match_status": "not_candidate",
+              "value_percent": 2.9,
               "status": "publicado"
             }
           ]

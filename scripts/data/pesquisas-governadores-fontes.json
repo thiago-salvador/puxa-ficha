@@ -13082,6 +13082,95 @@
         }
       },
       "consulted_at": "2026-10-19T12:20:23Z"
+    },
+    {
+      "id": "parana-pesquisas-to-09349-2026-revisao-20261020",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "FIETO - Federação das Indústrias do Estado do Tocantins",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-14",
+          "end": "2026-10-17"
+        },
+        "published_at": "2026-10-19",
+        "sample_size": 1500,
+        "method": "Entrevistas telefônicas assistidas por computador (CATI).",
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          2
+        ],
+        "registration_id": "TO-09349/2026",
+        "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-3.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-09349/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-20T12:14:45Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "dbf651be5140ab919c454e150340fa552c683a7e5c9ef8ad9851feee2a246751",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-3.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-09349-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_220_TO_-RegistroTSE_TO-09349.pdf",
+            "https://exame.com/brasil/pesquisa-parana-vicentinho-junior-tem-525-e-dorinha-404-no-2o-turno/",
+            "https://www.poder360.com.br/poder-pesquisas/vicentinho-tem-566-e-dorinha-435-no-2o-turno-no-to-diz-pesquisa/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-3.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-09349-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_220_TO_-RegistroTSE_TO-09349.pdf",
+            "https://exame.com/brasil/pesquisa-parana-vicentinho-junior-tem-525-e-dorinha-404-no-2o-turno/",
+            "https://www.poder360.com.br/poder-pesquisas/vicentinho-tem-566-e-dorinha-435-no-2o-turno-no-to-diz-pesquisa/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-3.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-09349-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_220_TO_-RegistroTSE_TO-09349.pdf",
+            "https://exame.com/brasil/pesquisa-parana-vicentinho-junior-tem-525-e-dorinha-404-no-2o-turno/",
+            "https://www.poder360.com.br/poder-pesquisas/vicentinho-tem-566-e-dorinha-435-no-2o-turno-no-to-diz-pesquisa/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-3.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-09349-2026-outubro-2026/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_220_TO_-RegistroTSE_TO-09349.pdf",
+            "https://exame.com/brasil/pesquisa-parana-vicentinho-junior-tem-525-e-dorinha-404-no-2o-turno/",
+            "https://www.poder360.com.br/poder-pesquisas/vicentinho-tem-566-e-dorinha-435-no-2o-turno-no-to-diz-pesquisa/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-20T12:14:45Z"
     }
   ]
 }
