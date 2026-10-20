@@ -62,6 +62,9 @@ it("recusa canonical ou og:url duplicados divergentes no fallback OG", () => {
   const base = html(paragraph, published).replace("</head>", `<meta property="og:type" content="article"><meta property="og:url" content="${url}"></head>`)
   assert.equal(extrairMetadadosArtigo(base.replace("</head>", `<link rel="canonical" href="${url}-outro"></head>`)), null)
   assert.equal(extrairMetadadosArtigo(base.replace("</head>", `<meta property="og:url" content="${url}-outro"></head>`)), null)
+  assert.notEqual(extrairMetadadosArtigo(base), null)
+  assert.equal(extrairMetadadosArtigo(base.replace("</head>", `<link rel="canonical" href=""></head>`)), null)
+  assert.equal(extrairMetadadosArtigo(base.replace("</head>", `<meta property="article:published_time" content=" "></head>`)), null)
 })
 
 it("exige metadados OG e canonical no head para o fallback", () => {

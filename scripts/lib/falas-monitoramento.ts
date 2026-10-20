@@ -163,9 +163,10 @@ export interface MetadadosArtigo {
 export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
   const $ = load(html)
   const uniqueValues = (selector: string, attribute: string) => {
-    const values = $(selector).toArray().map((element) => $(element).attr(attribute)?.trim()).filter((value): value is string => Boolean(value))
+    // A present but empty value still counts, so it conflicts with any other value.
+    const values = $(selector).toArray().map((element) => $(element).attr(attribute)?.trim()).filter((value): value is string => value !== undefined)
     const distinct = [...new Set(values)]
-    return { value: distinct.length === 1 ? distinct[0] : undefined, conflict: distinct.length > 1 }
+    return { value: distinct.length === 1 && distinct[0] ? distinct[0] : undefined, conflict: distinct.length > 1 }
   }
   const canonicalLinks = uniqueValues("head link[rel=canonical]", "href")
   const openGraphUrls = uniqueValues("head meta[property='og:url']", "content")
