@@ -159,7 +159,7 @@ function Card({ e, fotos }: { e: Eleito; fotos?: FotosCandidatos }) {
             Ficha completa <ArrowUpRight className="size-3.5" aria-hidden="true" />
           </Link>
         )}
-        <Link href={href1Turno(e.uf)} className={LINK} aria-label={`Ver resultado completo de ${e.nome}`}>
+        <Link href={href1Turno(e.uf)} className={LINK} aria-label={`Resultado do estado: ${e.nome}`}>
           Resultado do estado <ArrowUpRight className="size-3.5" aria-hidden="true" />
         </Link>
       </div>
@@ -202,7 +202,7 @@ export function GovernadoresEleitos1Turno({
   const inicial = [...eleitos].sort((a, b) => (b.disputa.totais.eleitorado ?? 0) - (a.disputa.totais.eleitorado ?? 0))[0].uf
   const linhas = [...eleitos]
     .sort((a, b) => a.nome.localeCompare(b.nome, "pt-BR"))
-    .map((e) => ({ uf: e.uf, rotulo: `${e.nome}: ${e.eleito.nome_urna} (${e.eleito.partido}), ${formatarPercentual(e.eleito.percentual_validos)}`, conteudo: <Linha e={e} fotos={fotos} /> }))
+    .map((e) => ({ uf: e.uf, conteudo: <Linha e={e} fotos={fotos} /> }))
   const cards = Object.fromEntries(eleitos.map((e) => [e.uf, <Card key={e.uf} e={e} fotos={fotos} />]))
   return (
     <section id="governadores-eleitos-1turno" className="scroll-mt-24" aria-labelledby="governadores-eleitos-1turno-titulo">

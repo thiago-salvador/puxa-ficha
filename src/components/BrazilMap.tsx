@@ -189,7 +189,7 @@ export function BrazilMap({
                   key={state.sigla}
                   className="cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2"
                   role="link"
-                  aria-label={`Abrir ${state.name} (${state.sigla})`}
+                  aria-label={`Abrir ${state.name}, ${state.sigla}`}
                   tabIndex={focusState === state.sigla ? 0 : -1}
                   data-map-uf={state.sigla}
                   onFocus={() => { setHovered(state.sigla); setFocusState(state.sigla) }}

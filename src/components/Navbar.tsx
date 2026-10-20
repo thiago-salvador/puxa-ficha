@@ -309,7 +309,7 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
             className={`relative z-floating flex min-h-11 items-center gap-2 rounded-full border px-3 py-2 max-sm:min-w-11 max-sm:justify-center ${
               useDarkText ? "border-black/15 text-black" : "border-white/20 text-white"
             }`}
-            aria-label="Abrir busca rápida"
+            aria-label={`Abrir busca rápida ${modKLabel}`}
           >
             <Search className="size-4 shrink-0" />
             <span

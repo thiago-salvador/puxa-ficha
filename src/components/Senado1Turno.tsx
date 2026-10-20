@@ -105,7 +105,7 @@ function Card({ e, fotos }: { e: EstadoSenado; fotos?: FotosCandidatos }) {
       <div className="mt-3 border-t border-border pt-1">
         <Link
           href={href1Turno(e.uf)}
-          aria-label={`Ver resultado completo de ${e.nome}`}
+          aria-label={`Resultado do estado: ${e.nome}`}
           className="inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-foreground underline underline-offset-4 hover:text-[var(--gray-600)]"
         >
           Resultado do estado <ArrowUpRight className="size-3.5" aria-hidden="true" />

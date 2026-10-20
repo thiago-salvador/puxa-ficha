@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react"
 
 export interface LinhaEleito {
   uf: string
-  rotulo: string
   conteudo: ReactNode
 }
 
@@ -40,11 +39,12 @@ export function GovernadoresEleitosInterativo({
                     <button
                       type="button"
                       aria-pressed={ativa}
-                      aria-label={`${l.rotulo}. Ver detalhes`}
                       onClick={() => setAberta(l.uf)}
                       className={`my-0.5 flex w-full min-w-0 items-center gap-2.5 rounded-[6px] px-1.5 py-1.5 lg:py-0.5 text-left transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground lg:h-[clamp(2.5rem,calc((100svh-19.5rem)/var(--pf-linhas)-0.3rem),4.5rem)] ${ativa ? "bg-[var(--gray-100)]" : "hover:bg-[var(--gray-50)]"}`}
                     >
                       {l.conteudo}
+                      {/* The accessible name is the visible row text (WCAG 2.5.3), plus this hint. */}
+                      <span className="sr-only">. Ver detalhes</span>
                       <ChevronRight className={`size-4 shrink-0 ${ativa ? "text-foreground" : "text-muted-foreground"}`} aria-hidden="true" />
                     </button>
                   </li>
