@@ -245,7 +245,7 @@
   "dependencies": {
     "@base-ui/react": "^1.6.0",
     "@sentry/nextjs": "^10.76.2",
-    "@supabase/supabase-js": "^2.117.3",
+    "@supabase/supabase-js": "^2.118.0",
     "@tanstack/react-virtual": "^3.14.14",
     "@vercel/functions": "^3.9.9",
     "class-variance-authority": "^0.7.1",
