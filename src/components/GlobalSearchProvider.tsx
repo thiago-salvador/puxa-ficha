@@ -137,11 +137,11 @@ export function GlobalSearchToolbarButton() {
       type="button"
       onClick={() => openSearch("toolbar")}
       className="group inline-flex min-h-11 min-w-11 items-center justify-center bg-transparent p-0.5 text-[length:var(--text-caption)] font-semibold uppercase tracking-[0.05em] text-foreground md:min-h-10 md:p-0"
-      aria-label="Abrir busca rápida"
+      aria-label={`Abrir busca rápida ${modLabel}`}
     >
       <span className="flex h-10 items-center gap-2 rounded-full border border-foreground px-4 text-[length:var(--text-caption)] font-semibold uppercase tracking-[0.05em] text-foreground transition-colors group-hover:bg-foreground group-hover:text-background">
         <Search className="size-3.5" />
-        Busca rápida
+        Busca rápida{" "}
         <span
           aria-hidden="true"
           className="hidden rounded-full border border-current px-2 py-0.5 text-[length:var(--text-eyebrow)] sm:inline-flex"

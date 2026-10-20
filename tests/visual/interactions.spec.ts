@@ -195,7 +195,7 @@ test.describe("Busca rápida palette", () => {
       await expect(filtersButton).toBeVisible()
       await expect(filtersButton).toHaveAttribute("aria-expanded", "false")
       await expect(
-        page.locator('main button[aria-label="Abrir busca rápida"]'),
+        page.locator('main button[aria-label^="Abrir busca rápida"]'),
       ).toBeHidden()
 
       const filtersId = await filtersButton.getAttribute("aria-controls")

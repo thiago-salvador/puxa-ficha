@@ -119,7 +119,7 @@ function DueloUf({ duelo, fotos, indice, aliancas }: { duelo: Duelo2TurnoUf; fot
         <div className="flex items-center gap-x-5">
           <Link
             href={`/uf/${duelo.uf.toLowerCase()}`}
-            aria-label={`Ver os candidatos de ${duelo.nome}`}
+            aria-label={`Ver estado: ${duelo.nome}`}
             className="inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold underline underline-offset-4 hover:text-[var(--gray-600)]"
           >
             Ver estado <ArrowRight className="size-3.5" aria-hidden="true" />
