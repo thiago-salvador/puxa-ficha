@@ -298,15 +298,14 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
                 type="button"
                 onClick={() => toggle(candidato.id)}
                 aria-pressed={selected}
-                aria-label={`${comparadorToggleLabel(candidato.nome_urna, selected)}. ${
-                  candidato.idade ? `${candidato.idade} anos, ` : ""
-                }${processosResumoLabel(candidato.total_processos, candidato.processos_verificacao, processosNow, candidato.processos_omitidos_sem_fonte_oficial ?? 0)}, evolução patrimonial ${formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}`}
                 className={`flex w-full items-center gap-3 rounded-[12px] border px-4 py-3.5 text-left transition-all ${
                   selected
                     ? "border-foreground bg-foreground/[0.03]"
                     : "border-border/50 hover:border-border"
                 }`}
               >
+                {/* The accessible name is the visible card text (WCAG 2.5.3), led by the action. */}
+                <span className="sr-only">{comparadorToggleLabel(candidato.nome_urna, selected)}: </span>
                 <div
                   className={`flex size-5 shrink-0 items-center justify-center rounded border transition-colors ${
                     selected ? "border-foreground bg-foreground" : "border-border"
@@ -328,21 +327,19 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
                     initialsClassName="text-xs"
                   />
                 )}
-                <div aria-hidden="true" className="min-w-0 flex-1">
+                <div className="min-w-0 flex-1">
                   <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-foreground">
                     {formatPartyPublicLabel(candidato.partido_sigla)}
-                  </span>
+                  </span>{" "}
                   <p className="truncate font-heading text-[length:var(--text-body-lg)] uppercase leading-tight text-foreground">
                     {candidato.nome_urna}
                   </p>
                 </div>
-                <div
-                  aria-hidden="true"
-                  className="flex max-w-[40%] shrink-0 flex-col items-end gap-0.5 whitespace-normal text-right text-[length:var(--text-eyebrow)] font-bold text-muted-foreground"
-                >
-                  {candidato.idade && <span>{candidato.idade} anos</span>}
-                  <span>{processosResumoLabel(candidato.total_processos, candidato.processos_verificacao, processosNow, candidato.processos_omitidos_sem_fonte_oficial ?? 0)}</span>
+                <div className="flex max-w-[40%] shrink-0 flex-col items-end gap-0.5 whitespace-normal text-right text-[length:var(--text-eyebrow)] font-bold text-muted-foreground">
+                  {candidato.idade && <span>{candidato.idade} anos<span className="sr-only">, </span></span>}
+                  <span>{processosResumoLabel(candidato.total_processos, candidato.processos_verificacao, processosNow, candidato.processos_omitidos_sem_fonte_oficial ?? 0)}<span className="sr-only">, </span></span>
                   <span>
+                    <span className="sr-only">evolução patrimonial </span>
                     {formatEvolucaoPatrimonialPct(candidato.evolucao_patrimonial_pct)}
                   </span>
                 </div>

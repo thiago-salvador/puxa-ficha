@@ -2,7 +2,7 @@
 
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react"
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion"
 import {
   clampTimeWindow,
@@ -575,9 +575,12 @@ export function TimelineDesktop({
                   const badgeX = Math.min(Math.max(cx + 12, LEFT_PAD + 8), chartRight - badgeWidth - 4)
                   const badgeY = cy - 11
 
+                  // WCAG 2.5.3: the visible badge leads the button's name; the glyph is an
+                  // icon, drawn after the button so it stays out of the name.
+                  const markerLabel = showBadge && badgeLabel ? `${badgeLabel}: ${ev.label}` : ev.label
                   return (
+                    <Fragment key={ev.id}>
                     <g
-                      key={ev.id}
                       role="button"
                       tabIndex={0}
                     className="cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -592,7 +595,7 @@ export function TimelineDesktop({
                           onSelectId(isSel ? null : ev.id, isSel ? undefined : a)
                         }
                       }}
-                      aria-label={ev.label}
+                      aria-label={markerLabel}
                     >
                       <circle
                         cx={cx}
@@ -630,18 +633,6 @@ export function TimelineDesktop({
                       ) : (
                         <circle cx={cx} cy={cy} r={6.5} fill={fill} stroke="#ffffff" strokeWidth={1.2} />
                       )}
-                      {glyph ? (
-                        <text
-                          x={cx}
-                          y={cy + 2.6}
-                          textAnchor="middle"
-                          className="pointer-events-none text-[6.5px] font-black uppercase"
-                          fill="#ffffff"
-                          style={{ fontSize: laneType === "projeto_lei" ? 5.8 : 6.5 }}
-                        >
-                          {glyph}
-                        </text>
-                      ) : null}
                       {showBadge && badgeLabel ? (
                         <g>
                           <rect
@@ -667,6 +658,20 @@ export function TimelineDesktop({
                         </g>
                       ) : null}
                     </g>
+                    {glyph ? (
+                      <text
+                        x={cx}
+                        y={cy + 2.6}
+                        textAnchor="middle"
+                        className="pointer-events-none text-[6.5px] font-black uppercase"
+                        fill="#ffffff"
+                        style={{ fontSize: laneType === "projeto_lei" ? 5.8 : 6.5 }}
+                        aria-hidden="true"
+                      >
+                        {glyph}
+                      </text>
+                    ) : null}
+                    </Fragment>
                   )
                 })}
               </TimelineLane>

@@ -69,7 +69,7 @@ export function CandidateSitesCard({
             <span className="min-w-0 flex-1">
               <span className="block text-[length:var(--text-eyebrow)] font-bold leading-tight text-foreground">
                 {link.label}
-              </span>
+              </span>{" "}
               <span className="mt-0.5 block truncate text-[length:var(--text-eyebrow)] font-medium text-muted-foreground">
                 {link.displayUrl}
               </span>
