@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-20T19:12:00-03:00",
+  "coletado_em": "2026-10-21T19:25:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -1054,6 +1054,12 @@
           "veiculo": "g1",
           "publicado_em": "2026-10-06",
           "trecho": "mas evitou declarar apoio ao petista no segundo turno da eleição presidencial"
+        },
+        {
+          "url": "https://www.opovo.com.br/noticias/politica/eleicoes/2026/10/21/campanha-de-lula-usa-raquel-lyra-em-propaganda-no-2-turno.html",
+          "veiculo": "O POVO",
+          "publicado_em": "2026-10-21T11:58:00-03:00",
+          "trecho": "embora Raquel reafirme que não apoiará candidatos no 2º turno"
         }
       ]
     },
