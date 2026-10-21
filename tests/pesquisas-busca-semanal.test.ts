@@ -126,10 +126,11 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
     }
   }
   const segundoTurno = lula.find((p) => p.grupo === "segundo_turno")
-  assert.equal(segundoTurno?.id, "real-time-big-data-br-02952-2026")
-  assert.equal(segundoTurno?.cenario.id, "real-time-big-data-br-02952-2026-2t")
-  assert.equal(segundoTurno?.resultado.valuePercent, 45)
+  assert.equal(segundoTurno?.id, "meio-ideia-br-08251-2026")
+  assert.equal(segundoTurno?.cenario.id, "meio-ideia-br-08251-2026-2t")
+  assert.equal(segundoTurno?.resultado.valuePercent, 46)
   for (const [id, value] of [
+    ["real-time-big-data-br-02952-2026", 45],
     ["vox-brasil-br-04332-2026", 46.4],
     ["ipespe-abrapel-br-00223-2026", 46],
     ["datafolha-br-00466-2026", 45],
@@ -153,9 +154,12 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
   assert.equal(listarPesquisasGovernadorPorSlug("omar-aziz", "AM")[0].resultado.valuePercent, 32.6)
   const omar = listarPesquisasGovernadorPorSlug("omar-aziz", "AM")
   const omarSegundoTurno = omar.find((p) => p.grupo === "segundo_turno")
-  assert.equal(omarSegundoTurno?.id, "quaest-am-09760-2026")
-  assert.equal(omarSegundoTurno?.cenario.id, "quaest-am-09760-2026-2t")
-  assert.equal(omarSegundoTurno?.resultado.valuePercent, 51)
+  assert.equal(omarSegundoTurno?.id, "real-time-big-data-am-03112-2026")
+  assert.equal(omarSegundoTurno?.cenario.id, "real-time-big-data-am-03112-2026-2t")
+  assert.equal(omarSegundoTurno?.resultado.valuePercent, 46)
+  const omarQuaest = omar.find((p) => p.id === "quaest-am-09760-2026" && p.grupo === "segundo_turno")
+  assert.equal(omarQuaest?.cenario.id, "quaest-am-09760-2026-2t")
+  assert.equal(omarQuaest?.resultado.valuePercent, 51)
   const omarPoderData = omar.find((p) => p.id === "poderdata-am-08245-2026" && p.grupo === "segundo_turno")
   assert.equal(omarPoderData?.cenario.id, "poderdata-am-08245-2026-2t")
   assert.equal(omarPoderData?.resultado.valuePercent, 52)

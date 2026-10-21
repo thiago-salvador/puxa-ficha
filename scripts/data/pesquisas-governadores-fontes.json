@@ -13171,6 +13171,91 @@
         }
       },
       "consulted_at": "2026-10-20T12:14:45Z"
+    },
+    {
+      "id": "parana-pesquisas-es-01531-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "INSTITUTO PARANA DE PESQUISAS E ANALISE DE CONSUMIDOR LTDA",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "metropoles.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-21",
+        "sample_size": 1300,
+        "method": "Entrevistas telefônicas assistidas por computador (CATI)",
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Espírito Santo",
+        "rounds": [
+          2
+        ],
+        "registration_id": "ES-01531/2026",
+        "result_url": "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "ES-01531/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T13:59:44Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados conferidos no relatório final e na publicação. Contratante e metodologia CATI declarados no registro TSE.",
+        "capture_sha256": "10a93fe08ed50668667f1e63da71ef0be2c6804abbd351ae3b712513bf89a3ff",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T13:59:44Z"
     }
   ]
 }

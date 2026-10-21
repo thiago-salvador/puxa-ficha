@@ -3944,6 +3944,83 @@
         }
       },
       "consulted_at": "2026-10-20T12:14:45Z"
+    },
+    {
+      "id": "meio-ideia-br-08251-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Meio/Ideia",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "admin.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-21",
+        "sample_size": 1500,
+        "method": "Pesquisa quantitativa com aplicação de questionário estruturado, através de pesquisa telefônica",
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-08251/2026",
+        "result_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Pesquisa-Meio_Ideia-Outubro-Imprensa.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-08251/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T13:56:13Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "d888d5b9845b882107480ec421e7401cebc44c6a5f6fe88137ce5efaea4a372b",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Pesquisa-Meio_Ideia-Outubro-Imprensa.pdf",
+            "https://exame.com/brasil/pesquisa-meio-ideia-flavio-bolsonaro-tem-51-e-lula-49-em-empate-tecnico/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Pesquisa-Meio_Ideia-Outubro-Imprensa.pdf",
+            "https://exame.com/brasil/pesquisa-meio-ideia-flavio-bolsonaro-tem-51-e-lula-49-em-empate-tecnico/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Pesquisa-Meio_Ideia-Outubro-Imprensa.pdf",
+            "https://exame.com/brasil/pesquisa-meio-ideia-flavio-bolsonaro-tem-51-e-lula-49-em-empate-tecnico/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Pesquisa-Meio_Ideia-Outubro-Imprensa.pdf",
+            "https://exame.com/brasil/pesquisa-meio-ideia-flavio-bolsonaro-tem-51-e-lula-49-em-empate-tecnico/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T13:56:13Z"
     }
   ],
   "media_fallback_policy": {
