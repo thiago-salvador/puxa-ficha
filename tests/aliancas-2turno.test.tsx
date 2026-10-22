@@ -1,4 +1,5 @@
 // cspell:ignore liberou cappelli garotinho zema flavio cury tarcisio jeronimo paes
+import "./helpers/css-modules"
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
