@@ -22,8 +22,13 @@ traz, no mesmo arquivo, o `GRANT` explícito para cada papel que precisa do
 objeto. Tabela nova também traz `ENABLE ROW LEVEL SECURITY` e só as policies de
 que algum papel além de `service_role` precisa: tabela só de servidor fica com
 RLS ligado e sem policy, como `request_ip_quotas`. View, função e sequence não
-têm RLS nem policy. Objeto interno ou só de servidor recebe grant só para
-`service_role` (ou nenhum) e diz isso num comentário. Sem o grant, o objeto existe no banco, mas a API recusa o acesso.
+têm RLS nem policy. View lida por `anon` ou `authenticated` usa
+`WITH (security_invoker = true)`, para respeitar o RLS da tabela base. Objeto
+interno ou só de servidor recebe grant só para `service_role` (ou nenhum) e diz
+isso num comentário. Função começa sempre com `REVOKE ALL ... FROM PUBLIC, anon,
+authenticated`, porque o Postgres concede `EXECUTE` a `PUBLIC` por padrão,
+independentemente da mudança da Supabase. Sem o grant, o objeto existe no
+banco, mas a API recusa o acesso.
 
 O padrão é o que as migrations desde `20260905` já seguem: `REVOKE ALL` antes,
 `GRANT` mínimo depois. Referências: `20260929100000_financiamento_despesas.sql`
@@ -51,6 +56,6 @@ REVOKE ALL ON FUNCTION public.exemplo_rpc(uuid) FROM PUBLIC, anon, authenticated
 GRANT EXECUTE ON FUNCTION public.exemplo_rpc(uuid) TO service_role;
 
 -- Sequence, só quando a tabela usa identity ou serial (o padrão do repo é uuid).
-REVOKE ALL ON SEQUENCE public.exemplo_id_seq FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON SEQUENCE public.exemplo_id_seq FROM PUBLIC, anon, authenticated, service_role;
 GRANT USAGE, SELECT ON SEQUENCE public.exemplo_id_seq TO service_role;
 ```
