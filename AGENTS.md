@@ -26,8 +26,9 @@ têm RLS nem policy. View lida por `anon` ou `authenticated` usa
 `WITH (security_invoker = true)`, para respeitar o RLS da tabela base. Objeto
 interno ou só de servidor recebe grant só para `service_role` (ou nenhum) e diz
 isso num comentário. Função começa sempre com `REVOKE ALL ... FROM PUBLIC, anon,
-authenticated`, porque o Postgres concede `EXECUTE` a `PUBLIC` por padrão,
-independentemente da mudança da Supabase. Sem o grant, o objeto existe no
+authenticated, service_role`, porque o Postgres concede `EXECUTE` a `PUBLIC` por
+padrão, independentemente da mudança da Supabase, e o `GRANT EXECUTE` volta só
+para quem chama a função. Sem o grant, o objeto existe no
 banco, mas a API recusa o acesso.
 
 O padrão é o que as migrations desde `20260905` já seguem: `REVOKE ALL` antes,
@@ -52,7 +53,7 @@ CREATE POLICY "Leitura pública"
   USING (public.is_public_candidate(candidato_id));
 
 -- Função chamada só pelo servidor: sem grant para anon e authenticated.
-REVOKE ALL ON FUNCTION public.exemplo_rpc(uuid) FROM PUBLIC, anon, authenticated;
+REVOKE ALL ON FUNCTION public.exemplo_rpc(uuid) FROM PUBLIC, anon, authenticated, service_role;
 GRANT EXECUTE ON FUNCTION public.exemplo_rpc(uuid) TO service_role;
 
 -- Sequence, só quando a tabela usa identity ou serial (o padrão do repo é uuid).
