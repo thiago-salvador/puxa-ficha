@@ -1408,9 +1408,9 @@
         },
         {
           "id": "real-time-big-data-ac-09297-2026",
-          "source_id": "real-time-big-data-estaduais-2026",
+          "source_id": "real-time-big-data-ac-09297-2026-revisao-20261021",
           "source_status": "aprovado",
-          "publishable_by_default": true,
+          "publishable_by_default": false,
           "state": "publicado",
           "instituto": {
             "value": "Real Time Big Data",
@@ -5690,9 +5690,9 @@
         },
         {
           "id": "real-time-big-data-am-03112-2026",
-          "source_id": "real-time-big-data-estaduais-2026",
+          "source_id": "real-time-big-data-am-03112-2026-revisao-20261021",
           "source_status": "aprovado",
-          "publishable_by_default": true,
+          "publishable_by_default": false,
           "state": "publicado",
           "instituto": {
             "value": "Real Time Big Data",
@@ -14275,9 +14275,9 @@
         },
         {
           "id": "real-time-big-data-df-01691-2026",
-          "source_id": "real-time-big-data-estaduais-2026",
+          "source_id": "real-time-big-data-df-01691-2026-revisao-20261021",
           "source_status": "aprovado",
-          "publishable_by_default": true,
+          "publishable_by_default": false,
           "state": "publicado",
           "instituto": {
             "value": "Real Time Big Data",
@@ -15762,9 +15762,9 @@
         },
         {
           "id": "real-time-big-data-es-06599-2026",
-          "source_id": "real-time-big-data-estaduais-2026",
+          "source_id": "real-time-big-data-es-06599-2026-revisao-20261021",
           "source_status": "aprovado",
-          "publishable_by_default": true,
+          "publishable_by_default": false,
           "state": "publicado",
           "instituto": {
             "value": "Real Time Big Data",
@@ -43424,9 +43424,9 @@
         },
         {
           "id": "real-time-big-data-rn-02651-2026",
-          "source_id": "real-time-big-data-estaduais-2026",
+          "source_id": "real-time-big-data-rn-02651-2026-revisao-20261021",
           "source_status": "aprovado",
-          "publishable_by_default": true,
+          "publishable_by_default": false,
           "state": "publicado",
           "instituto": {
             "value": "Real Time Big Data",
@@ -57614,9 +57614,9 @@
         },
         {
           "id": "real-time-big-data-to-09320-2026",
-          "source_id": "real-time-big-data-estaduais-2026",
+          "source_id": "real-time-big-data-to-09320-2026-revisao-20261021",
           "source_status": "aprovado",
-          "publishable_by_default": true,
+          "publishable_by_default": false,
           "state": "publicado",
           "instituto": {
             "value": "Real Time Big Data",
