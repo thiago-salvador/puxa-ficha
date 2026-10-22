@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-20T09:01:33.373Z",
+  "updated_at": "2026-10-22T20:28:34.724Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -9400,6 +9400,38 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "id": "aba188b636f1239603c0b2ccebde666735605bf8c84ef27e66411745fc6626b8",
+      "candidate_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+      "candidate_slug": "professora-dorinha",
+      "candidate_name": "Professora Dorinha",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Eu não disse que tudo está bem.",
+      "context": "“Eu não disse que tudo está bem. Eu disse que o que está bem, está funcionando, vai continuar, e nós vamos mudar”, respondeu.",
+      "event_context": "Confronto entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins na campanha ao Governo do Tocantins, com mediação de Maju Cotrim. A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+      "event_type": "debate",
+      "occurred_on": "2026-10-19",
+      "publisher": "Gazeta do Cerrado",
+      "article_url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+      "article_title": "Dorinha e Vicentinho debatem saúde, educação e programas sociais em confronto direto na RedeTV",
+      "article_published_at": "2026-10-20T00:59:47+00:00",
+      "article_modified_at": "2026-10-20T01:16:11+00:00",
+      "observed_at": "2026-10-22T20:28:34.724Z",
+      "source_sha256": "749d4d13c0672e2548124b3659609d9b42513936269ec2babcee6b8800bf3c1b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+        "date_excerpt": "A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+        "fetched_url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+          "datePublished": "2026-10-20T00:59:47+00:00",
+          "dateModified": "2026-10-20T01:16:11+00:00"
+        }
       }
     }
   ]
