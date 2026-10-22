@@ -20,7 +20,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AC|1|estimulada|lista-quaest-2026-08-27-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-1a10aea70072744e",
+      "exact_aliases_version": "monitor-2026-68ce1de6196cad69",
       "exact_aliases": [
         {
           "raw_label": "Alan Rick",
@@ -360,6 +360,24 @@
           "geography": "Acre",
           "turn": 2,
           "scenario_id": "quaest-ac-05379-2026-2t"
+        },
+        {
+          "raw_label": "Mailza Assis (PP)",
+          "candidate_slug": "mailza-assis",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-ac-09297-2026-2t"
+        },
+        {
+          "raw_label": "Alan Rick (Republicanos)",
+          "candidate_slug": "alan-rick",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Acre",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-ac-09297-2026-2t"
         }
       ],
       "pesquisas": [
@@ -1382,6 +1400,131 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 10,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-ac-09297-2026",
+          "source_id": "real-time-big-data-ac-09297-2026-revisao-20261021",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-20",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "AC-09297/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Acre",
+            "code": "AC"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://veja.abril.com.br/politica/o-estado-com-real-chance-de-vitoria-de-uma-mulher-no-segundo-turno-segundo-pesquisa/",
+            "supporting_urls": [
+              "https://noticias.r7.com/eleicoes/2026/acre-mailza-assis-tem-59-dos-votos-validos-contra-41-de-alan-rick-no-2-turno-indica-real-time-20102026/"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-21T13:56:13Z",
+            "capture": {
+              "format": "text",
+              "sha256": "048da4d56110e77f0c661772d93a46d92a027facb3ab6c3cd97225987577d263",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-ac-09297-2026-2t",
+              "turn": 2,
+              "geography": "Acre",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AC|2|estimulada|940ebd668de8dd5d27eee603d359f16085c5b17604b698a9934999b436db02a9|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Mailza Assis (PP)",
+                  "candidate_slug": "mailza-assis",
+                  "match_status": "exact_alias",
+                  "value_percent": 50,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Alan Rick (Republicanos)",
+                  "candidate_slug": "alan-rick",
+                  "match_status": "exact_alias",
+                  "value_percent": 35,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 11,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "NS/NR",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
                   "status": "publicado"
                 }
               ]
@@ -4037,7 +4180,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|AM|1|estimulada|lista-atlasintel-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-5ec4ce256be94cf8",
+      "exact_aliases_version": "monitor-2026-083b3352e1d077fd",
       "exact_aliases": [
         {
           "raw_label": "Cabo Daciolo",
@@ -4316,6 +4459,24 @@
           "geography": "Amazonas",
           "turn": 2,
           "scenario_id": "quaest-am-09760-2026-2t"
+        },
+        {
+          "raw_label": "Omar Aziz (PSD)",
+          "candidate_slug": "omar-aziz",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-am-03112-2026-2t"
+        },
+        {
+          "raw_label": "Professora Maria do Carmo (PL)",
+          "candidate_slug": "maria-do-carmo",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Amazonas",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-am-03112-2026-2t"
         }
       ],
       "pesquisas": [
@@ -5521,6 +5682,129 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 6,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-am-03112-2026",
+          "source_id": "real-time-big-data-am-03112-2026-revisao-20261021",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-20",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "AM-03112/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Amazonas",
+            "code": "AM"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.r7.com/eleicoes/2026/real-time-omar-aziz-tem-46-dos-votos-e-maria-do-carmo-41-no-2-turno-para-o-governo-do-am-20102026/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-21T13:52:03Z",
+            "capture": {
+              "format": "text",
+              "sha256": "db06cc8947132bfc24f4029e149e24e40075fbf61c4ca78f7d0cd6f7e95d2b43",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-am-03112-2026-2t",
+              "turn": 2,
+              "geography": "Amazonas",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|AM|2|estimulada|1db9320e4b7931738ab33a40f5994fe2d6123fe7ef914e427bd30a63bc64d8ab|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Omar Aziz (PSD)",
+                  "candidate_slug": "omar-aziz",
+                  "match_status": "exact_alias",
+                  "value_percent": 46,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Maria do Carmo (PL)",
+                  "candidate_slug": "maria-do-carmo",
+                  "match_status": "exact_alias",
+                  "value_percent": 41,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 11,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
                   "status": "publicado"
                 }
               ]
@@ -10477,7 +10761,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|DF|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-b56427136d90fc51",
+      "exact_aliases_version": "monitor-2026-a02eca058628ddcb",
       "exact_aliases": [
         {
           "raw_label": "Cappelli",
@@ -11349,6 +11633,24 @@
           "geography": "Distrito Federal",
           "turn": 2,
           "scenario_id": "instituto-gazeta-de-pesquisas-igape-df-02733-2026-2t"
+        },
+        {
+          "raw_label": "Celina Leão (PP)",
+          "candidate_slug": "celina-leao",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-df-01691-2026-2t"
+        },
+        {
+          "raw_label": "Leandro Grass (PT)",
+          "candidate_slug": "leandro-grass",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Distrito Federal",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-df-01691-2026-2t"
         }
       ],
       "pesquisas": [
@@ -13970,6 +14272,133 @@
               ]
             }
           ]
+        },
+        {
+          "id": "real-time-big-data-df-01691-2026",
+          "source_id": "real-time-big-data-df-01691-2026-revisao-20261021",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-20",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "DF-01691/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Distrito Federal",
+            "code": "DF"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://veja.abril.com.br/brasil/como-esta-a-disputa-entre-celina-leao-e-leandro-grass-no-df-segundo-nova-pesquisa/",
+            "supporting_urls": [
+              "https://exame.com/brasil/real-time-big-data-celina-tem-53-e-grass-37-no-2o-turno-no-distrito-federal/",
+              "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-tem-59-dos-votos-validos-ao-governo-do-df-grass-41/",
+              "https://www.congressoemfoco.com.br/noticia/123406/realtime-big-data-celina-tem-59-e-grass-41-dos-votos-validos-no-df"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-21T13:56:13Z",
+            "capture": {
+              "format": "text",
+              "sha256": "20a731718910bed43c5aa3e2fdd32608f40737e015bbceb147eb01f1da010874",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-df-01691-2026-2t",
+              "turn": 2,
+              "geography": "Distrito Federal",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|DF|2|estimulada|2ba233a041744a27fd1e249d2721bffaf6219a7bcc66a173470b330775406c99|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Celina Leão (PP)",
+                  "candidate_slug": "celina-leao",
+                  "match_status": "exact_alias",
+                  "value_percent": 53,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Leandro Grass (PT)",
+                  "candidate_slug": "leandro-grass",
+                  "match_status": "exact_alias",
+                  "value_percent": 37,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/Branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "NS / NR",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -13992,7 +14421,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|ES|1|estimulada|lista-real-time-big-data-2026-09-09-cenario-1|total_entrevistados"
       },
-      "exact_aliases_version": "monitor-2026-eb5178f75e5f14a8",
+      "exact_aliases_version": "monitor-2026-e1e001a6dc08cf98",
       "exact_aliases": [
         {
           "raw_label": "Breno Barcelos",
@@ -14292,6 +14721,42 @@
           "geography": "Espírito Santo",
           "turn": 1,
           "scenario_id": "quaest-es-09011-2026-1t"
+        },
+        {
+          "raw_label": "Lorenzo Pazolini (Republicanos)",
+          "candidate_slug": "pazolini",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-es-06599-2026-2t"
+        },
+        {
+          "raw_label": "Ricardo Ferraço (MDB)",
+          "candidate_slug": "ricardo-ferraco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-es-06599-2026-2t"
+        },
+        {
+          "raw_label": "Lorenzo Pazolini (Republicanos)",
+          "candidate_slug": "pazolini",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 2,
+          "scenario_id": "parana-pesquisas-es-01531-2026-2t"
+        },
+        {
+          "raw_label": "Ricardo Ferraço (MDB)",
+          "candidate_slug": "ricardo-ferraco",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Espírito Santo",
+          "turn": 2,
+          "scenario_id": "parana-pesquisas-es-01531-2026-2t"
         }
       ],
       "pesquisas": [
@@ -15289,6 +15754,256 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 18,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-es-06599-2026",
+          "source_id": "real-time-big-data-es-06599-2026-revisao-20261021",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-20",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "ES-06599/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Espírito Santo",
+            "code": "ES"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.r7.com/eleicoes/2026/real-time-lorenzo-pazolini-tem-46-dos-votos-e-ricardo-ferraco-43-no-2-turno-para-o-governo-de-es-20102026/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-21T13:52:03Z",
+            "capture": {
+              "format": "text",
+              "sha256": "5966d8fa6e59e890bf6732eabc659b4b6ad3bb453dd99cfcf5bd40468ca6bc70",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-es-06599-2026-2t",
+              "turn": 2,
+              "geography": "Espírito Santo",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|ES|2|estimulada|560461a9556edbfffcbd7a2b972e95bb6a72497ee454cc5b21998614b9d14558|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Lorenzo Pazolini (Republicanos)",
+                  "candidate_slug": "pazolini",
+                  "match_status": "exact_alias",
+                  "value_percent": 46,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ricardo Ferraço (MDB)",
+                  "candidate_slug": "ricardo-ferraco",
+                  "match_status": "exact_alias",
+                  "value_percent": 43,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Nulo/branco",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parana-pesquisas-es-01531-2026",
+          "source_id": "parana-pesquisas-es-01531-2026-revisao-20261021",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Paraná Pesquisas",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": "INSTITUTO PARANA DE PESQUISAS E ANALISE DE CONSUMIDOR LTDA",
+            "status": "publicado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-21",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1300,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "Eleitores do Estado do Espírito Santo",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2.7,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": "Entrevistas telefônicas assistidas por computador (CATI)",
+            "status": "publicado"
+          },
+          "registration": {
+            "code": {
+              "value": "ES-01531/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Espírito Santo",
+            "code": "ES"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "supporting_urls": [
+              "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+              "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+              "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+            ],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados, amostra, campo e população conferidos no relatório final e nas publicações. Metodologia CATI declarada no registro TSE.",
+            "consulted_at": "2026-10-21T13:59:44Z",
+            "capture": {
+              "format": "text",
+              "sha256": "10a93fe08ed50668667f1e63da71ef0be2c6804abbd351ae3b712513bf89a3ff",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "parana-pesquisas-es-01531-2026-2t",
+              "turn": 2,
+              "geography": "Espírito Santo",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|ES|2|estimulada|560461a9556edbfffcbd7a2b972e95bb6a72497ee454cc5b21998614b9d14558|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Lorenzo Pazolini (Republicanos)",
+                  "candidate_slug": "pazolini",
+                  "match_status": "exact_alias",
+                  "value_percent": 52.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ricardo Ferraço (MDB)",
+                  "candidate_slug": "ricardo-ferraco",
+                  "match_status": "exact_alias",
+                  "value_percent": 39.8,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Não sabe/não respondeu",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 3.4,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Ninguém/branco/nulo",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4.4,
                   "status": "publicado"
                 }
               ]
@@ -40775,7 +41490,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|RN|1|estimulada|lista-instituto-exatus-2026-09-04-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-43a11d4d64ebd14f",
+      "exact_aliases_version": "monitor-2026-67e7333081d6fe1e",
       "exact_aliases": [
         {
           "raw_label": "Allyson Bezerra",
@@ -41298,6 +42013,24 @@
           "geography": "Rio Grande do Norte",
           "turn": 2,
           "scenario_id": "datavero-rn-01514-2026-2t"
+        },
+        {
+          "raw_label": "Allyson",
+          "candidate_slug": "alysson-bezerra",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-rn-02651-2026-2t"
+        },
+        {
+          "raw_label": "Cadu de Lula (PT)",
+          "candidate_slug": "cadu-xavier",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Rio Grande do Norte",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-rn-02651-2026-2t"
         }
       ],
       "pesquisas": [
@@ -42683,6 +43416,129 @@
                   "candidate_slug": null,
                   "match_status": "not_candidate",
                   "value_percent": 3.24,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-rn-02651-2026",
+          "source_id": "real-time-big-data-rn-02651-2026-revisao-20261021",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-20",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "RN-02651/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Rio Grande do Norte",
+            "code": "RN"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.r7.com/eleicoes/2026/rn-allyson-tem-52-dos-votos-validos-contra-48-de-cadu-de-lula-no-2-turno-20102026/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-21T13:52:03Z",
+            "capture": {
+              "format": "text",
+              "sha256": "4ff00d7ffa2871d2ecc2d48189e2c25f1db7cb56c150e8335a9db26f1bb3bd67",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-rn-02651-2026-2t",
+              "turn": 2,
+              "geography": "Rio Grande do Norte",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|RN|2|estimulada|19e718a7bb4150b8caa4229f98c55f8ed0dd217153be8402c0966603cb7ee769|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Allyson",
+                  "candidate_slug": "alysson-bezerra",
+                  "match_status": "exact_alias",
+                  "value_percent": 45,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Cadu de Lula (PT)",
+                  "candidate_slug": "cadu-xavier",
+                  "match_status": "exact_alias",
+                  "value_percent": 42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Votos nulos ou brancos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 9,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "não sabem ou não responderam",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 4,
                   "status": "publicado"
                 }
               ]
@@ -54401,7 +55257,7 @@
         "turn": 1,
         "comparability_key": "2026|Governador|TO|1|estimulada|lista-parana-pesquisas-2026-08-28-cenario-1|total_amostra"
       },
-      "exact_aliases_version": "monitor-2026-989ba1855ca5e42f",
+      "exact_aliases_version": "monitor-2026-377565e00c3b86f1",
       "exact_aliases": [
         {
           "raw_label": "Ataídes de Oliveira",
@@ -54993,6 +55849,24 @@
           "geography": "Tocantins",
           "turn": 2,
           "scenario_id": "parana-pesquisas-to-09349-2026-2t"
+        },
+        {
+          "raw_label": "Vicentinho Júnior (PSDB)",
+          "candidate_slug": "vicentinho-junior",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-to-09320-2026-2t"
+        },
+        {
+          "raw_label": "Professora Dorinha (União)",
+          "candidate_slug": "professora-dorinha",
+          "year": 2026,
+          "office": "Governador",
+          "geography": "Tocantins",
+          "turn": 2,
+          "scenario_id": "real-time-big-data-to-09320-2026-2t"
         }
       ],
       "pesquisas": [
@@ -56732,6 +57606,129 @@
                   "candidate_slug": "professora-dorinha",
                   "match_status": "exact_alias",
                   "value_percent": 40.4,
+                  "status": "publicado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "real-time-big-data-to-09320-2026",
+          "source_id": "real-time-big-data-to-09320-2026-revisao-20261021",
+          "source_status": "aprovado",
+          "publishable_by_default": false,
+          "state": "publicado",
+          "instituto": {
+            "value": "Real Time Big Data",
+            "status": "publicado"
+          },
+          "contratante": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "fieldwork": {
+            "start": {
+              "value": "2026-10-15",
+              "status": "publicado"
+            },
+            "end": {
+              "value": "2026-10-19",
+              "status": "publicado"
+            }
+          },
+          "publication_date": {
+            "value": "2026-10-20",
+            "status": "publicado"
+          },
+          "sample": {
+            "size": {
+              "value": 1600,
+              "status": "publicado"
+            },
+            "population": {
+              "value": "eleitores",
+              "status": "publicado"
+            }
+          },
+          "margin_error_pp": {
+            "value": 2,
+            "status": "publicado"
+          },
+          "confidence_percent": {
+            "value": 95,
+            "status": "publicado"
+          },
+          "method": {
+            "value": null,
+            "status": "indeterminado"
+          },
+          "registration": {
+            "code": {
+              "value": "TO-09320/2026",
+              "status": "publicado"
+            },
+            "url": {
+              "value": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml",
+              "status": "publicado"
+            }
+          },
+          "geography": {
+            "type": "unidade_federativa",
+            "label": "Tocantins",
+            "code": "TO"
+          },
+          "office": "Governador",
+          "provenance": {
+            "result_url": "https://noticias.r7.com/eleicoes/2026/to-vicentinho-junior-tem-52-dos-votos-validos-contra-48-da-professora-dorinha-no-2-turno-20102026/",
+            "supporting_urls": [],
+            "source_kind": "divulgacao_jornalistica_publica",
+            "route_class": "importacao_manual_auditada",
+            "route_reason": "Resultados e metodologia lidos na publicação; revisão restrita à rodada identificada. Registro conforme informado na publicação.",
+            "consulted_at": "2026-10-21T13:52:03Z",
+            "capture": {
+              "format": "text",
+              "sha256": "c76664924eb9e6141e721eb35a3e3dd24e2826e6fe49bc889cf4ba88f64447af",
+              "status": "publicado"
+            }
+          },
+          "cenarios": [
+            {
+              "id": "real-time-big-data-to-09320-2026-2t",
+              "turn": 2,
+              "geography": "Tocantins",
+              "label_raw": "Intenção de voto estimulada no 2º turno; percentuais do total de entrevistados",
+              "question": {
+                "value": null,
+                "status": "indeterminado"
+              },
+              "comparability_key": "2026|Governador|TO|2|estimulada|600695d7d7ef7b21caa8eb0615eafb95c8ab95d35bc097973c9fa58ed6dff352|total_amostra",
+              "resultados": [
+                {
+                  "raw_label": "Vicentinho Júnior (PSDB)",
+                  "candidate_slug": "vicentinho-junior",
+                  "match_status": "exact_alias",
+                  "value_percent": 46,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Professora Dorinha (União)",
+                  "candidate_slug": "professora-dorinha",
+                  "match_status": "exact_alias",
+                  "value_percent": 42,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "Votos nulos ou brancos",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 10,
+                  "status": "publicado"
+                },
+                {
+                  "raw_label": "não sabem ou não responderam",
+                  "candidate_slug": null,
+                  "match_status": "not_candidate",
+                  "value_percent": 2,
                   "status": "publicado"
                 }
               ]
