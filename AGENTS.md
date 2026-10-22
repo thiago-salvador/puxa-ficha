@@ -19,9 +19,11 @@ A partir de 30/10/2026, a Supabase deixa de conceder por padrão
 
 Regra: toda migration que cria tabela, view, função/RPC ou sequence em `public`
 traz, no mesmo arquivo, o `GRANT` explícito para cada papel que precisa do
-objeto, junto com o `ENABLE ROW LEVEL SECURITY` e as policies. Objeto interno ou
-só de servidor recebe grant só para `service_role` (ou nenhum) e diz isso num
-comentário. Sem o grant, o objeto existe no banco, mas a API recusa o acesso.
+objeto. Tabela nova também traz `ENABLE ROW LEVEL SECURITY` e só as policies de
+que algum papel além de `service_role` precisa: tabela só de servidor fica com
+RLS ligado e sem policy, como `request_ip_quotas`. View, função e sequence não
+têm RLS nem policy. Objeto interno ou só de servidor recebe grant só para
+`service_role` (ou nenhum) e diz isso num comentário. Sem o grant, o objeto existe no banco, mas a API recusa o acesso.
 
 O padrão é o que as migrations desde `20260905` já seguem: `REVOKE ALL` antes,
 `GRANT` mínimo depois. Referências: `20260929100000_financiamento_despesas.sql`
