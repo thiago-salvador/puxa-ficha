@@ -8,12 +8,9 @@ import type { CandidatoResultado1Turno, DisputaResultado1Turno } from "@/lib/res
 import { larguraBarra, type FotosCandidatos } from "@/lib/resultados-1turno-vista"
 import { PROCESSO_DISCIPLINAR_AVISO, type ProcessosJusticaContagem } from "@/lib/processos-justica-total"
 import { coresDosFinalistas } from "@/lib/cores-finalistas"
+import { EvolucaoPesquisas2Turno } from "@/components/EvolucaoPesquisas2Turno"
 import {
-  escalarSerie,
   finalistasDaDisputa,
-  formatarDataEixo,
-  formatarDataPesquisa,
-  serieDasPesquisas,
   montarLadoALado,
   montarLadoALadoExtra,
   type CelulaLadoALado,
@@ -22,12 +19,8 @@ import {
   type Pesquisa2TurnoLinha,
 } from "@/lib/segundo-turno-2026"
 import type { CandidatoComparavel } from "@/lib/types"
-import { safeHref } from "@/lib/utils"
 import { FotoCandidato, ROTULO, TituloSecao } from "@/components/Resultado1TurnoPartes"
 import { SlashDivider } from "@/components/SlashDivider"
-
-const LINK_SETA =
-  "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold underline underline-offset-4 hover:text-[var(--gray-600)]"
 
 export const BOTAO_PILULA =
   "inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-foreground px-5 text-[length:var(--text-body-sm)] font-bold text-background transition-colors duration-200 hover:bg-[var(--gray-800)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
@@ -240,84 +233,6 @@ export function LadoALado2Turno({
   )
 }
 
-const CAIXA_TENDENCIA = { largura: 360, altura: 170, margemX: 42, margemY: 22 }
-
-/**
- * Tendência do confronto: uma linha por finalista, da pesquisa mais antiga à
- * mais recente, com x proporcional à data. Cores do lado do partido quando os
- * dois têm classe diferente; senão preto e cinza, como as barras da lista.
- */
-function TendenciaPesquisas2Turno({
-  linhas,
-  nomes,
-  partidos,
-}: {
-  linhas: Pesquisa2TurnoLinha[]
-  nomes: [string, string]
-  partidos?: [string, string]
-}) {
-  const serie = serieDasPesquisas(linhas)
-  if (serie.length === 0) return null
-  const { pontos, marcas } = escalarSerie(serie, CAIXA_TENDENCIA)
-  const espectro = partidos ? coresDosFinalistas(partidos[0], partidos[1]) : null
-  const cores: [string, string] = espectro ? [espectro.a.cor, espectro.b.cor] : ["var(--gray-950)", "var(--gray-400)"]
-  const primeiro = serie[0]
-  const ultimo = serie[serie.length - 1]
-  const institutos = [...new Set(serie.map((p) => p.instituto))].join(", ")
-  const resumo = `De ${formatarDataPesquisa(primeiro.data)} a ${formatarDataPesquisa(ultimo.data)}, em ${serie.length} pesquisas (${institutos}): ${nomes[0]} foi de ${primeiro.percentuais[0]}% a ${ultimo.percentuais[0]}%; ${nomes[1]} foi de ${primeiro.percentuais[1]}% a ${ultimo.percentuais[1]}%.`
-  const linha = (i: 0 | 1) => pontos.map((p, j) => `${j === 0 ? "M" : "L"}${p.x.toFixed(1)},${p.y[i].toFixed(1)}`).join(" ")
-  return (
-    <figure className="mb-8 max-w-md" data-pf-tendencia-2turno>
-      <svg viewBox={`0 0 ${CAIXA_TENDENCIA.largura} ${CAIXA_TENDENCIA.altura + 18}`} className="w-full overflow-visible" aria-hidden="true">
-        {marcas.map((m) => (
-          <g key={m.valor}>
-            <line x1={CAIXA_TENDENCIA.margemX - 6} x2={CAIXA_TENDENCIA.largura - 6} y1={m.y} y2={m.y} stroke="var(--gray-200)" strokeWidth={1} />
-            <text x={0} y={m.y + 3.5} fontSize={10} fill="var(--gray-500)" className="tabular-nums">
-              {m.valor}%
-            </text>
-          </g>
-        ))}
-        {([0, 1] as const).map((i) => (
-          <path key={i} d={linha(i)} fill="none" stroke={cores[i]} strokeWidth={2.5} strokeLinejoin="round" strokeLinecap="round" />
-        ))}
-        {pontos.map((p) => {
-          // O rótulo de quem está acima vai para cima do ponto; o de baixo, para baixo: os dois nunca se cruzam.
-          const cimaA = p.percentuais[0] >= p.percentuais[1]
-          return (
-            <g key={p.id}>
-              {([0, 1] as const).map((i) => {
-                const acima = i === 0 ? cimaA : !cimaA
-                return (
-                  <g key={i}>
-                    <circle cx={p.x} cy={p.y[i]} r={3.5} fill={cores[i]} stroke="var(--background)" strokeWidth={1.5} />
-                    <text x={p.x} y={acima ? p.y[i] - 8 : p.y[i] + 15} fontSize={11} fontWeight={700} textAnchor="middle" fill={cores[i]} className="tabular-nums">
-                      {p.percentuais[i]}%
-                    </text>
-                  </g>
-                )
-              })}
-              <text x={p.x} y={CAIXA_TENDENCIA.altura + 14} fontSize={10} textAnchor="middle" fill="var(--gray-500)">
-                {formatarDataEixo(p.data)}
-              </text>
-            </g>
-          )
-        })}
-      </svg>
-      <figcaption className="mt-2 text-[length:var(--text-caption)] font-medium leading-relaxed text-muted-foreground">
-        <span className="mr-3 inline-flex items-center gap-1.5 font-bold text-foreground">
-          <span aria-hidden="true" className="inline-block h-0.5 w-4 rounded-full" style={{ background: cores[0] }} />
-          {nomes[0]}
-        </span>
-        <span className="mr-3 inline-flex items-center gap-1.5 font-bold text-foreground">
-          <span aria-hidden="true" className="inline-block h-0.5 w-4 rounded-full" style={{ background: cores[1] }} />
-          {nomes[1]}
-        </span>
-        <span className="mt-1 block">{resumo}</span>
-      </figcaption>
-    </figure>
-  )
-}
-
 /** Últimas pesquisas do confronto exato dos finalistas, com link para a fonte de cada uma. */
 export function Pesquisas2Turno({
   linhas,
@@ -363,64 +278,15 @@ export function Pesquisas2Turno({
       </section>
     )
   }
+  const espectro = partidos ? coresDosFinalistas(partidos[0], partidos[1]) : null
+  const cores: [string, string] = espectro ? [espectro.a.cor, espectro.b.cor] : ["var(--gray-950)", "var(--gray-600)"]
   return (
     <section id="pesquisas-2turno" className="scroll-mt-24" aria-labelledby="pesquisas-2turno-titulo">
       <TituloSecao titulo="Pesquisas do 2º turno" id="pesquisas-2turno-titulo">
-        Intenção de voto no confronto {nomeA} x {nomeB}, da pesquisa mais recente para a mais antiga.
+        {nomeLegivel(nomeA)} × {nomeLegivel(nomeB)} · Acompanhe as pesquisas e a média por data.
       </TituloSecao>
       <SlashDivider className="mb-6 mt-6" />
-      <TendenciaPesquisas2Turno linhas={linhas} nomes={nomes} partidos={partidos} />
-      <p className="mb-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[length:var(--text-caption)] font-medium text-muted-foreground">
-        <span className="inline-flex items-center gap-1.5">
-          <span aria-hidden="true" className="size-2.5 rounded-full bg-[var(--gray-950)]" />
-          {nomeA}
-        </span>
-        <span className="inline-flex items-center gap-1.5">
-          <span aria-hidden="true" className="size-2.5 rounded-full bg-[var(--gray-400)]" />
-          {nomeB}
-        </span>
-        <span>Barra de 0 a 100% do total; o resto é branco, nulo e não sabe.</span>
-      </p>
-      <ol className="border-b border-border" data-pf-revelar="auto" data-pf-pesquisas-2turno>
-        {linhas.slice(0, limiteLista).map((linha, i) => {
-          const href = safeHref(linha.url)
-          const [pa, pb] = linha.percentuais
-          return (
-            <li
-              key={linha.id}
-              className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 border-t border-border py-4 sm:grid-cols-[12rem_minmax(0,1fr)_auto] sm:gap-x-6"
-            >
-              <div className="min-w-0">
-                <p className="font-bold text-foreground">{linha.instituto}</p>
-                <p className="text-[length:var(--text-caption)] font-medium tabular-nums text-muted-foreground">
-                  {formatarDataPesquisa(linha.data)}
-                  {linha.margem !== null && <> · margem {String(linha.margem).replace(".", ",")} p.p.</>}
-                </p>
-              </div>
-              <div className="col-span-2 row-start-2 min-w-0 sm:col-span-1 sm:col-start-2 sm:row-start-1">
-                <p className="flex items-baseline justify-between gap-3 font-heading text-2xl leading-none tabular-nums text-foreground">
-                  <span>{pa}%</span>
-                  <span className="text-[var(--gray-500)]">{pb}%</span>
-                </p>
-                <BarraConfronto a={pa} b={pb} indice={i} className="mt-2 h-2" rotulo={`${linha.instituto}: ${nomeA} ${pa}%, ${nomeB} ${pb}%`} />
-              </div>
-              {href ? (
-                <a
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Fonte da pesquisa ${linha.instituto} de ${formatarDataPesquisa(linha.data)} (abre em nova aba)`}
-                  className={`${LINK_SETA} justify-self-end sm:col-start-3`}
-                >
-                  Fonte <ArrowUpRight className="size-3.5" aria-hidden="true" />
-                </a>
-              ) : (
-                <span />
-              )}
-            </li>
-          )
-        })}
-      </ol>
+      <EvolucaoPesquisas2Turno linhas={linhas} nomes={[nomeLegivel(nomeA), nomeLegivel(nomeB)]} cores={cores} limiteLista={limiteLista} />
     </section>
   )
 }

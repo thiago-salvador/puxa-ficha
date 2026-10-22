@@ -153,10 +153,10 @@ export default async function Home() {
   const slugsFinalistas = finalistasPresidente?.[0].slug && finalistasPresidente[1].slug
     ? ([finalistasPresidente[0].slug, finalistasPresidente[1].slug] as [string, string])
     : null
-  // Limite alto: a tendência usa todas as pesquisas do confronto; a lista mostra só as seis mais recentes.
+  // A média diária precisa de todas as pesquisas: um corte pode deixar uma data incompleta.
   // "Nenhuma pesquisa publicada" só com o catálogo lido e os dois slugs: falha de dado não vira ausência de pesquisa.
   const catalogoPesquisas = slugsFinalistas ? pesquisasPresidenciais() : null
-  const pesquisas2Turno = slugsFinalistas && catalogoPesquisas ? selecionarPesquisasDoConfronto(catalogoPesquisas, slugsFinalistas, 60) : []
+  const pesquisas2Turno = slugsFinalistas && catalogoPesquisas ? selecionarPesquisasDoConfronto(catalogoPesquisas, slugsFinalistas, Number.POSITIVE_INFINITY) : []
   // Programas só dos dois finalistas à Presidência; sem o par publicado, todos os candidatos.
   const candidatosProgramas = slugsFinalistas
     ? candidatos.filter((candidato) => slugsFinalistas.includes(candidato.slug))

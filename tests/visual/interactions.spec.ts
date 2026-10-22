@@ -474,6 +474,28 @@ test.describe("No horizontal overflow", () => {
 // página inteira no celular, que passa a renderizar com zoom reduzido (o
 // comparador chegou a 547px numa tela de 390px).
 test.describe("Absolutos contidos nas regiões com rolagem horizontal", () => {
+  test("datas do gráfico cabem na página antes da hidratação", async ({ page }) => {
+    let releaseChunks = () => {}
+    const chunksReady = new Promise<void>((resolve) => { releaseChunks = resolve })
+    await page.route(/\/_next\/static\/.*\.js(?:\?.*)?$/, async (route) => {
+      await chunksReady
+      await route.continue()
+    })
+    try {
+      await page.goto("/", { waitUntil: "commit" })
+      const dates = page.getByRole("group", { name: "Datas das pesquisas" }).getByRole("button")
+      await expect(dates.first()).toHaveCSS("position", "absolute")
+      const bounds = await dates.evaluateAll((buttons) => ({
+        viewport: document.documentElement.clientWidth,
+        page: document.documentElement.scrollWidth,
+        right: Math.max(...buttons.map(button => button.getBoundingClientRect().right)),
+      }))
+      expect(bounds.right).toBeLessThanOrEqual(bounds.viewport)
+      expect(bounds.page).toBeLessThanOrEqual(bounds.viewport + 1)
+    } finally {
+      releaseChunks()
+    }
+  })
   const pages = [
     "/",
     "/1o-turno",
