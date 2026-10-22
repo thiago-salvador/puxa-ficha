@@ -239,7 +239,9 @@ test("segundo turno preserva cada duelo completo, rotulo e categorias sem depend
 })
 
 test("proposta conserva todos os cenarios e resolve nome completo com evidencia da mesma publicacao", () => {
-  const target = listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026", uf: "AM" })[0]
+  const target = listarAlvosMonitoramento({ sourceId: "real-time-big-data-estaduais-2026", uf: "AM" })
+    .find((item) => item.registration_id === "AM-09965/2026")!
+  assert.ok(target, "a fixture preserva a identidade do registro AM-09965/2026")
   const source = obterContratoFonte(target.source_id)
   const observedAt = "2026-09-09T12:00:00Z"
   const registrySupplement = parseDetalhePesqele(detailHtml, target.registration_id, observedAt)
@@ -261,6 +263,8 @@ test("proposta conserva todos os cenarios e resolve nome completo com evidencia 
     assert.deepEqual(scenarios.map((scenario: { turn: number; resultados: unknown[] }) => [scenario.turn, scenario.resultados.length]), [[1, 8], [2, 4], [2, 4]])
     assert.equal(scenarios[1].question.value, null, "não fabricar pergunta do segundo turno")
     const matrix = construirMatrizAgendada({ sourceId: target.source_id, uf: "AM" })
+      .map((item) => ({ ...item, poll_ids: item.poll_ids.filter((id) => id === target.poll_id) }))
+    assert.deepEqual(matrix.flatMap((item) => item.poll_ids), [target.poll_id])
     const consolidated = consolidarPropostasAgendadas({ matrix, documents: [{ key: matrix[0].key, proposal }], catalogs: carregarCatalogosAgendados() })
     assert.equal(consolidated.status, "ready")
     mkdirSync(join(dir, "scripts/data"), { recursive: true })
