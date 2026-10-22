@@ -1,6 +1,6 @@
 {
   "versao": 1,
-  "coletado_em": "2026-10-21T19:25:00-03:00",
+  "coletado_em": "2026-10-22T09:14:00-03:00",
   "metodo": "Declarações públicas lidas na fonte, com trecho literal. Sem declaração encontrada não significa neutralidade.",
   "itens": [
     {
@@ -929,6 +929,12 @@
           "veiculo": "CNN Brasil",
           "publicado_em": "2026-10-17T00:06:33-03:00",
           "trecho": "O meu compromisso, o meu apoio à Presidência da República é Flávio Bolsonaro"
+        },
+        {
+          "url": "https://www.gazetadopovo.com.br/eleicoes/2026/cleitinho-reafirma-apoio-a-flavio-apos-aceno-de-lula-em-minas-gerais/",
+          "veiculo": "Gazeta do Povo",
+          "publicado_em": "2026-10-17T15:51:00-03:00",
+          "trecho": "Cleitinho Azevedo (Republicanos), governador eleito de Minas Gerais, voltou a manifestar apoio a Flávio Bolsonaro (PL) na disputa pela Presidência da República nesta sexta-feira (16)."
         }
       ]
     },
@@ -979,6 +985,12 @@
           "veiculo": "Band",
           "publicado_em": "2026-10-08T06:00:00-03:00",
           "trecho": "Também reforçaram apoio imediato os governadores eleitos Cleitinho Azevedo (Minas Gerais) e Otaviano Pivetta (Mato Grosso)."
+        },
+        {
+          "url": "https://www.unicanews.com.br/politica/pivetta-se-esquiva-de-falar-das-acusacoes-contra-flavio-e-prefere-deixar-caso-para-justica/142756",
+          "veiculo": "Unica News",
+          "publicado_em": "2026-10-21T17:36:00-03:00",
+          "trecho": "Não tem muito para onde correr, nós temos dois candidatos, ou é 13 ou é 22. Vou votar no 22"
         }
       ]
     },
