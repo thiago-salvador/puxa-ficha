@@ -4175,6 +4175,160 @@
         }
       },
       "consulted_at": "2026-10-22T20:40:36Z"
+    },
+    {
+      "id": "real-time-big-data-br-09670-2026-revisao-20261024",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": "Real Time Big Data",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "gazetadopovo.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-19",
+          "end": "2026-10-22"
+        },
+        "published_at": "2026-10-23",
+        "sample_size": null,
+        "method": "Entrevistas por telefone",
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-09670/2026",
+        "result_url": "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-outubro-2026-segundo-turno-2/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-09670/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-24T12:12:21Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "1e701afd60cf45d11eaba70da2c88e7e4cf351a38a8d65f9b7e6d2b1e51e471c",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-outubro-2026-segundo-turno-2/",
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-52-dos-votos-validos-no-2o-turno-lula-48/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-outubro-2026-segundo-turno-2/",
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-52-dos-votos-validos-no-2o-turno-lula-48/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-outubro-2026-segundo-turno-2/",
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-52-dos-votos-validos-no-2o-turno-lula-48/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-outubro-2026-segundo-turno-2/",
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-52-dos-votos-validos-no-2o-turno-lula-48/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-24T12:12:21Z"
+    },
+    {
+      "id": "instituto-verita-br-06070-2026-revisao-20261024",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Instituto Veritá",
+        "commissioner": "Iniciativa própria do Instituto",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "admin.cnnbrasil.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-18",
+          "end": "2026-10-22"
+        },
+        "published_at": "2026-10-23",
+        "sample_size": 15554,
+        "method": "Entrevistas telefônicas por unidade automatizada de respostas (URA), com reconhecimento de voz e transcrição de áudio para texto; questionário eletrônico.",
+        "margin_of_error_pp": 1,
+        "confidence_level_pct": 95,
+        "office": "Presidente",
+        "geography": "Brasil",
+        "rounds": [
+          2
+        ],
+        "registration_id": "BR-06070/2026",
+        "result_url": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-Brasil-22-de-outubro-de-2026.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "BR-06070/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-24T12:12:21Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "fd289a17fb6e6997591d1a0a21392c9f77b9c29b213c0bf2f38a0130d92345e5",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-Brasil-22-de-outubro-de-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-flavio-tem-513-dos-votos-validos-no-2o-turno-lula-487/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-Brasil-22-de-outubro-de-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-flavio-tem-513-dos-votos-validos-no-2o-turno-lula-487/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-Brasil-22-de-outubro-de-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-flavio-tem-513-dos-votos-validos-no-2o-turno-lula-487/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2026/10/Relatorio-Brasil-22-de-outubro-de-2026.pdf",
+            "https://www.cnnbrasil.com.br/eleicoes/verita-flavio-tem-513-dos-votos-validos-no-2o-turno-lula-487/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-24T12:12:21Z"
     }
   ],
   "media_fallback_policy": {
