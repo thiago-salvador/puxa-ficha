@@ -145,8 +145,10 @@ test("debate realizado durante a noite preserva intervalo explícito de datas co
   })
   assert.deepEqual(accepted.quote.review_evidence?.article_metadata, { url: articleUrl, datePublished: published, dateModified: modified })
   assert.doesNotThrow(() => validarCatalogo({ ...empty, quotes: [accepted.quote!] }))
-  const { article_modified_at: _removedModified, ...withoutModified } = accepted.quote!
-  const { article_metadata: _removedMetadata, ...reviewWithoutMetadata } = withoutModified.review_evidence!
+  const withoutModified = { ...accepted.quote! }
+  delete withoutModified.article_modified_at
+  const reviewWithoutMetadata = { ...withoutModified.review_evidence! }
+  delete reviewWithoutMetadata.article_metadata
   assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...withoutModified, review_evidence: reviewWithoutMetadata }] }))
   assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...withoutModified, review_evidence: accepted.quote!.review_evidence }] }))
   assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...accepted.quote!, article_published_at: "2026-10-22T04:27:28Z",
@@ -194,7 +196,8 @@ test("intervalo explícito exige metadados completos do NewsArticle sem URL", ()
     occurred_on: null, occurred_between: { from: "2026-10-22", to: "2026-10-23" }, article_published_at: published,
     evidence: { identity_excerpt: "candidata Ana Silva", date_excerpt: excerpt,
       explicit_event_range: { excerpt } as unknown as AchadoRevisado["evidence"]["explicit_event_range"] } }
-  const { article_modified_at: _modified, ...withoutModified } = ranged
+  const withoutModified = { ...ranged }
+  delete withoutModified.article_modified_at
   const result = verificarRevisao({ candidate, finding: withoutModified, html: alteredHtml, now: new Date("2026-10-24T12:00:00Z") })
   assert.equal(result.quote, null)
 })
