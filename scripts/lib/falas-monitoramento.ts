@@ -144,6 +144,32 @@ export function dataEvento(context: string, published: string, allowRecentMonth 
   return !invalidExplicitDate && new Set(matches).size === 1 ? matches[0] : null
 }
 
+export interface ProvaIntervaloExplicito {
+  excerpt: string
+  from_excerpt: string
+  to_excerpt: string
+  from: string
+  to: string
+}
+
+/** Resolve only a literal, already-realized overnight debate interval. Each
+ * endpoint is resolved independently against the original publication day. */
+export function resolverIntervaloDebateExplicito(excerpt: string, published: string): ProvaIntervaloExplicito | null {
+  if (!Number.isFinite(Date.parse(published))
+    || /\b(?:será|serao|vai ser|está previsto|estao previstos|marcado para|agendado para|ocorrerá|acontecerá)\b/i.test(excerpt)) return null
+  const day = "(?:domingo|segunda(?:-feira)?|terça(?:-feira)?|quarta(?:-feira)?|quinta(?:-feira)?|sexta(?:-feira)?|sábado)"
+  const pattern = new RegExp(`\\bdebate\\b(?:(?!\\b(?:entrevista|sabatina|coletiva|comício)\\b).){0,800}?\\b(?:debate|embate|confronto)\\b,?\\s*realizado entre a noite de (${day}\\s*\\(\\d{1,2}(?:º)?\\)) e o início da madrugada (?:desta|de) (${day}\\s*\\(\\d{1,2}(?:º)?\\))`, "iu")
+  const match = excerpt.match(pattern)
+  if (!match) return null
+  const from = dataEvento(match[1], published)
+  const to = dataEvento(match[2], published)
+  if (!from || !to) return null
+  const nextDay = new Date(`${from}T00:00:00Z`)
+  nextDay.setUTCDate(nextDay.getUTCDate() + 1)
+  if (nextDay.toISOString().slice(0, 10) !== to) return null
+  return { excerpt, from_excerpt: match[1], to_excerpt: match[2], from, to }
+}
+
 function noticiasEstruturadas(value: unknown): Record<string, unknown>[] {
   if (Array.isArray(value)) return value.flatMap(noticiasEstruturadas)
   if (!value || typeof value !== "object") return []
@@ -160,7 +186,7 @@ export interface MetadadosArtigo {
 }
 
 /** Reads same-article JSON-LD or document-level itemprop metadata. */
-export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
+export function extrairMetadadosArtigo(html: string, options?: { requireCompleteNewsArticle?: boolean; expectedHeadline?: string }): MetadadosArtigo | null {
   const $ = load(html)
   const uniqueValues = (selector: string, attribute: string) => {
     // A present but empty value still counts, so it conflicts with any other value.
@@ -193,12 +219,46 @@ export function extrairMetadadosArtigo(html: string): MetadadosArtigo | null {
   const structured = $("script[type='application/ld+json']").toArray().flatMap((element) => {
     try { return noticiasEstruturadas(JSON.parse($(element).text())) } catch { return [] }
   })
+  if (options?.requireCompleteNewsArticle) {
+    const articleEntries = structured.filter((entry) => {
+      const types = Array.isArray(entry["@type"]) ? entry["@type"].map(String) : [String(entry["@type"])]
+      return types.some((type) => ["NewsArticle", "Article", "ReportageNewsArticle"].includes(type))
+    })
+    const urlMatches = articleEntries.filter((entry) => entry.url === canonical)
+    let mainArticle: Record<string, unknown> | undefined
+    if (urlMatches.length) {
+      if (urlMatches.length !== 1) return null
+      mainArticle = urlMatches[0]
+    } else {
+      const ogTitle = uniqueValues("head meta[property='og:title']", "content").value
+      const headline = options.expectedHeadline?.trim() || ogTitle
+      const normalizeHeadline = (value: unknown) => typeof value === "string" ? value.trim().replace(/\s+/g, " ").toLocaleLowerCase("pt-BR") : ""
+      const headlineMatches = headline ? articleEntries.filter((entry) => normalizeHeadline(entry.headline) === normalizeHeadline(headline)) : []
+      if (headlineMatches.length > 1) return null
+      if (headlineMatches.length === 1) mainArticle = headlineMatches[0]
+      else if (articleEntries.length === 1) mainArticle = articleEntries[0]
+      else return null
+    }
+    if (mainArticle.url !== undefined && mainArticle.url !== canonical) return null
+    const published = mainArticle.datePublished
+    const modified = mainArticle.dateModified
+    if (!validTimestamp(published) || !validTimestamp(modified) || Date.parse(modified) < Date.parse(published)) return null
+    const ogPublished = uniqueValues("head meta[property='article:published_time']", "content")
+    const ogModified = uniqueValues("head meta[property='article:modified_time']", "content")
+    if (ogPublished.conflict || ogModified.conflict
+      || (ogPublished.value && (!validTimestamp(ogPublished.value) || Date.parse(ogPublished.value) !== Date.parse(published)))
+      || (ogModified.value && (!validTimestamp(ogModified.value) || Date.parse(ogModified.value) !== Date.parse(modified)))) return null
+    return { url: canonical, datePublished: published, dateModified: modified }
+  }
   const matching = structured.filter((entry) => entry.url === canonical && (Array.isArray(entry["@type"]) ? entry["@type"].map(String).includes("ReportageNewsArticle") : entry["@type"] === "ReportageNewsArticle"))
   if (matching.length > 1) return null
   if (matching.length === 1) {
     const published = matching[0].datePublished
     const modified = matching[0].dateModified
     if (!validTimestamp(published) || (modified !== undefined && !validTimestamp(modified))) return null
+    const ogModified = uniqueValues("head meta[property='article:modified_time']", "content")
+    if (ogModified.conflict
+      || (ogModified.value && (!validTimestamp(ogModified.value) || !modified || Date.parse(ogModified.value) !== Date.parse(modified)))) return null
     if ((itemPublished.value && itemPublished.value !== published) || (itemModified.value && modified && itemModified.value !== modified)) return null
     return { url: canonical, datePublished: published, ...((modified ?? itemModified.value) ? { dateModified: modified ?? itemModified.value } : {}) }
   }
@@ -317,12 +377,12 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
     if (recorded) validarEstruturaVideoGravado(q)
     if (["The Papo com André Silva", "MetalTV (SMC)"].includes(q.publisher) && !recorded) throw new Error("Canal exige evidência do episódio gravado")
     const metadata = q.review_evidence?.article_metadata
-    const modifiedProof = !q.occurred_between && q.attribution === "source_context_review" && typeof q.article_modified_at === "string" && !!metadata
+    const modifiedProof = q.attribution === "source_context_review" && typeof q.article_modified_at === "string" && !!metadata
       && metadata.url === q.article_url && metadata.datePublished === q.article_published_at && metadata.dateModified === q.article_modified_at
       && Number.isFinite(Date.parse(q.article_published_at)) && Number.isFinite(Date.parse(q.article_modified_at))
       && Date.parse(q.article_modified_at) >= Date.parse(q.article_published_at) && Date.parse(q.article_modified_at) <= Date.parse(q.observed_at)
     if (q.article_modified_at !== undefined && !modifiedProof) throw new Error("Data modificada sem prova JSON-LD do mesmo artigo")
-    const publicationBound = transcript?.media_published_at ?? (modifiedProof ? q.article_modified_at! : q.article_published_at)
+    const publicationBound = transcript?.media_published_at ?? (!q.occurred_between && modifiedProof ? q.article_modified_at! : q.article_published_at)
     const eventDateReference = modifiedProof ? q.article_modified_at! : q.article_published_at
     if (transcript && (transcript.kind !== "automatic" || transcript.reviewed_context !== true
       || !transcript.engine?.trim() || typeof transcript.speaker_context !== "string" || transcript.speaker_context.trim().length < 30
@@ -333,6 +393,7 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
       || Date.parse(publicationBound) > Date.parse(q.observed_at) || q.attribution !== "source_context_review"
       || (q.occurred_between && !recorded) || q.quote_text.split(/\s+/).length > 25)) throw new Error("Transcrição sem integridade, contexto ou minutagem")
     const rangeProof = q.review_evidence?.date_range_proof
+    const explicitRangeProof = q.review_evidence?.explicit_event_range
     const live = q.review_evidence?.live_video
     if (live && (q.occurred_between || q.attribution !== "source_context_review" || live.reviewed_live_on_air !== true
       || !Object.hasOwn(CANAIS_AO_VIVO_APROVADOS, live.channel_id) || !urlVideoAprovada(live.channel_id, live.url) || !/^https:\/\/www\.youtube\.com\/watch\?v=[A-Za-z0-9_-]{11}$/.test(live.url)
@@ -342,13 +403,23 @@ export function validarCatalogo(catalog: CatalogoFalas): void {
       || !Number.isFinite(live.frame_at_seconds) || live.frame_at_seconds < 0
       || live.article_event_excerpt !== q.review_evidence?.date_excerpt
       || live.quote_excerpt.split(/\s+/).length < 6 || !normalizar(q.quote_text).includes(normalizar(live.quote_excerpt)))) throw new Error("Data ao vivo sem evidência vinculada")
-    if (!period || (q.occurred_between && !recorded && (!rangeProof || q.attribution !== "source_context_review"
-      || rangeProof.relationship_excerpt.length < 20
-      || !Number.isFinite(Date.parse(rangeProof.anchor_published_at)) || Date.parse(rangeProof.anchor_published_at) > Date.parse(q.observed_at)
-      || Date.parse(rangeProof.publication_timestamp) !== Date.parse(q.article_published_at)
-      || period.to !== rangeProof.publication_timestamp.slice(0, 10)
-      || dataEvento(rangeProof.anchor_excerpt, rangeProof.anchor_published_at, true) !== period.from
-      || !q.review_evidence?.supporting_sources?.some(p => p.url === rangeProof.anchor_url && p.excerpts.includes(rangeProof.anchor_excerpt))))) throw new Error("Intervalo da fala sem limites comprovados")
+    const validAnchoredRange = !!rangeProof && !explicitRangeProof && q.attribution === "source_context_review"
+      && rangeProof.relationship_excerpt.length >= 20
+      && Number.isFinite(Date.parse(rangeProof.anchor_published_at)) && Date.parse(rangeProof.anchor_published_at) <= Date.parse(q.observed_at)
+      && Date.parse(rangeProof.publication_timestamp) === Date.parse(q.article_published_at)
+      && period?.to === rangeProof.publication_timestamp.slice(0, 10)
+      && dataEvento(rangeProof.anchor_excerpt, rangeProof.anchor_published_at, true) === period?.from
+      && !!q.review_evidence?.supporting_sources?.some(p => p.url === rangeProof.anchor_url && p.excerpts.includes(rangeProof.anchor_excerpt))
+    const resolvedExplicitRange = explicitRangeProof && !rangeProof
+      ? resolverIntervaloDebateExplicito(explicitRangeProof.excerpt, q.article_published_at) : null
+    const validExplicitRange = !!resolvedExplicitRange && q.attribution === "source_context_review"
+      && modifiedProof
+      && explicitRangeProof?.from_excerpt === resolvedExplicitRange.from_excerpt
+      && explicitRangeProof?.to_excerpt === resolvedExplicitRange.to_excerpt
+      && resolvedExplicitRange.excerpt.includes(q.review_evidence?.date_excerpt ?? "")
+      && !!q.review_evidence?.date_excerpt
+      && period?.from === resolvedExplicitRange.from && period.to === resolvedExplicitRange.to
+    if (!period || (q.occurred_between && !recorded && !validAnchoredRange && !validExplicitRange)) throw new Error("Intervalo da fala sem limites comprovados")
     const source = SOURCES.find((s) => s.publisher === q.publisher && urlAprovada(q.article_url, s) === q.article_url)
     if (!source || !q.candidate_id || !q.candidate_slug || !q.candidate_name || !q.quote_text || !q.context?.includes(q.quote_text)
       || !q.article_title || !q.event_context || !["Presidente", "Governador"].includes(q.office)
