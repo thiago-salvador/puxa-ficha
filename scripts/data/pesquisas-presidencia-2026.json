@@ -14634,9 +14634,9 @@
     {
       "id": "real-time-big-data-br-09670-2026",
       "source_id": "real-time-big-data-br-09670-2026-revisao-20261024",
-      "source_status": "aprovado",
+      "source_status": "condicional",
       "publishable_by_default": false,
-      "state": "publicado",
+      "state": "indeterminado",
       "instituto": {
         "value": "Real Time Big Data",
         "status": "publicado"

@@ -4178,7 +4178,7 @@
     },
     {
       "id": "real-time-big-data-br-09670-2026-revisao-20261024",
-      "status": "aprovado",
+      "status": "condicional",
       "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
       "roles": {
         "institute": "Real Time Big Data",
@@ -4232,11 +4232,12 @@
           ]
         },
         "sample_identification": {
-          "pass": true,
+          "pass": false,
           "evidence_urls": [
             "https://www.gazetadopovo.com.br/eleicoes/2026/pesquisa-eleitoral-2026/real-time-big-data-presidente-outubro-2026-segundo-turno-2/",
             "https://www.cnnbrasil.com.br/eleicoes/real-time-flavio-tem-52-dos-votos-validos-no-2o-turno-lula-48/"
-          ]
+          ],
+          "note": "Tamanho da amostra sem conciliação: legenda informa 2.520; metodologia da mesma publicação e CNN informam 2.000. Mantido indeterminado até esclarecimento da fonte."
         },
         "publication_stability": {
           "pass": true,

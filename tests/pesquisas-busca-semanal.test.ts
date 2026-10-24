@@ -129,8 +129,8 @@ test("fontes alternativas recuperadas chegam às fichas com os valores publicado
   assert.equal(segundoTurno?.id, "instituto-verita-br-06070-2026")
   assert.equal(segundoTurno?.cenario.id, "instituto-verita-br-06070-2026-2t")
   assert.equal(segundoTurno?.resultado.valuePercent, 47.5)
+  assert.equal(lula.some((p) => p.id === "real-time-big-data-br-09670-2026"), false)
   for (const [id, value] of [
-    ["real-time-big-data-br-09670-2026", 45],
     ["futura-inteligencia-br-06614-2026", 46.8],
     ["palver-br-04612-2026", 48],
     ["meio-ideia-br-08251-2026", 46],
