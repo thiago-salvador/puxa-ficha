@@ -869,6 +869,16 @@
       "origin": "https://www.brasildefato.com.br",
       "listing": "/2026/",
       "articlePath": "/2026/"
+    },
+    {
+      "id": "gazeta-do-cerrado",
+      "publisher": "Gazeta do Cerrado",
+      "origin": "https://gazetadocerrado.com.br",
+      "listing": "/tocantins/",
+      "articlePath": "/tocantins/",
+      "approvedArticleUrls": [
+        "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/"
+      ]
     }
   ]
 }

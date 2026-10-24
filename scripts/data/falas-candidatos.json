@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-20T09:01:33.373Z",
+  "updated_at": "2026-10-24T09:00:58.613Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -9400,6 +9400,120 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "id": "aba188b636f1239603c0b2ccebde666735605bf8c84ef27e66411745fc6626b8",
+      "candidate_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+      "candidate_slug": "professora-dorinha",
+      "candidate_name": "Professora Dorinha",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Eu não disse que tudo está bem.",
+      "context": "“Eu não disse que tudo está bem. Eu disse que o que está bem, está funcionando, vai continuar, e nós vamos mudar”, respondeu.",
+      "event_context": "Confronto entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins na campanha ao Governo do Tocantins, com mediação de Maju Cotrim. A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+      "event_type": "debate",
+      "occurred_on": "2026-10-19",
+      "publisher": "Gazeta do Cerrado",
+      "article_url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+      "article_title": "Dorinha e Vicentinho debatem saúde, educação e programas sociais em confronto direto na RedeTV",
+      "article_published_at": "2026-10-20T00:59:47+00:00",
+      "article_modified_at": "2026-10-20T01:16:11+00:00",
+      "observed_at": "2026-10-22T20:28:34.724Z",
+      "source_sha256": "749d4d13c0672e2548124b3659609d9b42513936269ec2babcee6b8800bf3c1b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+        "date_excerpt": "A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+        "fetched_url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+          "datePublished": "2026-10-20T00:59:47+00:00",
+          "dateModified": "2026-10-20T01:16:11+00:00"
+        }
+      }
+    },
+    {
+      "id": "4633708fdf967dec21d3f8ab0ad3991d5fbcfe9021cd74b6f11422508c6c3714",
+      "candidate_id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+      "candidate_slug": "pazolini",
+      "candidate_name": "Pazolini",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "Nós vamos participar intensamente desse debate. Vamos dialogar com o setor produtivo e buscar a alternativa para manter a solidez fiscal do Espírito Santo",
+      "context": "“Nós vamos participar intensamente desse debate. Vamos dialogar com o setor produtivo e buscar a alternativa para manter a solidez fiscal do Espírito Santo”, afirmou Pazolini.",
+      "event_context": "Debate da TV Gazeta entre Lorenzo Pazolini e Ricardo Ferraço, candidatos ao governo do Espírito Santo no segundo turno; a matéria o identifica como o último debate antes da votação de 25/10. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+      "event_type": "debate",
+      "occurred_on": null,
+      "occurred_between": {
+        "from": "2026-10-22",
+        "to": "2026-10-23"
+      },
+      "publisher": "A Gazeta",
+      "article_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+      "article_title": "Segurança domina debate da TV Gazeta, com troca de farpas entre Ricardo e Pazolini",
+      "article_published_at": "2026-10-23T04:27:28.000Z",
+      "article_modified_at": "2026-10-23T04:27:42.000Z",
+      "observed_at": "2026-10-24T09:00:58.613Z",
+      "source_sha256": "2be5363eeda819550c2333eac0795738aabd739b88244ab05056154261e777f2",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "date_excerpt": "O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "fetched_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+          "datePublished": "2026-10-23T04:27:28.000Z",
+          "dateModified": "2026-10-23T04:27:42.000Z"
+        },
+        "explicit_event_range": {
+          "excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+          "from_excerpt": "quinta-feira (22)",
+          "to_excerpt": "sexta (23)"
+        }
+      }
+    },
+    {
+      "id": "93a994f668a0475d8aadc8ee30728355e04578e353120f4db4a634996bde3b7c",
+      "candidate_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+      "candidate_slug": "ricardo-ferraco",
+      "candidate_name": "Ricardo Ferraço",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "Os estudos que nós estamos fazendo indicam que o Espírito Santo não terá perdas na reforma tributária",
+      "context": "“Os estudos que nós estamos fazendo indicam que o Espírito Santo não terá perdas na reforma tributária”, disse Ricardo.",
+      "event_context": "Debate da TV Gazeta entre Lorenzo Pazolini e Ricardo Ferraço, candidatos ao governo do Espírito Santo no segundo turno; a matéria o identifica como o último debate antes da votação de 25/10. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+      "event_type": "debate",
+      "occurred_on": null,
+      "occurred_between": {
+        "from": "2026-10-22",
+        "to": "2026-10-23"
+      },
+      "publisher": "A Gazeta",
+      "article_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+      "article_title": "Segurança domina debate da TV Gazeta, com troca de farpas entre Ricardo e Pazolini",
+      "article_published_at": "2026-10-23T04:27:28.000Z",
+      "article_modified_at": "2026-10-23T04:27:42.000Z",
+      "observed_at": "2026-10-24T09:00:58.613Z",
+      "source_sha256": "2be5363eeda819550c2333eac0795738aabd739b88244ab05056154261e777f2",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "date_excerpt": "O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "fetched_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+          "datePublished": "2026-10-23T04:27:28.000Z",
+          "dateModified": "2026-10-23T04:27:42.000Z"
+        },
+        "explicit_event_range": {
+          "excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+          "from_excerpt": "quinta-feira (22)",
+          "to_excerpt": "sexta (23)"
+        }
       }
     }
   ]

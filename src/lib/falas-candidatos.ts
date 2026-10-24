@@ -60,6 +60,7 @@ export interface FalaCandidato {
       | { date_basis: "explicit_recording_date"; recorded_on: string }
     )
     date_range_proof?: { anchor_url: string; anchor_excerpt: string; relationship_excerpt: string; anchor_published_at: string; publication_timestamp: string }
+    explicit_event_range?: { excerpt: string; from_excerpt: string; to_excerpt: string }
     article_metadata?: { url: string; datePublished: string; dateModified: string }
     supporting_sources?: Array<{ url: string; sha256: string; excerpts: string[]; source_format?: "web_text" }>
   }
