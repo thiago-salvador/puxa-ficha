@@ -73,4 +73,18 @@ describe("cron freshness", () => {
     assert.equal(response.status, 500)
     assert.equal(((await response.json()) as { ok: boolean }).ok, false)
   })
+
+  test("modo arquivo marca cada cron como arquivado e mantém o último instante", async () => {
+    const handler = createCronFreshnessHandler({
+      expectedSecret: SECRET,
+      readLatest: async () => "2026-10-25T08:00:00.000Z",
+      now: () => NOW,
+      arquivoAtivo: true,
+    })
+    const response = await handler(request())
+    assert.equal(response.status, 200)
+    const body = (await response.json()) as { checks: Array<{ last: string | null; arquivado?: boolean }> }
+    assert.equal(body.checks.length, 5)
+    assert.ok(body.checks.every((check) => check.arquivado === true && check.last === "2026-10-25T08:00:00.000Z"))
+  })
 })

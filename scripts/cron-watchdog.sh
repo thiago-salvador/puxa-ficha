@@ -435,8 +435,13 @@ probe_cron_freshness() {
   fi
 
   local name age limit_hours
-  while IFS=$'\t' read -r name age; do
+  while IFS=$'\t' read -r name age arquivado; do
     [[ -z "$name" ]] && continue
+    # Modo arquivo: cron desligado de propósito não é atraso.
+    if [[ "$arquivado" == "true" ]]; then
+      echo "arquivado: ${name}"
+      continue
+    fi
     limit_hours="$max_hours"
     [[ "$name" == "revalidate-public-cache" ]] && limit_hours=13
     if [[ "$age" == "null" ]]; then
@@ -456,7 +461,7 @@ probe_cron_freshness() {
     else
       echo "ok: frescor ${name} (${age}h)"
     fi
-  done < <(jq -r '.checks[]? | [.name, (.age_hours // "null" | tostring)] | @tsv' "$body")
+  done < <(jq -r '.checks[]? | [.name, (.age_hours // "null" | tostring), (.arquivado // false | tostring)] | @tsv' "$body")
   rm -f "$body"
 }
 
