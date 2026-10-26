@@ -2,6 +2,8 @@
 import type { ComponentProps } from "react"
 import Image, { getImageProps } from "next/image"
 import Link from "next/link"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
+import arquivoImageLoader from "@/lib/arquivo-image-loader"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { formatarPercentual, formatarVotos, type CandidatoResultado1Turno, type DisputaResultado1Turno } from "@/lib/resultados-1turno"
 import { dividirVotosValidos, fotoDe, larguraBarra, type FotosCandidatos } from "@/lib/resultados-1turno-vista"
@@ -64,7 +66,8 @@ function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | nul
     width: retrato?.largura ?? 960,
     height: retrato?.altura ?? 1280,
     priority: true,
-    loader: carregadorOtimizado,
+    // No espelho estático não há otimizador: a imagem vem de /_img.
+    loader: ARQUIVO_ESTATICO ? arquivoImageLoader : carregadorOtimizado,
     // Foto horizontal aparece quase na largura da tela; retrato vertical, em pouco mais da metade.
     sizes: proporcao > 1.2 ? "(min-width: 1024px) 100vw, 1px" : "(min-width: 1024px) 60vw, 1px",
   }).props

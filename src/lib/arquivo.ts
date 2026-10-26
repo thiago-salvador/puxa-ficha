@@ -35,6 +35,29 @@ export function arquivoDownloadHref(url: string): string {
   return `/arquivo-dados/${base64Url(url)}.${formato === "csv" ? "csv" : "json"}`
 }
 
+// Hash síncrono (cyrb53): o mesmo nome de arquivo sai no servidor, no navegador e no crawler.
+function hashImagem(texto: string): string {
+  let h1 = 0xdeadbeef
+  let h2 = 0x41c6ce57
+  for (let i = 0; i < texto.length; i++) {
+    const c = texto.charCodeAt(i)
+    h1 = Math.imul(h1 ^ c, 2654435761)
+    h2 = Math.imul(h2 ^ c, 1597334677)
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909)
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909)
+  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36)
+}
+
+/**
+ * Imagem remota no espelho estático: arquivo local com nome derivado da URL. O
+ * `?o=` leva a origem para o crawler baixar; o host estático ignora a query.
+ */
+export function arquivoImagemLocal(src: string): string {
+  const ext = src.split("?")[0].match(/\.(jpe?g|png|webp|gif|svg|avif)$/i)?.[1].toLowerCase().replace("jpeg", "jpg") ?? "img"
+  return `/_img/${hashImagem(src)}.${ext}?o=${encodeURIComponent(src)}`
+}
+
 /** Documento completo do programa de governo no espelho estático, num arquivo só. */
 export function arquivoProgramaDocumentoHref(slug: string, documentoId: string): string {
   return `/api/candidato-profile/${encodeURIComponent(slug)}/programa-documento/${base64Url(documentoId)}.json`
