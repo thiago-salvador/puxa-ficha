@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs"
 import { resolve } from "node:path"
 import { supabase } from "./lib/supabase"
+import { escritaBloqueadaPeloArquivo } from "./lib/arquivo-guard"
 import { escreverAuditado } from "./lib/escrita-auditada"
 import { DEFAULT_COMPLEMENT_PACKAGE, DEFAULT_ROSTER_PACKAGE, COMPLEMENT_SOURCE_URL, ROSTER_MIN_TOTAL, ROSTER_SOURCE_URL, buildRoster, compareRoster, loadRows, rosterApplyBlock, type ComplementRow, type RosterRecord, type SnapshotRow } from "./lib/roster-deputados"
 
@@ -41,6 +42,11 @@ function emit(value: unknown): void {
 }
 
 async function main(): Promise<void> {
+ // Modo arquivo: o roster ficou congelado em 25/10/2026.
+ if (apply && escritaBloqueadaPeloArquivo()) {
+  emit({ status: "arquivo", reason: "modo_arquivo_sem_escrita", apply: false })
+  return
+ }
  if (!existsSync(resolve(snapshotPath)) || !existsSync(resolve(complementPath))) {
   emit({ status: "pending", reason: "pacote_oficial_ausente", expected: [resolve(snapshotPath), resolve(complementPath)], source_urls: [ROSTER_SOURCE_URL, COMPLEMENT_SOURCE_URL], apply: false, coverage_proven: false })
   return

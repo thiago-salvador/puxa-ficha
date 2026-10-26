@@ -43,6 +43,7 @@ import {
 import { aplicarCoorteAtualizacao } from "./lib/coorte-atualizacao"
 import { assertOutsideRepository } from "./audit/lib/private-output"
 import { infraErrorGraceDays } from "./audit/audit-cobertura-fichas"
+import { escritaBloqueadaPeloArquivo } from "./lib/arquivo-guard"
 import { parseRiscoIdentidadePinado, reciboBloqueadoPorIdentidade, type RiscoIdentidadePinado } from "./lib/tse-identidade-celulas"
 
 const SCRIPT = "tse-2026-financas"
@@ -655,6 +656,11 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
 }
 
 async function executar(opts: OpcoesCli, pinado: RiscoIdentidadePinado | null = null): Promise<number> {
+  // Modo arquivo: as finanças ficaram congeladas em 25/10/2026.
+  if (opts.aplicar && escritaBloqueadaPeloArquivo()) {
+    console.log(JSON.stringify({ modo: "arquivo", aplicado: false }))
+    return 0
+  }
   exigirChaveV2(process.env.PF_DOADOR_CPF_HASH_SALT)
   if (opts.avaliarTravas) return avaliarTravas(opts)
 
