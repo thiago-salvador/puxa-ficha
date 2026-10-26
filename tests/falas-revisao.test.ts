@@ -116,6 +116,92 @@ test("intervalo exige fato anterior comprovado e publicação original sem inven
   assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...accepted, review_evidence: { ...accepted.review_evidence!, date_range_proof: undefined } }] }))
 })
 
+test("debate realizado durante a noite preserva intervalo explícito de datas consecutivas", async () => {
+  const source = SOURCES.find((entry) => entry.id === "a-gazeta")!
+  const articleUrl = `${source.origin}/es/politica/debate-ana-2026`
+  const published = "2026-10-23T04:27:28Z"
+  const modified = "2026-10-23T04:27:42Z"
+  const quoteText = "Vamos ampliar o atendimento de saúde para toda a população"
+  const excerpt = "No último debate da TV Gazeta antes do segundo turno, a candidata Ana Silva participou do embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23)."
+  const metadata = { "@context": "https://schema.org", "@type": "ReportageNewsArticle", url: articleUrl, datePublished: published, dateModified: modified }
+  const html = `<html><head><link rel="canonical" href="${articleUrl}"><meta property="og:url" content="${articleUrl}"><meta property="og:type" content="article"><meta property="article:published_time" content="${published}"><meta property="article:modified_time" content="${modified}"><script type="application/ld+json">${JSON.stringify(metadata)}</script></head><body><article><p>${excerpt}</p><p>“${quoteText}”, disse Ana Silva.</p></article></body></html>`
+  const explicit_event_range = { excerpt }
+  const ranged: AchadoRevisado = { ...finding, article_url: articleUrl, article_title: "Debate da TV Gazeta", publisher: source.publisher,
+    quote_text: quoteText, context: `“${quoteText}”, disse Ana Silva.`, event_context: "Debate da TV Gazeta com Ana Silva",
+    occurred_on: null, occurred_between: { from: "2026-10-22", to: "2026-10-23" }, article_published_at: published, article_modified_at: modified,
+    evidence: { identity_excerpt: "candidata Ana Silva", date_excerpt: excerpt,
+      explicit_event_range: explicit_event_range as unknown as AchadoRevisado["evidence"]["explicit_event_range"] } }
+  const verify = (value: AchadoRevisado = ranged, body = html) => verificarRevisao({ candidate, finding: value, html: body, now: new Date("2026-10-24T12:00:00Z") })
+
+  const accepted = verify()
+  assert.ok(accepted.quote, accepted.reason)
+  assert.equal(accepted.quote.occurred_on, null)
+  assert.deepEqual(accepted.quote.occurred_between, { from: "2026-10-22", to: "2026-10-23" })
+  assert.equal(accepted.quote.article_modified_at, modified)
+  assert.deepEqual(accepted.quote.review_evidence?.explicit_event_range, {
+    excerpt,
+    from_excerpt: "quinta-feira (22)",
+    to_excerpt: "sexta (23)",
+  })
+  assert.deepEqual(accepted.quote.review_evidence?.article_metadata, { url: articleUrl, datePublished: published, dateModified: modified })
+  assert.doesNotThrow(() => validarCatalogo({ ...empty, quotes: [accepted.quote!] }))
+  const withoutModified = { ...accepted.quote! }
+  delete withoutModified.article_modified_at
+  const reviewWithoutMetadata = { ...withoutModified.review_evidence! }
+  delete reviewWithoutMetadata.article_metadata
+  assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...withoutModified, review_evidence: reviewWithoutMetadata }] }))
+  assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...withoutModified, review_evidence: accepted.quote!.review_evidence }] }))
+  assert.throws(() => validarCatalogo({ ...empty, quotes: [{ ...accepted.quote!, article_published_at: "2026-10-22T04:27:28Z",
+    review_evidence: { ...accepted.quote!.review_evidence!, article_metadata: { url: articleUrl, datePublished: "2026-10-22T04:27:28Z", dateModified: modified } } }] }))
+
+  const replay = await importarRevisao({ roster: [candidate], previous: empty, now: new Date("2026-10-24T12:00:00Z"),
+    research: [{ candidates: [{ candidate_id: candidate.id, slug: candidate.slug, status: "verified", queries: [], urls_consultadas: [articleUrl], achados: [ranged] }] }],
+    getText: async () => ({ body: html }) })
+  assert.equal(replay.receipts[0].status, "verified")
+  assert.equal(replay.proposal.quotes.length, 1)
+  assert.equal(replay.proposal.quotes[0].occurred_on, null)
+  assert.deepEqual(replay.proposal.quotes[0].occurred_between, { from: "2026-10-22", to: "2026-10-23" })
+  assert.equal(replay.proposal.quotes[0].article_modified_at, modified)
+
+  const realDateExcerpt = "entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23)"
+  const fabricatedRangeExcerpt = `Debate da TV Gazeta com Ana Silva terminou no embate, realizado ${realDateExcerpt}.`
+  assert.equal(verify({ ...ranged, evidence: { ...ranged.evidence, date_excerpt: realDateExcerpt,
+    explicit_event_range: { excerpt: fabricatedRangeExcerpt } as unknown as typeof ranged.evidence.explicit_event_range } }).quote, null)
+
+  const futureExcerpt = excerpt.replace("realizado entre", "será realizado entre")
+  assert.equal(verify({ ...ranged, evidence: { ...ranged.evidence, date_excerpt: futureExcerpt,
+    explicit_event_range: { excerpt: futureExcerpt } as unknown as typeof ranged.evidence.explicit_event_range } }, html.replace(excerpt, futureExcerpt)).quote, null)
+  assert.equal(verify({ ...ranged, occurred_between: { from: "2026-10-23", to: "2026-10-22" } }).quote, null)
+  assert.equal(verify({ ...ranged, occurred_between: { from: "2026-10-22", to: "2026-10-24" } }).quote, null)
+
+  const interviewExcerpt = excerpt.replace("debate", "entrevista")
+  assert.equal(verify({ ...ranged, event_context: "Entrevista da TV Gazeta com Ana Silva",
+    evidence: { ...ranged.evidence, date_excerpt: interviewExcerpt,
+      explicit_event_range: { excerpt: interviewExcerpt } as unknown as typeof ranged.evidence.explicit_event_range } }, html.replace(excerpt, interviewExcerpt)).quote, null)
+  assert.equal(verify(ranged, html.replace(modified, "2026-10-23T04:27:43Z")).reason, "invalid_article_modified_date")
+})
+
+test("intervalo explícito exige metadados completos do NewsArticle sem URL", () => {
+  const source = SOURCES.find((entry) => entry.id === "a-gazeta")!
+  const articleUrl = `${source.origin}/es/politica/debate-ana-2026`
+  const published = "2026-10-23T04:27:28Z"
+  const modified = "2026-10-23T04:27:42Z"
+  const excerpt = "No último debate da TV Gazeta antes do segundo turno, a candidata Ana Silva participou do embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23)."
+  const article = { "@context": "https://schema.org", "@type": "NewsArticle", headline: "Debate da TV Gazeta",
+    datePublished: "2026-10-22T04:27:28Z", dateModified: "2026-10-24T04:27:42Z" }
+  const quoteText = "Vamos ampliar o atendimento de saúde para toda a população"
+  const alteredHtml = `<html><head><link rel="canonical" href="${articleUrl}"><meta property="og:url" content="${articleUrl}"><meta property="og:type" content="article"><meta property="article:published_time" content="${published}"><meta property="article:modified_time" content="${modified}"><script type="application/ld+json">${JSON.stringify(article)}</script></head><body><article><p>${excerpt}</p><p>“${quoteText}”, disse Ana Silva.</p></article></body></html>`
+  const ranged: AchadoRevisado = { ...finding, article_url: articleUrl, article_title: "Debate da TV Gazeta", publisher: source.publisher,
+    quote_text: quoteText, context: `“${quoteText}”, disse Ana Silva.`, event_context: "Debate da TV Gazeta com Ana Silva",
+    occurred_on: null, occurred_between: { from: "2026-10-22", to: "2026-10-23" }, article_published_at: published,
+    evidence: { identity_excerpt: "candidata Ana Silva", date_excerpt: excerpt,
+      explicit_event_range: { excerpt } as unknown as AchadoRevisado["evidence"]["explicit_event_range"] } }
+  const withoutModified = { ...ranged }
+  delete withoutModified.article_modified_at
+  const result = verificarRevisao({ candidate, finding: withoutModified, html: alteredHtml, now: new Date("2026-10-24T12:00:00Z") })
+  assert.equal(result.quote, null)
+})
+
 test("declaração em campanha mantém o contexto real e exige trecho original", () => {
   const context = "A candidata Ana Silva falou durante a panfletagem de campanha nesta terça-feira (8)."
   const source = html.replace("A candidata Ana Silva falou em entrevista nesta terça-feira (8).", context)
