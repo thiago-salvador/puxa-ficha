@@ -1,3 +1,4 @@
+import "./helpers/css-modules"
 import assert from "node:assert/strict"
 import { createHash } from "node:crypto"
 import { existsSync, readFileSync } from "node:fs"
@@ -166,7 +167,7 @@ describe("referência 2022", () => {
   })
 })
 
-const linha = (id: string, data: string | null, a: number, b: number): Pesquisa2TurnoLinha => ({ id, instituto: "Inst", data, percentuais: [a, b], margem: 2, url: "https://exemplo.org" })
+const linha = (id: string, data: string | null, a: number, b: number): Pesquisa2TurnoLinha => ({ id, instituto: "Inst", data, percentuais: [a, b], margem: 2, url: "https://exemplo.org", comparabilidade: { chave: "comparavel", rotulo: "Votos totais" } })
 
 describe("tendência das pesquisas do 2º turno", () => {
   it("da mais antiga para a mais recente, sem data inválida; com menos de duas, vazio", () => {
@@ -194,13 +195,16 @@ describe("tendência das pesquisas do 2º turno", () => {
     assert.match(html, /data-pf-tendencia-2turno/)
     assert.match(html, /stroke="var\(--espectro-direita\)"/)
     assert.match(html, /stroke="var\(--espectro-esquerda\)"/)
-    assert.match(html, /A foi de 43% a 46%; B foi de 46% a 44%/)
+    assert.match(html, /As linhas mostram a média dos levantamentos divulgados em cada data/)
+    assert.match(html, /data-pf-media-final="0"/)
+    assert.match(html, /46,0%/)
     assert.match(html, /data-pf-pesquisas-2turno/)
   })
 
-  it("com uma pesquisa só, sem tendência, mas a lista continua", () => {
+  it("com uma pesquisa só, mostra um ponto sem linha e mantém a fonte", () => {
     const html = renderToStaticMarkup(<Pesquisas2Turno linhas={[linha("a", "2026-07-30", 43, 46)]} nomes={["A", "B"]} />)
-    assert.doesNotMatch(html, /data-pf-tendencia-2turno/)
+    assert.doesNotMatch(html, /data-pf-media-linha/)
+    assert.match(html, /Uma data disponível neste filtro/)
     assert.match(html, /data-pf-pesquisas-2turno/)
   })
 

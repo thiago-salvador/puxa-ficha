@@ -232,13 +232,13 @@ for (const mode of ["inalterado", "bloqueado", "item-incorreto", "matriz-ambigua
       mkdirSync(input)
       const proposal = JSON.stringify({
         schema_version: "1.0.0", dry_run: true, human_review_required: true,
-        items: [{
-          id: mode === "item-incorreto" ? "outra-pesquisa-live" : `${matrix[0].poll_ids[0]}-live`,
+        items: matrix[0].poll_ids.map((pollId, index) => ({
+          id: mode === "item-incorreto" && index === 0 ? "outra-pesquisa-live" : `${pollId}-live`,
           evidence: null, normalized_contract: null,
           decision: mode === "bloqueado"
             ? { classification: "fonte indisponivel", eligible_for_human_review: false, reason: "source_unavailable" }
             : { classification: "inalterado", eligible_for_human_review: false, reason: "evidence_unchanged" },
-        }],
+        })),
       })
       writeFileSync(resolve(input, "proposal.json"), proposal)
       if (mode === "duplicado") {

@@ -76,6 +76,450 @@
   },
   "sources": [
     {
+      "id": "real-time-big-data-ac-09297-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "veja.abril.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-20",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Acre",
+        "rounds": [
+          2
+        ],
+        "registration_id": "AC-09297/2026",
+        "result_url": "https://veja.abril.com.br/politica/o-estado-com-real-chance-de-vitoria-de-uma-mulher-no-segundo-turno-segundo-pesquisa/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AC-09297/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T14:39:06Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados, base total, campo, amostra, margem e confiança conferidos nas publicações indicadas. Método de entrevista não publicado; aprovação restrita ao registro listado.",
+        "capture_sha256": "048da4d56110e77f0c661772d93a46d92a027facb3ab6c3cd97225987577d263",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Método de entrevista não informado nas publicações examinadas."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://veja.abril.com.br/politica/o-estado-com-real-chance-de-vitoria-de-uma-mulher-no-segundo-turno-segundo-pesquisa/",
+            "https://noticias.r7.com/eleicoes/2026/acre-mailza-assis-tem-59-dos-votos-validos-contra-41-de-alan-rick-no-2-turno-indica-real-time-20102026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://veja.abril.com.br/politica/o-estado-com-real-chance-de-vitoria-de-uma-mulher-no-segundo-turno-segundo-pesquisa/",
+            "https://noticias.r7.com/eleicoes/2026/acre-mailza-assis-tem-59-dos-votos-validos-contra-41-de-alan-rick-no-2-turno-indica-real-time-20102026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://veja.abril.com.br/politica/o-estado-com-real-chance-de-vitoria-de-uma-mulher-no-segundo-turno-segundo-pesquisa/",
+            "https://noticias.r7.com/eleicoes/2026/acre-mailza-assis-tem-59-dos-votos-validos-contra-41-de-alan-rick-no-2-turno-indica-real-time-20102026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T14:39:06Z"
+    },
+    {
+      "id": "real-time-big-data-df-01691-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "veja.abril.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-20",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Distrito Federal",
+        "rounds": [
+          2
+        ],
+        "registration_id": "DF-01691/2026",
+        "result_url": "https://veja.abril.com.br/brasil/como-esta-a-disputa-entre-celina-leao-e-leandro-grass-no-df-segundo-nova-pesquisa/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "DF-01691/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T14:39:06Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados, base total, campo, amostra, margem e confiança conferidos nas publicações indicadas. Método de entrevista não publicado; aprovação restrita ao registro listado.",
+        "capture_sha256": "20a731718910bed43c5aa3e2fdd32608f40737e015bbceb147eb01f1da010874",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Método de entrevista não informado nas publicações examinadas."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://veja.abril.com.br/brasil/como-esta-a-disputa-entre-celina-leao-e-leandro-grass-no-df-segundo-nova-pesquisa/",
+            "https://exame.com/brasil/real-time-big-data-celina-tem-53-e-grass-37-no-2o-turno-no-distrito-federal/",
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-tem-59-dos-votos-validos-ao-governo-do-df-grass-41/",
+            "https://www.congressoemfoco.com.br/noticia/123406/realtime-big-data-celina-tem-59-e-grass-41-dos-votos-validos-no-df"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://veja.abril.com.br/brasil/como-esta-a-disputa-entre-celina-leao-e-leandro-grass-no-df-segundo-nova-pesquisa/",
+            "https://exame.com/brasil/real-time-big-data-celina-tem-53-e-grass-37-no-2o-turno-no-distrito-federal/",
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-tem-59-dos-votos-validos-ao-governo-do-df-grass-41/",
+            "https://www.congressoemfoco.com.br/noticia/123406/realtime-big-data-celina-tem-59-e-grass-41-dos-votos-validos-no-df"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://veja.abril.com.br/brasil/como-esta-a-disputa-entre-celina-leao-e-leandro-grass-no-df-segundo-nova-pesquisa/",
+            "https://exame.com/brasil/real-time-big-data-celina-tem-53-e-grass-37-no-2o-turno-no-distrito-federal/",
+            "https://www.cnnbrasil.com.br/eleicoes/real-time-celina-tem-59-dos-votos-validos-ao-governo-do-df-grass-41/",
+            "https://www.congressoemfoco.com.br/noticia/123406/realtime-big-data-celina-tem-59-e-grass-41-dos-votos-validos-no-df"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T14:39:06Z"
+    },
+    {
+      "id": "real-time-big-data-am-03112-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.r7.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-20",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Amazonas",
+        "rounds": [
+          2
+        ],
+        "registration_id": "AM-03112/2026",
+        "result_url": "https://noticias.r7.com/eleicoes/2026/real-time-omar-aziz-tem-46-dos-votos-e-maria-do-carmo-41-no-2-turno-para-o-governo-do-am-20102026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "AM-03112/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T14:39:06Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados, base total, campo, amostra, margem e confiança conferidos nas publicações indicadas. Método de entrevista não publicado; aprovação restrita ao registro listado.",
+        "capture_sha256": "db06cc8947132bfc24f4029e149e24e40075fbf61c4ca78f7d0cd6f7e95d2b43",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Método de entrevista não informado nas publicações examinadas."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-omar-aziz-tem-46-dos-votos-e-maria-do-carmo-41-no-2-turno-para-o-governo-do-am-20102026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-omar-aziz-tem-46-dos-votos-e-maria-do-carmo-41-no-2-turno-para-o-governo-do-am-20102026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-omar-aziz-tem-46-dos-votos-e-maria-do-carmo-41-no-2-turno-para-o-governo-do-am-20102026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T14:39:06Z"
+    },
+    {
+      "id": "real-time-big-data-es-06599-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.r7.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-20",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Espírito Santo",
+        "rounds": [
+          2
+        ],
+        "registration_id": "ES-06599/2026",
+        "result_url": "https://noticias.r7.com/eleicoes/2026/real-time-lorenzo-pazolini-tem-46-dos-votos-e-ricardo-ferraco-43-no-2-turno-para-o-governo-de-es-20102026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "ES-06599/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T14:39:06Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados, base total, campo, amostra, margem e confiança conferidos nas publicações indicadas. Método de entrevista não publicado; aprovação restrita ao registro listado.",
+        "capture_sha256": "5966d8fa6e59e890bf6732eabc659b4b6ad3bb453dd99cfcf5bd40468ca6bc70",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Método de entrevista não informado nas publicações examinadas."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-lorenzo-pazolini-tem-46-dos-votos-e-ricardo-ferraco-43-no-2-turno-para-o-governo-de-es-20102026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-lorenzo-pazolini-tem-46-dos-votos-e-ricardo-ferraco-43-no-2-turno-para-o-governo-de-es-20102026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/real-time-lorenzo-pazolini-tem-46-dos-votos-e-ricardo-ferraco-43-no-2-turno-para-o-governo-de-es-20102026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T14:39:06Z"
+    },
+    {
+      "id": "real-time-big-data-rn-02651-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.r7.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-20",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Rio Grande do Norte",
+        "rounds": [
+          2
+        ],
+        "registration_id": "RN-02651/2026",
+        "result_url": "https://noticias.r7.com/eleicoes/2026/rn-allyson-tem-52-dos-votos-validos-contra-48-de-cadu-de-lula-no-2-turno-20102026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "RN-02651/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T14:39:06Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados, base total, campo, amostra, margem e confiança conferidos nas publicações indicadas. Método de entrevista não publicado; aprovação restrita ao registro listado.",
+        "capture_sha256": "4ff00d7ffa2871d2ecc2d48189e2c25f1db7cb56c150e8335a9db26f1bb3bd67",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Método de entrevista não informado nas publicações examinadas."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/rn-allyson-tem-52-dos-votos-validos-contra-48-de-cadu-de-lula-no-2-turno-20102026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/rn-allyson-tem-52-dos-votos-validos-contra-48-de-cadu-de-lula-no-2-turno-20102026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/rn-allyson-tem-52-dos-votos-validos-contra-48-de-cadu-de-lula-no-2-turno-20102026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T14:39:06Z"
+    },
+    {
+      "id": "real-time-big-data-to-09320-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Real Time Big Data",
+        "commissioner": null,
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "noticias.r7.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-20",
+        "sample_size": 1600,
+        "method": null,
+        "margin_of_error_pp": 2,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          2
+        ],
+        "registration_id": "TO-09320/2026",
+        "result_url": "https://noticias.r7.com/eleicoes/2026/to-vicentinho-junior-tem-52-dos-votos-validos-contra-48-da-professora-dorinha-no-2-turno-20102026/",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-09320/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T14:39:06Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados, base total, campo, amostra, margem e confiança conferidos nas publicações indicadas. Método de entrevista não publicado; aprovação restrita ao registro listado.",
+        "capture_sha256": "c76664924eb9e6141e721eb35a3e3dd24e2826e6fe49bc889cf4ba88f64447af",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Método de entrevista não informado nas publicações examinadas."
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/to-vicentinho-junior-tem-52-dos-votos-validos-contra-48-da-professora-dorinha-no-2-turno-20102026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/to-vicentinho-junior-tem-52-dos-votos-validos-contra-48-da-professora-dorinha-no-2-turno-20102026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://noticias.r7.com/eleicoes/2026/to-vicentinho-junior-tem-52-dos-votos-validos-contra-48-da-professora-dorinha-no-2-turno-20102026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T14:39:06Z"
+    },
+    {
       "id": "datafolha-folha-globo-estaduais-2026",
       "status": "aprovado",
       "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
@@ -13171,6 +13615,91 @@
         }
       },
       "consulted_at": "2026-10-20T12:14:45Z"
+    },
+    {
+      "id": "parana-pesquisas-es-01531-2026-revisao-20261021",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "INSTITUTO PARANA DE PESQUISAS E ANALISE DE CONSUMIDOR LTDA",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "metropoles.com",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-15",
+          "end": "2026-10-19"
+        },
+        "published_at": "2026-10-21",
+        "sample_size": 1300,
+        "method": "Entrevistas telefônicas assistidas por computador (CATI)",
+        "margin_of_error_pp": 2.7,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Espírito Santo",
+        "rounds": [
+          2
+        ],
+        "registration_id": "ES-01531/2026",
+        "result_url": "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "ES-01531/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-21T13:59:44Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados conferidos no relatório final e na publicação. Contratante e metodologia CATI declarados no registro TSE.",
+        "capture_sha256": "10a93fe08ed50668667f1e63da71ef0be2c6804abbd351ae3b712513bf89a3ff",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://www.metropoles.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-es",
+            "https://exame.com/brasil/parana-pesquisas-pazolini-tem-524-e-ferraco-398-no-2o-turno-no-espirito-santo/",
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/1-JOB26_214_ES_-RegistroTSE_ES-01531.pdf",
+            "https://static.poder360.com.br/uploads/2026/10/ParanaPesquisa-governador-ES-20out2026.pdf"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-21T13:59:44Z"
     }
   ]
 }

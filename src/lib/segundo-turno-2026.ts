@@ -1,4 +1,4 @@
-// cspell:ignore exibicao celulas
+// cspell:ignore exibicao celulas revisao profissao ceap comparavel lider dimensoes espontanea
 /**
  * Helpers puros da página do 2º turno de 2026: contagem de dias até a votação,
  * linhas do lado a lado dos finalistas, seleção das pesquisas do confronto e os
@@ -12,6 +12,7 @@ import { PATRIMONIO_ATIPICO_ROTULO } from "@/lib/patrimonio-atipico"
 import { formatBRL } from "@/lib/utils"
 import type { StatePollScenario } from "@/lib/state-polls"
 import { fieldworkDate, publicPollMetadata, publishedValue } from "@/lib/poll-series"
+import { groupWeeklyPollSeries } from "@/lib/poll-weeks"
 import { DATAS_TURNOS_2026 } from "@/lib/coorte-atualizacao"
 import type { CandidatoComparavel } from "@/lib/types"
 import { COMPARADOR_NAO_SE_APLICA, deveMostrarBlocoCongresso } from "@/lib/comparador-display"
@@ -355,6 +356,9 @@ export interface Pesquisa2TurnoLinha {
   percentuais: [number, number]
   margem: number | null
   url: string
+  /** Dimensões verificadas do catálogo; sem elas, não combinar pesquisas. */
+  comparabilidade?: { chave: string; rotulo: string } | null
+  registro?: string | null
 }
 
 /**
@@ -391,6 +395,12 @@ export function selecionarPesquisasDoConfronto(
     const url = poll.provenance.resultUrl
     if (!/^https:\/\//.test(url)) continue
     vistas.add(poll.id)
+    // Reuse the catalog's comparison rules, including scope, mode and vote base.
+    const grupo = poll.scenario.comparabilityKey ? groupWeeklyPollSeries([poll])[0] : undefined
+    const dimensoes: unknown[] = grupo ? JSON.parse(grupo.id) : []
+    const comparavel = typeof dimensoes[0] === "number"
+    const base = dimensoes.at(-1) === "votos_validos" ? "Votos válidos" : "Votos totais"
+    const modalidade = dimensoes[4] === "espontanea" ? "espontânea" : "estimulada"
     linhas.push({
       id: poll.id,
       instituto: poll.instituto.value ?? "Instituto sem nome publicado",
@@ -398,6 +408,8 @@ export function selecionarPesquisasDoConfronto(
       percentuais: [va, vb],
       margem: poll.marginErrorPp.value,
       url,
+      comparabilidade: comparavel && grupo ? { chave: grupo.id, rotulo: `${base} · Intenção de voto ${modalidade}` } : null,
+      registro: poll.registration?.code.value ?? null,
     })
   }
   return linhas

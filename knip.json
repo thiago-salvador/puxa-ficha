@@ -16,7 +16,9 @@
     "tests/visual/box-sharing.playwright.config.ts",
     "tests/visual/imprensa.playwright.config.ts",
     "tests/visual/programas-busca.playwright.config.ts",
-    "tests/visual/fixtures/poll-evolution.tsx"
+    "tests/visual/second-round-polls.playwright.config.ts",
+    "tests/visual/fixtures/poll-evolution.tsx",
+    "tests/visual/fixtures/second-round-polls.tsx"
   ],
   "project": [
     "src/**/*.{ts,tsx}",
