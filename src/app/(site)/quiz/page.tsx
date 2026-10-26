@@ -7,7 +7,7 @@ import { buildAbsoluteUrl, buildTwitterMetadata } from "@/lib/metadata"
 
 const title = "Quem me representa? | Puxa Ficha"
 const description =
-  "Compare suas respostas com votos e posições documentadas dos candidatos, com cobertura explícita. Sem ranking ou recomendação de voto."
+  "Ferramenta encerrada em 25/10/2026. O quiz comparava respostas com votos e posições documentadas dos candidatos de 2026, sem ranking ou recomendação de voto."
 const image = buildAbsoluteUrl("/quiz/resultado/og")
 
 export const metadata: Metadata = {

@@ -305,11 +305,12 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
               <span
                 data-pf-nav-arquivo
                 title={`${ARQUIVO_ELEICOES_2026.titulo}: dados congelados em ${ARQUIVO_ELEICOES_2026.dataCorte}`}
-                className={`ml-1 whitespace-nowrap rounded-full border px-2 py-0.5 font-sans text-[length:var(--text-eyebrow)] font-bold normal-case tracking-normal ${
+                className={`ml-1 whitespace-nowrap rounded-full max-[359px]:hidden border px-2 py-0.5 font-sans text-[length:var(--text-eyebrow)] font-bold normal-case tracking-normal ${
                   useDarkText ? "border-black/30 text-black" : "border-white/50 text-white"
                 }`}
               >
-                {/* No celular só cabe a palavra; o ano volta a partir de sm. */}
+                {/* No celular só cabe a palavra; o ano volta a partir de sm. Abaixo
+                    de 360 px o selo some e o aviso fica no rodapé. */}
                 <span className="sm:hidden">Arquivo</span>
                 <span className="hidden sm:inline">{ARQUIVO_ELEICOES_2026.rotuloCurto}</span>
               </span>

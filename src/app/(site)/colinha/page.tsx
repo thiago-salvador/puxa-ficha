@@ -4,18 +4,18 @@ import { ArquivoFerramentaAviso } from "@/components/ArquivoFerramentaAviso"
 
 export const metadata: Metadata = {
   title: "Minha colinha de 2026 | Puxa Ficha",
-  description: "Monte, confira e compartilhe sua colinha de votação para as eleições de 2026.",
+  description: "Ferramenta encerrada em 25/10/2026. A colinha montava os seis votos na ordem da urna nas eleições de 2026.",
   alternates: { canonical: "/colinha" },
   openGraph: {
     title: "Minha colinha de 2026 | Puxa Ficha",
-    description: "Seis escolhas na ordem da urna para conferir antes de votar.",
+    description: "Ferramenta encerrada em 25/10/2026: montava os seis votos na ordem da urna.",
     url: "/colinha",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Puxa Ficha" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Minha colinha de 2026 | Puxa Ficha",
-    description: "Seis escolhas na ordem da urna para conferir antes de votar.",
+    description: "Ferramenta encerrada em 25/10/2026: montava os seis votos na ordem da urna.",
     images: ["/opengraph-image"],
   },
   robots: { index: false, follow: false, nocache: true },

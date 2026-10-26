@@ -437,7 +437,9 @@ describe("PF-26 alertas nightly", () => {
     }
   })
 
-  test("GET e POST reais usam a composicao default sem contato externo", async (t) => {
+  // Modo arquivo: com a eleição encerrada, o digest responde desligado antes de
+  // qualquer autenticação ou consulta, mesmo com a flag de email ligada.
+  test("no modo arquivo GET e POST reais nao enviam nada nem tocam a rede", async (t) => {
     const fixture = new AlertsRouteFixture()
     const fetchesBefore = blockedGlobalFetchUrls.length
     const previousFeatureFlag = process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED
@@ -450,37 +452,21 @@ describe("PF-26 alertas nightly", () => {
       }
     })
 
-    const unauthorized = await routeModule.GET(
-      fixture.request("/api/alerts/send-digest?chain=0"),
-    )
-    assert.equal(unauthorized.status, 401)
-    assert.deepEqual(await unauthorized.json(), { error: "Unauthorized" })
-    assert.equal(
-      blockedGlobalFetchUrls.length,
-      fetchesBefore,
-      "GET sem autorizacao nao pode alcançar nenhum adapter de rede",
-    )
-    assert.equal(fixture.emails.length, 0)
-    assert.equal(fixture.getTable("notification_log").length, 0)
+    const desligado = { ok: true, disabled: true, processed: 0, sent: 0 }
+    const semAuth = await routeModule.GET(fixture.request("/api/alerts/send-digest?chain=0"))
+    assert.equal(semAuth.status, 200)
+    assert.deepEqual(await semAuth.json(), desligado)
 
-    const authorized = await routeModule.POST(
+    const comAuth = await routeModule.POST(
       fixture.request("/api/alerts/send-digest?chain=0", {
         method: "POST",
         headers: { authorization: `Bearer ${TEST_CRON_SECRET}` },
       }),
     )
-    assert.equal(authorized.status, 503)
-    assert.deepEqual(await authorized.json(), { error: "Could not load subscribers" })
+    assert.equal(comAuth.status, 200)
+    assert.deepEqual(await comAuth.json(), desligado)
 
-    const blockedAttempts = blockedGlobalFetchUrls.slice(fetchesBefore)
-    assert.ok(blockedAttempts.length > 0, "POST autorizado precisa alcançar o adapter Supabase real")
-    for (const url of blockedAttempts) {
-      assert.match(
-        url,
-        /^http:\/\/127\.0\.0\.1:9\//,
-        `o adapter tentou um destino fora da fixture local: ${url}`,
-      )
-    }
+    assert.equal(blockedGlobalFetchUrls.length, fetchesBefore, "o digest desligado nao pode alcançar a rede")
     assert.equal(fixture.emails.length, 0)
     assert.equal(fixture.getTable("notification_log").length, 0)
   })
