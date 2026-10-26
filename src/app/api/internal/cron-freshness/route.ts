@@ -33,7 +33,11 @@ export interface CronFreshnessDeps {
   expectedSecret: string | undefined
   readLatest: (check: FreshnessCheck) => Promise<string | null>
   now: () => Date
-  /** Modo arquivo: os crons foram desligados de propósito e saem do alarme de frescor. */
+  /**
+   * Modo arquivo: as crons da Vercel foram desligadas no projeto inteiro em
+   * 26/10/2026 (inclusive published-consistency e revalidate-public-cache),
+   * então as cinco saem do alarme de frescor.
+   */
   arquivoAtivo?: boolean
 }
 
