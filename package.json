@@ -292,6 +292,9 @@
     "yaml": "2.9.1"
   },
   "overrides": {
+    "@vercel/cli-config": {
+      "zod": "4.6.7"
+    },
     "exceljs": {
       "uuid": "^11.1.1"
     },

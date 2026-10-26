@@ -1,6 +1,6 @@
 {
   "schema_version": "falas-v1",
-  "updated_at": "2026-10-20T09:01:33.373Z",
+  "updated_at": "2026-10-26T09:39:50.023Z",
   "quotes": [
     {
       "id": "0062071cf16d56755c81a47dfee662753a257af90407e7def28c6de4fdcba08e",
@@ -9400,6 +9400,242 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "id": "aba188b636f1239603c0b2ccebde666735605bf8c84ef27e66411745fc6626b8",
+      "candidate_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+      "candidate_slug": "professora-dorinha",
+      "candidate_name": "Professora Dorinha",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Eu não disse que tudo está bem.",
+      "context": "“Eu não disse que tudo está bem. Eu disse que o que está bem, está funcionando, vai continuar, e nós vamos mudar”, respondeu.",
+      "event_context": "Confronto entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins na campanha ao Governo do Tocantins, com mediação de Maju Cotrim. A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+      "event_type": "debate",
+      "occurred_on": "2026-10-19",
+      "publisher": "Gazeta do Cerrado",
+      "article_url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+      "article_title": "Dorinha e Vicentinho debatem saúde, educação e programas sociais em confronto direto na RedeTV",
+      "article_published_at": "2026-10-20T00:59:47+00:00",
+      "article_modified_at": "2026-10-20T01:16:11+00:00",
+      "observed_at": "2026-10-22T20:28:34.724Z",
+      "source_sha256": "749d4d13c0672e2548124b3659609d9b42513936269ec2babcee6b8800bf3c1b",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+        "date_excerpt": "A contratação de uma empresa para atuar no programa Jovem Trabalhador, os problemas na saúde pública e a responsabilidade pela gestão estadual provocaram embates entre Vicentinho Júnior (PSDB) e Professora Dorinha Seabra (União Brasil) durante o segundo bloco do debate da RedeTV Tocantins, realizado nesta segunda-feira, 19, com mediação da jornalista Maju Cotrim.",
+        "fetched_url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://gazetadocerrado.com.br/tocantins/dorinha-e-vicentinho-debatem-saude-educacao-e-programas-sociais-em-confronto-direto-na-redetv/",
+          "datePublished": "2026-10-20T00:59:47+00:00",
+          "dateModified": "2026-10-20T01:16:11+00:00"
+        }
+      }
+    },
+    {
+      "id": "4633708fdf967dec21d3f8ab0ad3991d5fbcfe9021cd74b6f11422508c6c3714",
+      "candidate_id": "8d4eb423-5fa3-401f-883d-d70f4c0c64d8",
+      "candidate_slug": "pazolini",
+      "candidate_name": "Pazolini",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "Nós vamos participar intensamente desse debate. Vamos dialogar com o setor produtivo e buscar a alternativa para manter a solidez fiscal do Espírito Santo",
+      "context": "“Nós vamos participar intensamente desse debate. Vamos dialogar com o setor produtivo e buscar a alternativa para manter a solidez fiscal do Espírito Santo”, afirmou Pazolini.",
+      "event_context": "Debate da TV Gazeta entre Lorenzo Pazolini e Ricardo Ferraço, candidatos ao governo do Espírito Santo no segundo turno; a matéria o identifica como o último debate antes da votação de 25/10. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+      "event_type": "debate",
+      "occurred_on": null,
+      "occurred_between": {
+        "from": "2026-10-22",
+        "to": "2026-10-23"
+      },
+      "publisher": "A Gazeta",
+      "article_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+      "article_title": "Segurança domina debate da TV Gazeta, com troca de farpas entre Ricardo e Pazolini",
+      "article_published_at": "2026-10-23T04:27:28.000Z",
+      "article_modified_at": "2026-10-23T04:27:42.000Z",
+      "observed_at": "2026-10-24T09:00:58.613Z",
+      "source_sha256": "2be5363eeda819550c2333eac0795738aabd739b88244ab05056154261e777f2",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "date_excerpt": "O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "fetched_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+          "datePublished": "2026-10-23T04:27:28.000Z",
+          "dateModified": "2026-10-23T04:27:42.000Z"
+        },
+        "explicit_event_range": {
+          "excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+          "from_excerpt": "quinta-feira (22)",
+          "to_excerpt": "sexta (23)"
+        }
+      }
+    },
+    {
+      "id": "93a994f668a0475d8aadc8ee30728355e04578e353120f4db4a634996bde3b7c",
+      "candidate_id": "e79ddaf5-f86c-40c6-a54c-10535cb5514d",
+      "candidate_slug": "ricardo-ferraco",
+      "candidate_name": "Ricardo Ferraço",
+      "office": "Governador",
+      "uf": "ES",
+      "quote_text": "Os estudos que nós estamos fazendo indicam que o Espírito Santo não terá perdas na reforma tributária",
+      "context": "“Os estudos que nós estamos fazendo indicam que o Espírito Santo não terá perdas na reforma tributária”, disse Ricardo.",
+      "event_context": "Debate da TV Gazeta entre Lorenzo Pazolini e Ricardo Ferraço, candidatos ao governo do Espírito Santo no segundo turno; a matéria o identifica como o último debate antes da votação de 25/10. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+      "event_type": "debate",
+      "occurred_on": null,
+      "occurred_between": {
+        "from": "2026-10-22",
+        "to": "2026-10-23"
+      },
+      "publisher": "A Gazeta",
+      "article_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+      "article_title": "Segurança domina debate da TV Gazeta, com troca de farpas entre Ricardo e Pazolini",
+      "article_published_at": "2026-10-23T04:27:28.000Z",
+      "article_modified_at": "2026-10-23T04:27:42.000Z",
+      "observed_at": "2026-10-24T09:00:58.613Z",
+      "source_sha256": "2be5363eeda819550c2333eac0795738aabd739b88244ab05056154261e777f2",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "identity_excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "date_excerpt": "O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+        "fetched_url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www.agazeta.com.br/es/politica/seguranca-domina-debate-da-tv-gazeta-com-troca-de-farpas-entre-ricardo-e-pazolini-1026",
+          "datePublished": "2026-10-23T04:27:28.000Z",
+          "dateModified": "2026-10-23T04:27:42.000Z"
+        },
+        "explicit_event_range": {
+          "excerpt": "No último debate da TV Gazeta antes do segundo turno, a segurança pública dominou o início das discussões entre os candidatos ao governo do Espírito Santo. O ex-prefeito de Vitória Lorenzo Pazolini (Republicanos) e o governador Ricardo Ferraço (MDB) trocaram farpas e acusações durante o embate, realizado entre a noite de quinta-feira (22) e o início da madrugada desta sexta (23), mas também trataram de temas como alianças políticas, saúde e educação.",
+          "from_excerpt": "quinta-feira (22)",
+          "to_excerpt": "sexta (23)"
+        }
+      }
+    },
+    {
+      "id": "06ead5f591fb6bdabf0d0ded65fdd5240ed3bbdaf36d6c698c195572e3517773",
+      "candidate_id": "4e3828f3-33c9-4206-9aff-7b869a466baa",
+      "candidate_slug": "mailza-assis",
+      "candidate_name": "Mailza Assis",
+      "office": "Governador",
+      "uf": "AC",
+      "quote_text": "Apesar de tudo isso, eu estou tranquila, estou feliz, estou muito agradecida a Deus, à nossa população, tudo o que aconteceu, a caminhada que fizemos, o que mostramos à população e também a demonstração da população com a gente",
+      "context": "“Apesar de tudo isso, eu estou tranquila, estou feliz, estou muito agradecida a Deus, à nossa população, tudo o que aconteceu, a caminhada que fizemos, o que mostramos à população e também a demonstração da população com a gente”, afirmou.",
+      "event_context": "A governadora do Acre e candidata à reeleição, Mailza Assis, afirmou estar tranquila, confiante e “besta de felicidade” com a expectativa para o resultado do segundo turno das eleições. A declaração foi dada na manhã deste domingo, 25, enquanto acompanhava a votação do prefeito de Rio Branco, Alysson Bestene, na capital. A declaração foi dada na manhã deste domingo, 25, enquanto acompanhava a votação do prefeito de Rio Branco, Alysson Bestene, na capital.",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-25",
+      "publisher": "A Gazeta do Acre",
+      "article_url": "https://agazetadoacre.com/2026/10/noticias/politica/mailza-diz-estar-besta-de-felicidade-e-confiante-na-reeleicao-reconhecendo-a-missao-que-tenho/",
+      "article_title": "Mailza diz estar “besta de felicidade” e confiante na reeleição: “Reconhecendo a missão que tenho” - A Gazeta do Acre",
+      "article_published_at": "2026-10-25T10:52:15-05:00",
+      "article_modified_at": "2026-10-25T12:09:39-05:00",
+      "observed_at": "2026-10-26T09:39:49.896Z",
+      "source_sha256": "d224bd3edf67655148db791e66bb38c1e5826604cc89be261ea4c804b47618e7",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "Questionada sobre como chegava ao dia decisivo da eleição, a governadora reconheceu a emoção do momento e destacou a gratidão pela campanha e pelo apoio recebido.",
+        "identity_excerpt": "A governadora do Acre e candidata à reeleição, Mailza Assis",
+        "date_excerpt": "A declaração foi dada na manhã deste domingo, 25, enquanto acompanhava a votação do prefeito de Rio Branco, Alysson Bestene, na capital.",
+        "fetched_url": "https://agazetadoacre.com/2026/10/noticias/politica/mailza-diz-estar-besta-de-felicidade-e-confiante-na-reeleicao-reconhecendo-a-missao-que-tenho/",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://agazetadoacre.com/2026/10/noticias/politica/mailza-diz-estar-besta-de-felicidade-e-confiante-na-reeleicao-reconhecendo-a-missao-que-tenho/",
+          "datePublished": "2026-10-25T10:52:15-05:00",
+          "dateModified": "2026-10-25T12:09:39-05:00"
+        }
+      }
+    },
+    {
+      "id": "47de4d3f9522fd7bc9e3ccba98f1ca44f3f2628cc97a490b62b3633b87606ad6",
+      "candidate_id": "00c6fd60-9151-43d2-b1e4-ea45371511a8",
+      "candidate_slug": "professora-dorinha",
+      "candidate_name": "Professora Dorinha",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Quem trouxe a violência para o debate não fui eu. Quem anunciou previamente foi o candidato, que, na tentativa de me intimidar, trouxe o tema",
+      "context": "“Quem trouxe a violência para o debate não fui eu. Quem anunciou previamente foi o candidato, que, na tentativa de me intimidar, trouxe o tema”, declarou Dorinha. Segundo a candidata, Vicentinho teria feito referências a possíveis publicações envolvendo sua campanha e mencionado familiares durante o confronto. Dorinha afirmou que não havia utilizado questões familiares do adversário na disputa e questionou a iniciativa do próprio deputado de abordar o assunto publicamente.",
+      "event_context": "Coletiva de imprensa na reta final da campanha do segundo turno. Durante coletiva neste sábado, 24, candidata afirmou que adversário mencionou a existência de um dossiê, criticou o tratamento recebido nos debates e relacionou a postura do deputado ao machismo na política",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-24",
+      "publisher": "Jornal Opção Tocantins",
+      "article_url": "https://tocantins.jornalopcao.com.br/noticias/quem-trouxe-a-violencia-para-o-debate-nao-fui-eu-diz-dorinha-ao-afirmar-que-vicentinho-tentou-intimida-la-603157/",
+      "article_title": "“Quem trouxe a violência para o debate não fui eu”, diz Dorinha ao afirmar que Vicentinho tentou intimidá-la",
+      "article_published_at": "2026-10-24",
+      "observed_at": "2026-10-26T09:39:49.896Z",
+      "source_sha256": "1a9aa479e6478bd27fbdbf9f19765b1dc63ef94f5b918141bd0751b046b18d25",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "A candidata ao governo do Tocantins, Professora Dorinha (União Brasil), afirmou neste sábado, 24, que não foi responsável por introduzir na campanha eleitoral o episódio envolvendo um laudo do Instituto Médico Legal (IML) de 2009, que registra lesões na então esposa de Vicentinho Júnior (PSDB) e o relato de uma suposta agressão.",
+        "identity_excerpt": "A candidata ao governo do Tocantins, Professora Dorinha (União Brasil), afirmou neste sábado, 24",
+        "date_excerpt": "Durante coletiva neste sábado, 24, candidata afirmou que adversário mencionou a existência de um dossiê, criticou o tratamento recebido nos debates e relacionou a postura do deputado ao machismo na política",
+        "fetched_url": "https://tocantins.jornalopcao.com.br/noticias/quem-trouxe-a-violencia-para-o-debate-nao-fui-eu-diz-dorinha-ao-afirmar-que-vicentinho-tentou-intimida-la-603157/",
+        "method": "codex_source_review",
+        "source_format": "web_text"
+      }
+    },
+    {
+      "id": "b8cc313b976c9df0adbae73dd2e8063b2c212901466640608304d6eaa4bf443d",
+      "candidate_id": "3e0885c9-ae59-424a-8a99-9367801c5740",
+      "candidate_slug": "vicentinho-junior",
+      "candidate_name": "Vicentinho Junior",
+      "office": "Governador",
+      "uf": "TO",
+      "quote_text": "Não quero mais saber quem votou no Vicentinho, quem deixou de votar. Tá tudo certo. Agora é hora de planejar um lindo governo, um próspero governo, um respeitoso governo",
+      "context": "“Não quero mais saber quem votou no Vicentinho, quem deixou de votar. Tá tudo certo. Agora é hora de planejar um lindo governo, um próspero governo, um respeitoso governo”, declarou.",
+      "event_context": "Discurso a aliados após a vitória no segundo turno, ao encerrar as disputas eleitorais. O governador eleito do Tocantins, Vicentinho Júnior (PSDB), afirmou neste domingo (25), após a vitória no segundo turno, que pretende encerrar o período de confrontos políticos da campanha e construir um governo de diálogo com diferentes setores do estado. Em discurso a aliados, ele agradeceu o apoio recebido durante a disputa e disse que não fará distinção entre eleitores que votaram nele e aqueles que escolheram sua adversária, a senadora Professora Dorinha Seabra (União Brasil).",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-25",
+      "publisher": "Jornal Opção Tocantins",
+      "article_url": "https://tocantins.jornalopcao.com.br/noticias/apos-vitoria-vicentinho-junior-promete-governo-de-paz-e-fim-dos-ataques-politicos-603265/",
+      "article_title": "Após vitória, Vicentinho Júnior promete governo de paz e fim dos ataques políticos",
+      "article_published_at": "2026-10-25",
+      "observed_at": "2026-10-26T09:39:49.896Z",
+      "source_sha256": "5e2669f12024bd56f3f62f738608eafb8f3bd240105bdba44762a98c917a2194",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "O governador eleito do Tocantins, Vicentinho Júnior (PSDB), afirmou neste domingo (25), após a vitória no segundo turno, que pretende encerrar o período de confrontos políticos da campanha e construir um governo de diálogo com diferentes setores do estado. Em discurso a aliados, ele agradeceu o apoio recebido durante a disputa e disse que não fará distinção entre eleitores que votaram nele e aqueles que escolheram sua adversária, a senadora Professora Dorinha Seabra (União Brasil).",
+        "identity_excerpt": "O governador eleito do Tocantins, Vicentinho Júnior (PSDB), afirmou neste domingo (25), após a vitória no segundo turno",
+        "date_excerpt": "O governador eleito do Tocantins, Vicentinho Júnior (PSDB), afirmou neste domingo (25), após a vitória no segundo turno, que pretende encerrar o período de confrontos políticos da campanha e construir um governo de diálogo com diferentes setores do estado. Em discurso a aliados, ele agradeceu o apoio recebido durante a disputa e disse que não fará distinção entre eleitores que votaram nele e aqueles que escolheram sua adversária, a senadora Professora Dorinha Seabra (União Brasil).",
+        "fetched_url": "https://tocantins.jornalopcao.com.br/noticias/apos-vitoria-vicentinho-junior-promete-governo-de-paz-e-fim-dos-ataques-politicos-603265/",
+        "method": "codex_source_review",
+        "source_format": "web_text"
+      }
+    },
+    {
+      "id": "f9dd46254da756aa86c4e6488c626fab26fc4e869dcf58b3c438c8ca4c82358a",
+      "candidate_id": "3b724874-8769-44f3-aab3-06c0155dc155",
+      "candidate_slug": "leandro-grass",
+      "candidate_name": "Leandro Grass",
+      "office": "Governador",
+      "uf": "DF",
+      "quote_text": "Entrei nessa campanha para ajudar quem precisa, não entrei por vaidade ou por um projeto pessoal, mas para um projeto coletivo de sociedade. Estou muito orgulhoso da campanha que a gente fez e muito orgulhoso da forma como nós fizemos também",
+      "context": "“Entrei nessa campanha para ajudar quem precisa, não entrei por vaidade ou por um projeto pessoal, mas para um projeto coletivo de sociedade. Estou muito orgulhoso da campanha que a gente fez e muito orgulhoso da forma como nós fizemos também”, disse.",
+      "event_context": "O candidato ao Governo do Distrito Federal (GDF) Leandro Grass (PT) afirmou, na manhã deste domingo (25/10), que está “orgulhoso da campanha” que fez ao longo das Eleições de 2026. A declaração foi dada após o candidato votar na Escola Classe 6 do Guará II. O candidato ao Governo do Distrito Federal (GDF) Leandro Grass (PT) afirmou, na manhã deste domingo (25/10)",
+      "event_type": "declaracao",
+      "occurred_on": "2026-10-25",
+      "publisher": "Metrópoles",
+      "article_url": "https://www.metropoles.com/distrito-federal/estou-orgulhoso-da-nossa-campanha-diz-grass-apos-votacao-no-guara",
+      "article_title": "“Estou orgulhoso da nossa campanha”, diz Grass após votação no Guará",
+      "article_published_at": "2026-10-25T11:28:00-03:00",
+      "article_modified_at": "2026-10-25T12:28:00-03:00",
+      "observed_at": "2026-10-26T09:39:49.896Z",
+      "source_sha256": "152cfc47a9693295389652ef73924fedb01c2c5cfea1bdf49391a480e0785078",
+      "attribution": "source_context_review",
+      "review_evidence": {
+        "declaration_context_excerpt": "O candidato ao Governo do Distrito Federal (GDF) Leandro Grass (PT) afirmou, na manhã deste domingo (25/10), que está “orgulhoso da campanha” que fez ao longo das Eleições de 2026. A declaração foi dada após o candidato votar na Escola Classe 6 do Guará II.",
+        "identity_excerpt": "O candidato ao Governo do Distrito Federal (GDF) Leandro Grass (PT)",
+        "date_excerpt": "O candidato ao Governo do Distrito Federal (GDF) Leandro Grass (PT) afirmou, na manhã deste domingo (25/10)",
+        "fetched_url": "https://www.metropoles.com/distrito-federal/estou-orgulhoso-da-nossa-campanha-diz-grass-apos-votacao-no-guara",
+        "method": "codex_source_review",
+        "article_metadata": {
+          "url": "https://www.metropoles.com/distrito-federal/estou-orgulhoso-da-nossa-campanha-diz-grass-apos-votacao-no-guara",
+          "datePublished": "2026-10-25T11:28:00-03:00",
+          "dateModified": "2026-10-25T12:28:00-03:00"
+        }
       }
     }
   ]
