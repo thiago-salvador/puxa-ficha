@@ -49,7 +49,7 @@ function destinoHtml(p) {
 async function baixar(url, arquivo, { externo = false, tentativas = 3 } = {}) {
   let r
   for (let t = 0; t < tentativas; t++) {
-    r = await fetch(externo ? url : ORIGEM + url, { redirect: externo ? "follow" : "manual", headers: externo ? { "user-agent": UA } : {} })
+    r = await fetch(externo ? url : ORIGEM + url, { redirect: externo ? "follow" : "manual", headers: externo ? { "user-agent": UA } : {}, signal: AbortSignal.timeout(60_000) })
     if (r.status !== 429) break
     await espera(externo ? 30000 : 4000 * (t + 1))
   }

@@ -22,7 +22,7 @@ const ritmo = { perfil: criarRitmo(250), leg: criarRitmo(250), programa: criarRi
 async function obter(url, fila) {
   for (let tentativa = 0; tentativa < 6; tentativa++) {
     await ritmo[fila]()
-    const r = await fetch(ORIGEM + url)
+    const r = await fetch(ORIGEM + url, { signal: AbortSignal.timeout(60_000) })
     if (r.status === 429) { await espera(5000 * (tentativa + 1)); continue }
     if (!r.ok) return { status: r.status }
     return { status: r.status, json: await r.json() }
@@ -112,7 +112,7 @@ async function espelharSlug(slug) {
 }
 
 async function main() {
-  const { slugs } = await (await fetch(`${ORIGEM}/api/candidato-slugs`)).json().then((j) => ({ slugs: Array.isArray(j) ? j : j.slugs ?? j.data }))
+  const { slugs } = await (await fetch(`${ORIGEM}/api/candidato-slugs`, { signal: AbortSignal.timeout(60_000) })).json().then((j) => ({ slugs: Array.isArray(j) ? j : j.slugs ?? j.data }))
   console.log(`slugs: ${slugs.length}`)
   let n = 0
   const fila = [...slugs]
