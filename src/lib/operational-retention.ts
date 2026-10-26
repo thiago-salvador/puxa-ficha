@@ -1,5 +1,6 @@
 import "server-only"
 
+import { referenciaDosDados } from "@/lib/arquivo"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
 
@@ -115,7 +116,9 @@ export function quizShortLinkRetentionCutoffIso(agora = new Date()): string {
   return agora.toISOString()
 }
 
-export function newsRetentionCutoffIso(agora = new Date()): string {
+// No modo arquivo a janela fica ancorada na data de corte, para as notícias da
+// eleição não saírem do ar com o passar do tempo.
+export function newsRetentionCutoffIso(agora = referenciaDosDados()): string {
   return new Date(agora.getTime() - NEWS_RETENTION_DAYS * MS_POR_DIA).toISOString()
 }
 

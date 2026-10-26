@@ -2,6 +2,7 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { createRequire } from "node:module"
 import { describe, it } from "node:test"
+import { referenciaDosDados } from "@/lib/arquivo"
 import { createFixedWindowIpRateLimiter } from "@/lib/request-rate-limit"
 import { formatPublicNewsCursor, nextPublicNewsCursor, parsePublicNewsCursor, PUBLIC_NEWS_PAGE_SIZE } from "@/lib/news/news-cursor"
 import type { NoticiaCandidato } from "@/lib/types"
@@ -39,7 +40,8 @@ function uuid(n: number): string {
  * saem pela denylist.
  */
 function makeRows(total: number, bloqueada: (index: number) => boolean): NoticiaCandidato[] {
-  const base = Date.now() - 60_000
+  // Ancorado na referência dos dados: no modo arquivo, nada depois do corte aparece.
+  const base = referenciaDosDados().getTime() - 60_000
   return Array.from({ length: total }, (_, index) => ({
     id: uuid(100_000 - index), // decrescente: a lista já sai na ordem do banco
     candidato_id: CANDIDATO.id,
@@ -82,6 +84,7 @@ function fakeClient(rowsByTable: Record<string, readonly object[]>) {
         eq(field: string, value: unknown) { filters.push((row) => row[field] === value); return query },
         not(field: string) { filters.push((row) => row[field] != null); return query },
         gte(field: string, value: string) { filters.push((row) => new Date(String(row[field])) >= new Date(value)); return query },
+        lt(field: string, value: string) { filters.push((row) => new Date(String(row[field])) < new Date(value)); return query },
         or(expression: string) {
           const match = /^data_publicacao\.lt\."([^"]+)",and\(data_publicacao\.eq\."([^"]+)",id\.lt\.([0-9a-f-]+)\)$/.exec(expression)
           assert.ok(match, `filtro de cursor inesperado: ${expression}`)

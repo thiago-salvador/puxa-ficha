@@ -1,5 +1,6 @@
 import "server-only"
 import { createServerSupabaseClient } from "@/lib/supabase"
+import { limitePublicacaoIso } from "@/lib/arquivo"
 import { newsRetentionCutoffIso } from "@/lib/operational-retention"
 import { splitNewsByDenylist } from "@/lib/news/denylist"
 import { newsTitleMentionsCandidate } from "@/lib/news/name-match"
@@ -28,6 +29,7 @@ export async function getPublicNewsArticle(
     .eq("candidato_id", candidate.data.id)
     .not("data_publicacao", "is", null)
     .gte("data_publicacao", newsRetentionCutoffIso())
+    .lt("data_publicacao", limitePublicacaoIso())
     .abortSignal(AbortSignal.timeout(8_000))
     .maybeSingle()
   if (result.error) throw new Error("Falha ao consultar notícia")

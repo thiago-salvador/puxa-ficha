@@ -1,5 +1,6 @@
 import "server-only"
 import type { SupabaseClient } from "@supabase/supabase-js"
+import { limitePublicacaoIso } from "@/lib/arquivo"
 import { createServerSupabaseClient } from "@/lib/supabase"
 import { newsRetentionCutoffIso } from "@/lib/operational-retention"
 import { NEWS_DENYLIST, splitNewsByDenylist } from "@/lib/news/denylist"
@@ -49,6 +50,7 @@ export function publicNewsWindowQuery(
     .eq("candidato_id", candidatoId)
     .not("data_publicacao", "is", null)
     .gte("data_publicacao", newsRetentionCutoffIso())
+    .lt("data_publicacao", limitePublicacaoIso())
   if (cursor) {
     query = query.or(
       `data_publicacao.lt."${cursor.data_publicacao}",and(data_publicacao.eq."${cursor.data_publicacao}",id.lt.${cursor.id})`,
@@ -143,6 +145,7 @@ async function countPublicNews(client: SupabaseClient, candidato: NewsCandidate 
     .eq("candidato_id", candidato.id)
     .not("data_publicacao", "is", null)
     .gte("data_publicacao", newsRetentionCutoffIso())
+    .lt("data_publicacao", limitePublicacaoIso())
 
   if (!NEWS_DENYLIST[candidato.slug]?.length) {
     const { count, error } = await base()

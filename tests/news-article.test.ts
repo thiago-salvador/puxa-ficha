@@ -1,6 +1,7 @@
 import assert from "node:assert/strict"
 import { createRequire } from "node:module"
 import test from "node:test"
+import { referenciaDosDados } from "@/lib/arquivo"
 import { createFixedWindowIpRateLimiter } from "@/lib/request-rate-limit"
 
 const require = createRequire(import.meta.url)
@@ -18,7 +19,7 @@ const ARTICLE = {
   titulo: "Pessoa Teste apresenta proposta",
   fonte: "Portal Exemplo",
   url: "https://portal.example/noticia",
-  data_publicacao: new Date().toISOString(),
+  data_publicacao: new Date(referenciaDosDados().getTime() - 60_000).toISOString(),
   snippet: "A proposta foi apresentada nesta semana.",
 }
 
@@ -51,6 +52,10 @@ function fixture(options: {
         },
         gte(field: string, value: string) {
           filters.push((row) => typeof row[field] === "string" && String(row[field]) >= value)
+          return query
+        },
+        lt(field: string, value: string) {
+          filters.push((row) => typeof row[field] === "string" && String(row[field]) < value)
           return query
         },
         abortSignal(signal: AbortSignal) { assert.ok(signal instanceof AbortSignal); return query },
