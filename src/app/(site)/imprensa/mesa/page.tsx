@@ -22,6 +22,7 @@ import {
 } from "@/lib/imprensa-data"
 import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
 import styles from "../imprensa.module.css"
+import { arquivoDownloadHref } from "@/lib/arquivo"
 
 export const metadata: Metadata = {
   title: "Mesa de apuração | Puxa Ficha",
@@ -210,16 +211,16 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
               <h3>Dados deste recorte</h3>
               <p>Uma linha por candidato, com os mesmos campos da tabela e as fontes.</p>
               <div className={styles.takeLinks}>
-                <a href={`/api/imprensa/export?format=csv${exportSuffix}`} download>Baixar CSV deste recorte</a>
-                <a href={`/api/imprensa/export?format=json${exportSuffix}`} download>Baixar JSON deste recorte</a>
+                <a href={arquivoDownloadHref(`/api/imprensa/export?format=csv${exportSuffix}`)} download>Baixar CSV deste recorte</a>
+                <a href={arquivoDownloadHref(`/api/imprensa/export?format=json${exportSuffix}`)} download>Baixar JSON deste recorte</a>
               </div>
             </div>
             <div className={styles.takeCard}>
               <h3>Um registro por linha</h3>
               <p>Sites, processos e gastos por ano, com o link oficial de cada registro.</p>
               <div className={styles.takeLinks}>
-                <a href={`/api/imprensa/export/sites?format=csv${exportSuffix}`}>Sites CSV</a>
-                <a href={`/api/imprensa/export/processos?format=csv${exportSuffix}`}>Processos CSV</a>
+                <a href={arquivoDownloadHref(`/api/imprensa/export/sites?format=csv${exportSuffix}`)}>Sites CSV</a>
+                <a href={arquivoDownloadHref(`/api/imprensa/export/processos?format=csv${exportSuffix}`)}>Processos CSV</a>
                 <a href={`/api/imprensa/export/gastos?format=csv${exportSuffix}`}>Gastos CSV</a>
               </div>
             </div>
@@ -263,7 +264,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
               <div><dt className="font-semibold text-foreground">version, generated_at, filtros cargo/UF</dt><dd>Metadados do conjunto e do recorte exportado. Unidade: versão, data ISO e texto. A data é geração/coleta, não data do fato.</dd></div>
             </dl>
             <p className="mt-4">
-              Ocorrências repetidas ficam nos arquivos longos: <a className={styles.sourceLink} href={`/api/imprensa/export/sites?format=csv${exportSuffix}`}>sites CSV</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/sites?format=json${exportSuffix}`}>sites JSON</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/processos?format=csv${exportSuffix}`}>processos CSV</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/processos?format=json${exportSuffix}`}>processos JSON</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/gastos?format=csv${exportSuffix}`}>gastos CSV</a> e <a className={styles.sourceLink} href={`/api/imprensa/export/gastos?format=json${exportSuffix}`}>gastos JSON</a>. Os dados do TSE recebem crédito conforme a licença Creative Commons Atribuição; isso não altera a licença Apache 2.0 do código.
+              Ocorrências repetidas ficam nos arquivos longos: <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/sites?format=csv${exportSuffix}`)}>sites CSV</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/sites?format=json${exportSuffix}`}>sites JSON</a>, <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/processos?format=csv${exportSuffix}`)}>processos CSV</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/processos?format=json${exportSuffix}`}>processos JSON</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/gastos?format=csv${exportSuffix}`}>gastos CSV</a> e <a className={styles.sourceLink} href={`/api/imprensa/export/gastos?format=json${exportSuffix}`}>gastos JSON</a>. Os dados do TSE recebem crédito conforme a licença Creative Commons Atribuição; isso não altera a licença Apache 2.0 do código.
             </p>
             <p className="mt-2">Ao reutilizar um recorte, credite Puxa Ficha e a fonte específica exibida na linha. O <Link className={styles.sourceLink} href="/embed">embed</Link> e o card público são recursos de apresentação, não novas fontes factuais.</p>
             {dataset?.generatedAt && <p className="mt-2">Conjunto gerado em {dateLabel(dataset.generatedAt)}{dataset.version ? ` · versão ${dataset.version}` : ""}.</p>}

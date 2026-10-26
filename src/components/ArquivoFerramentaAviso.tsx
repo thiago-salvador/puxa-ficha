@@ -6,10 +6,12 @@ interface ArquivoFerramentaAvisoProps {
   /** Como a ferramenta funcionava, em uma ou duas frases. */
   comoFuncionava: string
   metodologiaHref?: string
+  /** Texto do botão principal; o padrão serve para a metodologia. */
+  metodologiaRotulo?: string
 }
 
 // Substitui a parte interativa de uma ferramenta encerrada pelo modo arquivo.
-export function ArquivoFerramentaAviso({ ferramenta, comoFuncionava, metodologiaHref }: ArquivoFerramentaAvisoProps) {
+export function ArquivoFerramentaAviso({ ferramenta, comoFuncionava, metodologiaHref, metodologiaRotulo = "Ver a metodologia" }: ArquivoFerramentaAvisoProps) {
   return (
     <section data-pf-arquivo-ferramenta className="px-5 py-12 md:px-12 sm:py-16">
       <div className="mx-auto max-w-3xl rounded-[18px] border border-border bg-card p-6 sm:p-8">
@@ -31,7 +33,7 @@ export function ArquivoFerramentaAviso({ ferramenta, comoFuncionava, metodologia
               href={metodologiaHref}
               className="inline-flex min-h-11 items-center rounded-full bg-foreground px-5 text-[length:var(--text-body-sm)] font-bold text-background transition-colors duration-200 hover:bg-[var(--gray-800)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
             >
-              Ver a metodologia
+              {metodologiaRotulo}
             </Link>
           ) : null}
           <Link

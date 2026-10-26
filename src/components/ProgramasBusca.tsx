@@ -7,6 +7,8 @@ import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useEffect, useState, type FormEvent, type ReactNode } from "react"
 import type { ProgramaBuscaCandidato, ProgramaBuscaResposta, ProgramaBuscaResultado } from "@/lib/programa-governo-busca"
+import { ArquivoFerramentaAviso } from "@/components/ArquivoFerramentaAviso"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 
 const fieldClass = "mt-2 min-h-11 w-full rounded-lg border border-border bg-background px-3 text-base text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
 const linkClass = "inline-flex min-h-11 items-center rounded-lg border border-border px-4 py-2 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:bg-muted"
@@ -45,7 +47,7 @@ function Result({ resultado: r }: { resultado: ProgramaBuscaResultado }) {
   )
 }
 
-export function ProgramasBusca({ candidatos }: { candidatos: ProgramaBuscaCandidato[] }) {
+function ProgramasBuscaAtiva({ candidatos }: { candidatos: ProgramaBuscaCandidato[] }) {
   const params = useSearchParams()
   const router = useRouter()
   const search = params.toString()
@@ -160,4 +162,20 @@ export function ProgramasBusca({ candidatos }: { candidatos: ProgramaBuscaCandid
       </section>}
     </div>
   )
+}
+
+// Espelho estático: sem servidor nem banco, a busca vira aviso de ferramenta
+// encerrada e aponta para os dados abertos, que trazem a base completa.
+export function ProgramasBusca(props: { candidatos: ProgramaBuscaCandidato[] }) {
+  if (ARQUIVO_ESTATICO) {
+    return (
+      <ArquivoFerramentaAviso
+        ferramenta="Busca nos programas de governo"
+        comoFuncionava="A busca procurava termos dentro dos programas de governo registrados no TSE e mostrava os trechos de cada candidatura. Os programas seguem nas fichas dos candidatos."
+        metodologiaHref="/dados-abertos"
+        metodologiaRotulo="Baixar os dados abertos"
+      />
+    )
+  }
+  return <ProgramasBuscaAtiva {...props} />
 }
