@@ -20,23 +20,24 @@ test.describe("Quiz e2e", () => {
     expect(res.ok(), `/quiz deve responder com sucesso (HTTP ${res.status()})`).toBe(true)
   })
 
+  // Modo arquivo: a landing mostra o aviso de ferramenta encerrada no lugar
+  // dos botões de cargo.
   test.describe("landing", () => {
-    test("mostra titulo e botoes de cargo", async ({ page }) => {
+    test("mostra titulo e aviso de ferramenta encerrada", async ({ page }) => {
       await page.goto("/quiz")
       await page.waitForLoadState("networkidle")
 
       await expect(page.getByRole("heading", { name: /quem me representa/i })).toBeVisible()
-      await expect(page.getByRole("heading", { name: /^presidente$/i })).toBeVisible()
-      await expect(page.getByRole("button", { name: /^Começar$/i })).toBeVisible()
+      await expect(page.getByRole("heading", { name: /ferramenta encerrada em 25\/10\/2026/i })).toBeVisible()
+      await expect(page.getByRole("button", { name: /^Começar$/i })).toHaveCount(0)
     })
 
-    test("Presidente leva para perguntas", async ({ page }) => {
+    test("aviso leva para a metodologia", async ({ page }) => {
       await page.goto("/quiz")
       await page.waitForLoadState("networkidle")
 
-      await page.getByRole("button", { name: /^Começar$/i }).click()
-      await expect(page).toHaveURL(/\/quiz\/perguntas\?cargo=Presidente/i)
-      await expect(page.getByText(/pergunta 1 de/i)).toBeVisible()
+      await page.getByRole("link", { name: /ver a metodologia/i }).click()
+      await expect(page).toHaveURL(/\/quiz\/metodologia/)
     })
   })
 
