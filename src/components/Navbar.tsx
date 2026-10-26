@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { Search } from "lucide-react"
 
 import { useGlobalSearch, useModKShortcutLabel } from "@/components/GlobalSearchProvider"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 
 const NAV_ITEMS: { href: string; label: string; external?: boolean }[] = [
   { href: "/", label: "2º Turno" },
@@ -289,7 +290,7 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-12">
           <Link
             href="/"
-            className={`flex min-h-11 items-center gap-2 py-2 pr-3 font-heading text-[18px] uppercase tracking-[-0.01em] ${
+            className={`flex min-h-11 items-center gap-2 whitespace-nowrap py-2 pr-3 font-heading text-[18px] uppercase tracking-[-0.01em] ${
               useDarkText ? "text-black" : "text-white"
             }`}
           >
@@ -300,6 +301,19 @@ export function Navbar({}: { senadoEnabled?: boolean } = {}) {
               className={`size-7 ${useDarkText ? "" : "invert"}`}
             />
             Puxa Ficha
+            {ARQUIVO_ELEICOES_2026.ativo ? (
+              <span
+                data-pf-nav-arquivo
+                title={`${ARQUIVO_ELEICOES_2026.titulo}: dados congelados em ${ARQUIVO_ELEICOES_2026.dataCorte}`}
+                className={`ml-1 whitespace-nowrap rounded-full border px-2 py-0.5 font-sans text-[length:var(--text-eyebrow)] font-bold normal-case tracking-normal ${
+                  useDarkText ? "border-black/30 text-black" : "border-white/50 text-white"
+                }`}
+              >
+                {/* No celular só cabe a palavra; o ano volta a partir de sm. */}
+                <span className="sm:hidden">Arquivo</span>
+                <span className="hidden sm:inline">{ARQUIVO_ELEICOES_2026.rotuloCurto}</span>
+              </span>
+            ) : null}
           </Link>
 
           <div className="flex items-center gap-2 sm:gap-3">

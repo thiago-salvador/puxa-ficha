@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Suspense } from "react"
 import { Footer } from "@/components/Footer"
 import { SectionDivider } from "@/components/SectionHeader"
-import { QuizLanding } from "@/components/quiz/QuizLanding"
-import { QuizLinkExpiradoAviso } from "@/components/quiz/QuizLinkExpiradoAviso"
+import { ArquivoFerramentaAviso } from "@/components/ArquivoFerramentaAviso"
 import { buildAbsoluteUrl, buildTwitterMetadata } from "@/lib/metadata"
 
 const title = "Quem me representa? | Puxa Ficha"
@@ -61,7 +59,7 @@ export default function QuizPage() {
             Quem me representa?
           </h1>
           <p className="mt-4 max-w-3xl text-[length:var(--text-body)] font-medium leading-relaxed text-white/90 sm:text-[length:var(--text-body-lg)]">
-            Responda afirmações sobre temas políticos e compare suas respostas com as posições dos candidatos.
+            Comparava suas respostas sobre temas políticos com as posições dos candidatos de 2026.
           </p>
         </div>
       </section>
@@ -70,14 +68,11 @@ export default function QuizPage() {
         <SectionDivider />
       </div>
 
-      {/* Só aparece para quem caiu aqui vindo de um link curto de resultado que
-          já não resolve. Suspense com fallback nulo para o resto da landing
-          seguir no HTML estático. */}
-      <Suspense fallback={null}>
-        <QuizLinkExpiradoAviso />
-      </Suspense>
-
-      <QuizLanding />
+      <ArquivoFerramentaAviso
+        ferramenta="Quiz"
+        comoFuncionava="O quiz apresentava afirmações sobre temas políticos e comparava as suas respostas com votos e posições documentadas dos candidatos, mostrando a cobertura de cada comparação. Não fazia ranking nem recomendava voto."
+        metodologiaHref="/quiz/metodologia"
+      />
       <Footer />
     </div>
   )

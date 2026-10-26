@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Footer } from "@/components/Footer"
-import { ColinhaBuilder } from "@/components/ColinhaBuilder"
+import { ArquivoFerramentaAviso } from "@/components/ArquivoFerramentaAviso"
 
 export const metadata: Metadata = {
   title: "Minha colinha de 2026 | Puxa Ficha",
@@ -30,10 +30,13 @@ export default function ColinhaPage() {
           <div className="mx-auto max-w-7xl">
             <p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-background/65">Eleições 2026</p>
             <h1 className="mt-2 max-w-3xl font-heading text-[clamp(2.75rem,8vw,6rem)] uppercase leading-[.88]">Minha colinha</h1>
-            <p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-background/75">Seis votos, na ordem da urna. Escolha um de cada vez, confira número e partido e leve a lista com você. As escolhas ficam só no link desta página.</p>
+            <p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-background/75">Seis votos, na ordem da urna, para levar no dia da votação.</p>
           </div>
         </section>
-        <ColinhaBuilder />
+        <ArquivoFerramentaAviso
+          ferramenta="Colinha"
+          comoFuncionava="A colinha montava os seis votos na ordem da urna, com número e partido de cada escolha, para o eleitor levar no dia da votação. As escolhas ficavam só no link da página, sem cadastro."
+        />
       </div>
       <Footer />
     </div>
