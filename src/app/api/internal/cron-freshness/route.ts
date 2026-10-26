@@ -1,5 +1,6 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { secretsMatch } from "@/lib/crypto-utils"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { supabaseQueryTimeoutSignal } from "@/lib/supabase-retry"
@@ -32,6 +33,12 @@ export interface CronFreshnessDeps {
   expectedSecret: string | undefined
   readLatest: (check: FreshnessCheck) => Promise<string | null>
   now: () => Date
+  /**
+   * Modo arquivo: as crons da Vercel foram desligadas no projeto inteiro em
+   * 26/10/2026 (inclusive published-consistency e revalidate-public-cache),
+   * então as cinco saem do alarme de frescor.
+   */
+  arquivoAtivo?: boolean
 }
 
 export async function readLatestFromSupabase(check: FreshnessCheck): Promise<string | null> {
@@ -67,9 +74,20 @@ export function createCronFreshnessHandler(deps: CronFreshnessDeps) {
         try {
           const last = await deps.readLatest(check)
           const ageHours = last ? (now.getTime() - new Date(last).getTime()) / 3_600_000 : null
-          return { name: check.name, last, age_hours: ageHours === null ? null : Math.round(ageHours * 10) / 10 }
+          return {
+            name: check.name,
+            last,
+            age_hours: ageHours === null ? null : Math.round(ageHours * 10) / 10,
+            ...(deps.arquivoAtivo ? { arquivado: true } : {}),
+          }
         } catch (error) {
-          return { name: check.name, last: null, age_hours: null, error: error instanceof Error ? error.message : "read_failed" }
+          return {
+            name: check.name,
+            last: null,
+            age_hours: null,
+            ...(deps.arquivoAtivo ? { arquivado: true } : {}),
+            error: error instanceof Error ? error.message : "read_failed",
+          }
         }
       }),
     )
@@ -85,4 +103,5 @@ export const GET = createCronFreshnessHandler({
   expectedSecret: process.env.CRON_SECRET,
   readLatest: readLatestFromSupabase,
   now: () => new Date(),
+  arquivoAtivo: ARQUIVO_ELEICOES_2026.ativo,
 })

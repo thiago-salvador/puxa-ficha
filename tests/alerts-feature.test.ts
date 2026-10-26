@@ -5,10 +5,15 @@ import test from "node:test"
 import { isAlertsEmailFeatureEnabled } from "../src/lib/alerts-feature"
 
 test("flag de alertas habilita somente com true literal", () => {
-  assert.equal(isAlertsEmailFeatureEnabled({ NEXT_PUBLIC_ALERTS_EMAIL_ENABLED: "true" }), true)
+  assert.equal(isAlertsEmailFeatureEnabled({ NEXT_PUBLIC_ALERTS_EMAIL_ENABLED: "true" }, false), true)
   for (const value of [undefined, "", "false", "1", "TRUE"]) {
-    assert.equal(isAlertsEmailFeatureEnabled({ NEXT_PUBLIC_ALERTS_EMAIL_ENABLED: value }), false)
+    assert.equal(isAlertsEmailFeatureEnabled({ NEXT_PUBLIC_ALERTS_EMAIL_ENABLED: value }, false), false)
   }
+})
+
+test("modo arquivo desliga alertas mesmo com a flag ligada", () => {
+  assert.equal(isAlertsEmailFeatureEnabled({ NEXT_PUBLIC_ALERTS_EMAIL_ENABLED: "true" }, true), false)
+  assert.equal(isAlertsEmailFeatureEnabled({ NEXT_PUBLIC_ALERTS_EMAIL_ENABLED: "true" }), false)
 })
 
 test("subscribe e digest aplicam a mesma flag no servidor", () => {

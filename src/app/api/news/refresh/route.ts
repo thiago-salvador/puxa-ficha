@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto"
 import type { NextRequest } from "next/server"
 import { after, NextResponse } from "next/server"
 import { revalidateTag } from "next/cache"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { createServiceRoleSupabaseClient } from "@/lib/supabase"
 import { secretsMatch } from "@/lib/crypto-utils"
 import { carregarCoorteAtualizacao, filtrarCoorteAtualizacao, type CoorteAtualizacao } from "@/lib/coorte-atualizacao-loader"
@@ -103,6 +104,8 @@ interface NewsRefreshHandlerDeps {
   now: () => number
   /** Orçamento da invocação. Nos testes, 0 força uma página por invocação. */
   invocationBudgetMs: number
+  /** Modo arquivo: o refresh não grava notícia nova depois da data de corte. */
+  arquivoAtivo?: boolean
 }
 
 function getCronSecret(req: NextRequest): string | null {
@@ -224,6 +227,7 @@ const defaultDeps: NewsRefreshHandlerDeps = {
   createExecutionId: randomUUID,
   now: Date.now,
   invocationBudgetMs: INVOCATION_BUDGET_MS,
+  arquivoAtivo: ARQUIVO_ELEICOES_2026.ativo,
 }
 
 export function createNewsRefreshHandler(deps: NewsRefreshHandlerDeps = defaultDeps) {
@@ -234,6 +238,11 @@ export function createNewsRefreshHandler(deps: NewsRefreshHandlerDeps = defaultD
     if (!secretsMatch(providedSecret, expectedSecret)) {
       deps.log("unauthorized", {})
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
+    if (deps.arquivoAtivo) {
+      deps.log("arquivo", {})
+      return NextResponse.json({ ok: true, skipped: "arquivo" })
     }
 
     const requestedCursor = parsePositiveInt(req.nextUrl.searchParams.get("cursor"), 0)

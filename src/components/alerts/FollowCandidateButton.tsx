@@ -14,8 +14,9 @@ import {
   writeStoredFollowedCandidateSlugs,
 } from "@/lib/alerts-client"
 import { ALERT_SUBSCRIBE_HONEYPOT_FIELD } from "@/lib/alerts-honeypot"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 
-const ALERTS_EMAIL_ENABLED = process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED === "true"
+const ALERTS_EMAIL_ENABLED = !ARQUIVO_ELEICOES_2026.ativo && process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED === "true"
 
 interface FollowCandidateButtonProps {
   candidateName: string
@@ -112,6 +113,9 @@ export function FollowCandidateButton({
     if (hasSession) return "Seu acesso já está salvo neste navegador."
     return "Sem login. Você só precisa confirmar o email uma vez."
   }, [following, hasSession, sessionLoading])
+
+  // Modo arquivo: os alertas acabaram com a eleição, então a ficha não oferece mais o botão.
+  if (ARQUIVO_ELEICOES_2026.ativo) return null
 
   if (!ALERTS_EMAIL_ENABLED) {
     if (variant === "compact") return null

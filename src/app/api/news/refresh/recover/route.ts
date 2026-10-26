@@ -1,5 +1,6 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { secretsMatch } from "@/lib/crypto-utils"
 import { resolveChainOrigin, validarOrigemEncadeamento } from "@/lib/cron-chain-origin"
 import { confirmsNewsRefreshAcceptance } from "@/lib/news/refresh-ack"
@@ -22,6 +23,8 @@ interface NewsRefreshRecoveryDeps {
   listRecoverable: (limit: number) => Promise<NewsRefreshRecoverable[]>
   fetchImpl: typeof fetch
   log: (event: string, detail: Record<string, unknown>) => void
+  /** Modo arquivo: não há refresh para reprocessar, então a recuperação termina sem redisparar lotes. */
+  arquivoAtivo?: boolean
 }
 
 function getBearer(req: NextRequest): string | null {
@@ -42,6 +45,7 @@ const defaultDeps: NewsRefreshRecoveryDeps = {
   listRecoverable: (limit) => defaultStore.listRecoverable(limit),
   fetchImpl: fetch,
   log: (event, detail) => console.log(`[news-refresh-recovery] ${event} ${JSON.stringify(detail)}`),
+  arquivoAtivo: ARQUIVO_ELEICOES_2026.ativo,
 }
 
 export function createNewsRefreshRecoveryHandler(deps: NewsRefreshRecoveryDeps = defaultDeps) {
@@ -49,6 +53,11 @@ export function createNewsRefreshRecoveryHandler(deps: NewsRefreshRecoveryDeps =
     const expectedSecret = process.env.CRON_SECRET?.trim()
     if (!secretsMatch(getBearer(req), expectedSecret)) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
+    if (deps.arquivoAtivo) {
+      deps.log("recovery_arquivo", {})
+      return NextResponse.json({ ok: true, skipped: "arquivo" })
     }
 
     const origemBruta = resolveChainOrigin(req)

@@ -34,6 +34,7 @@ import type { IngestResult } from "./lib/types"
 import { fileURLToPath } from "node:url"
 import { resolve } from "node:path"
 import { writeFileSync } from "node:fs"
+import { escritaBloqueadaPeloArquivo } from "./lib/arquivo-guard"
 import { ativarDryRun, emDryRun, relatorioDryRun } from "./lib/dry-run"
 
 const VALID_SOURCES = [
@@ -289,6 +290,12 @@ function shouldShowHistoricoReminder(selectedSources: Set<IngestSource>): boolea
 }
 
 async function main() {
+  // Modo arquivo: as fichas ficaram congeladas em 25/10/2026. Só dry run roda,
+  // a não ser que a correção seja deliberada (PF_ARQUIVO_PERMITIR_ESCRITA=1).
+  if (!cli.dryRun && escritaBloqueadaPeloArquivo()) {
+    log("pipeline", "Modo arquivo: ingestão com escrita desligada; nada foi executado.")
+    return
+  }
   if (cli.dryRun) ativarDryRun()
   log("pipeline", `Iniciando ingestao: ${sources.join(", ")}`)
   const start = Date.now()

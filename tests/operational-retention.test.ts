@@ -245,6 +245,10 @@ describe("retenção operacional agendada", () => {
     assert.equal(newsRetentionCutoffIso(new Date("2026-09-06T12:00:00.000Z")), "2025-09-06T12:00:00.000Z")
   })
 
+  it("no modo arquivo a janela de notícias fica ancorada na data de corte", () => {
+    assert.equal(newsRetentionCutoffIso(), "2025-10-26T03:00:00.000Z")
+  })
+
   it("retenção agendada nasce desativada e só aceita o valor literal 1", () => {
     assert.equal(operationalRetentionEnabled({}), false)
     assert.equal(operationalRetentionEnabled({ PF_OPERATIONAL_RETENTION_ENABLED: "0" }), false)

@@ -1,6 +1,7 @@
 // cspell:words xdosalvador
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { isSenadoEnabled } from "@/lib/senado-feature"
 import { STATE_INDICATOR_FONTES_DOC } from "@/lib/state-indicator-fonte"
 import { SlashDivider } from "./SlashDivider"
@@ -116,6 +117,9 @@ export function Footer() {
             <p className="font-heading text-[length:var(--text-heading)] uppercase leading-none text-foreground">Puxa Ficha</p>
             <p className="mt-3 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-muted-foreground">
               Projeto de mídia independente e de código aberto, de Thiago Salvador.
+            </p>
+            <p data-pf-footer-arquivo className="mt-3 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-foreground">
+              <strong className="font-bold">{ARQUIVO_ELEICOES_2026.titulo}.</strong> {ARQUIVO_ELEICOES_2026.texto}
             </p>
           </div>
           <a

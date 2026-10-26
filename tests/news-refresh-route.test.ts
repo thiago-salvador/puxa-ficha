@@ -404,6 +404,18 @@ describe("news refresh route", () => {
     assert.equal(captured.afterCallbacks.length, 0)
   })
 
+  it("does not write news in archive mode", async () => {
+    const { deps, captured } = createDeps(makeCandidatos(10))
+    const handler = createNewsRefreshHandler({ ...deps, arquivoAtivo: true })
+
+    const response = await handler(makeRequest({}))
+    assert.equal(response.status, 200)
+    assert.equal((await readJson(response)).skipped, "arquivo")
+    assert.equal(captured.pageCalls.length, 0)
+    assert.equal(captured.refreshedBatches.length, 0)
+    assert.equal(captured.claimCalls.length, 0)
+  })
+
   it("filters closed candidates and advances pagination across a fully closed page", async () => {
     const candidatos = makeCandidatos(10)
     const { deps, captured } = createDeps(candidatos)

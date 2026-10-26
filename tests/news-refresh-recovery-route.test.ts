@@ -75,6 +75,29 @@ describe("news refresh recovery sweeper", () => {
     assert.equal(scans, 0)
   })
 
+  it("finishes without redriving batches in archive mode", async () => {
+    let scans = 0
+    let fetches = 0
+    const handler = createNewsRefreshRecoveryHandler({
+      listRecoverable: async () => {
+        scans += 1
+        return recoverable
+      },
+      fetchImpl: (async () => {
+        fetches += 1
+        return new Response("{}")
+      }) as typeof fetch,
+      log: () => undefined,
+      arquivoAtivo: true,
+    })
+
+    const response = await handler(request())
+    assert.equal(response.status, 200)
+    assert.deepEqual(await response.json(), { ok: true, skipped: "arquivo" })
+    assert.equal(scans, 0)
+    assert.equal(fetches, 0)
+  })
+
   it("redrives every recoverable key with stable execution id and no secret in URLs", async () => {
     const fetchCalls: Array<{ url: string; init?: RequestInit }> = []
     const logs: Array<{ event: string; detail: Record<string, unknown> }> = []

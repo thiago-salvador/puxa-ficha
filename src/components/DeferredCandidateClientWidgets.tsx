@@ -3,6 +3,7 @@
 import { Bell, ImageIcon } from "lucide-react"
 import { useEffect, useState, type ComponentType } from "react"
 import { Button } from "@/components/ui/button"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import type { FaseEleitoral2026 } from "@/lib/types"
 
 type ShareButtonsProps = {
@@ -31,7 +32,8 @@ type RecordVisitProps = {
 
 const MOBILE_DEFER_TIMEOUT_MS = 7000
 
-const ALERTS_EMAIL_ENABLED = process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED === "true"
+// No modo arquivo não há mais alertas por email.
+const ALERTS_EMAIL_ENABLED = !ARQUIVO_ELEICOES_2026.ativo && process.env.NEXT_PUBLIC_ALERTS_EMAIL_ENABLED === "true"
 
 // Mesmas classes do botão pill do ShareButtons real: o placeholder precisa ter o
 // tamanho exato do conteúdo final, senão a troca pós-hidratação causa layout shift

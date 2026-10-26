@@ -23,6 +23,8 @@ test("a ficha publica nao devolve noticia sem data, vencida ou bloqueada editori
   const windowQuery = shared.slice(windowStart, shared.indexOf("export function toPublicNewsItems", windowStart))
   assert.match(windowQuery, /\.not\("data_publicacao", "is", null\)/)
   assert.match(windowQuery, /\.gte\("data_publicacao", newsRetentionCutoffIso\(\)\)/)
+  // Modo arquivo: nada publicado depois da data de corte entra na janela.
+  assert.match(windowQuery, /\.lt\("data_publicacao", limitePublicacaoIso\(\)\)/)
   assert.match(windowQuery, /\.order\("id", \{ ascending: false \}\)/)
   assert.match(shared, /PUBLIC_NEWS_FETCH_LIMIT = PUBLIC_NEWS_PAGE_SIZE \* 2/)
 

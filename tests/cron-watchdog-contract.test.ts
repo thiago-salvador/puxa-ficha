@@ -288,6 +288,26 @@ describe("watchdog dry-run com curl mockado", () => {
     assert.match(output, /anomalias_detectadas=1/)
   })
 
+  it("modo arquivo: cron arquivado não abre issue mesmo velho ou sem recibo", () => {
+    const run = runWatchdog({
+      httpCode: "200",
+      body: JSON.stringify({ ok: true, total: 6, results: [] }),
+      freshnessBody: JSON.stringify({ ok: true, checks: [
+        { name: "news-refresh", age_hours: 400, arquivado: true },
+        { name: "news-refresh-recover", age_hours: null, arquivado: true },
+        { name: "send-digest", age_hours: 900, arquivado: true },
+        { name: "published-consistency", age_hours: null, arquivado: true },
+        { name: "revalidate-public-cache", age_hours: 300, arquivado: true },
+      ] }),
+    })
+    fixtures.push(run.fixture)
+    const output = `${run.stdout}\n${run.stderr}`
+    assert.equal(run.status, 0, output)
+    assert.match(output, /arquivado: news-refresh/)
+    assert.match(output, /arquivado: published-consistency/)
+    assert.doesNotMatch(output, /vercel-cron-/)
+  })
+
   it("denuncia recibo ausente e cache sem execução dentro de 13 horas", () => {
     const run = runWatchdog({
       httpCode: "200", body: JSON.stringify({ ok: true, total: 6, results: [] }),
