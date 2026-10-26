@@ -13700,6 +13700,83 @@
         }
       },
       "consulted_at": "2026-10-21T13:59:44Z"
+    },
+    {
+      "id": "parana-pesquisas-to-02968-2026-revisao-20261026",
+      "status": "aprovado",
+      "source_kind": "instituto_com_veiculo_como_fonte_do_resultado",
+      "roles": {
+        "institute": "Paraná Pesquisas",
+        "commissioner": "FIETO - Federação das Indústrias do Estado do Tocantins",
+        "official_registry": "TSE/PesqEle (registro informado na publicação)",
+        "publication_vehicle": "paranapesquisas.com.br",
+        "dissemination_partner": null
+      },
+      "representative_poll": {
+        "field_period": {
+          "start": "2026-10-18",
+          "end": "2026-10-23"
+        },
+        "published_at": "2026-10-24",
+        "sample_size": 1500,
+        "method": null,
+        "margin_of_error_pp": 2.5,
+        "confidence_level_pct": 95,
+        "office": "Governador",
+        "geography": "Tocantins",
+        "rounds": [
+          2
+        ],
+        "registration_id": "TO-02968/2026",
+        "result_url": "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-2-1.pdf",
+        "registry_url": "https://pesqele-divulgacao.tse.jus.br/app/pesquisa/listar.xhtml"
+      },
+      "reviewed_registration_ids": [
+        "TO-02968/2026"
+      ],
+      "review": {
+        "reviewed_at": "2026-10-26T12:18:08Z",
+        "reviewer": "revisão manual auditada",
+        "basis": "Resultados e metodologia lidos na publicação indicada; captura literal preservada por hash.",
+        "capture_sha256": "0bef4a5bc8fb9ebaf5c90c0ec8a55345d3b08c6534ca5c04566b8b68d48bde57",
+        "scope": "Somente o registro listado, não aprovação irrestrita de rodadas futuras."
+      },
+      "criteria": {
+        "methodology_transparency": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-2-1.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-02968-2026-outubro-2026/"
+          ]
+        },
+        "result_access": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-2-1.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-02968-2026-outubro-2026/"
+          ]
+        },
+        "sample_identification": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-2-1.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-02968-2026-outubro-2026/"
+          ]
+        },
+        "publication_stability": {
+          "pass": true,
+          "evidence_urls": [
+            "https://paranapesquisas.com.br/wp-content/uploads/2026/10/TO_Out26-2-1.pdf",
+            "https://paranapesquisas.com.br/pesquisas/parana-pesquisas-registra-pesquisa-no-estado-do-tocantins-para-o-cargo-de-governador-registro-tse-n-o-to-02968-2026-outubro-2026/"
+          ]
+        },
+        "corrections": {
+          "pass": false,
+          "evidence_urls": [],
+          "note": "Política de correções não examinada; inclusão restrita a esta rodada."
+        }
+      },
+      "consulted_at": "2026-10-26T12:18:08Z"
     }
   ]
 }
