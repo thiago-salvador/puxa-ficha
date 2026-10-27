@@ -1,0 +1,12 @@
+{
+  "conjunto": "turno-2",
+  "base_version": "20261015221500",
+  "base_name": "fase_eleitoral_turno_1_rj",
+  "migrations": [
+    {
+      "version": "20261027134837",
+      "name": "fase_eleitoral_turno_2"
+    }
+  ],
+  "plano_sha256": "47dd60f72855baeab799c8388034a47811c0afce9d2e5941da4d8e4e103ad6a2"
+}

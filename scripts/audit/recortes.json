@@ -816,6 +816,13 @@
       "ate": "20261015221500",
       "allowlist": "scripts/audit/allowlist-fase-eleitoral-turno-1-rj-20261015.json",
       "divida": null
+    },
+    {
+      "nome": "fase-eleitoral-turno-2-20261027",
+      "desde": "20261027134837",
+      "ate": "20261027134837",
+      "allowlist": "scripts/audit/allowlist-fase-eleitoral-turno-2-20261027.json",
+      "divida": null
     }
   ],
   "allowlists_sem_recorte": [
