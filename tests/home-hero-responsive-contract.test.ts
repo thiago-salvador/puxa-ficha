@@ -4,7 +4,7 @@ import test from "node:test"
 
 test("hero da home: preload e imagem compartilham srcset responsivo sem baixar o original em paralelo", () => {
   // Desde 05/10 a faixa preta voltou ao topo da home única: é o LCP, carrega já e tem preload.
-  const page = readFileSync("src/app/(site)/page.tsx", "utf8")
+  const page = readFileSync("src/components/PaginaSegundoTurno.tsx", "utf8")
   assert.match(page, /getImageProps\(/)
   assert.match(page, /loading: "eager"/)
   assert.match(page, /fetchPriority: "high"/)
@@ -25,7 +25,7 @@ test("hero da home: preload e imagem compartilham srcset responsivo sem baixar o
 })
 
 test("a faixa \"Sobre o projeto\" do fim da página saiu: o hero voltou ao topo", () => {
-  const page = readFileSync("src/app/(site)/page.tsx", "utf8")
+  const page = readFileSync("src/components/PaginaSegundoTurno.tsx", "utf8")
   assert.doesNotMatch(page, /Sobre o projeto/)
   assert.doesNotMatch(page, /hero-dossie-mobile\.webp" \/>/)
 })

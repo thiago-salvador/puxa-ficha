@@ -1,8 +1,8 @@
 {
-  "versao": 1,
-  "medido_em": "2026-10-27T15:10:10.977Z",
+  "versao": 2,
+  "medido_em": "2026-10-27T17:52:26.939Z",
   "exportado_em": "2026-10-26T17:13:12.221Z",
-  "ref_codigo": "16404dd2",
+  "ref_codigo": "9c30dc27",
   "dados": {
     "fichas": {
       "valor": 512,
@@ -62,22 +62,204 @@
       "fonte": "export do banco de 2026-10-26, tabela candidate_changes até o corte de 25/10/2026"
     }
   },
+  "serie_semanal": {
+    "semanas": [
+      "2026-03-23",
+      "2026-03-30",
+      "2026-04-06",
+      "2026-04-13",
+      "2026-04-20",
+      "2026-04-27",
+      "2026-05-04",
+      "2026-05-11",
+      "2026-05-18",
+      "2026-05-25",
+      "2026-06-01",
+      "2026-06-08",
+      "2026-06-15",
+      "2026-06-22",
+      "2026-06-29",
+      "2026-07-06",
+      "2026-07-13",
+      "2026-07-20",
+      "2026-07-27",
+      "2026-08-03",
+      "2026-08-10",
+      "2026-08-17",
+      "2026-08-24",
+      "2026-08-31",
+      "2026-09-07",
+      "2026-09-14",
+      "2026-09-21",
+      "2026-09-28",
+      "2026-10-05",
+      "2026-10-12",
+      "2026-10-19"
+    ],
+    "coleta": [
+      7,
+      44,
+      2,
+      98,
+      1,
+      2,
+      41,
+      13,
+      1,
+      2,
+      0,
+      0,
+      0,
+      0,
+      28,
+      71,
+      0,
+      0,
+      5,
+      5025,
+      2225,
+      1578,
+      4677,
+      8308,
+      1919,
+      17925,
+      14262,
+      20695,
+      3741,
+      1288,
+      1906
+    ],
+    "mudancas": [
+      0,
+      281,
+      2272,
+      2639,
+      1527,
+      1371,
+      1848,
+      15,
+      6,
+      43,
+      2239,
+      197,
+      162,
+      303,
+      280,
+      426,
+      180,
+      180,
+      83,
+      4345,
+      3211,
+      3881,
+      3159,
+      3086,
+      2635,
+      11982,
+      6133,
+      8182,
+      4621,
+      478,
+      595
+    ],
+    "noticias": [
+      0,
+      4460,
+      2080,
+      2025,
+      1439,
+      1308,
+      1806,
+      4,
+      0,
+      0,
+      2035,
+      187,
+      157,
+      231,
+      172,
+      148,
+      136,
+      145,
+      83,
+      3839,
+      2730,
+      3549,
+      2926,
+      2957,
+      2475,
+      9959,
+      5520,
+      7535,
+      4510,
+      456,
+      580
+    ],
+    "fonte": "export do banco de 2026-10-26: coleta_log.executado_em, candidate_changes.created_at e noticias_candidato.created_at, por semana (segunda a domingo, horário de Brasília)"
+  },
+  "marcos": [
+    {
+      "data": "2026-03-29",
+      "titulo": "Primeira coleta registrada",
+      "fonte": "coleta_log"
+    },
+    {
+      "data": "2026-08-18",
+      "titulo": "Primeiro commit do repositório público, já com fichas, comparador, quiz, alertas, listas e doadores",
+      "fonte": "primeiro commit público"
+    },
+    {
+      "data": "2026-09-16",
+      "titulo": "Entram no código: Senado",
+      "fonte": "merge na main"
+    },
+    {
+      "data": "2026-09-23",
+      "titulo": "Entram no código: área de imprensa, colinha e deputados",
+      "fonte": "merge na main"
+    },
+    {
+      "data": "2026-09-27",
+      "titulo": "Entram no código: dados abertos",
+      "fonte": "merge na main"
+    },
+    {
+      "data": "2026-09-29",
+      "titulo": "Entram no código: programas de governo",
+      "fonte": "merge na main"
+    },
+    {
+      "data": "2026-10-04",
+      "titulo": "1º turno",
+      "fonte": "calendário eleitoral do TSE"
+    },
+    {
+      "data": "2026-10-06",
+      "titulo": "Entram no código: resultado do 1º turno por estado",
+      "fonte": "merge na main"
+    },
+    {
+      "data": "2026-10-25",
+      "titulo": "2º turno; os dados congelam em 25/10/2026",
+      "fonte": "calendário eleitoral do TSE"
+    }
+  ],
   "construcao": {
     "testes": {
-      "valor": 8550,
-      "fonte": "npm test em 16404dd2"
+      "valor": 8561,
+      "fonte": "npm test em 9c30dc27"
     },
     "prs_mesclados": {
-      "valor": 625,
+      "valor": 626,
       "fonte": "GitHub, pull requests mesclados"
     },
     "commits": {
-      "valor": 1932,
-      "fonte": "git rev-list em 16404dd2"
+      "valor": 1938,
+      "fonte": "git rev-list em 9c30dc27"
     },
     "migracoes": {
       "valor": 543,
-      "fonte": "supabase/migrations em 16404dd2"
+      "fonte": "supabase/migrations em 9c30dc27"
     }
   }
 }

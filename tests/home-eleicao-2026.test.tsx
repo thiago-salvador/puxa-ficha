@@ -11,7 +11,6 @@ import type { Candidato, CandidatoComparavel } from "@/lib/types"
 import { numerosHero1Turno } from "@/lib/home-eleicao-2026"
 import type { CandidatoResultado1Turno, DisputaResultado1Turno, Resultados1Turno } from "@/lib/resultados-1turno"
 import type { Pesquisa2TurnoLinha } from "@/lib/segundo-turno-2026"
-import SegundoTurnoPage from "@/app/(site)/2o-turno/page"
 
 const TOTAIS: DisputaResultado1Turno["totais"] = {
   secoes: 10,
@@ -310,7 +309,8 @@ describe("lado a lado e duelos estaduais: ficha completa e mais informações", 
 })
 
 describe("home do 2º turno: blocos e recortes", () => {
-  const home = readFileSync("src/app/(site)/page.tsx", "utf8")
+  // O corpo do 2º turno mora em PaginaSegundoTurno: a home sem o arquivo e /2o-turno com ele.
+  const home = readFileSync("src/components/PaginaSegundoTurno.tsx", "utf8")
   const secoes = readFileSync("src/components/PresidentialElectionSections.tsx", "utf8")
   const lado = readFileSync("src/components/SegundoTurnoPresidente.tsx", "utf8")
 
@@ -341,20 +341,17 @@ describe("home do 2º turno: blocos e recortes", () => {
 })
 
 describe("rotas da eleição", () => {
-  it("/2o-turno tem redirect temporário na config: a página estática sozinha devolveria 200 com meta refresh", () => {
+  it("/2o-turno tem redirect temporário na config só sem o arquivo: a página estática sozinha devolveria 200 com meta refresh", () => {
     const config = readFileSync("next.config.ts", "utf8")
-    assert.match(config, /source: "\/2o-turno",\s*destination: "\/",[^}]*permanent: false/)
+    assert.match(config, /ARQUIVO_ELEICOES_2026\.ativo \? \[\] : \[\{ source: "\/2o-turno", destination: "\/", permanent: false \}\]/)
   })
 
-  it("/2o-turno redireciona para a home sem 308, que ficaria preso no cache do navegador", () => {
-    assert.throws(
-      () => SegundoTurnoPage(),
-      (erro: unknown) => {
-        const digest = String((erro as { digest?: unknown }).digest ?? "")
-        assert.match(digest, /^NEXT_REDIRECT;[a-z]+;\/;307;/)
-        return true
-      },
-    )
+  it("/2o-turno sem o arquivo redireciona para a home sem 308, que ficaria preso no cache do navegador", () => {
+    // Com o arquivo ligado a página renderiza o 2º turno (a home conta o projeto); o import dela puxa o
+    // Supabase (server-only), então o contrato é lido no código.
+    const segundo = readFileSync("src/app/(site)/2o-turno/page.tsx", "utf8")
+    assert.match(segundo, /import \{ redirect \} from "next\/navigation"/)
+    assert.doesNotMatch(segundo, /permanentRedirect/)
   })
 
   it("/1o-turno é o arquivo do 1º turno com título e canonical próprios; a home não tem faixa de turnos", () => {
@@ -364,10 +361,16 @@ describe("rotas da eleição", () => {
     assert.match(primeiro, /title = "Arquivo do 1º turno das eleições 2026 \| Puxa Ficha"/)
     assert.match(primeiro, /canonical: "\/1o-turno"/)
 
-    const home = readFileSync("src/app/(site)/page.tsx", "utf8")
-    assert.match(home, /canonical: "\/"/)
+    const pagina = readFileSync("src/app/(site)/page.tsx", "utf8")
+    assert.match(pagina, /canonical: "\/"/)
     // O título sai de metadadosDaHome com a flag do arquivo; os dois valores estão em home-arquivo-2026.test.tsx.
-    assert.match(home, /const \{ title, description \} = metadadosDaHome\(ARQUIVO_ELEICOES_2026\.ativo\)/)
+    assert.match(pagina, /const \{ title, description \} = metadadosDaHome\(ARQUIVO_ELEICOES_2026\.ativo\)/)
+    // Com o arquivo, a home é o projeto e o 2º turno vai para /2o-turno; sem ele, a home é o 2º turno.
+    assert.match(pagina, /ARQUIVO_ELEICOES_2026\.ativo \? <HomeArquivo2026 \/> : <PaginaSegundoTurno \/>/)
+    const segundo = readFileSync("src/app/(site)/2o-turno/page.tsx", "utf8")
+    assert.match(segundo, /canonical: "\/2o-turno"/)
+    assert.match(segundo, /if \(!ARQUIVO_ELEICOES_2026\.ativo\) redirect\("\/"\)/)
+    const home = readFileSync("src/components/PaginaSegundoTurno.tsx", "utf8")
     assert.doesNotMatch(home, /NavTurnos/)
     assert.match(home, /href="\/1o-turno"[\s\S]*?Arquivo do 1º turno/)
     assert.doesNotMatch(home, /Resultado completo do 1º turno/)

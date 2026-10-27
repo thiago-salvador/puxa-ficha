@@ -1,7 +1,8 @@
 import { expect, test } from "playwright/test"
 
 test("home presents presidential programs then national polls", async ({ page }) => {
-  await page.goto("/")
+  // Programas e pesquisas da Presidência ficam em /2o-turno desde o arquivo.
+  await page.goto("/2o-turno")
   const programs = page.locator("#programas")
   const polls = page.locator("#pesquisas")
   await expect(programs).toBeVisible()
@@ -26,7 +27,8 @@ test("home presents presidential programs then national polls", async ({ page })
 test("first-turn national poll fits a 375px viewport", async ({ browser }) => {
   const context = await browser.newContext({ viewport: { width: 375, height: 812 } })
   const page = await context.newPage()
-  await page.goto("/")
+  // Programas e pesquisas da Presidência ficam em /2o-turno desde o arquivo.
+  await page.goto("/2o-turno")
   await expect(page.locator("#pesquisas")).toBeVisible()
   await page.waitForLoadState("networkidle")
   const dimensions = await page.evaluate(() => ({

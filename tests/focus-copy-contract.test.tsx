@@ -15,10 +15,10 @@ describe("PT-BR navigation copy", () => {
     const navbar = read("src/components/Navbar.tsx")
     const footer = read("src/components/Footer.tsx")
 
-    assert.match(navbar, /href: \"\/\", label: \"2º Turno\"/)
+    assert.match(navbar, /href: ARQUIVO_ELEICOES_2026\.ativo \? "\/2o-turno" : "\/", label: "2º Turno"/)
     assert.match(navbar, /href: \"\/1o-turno\", label: \"1º Turno\"/)
     assert.match(footer, /Eleição 2026/)
-    assert.match(footer, /href: \"\/\", label: \"2º Turno\"/)
+    assert.match(footer, /href: ARQUIVO_ELEICOES_2026\.ativo \? "\/2o-turno" : "\/", label: "2º Turno"/)
     assert.match(footer, /href: \"\/1o-turno\", label: \"1º Turno\"/)
     assert.doesNotMatch(`${navbar}\n${footer}`, /Presidencia|Paginas/)
   })

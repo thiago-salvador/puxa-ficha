@@ -18,7 +18,7 @@ type FooterLink = {
 /** Senado só aparece com a flag ligada, a mesma régua do sitemap e das fichas. */
 function eleicaoLinks(): FooterLink[] {
   return [
-    { href: "/", label: "2º Turno" },
+    { href: ARQUIVO_ELEICOES_2026.ativo ? "/2o-turno" : "/", label: "2º Turno" },
     { href: "/1o-turno", label: "1º Turno" },
     { href: "/governadores", label: "Governadores" },
     ...(isSenadoEnabled() ? [{ href: "/senado", label: "Senado" }] : []),

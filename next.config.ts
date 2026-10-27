@@ -1,5 +1,6 @@
 import type { NextConfig } from "next"
 import { withSentryConfig } from "@sentry/nextjs/config"
+import { ARQUIVO_ELEICOES_2026 } from "./src/lib/arquivo"
 import { REMOTE_IMAGE_HOSTS } from "./src/lib/remote-image-hosts"
 import { getEmbedNoindexHeaderValue } from "./src/lib/preview-indexing"
 import ondaPRedirects from "./src/data/redirects-onda-p.json"
@@ -99,14 +100,10 @@ export const puxaFichaNextConfig: NextConfig = {
         destination: "/alertas/gerenciar",
         permanent: true,
       },
-      {
-        // O 2º turno virou a home única em 05/10/2026. A página /2o-turno é estática e o
-        // permanentRedirect dela só vira meta refresh com status 200; aqui sai um 308 de verdade.
-        source: "/2o-turno",
-        destination: "/",
-        // Temporário: /2o-turno pode voltar como página própria depois de 25/10, e 308 fica preso no cache.
-        permanent: false,
-      },
+      // O 2º turno virou a home única em 05/10/2026 e /2o-turno redirecionava para ela. Com o arquivo
+      // ligado (27/10/2026), a home conta o projeto e /2o-turno volta a ser a página do 2º turno.
+      // Temporário: 308 fica preso no cache.
+      ...(ARQUIVO_ELEICOES_2026.ativo ? [] : [{ source: "/2o-turno", destination: "/", permanent: false }]),
       {
         // Endereço curto e estável do media kit; o arquivo pode ser trocado sem mudar o link.
         source: "/media-kit",

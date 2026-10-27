@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { createRequire } from "node:module"
 import { afterEach, beforeEach, describe, it } from "node:test"
 import type { ReactElement } from "react"
@@ -221,9 +222,9 @@ describe("flag do Senado nas superfícies públicas restantes", () => {
       for (const flag of [false, true]) {
         const items = buildShortcutItems(flag)
         assert.equal(items.find((item) => item.href === "/parlamentares"), undefined)
-        assert.equal(items.find((item) => item.href === "/")?.title, "2º Turno")
+        // Com o arquivo ligado o 2º Turno é /2o-turno (a home conta o projeto); sem ele, a home.
+        assert.equal(items.find((item) => item.href === (ARQUIVO_ELEICOES_2026.ativo ? "/2o-turno" : "/"))?.title, "2º Turno")
         assert.equal(items.find((item) => item.href === "/1o-turno")?.title, "1º Turno")
-        assert.equal(items.find((item) => item.href === "/2o-turno"), undefined)
       }
       assert.deepEqual(buildShortcutItems(false), buildShortcutItems(true))
     })
