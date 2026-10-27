@@ -48,6 +48,7 @@ function main() {
   const processos = tabela(pasta, "processos")
   const contas = tabela(pasta, "financiamento").filter(publicada)
   const anosContas = contas.map((r) => Number(r.ano_eleicao)).filter(Number.isFinite)
+  const declaracoes = tabela(pasta, "patrimonio").filter(publicada)
   const coleta = tabela(pasta, "coleta_log")
   const datasColeta = coleta.map((r) => String(r.executado_em)).sort()
 
@@ -70,7 +71,8 @@ function main() {
       atos_governo: { valor: tabela(pasta, "legislacao_mandato_executivo").length, fonte: `${exportFonte}, tabela legislacao_mandato_executivo` },
       processos: { valor: processos.length, tribunais: distintos(processos, "tribunal"), fonte: `${exportFonte}, tabela processos` },
       prestacoes_contas: { valor: contas.length, ano_inicial: Math.min(...anosContas), ano_final: Math.max(...anosContas), fonte: `${exportFonte}, tabela financiamento, só publicadas` },
-      bens_declarados: { valor: tabela(pasta, "patrimonio").length, fonte: `${exportFonte}, tabela patrimonio` },
+      // Cada linha de patrimonio é uma declaração; os bens ficam no array `bens` dela.
+      bens_declarados: { valor: declaracoes.reduce((total, r) => total + (Array.isArray(r.bens) ? r.bens.length : 0), 0), declaracoes: declaracoes.length, fonte: `${exportFonte}, itens de patrimonio.bens nas declarações publicadas` },
     },
     operacao: {
       registros_coleta: { valor: coleta.length, inicio: datasColeta[0].slice(0, 10), fim: datasColeta.at(-1)!.slice(0, 10), fonte: `${exportFonte}, tabela coleta_log` },

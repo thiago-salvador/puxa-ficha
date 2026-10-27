@@ -1,8 +1,8 @@
 {
   "versao": 1,
-  "medido_em": "2026-10-27T01:35:09.244Z",
+  "medido_em": "2026-10-27T14:04:33.720Z",
   "exportado_em": "2026-10-26T17:13:12.221Z",
-  "ref_codigo": "f1675f72",
+  "ref_codigo": "3818cb07",
   "dados": {
     "fichas": {
       "valor": 512,
@@ -41,8 +41,9 @@
       "fonte": "export do banco de 2026-10-26, tabela financiamento, só publicadas"
     },
     "bens_declarados": {
-      "valor": 2057,
-      "fonte": "export do banco de 2026-10-26, tabela patrimonio"
+      "valor": 18957,
+      "declaracoes": 2055,
+      "fonte": "export do banco de 2026-10-26, itens de patrimonio.bens nas declarações publicadas"
     }
   },
   "operacao": {
@@ -63,20 +64,20 @@
   },
   "construcao": {
     "testes": {
-      "valor": 8540,
-      "fonte": "npm test em f1675f72"
+      "valor": 8547,
+      "fonte": "npm test em 3818cb07"
     },
     "prs_mesclados": {
       "valor": 622,
       "fonte": "GitHub, pull requests mesclados"
     },
     "commits": {
-      "valor": 1917,
-      "fonte": "git rev-list em f1675f72"
+      "valor": 1921,
+      "fonte": "git rev-list em 3818cb07"
     },
     "migracoes": {
       "valor": 542,
-      "fonte": "supabase/migrations em f1675f72"
+      "fonte": "supabase/migrations em 3818cb07"
     }
   }
 }

@@ -168,7 +168,7 @@ function HomeArquivoNumeros() {
         <Numero valor={formatarInteiro(dados.atos_governo.valor)} rotulo="atos de governo" detalhe="de quem já exerceu mandato no Executivo" />
         <Numero valor={formatarInteiro(dados.processos.valor)} rotulo="processos judiciais" detalhe={`em ${dados.processos.tribunais} tribunais`} />
         <Numero valor={formatarInteiro(dados.prestacoes_contas.valor)} rotulo="prestações de contas" detalhe={`de campanhas de ${dados.prestacoes_contas.ano_inicial} a ${dados.prestacoes_contas.ano_final}`} />
-        <Numero valor={formatarInteiro(dados.bens_declarados.valor)} rotulo="bens declarados ao TSE" />
+        <Numero valor={formatarInteiro(dados.bens_declarados.valor)} rotulo="bens declarados ao TSE" detalhe={`em ${formatarInteiro(dados.bens_declarados.declaracoes)} declarações de patrimônio`} />
         <Numero valor={formatarInteiro(dados.candidaturas_tse.valor)} rotulo="candidaturas no cadastro do TSE" detalhe="todas as de 2026, deputados inclusive" />
       </div>
 
