@@ -3,7 +3,7 @@ import type { ReactNode } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Footer } from "@/components/Footer"
-import { arquivoDownloadHref } from "@/lib/arquivo"
+import { ARQUIVO_ESTATICO, arquivoDownloadHref } from "@/lib/arquivo"
 import { NoticePanel } from "@/components/NoticePanel"
 import { SlashDivider } from "@/components/SlashDivider"
 import { CiteBox } from "@/components/imprensa/CiteBox"
@@ -349,12 +349,13 @@ export function ImprensaPack({
               {!semSegundoTurno && <TakeLink external href={arquivoDownloadHref(`/api/imprensa/export?format=csv&${exportQuery}&turno=2`)} title={`CSV do 2º turno ${de}`} hint="Uma linha por finalista, com a data de geração." />}
               <TakeLink external href={arquivoDownloadHref(`/api/imprensa/export?format=csv&${exportQuery}`)} title={`CSV do 1º turno ${de}`} hint="Todos os candidatos do recorte, com a data de geração." />
               <TakeLink external href={arquivoDownloadHref(`/api/imprensa/export?format=json&${exportQuery}`)} title={`JSON do 1º turno ${de}`} hint="Os mesmos dados, para programas e planilhas." />
-              {alertsEnabled ? (
+              {alertsEnabled && !ARQUIVO_ESTATICO ? (
                 <TakeLink href={`${imprensaHref("/imprensa/mesa", recorte2)}#alertas`} title={`Alerta por email ${de}`} hint="Cadastro na Mesa, por cargo e UF." />
               ) : (
                 <TakeLink href={imprensaHref("/imprensa/atualizacoes", recorteTodos)} title={`O que mudou ${em}`} hint="O alerta por email não está disponível agora." />
               )}
-              <TakeLink href={imprensaHref("/imprensa/mesa", semSegundoTurno ? recorteTodos : recorte2)} title={`Abrir a Mesa ${em}`} hint="Tabela com fonte e estado de cada dado." />
+              {/* No espelho estático a Mesa não aplica recorte por query: o link prometeria o estado e mostraria o país. */}
+              {!ARQUIVO_ESTATICO && <TakeLink href={imprensaHref("/imprensa/mesa", semSegundoTurno ? recorteTodos : recorte2)} title={`Abrir a Mesa ${em}`} hint="Tabela com fonte e estado de cada dado." />}
             </ul>
             {dataset && (
               <CiteBox

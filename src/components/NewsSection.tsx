@@ -82,9 +82,11 @@ export function NewsSection({ noticias, nextCursor = null, candidateSlug, select
   const [pageError, setPageError] = useState(false)
   const [announcement, setAnnouncement] = useState("")
   const loaded = [...noticias, ...pages.itens]
+  // O ID chega da URL sem normalização; UUID e ID compacto comparam em minúsculas.
+  const idSelecionado = selectedNewsId?.trim().toLowerCase() || null
   // No espelho, o link do alerta traz o UUID e a prévia usa o ID compacto, que termina no hash desse UUID.
-  const sufixoSelecionado = ARQUIVO_ESTATICO && selectedNewsId ? `-${hashPublicId(selectedNewsId)}` : null
-  const ehSelecionada = (n: NoticiaCandidato) => Boolean(selectedNewsId) && (n.id === selectedNewsId || (sufixoSelecionado !== null && n.id.startsWith("noticia-") && n.id.endsWith(sufixoSelecionado)))
+  const sufixoSelecionado = ARQUIVO_ESTATICO && idSelecionado ? `-${hashPublicId(idSelecionado)}` : null
+  const ehSelecionada = (n: NoticiaCandidato) => idSelecionado !== null && (n.id.toLowerCase() === idSelecionado || (sufixoSelecionado !== null && n.id.startsWith("noticia-") && n.id.endsWith(sufixoSelecionado)))
   const localSelected = loaded.find(ehSelecionada)
   const needsFetch = Boolean(selectedNewsId && !localSelected)
 
@@ -98,7 +100,7 @@ export function NewsSection({ noticias, nextCursor = null, candidateSlug, select
           if (response.status === 404) return { id: selectedNewsId, status: "missing" as const }
           if (!response.ok) throw new Error("Notícia indisponível")
           const body = await response.json() as { data: NoticiaCandidato[] }
-          const noticia = body.data.find((n) => n.id === selectedNewsId)
+          const noticia = body.data.find((n) => n.id.toLowerCase() === idSelecionado)
           return noticia ? { id: selectedNewsId, status: "ready" as const, noticia } : { id: selectedNewsId, status: "missing" as const }
         })
         .then((result) => { if (!controller.signal.aborted) setRemote(result) })
@@ -115,7 +117,7 @@ export function NewsSection({ noticias, nextCursor = null, candidateSlug, select
       .then((result) => { if (!controller.signal.aborted) setRemote(result) })
       .catch(() => { if (!controller.signal.aborted) setRemote({ id: selectedNewsId, status: "error" }) })
     return () => controller.abort()
-  }, [candidateSlug, needsFetch, selectedNewsId, retry])
+  }, [candidateSlug, idSelecionado, needsFetch, selectedNewsId, retry])
 
   const remoteSelected = remote?.id === selectedNewsId ? remote : null
   const selected = localSelected ?? remoteSelected?.noticia

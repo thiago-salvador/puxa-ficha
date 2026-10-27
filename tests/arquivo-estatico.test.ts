@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import fs from "node:fs"
-import path from "node:path"
+import { fileURLToPath } from "node:url"
 import { createRequire } from "node:module"
 import test from "node:test"
 
@@ -63,7 +63,7 @@ test("download aceita formato em maiúsculas e cai em JSON sem formato", () => {
 // O crawler roda main() ao ser importado: a cópia das funções sai do texto do arquivo.
 test("crawler e site geram o mesmo nome de imagem", () => {
   const { arquivoImagemLocal } = carregarArquivo(true)
-  const fonte = fs.readFileSync(path.join(process.cwd(), "scripts/arquivo/espelhar-paginas.mjs"), "utf8")
+  const fonte = fs.readFileSync(fileURLToPath(new URL("../scripts/arquivo/espelhar-paginas.mjs", import.meta.url)), "utf8")
   const inicio = fonte.indexOf("function hashImagem(")
   const fim = fonte.indexOf("\n}\n", fonte.indexOf("function arquivoImagemLocal(")) + 3
   assert.ok(inicio > 0 && fim > inicio, "funções de imagem não encontradas no crawler")

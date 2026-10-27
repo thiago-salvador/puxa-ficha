@@ -53,6 +53,7 @@ import { buildComparatorBoxCard } from "@/lib/box-card-model"
 import { BoxShareButton } from "@/components/BoxShareButton"
 import { FOTO_PB_DICA } from "@/lib/arquivo-1turno"
 import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
+import { isComparadorSlugParam } from "@/lib/comparador-cohort"
 
 const VALID_UF_SIGLA = new Set<string>(BRAZIL_STATES.map((s) => s.sigla))
 
@@ -138,7 +139,7 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
   const foraDoGrupo = useMemo(() => {
     if (!ARQUIVO_ESTATICO || !hidratado) return []
     const slugs = ["c1", "c2", "c3", "c4"].map((key) => searchParams.get(key)?.trim()).filter((slug): slug is string => Boolean(slug))
-    return slugs.filter((slug) => !candidatos.some((c) => c.slug === slug))
+    return slugs.filter((slug) => isComparadorSlugParam(slug) && !candidatos.some((c) => c.slug === slug))
   }, [candidatos, hidratado, searchParams])
 
   const selectedCandidatos = useMemo(
@@ -222,12 +223,14 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
 
   useEffect(() => {
     if (candidatos.length === 0) return
+    // Normalizar a URL apagaria os slugs fora do grupo e, com eles, o aviso que leva às fichas.
+    if (foraDoGrupo.length > 0) return
     const current = searchParams.toString()
     const qs = buildCompararQueryString(candidatos, selectedIds, eixo, hubScope, current)
     if (qs === current) return
     const hash = typeof window === "undefined" ? "" : window.location.hash
     router.replace(qs ? `${pathname}?${qs}${hash}` : `${pathname}${hash}`, { scroll: false })
-  }, [candidatos, eixo, hubScope, pathname, router, searchParams, selectedIds])
+  }, [candidatos, eixo, foraDoGrupo.length, hubScope, pathname, router, searchParams, selectedIds])
 
   const shareUrl =
     typeof window !== "undefined" && candidatos.length > 0 && selectedIds.length >= 2
