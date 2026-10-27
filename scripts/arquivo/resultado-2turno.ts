@@ -11,7 +11,7 @@
  *   node --import tsx scripts/arquivo/resultado-2turno.ts --plano=<pasta>/plano-turno-2.json
  *        [--out=src/data/resultados-2turno-2026.json]
  */
-import { readFileSync, writeFileSync } from "node:fs"
+import { readFileSync, renameSync, writeFileSync } from "node:fs"
 import { lerArquivoResultado, type ArquivoAlvo, type CargoResultado } from "../lib/resultados-tse"
 
 const USER_AGENT = "puxa-ficha-resultados/1.0 (+https://puxaficha.com.br)"
@@ -90,7 +90,9 @@ async function main() {
     gerado_em: new Date().toISOString(),
     disputas: disputas.sort((a, b) => (a.cargo === b.cargo ? a.uf.localeCompare(b.uf) : a.cargo === "Presidente" ? -1 : 1)),
   }
-  writeFileSync(out, `${JSON.stringify(snapshot, null, 2)}\n`)
+  // Temporário e rename: uma queda no meio não deixa o snapshot truncado.
+  writeFileSync(`${out}.tmp`, `${JSON.stringify(snapshot, null, 2)}\n`)
+  renameSync(`${out}.tmp`, out)
   console.log(`gravado ${out}: ${disputas.length} disputas`)
 }
 

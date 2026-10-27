@@ -1,8 +1,8 @@
 {
   "versao": 1,
-  "medido_em": "2026-10-27T14:04:33.720Z",
+  "medido_em": "2026-10-27T15:10:10.977Z",
   "exportado_em": "2026-10-26T17:13:12.221Z",
-  "ref_codigo": "3818cb07",
+  "ref_codigo": "16404dd2",
   "dados": {
     "fichas": {
       "valor": 512,
@@ -17,9 +17,9 @@
       "fonte": "export do banco de 2026-10-26, tabela candidatos_roster_2026 (cadastro do TSE)"
     },
     "noticias": {
-      "valor": 63693,
-      "fontes": 2603,
-      "fonte": "export do banco de 2026-10-26, tabela noticias_candidato"
+      "valor": 63649,
+      "fontes": 2598,
+      "fonte": "export do banco de 2026-10-26, tabela noticias_candidato, publicadas até o corte"
     },
     "projetos_lei": {
       "valor": 161092,
@@ -48,36 +48,36 @@
   },
   "operacao": {
     "registros_coleta": {
-      "valor": 83917,
+      "valor": 83864,
       "inicio": "2026-03-29",
-      "fim": "2026-10-26",
-      "fonte": "export do banco de 2026-10-26, tabela coleta_log"
+      "fim": "2026-10-25",
+      "fonte": "export do banco de 2026-10-26, tabela coleta_log até o corte de 25/10/2026"
     },
     "rotinas_coleta": {
       "valor": 199,
       "fonte": "export do banco de 2026-10-26, valores distintos de coleta_log.fonte"
     },
     "mudancas_rastreadas": {
-      "valor": 66580,
-      "fonte": "export do banco de 2026-10-26, tabela candidate_changes"
+      "valor": 66360,
+      "fonte": "export do banco de 2026-10-26, tabela candidate_changes até o corte de 25/10/2026"
     }
   },
   "construcao": {
     "testes": {
-      "valor": 8547,
-      "fonte": "npm test em 3818cb07"
+      "valor": 8550,
+      "fonte": "npm test em 16404dd2"
     },
     "prs_mesclados": {
-      "valor": 622,
+      "valor": 625,
       "fonte": "GitHub, pull requests mesclados"
     },
     "commits": {
-      "valor": 1921,
-      "fonte": "git rev-list em 3818cb07"
+      "valor": 1932,
+      "fonte": "git rev-list em 16404dd2"
     },
     "migracoes": {
-      "valor": 542,
-      "fonte": "supabase/migrations em 3818cb07"
+      "valor": 543,
+      "fonte": "supabase/migrations em 16404dd2"
     }
   }
 }

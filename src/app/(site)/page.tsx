@@ -23,6 +23,7 @@ import { JsonLd } from "@/components/JsonLd"
 import { RevelarBarras } from "@/components/RevelarBarras"
 import { HomeHero2026 } from "@/components/HomeHero2026"
 import { HomeArquivo2026 } from "@/components/HomeArquivo2026"
+import { metadadosDaHome } from "@/lib/arquivo-home"
 import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { ResultadoPreviaBanner } from "@/components/Resultado1TurnoPartes"
 import { Resultado1TurnoEstados } from "@/components/Resultado1TurnoEstados"
@@ -54,10 +55,7 @@ import type { StatePollScenario } from "@/lib/state-polls"
 // Página única da eleição desde 05/10/2026: o hero preto volta ao topo com o 2º turno. /1o-turno é o arquivo
 // (o site como estava até a votação) e cada estado tem o resultado em /1o-turno/{uf}.
 // Desde 26/10/2026 a home é o arquivo: resultado oficial do 2º turno e o que o site reuniu.
-const title = ARQUIVO_ELEICOES_2026.ativo ? "Puxa Ficha | Arquivo das eleições 2026" : "Puxa Ficha | 2º turno das eleições 2026"
-const description = ARQUIVO_ELEICOES_2026.ativo
-  ? "Arquivo das eleições 2026: o resultado oficial do 2º turno e as fichas públicas de presidente, governadores e senadores, com notícias, projetos de lei, processos e contas de campanha, todos com fonte."
-  : "Presidente e governadores no 2º turno de 25 de outubro: resultado do 1º turno, pesquisas, comparação lado a lado e a ficha pública de cada finalista, com fontes oficiais."
+const { title, description } = metadadosDaHome(ARQUIVO_ELEICOES_2026.ativo)
 
 // Card do duelo gerado do snapshot do TSE (src/app/(site)/og/segundo-turno); sem finalistas, a rota cai no card editorial.
 export const metadata: Metadata = {

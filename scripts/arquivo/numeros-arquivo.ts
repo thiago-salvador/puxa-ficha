@@ -11,9 +11,10 @@
  *        [--out=src/data/numeros-arquivo-2026.json]
  */
 import { execFileSync } from "node:child_process"
-import { readFileSync, writeFileSync } from "node:fs"
+import { readFileSync, renameSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
+import { ARQUIVO_ELEICOES_2026 } from "../../src/lib/arquivo"
 
 type Linha = Record<string, unknown>
 
@@ -27,6 +28,11 @@ function tabela(pasta: string, nome: string): Linha[] {
 }
 
 const publicada = (r: Linha) => !r.despublicado_em
+// O arquivo congela os dados no fim do dia do corte (25/10, Brasília): registro posterior não entra na contagem.
+const FIM_DO_CORTE = Date.parse(ARQUIVO_ELEICOES_2026.fimIso)
+const antesDoCorte = (campo: string) => (r: Linha) => typeof r[campo] === "string" && Date.parse(r[campo] as string) < FIM_DO_CORTE
+/** Data no fuso de Brasília (UTC-3, sem horário de verão em 2026). */
+const diaEmBrasilia = (iso: string) => new Date(Date.parse(iso) - 3 * 3600_000).toISOString().slice(0, 10)
 const distintos = (linhas: Linha[], campo: string) => new Set(linhas.map((r) => r[campo]).filter((v) => v !== null && v !== undefined && v !== "")).size
 
 function comando(bin: string, args: string[]): string {
@@ -43,13 +49,13 @@ function main() {
 
   const fichas = tabela(pasta, "candidatos_publico")
   const porCargo = (cargo: string) => fichas.filter((r) => r.cargo_disputado === cargo).length
-  const noticias = tabela(pasta, "noticias_candidato")
+  const noticias = tabela(pasta, "noticias_candidato").filter(antesDoCorte("data_publicacao"))
   const projetos = tabela(pasta, "projetos_lei").filter(publicada)
   const processos = tabela(pasta, "processos")
   const contas = tabela(pasta, "financiamento").filter(publicada)
   const anosContas = contas.map((r) => Number(r.ano_eleicao)).filter(Number.isFinite)
   const declaracoes = tabela(pasta, "patrimonio").filter(publicada)
-  const coleta = tabela(pasta, "coleta_log")
+  const coleta = tabela(pasta, "coleta_log").filter(antesDoCorte("executado_em"))
   const datasColeta = coleta.map((r) => String(r.executado_em)).sort()
 
   const testes = Number(readFileSync(logTestes, "utf8").match(/^ℹ tests (\d+)$/m)?.[1])
@@ -66,7 +72,7 @@ function main() {
     dados: {
       fichas: { valor: fichas.length, presidente: porCargo("Presidente"), governador: porCargo("Governador"), senador: porCargo("Senador"), ufs: distintos(fichas, "estado"), fonte: `${exportFonte}, tabela candidatos_publico` },
       candidaturas_tse: { valor: tabela(pasta, "candidatos_roster_2026").length, fonte: `${exportFonte}, tabela candidatos_roster_2026 (cadastro do TSE)` },
-      noticias: { valor: noticias.length, fontes: distintos(noticias, "fonte"), fonte: `${exportFonte}, tabela noticias_candidato` },
+      noticias: { valor: noticias.length, fontes: distintos(noticias, "fonte"), fonte: `${exportFonte}, tabela noticias_candidato, publicadas até o corte` },
       projetos_lei: { valor: projetos.length, fonte: `${exportFonte}, tabela projetos_lei, só publicados` },
       atos_governo: { valor: tabela(pasta, "legislacao_mandato_executivo").length, fonte: `${exportFonte}, tabela legislacao_mandato_executivo` },
       processos: { valor: processos.length, tribunais: distintos(processos, "tribunal"), fonte: `${exportFonte}, tabela processos` },
@@ -75,9 +81,9 @@ function main() {
       bens_declarados: { valor: declaracoes.reduce((total, r) => total + (Array.isArray(r.bens) ? r.bens.length : 0), 0), declaracoes: declaracoes.length, fonte: `${exportFonte}, itens de patrimonio.bens nas declarações publicadas` },
     },
     operacao: {
-      registros_coleta: { valor: coleta.length, inicio: datasColeta[0].slice(0, 10), fim: datasColeta.at(-1)!.slice(0, 10), fonte: `${exportFonte}, tabela coleta_log` },
+      registros_coleta: { valor: coleta.length, inicio: diaEmBrasilia(datasColeta[0]), fim: diaEmBrasilia(datasColeta.at(-1)!), fonte: `${exportFonte}, tabela coleta_log até o corte de ${ARQUIVO_ELEICOES_2026.dataCorte}` },
       rotinas_coleta: { valor: distintos(coleta, "fonte"), fonte: `${exportFonte}, valores distintos de coleta_log.fonte` },
-      mudancas_rastreadas: { valor: tabela(pasta, "candidate_changes").length, fonte: `${exportFonte}, tabela candidate_changes` },
+      mudancas_rastreadas: { valor: tabela(pasta, "candidate_changes").filter(antesDoCorte("created_at")).length, fonte: `${exportFonte}, tabela candidate_changes até o corte de ${ARQUIVO_ELEICOES_2026.dataCorte}` },
     },
     construcao: {
       testes: { valor: testes, fonte: `npm test em ${sha}` },
@@ -86,7 +92,9 @@ function main() {
       migracoes: { valor: comando("git", ["ls-tree", "--name-only", `${ref}:supabase/migrations`]).split("\n").filter((f) => f.endsWith(".sql")).length, fonte: `supabase/migrations em ${sha}` },
     },
   }
-  writeFileSync(out, `${JSON.stringify(numeros, null, 2)}\n`)
+  // Temporário e rename: uma queda no meio não deixa o JSON da home truncado.
+  writeFileSync(`${out}.tmp`, `${JSON.stringify(numeros, null, 2)}\n`)
+  renameSync(`${out}.tmp`, out)
   console.log(`gravado ${out}`)
 }
 

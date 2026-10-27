@@ -4,7 +4,7 @@ import { describe, it } from "node:test"
 import { renderToStaticMarkup } from "react-dom/server"
 
 import { HomeArquivo2026 } from "@/components/HomeArquivo2026"
-import { disputaFinal, formatarGeradoTse, getNumerosArquivo, getResultado2Turno } from "@/lib/arquivo-home"
+import { disputaFinal, formatarGeradoTse, getNumerosArquivo, getResultado2Turno, metadadosDaHome } from "@/lib/arquivo-home"
 
 describe("resultado oficial do 2º turno", () => {
   const resultado = getResultado2Turno()
@@ -28,6 +28,7 @@ describe("resultado oficial do 2º turno", () => {
     assert.ok(presidente)
     assert.notEqual(presidente.eleito.slug, presidente.derrotado.slug)
     assert.equal(disputaFinal(resultado, "Presidente", "SP"), null)
+    assert.equal(disputaFinal(resultado, "PRESIDENTE", "br")?.eleito.slug, presidente.eleito.slug)
   })
 
   it("formata o horário de geração do TSE", () => {
@@ -69,5 +70,18 @@ describe("HomeArquivo2026", () => {
     assert.match(html, /O que o Puxa Ficha reuniu/)
     assert.match(html, /Concebido, construído e mantido por Thiago Salvador, de março a outubro de 2026/)
     assert.match(html, /De onde vêm estes números/)
+  })
+})
+
+describe("metadados da home", () => {
+  it("com o arquivo ligado o título e a descrição são os do arquivo", () => {
+    const m = metadadosDaHome(true)
+    assert.equal(m.title, "Puxa Ficha | Arquivo das eleições 2026")
+    assert.match(m.description, /resultado oficial do 2º turno/)
+  })
+  it("sem o arquivo volta o título da campanha do 2º turno", () => {
+    const m = metadadosDaHome(false)
+    assert.equal(m.title, "Puxa Ficha | 2º turno das eleições 2026")
+    assert.doesNotMatch(m.description, /Arquivo/)
   })
 })
