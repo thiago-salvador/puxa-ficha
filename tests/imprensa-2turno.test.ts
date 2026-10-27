@@ -126,6 +126,13 @@ describe("buildSalaPromise2Turno", () => {
     assert.doesNotMatch(text, DASHES)
   })
 
+  test("no arquivo, fala no passado e marca o dia da votação", () => {
+    const text = buildSalaPromise2Turno(14, true, ["AC"], true)
+    assert.match(text, /registravam sobre os 14 finalistas do 2º turno: presidente e governador em AC, até o dia da votação\./)
+    assert.doesNotMatch(text, /registram /)
+    assert.doesNotMatch(text, DASHES)
+  })
+
   test("sem contagem, não afirma número nem zero", () => {
     for (const total of [null, 0]) {
       const text = buildSalaPromise2Turno(total, true, [])

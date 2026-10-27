@@ -3,6 +3,7 @@ import { createRequire } from "node:module"
 import { describe, it } from "node:test"
 import React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 
 const require = createRequire(import.meta.url)
 require.extensions[".css"] = (module) => {
@@ -74,11 +75,19 @@ describe("ImprensaSubnav", () => {
     assert.match(html, /href="\/imprensa\/1o-turno"/)
     assert.equal(html.match(/aria-current=/g)?.length, 1)
     assert.match(html, /href="\/imprensa\/uf\/ba"/)
-    assert.match(html, /<time dateTime="2026-09-28T17:02:00.000Z">Dados de 28\/09, 14:02<\/time>/)
+    if (ARQUIVO_ELEICOES_2026.ativo) {
+      // No arquivo, o selo é a data do corte, não a da leitura do dataset.
+      assert.match(html, /Dados congelados em <time dateTime="2026-10-26T03:00:00.000Z">25\/10\/2026<\/time>/)
+      assert.doesNotMatch(html, /Dados de 28\/09/)
+    } else {
+      assert.match(html, /<time dateTime="2026-09-28T17:02:00.000Z">Dados de 28\/09, 14:02<\/time>/)
+    }
   })
 
-  it("avisa quando a data dos dados não está disponível", () => {
-    assert.match(renderToStaticMarkup(<ImprensaSubnav current="sala" />), /Data dos dados indisponível/)
+  it("avisa quando a data dos dados não está disponível (fora do arquivo)", () => {
+    const html = renderToStaticMarkup(<ImprensaSubnav current="sala" />)
+    if (ARQUIVO_ELEICOES_2026.ativo) assert.match(html, /Dados congelados em/)
+    else assert.match(html, /Data dos dados indisponível/)
   })
 })
 

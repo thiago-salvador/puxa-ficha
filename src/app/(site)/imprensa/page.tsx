@@ -22,13 +22,18 @@ import { computeImprensaFacts } from "@/lib/imprensa-facts"
 import { IMPRENSA_STATE_CHOOSER_ID, imprensaHref, imprensaUfPath } from "@/lib/imprensa-nav"
 import { getImprensaUfName, IMPRENSA_UFS, isImprensaUf } from "@/lib/imprensa-uf-pack"
 import styles from "./sala.module.css"
-import { arquivoDownloadHref } from "@/lib/arquivo"
+import { ARQUIVO_ELEICOES_2026, arquivoDownloadHref } from "@/lib/arquivo"
+import { getResultado2Turno, type CandidatoFinal2Turno } from "@/lib/arquivo-home"
 
 // cspell:words numeros confianca atualizacoes presidencia homonimos
 
+const ARQUIVO = ARQUIVO_ELEICOES_2026.ativo
+
 export const metadata: Metadata = {
   title: "Imprensa | Puxa Ficha",
-  description: "Sala de imprensa do 2º turno de 2026: quem segue na disputa, fatos dos finalistas com fonte oficial, pacotes por estado, mudanças verificadas no TSE e o arquivo do 1º turno.",
+  description: ARQUIVO
+    ? "Sala de imprensa das eleições 2026, em arquivo: o resultado oficial do 2º turno, fatos dos finalistas com fonte oficial, pacotes por estado, mudanças verificadas no TSE até 25/10 e o arquivo do 1º turno."
+    : "Sala de imprensa do 2º turno de 2026: quem segue na disputa, fatos dos finalistas com fonte oficial, pacotes por estado, mudanças verificadas no TSE e o arquivo do 1º turno.",
   alternates: { canonical: "/imprensa" },
 }
 
@@ -43,6 +48,12 @@ function finalistas(total: number): string {
 }
 
 const SEGUNDO_TURNO = { turno: 2 } as const
+
+/** Resultado oficial do 2º turno por slug, para os duelos da sala no arquivo; vazio com a flag desligada. */
+function resultado2TurnoPorSlug(): ReadonlyMap<string, CandidatoFinal2Turno> {
+  if (!ARQUIVO) return new Map()
+  return new Map(getResultado2Turno().disputas.flatMap((d) => d.candidatos.map((c) => [c.slug, c] as const)))
+}
 
 export default async function ImprensaSala() {
   const alertsEnabled = isAlertsEmailFeatureEnabled()
@@ -62,7 +73,8 @@ export default async function ImprensaSala() {
   const recortes = dataset ? countSalaRecortes(rows) : null
   const updates = atualizacoes.status === "available" ? buildSalaUpdates(atualizacoes.updates, allRows) : []
   const ufsGovernador = segundo.duelos.map((duelo) => duelo.uf)
-  const promise = buildSalaPromise2Turno(dataset ? rows.length : null, segundo.presidencia !== null, ufsGovernador)
+  const promise = buildSalaPromise2Turno(dataset ? rows.length : null, segundo.presidencia !== null, ufsGovernador, ARQUIVO)
+  const resultado2 = resultado2TurnoPorSlug()
   const updatesTotal = atualizacoes.status === "available" && typeof atualizacoes.total === "number" ? atualizacoes.total : null
   const sectionsLive: SalaSectionLive = {
     estado: `${IMPRENSA_UFS.length} pacotes; governador no 2º turno em ${rotuloUfs(ufsGovernador)}`,
@@ -81,14 +93,14 @@ export default async function ImprensaSala() {
         <Image src="/images/hero-dossie.webp" alt="" fill sizes="100vw" loading="eager" fetchPriority="high" className={styles.heroImage} />
         <div className={styles.heroShade} aria-hidden="true" />
         <div className={styles.heroInner}>
-          <p className={styles.eyebrow}>2º turno · {formatarData2Turno()} · Fontes oficiais</p>
+          <p className={styles.eyebrow}>{ARQUIVO ? `${ARQUIVO_ELEICOES_2026.titulo} · 2º turno em ${formatarData2Turno()}` : `2º turno · ${formatarData2Turno()}`} · Fontes oficiais</p>
           <h1 className={styles.heroTitle}>Sala de imprensa</h1>
           <p className={styles.heroCopy}>{promise}</p>
           <div className={styles.heroSearch}>
             <SalaSearchTrigger className={styles.searchTrigger} />
           </div>
           <nav aria-label="Tarefas de imprensa" className={styles.heroButtons}>
-            <Link className={styles.pill} href="#segundo-turno">Quem está no 2º turno <ArrowRight aria-hidden="true" className={styles.arrow} /></Link>
+            <Link className={styles.pill} href="#segundo-turno">{ARQUIVO ? "Resultado do 2º turno" : "Quem está no 2º turno"} <ArrowRight aria-hidden="true" className={styles.arrow} /></Link>
             <Link className={styles.pillGhost} href={`#${IMPRENSA_STATE_CHOOSER_ID}`}>Escolher meu estado <ArrowRight aria-hidden="true" className={styles.arrow} /></Link>
             <Link className={styles.pillGhost} href={imprensaHref("/imprensa/mesa", SEGUNDO_TURNO)}>Abrir a Mesa <ArrowRight aria-hidden="true" className={styles.arrow} /></Link>
           </nav>
@@ -102,15 +114,19 @@ export default async function ImprensaSala() {
 
       <div className={styles.content}>
         <section id="segundo-turno" className={styles.section} aria-labelledby="segundo-turno-title">
-          <SectionHead num="01" id="segundo-turno-title">Quem está no 2º turno</SectionHead>
-          <p className={styles.lead}>Os finalistas pelo resultado oficial do 1º turno, com a porcentagem dos votos válidos. Cada duelo abre o pacote de imprensa do recorte; o nome abre a ficha.</p>
+          <SectionHead num="01" id="segundo-turno-title">{ARQUIVO ? "Resultado do 2º turno" : "Quem está no 2º turno"}</SectionHead>
+          <p className={styles.lead}>
+            {ARQUIVO
+              ? "Os finalistas com o resultado oficial do 2º turno, em 25 de outubro, e a porcentagem dos votos válidos. Cada duelo abre o pacote de imprensa do recorte; o nome abre a ficha."
+              : "Os finalistas pelo resultado oficial do 1º turno, com a porcentagem dos votos válidos. Cada duelo abre o pacote de imprensa do recorte; o nome abre a ficha."}
+          </p>
           {segundo.presidencia ? (
             <article className={styles.duelPresidencia} aria-labelledby="duelo-presidencia">
               <header className={styles.duelHead}>
                 <h3 id="duelo-presidencia" className={styles.duelTitle}>Presidência</h3>
                 <Link className={styles.duelPack} href={imprensaHref("/imprensa/presidencia")}>Pacote da Presidência <ArrowRight aria-hidden="true" className={styles.arrowSmall} /></Link>
               </header>
-              <DuelSides finalistas={segundo.presidencia} rowBySlug={rowBySlug} />
+              <DuelSides finalistas={segundo.presidencia} rowBySlug={rowBySlug} resultado2={resultado2} />
             </article>
           ) : null}
           {segundo.duelos.length > 0 ? (
@@ -125,23 +141,30 @@ export default async function ImprensaSala() {
                         <h4 className={styles.duelUf}>{duelo.uf}{uf ? <span className={styles.duelUfName}>{getImprensaUfName(uf)}</span> : null}</h4>
                         {uf ? <Link className={styles.duelPack} href={imprensaUfPath(uf)} aria-label={`Pacote de imprensa: ${getImprensaUfName(uf)}`}>Pacote <ArrowRight aria-hidden="true" className={styles.arrowSmall} /></Link> : null}
                       </header>
-                      <DuelSides finalistas={duelo.finalistas} rowBySlug={rowBySlug} />
+                      <DuelSides finalistas={duelo.finalistas} rowBySlug={rowBySlug} resultado2={resultado2} />
                     </li>
                   )
                 })}
               </ul>
             </>
           ) : null}
-          <p className={styles.duelSource}>
-            Fonte: resultado oficial do 1º turno, TSE. Os votos de cada disputa estão em <Link href="/1o-turno">Resultado do 1º turno</Link>.
-            {segundo.governadorEleito.size > 0 ? ` Em ${rotuloUfs([...segundo.governadorEleito.keys()])}, o governo foi decidido no 1º turno; lá, em ${formatarData2Turno()}, o voto é só para presidente.` : ""}
-          </p>
+          {ARQUIVO ? (
+            <p className={styles.duelSource}>
+              Fonte: resultado oficial do 2º turno, TSE. O resultado completo está em <Link href="/2o-turno">2º turno</Link> e os votos do 1º turno em <Link href="/1o-turno">Resultado do 1º turno</Link>.
+              {segundo.governadorEleito.size > 0 ? ` Em ${rotuloUfs([...segundo.governadorEleito.keys()])}, o governo foi decidido no 1º turno.` : ""}
+            </p>
+          ) : (
+            <p className={styles.duelSource}>
+              Fonte: resultado oficial do 1º turno, TSE. Os votos de cada disputa estão em <Link href="/1o-turno">Resultado do 1º turno</Link>.
+              {segundo.governadorEleito.size > 0 ? ` Em ${rotuloUfs([...segundo.governadorEleito.keys()])}, o governo foi decidido no 1º turno; lá, em ${formatarData2Turno()}, o voto é só para presidente.` : ""}
+            </p>
+          )}
         </section>
 
         <SlashDivider />
 
         <section id="numeros" className={styles.section} aria-labelledby="numeros-title">
-          <SectionHead num="02" id="numeros-title">Nos dados de hoje</SectionHead>
+          <SectionHead num="02" id="numeros-title">{ARQUIVO ? `Nos dados de ${ARQUIVO_ELEICOES_2026.dataCorte}` : "Nos dados de hoje"}</SectionHead>
           <p className={styles.lead}>Cada número conta os finalistas a partir de um campo oficial, com o denominador e a ressalva ao lado. O link abre a Mesa no recorte do 2º turno. Os mesmos fatos sobre todos os candidatos estão no <Link className={styles.inlineLink} href={imprensaHref("/imprensa/1o-turno")}>arquivo do 1º turno</Link>.</p>
           <div className={styles.block}>
             {facts
@@ -154,7 +177,11 @@ export default async function ImprensaSala() {
 
         <section id={IMPRENSA_STATE_CHOOSER_ID} className={styles.section} aria-labelledby="estados-title">
           <SectionHead num="03" id="estados-title">Escolha seu estado</SectionHead>
-          <p className={styles.lead}>Todo o país vota para presidente no 2º turno; {rotuloUfs(ufsGovernador)} {ufsGovernador.length === 1 ? "vota" : "votam"} também para governador. Cada pacote abre com quem segue na disputa e guarda, no fim, o histórico do 1º turno.</p>
+          <p className={styles.lead}>
+            {ARQUIVO
+              ? <>No 2º turno, todo o país votou para presidente; {rotuloUfs(ufsGovernador)} {ufsGovernador.length === 1 ? "votou" : "votaram"} também para governador. Cada pacote abre com os finalistas do estado e guarda, no fim, o histórico do 1º turno.</>
+              : <>Todo o país vota para presidente no 2º turno; {rotuloUfs(ufsGovernador)} {ufsGovernador.length === 1 ? "vota" : "votam"} também para governador. Cada pacote abre com quem segue na disputa e guarda, no fim, o histórico do 1º turno.</>}
+          </p>
           {recortes ? null : <Unavailable title="Contagens indisponíveis agora">Os pacotes continuam abertos. Uma falha de consulta não significa que o estado não tem finalistas.</Unavailable>}
           <ul className={styles.ufGrid} aria-label="Pacotes de imprensa">
             <li className={styles.ufPresidencia}>
@@ -184,11 +211,16 @@ export default async function ImprensaSala() {
 
         <section id="atualizacoes" className={styles.section} aria-labelledby="atualizacoes-title">
           <SectionHead num="04" id="atualizacoes-title">O que mudou no TSE</SectionHead>
-          <p className={styles.lead}>Quem teve a candidatura, o partido ou o patrimônio alterado no TSE. A data é a da detecção da mudança, não a do fato. Depois do 1º turno, a conferência diária segue só para as fichas dos finalistas.</p>
+          <p className={styles.lead}>
+            Quem teve a candidatura, o partido ou o patrimônio alterado no TSE. A data é a da detecção da mudança, não a do fato.{" "}
+            {ARQUIVO
+              ? `Depois do 1º turno, a conferência diária seguiu só para as fichas dos finalistas e parou em ${ARQUIVO_ELEICOES_2026.dataCorte}, quando os dados foram congelados.`
+              : "Depois do 1º turno, a conferência diária segue só para as fichas dos finalistas."}
+          </p>
           {atualizacoes.status === "unavailable" ? (
             <Unavailable title="Mudanças indisponíveis agora">Não foi possível consultar o registro. Uma falha de consulta não significa que nada mudou.</Unavailable>
           ) : updates.length === 0 ? (
-            <p role="status" className={styles.empty}>Nenhuma mudança verificada registrada até agora.</p>
+            <p role="status" className={styles.empty}>{ARQUIVO ? `Nenhuma mudança verificada registrada até ${ARQUIVO_ELEICOES_2026.dataCorte}.` : "Nenhuma mudança verificada registrada até agora."}</p>
           ) : (
             <ol className={styles.updates} aria-label="Mudanças verificadas mais recentes">
               {updates.map((item) => (
@@ -291,19 +323,37 @@ export default async function ImprensaSala() {
   )
 }
 
-/** Os dois lados de um duelo: nome (ficha), partido e % dos válidos no 1º turno. */
-function DuelSides({ finalistas: pair, rowBySlug }: { finalistas: Finalistas; rowBySlug: ReadonlyMap<string, ImprensaPageRow> }) {
+/**
+ * Os dois lados de um duelo: nome (ficha), partido e % dos válidos. Com o resultado do 2º turno (arquivo),
+ * o eleito vem primeiro, com a marca "Eleito", e o percentual é o do 2º turno; sem ele, o do 1º turno.
+ */
+function DuelSides({
+  finalistas: pair,
+  rowBySlug,
+  resultado2,
+}: {
+  finalistas: Finalistas
+  rowBySlug: ReadonlyMap<string, ImprensaPageRow>
+  resultado2: ReadonlyMap<string, CandidatoFinal2Turno>
+}) {
+  const final = (slug: string | null) => (slug ? resultado2.get(slug) : undefined)
+  const temResultado = pair.every((c) => final(c.slug))
+  const ordem = temResultado ? [...pair].sort((a, b) => Number(final(b.slug)?.eleito) - Number(final(a.slug)?.eleito)) : pair
   return (
     <ol className={styles.duelSides}>
-      {pair.map((candidato) => {
+      {ordem.map((candidato) => {
         const row = candidato.slug ? rowBySlug.get(candidato.slug) : undefined
         const nome = row?.nome ?? formatDisplayName(candidato.nome_urna)
         const href = row?.fichaUrl ?? (candidato.slug ? `/candidato/${candidato.slug}` : null)
+        const resultado = temResultado ? final(candidato.slug) : undefined
         return (
-          <li key={candidato.sq} className={styles.duelSide}>
-            <span className={styles.duelName}>{href ? <Link href={href}>{nome}</Link> : nome}</span>
+          <li key={candidato.sq} className={styles.duelSide} data-pf-sala-eleito={resultado ? (resultado.eleito ? "sim" : "nao") : undefined}>
+            <span className={styles.duelName}>
+              {href ? <Link href={href}>{nome}</Link> : nome}
+              {resultado?.eleito ? <strong className={styles.duelEleito}> · Eleito</strong> : null}
+            </span>
             <span className={styles.duelParty}>{candidato.partido}</span>
-            <span className={styles.duelPct}>{formatarPercentual(candidato.percentual_validos)}</span>
+            <span className={styles.duelPct}>{formatarPercentual(resultado ? resultado.percentual_validos : candidato.percentual_validos)}</span>
           </li>
         )
       })}

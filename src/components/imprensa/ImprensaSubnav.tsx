@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { buildImprensaNav, formatImprensaStamp, type ImprensaNavId, type ImprensaRecorte } from "@/lib/imprensa-nav"
 import styles from "./imprensa-shell.module.css"
 
@@ -29,7 +30,14 @@ export function ImprensaSubnav({
           </ul>
         </nav>
         <p className={styles.stamp}>
-          {stamp && generatedAt ? <time dateTime={generatedAt}>{stamp}</time> : "Data dos dados indisponível"}
+          {/* No arquivo o dataset é relido a cada visita, mas os dados pararam no corte: o selo diz a data do corte. */}
+          {ARQUIVO_ELEICOES_2026.ativo ? (
+            <>Dados congelados em <time dateTime={ARQUIVO_ELEICOES_2026.fimIso}>{ARQUIVO_ELEICOES_2026.dataCorte}</time></>
+          ) : stamp && generatedAt ? (
+            <time dateTime={generatedAt}>{stamp}</time>
+          ) : (
+            "Data dos dados indisponível"
+          )}
         </p>
       </div>
     </div>
