@@ -91,6 +91,12 @@ async function main() {
   const sitemap = (await baixar("/sitemap.xml")).buf.toString("utf8")
   for (const m of sitemap.matchAll(/<loc>https?:\/\/[^/]+([^<]*)<\/loc>/g)) enfileirar(m[1] || "/")
   enfileirar("/")
+  // Widgets já publicados em outros sites carregam /embed/<slug>, que não está no sitemap.
+  const slugs = await fetch(`${ORIGEM}/api/candidato-slugs`, { signal: AbortSignal.timeout(60_000) })
+    .then((r) => r.json())
+    .then((j) => (Array.isArray(j) ? j : j.slugs ?? j.data ?? []).map((s) => (typeof s === "string" ? s : s.slug)))
+    .catch((e) => { falhas.push(`slugs do embed: ${e.message}`); return [] })
+  for (const slug of slugs) enfileirar(`/embed/${slug}`)
   let n = 0
   await Promise.all(Array.from({ length: 8 }, async () => {
     while (fila.length) {
