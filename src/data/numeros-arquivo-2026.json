@@ -1,0 +1,82 @@
+{
+  "versao": 1,
+  "medido_em": "2026-10-27T01:35:09.244Z",
+  "exportado_em": "2026-10-26T17:13:12.221Z",
+  "ref_codigo": "f1675f72",
+  "dados": {
+    "fichas": {
+      "valor": 512,
+      "presidente": 13,
+      "governador": 191,
+      "senador": 308,
+      "ufs": 27,
+      "fonte": "export do banco de 2026-10-26, tabela candidatos_publico"
+    },
+    "candidaturas_tse": {
+      "valor": 20065,
+      "fonte": "export do banco de 2026-10-26, tabela candidatos_roster_2026 (cadastro do TSE)"
+    },
+    "noticias": {
+      "valor": 63693,
+      "fontes": 2603,
+      "fonte": "export do banco de 2026-10-26, tabela noticias_candidato"
+    },
+    "projetos_lei": {
+      "valor": 161092,
+      "fonte": "export do banco de 2026-10-26, tabela projetos_lei, só publicados"
+    },
+    "atos_governo": {
+      "valor": 19244,
+      "fonte": "export do banco de 2026-10-26, tabela legislacao_mandato_executivo"
+    },
+    "processos": {
+      "valor": 319,
+      "tribunais": 76,
+      "fonte": "export do banco de 2026-10-26, tabela processos"
+    },
+    "prestacoes_contas": {
+      "valor": 2222,
+      "ano_inicial": 2002,
+      "ano_final": 2026,
+      "fonte": "export do banco de 2026-10-26, tabela financiamento, só publicadas"
+    },
+    "bens_declarados": {
+      "valor": 2057,
+      "fonte": "export do banco de 2026-10-26, tabela patrimonio"
+    }
+  },
+  "operacao": {
+    "registros_coleta": {
+      "valor": 83917,
+      "inicio": "2026-03-29",
+      "fim": "2026-10-26",
+      "fonte": "export do banco de 2026-10-26, tabela coleta_log"
+    },
+    "rotinas_coleta": {
+      "valor": 199,
+      "fonte": "export do banco de 2026-10-26, valores distintos de coleta_log.fonte"
+    },
+    "mudancas_rastreadas": {
+      "valor": 66580,
+      "fonte": "export do banco de 2026-10-26, tabela candidate_changes"
+    }
+  },
+  "construcao": {
+    "testes": {
+      "valor": 8540,
+      "fonte": "npm test em f1675f72"
+    },
+    "prs_mesclados": {
+      "valor": 622,
+      "fonte": "GitHub, pull requests mesclados"
+    },
+    "commits": {
+      "valor": 1917,
+      "fonte": "git rev-list em f1675f72"
+    },
+    "migracoes": {
+      "valor": 542,
+      "fonte": "supabase/migrations em f1675f72"
+    }
+  }
+}

@@ -22,6 +22,8 @@ import { PublicDataSourcesNote } from "@/components/PublicDataSourcesNote"
 import { JsonLd } from "@/components/JsonLd"
 import { RevelarBarras } from "@/components/RevelarBarras"
 import { HomeHero2026 } from "@/components/HomeHero2026"
+import { HomeArquivo2026 } from "@/components/HomeArquivo2026"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { ResultadoPreviaBanner } from "@/components/Resultado1TurnoPartes"
 import { Resultado1TurnoEstados } from "@/components/Resultado1TurnoEstados"
 import { GovernadoresEleitos1Turno } from "@/components/GovernadoresEleitos1Turno"
@@ -51,9 +53,11 @@ import type { StatePollScenario } from "@/lib/state-polls"
 
 // Página única da eleição desde 05/10/2026: o hero preto volta ao topo com o 2º turno. /1o-turno é o arquivo
 // (o site como estava até a votação) e cada estado tem o resultado em /1o-turno/{uf}.
-const title = "Puxa Ficha | 2º turno das eleições 2026"
-const description =
-  "Presidente e governadores no 2º turno de 25 de outubro: resultado do 1º turno, pesquisas, comparação lado a lado e a ficha pública de cada finalista, com fontes oficiais."
+// Desde 26/10/2026 a home é o arquivo: resultado oficial do 2º turno e o que o site reuniu.
+const title = ARQUIVO_ELEICOES_2026.ativo ? "Puxa Ficha | Arquivo das eleições 2026" : "Puxa Ficha | 2º turno das eleições 2026"
+const description = ARQUIVO_ELEICOES_2026.ativo
+  ? "Arquivo das eleições 2026: o resultado oficial do 2º turno e as fichas públicas de presidente, governadores e senadores, com notícias, projetos de lei, processos e contas de campanha, todos com fonte."
+  : "Presidente e governadores no 2º turno de 25 de outubro: resultado do 1º turno, pesquisas, comparação lado a lado e a ficha pública de cada finalista, com fontes oficiais."
 
 // Card do duelo gerado do snapshot do TSE (src/app/(site)/og/segundo-turno); sem finalistas, a rota cai no card editorial.
 export const metadata: Metadata = {
@@ -227,29 +231,35 @@ export default async function Home() {
     <div className="min-h-screen bg-background">
       <JsonLd data={schema} />
       {/* Filho direto de "main > div": o Navbar reconhece a faixa preta e fica transparente sobre ela. */}
-      <HomeHero2026
-        imagem={heroImage}
-        temResultado={temResultado}
-        presidente={presidente}
-        fotos={fotos}
-        pesquisa={pesquisas2Turno[0] ?? null}
-        numeros={numerosHero1Turno(resultados, getReferencia2022())}
-        metricas={heroMetricas}
-        ufs={opcoesUf}
-        referenceNow={referenceNow}
-        compararHref={presidente && finalistasPresidente ? "#lado-a-lado" : null}
-        compartilhar={finalistasPresidente ? { url: buildAbsoluteUrl("/") } : null}
-        fonte2022={{ pagina: getReferencia2022().fonte.pagina }}
-      />
-      {finalistasPresidente && (
-        <FaixaFixa2Turno
-          finalistas={[
-            { nome: nomeLegivel(finalistasPresidente[0].nome_urna), percentual: formatarPercentual(finalistasPresidente[0].percentual_validos) },
-            { nome: nomeLegivel(finalistasPresidente[1].nome_urna), percentual: formatarPercentual(finalistasPresidente[1].percentual_validos) },
-          ]}
-          referenceNow={referenceNow}
-          href="#lado-a-lado"
-        />
+      {ARQUIVO_ELEICOES_2026.ativo ? (
+        <HomeArquivo2026 nomes={Object.fromEntries(todosCandidatos.map((c) => [c.slug, c.nome_urna]))} />
+      ) : (
+        <>
+          <HomeHero2026
+            imagem={heroImage}
+            temResultado={temResultado}
+            presidente={presidente}
+            fotos={fotos}
+            pesquisa={pesquisas2Turno[0] ?? null}
+            numeros={numerosHero1Turno(resultados, getReferencia2022())}
+            metricas={heroMetricas}
+            ufs={opcoesUf}
+            referenceNow={referenceNow}
+            compararHref={presidente && finalistasPresidente ? "#lado-a-lado" : null}
+            compartilhar={finalistasPresidente ? { url: buildAbsoluteUrl("/") } : null}
+            fonte2022={{ pagina: getReferencia2022().fonte.pagina }}
+          />
+          {finalistasPresidente && (
+            <FaixaFixa2Turno
+              finalistas={[
+                { nome: nomeLegivel(finalistasPresidente[0].nome_urna), percentual: formatarPercentual(finalistasPresidente[0].percentual_validos) },
+                { nome: nomeLegivel(finalistasPresidente[1].nome_urna), percentual: formatarPercentual(finalistasPresidente[1].percentual_validos) },
+              ]}
+              referenceNow={referenceNow}
+              href="#lado-a-lado"
+            />
+          )}
+        </>
       )}
 
       {sourceStatus !== "live" && (
