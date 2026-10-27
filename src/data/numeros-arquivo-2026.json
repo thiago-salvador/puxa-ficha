@@ -1,8 +1,8 @@
 {
   "versao": 2,
-  "medido_em": "2026-10-27T17:23:36.536Z",
+  "medido_em": "2026-10-27T17:52:26.939Z",
   "exportado_em": "2026-10-26T17:13:12.221Z",
-  "ref_codigo": "ab2a4369",
+  "ref_codigo": "9c30dc27",
   "dados": {
     "fichas": {
       "valor": 512,
@@ -210,22 +210,22 @@
     },
     {
       "data": "2026-09-16",
-      "titulo": "Entram no ar: Senado",
+      "titulo": "Entram no código: Senado",
       "fonte": "merge na main"
     },
     {
       "data": "2026-09-23",
-      "titulo": "Entram no ar: área de imprensa, colinha e deputados",
+      "titulo": "Entram no código: área de imprensa, colinha e deputados",
       "fonte": "merge na main"
     },
     {
       "data": "2026-09-27",
-      "titulo": "Entram no ar: dados abertos",
+      "titulo": "Entram no código: dados abertos",
       "fonte": "merge na main"
     },
     {
       "data": "2026-09-29",
-      "titulo": "Entram no ar: programas de governo",
+      "titulo": "Entram no código: programas de governo",
       "fonte": "merge na main"
     },
     {
@@ -235,7 +235,7 @@
     },
     {
       "data": "2026-10-06",
-      "titulo": "Entram no ar: resultado do 1º turno por estado",
+      "titulo": "Entram no código: resultado do 1º turno por estado",
       "fonte": "merge na main"
     },
     {
@@ -246,20 +246,20 @@
   ],
   "construcao": {
     "testes": {
-      "valor": 8556,
-      "fonte": "npm test em ab2a4369"
+      "valor": 8561,
+      "fonte": "npm test em 9c30dc27"
     },
     "prs_mesclados": {
       "valor": 626,
       "fonte": "GitHub, pull requests mesclados"
     },
     "commits": {
-      "valor": 1935,
-      "fonte": "git rev-list em ab2a4369"
+      "valor": 1938,
+      "fonte": "git rev-list em 9c30dc27"
     },
     "migracoes": {
       "valor": 543,
-      "fonte": "supabase/migrations em ab2a4369"
+      "fonte": "supabase/migrations em 9c30dc27"
     }
   }
 }
