@@ -165,6 +165,10 @@ export const puxaFichaNextConfig: NextConfig = {
         }))
       }),
     ],
+    // Espelho estático do arquivo: sem otimizador, cada imagem remota vira arquivo em /_img.
+    ...(process.env.NEXT_PUBLIC_ARQUIVO_ESTATICO === "1"
+      ? { loader: "custom" as const, loaderFile: "./src/lib/arquivo-image-loader.ts" }
+      : {}),
   },
   async headers() {
     return [

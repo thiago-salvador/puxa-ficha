@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { buildImprensaFactGroups, IMPRENSA_FACT_CARD_ORDER, type ImprensaFactCardId, type ImprensaFacts as ImprensaFactsData } from "@/lib/imprensa-facts"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 import { imprensaHref, type ImprensaRecorte } from "@/lib/imprensa-nav"
 import styles from "./imprensa-shell.module.css"
 
@@ -51,7 +52,8 @@ export function ImprensaFacts({
                   <p className={styles.factLabel}>{card.label}</p>
                   <p className={styles.factDetail}>{card.detail}</p>
                   <p className={styles.factCaveat}>{card.caveat}</p>
-                  {linkToMesa && (
+                  {/* No espelho estático a Mesa ignora o recorte da query: sem link que prometa o filtro. */}
+                  {linkToMesa && !ARQUIVO_ESTATICO && (
                     <Link className={styles.factLink} href={imprensaHref("/imprensa/mesa", recorte, card.mesaQuery)}>
                       {card.cta}
                     </Link>

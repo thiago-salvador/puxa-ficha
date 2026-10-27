@@ -7,6 +7,7 @@ import { ImprensaFacts } from "@/components/imprensa/ImprensaFacts"
 import { ImprensaSubnav } from "@/components/imprensa/ImprensaSubnav"
 import { TrustFooter } from "@/components/imprensa/TrustFooter"
 import { buildSalaPromise, countSalaRecortes } from "@/components/imprensa/sala/sala-model"
+import { arquivoDownloadHref } from "@/lib/arquivo"
 import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
 import { normalizeImprensaFilters } from "@/lib/imprensa-data"
 import { computeImprensaFacts } from "@/lib/imprensa-facts"
@@ -114,7 +115,7 @@ export default async function ImprensaArquivo1Turno() {
 
         <section id="baixar" className={styles.section} aria-labelledby="arquivo-baixar-title">
           <SectionHead num="03" id="arquivo-baixar-title">Baixar o 1º turno</SectionHead>
-          <p className={styles.lead}>Todas as linhas da Mesa, com o estado de cada dado: <a className={styles.inlineLink} href="/api/imprensa/export?format=csv" download>CSV</a> ou <a className={styles.inlineLink} href="/api/imprensa/export?format=json" download>JSON</a>. O resultado de cada disputa, com os votos e a fonte do TSE, está em <Link className={styles.inlineLink} href="/1o-turno">Resultado do 1º turno</Link>.</p>
+          <p className={styles.lead}>Todas as linhas da Mesa, com o estado de cada dado: <a className={styles.inlineLink} href={arquivoDownloadHref("/api/imprensa/export?format=csv")} download>CSV</a> ou <a className={styles.inlineLink} href={arquivoDownloadHref("/api/imprensa/export?format=json")} download>JSON</a>. O resultado de cada disputa, com os votos e a fonte do TSE, está em <Link className={styles.inlineLink} href="/1o-turno">Resultado do 1º turno</Link>.</p>
         </section>
       </div>
 

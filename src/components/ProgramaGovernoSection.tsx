@@ -36,6 +36,7 @@ import type { ProgramaGovernoPendencia } from "@/lib/programa-governo-pendencia"
 import { compromissoEvidenciaCopy, programaGovernoPendenteCopy } from "@/lib/ui-labels"
 import { findProgramaTextMatches, normalizedSearch, type ProgramaTextMatch } from "@/lib/programa-governo-text-search"
 import { programaSecaoAnchor, resolveProgramaSectionTarget } from "@/lib/programa-governo-navigation"
+import { ARQUIVO_ESTATICO, arquivoProgramaDocumentoHref } from "@/lib/arquivo"
 
 export { findProgramaTextMatches } from "@/lib/programa-governo-text-search"
 export type { ProgramaTextMatch } from "@/lib/programa-governo-text-search"
@@ -608,6 +609,16 @@ export async function loadProgramaGovernoDocumentoCompleto(
   signal: AbortSignal,
   fetcher: ProgramaGovernoFetch = fetch,
 ): Promise<ProgramaGovernoDocumentoCarregado> {
+  // Espelho estático: o documento inteiro já vem num arquivo, sem paginação por cursor.
+  if (ARQUIVO_ESTATICO) {
+    const response = await fetcher(arquivoProgramaDocumentoHref(slug, documento.documentoId), { signal })
+    if (!response.ok) throw new Error(`programa_governo_documento_fetch_failed:${response.status}`)
+    const carregado = (await response.json()) as ProgramaGovernoDocumentoCarregado
+    if (carregado.documentoId !== documento.documentoId || carregado.secoes.length !== documento.secoes) {
+      throw new Error("programa_governo_documento_incomplete")
+    }
+    return carregado
+  }
   const secoes: ProgramaGovernoSecao[] = []
   const sectionIds = new Set<string>()
   const seenCursors = new Set<string>()

@@ -1,5 +1,6 @@
 import { formatDisplayName } from "@/lib/display-name"
-import { imprensaHref, normalizeRecorteUf } from "@/lib/imprensa-nav"
+import { arquivoPaginaHref } from "@/lib/arquivo"
+import { imprensaHrefComQuery, normalizeRecorteUf } from "@/lib/imprensa-nav"
 import { IMPRENSA_UFS, type ImprensaUf } from "@/lib/imprensa-uf-pack"
 import type { VerifiedCandidateUpdate } from "@/lib/verified-candidate-updates"
 
@@ -162,13 +163,13 @@ export function latestDetection(rows: readonly UpdateRow[]): string | null {
 
 /** Link de O que mudou com UF e cargo pelo recorte comum da seção, mais tipo e página. */
 export function updatesHref(filters: Filters, page = 1): string {
-  const base = imprensaHref("/imprensa/atualizacoes", { uf: filters.uf, cargo: filters.cargo })
+  const base = imprensaHrefComQuery("/imprensa/atualizacoes", { uf: filters.uf, cargo: filters.cargo })
   const [path, search = ""] = base.split("?")
   const query = new URLSearchParams(search)
   if (filters.tipo) query.set("tipo", filters.tipo)
   if (page > 1) query.set("page", String(page))
   const text = query.toString()
-  return text ? `${path}?${text}` : path
+  return text ? arquivoPaginaHref(`${path}?${text}`) : path
 }
 
 const DAY_MONTH = new Intl.DateTimeFormat("pt-BR", { timeZone: "America/Sao_Paulo", day: "2-digit", month: "2-digit" })

@@ -3,6 +3,7 @@
 import { ImageIcon } from "lucide-react"
 import { useCallback, useEffect, useState } from "react"
 import { SocialCardModal } from "@/components/SocialCardModal"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 import type { FaseEleitoral2026 } from "@/lib/types"
 import type { BoxCardModel, ComparatorBoxCardContext } from "@/lib/box-card-model"
 
@@ -68,7 +69,8 @@ export function ShareButtons({
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(`${title} ${shareUrl}`)}`
   const btnClass =
     "inline-flex min-h-11 items-center justify-center rounded-full border border-border bg-background px-4 py-2 text-[length:var(--text-caption)] font-semibold text-foreground transition-colors hover:bg-muted"
-  const canGenerateCard = Boolean(slug || boxCard)
+  // O card é gerado por rota de servidor, que o espelho estático não tem.
+  const canGenerateCard = !ARQUIVO_ESTATICO && Boolean(slug || boxCard)
 
   if (variant === "compact") {
     return (
@@ -110,7 +112,7 @@ export function ShareButtons({
         {label}
       </p>
       <div className="mt-3 flex flex-wrap gap-2">
-        {slug && !boxCard && (
+        {canGenerateCard && slug && !boxCard && (
           <button
             type="button"
             onClick={() => setCardModalOpen(true)}
@@ -155,7 +157,7 @@ export function ShareButtons({
         </button>
       </div>
 
-      {slug && !boxCard && (
+      {canGenerateCard && slug && !boxCard && (
         <SocialCardModal
           slug={slug}
           candidateName={candidateName ?? slug}

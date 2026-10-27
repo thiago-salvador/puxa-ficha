@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, Search } from "lucide-react"
 import { CandidatePhoto } from "@/components/CandidatePhoto"
+import { ARQUIVO_ESTATICO, arquivoPaginaHref } from "@/lib/arquivo"
 import {
   cargoLabel,
   DEPUTADOS_PAGE_SIZE,
@@ -13,7 +14,7 @@ function queryHref(uf: string, cargo: DeputadoCargo, search: string, page: numbe
   const params = new URLSearchParams({ cargo })
   if (search) params.set("q", search)
   if (page > 1) params.set("pagina", String(page))
-  return `/deputados/${uf.toLowerCase()}?${params.toString()}`
+  return arquivoPaginaHref(`/deputados/${uf.toLowerCase()}?${params.toString()}`)
 }
 
 export function DeputadosList({
@@ -47,15 +48,20 @@ export function DeputadosList({
         </div>
         <p className="text-sm font-semibold text-muted-foreground">{total ? `${total.toLocaleString("pt-BR")} candidaturas` : "Nenhuma candidatura carregada"}</p>
       </div>
-      <form role="search" className="mt-7 flex flex-col gap-3 sm:flex-row" action={`/deputados/${uf.toLowerCase()}`}>
-        <input type="hidden" name="cargo" value={cargo} />
-        <label className="sr-only" htmlFor="deputados-busca">Buscar por nome, número ou partido</label>
-        <div className="flex min-h-12 flex-1 items-center gap-2 rounded-lg border border-border bg-card px-3 focus-within:ring-2 focus-within:ring-foreground/30">
-          <Search aria-hidden="true" className="size-4 text-muted-foreground" />
-          <input id="deputados-busca" name="q" defaultValue={search} placeholder="Nome, número ou partido" className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground" />
-        </div>
-        <button type="submit" className="min-h-12 rounded-lg bg-foreground px-5 text-sm font-bold text-background transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2">Buscar</button>
-      </form>
+      {ARQUIVO_ESTATICO ? (
+        // Sem servidor no espelho: a busca não tem resposta, a lista segue página a página.
+        <p className="mt-7 text-sm font-medium text-muted-foreground">No arquivo, a busca por nome fica fora do ar; a lista completa segue nas páginas abaixo.</p>
+      ) : (
+        <form role="search" className="mt-7 flex flex-col gap-3 sm:flex-row" action={`/deputados/${uf.toLowerCase()}`}>
+          <input type="hidden" name="cargo" value={cargo} />
+          <label className="sr-only" htmlFor="deputados-busca">Buscar por nome, número ou partido</label>
+          <div className="flex min-h-12 flex-1 items-center gap-2 rounded-lg border border-border bg-card px-3 focus-within:ring-2 focus-within:ring-foreground/30">
+            <Search aria-hidden="true" className="size-4 text-muted-foreground" />
+            <input id="deputados-busca" name="q" defaultValue={search} placeholder="Nome, número ou partido" className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground" />
+          </div>
+          <button type="submit" className="min-h-12 rounded-lg bg-foreground px-5 text-sm font-bold text-background transition-opacity hover:opacity-85 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2">Buscar</button>
+        </form>
+      )}
       <div className="mt-7 overflow-hidden rounded-xl border border-border bg-card">
         {rows.length ? <ul className="divide-y divide-border" aria-label={`Candidaturas a ${cargoLabel(cargo)}`}>
           {rows.map((row) => <li key={row.sq_candidato} className="flex flex-wrap items-center gap-4 px-4 py-4 sm:px-5">

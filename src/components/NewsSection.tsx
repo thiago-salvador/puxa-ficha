@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
+import { hashPublicId } from "@/lib/public-id-hash"
 import type { NoticiaCandidato } from "@/lib/types"
 import { formatDate } from "@/lib/utils"
 import { normalizeNewsUrl } from "@/lib/news/google-news"
@@ -80,12 +82,31 @@ export function NewsSection({ noticias, nextCursor = null, candidateSlug, select
   const [pageError, setPageError] = useState(false)
   const [announcement, setAnnouncement] = useState("")
   const loaded = [...noticias, ...pages.itens]
-  const localSelected = loaded.find((n) => n.id === selectedNewsId)
+  // O ID chega da URL sem normalização; UUID e ID compacto comparam em minúsculas.
+  const idSelecionado = selectedNewsId?.trim().toLowerCase() || null
+  // No espelho, o link do alerta traz o UUID e a prévia usa o ID compacto, que termina no hash desse UUID.
+  const sufixoSelecionado = ARQUIVO_ESTATICO && idSelecionado ? `-${hashPublicId(idSelecionado)}` : null
+  const ehSelecionada = (n: NoticiaCandidato) => idSelecionado !== null && (n.id.toLowerCase() === idSelecionado || (sufixoSelecionado !== null && n.id.startsWith("noticia-") && n.id.endsWith(sufixoSelecionado)))
+  const localSelected = loaded.find(ehSelecionada)
   const needsFetch = Boolean(selectedNewsId && !localSelected)
 
   useEffect(() => {
     if (!needsFetch || !selectedNewsId) return
     const controller = new AbortController()
+    if (ARQUIVO_ESTATICO) {
+      // Sem rota individual no espelho: a coleção arquivada traz as notícias seguintes com o ID real.
+      fetch(`/api/candidato-profile/${encodeURIComponent(candidateSlug)}/noticias`, { signal: controller.signal })
+        .then(async (response) => {
+          if (response.status === 404) return { id: selectedNewsId, status: "missing" as const }
+          if (!response.ok) throw new Error("Notícia indisponível")
+          const body = await response.json() as { data: NoticiaCandidato[] }
+          const noticia = body.data.find((n) => n.id.toLowerCase() === idSelecionado)
+          return noticia ? { id: selectedNewsId, status: "ready" as const, noticia } : { id: selectedNewsId, status: "missing" as const }
+        })
+        .then((result) => { if (!controller.signal.aborted) setRemote(result) })
+        .catch(() => { if (!controller.signal.aborted) setRemote({ id: selectedNewsId, status: "error" }) })
+      return () => controller.abort()
+    }
     fetch(`/api/candidato-profile/${encodeURIComponent(candidateSlug)}/noticias/${encodeURIComponent(selectedNewsId)}`, { signal: controller.signal })
       .then(async (response) => {
         if (response.status === 404 || response.status === 400) return { id: selectedNewsId, status: "missing" as const }
@@ -96,7 +117,7 @@ export function NewsSection({ noticias, nextCursor = null, candidateSlug, select
       .then((result) => { if (!controller.signal.aborted) setRemote(result) })
       .catch(() => { if (!controller.signal.aborted) setRemote({ id: selectedNewsId, status: "error" }) })
     return () => controller.abort()
-  }, [candidateSlug, needsFetch, selectedNewsId, retry])
+  }, [candidateSlug, idSelecionado, needsFetch, selectedNewsId, retry])
 
   const remoteSelected = remote?.id === selectedNewsId ? remote : null
   const selected = localSelected ?? remoteSelected?.noticia
@@ -139,7 +160,7 @@ export function NewsSection({ noticias, nextCursor = null, candidateSlug, select
     .sort((a, b) => new Date(b.data_publicacao).getTime() - new Date(a.data_publicacao).getTime())
   const term = query.trim().toLocaleLowerCase("pt-BR")
   const filtered = sorted.filter((n) => !term || `${n.titulo} ${n.fonte ?? ""} ${n.snippet ?? ""}`.toLocaleLowerCase("pt-BR").includes(term))
-  const limit = expanded || term ? filtered.length : Math.max(VISIBLE_LIMIT, filtered.findIndex((n) => n.id === selectedNewsId) + 1)
+  const limit = expanded || term ? filtered.length : Math.max(VISIBLE_LIMIT, filtered.findIndex(ehSelecionada) + 1)
   const visible = filtered.slice(0, limit)
   const statusLabel = term
     ? `${filtered.length} ${plural(filtered.length, "notícia encontrada", "notícias encontradas")}`
@@ -168,7 +189,7 @@ export function NewsSection({ noticias, nextCursor = null, candidateSlug, select
         </label>
       </div>
       <div className="space-y-3">
-        {visible.map((noticia) => <NewsItem key={`${noticia.id}-${selectedNewsId ?? ""}`} noticia={noticia} selected={noticia.id === selectedNewsId} />)}
+        {visible.map((noticia) => <NewsItem key={`${noticia.id}-${selectedNewsId ?? ""}`} noticia={noticia} selected={ehSelecionada(noticia)} />)}
         {filtered.length === 0 && <p className="rounded-lg border border-border p-6 text-sm text-muted-foreground">{term ? "Nenhuma notícia encontrada para esta busca." : "Ainda não há notícias exibidas nesta ficha."}</p>}
       </div>
       {filtered.length > visible.length && <button onClick={() => setExpanded(true)} className="flex min-h-11 w-full items-center justify-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold hover:bg-secondary focus-visible:outline-2 focus-visible:outline-ring">Ver mais ({filtered.length - visible.length})<ChevronDown aria-hidden="true" className="size-4" /></button>}
