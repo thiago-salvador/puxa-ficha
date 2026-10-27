@@ -8,6 +8,7 @@ import {
 import { establishAutomationBypass } from "./vercel-automation-bypass"
 import { COMPARADOR_ADICIONAR_PATTERN } from "@/lib/comparador-labels"
 import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
+import { disputaFinal, getResultado2Turno } from "@/lib/arquivo-home"
 
 export { automationBypassHeaders } from "./vercel-automation-bypass"
 
@@ -262,8 +263,13 @@ async function checkHomeArquivo(context: BrowserContext): Promise<string[]> {
     await topo.waitFor({ state: "visible" })
     const paths = await waitForCandidatePaths(topo, 1)
     failures.push(...(await textoEAvataresProibidos(page)))
-    if (paths.length !== 1) failures.push(`topo de /2o-turno tem ${paths.length} fichas, esperado o eleito`)
-    if ((await page.locator("[data-pf-arquivo-governador]").count()) === 0) failures.push("/2o-turno sem governadores eleitos")
+    // O eleito e o número de governadores vêm do resultado oficial gravado no repositório.
+    const resultado = getResultado2Turno()
+    const eleito = disputaFinal(resultado, "Presidente", "BR")?.eleito.slug
+    const governadores = resultado.disputas.filter((d) => d.cargo === "Governador").length
+    if (paths.length !== 1 || paths[0] !== `/candidato/${eleito}`) failures.push(`topo de /2o-turno leva a ${paths.join(", ") || "nenhuma ficha"}, esperado /candidato/${eleito}`)
+    const naPagina = await page.locator("[data-pf-arquivo-governador]").count()
+    if (naPagina !== governadores) failures.push(`/2o-turno tem ${naPagina} governadores eleitos, esperado ${governadores}`)
     if (failures.length > 0) throw new PartialCheckFailure(failures.join("; "), paths)
     return paths
   })
@@ -376,6 +382,9 @@ async function checkQuizArquivado(context: BrowserContext): Promise<string> {
     page.on("pageerror", (error) => consoleErrors.push(error.message))
     await gotoPublicPage(page, "/quiz")
     await page.locator("[data-pf-arquivo-ferramenta]").waitFor({ state: "visible" })
+    // O aviso já vem no HTML: espera os scripts carregarem e a rede assentar antes de fechar a coleta de erros.
+    await page.waitForLoadState("load")
+    await page.waitForLoadState("networkidle", { timeout: ACTION_TIMEOUT_MS })
     invariant(consoleErrors.length === 0, `erros de console: ${consoleErrors.join(" | ")}`)
     return "aviso_arquivo=presente"
   } finally {
