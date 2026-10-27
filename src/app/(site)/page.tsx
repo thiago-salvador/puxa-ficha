@@ -11,7 +11,13 @@ import { buildTwitterMetadata } from "@/lib/metadata"
 // Com a flag desligada, a home volta a ser a página do 2º turno.
 const { title, description } = metadadosDaHome(ARQUIVO_ELEICOES_2026.ativo)
 
-// Card do duelo gerado do snapshot do TSE (src/app/(site)/og/segundo-turno); sem finalistas, a rota cai no card editorial.
+// Com o arquivo, a home usa o card geral do site (o mesmo do layout): o card do duelo é do 2º turno e foi para
+// /2o-turno. Sem o arquivo, o card do duelo gerado do snapshot do TSE (src/app/(site)/og/segundo-turno);
+// sem finalistas, a rota cai no card editorial.
+const imagem = ARQUIVO_ELEICOES_2026.ativo
+  ? { url: "/opengraph-image", alt: "Puxa Ficha" }
+  : { url: IMAGEM_DUELO_PATH, alt: "Os dois finalistas à Presidência no 2º turno, com o resultado do 1º turno" }
+
 export const metadata: Metadata = {
   title,
   description,
@@ -20,9 +26,9 @@ export const metadata: Metadata = {
     title,
     description,
     url: "https://puxaficha.com.br",
-    images: [{ url: IMAGEM_DUELO_PATH, width: 1200, height: 630, alt: "Os dois finalistas à Presidência no 2º turno, com o resultado do 1º turno" }],
+    images: [{ ...imagem, width: 1200, height: 630 }],
   },
-  twitter: buildTwitterMetadata({ title, description, image: IMAGEM_DUELO_PATH }),
+  twitter: buildTwitterMetadata({ title, description, image: imagem.url }),
 }
 
 export default function Home() {

@@ -115,7 +115,7 @@ export function ArquivoGraficoSemanal({ id, titulo, semanas, valores, unidade, m
       </div>
       <details className="mt-2 text-[length:var(--text-caption)] text-muted-foreground">
         <summary className="cursor-pointer font-bold">Ver em tabela</summary>
-        <table className="mt-2 w-full max-w-sm text-left tabular-nums">
+        <table className="mt-2 w-full max-w-sm text-left tabular-nums" aria-labelledby={`${id}-titulo`}>
           <thead>
             <tr><th className="py-0.5 font-bold">Semana de</th><th className="py-0.5 text-right font-bold">{unidade}</th></tr>
           </thead>

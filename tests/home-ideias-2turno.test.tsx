@@ -354,10 +354,14 @@ describe("compartilhar o duelo", () => {
     assert.equal(modoCompartilhar(null), "nenhum")
   })
 
-  it("home aponta Open Graph e Twitter para o card do duelo, e a rota existe", () => {
+  it("o card do duelo vai para /2o-turno; a home do arquivo usa o card geral; a rota existe", () => {
     const pagina = readFileSync("src/app/(site)/page.tsx", "utf8")
-    assert.match(pagina, /images: \[\{ url: IMAGEM_DUELO_PATH/)
-    assert.match(pagina, /buildTwitterMetadata\(\{ title, description, image: IMAGEM_DUELO_PATH \}\)/)
+    assert.match(pagina, /const imagem = ARQUIVO_ELEICOES_2026\.ativo\s*\?\s*\{ url: "\/opengraph-image"[^}]*\}\s*:\s*\{ url: IMAGEM_DUELO_PATH/)
+    assert.match(pagina, /images: \[\{ \.\.\.imagem, width: 1200, height: 630 \}\]/)
+    assert.match(pagina, /buildTwitterMetadata\(\{ title, description, image: imagem\.url \}\)/)
+    const segundo = readFileSync("src/app/(site)/2o-turno/page.tsx", "utf8")
+    assert.match(segundo, /images: \[\{ url: IMAGEM_DUELO_PATH/)
+    assert.match(segundo, /buildTwitterMetadata\(\{ title, description, image: IMAGEM_DUELO_PATH \}\)/)
     assert.ok(existsSync("src/app/(site)/og/segundo-turno/route.tsx"))
     const rota = readFileSync("src/app/(site)/og/segundo-turno/route.tsx", "utf8")
     assert.match(rota, /getResultados1Turno/)

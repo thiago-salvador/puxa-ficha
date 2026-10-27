@@ -165,7 +165,8 @@ export async function PaginaSegundoTurno() {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "Puxa Ficha",
-      url: "https://puxaficha.com.br",
+      // Mesma rota do canonical: /2o-turno com o arquivo, a home sem ele.
+      url: buildAbsoluteUrl(ARQUIVO_ELEICOES_2026.ativo ? "/2o-turno" : "/"),
       description:
         "Consulta pública sobre candidatos mapeados para 2026, com ficha pública, comparador e contexto editorial baseado em fontes disponíveis.",
     },

@@ -113,7 +113,7 @@ describe("HomeArquivo2026, a home do projeto", () => {
 
   it("abre com o projeto, sem o resultado do 2º turno, e leva até ele", () => {
     assert.match(html, /data-pf-home-hero="arquivo"/)
-    assert.match(html, new RegExp(`${diasEntre(n.operacao.registros_coleta.inicio, n.operacao.registros_coleta.fim)} dias puxando a ficha de 512 candidatos`))
+    assert.match(html, new RegExp(`${diasEntre(n.operacao.registros_coleta.inicio, n.operacao.registros_coleta.fim)} dias puxando a ficha de ${n.dados.fichas.valor} candidatos`))
     assert.match(html, /Concebido, construído e mantido por Thiago Salvador, de março a outubro de 2026/)
     assert.doesNotMatch(html, /eleito presidente/)
     assert.match(html, /href="\/2o-turno"/)

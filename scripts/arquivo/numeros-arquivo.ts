@@ -17,6 +17,7 @@ import { readFileSync, renameSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
 import { gunzipSync } from "node:zlib"
 import { ARQUIVO_ELEICOES_2026 } from "../../src/lib/arquivo"
+import { diaEmBrasilia, porSemana } from "./semanas"
 
 type Linha = Record<string, unknown>
 
@@ -33,27 +34,7 @@ const publicada = (r: Linha) => !r.despublicado_em
 // O arquivo congela os dados no fim do dia do corte (25/10, Brasília): registro posterior não entra na contagem.
 const FIM_DO_CORTE = Date.parse(ARQUIVO_ELEICOES_2026.fimIso)
 const antesDoCorte = (campo: string) => (r: Linha) => typeof r[campo] === "string" && Date.parse(r[campo] as string) < FIM_DO_CORTE
-/** Data no fuso de Brasília (UTC-3, sem horário de verão em 2026). */
-const diaEmBrasilia = (iso: string) => new Date(Date.parse(iso) - 3 * 3600_000).toISOString().slice(0, 10)
 const distintos = (linhas: Linha[], campo: string) => new Set(linhas.map((r) => r[campo]).filter((v) => v !== null && v !== undefined && v !== "")).size
-
-/** Segunda-feira (Brasília) da semana da data, em AAAA-MM-DD. */
-function semanaDe(iso: string): string {
-  const dia = new Date(`${diaEmBrasilia(iso)}T00:00:00Z`)
-  dia.setUTCDate(dia.getUTCDate() - ((dia.getUTCDay() + 6) % 7))
-  return dia.toISOString().slice(0, 10)
-}
-
-/** Contagem por semana, de `inicio` até `fim` (inclusive), com zero nas semanas sem registro. */
-function porSemana(datas: string[], inicio: string, fim: string): { semanas: string[]; valores: number[] } {
-  const contagem = new Map<string, number>()
-  for (const d of datas) contagem.set(semanaDe(d), (contagem.get(semanaDe(d)) ?? 0) + 1)
-  const semanas: string[] = []
-  for (let s = new Date(`${semanaDe(inicio)}T00:00:00Z`); s.toISOString().slice(0, 10) <= semanaDe(fim); s.setUTCDate(s.getUTCDate() + 7)) {
-    semanas.push(s.toISOString().slice(0, 10))
-  }
-  return { semanas, valores: semanas.map((s) => contagem.get(s) ?? 0) }
-}
 
 // Seções do site e o nome com que aparecem no menu e no rodapé. A data de cada uma é a do merge na main
 // (git log --first-parent), ou a do código publicado quando ela já veio no primeiro commit.
@@ -109,7 +90,11 @@ function main() {
   const inicioColeta = datasColeta[0]
   const mudancas = tabela(pasta, "candidate_changes").filter(antesDoCorte("created_at"))
   const semanal = porSemana(datasColeta, inicioColeta, fimCorte)
-  const datasEntrada = (linhas: Linha[], campo: string) => linhas.map((r) => String(r[campo])).filter((d) => d >= inicioColeta)
+  // Só datas válidas entre a primeira coleta e o corte: campo nulo ou fora do período não entra na série.
+  const datasEntrada = (linhas: Linha[], campo: string) =>
+    linhas
+      .map((r) => r[campo])
+      .filter((d): d is string => typeof d === "string" && Number.isFinite(Date.parse(d)) && d >= inicioColeta && Date.parse(d) < FIM_DO_CORTE)
 
   // Linha do tempo: só datas com registro (banco, Git, calendário do TSE no código).
   const primeiroCommit = comando("git", ["rev-list", "--max-parents=0", ref]).split("\n").at(-1)!
@@ -124,7 +109,7 @@ function main() {
     { data: diaEmBrasilia(inicioColeta), titulo: "Primeira coleta registrada", fonte: "coleta_log" },
     ...[...secoesPorData.entries()].map(([data, rotulos]) => ({
       data,
-      titulo: data === dataPrimeiroCommit ? `Primeiro commit do repositório público, já com ${juntar(rotulos)}` : `Entram no ar: ${juntar(rotulos)}`,
+      titulo: data === dataPrimeiroCommit ? `Primeiro commit do repositório público, já com ${juntar(rotulos)}` : `Entram no código: ${juntar(rotulos)}`,
       fonte: data === dataPrimeiroCommit ? "primeiro commit público" : "merge na main",
     })),
     { data: "2026-10-04", titulo: "1º turno", fonte: "calendário eleitoral do TSE" },
