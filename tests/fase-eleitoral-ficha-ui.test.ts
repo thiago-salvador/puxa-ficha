@@ -1,6 +1,7 @@
 import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import test from "node:test"
+import { fonteResultadoTseRotulo } from "@/lib/fase-eleitoral-publica"
 
 const view = readFileSync("src/app/(site)/candidato/[slug]/CandidatoFichaView.tsx", "utf8")
 const selo = readFileSync("src/components/FaseEleitoralSelo.tsx", "utf8")
@@ -18,6 +19,12 @@ test("a ficha coloca o selo de resultado no hero e preserva a nota neutra", () =
 test("o selo usa apenas o rótulo público e o link oficial do TSE", () => {
   assert.match(selo, /rotuloFaseEleitoral\(candidato\)/)
   assert.match(selo, /href=\{FONTE_RESULTADO_TSE_URL\}/)
-  assert.match(selo, /\{FONTE_RESULTADO_TSE_ROTULO\}/)
+  assert.match(selo, /fonteResultadoTseRotulo\(candidato\.fase_eleitoral_2026\?\.fase_turno\)/)
   assert.doesNotMatch(selo, /atualizacao_encerrada_em|\d+%/)
+})
+
+test("a fonte do selo cita o turno que decidiu a fase", () => {
+  assert.equal(fonteResultadoTseRotulo(2), "Fonte: TSE, resultado oficial do 2º turno")
+  assert.equal(fonteResultadoTseRotulo(1), "Fonte: TSE, resultado oficial do 1º turno")
+  assert.equal(fonteResultadoTseRotulo(undefined), "Fonte: TSE, resultado oficial do 1º turno")
 })

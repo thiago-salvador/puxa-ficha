@@ -13,7 +13,7 @@ import { exibicaoProcessosJustica } from "@/lib/processos-justica-total"
 import { contarProcessosJusticaDoCandidato } from "@/lib/processos-justica-candidato"
 import { formatDate } from "@/lib/utils"
 import {
-  FONTE_RESULTADO_TSE_ROTULO,
+  fonteResultadoTseRotulo,
   FONTE_RESULTADO_TSE_URL,
   rotuloFaseEleitoral,
 } from "@/lib/fase-eleitoral-publica"
@@ -338,6 +338,7 @@ interface CardData {
   atualizadoEm: string | null
   faseEleitoralLabel: string | null
   faseEleitoralFonteUrl: string | null
+  faseEleitoralFonteRotulo: string
   slug: string
 }
 
@@ -413,6 +414,7 @@ export function extractCardData(
     atualizadoEm: atualizadoEm && atualizadoEm !== "Data indisponível" ? atualizadoEm : null,
     faseEleitoralLabel,
     faseEleitoralFonteUrl: faseEleitoralLabel ? FONTE_RESULTADO_TSE_URL : null,
+    faseEleitoralFonteRotulo: fonteResultadoTseRotulo(ficha.fase_eleitoral_2026?.fase_turno),
     slug: ficha.slug,
   }
 }
@@ -674,7 +676,7 @@ function CardHeader({ data, scale }: { data: CardData; scale: CardScale }) {
                 textDecoration: "underline",
               }}
             >
-              {FONTE_RESULTADO_TSE_ROTULO}
+              {data.faseEleitoralFonteRotulo}
             </a>
           </div>
         ) : null}

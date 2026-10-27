@@ -1,8 +1,8 @@
 import Link from "next/link"
 import type { Candidato } from "@/lib/types"
 import {
-  FONTE_RESULTADO_TSE_ROTULO,
   FONTE_RESULTADO_TSE_URL,
+  fonteResultadoTseRotulo,
   rotuloFaseEleitoral,
 } from "@/lib/fase-eleitoral-publica"
 
@@ -21,6 +21,7 @@ interface FaseEleitoralSeloProps {
 export function FaseEleitoralSelo({ candidato, compact = false, className = "" }: FaseEleitoralSeloProps) {
   const label = rotuloFaseEleitoral(candidato)
   if (!label) return null
+  const fonte = fonteResultadoTseRotulo(candidato.fase_eleitoral_2026?.fase_turno)
 
   return (
     <div
@@ -37,9 +38,9 @@ export function FaseEleitoralSelo({ candidato, compact = false, className = "" }
         target="_blank"
         rel="noopener noreferrer"
         className="text-[length:var(--text-eyebrow)] font-semibold text-muted-foreground underline underline-offset-2 hover:text-foreground"
-        aria-label={`${FONTE_RESULTADO_TSE_ROTULO} (abre em nova aba)`}
+        aria-label={`${fonte} (abre em nova aba)`}
       >
-        {FONTE_RESULTADO_TSE_ROTULO}
+        {fonte}
       </Link>
     </div>
   )
