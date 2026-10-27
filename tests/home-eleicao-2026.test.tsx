@@ -366,7 +366,8 @@ describe("rotas da eleição", () => {
 
     const home = readFileSync("src/app/(site)/page.tsx", "utf8")
     assert.match(home, /canonical: "\/"/)
-    assert.match(home, /title = "Puxa Ficha \| 2º turno das eleições 2026"/)
+    // O título sai de metadadosDaHome com a flag do arquivo; os dois valores estão em home-arquivo-2026.test.tsx.
+    assert.match(home, /const \{ title, description \} = metadadosDaHome\(ARQUIVO_ELEICOES_2026\.ativo\)/)
     assert.doesNotMatch(home, /NavTurnos/)
     assert.match(home, /href="\/1o-turno"[\s\S]*?Arquivo do 1º turno/)
     assert.doesNotMatch(home, /Resultado completo do 1º turno/)

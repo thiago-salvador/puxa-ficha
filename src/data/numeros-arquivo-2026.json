@@ -1,0 +1,83 @@
+{
+  "versao": 1,
+  "medido_em": "2026-10-27T15:10:10.977Z",
+  "exportado_em": "2026-10-26T17:13:12.221Z",
+  "ref_codigo": "16404dd2",
+  "dados": {
+    "fichas": {
+      "valor": 512,
+      "presidente": 13,
+      "governador": 191,
+      "senador": 308,
+      "ufs": 27,
+      "fonte": "export do banco de 2026-10-26, tabela candidatos_publico"
+    },
+    "candidaturas_tse": {
+      "valor": 20065,
+      "fonte": "export do banco de 2026-10-26, tabela candidatos_roster_2026 (cadastro do TSE)"
+    },
+    "noticias": {
+      "valor": 63649,
+      "fontes": 2598,
+      "fonte": "export do banco de 2026-10-26, tabela noticias_candidato, publicadas até o corte"
+    },
+    "projetos_lei": {
+      "valor": 161092,
+      "fonte": "export do banco de 2026-10-26, tabela projetos_lei, só publicados"
+    },
+    "atos_governo": {
+      "valor": 19244,
+      "fonte": "export do banco de 2026-10-26, tabela legislacao_mandato_executivo"
+    },
+    "processos": {
+      "valor": 319,
+      "tribunais": 76,
+      "fonte": "export do banco de 2026-10-26, tabela processos"
+    },
+    "prestacoes_contas": {
+      "valor": 2222,
+      "ano_inicial": 2002,
+      "ano_final": 2026,
+      "fonte": "export do banco de 2026-10-26, tabela financiamento, só publicadas"
+    },
+    "bens_declarados": {
+      "valor": 18957,
+      "declaracoes": 2055,
+      "fonte": "export do banco de 2026-10-26, itens de patrimonio.bens nas declarações publicadas"
+    }
+  },
+  "operacao": {
+    "registros_coleta": {
+      "valor": 83864,
+      "inicio": "2026-03-29",
+      "fim": "2026-10-25",
+      "fonte": "export do banco de 2026-10-26, tabela coleta_log até o corte de 25/10/2026"
+    },
+    "rotinas_coleta": {
+      "valor": 199,
+      "fonte": "export do banco de 2026-10-26, valores distintos de coleta_log.fonte"
+    },
+    "mudancas_rastreadas": {
+      "valor": 66360,
+      "fonte": "export do banco de 2026-10-26, tabela candidate_changes até o corte de 25/10/2026"
+    }
+  },
+  "construcao": {
+    "testes": {
+      "valor": 8550,
+      "fonte": "npm test em 16404dd2"
+    },
+    "prs_mesclados": {
+      "valor": 625,
+      "fonte": "GitHub, pull requests mesclados"
+    },
+    "commits": {
+      "valor": 1932,
+      "fonte": "git rev-list em 16404dd2"
+    },
+    "migracoes": {
+      "valor": 543,
+      "fonte": "supabase/migrations em 16404dd2"
+    }
+  }
+}

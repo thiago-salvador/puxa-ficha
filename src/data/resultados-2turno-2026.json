@@ -1,0 +1,289 @@
+{
+  "versao": 1,
+  "turno": 2,
+  "status": "final",
+  "data_eleicao": "2026-10-25",
+  "gerado_em": "2026-10-27T01:32:32.731Z",
+  "disputas": [
+    {
+      "cargo": "Presidente",
+      "uf": "BR",
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6258/dados/br/br-c0001-e006258-u.json",
+        "sha256": "67fae708b0c7977fc9847d36100c63313621bff971178c48f2da99969707c263",
+        "gerado_tse": "25/10/2026 23:27:02"
+      },
+      "totais": {
+        "votos_validos": 124082273,
+        "comparecimento": 128236074,
+        "eleitorado": 158745502
+      },
+      "candidatos": [
+        {
+          "sq": "280002542548",
+          "slug": "lula",
+          "numero": "13",
+          "nome": "LUIZ INÁCIO LULA DA SILVA",
+          "nome_urna": "LULA",
+          "partido": "PT",
+          "votos": 64256232,
+          "percentual_validos": 51.785182884,
+          "situacao_tse": "Eleito",
+          "eleito": true
+        },
+        {
+          "sq": "280002551544",
+          "slug": "flavio-bolsonaro",
+          "numero": "22",
+          "nome": "FLAVIO NANTES BOLSONARO",
+          "nome_urna": "FLAVIO BOLSONARO",
+          "partido": "PL",
+          "votos": 59826041,
+          "percentual_validos": 48.214817116,
+          "situacao_tse": "Não eleito",
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "cargo": "Governador",
+      "uf": "AC",
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/ac/ac-c0003-e006260-u.json",
+        "sha256": "7bf1f65f9c1f77ff9e70fbbbf8ce15c4f3bf843f9ed97783340f95d0fbf5fa88",
+        "gerado_tse": "25/10/2026 21:26:35"
+      },
+      "totais": {
+        "votos_validos": 411743,
+        "comparecimento": 453334,
+        "eleitorado": 613336
+      },
+      "candidatos": [
+        {
+          "sq": "10002544107",
+          "slug": "mailza-assis",
+          "numero": "11",
+          "nome": "MAILZA ASSIS CAMELI",
+          "nome_urna": "MAILZA ASSIS",
+          "partido": "PP",
+          "votos": 272635,
+          "percentual_validos": 66.214847611,
+          "situacao_tse": "Eleito",
+          "eleito": true
+        },
+        {
+          "sq": "10002532492",
+          "slug": "alan-rick",
+          "numero": "10",
+          "nome": "ALAN RICK MIRANDA",
+          "nome_urna": "ALAN RICK",
+          "partido": "REPUBLICANOS",
+          "votos": 139108,
+          "percentual_validos": 33.785152389,
+          "situacao_tse": "Não eleito",
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "cargo": "Governador",
+      "uf": "AM",
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/am/am-c0003-e006260-u.json",
+        "sha256": "ad814f7694d9cf6d5c4847cbdfdf1f23a281991cd7207f068dc9ddebf3db9acb",
+        "gerado_tse": "25/10/2026 22:10:45"
+      },
+      "totais": {
+        "votos_validos": 2074303,
+        "comparecimento": 2189860,
+        "eleitorado": 2796187
+      },
+      "candidatos": [
+        {
+          "sq": "40002532272",
+          "slug": "omar-aziz",
+          "numero": "55",
+          "nome": "OMAR JOSE ABDELAZIZ",
+          "nome_urna": "OMAR AZIZ",
+          "partido": "PSD",
+          "votos": 1273975,
+          "percentual_validos": 61.41701574,
+          "situacao_tse": "Eleito",
+          "eleito": true
+        },
+        {
+          "sq": "40002541626",
+          "slug": "maria-do-carmo",
+          "numero": "22",
+          "nome": "MARIA DO CARMO SEFFAIR LINS DE ALBUQUERQUE",
+          "nome_urna": "PROFESSORA MARIA DO CARMO",
+          "partido": "PL",
+          "votos": 800328,
+          "percentual_validos": 38.58298426,
+          "situacao_tse": "Não eleito",
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "cargo": "Governador",
+      "uf": "DF",
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/df/df-c0003-e006260-u.json",
+        "sha256": "362a011c437b2120b66f96314703a2c803eaac81a0ed075790bea1cc4989b901",
+        "gerado_tse": "25/10/2026 21:28:25"
+      },
+      "totais": {
+        "votos_validos": 1726272,
+        "comparecimento": 1854323,
+        "eleitorado": 2244176
+      },
+      "candidatos": [
+        {
+          "sq": "70002553055",
+          "slug": "celina-leao",
+          "numero": "11",
+          "nome": "CELINA LEAO HIZIM FERREIRA",
+          "nome_urna": "CELINA LEÃO",
+          "partido": "PP",
+          "votos": 987142,
+          "percentual_validos": 57.183456605,
+          "situacao_tse": "Eleito",
+          "eleito": true
+        },
+        {
+          "sq": "70002552496",
+          "slug": "leandro-grass",
+          "numero": "13",
+          "nome": "LEANDRO ANTÔNIO GRASS PEIXOTO",
+          "nome_urna": "LEANDRO GRASS",
+          "partido": "PT",
+          "votos": 739130,
+          "percentual_validos": 42.816543395,
+          "situacao_tse": "Não eleito",
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "cargo": "Governador",
+      "uf": "ES",
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/es/es-c0003-e006260-u.json",
+        "sha256": "ed715ecbb21d48c5e10dc8dda4e7c738bbeb72ad9bb1963d010dcacf9314da0c",
+        "gerado_tse": "25/10/2026 21:32:45"
+      },
+      "totais": {
+        "votos_validos": 2207937,
+        "comparecimento": 2405654,
+        "eleitorado": 2987603
+      },
+      "candidatos": [
+        {
+          "sq": "80002552682",
+          "slug": "pazolini",
+          "numero": "10",
+          "nome": "LORENZO SILVA DE PAZOLINI",
+          "nome_urna": "LORENZO PAZOLINI",
+          "partido": "REPUBLICANOS",
+          "votos": 1151818,
+          "percentual_validos": 52.167158755,
+          "situacao_tse": "Eleito",
+          "eleito": true
+        },
+        {
+          "sq": "80002552172",
+          "slug": "ricardo-ferraco",
+          "numero": "15",
+          "nome": "RICARDO DE REZENDE FERRAÇO",
+          "nome_urna": "RICARDO FERRAÇO",
+          "partido": "MDB",
+          "votos": 1056119,
+          "percentual_validos": 47.832841245,
+          "situacao_tse": "Não eleito",
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "cargo": "Governador",
+      "uf": "RN",
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/rn/rn-c0003-e006260-u.json",
+        "sha256": "6ba7877cba3837cbccca75c839917fe697fdbf8917a3b8cb4580e5d7d760d869",
+        "gerado_tse": "25/10/2026 21:24:45"
+      },
+      "totais": {
+        "votos_validos": 2113423,
+        "comparecimento": 2229510,
+        "eleitorado": 2656286
+      },
+      "candidatos": [
+        {
+          "sq": "200002534001",
+          "slug": "cadu-xavier",
+          "numero": "13",
+          "nome": "CARLOS EDUARDO XAVIER",
+          "nome_urna": "CADU DE LULA",
+          "partido": "PT",
+          "votos": 1073024,
+          "percentual_validos": 50.771852109,
+          "situacao_tse": "Eleito",
+          "eleito": true
+        },
+        {
+          "sq": "200002535255",
+          "slug": "alysson-bezerra",
+          "numero": "44",
+          "nome": "ALLYSON LEANDRO BEZERRA SILVA",
+          "nome_urna": "ALLYSON",
+          "partido": "UNIÃO",
+          "votos": 1040399,
+          "percentual_validos": 49.228147891,
+          "situacao_tse": "Não eleito",
+          "eleito": false
+        }
+      ]
+    },
+    {
+      "cargo": "Governador",
+      "uf": "TO",
+      "fonte": {
+        "url": "https://resultados.tse.jus.br/oficial/ele2026/6260/dados/to/to-c0003-e006260-u.json",
+        "sha256": "6629b897507db1a4f2f861831fd26425e2b00cd2bcdb2701f57b4283db3e0bf5",
+        "gerado_tse": "25/10/2026 21:45:15"
+      },
+      "totais": {
+        "votos_validos": 871159,
+        "comparecimento": 953385,
+        "eleitorado": 1180466
+      },
+      "candidatos": [
+        {
+          "sq": "270002544544",
+          "slug": "vicentinho-junior",
+          "numero": "45",
+          "nome": "VICENTE ALVES DE OLIVEIRA JÚNIOR",
+          "nome_urna": "VICENTINHO JÚNIOR",
+          "partido": "PSDB",
+          "votos": 562083,
+          "percentual_validos": 64.521287159,
+          "situacao_tse": "Eleito",
+          "eleito": true
+        },
+        {
+          "sq": "270002544599",
+          "slug": "professora-dorinha",
+          "numero": "44",
+          "nome": "MARIA AUXILIADORA SEABRA REZENDE",
+          "nome_urna": "PROFESSORA DORINHA",
+          "partido": "UNIÃO",
+          "votos": 309076,
+          "percentual_validos": 35.478712841,
+          "situacao_tse": "Não eleito",
+          "eleito": false
+        }
+      ]
+    }
+  ]
+}

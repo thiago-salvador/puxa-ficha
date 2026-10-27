@@ -2,8 +2,7 @@
 import type { ComponentProps } from "react"
 import Image, { getImageProps } from "next/image"
 import Link from "next/link"
-import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
-import arquivoImageLoader from "@/lib/arquivo-image-loader"
+import { carregadorRetrato } from "@/lib/carregador-retrato"
 import { ArrowRight, ArrowUpRight } from "lucide-react"
 import { formatarPercentual, formatarVotos, type CandidatoResultado1Turno, type DisputaResultado1Turno } from "@/lib/resultados-1turno"
 import { dividirVotosValidos, fotoDe, larguraBarra, type FotosCandidatos } from "@/lib/resultados-1turno-vista"
@@ -25,15 +24,7 @@ const TEXTO_APOIO = "text-[length:var(--text-caption)] font-medium tabular-nums 
 const LINK_ESCURO =
   "inline-flex min-h-11 items-center gap-1 whitespace-nowrap text-[length:var(--text-body-sm)] font-bold text-white underline underline-offset-4 hover:text-white/80"
 
-/**
- * Passa pelo otimizador do Next (/_next/image), que valida o host do Wikimedia no servidor. O
- * carregador explícito evita a checagem de host no render, que falha fora do app (testes).
- */
 const MASCARA_BASE = "linear-gradient(to bottom, #000 0%, #000 55%, rgba(0,0,0,0.6) 78%, rgba(0,0,0,0.2) 92%, transparent 100%)"
-
-function carregadorOtimizado({ src, width, quality }: { src: string; width: number; quality?: number }): string {
-  return `/_next/image?url=${encodeURIComponent(src)}&w=${width}&q=${quality ?? 75}`
-}
 
 /**
  * Retrato do finalista (do lg em diante), cobrindo metade da parte de cima. A foto tem a altura da
@@ -67,7 +58,7 @@ function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | nul
     height: retrato?.altura ?? 1280,
     priority: true,
     // No espelho estático não há otimizador: a imagem vem de /_img.
-    loader: ARQUIVO_ESTATICO ? arquivoImageLoader : carregadorOtimizado,
+    loader: carregadorRetrato,
     // Foto horizontal aparece quase na largura da tela; retrato vertical, em pouco mais da metade.
     sizes: proporcao > 1.2 ? "(min-width: 1024px) 100vw, 1px" : "(min-width: 1024px) 60vw, 1px",
   }).props
