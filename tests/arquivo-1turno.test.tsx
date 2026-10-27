@@ -157,7 +157,8 @@ describe("composição de /1o-turno", () => {
     assert.match(pagina, /canonical: "\/1o-turno"/)
     assert.match(pagina, /Arquivo do 1º turno:<\/strong> o site como estava até a votação de 4 de outubro\./)
     assert.match(pagina, /Fotos em preto e branco: candidaturas que não seguem na disputa\./)
-    assert.match(pagina, /<Link href="\/"[^>]*>\s*Ver o 2º turno/)
+    // Com o arquivo ligado, o link vai para /2o-turno; sem ele, para a home do 2º turno.
+    assert.match(pagina, /<Link href=\{ARQUIVO_ELEICOES_2026\.ativo \? "\/2o-turno" : "\/"\}[^>]*>\s*Ver o 2º turno/)
     assert.match(pagina, /<UfResultadoSelector options=\{opcoesUf\} basePath="\/1o-turno" rotulo="Resultado por estado" compacto \/>/)
   })
 

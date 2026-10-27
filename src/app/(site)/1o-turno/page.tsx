@@ -53,6 +53,7 @@ import { buildTwitterMetadata } from "@/lib/metadata"
 import { comFaseEfetiva, slugsComFotoPretoEBranco } from "@/lib/finalistas-1turno"
 import { rotuloAbaFinalistas, separarSecoesPorFase } from "@/lib/fase-eleitoral-publica"
 import { hasResultados1Turno } from "@/lib/resultados-1turno"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 
 export default async function PrimeiroTurnoArquivoPage() {
   const { props: heroImage } = getImageProps({
@@ -250,7 +251,8 @@ export default async function PrimeiroTurnoArquivoPage() {
           <p className="max-w-prose text-[length:var(--text-body-sm)] font-medium leading-relaxed text-foreground">
             <strong className="font-bold">Arquivo do 1º turno:</strong> o site como estava até a votação de 4 de outubro.
             {slugsFotoPB.length > 0 && " Fotos em preto e branco: candidaturas que não seguem na disputa."}{" "}
-            <Link href="/" className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4 sm:min-h-0">
+            {/* Com o arquivo ligado, o 2º turno tem página própria; a home conta o projeto. */}
+            <Link href={ARQUIVO_ELEICOES_2026.ativo ? "/2o-turno" : "/"} className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4 sm:min-h-0">
               Ver o 2º turno
             </Link>
           </p>
