@@ -23,7 +23,7 @@ const LARGURA = 640
 const ALTURA = 200
 const MARGEM = { topo: 26, direita: 4, base: 24, esquerda: 4 }
 const VAO = 2
-const ROTULO = "pointer-events-none absolute whitespace-nowrap text-[11px] font-medium leading-none"
+const ROTULO = "pointer-events-none absolute whitespace-nowrap text-[length:var(--text-eyebrow)] font-medium leading-none"
 
 const pct = (v: number, total: number) => `${(v / total) * 100}%`
 

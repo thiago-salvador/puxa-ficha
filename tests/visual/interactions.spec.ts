@@ -75,7 +75,8 @@ test.describe("Navbar mobile menu", () => {
     await expect(menuBtn).toHaveAttribute("aria-expanded", "true")
 
     // Confirm links are present
-    await expect(dialog.getByRole("link", { name: "2º Turno", exact: true })).toHaveAttribute("href", "/")
+    // Com o arquivo ligado, o 2º Turno tem página própria; a home conta o projeto.
+    await expect(dialog.getByRole("link", { name: "2º Turno", exact: true })).toHaveAttribute("href", "/2o-turno")
     await expect(dialog.getByText("1º Turno")).toBeVisible()
     await expect(dialog.getByRole("link", { name: "1º Turno", exact: true })).toHaveAttribute("href", "/1o-turno")
     await expect(dialog.getByText("Doadores")).toBeVisible()
@@ -482,7 +483,8 @@ test.describe("Absolutos contidos nas regiões com rolagem horizontal", () => {
       await route.continue()
     })
     try {
-      await page.goto("/", { waitUntil: "commit" })
+      // O gráfico das pesquisas do confronto fica em /2o-turno desde o arquivo.
+      await page.goto("/2o-turno", { waitUntil: "commit" })
       const dates = page.getByRole("group", { name: "Datas das pesquisas" }).getByRole("button")
       await expect(dates.first()).toHaveCSS("position", "absolute")
       const bounds = await dates.evaluateAll((buttons) => ({
