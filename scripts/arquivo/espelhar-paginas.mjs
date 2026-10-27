@@ -46,7 +46,7 @@ function destinoHtml(p) {
   return path.join(DEST, p === "/" ? "index.html" : `${p.replace(/\/$/, "")}/index.html`)
 }
 
-async function baixar(url, arquivo, { externo = false, tentativas = 3 } = {}) {
+async function baixar(url, arquivo, { externo = false, tentativas = 3, aceitar404 = false } = {}) {
   let r
   for (let t = 0; t < tentativas; t++) {
     r = await fetch(externo ? url : ORIGEM + url, { redirect: externo ? "follow" : "manual", headers: externo ? { "user-agent": UA } : {}, signal: AbortSignal.timeout(60_000) })
@@ -54,7 +54,8 @@ async function baixar(url, arquivo, { externo = false, tentativas = 3 } = {}) {
     await espera(externo ? 30000 : 4000 * (t + 1))
   }
   if (r.status >= 300 && r.status < 400) return { redirect: r.headers.get("location"), status: r.status }
-  if (!r.ok) return { status: r.status }
+  // A página 404 é capturada pelo corpo da própria resposta de erro.
+  if (!r.ok && !(aceitar404 && r.status === 404)) return { status: r.status }
   const buf = Buffer.from(await r.arrayBuffer())
   if (arquivo) {
     fs.mkdirSync(path.dirname(arquivo), { recursive: true })
@@ -141,7 +142,7 @@ async function main() {
   for (const extra of ["/sitemap.xml", "/robots.txt", "/manifest.webmanifest", "/favicon.ico", "/opengraph-image"]) {
     await baixar(extra, path.join(DEST, extra)).catch(() => null)
   }
-  const naoExiste = await baixar("/pagina-que-nao-existe-arquivo")
+  const naoExiste = await baixar("/pagina-que-nao-existe-arquivo", null, { aceitar404: true })
   fs.writeFileSync(path.join(DEST, "404.html"), naoExiste.buf ?? "")
   for (const d of downloads) {
     const original = Buffer.from(d.split("/").pop().replace(/\.(csv|json)$/, ""), "base64url").toString("utf8")
