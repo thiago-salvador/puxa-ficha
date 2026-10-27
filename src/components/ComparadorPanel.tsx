@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react"
 import Link from "next/link"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { PUBLIC_DATA_VOCABULARY } from "@/lib/public-data-vocabulary"
@@ -52,6 +52,7 @@ import { observeAnalyticsResult } from "@/lib/analytics-visibility"
 import { buildComparatorBoxCard } from "@/lib/box-card-model"
 import { BoxShareButton } from "@/components/BoxShareButton"
 import { FOTO_PB_DICA } from "@/lib/arquivo-1turno"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 
 const VALID_UF_SIGLA = new Set<string>(BRAZIL_STATES.map((s) => s.sigla))
 
@@ -93,6 +94,8 @@ function resolveInitialSelectedIds(
   return next
 }
 
+const subscribeNada = () => () => {}
+
 export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, initialSelectedSlugs, initialEixo, slugsFotoPB }: Props) {
   const fotoPB = useMemo(() => new Set(slugsFotoPB ?? []), [slugsFotoPB])
   const candidatos = useMemo(() => ordenarPorFaseEleitoral(candidatosInput), [candidatosInput])
@@ -128,6 +131,15 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
   const comparisonViewedRef = useRef(false)
   const prefersReducedMotion = usePrefersReducedMotion()
   const comparisonRef = useRef<HTMLDivElement>(null)
+  // No espelho estático a página guarda só o grupo da Presidência: candidato de
+  // outra disputa pedido na URL não está aqui, e o aviso leva à ficha dele.
+  // O HTML do espelho sai sem query: o aviso só existe depois da hidratação.
+  const hidratado = useSyncExternalStore(subscribeNada, () => true, () => false)
+  const foraDoGrupo = useMemo(() => {
+    if (!ARQUIVO_ESTATICO || !hidratado) return []
+    const slugs = ["c1", "c2", "c3", "c4"].map((key) => searchParams.get(key)?.trim()).filter((slug): slug is string => Boolean(slug))
+    return slugs.filter((slug) => !candidatos.some((c) => c.slug === slug))
+  }, [candidatos, hidratado, searchParams])
 
   const selectedCandidatos = useMemo(
     () =>
@@ -246,6 +258,20 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
 
   return (
     <>
+      {foraDoGrupo.length > 0 && (
+        <div role="status" className="mx-auto mt-6 max-w-7xl px-5 md:px-12">
+          <p className="rounded-[18px] border border-border bg-card p-5 text-[length:var(--text-body-sm)] font-medium leading-relaxed text-foreground">
+            No arquivo, o comparador reúne só a disputa para presidente. As comparações de outras disputas ficaram fora do espelho; abra as fichas:{" "}
+            {foraDoGrupo.map((slug, i) => (
+              <span key={slug}>
+                {i > 0 ? ", " : ""}
+                <Link className="font-bold underline underline-offset-2" href={`/candidato/${encodeURIComponent(slug)}`}>{slug}</Link>
+              </span>
+            ))}
+            .
+          </p>
+        </div>
+      )}
       {selectedIds.length > 0 && (
         <div className="sticky top-16 z-30 border-b border-border/50 bg-background/95 backdrop-blur-sm">
           <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-2 px-5 py-3 sm:flex sm:gap-3 md:px-12">
