@@ -36,7 +36,7 @@ function arquivoImagemLocal(src) {
 function enfileirar(p) {
   if (!p.startsWith("/") || p.startsWith("//")) return
   const limpo = p.split("#")[0].split("?")[0]
-  if (!limpo || limpo.startsWith("/api/") || limpo.startsWith("/_next/") || limpo.startsWith("/arquivo-dados/") || /\.[a-z0-9]{2,5}$/i.test(limpo)) return
+  if (!limpo || limpo.startsWith("/api/") || limpo.startsWith("/_next/") || limpo.startsWith("/arquivo-dados/") || /\.[a-z0-9]{2,12}$/i.test(limpo)) return
   if (feitos.has(limpo)) return
   feitos.add(limpo)
   fila.push(limpo)
