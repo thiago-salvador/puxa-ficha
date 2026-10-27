@@ -395,15 +395,13 @@ function DoadoresBuscaAtiva() {
 }
 
 // Espelho estático: sem servidor nem banco, a busca vira aviso de ferramenta
-// encerrada e aponta para os dados abertos, que trazem a base completa.
+// encerrada e aponta para as fichas, onde os dados seguem publicados.
 export function DoadoresBusca() {
   if (ARQUIVO_ESTATICO) {
     return (
       <ArquivoFerramentaAviso
         ferramenta="Busca de doadores"
-        comoFuncionava="A busca reversa procurava um doador pelo nome e listava as candidaturas que ele financiou nas eleições de 2026, com valores declarados ao TSE."
-        metodologiaHref="/dados-abertos"
-        metodologiaRotulo="Baixar os dados abertos"
+        comoFuncionava="A busca reversa procurava um doador pelo nome e listava as candidaturas que ele financiou nas eleições de 2026, com valores declarados ao TSE. Os doadores de cada candidatura seguem na seção de financiamento da ficha."
       />
     )
   }

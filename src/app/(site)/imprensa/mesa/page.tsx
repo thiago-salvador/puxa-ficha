@@ -22,7 +22,7 @@ import {
 } from "@/lib/imprensa-data"
 import { getImprensaDatasetCached, type ImprensaPageDataset } from "@/lib/imprensa-cache"
 import styles from "../imprensa.module.css"
-import { arquivoDownloadHref } from "@/lib/arquivo"
+import { ARQUIVO_ESTATICO, arquivoDownloadHref } from "@/lib/arquivo"
 
 export const metadata: Metadata = {
   title: "Mesa de apuração | Puxa Ficha",
@@ -127,35 +127,40 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
       <div className={styles.content}>
         <section className={styles.section} aria-labelledby="mesa-recorte">
           <SectionHead num="01" id="mesa-recorte">Recorte</SectionHead>
-          <form className={styles.filters} action="/imprensa/mesa" method="get" aria-label="Filtrar candidatos">
-            <div className={styles.field}>
-              <label htmlFor="imprensa-turno">Turno</label>
-              <select id="imprensa-turno" name="turno" defaultValue={turno === 2 ? "2" : ""}>
-                <option value="2">2º turno (finalistas)</option>
-                <option value="">1º turno (todos os candidatos)</option>
-              </select>
-            </div>
-            <div className={styles.field}>
-              <label htmlFor="imprensa-cargo">Cargo</label>
-              <select id="imprensa-cargo" name="cargo" defaultValue={filters.cargo ?? ""}>
-                <option value="">Todos os cargos</option>
-                {cargos.map((cargo) => <option key={cargo} value={cargo}>{cargo}</option>)}
-              </select>
-            </div>
-            <div className={styles.field}>
-              <label htmlFor="imprensa-uf">UF</label>
-              <select id="imprensa-uf" name="uf" defaultValue={filters.uf ?? ""}>
-                <option value="">Todas as UFs</option>
-                {ufs.map((uf) => <option key={uf} value={uf}>{uf}</option>)}
-              </select>
-            </div>
-            <div className={styles.formActions}>
-              <button className={styles.submit} type="submit">Aplicar recorte</button>
-              <Link className={styles.reset} href={imprensaHref("/imprensa/mesa", { turno })}>Limpar</Link>
-            </div>
-          </form>
+          {ARQUIVO_ESTATICO ? (
+            // O espelho estático serve um arquivo por página: o recorte por query não existe nele.
+            <p className={styles.lead}>No arquivo, a mesa mostra todos os candidatos do 1º turno, de todos os cargos e UFs. Os recortes por estado ficam nos pacotes de imprensa de cada UF, e os arquivos abaixo trazem a base inteira.</p>
+          ) : (
+            <form className={styles.filters} action="/imprensa/mesa" method="get" aria-label="Filtrar candidatos">
+              <div className={styles.field}>
+                <label htmlFor="imprensa-turno">Turno</label>
+                <select id="imprensa-turno" name="turno" defaultValue={turno === 2 ? "2" : ""}>
+                  <option value="2">2º turno (finalistas)</option>
+                  <option value="">1º turno (todos os candidatos)</option>
+                </select>
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="imprensa-cargo">Cargo</label>
+                <select id="imprensa-cargo" name="cargo" defaultValue={filters.cargo ?? ""}>
+                  <option value="">Todos os cargos</option>
+                  {cargos.map((cargo) => <option key={cargo} value={cargo}>{cargo}</option>)}
+                </select>
+              </div>
+              <div className={styles.field}>
+                <label htmlFor="imprensa-uf">UF</label>
+                <select id="imprensa-uf" name="uf" defaultValue={filters.uf ?? ""}>
+                  <option value="">Todas as UFs</option>
+                  {ufs.map((uf) => <option key={uf} value={uf}>{uf}</option>)}
+                </select>
+              </div>
+              <div className={styles.formActions}>
+                <button className={styles.submit} type="submit">Aplicar recorte</button>
+                <Link className={styles.reset} href={imprensaHref("/imprensa/mesa", { turno })}>Limpar</Link>
+              </div>
+            </form>
+          )}
           <p className={styles.lead}>
-            O endereço da página guarda o recorte, a ordem e o filtro: dá para compartilhar o link dentro da redação.
+            {!ARQUIVO_ESTATICO && <>O endereço da página guarda o recorte, a ordem e o filtro: dá para compartilhar o link dentro da redação.</>}
             {packUf && <> Para o estado inteiro em uma página, abra o <Link className={styles.inlineLink} href={imprensaUfPath(packUf)}>pacote de imprensa do estado: {getImprensaUfName(packUf)}</Link>.</>}
           </p>
         </section>
@@ -221,7 +226,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
               <div className={styles.takeLinks}>
                 <a href={arquivoDownloadHref(`/api/imprensa/export/sites?format=csv${exportSuffix}`)}>Sites CSV</a>
                 <a href={arquivoDownloadHref(`/api/imprensa/export/processos?format=csv${exportSuffix}`)}>Processos CSV</a>
-                <a href={`/api/imprensa/export/gastos?format=csv${exportSuffix}`}>Gastos CSV</a>
+                <a href={arquivoDownloadHref(`/api/imprensa/export/gastos?format=csv${exportSuffix}`)}>Gastos CSV</a>
               </div>
             </div>
             <div className={styles.takeCard}>
@@ -264,7 +269,7 @@ export default async function ImprensaPage({ searchParams }: { searchParams: Pro
               <div><dt className="font-semibold text-foreground">version, generated_at, filtros cargo/UF</dt><dd>Metadados do conjunto e do recorte exportado. Unidade: versão, data ISO e texto. A data é geração/coleta, não data do fato.</dd></div>
             </dl>
             <p className="mt-4">
-              Ocorrências repetidas ficam nos arquivos longos: <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/sites?format=csv${exportSuffix}`)}>sites CSV</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/sites?format=json${exportSuffix}`}>sites JSON</a>, <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/processos?format=csv${exportSuffix}`)}>processos CSV</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/processos?format=json${exportSuffix}`}>processos JSON</a>, <a className={styles.sourceLink} href={`/api/imprensa/export/gastos?format=csv${exportSuffix}`}>gastos CSV</a> e <a className={styles.sourceLink} href={`/api/imprensa/export/gastos?format=json${exportSuffix}`}>gastos JSON</a>. Os dados do TSE recebem crédito conforme a licença Creative Commons Atribuição; isso não altera a licença Apache 2.0 do código.
+              Ocorrências repetidas ficam nos arquivos longos: <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/sites?format=csv${exportSuffix}`)}>sites CSV</a>, <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/sites?format=json${exportSuffix}`)}>sites JSON</a>, <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/processos?format=csv${exportSuffix}`)}>processos CSV</a>, <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/processos?format=json${exportSuffix}`)}>processos JSON</a>, <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/gastos?format=csv${exportSuffix}`)}>gastos CSV</a> e <a className={styles.sourceLink} href={arquivoDownloadHref(`/api/imprensa/export/gastos?format=json${exportSuffix}`)}>gastos JSON</a>. Os dados do TSE recebem crédito conforme a licença Creative Commons Atribuição; isso não altera a licença Apache 2.0 do código.
             </p>
             <p className="mt-2">Ao reutilizar um recorte, credite Puxa Ficha e a fonte específica exibida na linha. O <Link className={styles.sourceLink} href="/embed">embed</Link> e o card público são recursos de apresentação, não novas fontes factuais.</p>
             {dataset?.generatedAt && <p className="mt-2">Conjunto gerado em {dateLabel(dataset.generatedAt)}{dataset.version ? ` · versão ${dataset.version}` : ""}.</p>}

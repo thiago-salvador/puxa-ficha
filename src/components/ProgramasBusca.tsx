@@ -165,15 +165,13 @@ function ProgramasBuscaAtiva({ candidatos }: { candidatos: ProgramaBuscaCandidat
 }
 
 // Espelho estático: sem servidor nem banco, a busca vira aviso de ferramenta
-// encerrada e aponta para os dados abertos, que trazem a base completa.
+// encerrada e aponta para as fichas, onde os dados seguem publicados.
 export function ProgramasBusca(props: { candidatos: ProgramaBuscaCandidato[] }) {
   if (ARQUIVO_ESTATICO) {
     return (
       <ArquivoFerramentaAviso
         ferramenta="Busca nos programas de governo"
         comoFuncionava="A busca procurava termos dentro dos programas de governo registrados no TSE e mostrava os trechos de cada candidatura. Os programas seguem nas fichas dos candidatos."
-        metodologiaHref="/dados-abertos"
-        metodologiaRotulo="Baixar os dados abertos"
       />
     )
   }

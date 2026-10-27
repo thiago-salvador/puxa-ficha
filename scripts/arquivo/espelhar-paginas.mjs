@@ -46,6 +46,14 @@ function destinoHtml(p) {
   return path.join(DEST, p === "/" ? "index.html" : `${p.replace(/\/$/, "")}/index.html`)
 }
 
+// Temporário e rename: arquivo truncado por uma queda não fica no lugar, e a fase 2 o refaz.
+function gravarAtomico(arquivo, conteudo) {
+  fs.mkdirSync(path.dirname(arquivo), { recursive: true })
+  const tmp = `${arquivo}.tmp-${process.pid}`
+  fs.writeFileSync(tmp, conteudo)
+  fs.renameSync(tmp, arquivo)
+}
+
 async function baixar(url, arquivo, { externo = false, tentativas = 3, aceitar404 = false } = {}) {
   let r
   for (let t = 0; t < tentativas; t++) {
@@ -57,10 +65,7 @@ async function baixar(url, arquivo, { externo = false, tentativas = 3, aceitar40
   // A página 404 é capturada pelo corpo da própria resposta de erro.
   if (!r.ok && !(aceitar404 && r.status === 404)) return { status: r.status }
   const buf = Buffer.from(await r.arrayBuffer())
-  if (arquivo) {
-    fs.mkdirSync(path.dirname(arquivo), { recursive: true })
-    fs.writeFileSync(arquivo, buf)
-  }
+  if (arquivo) gravarAtomico(arquivo, buf)
   return { status: r.status, buf, tipo: r.headers.get("content-type") || "" }
 }
 
@@ -68,8 +73,7 @@ async function processarPagina(p) {
   const r = await baixar(p)
   if (r.redirect) {
     const alvo = new URL(r.redirect, ORIGEM).pathname
-    fs.mkdirSync(path.dirname(destinoHtml(p)), { recursive: true })
-    fs.writeFileSync(destinoHtml(p), `<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${alvo}"><link rel="canonical" href="${alvo}">`)
+    gravarAtomico(destinoHtml(p), `<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${alvo}"><link rel="canonical" href="${alvo}">`)
     enfileirar(alvo)
     return
   }
@@ -78,8 +82,7 @@ async function processarPagina(p) {
   for (const m of html.matchAll(/href="(\/[^"]*)"/g)) enfileirar(m[1])
   for (const m of html.matchAll(/\/arquivo-dados\/[A-Za-z0-9_-]+\.(?:csv|json)/g)) downloads.add(m[0])
   for (const m of html.matchAll(/\/_img\/([a-z0-9]+\.[a-z]+)\?o=([^"'\s,)\\&]+)/g)) refsImagem.add(`${m[1]} ${decodeURIComponent(m[2])}`)
-  fs.mkdirSync(path.dirname(destinoHtml(p)), { recursive: true })
-  fs.writeFileSync(destinoHtml(p), html)
+  gravarAtomico(destinoHtml(p), html)
   paginas.set(p, destinoHtml(p))
 }
 
@@ -119,9 +122,10 @@ async function main() {
   async function pegar([nome, origem], externo) {
     const arquivo = path.join(DEST, "_img", nome)
     if (fs.existsSync(arquivo)) { ok++; return }
-    let r = await baixar(origem, arquivo, { externo, tentativas: 5 })
+    const falhou = (e) => ({ status: `erro ${e.name}` })
+    let r = await baixar(origem, arquivo, { externo, tentativas: 5 }).catch(falhou)
     // Reserva: o otimizador da produção guarda em cache a versão que o site já serviu.
-    if (!r.buf) r = await baixar(`https://puxaficha.com.br/_next/image?url=${encodeURIComponent(origem)}&w=640&q=75`, arquivo, { externo: true, tentativas: 2 })
+    if (!r.buf) r = await baixar(`https://puxaficha.com.br/_next/image?url=${encodeURIComponent(origem)}&w=640&q=75`, arquivo, { externo: true, tentativas: 2 }).catch(falhou)
     if (r.buf) ok++
     else falhas.push(`img ${r.status} ${origem.slice(0, 120)}`)
   }
@@ -140,16 +144,19 @@ async function main() {
   fs.cpSync(path.join(REPO, ".next/static"), path.join(DEST, "_next/static"), { recursive: true })
   fs.cpSync(path.join(REPO, "public"), DEST, { recursive: true })
   for (const extra of ["/sitemap.xml", "/robots.txt", "/manifest.webmanifest", "/favicon.ico", "/opengraph-image"]) {
-    await baixar(extra, path.join(DEST, extra)).catch(() => null)
+    const r = await baixar(extra, path.join(DEST, extra)).catch((e) => ({ status: `erro ${e.name}` }))
+    if (!r.buf) falhas.push(`extra ${r.status} ${extra}`)
   }
   const naoExiste = await baixar("/pagina-que-nao-existe-arquivo", null, { aceitar404: true })
-  fs.writeFileSync(path.join(DEST, "404.html"), naoExiste.buf ?? "")
+  if (naoExiste.buf) gravarAtomico(path.join(DEST, "404.html"), naoExiste.buf)
+  else falhas.push(`404 ${naoExiste.status} sem corpo`)
   for (const d of downloads) {
     const original = Buffer.from(d.split("/").pop().replace(/\.(csv|json)$/, ""), "base64url").toString("utf8")
-    const r = await baixar(original, path.join(DEST, d))
+    const r = await baixar(original, path.join(DEST, d)).catch((e) => ({ status: `erro ${e.name}` }))
     if (!r.buf) falhas.push(`download ${r.status} ${original}`)
   }
-  await baixar("/api/search-index", path.join(DEST, "api/search-index"))
+  const indice = await baixar("/api/search-index", path.join(DEST, "api/search-index")).catch((e) => ({ status: `erro ${e.name}` }))
+  if (!indice.buf) falhas.push(`busca ${indice.status} /api/search-index`)
   fs.writeFileSync(path.join(DEST, "_relatorio.json"), JSON.stringify({ paginas: paginas.size, imagens: ok, refs: refsImagem.size, downloads: downloads.size, falhas }, null, 2))
   console.log(`fim: ${paginas.size} páginas, ${ok}/${refsImagem.size} imagens, ${downloads.size} downloads, ${falhas.length} falhas`)
 }

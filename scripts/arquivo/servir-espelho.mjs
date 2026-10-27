@@ -4,13 +4,17 @@ import http from "node:http"
 import fs from "node:fs"
 import path from "node:path"
 
-const [DIR, PORTA = "4100"] = process.argv.slice(2)
+const [DIR_ARG, PORTA = "4100"] = process.argv.slice(2)
+const DIR = path.resolve(DIR_ARG)
 const tipos = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".csv": "text/csv; charset=utf-8", ".ico": "image/x-icon", ".xml": "application/xml", ".txt": "text/plain" }
 
 http.createServer((req, res) => {
-  let p = decodeURIComponent(new URL(req.url, "http://x").pathname)
+  let p
+  try { p = decodeURIComponent(new URL(req.url, "http://x").pathname) } catch { res.writeHead(400); return res.end() }
   if (/^\/api\/candidato-profile\/[^/]+$/.test(p)) p = `${p}/perfil.json`
-  const candidatos = [path.join(DIR, p), path.join(DIR, p, "index.html"), path.join(DIR, `${p}.html`)]
+  // Só arquivos dentro do espelho: %2f decodificado não pode subir para fora de DIR.
+  const dentro = (c) => c === DIR || c.startsWith(DIR + path.sep)
+  const candidatos = [path.join(DIR, p), path.join(DIR, p, "index.html"), path.join(DIR, `${p}.html`)].filter(dentro)
   const achado = candidatos.find((c) => fs.existsSync(c) && fs.statSync(c).isFile())
   if (!achado) {
     res.writeHead(404, { "content-type": "text/html; charset=utf-8" })
@@ -20,4 +24,4 @@ http.createServer((req, res) => {
   const tipo = p.startsWith("/api/") ? "application/json; charset=utf-8" : tipos[ext] ?? "application/octet-stream"
   res.writeHead(200, { "content-type": tipo })
   fs.createReadStream(achado).pipe(res)
-}).listen(Number(PORTA), () => console.log(`espelho em http://localhost:${PORTA}`))
+}).listen(Number(PORTA), "127.0.0.1", () => console.log(`espelho em http://localhost:${PORTA}`))

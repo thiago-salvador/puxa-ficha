@@ -22,12 +22,13 @@ const ritmo = { perfil: criarRitmo(250), leg: criarRitmo(250), programa: criarRi
 async function obter(url, fila) {
   for (let tentativa = 0; tentativa < 6; tentativa++) {
     await ritmo[fila]()
-    const r = await fetch(ORIGEM + url, { signal: AbortSignal.timeout(60_000) })
-    if (r.status === 429) { await espera(5000 * (tentativa + 1)); continue }
+    // Timeout e falha de rede contam como tentativa, como o 429: o crawl leva 1h30 e não pode cair por uma chamada.
+    const r = await fetch(ORIGEM + url, { signal: AbortSignal.timeout(60_000) }).catch((e) => ({ status: `erro ${e.name}` }))
+    if (r.status === 429 || typeof r.status === "string") { await espera(5000 * (tentativa + 1)); continue }
     if (!r.ok) return { status: r.status }
     return { status: r.status, json: await r.json() }
   }
-  return { status: 429 }
+  return { status: "esgotado" }
 }
 
 // O perfil (/api/candidato-profile/<slug>) também é pasta das seções: vai para
@@ -45,7 +46,10 @@ function semCaminhoLocal(texto) {
 function gravar(url, corpo) {
   const arquivo = path.join(DEST, arquivoDe(url))
   fs.mkdirSync(path.dirname(arquivo), { recursive: true })
-  fs.writeFileSync(arquivo, semCaminhoLocal(JSON.stringify(corpo)))
+  // Temporário e rename: uma queda no meio não deixa JSON truncado no lugar do arquivo.
+  const tmp = `${arquivo}.tmp-${process.pid}`
+  fs.writeFileSync(tmp, semCaminhoLocal(JSON.stringify(corpo)))
+  fs.renameSync(tmp, arquivo)
   relatorio.ok++
 }
 
@@ -86,35 +90,44 @@ async function espelharSlug(slug) {
       gravar(`${base}/programa-documento/${Buffer.from(doc.documentoId).toString("base64url")}.json`, {
         documentoId: doc.documentoId, sourceSha256: doc.sourceSha256, extractedTextSha256: doc.extractedTextSha256, secoes,
       })
+    } else {
+      relatorio.falhas.push(`incompleto ${base}/programa doc ${doc.documentoId}: ${secoes.length}/${doc.secoes} seções`)
     }
   }
 
   // Projetos de lei: junta todas as páginas num arquivo só; o cliente fecha o laço numa requisição.
   const linhas = []
   let total = Infinity
+  let projetosCompletos = true
   for (let offset = 0; offset < total;) {
     const r = await obter(`${base}/projetos-lei?offset=${offset}&limit=100`, "projetos")
-    if (!r.json?.data) { if (r.status !== 404) relatorio.falhas.push(`${r.status} ${base}/projetos-lei@${offset}`); break }
+    if (!r.json?.data) { if (r.status !== 404) { projetosCompletos = false; relatorio.falhas.push(`${r.status} ${base}/projetos-lei@${offset}`) } break }
     total = r.json.data.total ?? r.json.data.rows.length
     linhas.push(...r.json.data.rows)
     if (r.json.data.rows.length === 0) break
     offset += r.json.data.rows.length
   }
-  if (linhas.length) gravar(`${base}/projetos-lei`, { data: { rows: linhas, total: linhas.length } })
+  if (projetosCompletos && Number.isFinite(total) && linhas.length < total) {
+    projetosCompletos = false
+    relatorio.falhas.push(`incompleto ${base}/projetos-lei: ${linhas.length}/${total}`)
+  }
+  // Lista parcial não vai para o espelho: o arquivo diria que está completa.
+  if (linhas.length && projetosCompletos) gravar(`${base}/projetos-lei`, { data: { rows: linhas, total: linhas.length } })
 
   // Notícias: o cursor inicial vem no JSON da ficha (noticias_cursor); o arquivo traz o resto e nextCursor nulo.
   const perfil = fs.existsSync(path.join(DEST, arquivoDe(base))) ? JSON.parse(fs.readFileSync(path.join(DEST, arquivoDe(base)), "utf8")) : null
   let cursor = acharCampo(perfil, "noticias_cursor")
   const restantes = []
   let totalNoticias = 0
+  let noticiasCompletas = true
   while (cursor) {
     const r = await obter(`${base}/noticias?cursor=${encodeURIComponent(cursor)}`, "noticias")
-    if (!r.json) { relatorio.falhas.push(`${r.status} ${base}/noticias`); break }
+    if (!r.json) { noticiasCompletas = false; relatorio.falhas.push(`${r.status} ${base}/noticias`); break }
     restantes.push(...r.json.data)
     totalNoticias = r.json.total
     cursor = r.json.nextCursor
   }
-  if (restantes.length) gravar(`${base}/noticias`, { data: restantes, nextCursor: null, total: totalNoticias })
+  if (restantes.length && noticiasCompletas) gravar(`${base}/noticias`, { data: restantes, nextCursor: null, total: totalNoticias })
 }
 
 async function main() {
@@ -125,7 +138,7 @@ async function main() {
   await Promise.all(Array.from({ length: 4 }, async () => {
     while (fila.length) {
       const slug = typeof fila[0] === "string" ? fila.shift() : fila.shift().slug
-      await espelharSlug(slug)
+      await espelharSlug(slug).catch((e) => relatorio.falhas.push(`erro ${slug}: ${e.message}`))
       if (++n % 50 === 0) console.log(`fichas ${n}/${slugs.length} arquivos ${relatorio.ok} falhas ${relatorio.falhas.length}`)
     }
   }))
