@@ -7,6 +7,7 @@ import {
 } from "playwright"
 import { establishAutomationBypass } from "./vercel-automation-bypass"
 import { COMPARADOR_ADICIONAR_PATTERN } from "@/lib/comparador-labels"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 
 export { automationBypassHeaders } from "./vercel-automation-bypass"
 
@@ -232,13 +233,37 @@ async function textoEAvataresProibidos(page: Page): Promise<string[]> {
 
 // Desde 06/10/2026 a home (/) é a página do 2º turno: o hero traz o duelo com o link
 // "Ficha completa" de cada finalista. A grade presidencial completa mora no arquivo /1o-turno.
+// Com o arquivo ligado (27/10/2026), a home conta o projeto e o 2º turno vai para /2o-turno.
 async function checkHome(context: BrowserContext): Promise<string[]> {
+  if (ARQUIVO_ELEICOES_2026.ativo) return checkHomeArquivo(context)
   return withPage(context, "/", async (page) => {
     const duelo = page.locator('[data-pf-hero-duelo="Presidente"]')
     await duelo.waitFor({ state: "visible" })
     const paths = await waitForCandidatePaths(duelo, 2)
     const failures = await textoEAvataresProibidos(page)
     if (paths.length !== 2) failures.push(`duelo do hero tem ${paths.length} fichas, esperado 2 finalistas`)
+    if (failures.length > 0) throw new PartialCheckFailure(failures.join("; "), paths)
+    return paths
+  })
+}
+
+// Home do arquivo: hero do projeto e a lista de seções com o link do 2º turno; /2o-turno com o eleito no
+// topo e os governadores eleitos. Devolve as fichas linkadas no topo de /2o-turno.
+async function checkHomeArquivo(context: BrowserContext): Promise<string[]> {
+  const failures = await withPage(context, "/", async (page) => {
+    await page.locator('[data-pf-home-hero="arquivo"]').waitFor({ state: "visible" })
+    const falhas = await textoEAvataresProibidos(page)
+    if ((await page.locator('[data-pf-arquivo-secoes] a[href="/2o-turno"]').count()) !== 1) falhas.push("home do arquivo sem o link do 2º turno")
+    if ((await page.locator("[data-pf-arquivo-grafico]").count()) !== 2) falhas.push("home do arquivo sem os dois gráficos semanais")
+    return falhas
+  })
+  return withPage(context, "/2o-turno", async (page) => {
+    const topo = page.locator('[data-pf-home-hero="arquivo"]')
+    await topo.waitFor({ state: "visible" })
+    const paths = await waitForCandidatePaths(topo, 1)
+    failures.push(...(await textoEAvataresProibidos(page)))
+    if (paths.length !== 1) failures.push(`topo de /2o-turno tem ${paths.length} fichas, esperado o eleito`)
+    if ((await page.locator("[data-pf-arquivo-governador]").count()) === 0) failures.push("/2o-turno sem governadores eleitos")
     if (failures.length > 0) throw new PartialCheckFailure(failures.join("; "), paths)
     return paths
   })
@@ -338,6 +363,24 @@ async function checkProfile(context: BrowserContext, candidatePath: string): Pro
       jsonLd: jsonLdBlocks.length,
     }
   })
+}
+
+// Com o arquivo ligado, o quiz fica encerrado: a página mostra o aviso da ferramenta arquivada, sem erro de console.
+async function checkQuizArquivado(context: BrowserContext): Promise<string> {
+  const page = await context.newPage()
+  const consoleErrors: string[] = []
+  try {
+    page.on("console", (message) => {
+      if (message.type() === "error") consoleErrors.push(message.text())
+    })
+    page.on("pageerror", (error) => consoleErrors.push(error.message))
+    await gotoPublicPage(page, "/quiz")
+    await page.locator("[data-pf-arquivo-ferramenta]").waitFor({ state: "visible" })
+    invariant(consoleErrors.length === 0, `erros de console: ${consoleErrors.join(" | ")}`)
+    return "aviso_arquivo=presente"
+  } finally {
+    await page.close()
+  }
 }
 
 async function checkQuiz(context: BrowserContext): Promise<{ questions: number; candidates: number }> {
@@ -474,7 +517,7 @@ async function main(): Promise<number> {
     await collect(
       "home",
       () => checkHome(context),
-      (paths) => `finalistas=${paths.length} pre_candidato=0 ui_avatars=0`,
+      (paths) => `${ARQUIVO_ELEICOES_2026.ativo ? "eleito" : "finalistas"}=${paths.length} pre_candidato=0 ui_avatars=0`,
     )
     const presidentialPaths = await collect(
       "arquivo-1turno",
@@ -531,11 +574,15 @@ async function main(): Promise<number> {
       console.log(formatResultLine(result))
     }
 
-    await collect(
-      "quiz",
-      () => checkQuiz(context),
-      (check) => `perguntas=${check.questions} candidatos_resultado=${check.candidates} console_errors=0`,
-    )
+    if (ARQUIVO_ELEICOES_2026.ativo) {
+      await collect("quiz", () => checkQuizArquivado(context), (detalhe) => `${detalhe} console_errors=0`)
+    } else {
+      await collect(
+        "quiz",
+        () => checkQuiz(context),
+        (check) => `perguntas=${check.questions} candidatos_resultado=${check.candidates} console_errors=0`,
+      )
+    }
     await collect(
       "comparador",
       () => checkComparator(context),
