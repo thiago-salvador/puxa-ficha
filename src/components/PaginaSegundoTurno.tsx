@@ -213,7 +213,7 @@ export async function PaginaSegundoTurno() {
       <JsonLd data={schema} />
       {/* Filho direto de "main > div": o Navbar reconhece a faixa preta e fica transparente sobre ela. */}
       {ARQUIVO_ELEICOES_2026.ativo ? (
-        <Arquivo2TurnoHero nomes={Object.fromEntries(todosCandidatos.map((c) => [c.slug, c.nome_urna]))} />
+        <Arquivo2TurnoHero nomes={Object.fromEntries(todosCandidatos.map((c) => [c.slug, c.nome_urna]))} fotos={fotos} />
       ) : (
         <>
           <HomeHero2026

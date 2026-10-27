@@ -20,6 +20,8 @@ export interface DisputaFinal2Turno {
   cargo: string
   uf: string
   fonte: { url: string; sha256: string; gerado_tse: string }
+  /** Totais do boletim do TSE; ausentes num arquivo antigo. */
+  totais?: { votos_validos: number; comparecimento: number; eleitorado: number }
   candidatos: CandidatoFinal2Turno[]
 }
 
@@ -40,12 +42,42 @@ export function getNumerosArquivo(): NumerosArquivo {
 }
 
 /** A disputa do cargo, com o eleito primeiro; null se o arquivo não a tiver. */
-export function disputaFinal(resultado: Resultado2Turno, cargo: string, uf: string): { eleito: CandidatoFinal2Turno; derrotado: CandidatoFinal2Turno; fonte: DisputaFinal2Turno["fonte"] } | null {
+export function disputaFinal(
+  resultado: Resultado2Turno,
+  cargo: string,
+  uf: string,
+): { eleito: CandidatoFinal2Turno; derrotado: CandidatoFinal2Turno; fonte: DisputaFinal2Turno["fonte"]; totais: DisputaFinal2Turno["totais"] } | null {
   // Cargo e UF comparam sem caixa: "PRESIDENTE"/"br" acham a mesma disputa.
   const disputa = resultado.disputas.find((d) => d.cargo.toLowerCase() === cargo.toLowerCase() && d.uf.toUpperCase() === uf.toUpperCase())
   const eleito = disputa?.candidatos.find((c) => c.eleito)
   const derrotado = disputa?.candidatos.find((c) => !c.eleito)
-  return disputa && eleito && derrotado ? { eleito, derrotado, fonte: disputa.fonte } : null
+  return disputa && eleito && derrotado ? { eleito, derrotado, fonte: disputa.fonte, totais: disputa.totais } : null
+}
+
+export interface Numero2Turno {
+  id: "comparecimento" | "abstencao" | "diferenca" | "governadores"
+  valor: string
+  rotulo: string
+}
+
+const PERCENTUAL = new Intl.NumberFormat("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+
+/** Faixa "2º turno em números": comparecimento e abstenção do boletim, diferença de votos e governadores eleitos. */
+export function numeros2Turno(resultado: Resultado2Turno): Numero2Turno[] {
+  const presidente = disputaFinal(resultado, "Presidente", "BR")
+  if (!presidente) return []
+  const numeros: Numero2Turno[] = []
+  const { totais, eleito, derrotado } = presidente
+  if (totais && totais.eleitorado > 0) {
+    numeros.push({ id: "comparecimento", valor: `${PERCENTUAL.format((totais.comparecimento / totais.eleitorado) * 100)}%`, rotulo: "comparecimento" })
+    numeros.push({ id: "abstencao", valor: `${PERCENTUAL.format(((totais.eleitorado - totais.comparecimento) / totais.eleitorado) * 100)}%`, rotulo: "abstenção" })
+  }
+  if (eleito.votos !== null && derrotado.votos !== null) {
+    numeros.push({ id: "diferenca", valor: formatarInteiro(eleito.votos - derrotado.votos), rotulo: "votos de diferença" })
+  }
+  const governadores = resultado.disputas.filter((d) => d.cargo === "Governador").length
+  if (governadores > 0) numeros.push({ id: "governadores", valor: String(governadores), rotulo: "governadores eleitos no 2º turno" })
+  return numeros
 }
 
 const INTEIRO = new Intl.NumberFormat("pt-BR")

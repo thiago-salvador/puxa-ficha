@@ -1,8 +1,8 @@
 {
   "versao": 2,
-  "medido_em": "2026-10-27T17:52:26.939Z",
+  "medido_em": "2026-10-27T19:44:12.593Z",
   "exportado_em": "2026-10-26T17:13:12.221Z",
-  "ref_codigo": "9c30dc27",
+  "ref_codigo": "178af353",
   "dados": {
     "fichas": {
       "valor": 512,
@@ -246,20 +246,20 @@
   ],
   "construcao": {
     "testes": {
-      "valor": 8561,
-      "fonte": "npm test em 9c30dc27"
+      "valor": 8562,
+      "fonte": "npm test em 178af353"
     },
     "prs_mesclados": {
-      "valor": 626,
+      "valor": 628,
       "fonte": "GitHub, pull requests mesclados"
     },
     "commits": {
-      "valor": 1938,
-      "fonte": "git rev-list em 9c30dc27"
+      "valor": 1946,
+      "fonte": "git rev-list em 178af353"
     },
     "migracoes": {
       "valor": 543,
-      "fonte": "supabase/migrations em 9c30dc27"
+      "fonte": "supabase/migrations em 178af353"
     }
   }
 }

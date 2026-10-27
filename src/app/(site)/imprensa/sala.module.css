@@ -116,6 +116,9 @@
 .duelParty { color: var(--muted); font-size: 13px; font-weight: 700; grid-area: party; letter-spacing: .04em; }
 .duelPresidencia .duelParty { color: #cfcfcf; }
 .duelPct { align-self: center; font: 400 1.9rem/1 var(--font-anton), sans-serif; font-variant-numeric: tabular-nums; grid-area: pct; }
+/* Arquivo: o eleito leva a marca; o percentual de quem perdeu fica em cinza. */
+.duelEleito { font-size: 0.72em; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.duelSide[data-pf-sala-eleito="nao"] .duelPct { color: #8a8a8a; }
 .duelPresidencia .duelName { font-size: clamp(1.1rem, 2.2vw, 1.5rem); }
 .duelPresidencia .duelPct { font-size: clamp(2.2rem, 5vw, 3.4rem); }
 .duelGroupTitle { font-size: 13px; font-weight: 800; letter-spacing: .1em; margin-top: 32px; text-transform: uppercase; }

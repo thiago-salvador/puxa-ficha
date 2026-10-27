@@ -34,7 +34,7 @@ function juntarPt(items: readonly string[]): string {
  * pública no dataset (null quando a contagem falhou: a frase sai sem número);
  * `ufsGovernador` são as UFs com 2º turno para governador, em ordem.
  */
-export function buildSalaPromise2Turno(total: number | null, temPresidencia: boolean, ufsGovernador: readonly string[]): string {
+export function buildSalaPromise2Turno(total: number | null, temPresidencia: boolean, ufsGovernador: readonly string[], arquivo = false): string {
   const quem = total === null || total === 0
     ? "os finalistas do 2º turno"
     : total === 1 ? "1 finalista do 2º turno" : `os ${new Intl.NumberFormat("pt-BR").format(total)} finalistas do 2º turno`
@@ -43,6 +43,8 @@ export function buildSalaPromise2Turno(total: number | null, temPresidencia: boo
     ufsGovernador.length ? `governador em ${juntarPt(ufsGovernador)}` : null,
   ].filter((item): item is string => item !== null)
   const alvo = disputas.length ? `: ${juntarPt(disputas)}` : ""
+  // No arquivo, o tempo verbal e a data do corte: a sala mostra o que estava registrado até o dia do 2º turno.
+  if (arquivo) return `O que TSE, tribunais, CGU e Congresso registravam sobre ${quem}${alvo}, até o dia da votação. Cada dado com link para a fonte oficial e data de coleta.`
   return `O que TSE, tribunais, CGU e Congresso registram sobre ${quem}${alvo}. Cada dado com link para a fonte oficial e data de coleta.`
 }
 

@@ -32,7 +32,7 @@ const MASCARA_BASE = "linear-gradient(to bottom, #000 0%, #000 55%, rgba(0,0,0,0
  * do duelo (largura min(40rem, 48vw), centrada), então o rosto nunca fica sob o texto. O resto da
  * imagem some aos poucos até o meio da tela.
  */
-function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | null; fotoFicha: string | null; lado: "esquerda" | "direita" }) {
+export function RetratoFundo({ retrato, fotoFicha, lado }: { retrato: RetratoHero | null; fotoFicha: string | null; lado: "esquerda" | "direita" }) {
   const src = retrato?.url ?? fotoFicha
   if (!src) return null
   // Sem retrato largo, a foto da ficha (3:4) com o rosto no centro.
