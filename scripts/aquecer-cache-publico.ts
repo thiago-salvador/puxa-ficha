@@ -51,6 +51,8 @@ const ROTAS_FIXAS = [
   "/governadores",
   "/parlamentares",
   "/1o-turno",
+  // Página do 2º turno desde o arquivo (27/10/2026); sem a flag, redireciona para a home.
+  "/2o-turno",
   "/doadores",
 ]
 

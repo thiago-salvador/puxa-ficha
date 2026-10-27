@@ -1,4 +1,5 @@
 import assert from "node:assert/strict"
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import { readFileSync } from "node:fs"
 import { describe, test } from "node:test"
 import { buildShortcutItems } from "@/components/GlobalSearchProvider"
@@ -62,17 +63,18 @@ describe("página /parlamentares", () => {
     assert.doesNotMatch(deputados, /getCandidatosResource|from "@\/lib\/api"/)
   })
 
-  test("Navbar abre com 2º Turno e 1º Turno, sem Governadores, Comparar e Listas; Footer mantém Governadores; nenhum tem /2o-turno nem Parlamentares", () => {
+  test("Navbar abre com 2º Turno e 1º Turno, sem Governadores, Comparar e Listas; Footer mantém Governadores; nenhum tem Parlamentares", () => {
     const navbar = read("src/components/Navbar.tsx")
     const footer = read("src/components/Footer.tsx")
 
     // Navbar enxuto (pedido de 05/10): 2º Turno, 1º Turno e direto Doadores; sem Governadores, Comparar e Listas.
-    assert.match(navbar, /href: "\/", label: "2º Turno" \},\s*\{ href: "\/1o-turno", label: "1º Turno" \},\s*\{ href: "\/doadores", label: "Doadores" \}/)
+    // Desde 27/10 o 2º Turno aponta para /2o-turno com o arquivo ligado (a home conta o projeto) e para / sem ele.
+    const segundoTurno = String.raw`\{ href: ARQUIVO_ELEICOES_2026\.ativo \? "\/2o-turno" : "\/", label: "2º Turno" \},\s*`
+    assert.match(navbar, new RegExp(segundoTurno + String.raw`\{ href: "\/1o-turno", label: "1º Turno" \},\s*\{ href: "\/doadores", label: "Doadores" \}`))
     assert.doesNotMatch(navbar, /\/governadores|\/comparar"|\/rankings/)
-    assert.match(footer, /href: "\/", label: "2º Turno" \},\s*\{ href: "\/1o-turno", label: "1º Turno" \},\s*\{ href: "\/governadores", label: "Governadores" \}/)
+    assert.match(footer, new RegExp(segundoTurno + String.raw`\{ href: "\/1o-turno", label: "1º Turno" \},\s*\{ href: "\/governadores", label: "Governadores" \}`))
     for (const source of [navbar, footer]) {
       assert.doesNotMatch(source, /\/parlamentares/)
-      assert.doesNotMatch(source, /\/2o-turno/)
     }
   })
 
@@ -83,24 +85,24 @@ describe("página /parlamentares", () => {
 
     assert.match(sitemap, /\$\{SITE_ORIGIN\}\/parlamentares/)
     assert.match(cache, /"\/parlamentares"/)
-    // /1o-turno entra (arquivo do 1º turno); /2o-turno só redireciona para a home e sai; as UFs ficam.
+    // /1o-turno entra (arquivo do 1º turno); /2o-turno entra só com o arquivo ligado; as UFs ficam.
     assert.match(sitemap, /\$\{SITE_ORIGIN\}\/1o-turno`/)
-    assert.doesNotMatch(sitemap, /\$\{SITE_ORIGIN\}\/2o-turno/)
+    assert.match(sitemap, /ARQUIVO_ELEICOES_2026\.ativo \? \[\{ url: `\$\{SITE_ORIGIN\}\/2o-turno`/)
     assert.match(sitemap, /\$\{SITE_ORIGIN\}\/1o-turno\/\$\{uf\}/)
     assert.match(cache, /"\/1o-turno"/)
-    assert.doesNotMatch(cache, /"\/2o-turno"/)
+    assert.match(cache, /"\/2o-turno"/)
     assert.doesNotMatch(search, /href: "\/parlamentares"/)
-    assert.match(search, /href: "\/",\s*title: "2º Turno"/)
+    assert.match(search, /href: ARQUIVO_ELEICOES_2026\.ativo \? "\/2o-turno" : "\/",\s*title: "2º Turno"/)
     assert.match(search, /href: "\/1o-turno",\s*title: "1º Turno"/)
-    assert.doesNotMatch(search, /\/2o-turno/)
   })
 
-  test("busca rápida abre com Home (/) e 1º Turno no lugar de /parlamentares, com ou sem a flag do Senado", () => {
+  test("busca rápida abre com o 2º Turno e o 1º Turno no lugar de /parlamentares, com ou sem a flag do Senado", () => {
+    // Com o arquivo ligado o 2º Turno é /2o-turno; sem ele, a home.
+    const segundoTurno = ARQUIVO_ELEICOES_2026.ativo ? "/2o-turno" : "/"
     for (const flag of [false, true]) {
       const items = buildShortcutItems(flag)
       assert.equal(items.find((item) => item.href === "/parlamentares"), undefined)
-      assert.deepEqual(items.slice(0, 2).map((item) => [item.href, item.title]), [["/", "2º Turno"], ["/1o-turno", "1º Turno"]])
-      assert.equal(items.find((item) => item.href === "/2o-turno"), undefined)
+      assert.deepEqual(items.slice(0, 2).map((item) => [item.href, item.title]), [[segundoTurno, "2º Turno"], ["/1o-turno", "1º Turno"]])
     }
   })
 })

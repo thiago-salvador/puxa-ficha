@@ -1,5 +1,6 @@
 "use client"
 
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import {
   createContext,
   Suspense,
@@ -91,9 +92,9 @@ export function buildShortcutItems(_senadoEnabled = false): GlobalSearchIndexIte
     Pick<GlobalSearchIndexItem, "href" | "title" | "subtitle" | "badge">
   > = [
     {
-      href: "/",
+      href: ARQUIVO_ELEICOES_2026.ativo ? "/2o-turno" : "/",
       title: "2º Turno",
-      subtitle: "2º turno em 25 de outubro: presidente, governadores e pesquisas",
+      subtitle: ARQUIVO_ELEICOES_2026.ativo ? "Resultado oficial de 25 de outubro: presidente e governadores eleitos" : "2º turno em 25 de outubro: presidente, governadores e pesquisas",
       badge: "Atalho",
     },
     {

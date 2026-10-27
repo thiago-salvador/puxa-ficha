@@ -1,3 +1,4 @@
+import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 import type { MetadataRoute } from "next"
 import { rankingDefinitions } from "@/data/ranking-definitions"
 import { getCandidatosResource, getEstadoUFs } from "@/lib/api"
@@ -58,8 +59,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }))
   const primeiroTurnoUrls = [
+    // Com o arquivo ligado, o 2º turno tem página própria (a home conta o projeto); sem ele, /2o-turno redireciona para a home.
+    ...(ARQUIVO_ELEICOES_2026.ativo ? [{ url: `${SITE_ORIGIN}/2o-turno`, changeFrequency: "daily" as const, priority: 0.9 }] : []),
     {
-      // A home (/) é a página única da eleição; /1o-turno é o arquivo do 1º turno e /2o-turno só redireciona.
       url: `${SITE_ORIGIN}/1o-turno`,
       changeFrequency: "daily" as const,
       priority: 0.9,

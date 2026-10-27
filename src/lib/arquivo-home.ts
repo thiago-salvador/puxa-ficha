@@ -53,6 +53,11 @@ export function formatarInteiro(valor: number): string {
   return INTEIRO.format(valor)
 }
 
+/** Dias de `inicio` a `fim` (AAAA-MM-DD), contando os dois. */
+export function diasEntre(inicio: string, fim: string): number {
+  return Math.round((Date.parse(`${fim}T00:00:00Z`) - Date.parse(`${inicio}T00:00:00Z`)) / 86_400_000) + 1
+}
+
 /** "25/10/2026 23:27:02" do TSE vira "25/10/2026, 23h27". */
 export function formatarGeradoTse(gerado: string): string {
   const m = gerado.match(/^(\d{2}\/\d{2}\/\d{4}) (\d{2}):(\d{2})/)
@@ -64,7 +69,7 @@ export function metadadosDaHome(arquivoAtivo: boolean): { title: string; descrip
   return arquivoAtivo
     ? {
         title: "Puxa Ficha | Arquivo das eleições 2026",
-        description: "Arquivo das eleições 2026: o resultado oficial do 2º turno e as fichas públicas de presidente, governadores e senadores, com notícias, projetos de lei, processos e contas de campanha, todos com fonte.",
+        description: "Arquivo do Puxa Ficha, de março a outubro de 2026: fichas públicas de presidente, governadores e senadores, com notícias, projetos de lei, processos e contas de campanha, todos com fonte, e como a coleta funcionou.",
       }
     : {
         title: "Puxa Ficha | 2º turno das eleições 2026",

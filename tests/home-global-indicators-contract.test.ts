@@ -2,7 +2,7 @@ import assert from "node:assert/strict"
 import { readFileSync } from "node:fs"
 import { describe, it } from "node:test"
 
-const homeSource = readFileSync("src/app/(site)/page.tsx", "utf8")
+const homeSource = readFileSync("src/components/PaginaSegundoTurno.tsx", "utf8")
 const heroMetricsSource = readFileSync("src/lib/home-hero-metrics.ts", "utf8")
 
 describe("home global indicators contract", () => {

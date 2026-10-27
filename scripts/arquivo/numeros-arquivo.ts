@@ -2,7 +2,9 @@
  * Números da home do arquivo, com a fonte de cada um.
  *
  * Conta direto no export do banco (NDJSON.gz por tabela, feito no dia do
- * corte), no Git e no GitHub, e grava src/data/numeros-arquivo-2026.json.
+ * corte), no Git e no GitHub, e grava src/data/numeros-arquivo-2026.json:
+ * os totais, a série semanal dos gráficos da home e a linha do tempo (só
+ * datas com registro no banco, no Git ou no calendário do TSE).
  * Nenhum número é digitado: refazer o arquivo é rodar o script de novo.
  *
  * Uso:
@@ -35,8 +37,48 @@ const antesDoCorte = (campo: string) => (r: Linha) => typeof r[campo] === "strin
 const diaEmBrasilia = (iso: string) => new Date(Date.parse(iso) - 3 * 3600_000).toISOString().slice(0, 10)
 const distintos = (linhas: Linha[], campo: string) => new Set(linhas.map((r) => r[campo]).filter((v) => v !== null && v !== undefined && v !== "")).size
 
+/** Segunda-feira (Brasília) da semana da data, em AAAA-MM-DD. */
+function semanaDe(iso: string): string {
+  const dia = new Date(`${diaEmBrasilia(iso)}T00:00:00Z`)
+  dia.setUTCDate(dia.getUTCDate() - ((dia.getUTCDay() + 6) % 7))
+  return dia.toISOString().slice(0, 10)
+}
+
+/** Contagem por semana, de `inicio` até `fim` (inclusive), com zero nas semanas sem registro. */
+function porSemana(datas: string[], inicio: string, fim: string): { semanas: string[]; valores: number[] } {
+  const contagem = new Map<string, number>()
+  for (const d of datas) contagem.set(semanaDe(d), (contagem.get(semanaDe(d)) ?? 0) + 1)
+  const semanas: string[] = []
+  for (let s = new Date(`${semanaDe(inicio)}T00:00:00Z`); s.toISOString().slice(0, 10) <= semanaDe(fim); s.setUTCDate(s.getUTCDate() + 7)) {
+    semanas.push(s.toISOString().slice(0, 10))
+  }
+  return { semanas, valores: semanas.map((s) => contagem.get(s) ?? 0) }
+}
+
+// Seções do site e o nome com que aparecem no menu e no rodapé. A data de cada uma é a do merge na main
+// (git log --first-parent), ou a do código publicado quando ela já veio no primeiro commit.
+const SECOES: { rota: string; rotulo: string }[] = [
+  { rota: "candidato", rotulo: "fichas" },
+  { rota: "comparar", rotulo: "comparador" },
+  { rota: "quiz", rotulo: "quiz" },
+  { rota: "alertas", rotulo: "alertas" },
+  { rota: "rankings", rotulo: "listas" },
+  { rota: "doadores", rotulo: "doadores" },
+  { rota: "senado", rotulo: "Senado" },
+  { rota: "imprensa", rotulo: "área de imprensa" },
+  { rota: "colinha", rotulo: "colinha" },
+  { rota: "deputados", rotulo: "deputados" },
+  { rota: "dados-abertos", rotulo: "dados abertos" },
+  { rota: "programas", rotulo: "programas de governo" },
+  { rota: "1o-turno", rotulo: "resultado do 1º turno por estado" },
+]
+
 function comando(bin: string, args: string[]): string {
   return execFileSync(bin, args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 }).trim()
+}
+
+function juntar(itens: string[]): string {
+  return itens.length < 2 ? itens.join("") : `${itens.slice(0, -1).join(", ")} e ${itens.at(-1)}`
 }
 
 function main() {
@@ -63,9 +105,34 @@ function main() {
   if (!Number.isFinite(testes) || falhas !== 0) throw new Error("log de testes sem total ou com falha")
 
   const sha = comando("git", ["rev-parse", "--short", ref])
+  const fimCorte = new Date(FIM_DO_CORTE - 1).toISOString()
+  const inicioColeta = datasColeta[0]
+  const mudancas = tabela(pasta, "candidate_changes").filter(antesDoCorte("created_at"))
+  const semanal = porSemana(datasColeta, inicioColeta, fimCorte)
+  const datasEntrada = (linhas: Linha[], campo: string) => linhas.map((r) => String(r[campo])).filter((d) => d >= inicioColeta)
+
+  // Linha do tempo: só datas com registro (banco, Git, calendário do TSE no código).
+  const primeiroCommit = comando("git", ["rev-list", "--max-parents=0", ref]).split("\n").at(-1)!
+  const dataPrimeiroCommit = comando("git", ["log", "-1", "--format=%ad", "--date=short", primeiroCommit])
+  const secoesPorData = new Map<string, string[]>()
+  for (const { rota, rotulo } of SECOES) {
+    const data = comando("git", ["log", ref, "--first-parent", "--reverse", "--format=%ad", "--date=short", "--", `src/app/(site)/${rota}`]).split("\n")[0]
+    if (!data) throw new Error(`seção sem histórico no Git: ${rota}`)
+    secoesPorData.set(data, [...(secoesPorData.get(data) ?? []), rotulo])
+  }
+  const marcos = [
+    { data: diaEmBrasilia(inicioColeta), titulo: "Primeira coleta registrada", fonte: "coleta_log" },
+    ...[...secoesPorData.entries()].map(([data, rotulos]) => ({
+      data,
+      titulo: data === dataPrimeiroCommit ? `Primeiro commit do repositório público, já com ${juntar(rotulos)}` : `Entram no ar: ${juntar(rotulos)}`,
+      fonte: data === dataPrimeiroCommit ? "primeiro commit público" : "merge na main",
+    })),
+    { data: "2026-10-04", titulo: "1º turno", fonte: "calendário eleitoral do TSE" },
+    { data: "2026-10-25", titulo: `2º turno; os dados congelam em ${ARQUIVO_ELEICOES_2026.dataCorte}`, fonte: "calendário eleitoral do TSE" },
+  ].sort((a, b) => a.data.localeCompare(b.data))
   const exportFonte = `export do banco de ${manifesto.exportado_em.slice(0, 10)}`
   const numeros = {
-    versao: 1,
+    versao: 2,
     medido_em: new Date().toISOString(),
     exportado_em: manifesto.exportado_em,
     ref_codigo: sha,
@@ -83,8 +150,16 @@ function main() {
     operacao: {
       registros_coleta: { valor: coleta.length, inicio: diaEmBrasilia(datasColeta[0]), fim: diaEmBrasilia(datasColeta.at(-1)!), fonte: `${exportFonte}, tabela coleta_log até o corte de ${ARQUIVO_ELEICOES_2026.dataCorte}` },
       rotinas_coleta: { valor: distintos(coleta, "fonte"), fonte: `${exportFonte}, valores distintos de coleta_log.fonte` },
-      mudancas_rastreadas: { valor: tabela(pasta, "candidate_changes").filter(antesDoCorte("created_at")).length, fonte: `${exportFonte}, tabela candidate_changes até o corte de ${ARQUIVO_ELEICOES_2026.dataCorte}` },
+      mudancas_rastreadas: { valor: mudancas.length, fonte: `${exportFonte}, tabela candidate_changes até o corte de ${ARQUIVO_ELEICOES_2026.dataCorte}` },
     },
+    serie_semanal: {
+      semanas: semanal.semanas,
+      coleta: semanal.valores,
+      mudancas: porSemana(datasEntrada(mudancas, "created_at"), inicioColeta, fimCorte).valores,
+      noticias: porSemana(datasEntrada(noticias, "created_at"), inicioColeta, fimCorte).valores,
+      fonte: `${exportFonte}: coleta_log.executado_em, candidate_changes.created_at e noticias_candidato.created_at, por semana (segunda a domingo, horário de Brasília)`,
+    },
+    marcos,
     construcao: {
       testes: { valor: testes, fonte: `npm test em ${sha}` },
       prs_mesclados: { valor: Number(comando("gh", ["pr", "list", "--state", "merged", "--limit", "5000", "--json", "number", "--jq", "length"])), fonte: "GitHub, pull requests mesclados" },

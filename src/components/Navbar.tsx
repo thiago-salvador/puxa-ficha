@@ -9,7 +9,8 @@ import { useGlobalSearch, useModKShortcutLabel } from "@/components/GlobalSearch
 import { ARQUIVO_ELEICOES_2026 } from "@/lib/arquivo"
 
 const NAV_ITEMS: { href: string; label: string; external?: boolean }[] = [
-  { href: "/", label: "2º Turno" },
+  // Com o arquivo ligado, a home conta o projeto (o logo leva até ela) e o 2º turno tem página própria.
+  { href: ARQUIVO_ELEICOES_2026.ativo ? "/2o-turno" : "/", label: "2º Turno" },
   { href: "/1o-turno", label: "1º Turno" },
   { href: "/doadores", label: "Doadores" },
   { href: "/quiz", label: "Quiz" },

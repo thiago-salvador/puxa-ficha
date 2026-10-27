@@ -196,7 +196,7 @@ describe("hero: agregado com a mesma definição da ficha", () => {
     assert.match(hero, /totalProcessosDisciplinares/)
     assert.match(hero, /PROCESSO_DISCIPLINAR_AVISO/)
     assert.match(readFileSync("src/app/(site)/uf/[uf]/page.tsx", "utf8"), /PROCESSO_DISCIPLINAR_AVISO/)
-    for (const path of ["src/app/(site)/page.tsx", "src/app/(site)/uf/[uf]/page.tsx", "src/app/(site)/uf/[uf]/senado/page.tsx"]) {
+    for (const path of ["src/components/PaginaSegundoTurno.tsx", "src/app/(site)/uf/[uf]/page.tsx", "src/app/(site)/uf/[uf]/senado/page.tsx"]) {
       assert.match(readFileSync(path, "utf8"), /processosContagem=\{processosContagem\}/, path)
     }
   })
