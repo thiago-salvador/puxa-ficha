@@ -35,6 +35,20 @@ export function arquivoDownloadHref(url: string): string {
   return `/arquivo-dados/${base64Url(url)}.${formato === "csv" ? "csv" : "json"}`
 }
 
+/**
+ * Página com query no espelho estático: o host serve um arquivo por caminho e
+ * ignora a query, então a query vai codificada no caminho
+ * (`/x/__q/<query em base64url>`) e o crawler grava essa variante.
+ */
+export function arquivoPaginaHref(url: string): string {
+  if (!ARQUIVO_ESTATICO) return url
+  const [semHash, hash] = url.split("#")
+  const i = semHash.indexOf("?")
+  if (i < 0 || i === semHash.length - 1) return url
+  const caminho = semHash.slice(0, i).replace(/\/$/, "")
+  return `${caminho}/__q/${base64Url(semHash.slice(i + 1))}${hash ? `#${hash}` : ""}`
+}
+
 // Hash síncrono (cyrb53): o mesmo nome de arquivo sai no servidor, no navegador e no crawler.
 function hashImagem(texto: string): string {
   let h1 = 0xdeadbeef

@@ -77,3 +77,13 @@ test("crawler e site geram o mesmo nome de imagem", () => {
     assert.equal(copia(url), arquivoImagemLocal(url), url)
   }
 })
+
+test("página com query vira caminho no espelho e volta à URL original", () => {
+  assert.equal(carregarArquivo(false).arquivoPaginaHref("/deputados/sp?cargo=deputado_federal&pagina=2"), "/deputados/sp?cargo=deputado_federal&pagina=2")
+  const { arquivoPaginaHref } = carregarArquivo(true)
+  assert.equal(arquivoPaginaHref("/deputados/sp"), "/deputados/sp")
+  const href = arquivoPaginaHref("/deputados/sp?cargo=deputado_federal&pagina=2#lista")
+  assert.match(href, /^\/deputados\/sp\/__q\/[A-Za-z0-9_-]+#lista$/)
+  const codificado = href.split("/__q/")[1].split("#")[0]
+  assert.equal(Buffer.from(codificado, "base64url").toString("utf8"), "cargo=deputado_federal&pagina=2")
+})

@@ -1,3 +1,4 @@
+import { arquivoPaginaHref } from "@/lib/arquivo"
 import { isImprensaUf, type ImprensaUf } from "@/lib/imprensa-uf-pack"
 
 /**
@@ -105,6 +106,11 @@ export function imprensaUfPath(uf: ImprensaUf): ImprensaPath {
  * recorte. `extra` acrescenta `ordem` e `com` na Mesa.
  */
 export function imprensaHref(path: ImprensaPath, recorte: ImprensaRecorte = {}, extra: MesaQuery = {}): string {
+  return arquivoPaginaHref(imprensaHrefComQuery(path, recorte, extra))
+}
+
+/** O mesmo link com a query aberta, para quem ainda acrescenta parâmetros. */
+export function imprensaHrefComQuery(path: ImprensaPath, recorte: ImprensaRecorte = {}, extra: MesaQuery = {}): string {
   const query = new URLSearchParams()
   if (QUERY_RECORTE_PATHS.has(path)) {
     const cargo = normalizeCargo(recorte.cargo)

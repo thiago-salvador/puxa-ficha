@@ -13,6 +13,7 @@ const paginas = new Map() // caminho -> arquivo html
 const refsImagem = new Set() // como aparecem no HTML (com &amp;)
 const downloads = new Set()
 const falhas = []
+const imagensMeta = new Set()
 const espera = (ms) => new Promise((ok) => setTimeout(ok, ms))
 
 // Cópia exata de src/lib/arquivo.ts (hashImagem + arquivoImagemLocal).
@@ -36,7 +37,7 @@ function arquivoImagemLocal(src) {
 function enfileirar(p) {
   if (!p.startsWith("/") || p.startsWith("//")) return
   const limpo = p.split("#")[0].split("?")[0]
-  if (!limpo || limpo.startsWith("/api/") || limpo.startsWith("/_next/") || limpo.startsWith("/arquivo-dados/") || /\.[a-z0-9]{2,12}$/i.test(limpo)) return
+  if (!limpo || limpo.startsWith("/api/") || limpo.startsWith("/_next/") || limpo.startsWith("/arquivo-dados/") || limpo.startsWith("/og/") || /\/(?:opengraph|twitter)-image$/.test(limpo) || /\.[a-z0-9]{2,12}$/i.test(limpo)) return
   if (feitos.has(limpo)) return
   feitos.add(limpo)
   fila.push(limpo)
@@ -69,8 +70,14 @@ async function baixar(url, arquivo, { externo = false, tentativas = 3, aceitar40
   return { status: r.status, buf, tipo: r.headers.get("content-type") || "" }
 }
 
+// Variante com query (arquivoPaginaHref): /x/__q/<query em base64url> vem de /x?<query>.
+function origemDaPagina(p) {
+  const m = p.match(/^(.*)\/__q\/([A-Za-z0-9_-]+)$/)
+  return m ? `${m[1] || "/"}?${Buffer.from(m[2], "base64url").toString("utf8")}` : p
+}
+
 async function processarPagina(p) {
-  const r = await baixar(p)
+  const r = await baixar(origemDaPagina(p))
   if (r.redirect) {
     const alvo = new URL(r.redirect, ORIGEM).pathname
     gravarAtomico(destinoHtml(p), `<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${alvo}"><link rel="canonical" href="${alvo}">`)
@@ -81,6 +88,8 @@ async function processarPagina(p) {
   const html = r.buf.toString("utf8")
   for (const m of html.matchAll(/href="(\/[^"]*)"/g)) enfileirar(m[1])
   for (const m of html.matchAll(/\/arquivo-dados\/[A-Za-z0-9_-]+\.(?:csv|json)/g)) downloads.add(m[0])
+  // Imagem de compartilhamento: a rota que a gera some com o servidor, então o arquivo vai junto.
+  for (const m of html.matchAll(/<meta (?:property|name)="(?:og|twitter):image" content="https?:\/\/[^/"]+(\/[^"?]*)/g)) imagensMeta.add(m[1])
   for (const m of html.matchAll(/\/_img\/([a-z0-9]+\.[a-z]+)\?o=([^"'\s,)\\&]+)/g)) refsImagem.add(`${m[1]} ${decodeURIComponent(m[2])}`)
   gravarAtomico(destinoHtml(p), html)
   paginas.set(p, destinoHtml(p))
@@ -152,6 +161,10 @@ async function main() {
   for (const extra of ["/sitemap.xml", "/robots.txt", "/manifest.webmanifest", "/favicon.ico", "/opengraph-image"]) {
     const r = await baixar(extra, path.join(DEST, extra)).catch((e) => ({ status: `erro ${e.name}` }))
     if (!r.buf) falhas.push(`extra ${r.status} ${extra}`)
+  }
+  for (const caminho of imagensMeta) {
+    const r = await baixar(caminho, path.join(DEST, caminho)).catch((e) => ({ status: `erro ${e.name}` }))
+    if (!r.buf) falhas.push(`imagem de compartilhamento ${r.status} ${caminho}`)
   }
   const naoExiste = await baixar("/pagina-que-nao-existe-arquivo", null, { aceitar404: true })
   if (naoExiste.buf) gravarAtomico(path.join(DEST, "404.html"), naoExiste.buf)
