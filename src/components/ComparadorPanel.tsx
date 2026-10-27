@@ -75,11 +75,20 @@ function buildCompararQueryString(
   eixo: ComparadorEixo,
   scope: { cargo: string; uf: string } | null,
   currentSearch: string,
+  preservados: string[] = [],
 ): string {
   const slugs = selectedIds.slice(0, 4)
     .map((id) => candidatos.find((candidate) => candidate.id === id)?.slug)
     .filter((slug): slug is string => Boolean(slug))
-  return mergeComparadorQueryString(currentSearch, slugs, eixo, scope)
+  return mergeComparadorQueryString(currentSearch, [...preservados, ...slugs].slice(0, 4), eixo, scope)
+}
+
+/** No espelho estático, slugs válidos da URL que não estão no grupo desta página. */
+function slugsForaDoGrupo(searchParams: { get(key: string): string | null }, candidatos: CandidatoComparavel[]): string[] {
+  if (!ARQUIVO_ESTATICO) return []
+  return ["c1", "c2", "c3", "c4"]
+    .map((key) => searchParams.get(key)?.trim())
+    .filter((slug): slug is string => isComparadorSlugParam(slug) && !candidatos.some((c) => c.slug === slug))
 }
 
 function resolveInitialSelectedIds(
@@ -136,11 +145,7 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
   // outra disputa pedido na URL não está aqui, e o aviso leva à ficha dele.
   // O HTML do espelho sai sem query: o aviso só existe depois da hidratação.
   const hidratado = useSyncExternalStore(subscribeNada, () => true, () => false)
-  const foraDoGrupo = useMemo(() => {
-    if (!ARQUIVO_ESTATICO || !hidratado) return []
-    const slugs = ["c1", "c2", "c3", "c4"].map((key) => searchParams.get(key)?.trim()).filter((slug): slug is string => Boolean(slug))
-    return slugs.filter((slug) => isComparadorSlugParam(slug) && !candidatos.some((c) => c.slug === slug))
-  }, [candidatos, hidratado, searchParams])
+  const foraDoGrupo = useMemo(() => (hidratado ? slugsForaDoGrupo(searchParams, candidatos) : []), [candidatos, hidratado, searchParams])
 
   const selectedCandidatos = useMemo(
     () =>
@@ -223,14 +228,13 @@ export function ComparadorPanel({ candidatos: candidatosInput, referenceNow, ini
 
   useEffect(() => {
     if (candidatos.length === 0) return
-    // Normalizar a URL apagaria os slugs fora do grupo e, com eles, o aviso que leva às fichas.
-    if (foraDoGrupo.length > 0) return
     const current = searchParams.toString()
-    const qs = buildCompararQueryString(candidatos, selectedIds, eixo, hubScope, current)
+    // Os slugs fora do grupo ficam nas primeiras vagas da URL: o aviso que leva às fichas não some ao sincronizar.
+    const qs = buildCompararQueryString(candidatos, selectedIds, eixo, hubScope, current, slugsForaDoGrupo(searchParams, candidatos))
     if (qs === current) return
     const hash = typeof window === "undefined" ? "" : window.location.hash
     router.replace(qs ? `${pathname}?${qs}${hash}` : `${pathname}${hash}`, { scroll: false })
-  }, [candidatos, eixo, foraDoGrupo.length, hubScope, pathname, router, searchParams, selectedIds])
+  }, [candidatos, eixo, hubScope, pathname, router, searchParams, selectedIds])
 
   const shareUrl =
     typeof window !== "undefined" && candidatos.length > 0 && selectedIds.length >= 2

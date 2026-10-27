@@ -145,7 +145,8 @@ test("candidato privado e candidato inexistente não permitem consulta de notíc
 })
 
 test("notícias sem data ou fora da retenção não são recuperadas pelo link antigo", async () => {
-  for (const data_publicacao of [null, new Date(Date.now() - 366 * 24 * 60 * 60 * 1000).toISOString()]) {
+  // A retenção conta da referência dos dados (o corte do arquivo), não do relógio: com Date.now() o teste vence no dia seguinte ao corte.
+  for (const data_publicacao of [null, new Date(referenciaDosDados().getTime() - 366 * 24 * 60 * 60 * 1000).toISOString()]) {
     const response = await fixture({ articles: [{ ...ARTICLE, data_publicacao }] }).request()
     assert.equal(response.status, 404)
     assert.deepEqual(await response.json(), { data: null })
