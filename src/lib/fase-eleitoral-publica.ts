@@ -3,7 +3,12 @@ import { mergeComparadorQueryString } from "@/lib/comparador-query"
 import { COMPARADOR_EIXO_DEFAULT } from "@/lib/comparador-axis"
 
 export const FONTE_RESULTADO_TSE_URL = "https://resultados.tse.jus.br"
-export const FONTE_RESULTADO_TSE_ROTULO = "Fonte: TSE, resultado oficial do 1º turno"
+const FONTE_RESULTADO_TSE_ROTULO = "Fonte: TSE, resultado oficial do 1º turno"
+
+/** Rótulo da fonte do selo pelo turno que decidiu a fase; sem turno, o do 1º. */
+export function fonteResultadoTseRotulo(turno: 1 | 2 | null | undefined): string {
+  return turno === 2 ? "Fonte: TSE, resultado oficial do 2º turno" : FONTE_RESULTADO_TSE_ROTULO
+}
 
 export interface FaseEleitoralPublica extends FaseEleitoral2026 {
   candidato_id: string
