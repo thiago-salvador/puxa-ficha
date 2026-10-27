@@ -1,0 +1,60 @@
+{
+  "versao": "2026-10-27",
+  "_comentario": "Allowlist fechada da migration 20261027134837 (resultado oficial do 2º turno de 2026), gerada por scripts/resultados-tse-fase.ts a partir do plano sha256 47dd60f72855baeab799c8388034a47811c0afce9d2e5941da4d8e4e103ad6a2.",
+  "fonte": "Divulgação oficial de resultados do TSE (resultados.tse.jus.br/oficial), arquivos com totalização final; URLs e SHA-256 no cabeçalho da migration e no recibo.",
+  "motivo": "Registrar a fase eleitoral de cada candidatura e encerrar a atualização de quem saiu da disputa, sem despublicar ficha nem apagar dado.",
+  "coorte": [
+    "alan-rick",
+    "alysson-bezerra",
+    "cadu-xavier",
+    "celina-leao",
+    "flavio-bolsonaro",
+    "leandro-grass",
+    "lula",
+    "mailza-assis",
+    "maria-do-carmo",
+    "omar-aziz",
+    "pazolini",
+    "professora-dorinha",
+    "ricardo-ferraco",
+    "vicentinho-junior"
+  ],
+  "fora_por_construcao": {
+    "slugs": []
+  },
+  "entries": [],
+  "referencias": [
+    {
+      "tabela": "candidaturas_fase_2026",
+      "ref": "fase-turno-2-20261027134837",
+      "campos": [
+        "candidato_id",
+        "sq_candidato_2026",
+        "cargo_disputado",
+        "fase_eleitoral",
+        "fase_turno",
+        "atualizacao_encerrada_em",
+        "situacao_tse",
+        "fonte_url",
+        "fonte_sha256",
+        "migration_version",
+        "registrado_em"
+      ]
+    },
+    {
+      "tabela": "coleta_log",
+      "ref": "migration:20261027134837",
+      "campos": [
+        "fonte",
+        "escopo",
+        "alvo",
+        "resultado",
+        "volume",
+        "detalhe",
+        "url",
+        "execucao",
+        "natureza"
+      ]
+    }
+  ]
+}
