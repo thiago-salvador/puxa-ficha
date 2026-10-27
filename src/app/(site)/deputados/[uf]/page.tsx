@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Footer } from "@/components/Footer"
 import { SectionDivider } from "@/components/SectionHeader"
 import { DeputadosList } from "@/components/DeputadosList"
+import { arquivoPaginaHref } from "@/lib/arquivo"
 import { buildTwitterMetadata } from "@/lib/metadata"
 import { getEstadoNome, getEstadoUFs } from "@/lib/br-uf"
 import { getDeputadosRoster, type DeputadoCargo } from "@/lib/deputados-roster"
@@ -61,7 +62,7 @@ export default async function DeputadosUfPage({
   const tabHref = (tab: DeputadoCargo) => {
     const params = new URLSearchParams({ cargo: tab })
     if (search) params.set("q", search)
-    return `/deputados/${uf}?${params.toString()}`
+    return arquivoPaginaHref(`/deputados/${uf}?${params.toString()}`)
   }
   return <div className="min-h-screen bg-background"><div>
     <section className="bg-foreground px-5 pb-12 pt-28 text-background sm:pt-36 md:px-12"><div className="mx-auto max-w-7xl"><p className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.12em] text-background/65">Eleições 2026 · {uf.toUpperCase()}</p><h1 className="mt-2 font-heading text-[clamp(2.75rem,8vw,6rem)] uppercase leading-[.88]">Deputados de {nome}</h1><p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-background/75">Candidaturas por UF com número de urna, partido e situação do registro. A lista indica quando a cobertura do snapshot ainda é parcial.</p></div></section>

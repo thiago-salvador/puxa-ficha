@@ -13,6 +13,8 @@ import {
 import { formatPartyPublicLabel } from "@/lib/party-utils"
 import { formatFinancingLabel } from "@/lib/ui-labels"
 import { formatBRL } from "@/lib/utils"
+import { ArquivoFerramentaAviso } from "@/components/ArquivoFerramentaAviso"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 
 interface BuscaResponse {
   result: DoadorReverseSearchResult
@@ -300,7 +302,7 @@ function Resultados({ result }: { result: DoadorReverseSearchResult }) {
 
 // A página /doadores é estática; o termo vem de `?q=` no client e a busca sai
 // por /api/doadores/busca, que fica em cache de CDN por termo.
-export function DoadoresBusca() {
+function DoadoresBuscaAtiva() {
   const rawQ = useSearchParams().get("q") ?? ""
   const trimmed = rawQ.trim()
   const termoCurtoDemais = trimmed.length > 0 && trimmed.length < DOADOR_REVERSE_MIN_QUERY_LENGTH
@@ -390,4 +392,18 @@ export function DoadoresBusca() {
       {result && hasQuery && !result.error && <Resultados key={result.normalizedQuery} result={result} />}
     </>
   )
+}
+
+// Espelho estático: sem servidor nem banco, a busca vira aviso de ferramenta
+// encerrada e aponta para as fichas, onde os dados seguem publicados.
+export function DoadoresBusca() {
+  if (ARQUIVO_ESTATICO) {
+    return (
+      <ArquivoFerramentaAviso
+        ferramenta="Busca de doadores"
+        comoFuncionava="A busca reversa procurava um doador pelo nome e listava as candidaturas que ele financiou nas eleições de 2026, com valores declarados ao TSE. Os doadores de cada candidatura seguem na seção de financiamento da ficha."
+      />
+    )
+  }
+  return <DoadoresBuscaAtiva />
 }

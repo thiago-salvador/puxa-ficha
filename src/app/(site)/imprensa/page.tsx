@@ -22,6 +22,7 @@ import { computeImprensaFacts } from "@/lib/imprensa-facts"
 import { IMPRENSA_STATE_CHOOSER_ID, imprensaHref, imprensaUfPath } from "@/lib/imprensa-nav"
 import { getImprensaUfName, IMPRENSA_UFS, isImprensaUf } from "@/lib/imprensa-uf-pack"
 import styles from "./sala.module.css"
+import { arquivoDownloadHref } from "@/lib/arquivo"
 
 // cspell:words numeros confianca atualizacoes presidencia homonimos
 
@@ -256,24 +257,24 @@ export default async function ImprensaSala() {
               <strong>Finalistas do 2º turno</strong>
               <span>As linhas da Mesa dos finalistas, com o estado de cada dado.</span>
               <span className={styles.toolLinks}>
-                <a href="/api/imprensa/export?format=csv&turno=2" download>CSV</a>
-                <a href="/api/imprensa/export?format=json&turno=2" download>JSON</a>
+                <a href={arquivoDownloadHref("/api/imprensa/export?format=csv&turno=2")} download>CSV</a>
+                <a href={arquivoDownloadHref("/api/imprensa/export?format=json&turno=2")} download>JSON</a>
               </span>
             </li>
             <li>
               <strong>Todos os candidatos</strong>
               <span>As linhas do 1º turno, inclusive de quem saiu da disputa.</span>
               <span className={styles.toolLinks}>
-                <a href="/api/imprensa/export?format=csv" download>CSV</a>
-                <a href="/api/imprensa/export?format=json" download>JSON</a>
+                <a href={arquivoDownloadHref("/api/imprensa/export?format=csv")} download>CSV</a>
+                <a href={arquivoDownloadHref("/api/imprensa/export?format=json")} download>JSON</a>
               </span>
             </li>
             <li>
               <strong>Cota parlamentar por ano</strong>
               <span>Gastos na Câmara e no Senado, por candidato e ano.</span>
               <span className={styles.toolLinks}>
-                <a href="/api/imprensa/export/gastos?format=csv" download>CSV</a>
-                <a href="/api/imprensa/export/gastos?format=json" download>JSON</a>
+                <a href={arquivoDownloadHref("/api/imprensa/export/gastos?format=csv")} download>CSV</a>
+                <a href={arquivoDownloadHref("/api/imprensa/export/gastos?format=json")} download>JSON</a>
               </span>
             </li>
             <Tool title="Embed" text="Ficha ou comparação para colar na matéria." href="/embed" />

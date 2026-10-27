@@ -3,6 +3,7 @@ import Link from "next/link"
 import { normalizeDadosAbertosFilters, type DadosAbertosFilters } from "@/lib/dados-abertos"
 import { getDadosAbertosDatasetCached } from "@/lib/dados-abertos-cache"
 import styles from "./dados-abertos.module.css"
+import { arquivoDownloadHref } from "@/lib/arquivo"
 
 export const metadata: Metadata = {
   title: "Dados abertos | Puxa Ficha",
@@ -66,10 +67,10 @@ export default async function DadosAbertosPage({ searchParams }: { searchParams:
         </p>
 
         <div className={styles.downloadRow}>
-          <a className={styles.downloadButton} href={`/api/dados-abertos?format=csv${exportSuffix}`} download>
+          <a className={styles.downloadButton} href={arquivoDownloadHref(`/api/dados-abertos?format=csv${exportSuffix}`)} download>
             Baixar CSV
           </a>
-          <a className={styles.downloadButton} href={`/api/dados-abertos?format=json${exportSuffix}`} download>
+          <a className={styles.downloadButton} href={arquivoDownloadHref(`/api/dados-abertos?format=json${exportSuffix}`)} download>
             Baixar JSON
           </a>
         </div>

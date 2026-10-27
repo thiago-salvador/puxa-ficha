@@ -1,3 +1,4 @@
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
@@ -278,60 +279,67 @@ export default async function RankingDetailPage({
               </Link>
             ) : null}
           </div>
-          <form method="get" className="mt-5 grid gap-4 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end">
-            <label className="block">
-              <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-                Cargo
-              </span>
-              <select
-                name="cargo"
-                defaultValue={view.cargo}
-                className="mt-2 w-full rounded-[14px] border border-border bg-background px-4 py-3 text-[length:var(--text-body)] font-medium text-foreground"
+          {ARQUIVO_ESTATICO ? (
+            // O espelho estático guarda um arquivo por página: o filtro por query não existe nele.
+            <p className="mt-5 text-[length:var(--text-body-sm)] font-medium text-muted-foreground">
+              No arquivo, o ranking mostra o recorte padrão. Os dados de cada candidato seguem nas fichas e nos dados abertos.
+            </p>
+          ) : (
+            <form method="get" className="mt-5 grid gap-4 lg:grid-cols-[1fr_1fr_1fr_auto] lg:items-end">
+              <label className="block">
+                <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  Cargo
+                </span>
+                <select
+                  name="cargo"
+                  defaultValue={view.cargo}
+                  className="mt-2 w-full rounded-[14px] border border-border bg-background px-4 py-3 text-[length:var(--text-body)] font-medium text-foreground"
+                >
+                  {RANKING_CARGOS.map((cargo) => (
+                    <option key={cargo} value={cargo}>
+                      {cargo}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="block">
+                <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  UF
+                </span>
+                <select
+                  name="uf"
+                  defaultValue={dataset.estado ?? ""}
+                  className="mt-2 w-full rounded-[14px] border border-border bg-background px-4 py-3 text-[length:var(--text-body)] font-medium text-foreground"
+                >
+                  <option value="">Brasil inteiro</option>
+                  {ufOptions.map((uf) => (
+                    <option key={uf} value={uf}>
+                      {uf}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="block">
+                <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
+                  Ordem
+                </span>
+                <select
+                  name="ordem"
+                  defaultValue={view.sortOrder}
+                  className="mt-2 w-full rounded-[14px] border border-border bg-background px-4 py-3 text-[length:var(--text-body)] font-medium text-foreground"
+                >
+                  <option value="desc">Maior para menor</option>
+                  <option value="asc">Menor para maior</option>
+                </select>
+              </label>
+              <button
+                type="submit"
+                className="rounded-full border border-foreground px-5 py-3 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.08em] text-foreground transition-colors hover:bg-foreground hover:text-background"
               >
-                {RANKING_CARGOS.map((cargo) => (
-                  <option key={cargo} value={cargo}>
-                    {cargo}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="block">
-              <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-                UF
-              </span>
-              <select
-                name="uf"
-                defaultValue={dataset.estado ?? ""}
-                className="mt-2 w-full rounded-[14px] border border-border bg-background px-4 py-3 text-[length:var(--text-body)] font-medium text-foreground"
-              >
-                <option value="">Brasil inteiro</option>
-                {ufOptions.map((uf) => (
-                  <option key={uf} value={uf}>
-                    {uf}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="block">
-              <span className="text-[length:var(--text-eyebrow)] font-bold uppercase tracking-[0.08em] text-muted-foreground">
-                Ordem
-              </span>
-              <select
-                name="ordem"
-                defaultValue={view.sortOrder}
-                className="mt-2 w-full rounded-[14px] border border-border bg-background px-4 py-3 text-[length:var(--text-body)] font-medium text-foreground"
-              >
-                <option value="desc">Maior para menor</option>
-                <option value="asc">Menor para maior</option>
-              </select>
-            </label>
-            <button
-              type="submit"
-              className="rounded-full border border-foreground px-5 py-3 text-[length:var(--text-caption)] font-bold uppercase tracking-[0.08em] text-foreground transition-colors hover:bg-foreground hover:text-background"
-            >
-              Aplicar
-            </button>
-          </form>
+                Aplicar
+              </button>
+            </form>
+          )}
           {view.isFiltered ? (
             <p className="mt-4 text-[length:var(--text-caption)] font-medium text-muted-foreground">
               Este recorte por cargo e UF existe para navegacao e compartilhamento. A versao indexavel fica na rota

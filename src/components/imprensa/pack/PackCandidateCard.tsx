@@ -1,5 +1,6 @@
 // cspell:words justica
 import Link from "next/link"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 import type { ImprensaPageRow } from "@/lib/imprensa-cache"
 import { candidateCitation, packCardLines, packChapaLine } from "@/lib/imprensa-uf-pack"
 import { CiteBox } from "@/components/imprensa/CiteBox"
@@ -43,7 +44,7 @@ export function PackCandidateCard({ row, generatedAt }: { row: ImprensaPageRow; 
       <div className={styles.cardActions}>
         <Link href={row.fichaUrl}>Ficha</Link>
         <Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link>
-        <a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`} rel="noreferrer">Card</a>
+        {!ARQUIVO_ESTATICO && <a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`} rel="noreferrer">Card</a>}
         <details className={styles.citeToggle}>
           <summary>Citar</summary>
           <CiteBox citation={candidateCitation(row, generatedAt)} label={`Como citar: ${row.nome}`} />
