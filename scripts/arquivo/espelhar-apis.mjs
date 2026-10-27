@@ -36,10 +36,16 @@ function arquivoDe(url) {
   return /^\/api\/candidato-profile\/[^/]+$/.test(url) ? `${url}/perfil.json` : url
 }
 
+// Alguns recibos guardam o caminho absoluto da máquina que gerou o artefato:
+// no espelho público fica só o caminho relativo ao repositório.
+function semCaminhoLocal(texto) {
+  return texto.replace(/"\/(?:Users|home)\/[^"]*?\/(\.artifacts\/)/g, '"$1')
+}
+
 function gravar(url, corpo) {
   const arquivo = path.join(DEST, arquivoDe(url))
   fs.mkdirSync(path.dirname(arquivo), { recursive: true })
-  fs.writeFileSync(arquivo, JSON.stringify(corpo))
+  fs.writeFileSync(arquivo, semCaminhoLocal(JSON.stringify(corpo)))
   relatorio.ok++
 }
 

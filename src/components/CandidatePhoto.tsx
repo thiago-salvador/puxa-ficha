@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 import {
   cn,
   FALLBACK_GRADIENT,
@@ -83,7 +84,8 @@ export function CandidatePhoto({
       sizes={sizes}
       priority={priority}
       fetchPriority={fetchPriority ?? (priority ? "high" : undefined)}
-      unoptimized={unoptimized ?? (priority ? false : shouldBypassImageOptimization(displaySrc))}
+      // No espelho estático toda foto passa pelo loader local: nenhuma depende do Storage.
+      unoptimized={ARQUIVO_ESTATICO ? false : unoptimized ?? (priority ? false : shouldBypassImageOptimization(displaySrc))}
       className={className}
       onError={() => setFailed(true)}
     />
