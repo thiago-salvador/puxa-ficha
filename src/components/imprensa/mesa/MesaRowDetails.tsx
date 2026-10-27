@@ -1,3 +1,4 @@
+import { ARQUIVO_ESTATICO } from "@/lib/arquivo"
 import { safeHref } from "@/lib/utils"
 import Link from "next/link"
 import type { ReactNode } from "react"
@@ -110,7 +111,7 @@ export function MesaRowDetails({ row, generatedAt, id }: { row: MesaRow; generat
           <Link href={`${row.fichaUrl}?tab=justica`}>Justiça</Link>
           <Link href={`/comparar?c1=${encodeURIComponent(row.slug)}`}>Comparar</Link>
           <Link href={`${row.fichaUrl}?tab=dinheiro`}>Doadores da campanha</Link>
-          <a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`} rel="noreferrer">Card para redes</a>
+          {!ARQUIVO_ESTATICO && <a href={`/api/card/${encodeURIComponent(row.slug)}?format=feed&v=2`} rel="noreferrer">Card para redes</a>}
         </nav>
         <p className={styles.errorBox}>
           <strong>Encontrou um erro?</strong> Escreva para{" "}
