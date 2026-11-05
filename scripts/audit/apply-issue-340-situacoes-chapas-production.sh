@@ -105,7 +105,7 @@ raw, body = split_body(migration_path)
 rollback = pathlib.Path(rollback_path).read_bytes()
 readback = pathlib.Path(readback_path).read_bytes()
 name = pathlib.Path(migration_path).stem.removeprefix(version + "_")
-created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
 
 print("BEGIN;")
 print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:issue-340-situacoes-chapas-production', 0));")

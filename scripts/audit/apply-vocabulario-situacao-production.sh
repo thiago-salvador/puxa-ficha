@@ -100,7 +100,7 @@ rollback = pathlib.Path(rollback_path).read_bytes()
 readback = pathlib.Path(readback_path).read_bytes()
 name_a = pathlib.Path(path_a).stem.removeprefix(version_a + "_")
 name_b = pathlib.Path(path_b).stem.removeprefix(version_b + "_")
-created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
 
 def ledger_row(version, name, digest, raw):
     return (

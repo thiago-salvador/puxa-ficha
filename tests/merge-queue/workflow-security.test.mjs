@@ -169,7 +169,7 @@ test('privileged automation sources are protected by the irreversible-change gat
   assert.deepEqual(config.queue.trustedContextActors, ['thiago-salvador']);
   assert.deepEqual(config.queue.mergeCoAuthor, {
     name: 'Thiago Salvador',
-    email: 'contato.thiagosalvador@gmail.com',
+    email: '131783790+thiago-salvador@users.noreply.github.com',
   });
 });
 

@@ -43,7 +43,7 @@ function fixture(
   const root = mkdtempSync(join(tmpdir(), "pf21-audit-"))
   git(root, ["init", "-q"])
   git(root, ["config", "user.name", "Thiago Salvador"])
-  git(root, ["config", "user.email", "contato.thiagosalvador@gmail.com"])
+  git(root, ["config", "user.email", "test@example.com"])
   mkdirSync(join(root, "public/candidates"), { recursive: true })
   writeFileSync(join(root, candidatePath), "asset")
   writeFileSync(join(root, "source.ts"), source)

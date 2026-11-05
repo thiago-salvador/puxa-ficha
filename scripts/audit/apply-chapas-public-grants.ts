@@ -8,7 +8,9 @@ import { transactionBody } from "./lib/master-review-transaction"
 const PREDECESSOR = "20260912160100"
 const VERSION = "20260912160200"
 const NAME = "grant_chapas_publico_columns"
-const AUTHOR = "Thiago Salvador <contato.thiagosalvador@gmail.com> via chapas-public-grants:"
+const AUTHOR = "Thiago Salvador <hi@thiagosalvador.work> via chapas-public-grants:"
+// Ledger rows written before the contact change keep their original address.
+const AUTHOR_PATTERN = "^Thiago Salvador <[^<>@[:space:]]+@[^<>@[:space:]]+> via chapas-public-grants:"
 const digest = (text: string) => `sha256:${createHash("sha256").update(text).digest("hex")}`
 const lit = (text: string) => `'${text.replaceAll("'", "''")}'`
 const encoded = (text: string) => `convert_from(decode(${lit(Buffer.from(text).toString("base64"))}, 'base64'), 'UTF8')`
@@ -31,7 +33,7 @@ export function renderChapasPublicGrantsTransaction(mode: "apply" | "dry-run" | 
   const sql = [applied ? "BEGIN READ ONLY;" : "BEGIN;", "SET LOCAL standard_conforming_strings = on;"]
   if (!applied) sql.push("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migrations', 0));", "LOCK TABLE supabase_migrations.schema_migrations IN SHARE ROW EXCLUSIVE MODE;", ledger, transactionBody(raw), `INSERT INTO supabase_migrations.schema_migrations(version,statements,name,created_by,idempotency_key,rollback) VALUES (${lit(VERSION)}, ARRAY[${encoded(raw)}], ${lit(NAME)}, ${lit(AUTHOR + sha)}, ${lit(hash)}, ARRAY[${encoded(rollback)}]);`)
   else sql.push(ledger)
-  sql.push(transactionBody(readback), `DO $proof$ BEGIN IF (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version=${lit(VERSION)} AND name=${lit(NAME)} AND idempotency_key=${lit(hash)} AND created_by=${lit(AUTHOR + sha)} AND statements=ARRAY[${encoded(raw)}] AND rollback=ARRAY[${encoded(rollback)}]) <> 1 THEN RAISE EXCEPTION 'chapas grants: ledger provenance mismatch'; END IF; END $proof$;`, mode === "apply" ? "COMMIT;" : "ROLLBACK;")
+  sql.push(transactionBody(readback), `DO $proof$ BEGIN IF (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version=${lit(VERSION)} AND name=${lit(NAME)} AND idempotency_key=${lit(hash)} AND created_by ~ ${lit(`${AUTHOR_PATTERN}${sha}$`)} AND statements=ARRAY[${encoded(raw)}] AND rollback=ARRAY[${encoded(rollback)}]) <> 1 THEN RAISE EXCEPTION 'chapas grants: ledger provenance mismatch'; END IF; END $proof$;`, mode === "apply" ? "COMMIT;" : "ROLLBACK;")
   return `${sql.join("\n")}\n`
 }
 

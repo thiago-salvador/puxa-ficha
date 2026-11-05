@@ -303,7 +303,7 @@ async function ensurePr({ repository, env, branch, baseSha, deadline }) {
   validateChangedFiles(changed)
   await git(["diff", "--check"], env)
   await git(["config", "user.name", "Thiago Salvador"], env)
-  await git(["config", "user.email", "contato.thiagosalvador@gmail.com"], env)
+  await git(["config", "user.email", "131783790+thiago-salvador@users.noreply.github.com"], env)
   await git(["switch", "-c", branch], env)
   await git(["add", ...CATALOG_FILES], env)
   await git(["commit", "-m", "data: publicar atualização de pesquisas"], env)

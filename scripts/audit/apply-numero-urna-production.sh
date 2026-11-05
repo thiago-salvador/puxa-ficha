@@ -45,7 +45,7 @@ PGOPTIONS='-c statement_timeout=300000 -c lock_timeout=5000' psql -X -v ON_ERROR
   cat "$tmp_dry"
   cat <<'SQL'
 INSERT INTO supabase_migrations.schema_migrations (version, statements, name, created_by, idempotency_key, rollback)
-VALUES (:'version', ARRAY[convert_from(decode(:'migration_b64', 'base64'), 'UTF8')], 'numero_urna_schema', 'Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions', :'digest', ARRAY[convert_from(decode(:'rollback_b64', 'base64'), 'UTF8')]);
+VALUES (:'version', ARRAY[convert_from(decode(:'migration_b64', 'base64'), 'UTF8')], 'numero_urna_schema', 'Thiago Salvador <hi@thiagosalvador.work> via github-actions', :'digest', ARRAY[convert_from(decode(:'rollback_b64', 'base64'), 'UTF8')]);
 COMMIT;
 SQL
 } > "$tmp_apply"

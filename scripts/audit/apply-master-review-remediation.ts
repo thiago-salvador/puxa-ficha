@@ -42,7 +42,7 @@ export function renderRemediationTransaction(mode: "apply" | "dry-run" | "rollba
   if (mode === "apply" || mode === "dry-run") {
     for (const file of bodies) {
       sql.push(file.body)
-      sql.push(`INSERT INTO supabase_migrations.schema_migrations(version, statements, name, created_by, idempotency_key, rollback) VALUES (${lit(file.version)}, ARRAY[${encoded(file.raw)}], ${lit(file.name)}, ${lit(`Thiago Salvador <contato.thiagosalvador@gmail.com> via master-review:${sha}`)}, ${lit(digest(file.raw))}, ARRAY[${encoded(file.rollbackSql)}]);`)
+      sql.push(`INSERT INTO supabase_migrations.schema_migrations(version, statements, name, created_by, idempotency_key, rollback) VALUES (${lit(file.version)}, ARRAY[${encoded(file.raw)}], ${lit(file.name)}, ${lit(`Thiago Salvador <hi@thiagosalvador.work> via master-review:${sha}`)}, ${lit(digest(file.raw))}, ARRAY[${encoded(file.rollbackSql)}]);`)
       sql.push(file.readbackBody)
     }
     sql.push(guard(true))

@@ -103,7 +103,7 @@ body = text[begins[0].end():commits[0].start()]
 rollback = pathlib.Path(rollback_path).read_bytes()
 readback = pathlib.Path(readback_path).read_bytes()
 name = pathlib.Path(path).stem.removeprefix(version + "_")
-created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
 
 def lit(value): return "'" + value.replace("'", "''") + "'"
 def b64(value): return base64.b64encode(value).decode("ascii")

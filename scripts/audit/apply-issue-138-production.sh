@@ -117,7 +117,7 @@ def b64(value):
 
 def ledger_insert(version, digest, path, raw, rollback):
     name = pathlib.Path(path).stem.removeprefix(version + "_")
-    created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+    created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
     print("INSERT INTO supabase_migrations.schema_migrations")
     print("  (version, statements, name, created_by, idempotency_key, rollback)")
     print("VALUES (")

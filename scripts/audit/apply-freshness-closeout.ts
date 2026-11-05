@@ -13,7 +13,9 @@ export const PREDECESSOR = "20260905220200"
 export const digest = (sql: string) => `sha256:${createHash("sha256").update(sql).digest("hex")}`
 const lit = (value: string) => `'${value.replaceAll("'", "''")}'`
 const encoded = (value: string) => `convert_from(decode(${lit(Buffer.from(value).toString("base64"))}, 'base64'), 'UTF8')`
-const AUTHOR_PREFIX = "Thiago Salvador <contato.thiagosalvador@gmail.com> via freshness-closeout:"
+const AUTHOR_PREFIX = "Thiago Salvador <hi@thiagosalvador.work> via freshness-closeout:"
+// Ledger rows written before the contact change keep their original address.
+const AUTHOR_PATTERN = "^Thiago Salvador <[^<>@[:space:]]+@[^<>@[:space:]]+> via freshness-closeout:[a-f0-9]{40}$"
 
 export function renderFreshnessCloseoutTransaction(mode: "apply" | "dry-run" | "rollback" | "verify", sha: string, root = process.cwd()): string {
   if (!/^[a-f0-9]{40}$/.test(sha)) throw new Error("Invalid expected SHA")
@@ -36,12 +38,11 @@ export function renderFreshnessCloseoutTransaction(mode: "apply" | "dry-run" | "
     return `DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) IS DISTINCT FROM ${lit(top)} OR ${checks.join(" OR ")} THEN RAISE EXCEPTION 'freshness-closeout: ledger or digest drift'; END IF; END $ledger$;`
   }
   const versions = files.map((file) => lit(file.version)).join(",")
-  const appliedSha = `(SELECT substring(created_by FROM ${AUTHOR_PREFIX.length + 1}) FROM supabase_migrations.schema_migrations WHERE version=${lit(files[0].version)})`
+  const appliedSha = `(SELECT substring(created_by FROM ' via freshness-closeout:([a-f0-9]{40})$') FROM supabase_migrations.schema_migrations WHERE version=${lit(files[0].version)})`
   const authorGuard = `DO $author$ BEGIN IF
     (SELECT count(DISTINCT created_by) FROM supabase_migrations.schema_migrations WHERE version IN (${versions})) <> 1
     OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version IN (${versions})
-      AND left(created_by,${AUTHOR_PREFIX.length})=${lit(AUTHOR_PREFIX)}
-      AND substring(created_by FROM ${AUTHOR_PREFIX.length + 1}) ~ '^[a-f0-9]{40}$') <> ${files.length}
+      AND created_by ~ ${lit(AUTHOR_PATTERN)}) <> ${files.length}
     THEN RAISE EXCEPTION 'freshness-closeout: applied SHA or ledger author drift'; END IF; END $author$;`
   const receiptKey = (operation: "apply" | "rollback") => `freshness-closeout:${files.map((file) => file.version).join("+")}:${operation}`
   const receiptDetails = (operation: "apply" | "rollback", gitSha: string) => {
