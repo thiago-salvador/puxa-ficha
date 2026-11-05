@@ -73,6 +73,10 @@ q -q -c "UPDATE supabase_migrations.schema_migrations SET created_by=regexp_repl
 compose verify | expect_sql_error 'siqueira-publication: stored migration provenance mismatch'
 q -q -c "UPDATE supabase_migrations.schema_migrations SET created_by=regexp_replace(created_by,'[a-f0-9]{40}$',repeat('a',40)) WHERE version IN ('20260907193000','20260907193100')"
 compose verify | q -q
+# Linhas gravadas antes da troca do contato mantêm o endereço antigo; o verify precisa aceitá-las.
+q -q -c "UPDATE supabase_migrations.schema_migrations SET created_by=replace(created_by,'<hi@thiagosalvador.work>','<legacy.author@example.com>') WHERE created_by LIKE '% via siqueira-publication:%'"
+if [[ "$(q -Atqc "select count(*) from supabase_migrations.schema_migrations where created_by like 'Thiago Salvador <legacy.author@example.com> via siqueira-publication:%'")" != 2 ]]; then echo 'FAIL: linhas legadas de siqueira-publication não semeadas' >&2; exit 1; fi
+compose verify | q -q
 compose apply | expect_sql_error 'siqueira-publication: ledger or digest drift'
 expect_sql_error 'siqueira: colisão de inscrição/chapa ou recibo existente' < "$D"
 # O ramo legado continua recusando códigos/coligação ausentes.
