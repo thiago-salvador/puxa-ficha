@@ -756,13 +756,13 @@ test('GitHub squash merge always credits the configured co-author', async () => 
   const sha = 'a'.repeat(40);
   await github.merge(43, sha, 'squash', {
     name: 'Thiago Salvador',
-    email: 'contato.thiagosalvador@gmail.com',
+    email: 'coauthor@example.com',
   });
   assert.equal(calls[0].url, 'https://api.github.com/repos/owner/repo/pulls/43/merge');
   assert.deepEqual(JSON.parse(calls[0].init.body), {
     sha,
     merge_method: 'squash',
-    commit_message: 'Co-authored-by: Thiago Salvador <contato.thiagosalvador@gmail.com>',
+    commit_message: 'Co-authored-by: Thiago Salvador <coauthor@example.com>',
   });
 });
 

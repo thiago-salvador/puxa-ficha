@@ -99,7 +99,7 @@ print(text[begin[0].end():commit[0].start()])
 encoded = base64.b64encode(raw).decode('ascii')
 name = pathlib.Path(migration).stem.removeprefix(version + '_')
 print('INSERT INTO supabase_migrations.schema_migrations (version,statements,name,created_by,idempotency_key) VALUES (')
-print(f"{lit(version)}, ARRAY[convert_from(decode({lit(encoded)},'base64'),'UTF8')], {lit(name)}, {lit('Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:' + sha)}, {lit(digest)});")
+print(f"{lit(version)}, ARRAY[convert_from(decode({lit(encoded)},'base64'),'UTF8')], {lit(name)}, {lit('Thiago Salvador <hi@thiagosalvador.work> via github-actions:' + sha)}, {lit(digest)});")
 print(pathlib.Path(readback).read_text())
 # Mesma transação: como anon, as linhas marcadas já não aparecem (vale também no dry-run).
 print('SET LOCAL ROLE anon;')

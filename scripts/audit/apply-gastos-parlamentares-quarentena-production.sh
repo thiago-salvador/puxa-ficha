@@ -86,7 +86,7 @@ for v, d, path in [(schema_version, schema_digest, schema_migration), (version, 
     encoded = base64.b64encode(raw).decode('ascii')
     name = pathlib.Path(path).stem.removeprefix(v + '_')
     print('INSERT INTO supabase_migrations.schema_migrations (version,statements,name,created_by,idempotency_key) VALUES (')
-    print(f"{lit(v)}, ARRAY[convert_from(decode({lit(encoded)},'base64'),'UTF8')], {lit(name)}, {lit('Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:' + sha)}, {lit(d)});")
+    print(f"{lit(v)}, ARRAY[convert_from(decode({lit(encoded)},'base64'),'UTF8')], {lit(name)}, {lit('Thiago Salvador <hi@thiagosalvador.work> via github-actions:' + sha)}, {lit(d)});")
 readback_body = re.sub(r'(?im)^\s*(?:BEGIN READ ONLY|COMMIT);\s*$', '', readback_text)
 print(readback_body)
 print('RESET ROLE;')

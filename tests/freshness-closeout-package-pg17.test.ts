@@ -189,6 +189,9 @@ test("PG17: pacote dados/view/ledger atômico, readback, drift e rollback preser
     assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations"),"1")
     ok("ALTER VIEW chapas_2026_publico SET(security_invoker=true)")
     ok(sql("apply")); ok(sql("verify"))
+    // Rows written before the contact change keep their original address; verify and rollback below run on them.
+    ok("UPDATE supabase_migrations.schema_migrations SET created_by=replace(created_by,'<hi@thiagosalvador.work>','<legacy.author@example.com>') WHERE created_by LIKE '% via freshness-closeout:%'")
+    assert.equal(ok("SELECT count(*) FROM supabase_migrations.schema_migrations WHERE created_by LIKE 'Thiago Salvador <legacy.author@example.com> via freshness-closeout:%'"),"2","legacy ledger rows seeded")
     assert.equal(ok("SELECT situacao_candidatura || ':' || publicavel::text || ':' || status FROM candidatos WHERE slug='jose-moita'"),"aguardando julgamento:false:removido")
     ok(sql("verify","b".repeat(40)))
     assert.equal(ok("SELECT count(*) FROM coleta_log"),"1")

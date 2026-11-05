@@ -147,7 +147,7 @@ for i in range(0, len(resto), 5):
     raw, body = split_body(migration_path)
     rollback = pathlib.Path(rollback_path).read_bytes()
     readback = pathlib.Path(readback_path).read_bytes()
-    created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+    created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
 
     # Mesma regra da checagem fora do lock: digest do predecessor so vale como
     # gate quando existe. Divergencia de digest presente continua reprovando.

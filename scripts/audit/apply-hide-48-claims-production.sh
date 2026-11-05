@@ -96,7 +96,7 @@ def lit(value: str) -> str:
 
 name = pathlib.Path(migration_path).stem.removeprefix(version + "_")
 digest = "sha256:" + hashlib.sha256(migration).hexdigest()
-created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
 
 print("BEGIN;")
 print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:hide-48-claims-production', 0));")

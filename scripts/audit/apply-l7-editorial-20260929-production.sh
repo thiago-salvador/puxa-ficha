@@ -94,7 +94,7 @@ if len(re.findall(r'(?im)^\s*(?:BEGIN|COMMIT);\s*$', body)) != 2:
     raise SystemExit('FAIL: migration deve conter BEGIN e COMMIT unicos')
 body = re.sub(r'(?im)^\s*(?:BEGIN|COMMIT);\s*$', '', body)
 readback = pathlib.Path(readback_path).read_text(encoding='utf-8')
-created_by = 'Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:' + sha
+created_by = 'Thiago Salvador <hi@thiagosalvador.work> via github-actions:' + sha
 print('BEGIN;')
 print('SET LOCAL TIME ZONE \'UTC\';')
 print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migrations', 0));")

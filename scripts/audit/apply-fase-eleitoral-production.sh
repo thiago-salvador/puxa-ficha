@@ -209,7 +209,7 @@ for i in range(0, len(resto), 5):
     raw, body = split_body(migration_path)
     rollback = pathlib.Path(rollback_path).read_bytes()
     readback = pathlib.Path(readback_path).read_bytes()
-    created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+    created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
 
     print(f"DO $ledger$ BEGIN IF (SELECT max(version) FROM supabase_migrations.schema_migrations) <> {lit(previous)} OR (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version={lit(previous)} AND idempotency_key={lit(previous_digest)}) <> 1 OR EXISTS (SELECT 1 FROM supabase_migrations.schema_migrations WHERE version={lit(version)}) THEN RAISE EXCEPTION 'fase-eleitoral: ledger divergiu sob lock antes de {version}'; END IF; END $ledger$;")
     print(body, end="" if body.endswith("\n") else "\n")

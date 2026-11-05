@@ -10,7 +10,9 @@ export const VICE_STATUS_MIGRATIONS = [
   { version: "20260912160000", name: "chapas_vice_situacao_divulgacand" },
   { version: "20260912160100", name: "chapas_rr_vice_inapto" },
 ] as const
-const AUTHOR = "Thiago Salvador <contato.thiagosalvador@gmail.com> via vice-status:"
+const AUTHOR = "Thiago Salvador <hi@thiagosalvador.work> via vice-status:"
+// Ledger rows written before the contact change keep their original address.
+const AUTHOR_PATTERN = "^Thiago Salvador <[^<>@[:space:]]+@[^<>@[:space:]]+> via vice-status:"
 const digest = (text: string) => `sha256:${createHash("sha256").update(text).digest("hex")}`
 const lit = (text: string) => `'${text.replaceAll("'", "''")}'`
 const encoded = (text: string) => `convert_from(decode(${lit(Buffer.from(text).toString("base64"))}, 'base64'), 'UTF8')`
@@ -51,7 +53,7 @@ export function renderViceStatusTransaction(
       sql.push(`INSERT INTO supabase_migrations.schema_migrations(version, statements, name, created_by, idempotency_key, rollback) VALUES (${lit(file.version)}, ARRAY[${encoded(file.raw)}], ${lit(file.name)}, ${lit(AUTHOR + sha)}, ${lit(digest(file.raw))}, ARRAY[${encoded(file.rollback)}]);`)
     }
     sql.push(file.readbackBody)
-    sql.push(`DO $proof$ BEGIN IF (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version=${lit(file.version)} AND idempotency_key=${lit(digest(file.raw))} AND name=${lit(file.name)} AND statements=ARRAY[${encoded(file.raw)}] AND rollback=ARRAY[${encoded(file.rollback)}] AND created_by=${lit(AUTHOR + sha)}) <> 1 THEN RAISE EXCEPTION 'vice-status: stored migration provenance mismatch'; END IF; END $proof$;`)
+    sql.push(`DO $proof$ BEGIN IF (SELECT count(*) FROM supabase_migrations.schema_migrations WHERE version=${lit(file.version)} AND idempotency_key=${lit(digest(file.raw))} AND name=${lit(file.name)} AND statements=ARRAY[${encoded(file.raw)}] AND rollback=ARRAY[${encoded(file.rollback)}] AND created_by ~ ${lit(`${AUTHOR_PATTERN}${sha}$`)}) <> 1 THEN RAISE EXCEPTION 'vice-status: stored migration provenance mismatch'; END IF; END $proof$;`)
   }
   sql.push(`DO $authors$ BEGIN IF (SELECT count(DISTINCT created_by) FROM supabase_migrations.schema_migrations WHERE version IN (${files.map((file) => lit(file.version)).join(",")})) <> 1 THEN RAISE EXCEPTION 'vice-status: inconsistent applied SHA'; END IF; END $authors$;`)
   sql.push(mode === "apply" ? "COMMIT;" : "ROLLBACK;")

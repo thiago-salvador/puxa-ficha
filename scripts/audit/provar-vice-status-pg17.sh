@@ -40,9 +40,17 @@ compose dry-run | q -q
 if [[ "$(dump_schema)" != "$schema_before" ]]; then echo 'FAIL: dry-run mudou schema' >&2; exit 1; fi
 compose apply | q -q
 compose verify | q -q
+# Linhas gravadas antes da troca do contato mantêm o endereço antigo; o verify precisa aceitá-las.
+q -q -c "UPDATE supabase_migrations.schema_migrations SET created_by=replace(created_by,'<hi@thiagosalvador.work>','<legacy.author@example.com>') WHERE created_by LIKE '% via vice-status:%'"
+if [[ "$(q -Atqc "select count(*) from supabase_migrations.schema_migrations where created_by like 'Thiago Salvador <legacy.author@example.com> via vice-status:%'")" != 2 ]]; then echo 'FAIL: linhas legadas de vice-status não semeadas' >&2; exit 1; fi
+compose verify | q -q
 compose apply | expect_sql_error 'vice-status: ledger or digest drift'
 # Production-state ACL regression: the two vice migrations are already in the ledger.
 node --import tsx scripts/audit/apply-chapas-public-grants.ts apply "$SHA" | q -q
+node --import tsx scripts/audit/apply-chapas-public-grants.ts verify "$SHA" | q -q
+# Linhas gravadas antes da troca do contato mantêm o endereço antigo; o verify precisa aceitá-las.
+q -q -c "UPDATE supabase_migrations.schema_migrations SET created_by=replace(created_by,'<hi@thiagosalvador.work>','<legacy.author@example.com>') WHERE created_by LIKE '% via chapas-public-grants:%'"
+if [[ "$(q -Atqc "select count(*) from supabase_migrations.schema_migrations where created_by like 'Thiago Salvador <legacy.author@example.com> via chapas-public-grants:%'")" != 1 ]]; then echo 'FAIL: linhas legadas de chapas-public-grants não semeadas' >&2; exit 1; fi
 node --import tsx scripts/audit/apply-chapas-public-grants.ts verify "$SHA" | q -q
 q -q < supabase/rollback/20260912160200_grant_chapas_publico_columns.rollback.sql
 if [[ "$(q -Atqc "select count(*) from supabase_migrations.schema_migrations where version in ('20260912160000','20260912160100')")" != 2 ]]; then echo 'FAIL: ACL rollback removed prior ledger entries' >&2; exit 1; fi

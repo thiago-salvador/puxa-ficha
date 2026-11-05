@@ -103,7 +103,7 @@ if re.search(r"(?im)^\s*(?:BEGIN|COMMIT);\s*$", body):
 rollback = pathlib.Path(rollback_path).read_bytes()
 readback = pathlib.Path(readback_path).read_text(encoding="utf-8")
 readback = re.sub(r"(?im)^\s*(?:BEGIN READ ONLY|COMMIT);\s*$", "", readback)
-created_by = "Thiago Salvador <contato.thiagosalvador@gmail.com> via github-actions:" + sha
+created_by = "Thiago Salvador <hi@thiagosalvador.work> via github-actions:" + sha
 print("BEGIN;")
 print("SELECT pg_advisory_xact_lock(hashtextextended('puxa-ficha:production-db-migrations', 0));")
 print("LOCK TABLE supabase_migrations.schema_migrations IN SHARE ROW EXCLUSIVE MODE;")
